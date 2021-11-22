@@ -1,0 +1,12 @@
+# Local
+.DS_Store
+.idea
+.eslintcache
+
+# Generated
+build/
+dist/
+
+# Yarn
+node_modules/
+yarn-error.log
