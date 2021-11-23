@@ -1,3 +1,7 @@
 export const Card = {
-  baseStyle: (props: any) => ({}),
+  baseStyle: {
+    color: "white",
+    border: "1px solid",
+    borderColor: "purple.300",
+  },
 }

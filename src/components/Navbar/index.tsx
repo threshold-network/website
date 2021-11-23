@@ -5,7 +5,7 @@ import ThresholdBrand from "./ThresholdBrand"
 import SocialMediaLinks from "./SocialMediaLinks"
 import HamburgerButton from "./HamburgerButton"
 import MobileDrawer from "./MobileDrawer"
-import { LinkInfo } from "./types"
+import { ExternalLink, LinkInfo } from "./types"
 import WhatsNextBanner from "./WhatsNextBanner"
 
 const Navbar: FC = () => {
@@ -20,8 +20,8 @@ const Navbar: FC = () => {
   })
 
   const navLinks: LinkInfo[] = [
-    { href: "/", text: "Community" },
-    { href: "/", text: "Blog" },
+    { href: ExternalLink.THRESHOLD_DISCORD, text: "Community" },
+    { href: ExternalLink.THRESHOLD_BLOG, text: "Blog" },
   ]
 
   return (
@@ -29,7 +29,6 @@ const Navbar: FC = () => {
       {showBanner && <WhatsNextBanner onClose={closeBanner} />}
       <HStack borderBottom="1px solid" borderColor="purple.300" h="90px">
         <Container maxW="6xl" h="100%" display="flex">
-          <HamburgerButton openDrawer={onDrawOpen} />
           <MobileDrawer
             isOpen={isDrawerOpen}
             onClose={onDrawerClose}
@@ -38,6 +37,7 @@ const Navbar: FC = () => {
           <ThresholdBrand />
           <NavLinks navLinks={navLinks} />
           <SocialMediaLinks />
+          <HamburgerButton openDrawer={onDrawOpen} />
         </Container>
       </HStack>
     </>

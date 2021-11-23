@@ -5,7 +5,7 @@ import Threshold from "../../static/images/ThresholdBrandFullWhite.svg"
 const ThresholdBrand: FC = () => {
   return (
     <HStack
-      px={8}
+      px={{ base: 0, md: 8 }}
       minW={{ base: "160px", md: "264px" }}
       width={{ base: "100%", md: "auto" }}
     >

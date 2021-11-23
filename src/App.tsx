@@ -13,18 +13,23 @@ const App: FC = () => {
       <ChakraProvider theme={theme}>
         <Box
           w="100vw"
-          h="100vh"
+          h="100%"
           bg="linear-gradient(130.52deg, #7D00FF 0%, #7F00AC 100%)"
         >
-          <Navbar />
-          <Container maxW="6xl">
-            <Switch>
-              <Route exact path="/" component={SplashPage} />
-            </Switch>
-          </Container>
+          <Box
+            backgroundImage={Swoosh}
+            // backgroundRepeat="repeat-y"
+            // backgroundPosition="center"
+          >
+            <Navbar />
+            <Container maxW="6xl">
+              <Switch>
+                <Route exact path="/" component={SplashPage} />
+              </Switch>
+            </Container>
+          </Box>
         </Box>
       </ChakraProvider>
-      {/*<Image src={Swoosh} position="fixed" w="200%" h="200%" top="-20%" />*/}
     </Router>
   )
 }

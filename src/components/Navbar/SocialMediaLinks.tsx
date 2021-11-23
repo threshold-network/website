@@ -25,6 +25,10 @@ const SocialMediaLinks: FC<{ isMobileDrawerFooter?: boolean }> = ({
     <HStack
       spacing={6}
       px={8}
+      display={{
+        base: isMobileDrawerFooter ? "inherit" : "none",
+        md: "inherit",
+      }}
       justifyContent={{
         base: isMobileDrawerFooter ? "center" : "flex-end",
         md: "flex-start",
