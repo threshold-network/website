@@ -1,15 +1,23 @@
 import { FC } from "react"
-import { Icon, IconButton, IconButtonProps } from "@chakra-ui/react"
+import { HStack, Icon } from "@chakra-ui/react"
 import { HamburgerIcon } from "@chakra-ui/icons"
 
-const HamburgerButton: FC<Omit<IconButtonProps, "aria-label">> = (props) => {
+const HamburgerButton: FC<{ openDrawer: () => void }> = ({ openDrawer }) => {
   return (
-    <IconButton
-      variant="ghost"
-      aria-label="open navigation"
-      icon={<Icon as={HamburgerIcon} />}
-      {...props}
-    />
+    <HStack>
+      <Icon
+        onClick={openDrawer}
+        color="purple.100"
+        _hover={{
+          cursor: "pointer",
+          color: "white",
+        }}
+        boxSize={6}
+        display={{ base: "block", md: "none" }}
+        variant="ghost"
+        as={HamburgerIcon}
+      />
+    </HStack>
   )
 }
 

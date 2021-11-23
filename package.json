@@ -2,7 +2,6 @@
   "name": "treshold-splash-page",
   "version": "0.1.0",
   "private": true,
-
   "dependencies": {
     "@chakra-ui/icons": "^1.0.15",
     "@chakra-ui/react": "^1.6.7",
@@ -22,7 +21,6 @@
     "typescript": "^4.4.3",
     "web-vitals": "^1.0.1"
   },
-
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
