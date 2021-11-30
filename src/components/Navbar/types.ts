@@ -4,8 +4,9 @@ export interface LinkInfo {
 }
 
 export enum ExternalLink {
-  THRESHOLD_GITHUB = "https://github.com/threshold-network/token-dashboard",
-  THRESHOLD_DISCORD = "https://discord.gg/hHHZF4rA",
+  LEARN_MORE = "/",
+  THRESHOLD_GITHUB = "https://github.com/threshold-network",
+  THRESHOLD_DISCORD = "https://discord.gg/VafbhzJ3vW",
   THRESHOLD_TWITTER = "https://twitter.com/TheTNetwork",
   THRESHOLD_BLOG = "https://blog.threshold.network/",
 }

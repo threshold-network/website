@@ -16,11 +16,7 @@ const App: FC = () => {
           h="100%"
           bg="linear-gradient(130.52deg, #7D00FF 0%, #7F00AC 100%)"
         >
-          <Box
-            backgroundImage={Swoosh}
-            // backgroundRepeat="repeat-y"
-            // backgroundPosition="center"
-          >
+          <Box backgroundImage={Swoosh} backgroundPosition="center">
             <Navbar />
             <Container maxW="6xl">
               <Switch>

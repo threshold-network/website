@@ -11,7 +11,7 @@ import {
   Stack,
   StackDivider,
 } from "@chakra-ui/react"
-import { H1, H5 } from "../../components/Typography"
+import { Body1, H1, H5 } from "../../components/Typography"
 import SplashCard, { SplashCardInfo } from "./SplashCard"
 import {
   BsStack,
@@ -52,8 +52,8 @@ const SplashPage: FC = () => {
         Threshold gives users sovereignty on the public blockchain.
       </H1>
       <H5 color="purple.100" mt={6} maxW="lg">
-        Threshold Network is the first ever on-chain merge between two existing
-        networks.
+        Access cryptographic tools that ensure full control over your digital
+        assets.
       </H5>
       <HStack mt={16}>
         <Button
@@ -78,6 +78,13 @@ const SplashPage: FC = () => {
       <H5 color="white" mt={32}>
         Why Threshold Network?
       </H5>
+      <Body1 color="purple.100" mt={6}>
+        Threshold Network is the first ever on-chain merge between two existing
+        networks.{" "}
+        <Link textDecoration="underline" href={ExternalLink.LEARN_MORE}>
+          Learn more ↗
+        </Link>
+      </Body1>
       <Box position="relative">
         {!mediumBreakpoint && (
           <Divider

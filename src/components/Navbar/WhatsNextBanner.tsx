@@ -1,6 +1,7 @@
 import { Alert, CloseButton, Icon, Link } from "@chakra-ui/react"
 import { FC } from "react"
 import { HiOutlineExternalLink } from "react-icons/all"
+import { ExternalLink } from "./types"
 
 const WhatsNextBanner: FC<{ onClose: () => void }> = ({ onClose }) => {
   return (
@@ -11,7 +12,7 @@ const WhatsNextBanner: FC<{ onClose: () => void }> = ({ onClose }) => {
       position="relative"
     >
       Find out what's next...
-      <Link ml="5px" textDecoration="underline">
+      <Link ml="5px" textDecoration="underline" href={ExternalLink.LEARN_MORE}>
         Learn More
       </Link>
       <Icon ml="5px" as={HiOutlineExternalLink} />
