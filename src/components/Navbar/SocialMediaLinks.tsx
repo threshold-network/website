@@ -37,13 +37,13 @@ const SocialMediaLinks: FC<{ isMobileDrawerFooter?: boolean }> = ({
         base: isMobileDrawerFooter ? "none" : "1px solid",
         md: "none",
       }}
-      borderColor="purple.300"
+      borderColor="brand.300"
     >
       {socialMediaLinks.map(({ href, logo }) => (
         <Link key={href} href={href} target="_blank">
           <Icon
             boxSize="25px"
-            color="purple.100"
+            color="brand.100"
             _hover={{ color: "white" }}
             as={logo}
           />

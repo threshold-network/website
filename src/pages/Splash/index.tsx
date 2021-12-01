@@ -6,8 +6,6 @@ import {
   Divider,
   HStack,
   Link,
-  LinkBox,
-  LinkOverlay,
   Stack,
   StackDivider,
 } from "@chakra-ui/react"
@@ -48,15 +46,17 @@ const SplashPage: FC = () => {
         color="white"
         fontWeight="700"
         fontSize={{ base: "44px", sm: "52px", lg: "60px" }}
+        maxW="688px"
       >
-        Threshold gives users sovereignty on the public blockchain.
+        Threshold powers user sovereignty on the public blockchain.
       </H1>
-      <H5 color="purple.100" mt={6} maxW="lg">
+      <H5 color="brand.100" mt={6}>
         Access cryptographic tools that ensure full control over your digital
         assets.
       </H5>
       <HStack mt={16}>
         <Button
+          px="40px"
           isFullWidth={mediumBreakpoint}
           onClick={() => {
             window.open(ExternalLink.THRESHOLD_DISCORD)
@@ -66,6 +66,7 @@ const SplashPage: FC = () => {
         </Button>
 
         <Button
+          px="40px"
           isFullWidth={mediumBreakpoint}
           variant="outline"
           onClick={() => {
@@ -78,7 +79,7 @@ const SplashPage: FC = () => {
       <H5 color="white" mt={32}>
         Why Threshold Network?
       </H5>
-      <Body1 color="purple.100" mt={6}>
+      <Body1 color="brand.100" mt={6}>
         Threshold Network is the first ever on-chain merge between two existing
         networks.{" "}
         <Link textDecoration="underline" href={ExternalLink.LEARN_MORE}>
@@ -86,22 +87,23 @@ const SplashPage: FC = () => {
         </Link>
       </Body1>
       <Box position="relative">
+        {/* Divider that spans all 3 cards on large screen sizes */}
         {!mediumBreakpoint && (
           <Divider
             position="absolute"
-            top="73px"
+            top="88px"
             zIndex="1"
             direction="horizontal"
-            borderColor="purple.300"
+            borderColor="brand.300"
           />
         )}
         <Stack
           direction={{ base: "column", md: "row" }}
           mt={8}
           bg="blackAlpha.300"
-          divider={<StackDivider borderColor="purple.300" />}
+          divider={<StackDivider borderColor="brand.300" />}
           border="1px solid"
-          borderColor="purple.300"
+          borderColor="brand.300"
         >
           {splashCardContent.map((card, i) => (
             <SplashCard

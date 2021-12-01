@@ -22,7 +22,7 @@ export const H4: FC<TextProps> = (props) => {
 }
 
 export const H5: FC<TextProps> = (props) => {
-  return <Text as="h5" fontSize="2xl" lineHeigh="32px" {...props} />
+  return <Text as="h5" fontSize="2xl" lineHeight="32px" {...props} />
 }
 
 export const Body1: FC<TextProps> = (props) => {
@@ -42,8 +42,8 @@ export const Label1: FC<TextProps> = (props) => {
     <Text
       fontWeight={600}
       fontSize="md"
-      letterSpacing="7.5%"
       lineHeight="28px"
+      letterSpacing="10%"
       {...props}
     />
   )

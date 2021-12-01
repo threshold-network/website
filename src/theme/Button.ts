@@ -1,24 +1,27 @@
 export const Button = {
   baseStyle: {
-    padding: "20px 40px",
+    paddingX: 5,
+    paddingY: 10,
     borderRadius: 0,
+    height: "auto",
+    width: "auto",
   },
   variants: {
     solid: {
-      color: "purple.700",
+      color: "brand.700",
       bg: "white",
       boxShadow: "md",
       _hover: {
-        bg: "purple.100",
+        bg: "brand.100",
       },
       _active: {
-        bg: "purple.100",
+        bg: "brand.100",
       },
     },
     outline: {
       color: "white",
       bg: "blackAlpha.300",
-      borderColor: "purple.300",
+      borderColor: "brand.300",
       border: "1px solid",
       _hover: {
         bg: "blackAlpha.400",

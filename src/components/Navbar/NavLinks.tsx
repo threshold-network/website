@@ -8,7 +8,7 @@ const NavLink: FC<{ href: string }> = ({ href, children }) => {
   return (
     <Link
       href={href}
-      color="purple.100"
+      color="brand.100"
       display="flex"
       _hover={{
         textDecoration: "none",
@@ -31,7 +31,7 @@ const NavLinks: FC<{ navLinks: LinkInfo[] }> = ({ navLinks }) => {
       w="100%"
       borderRight="1px solid"
       borderLeft="1px solid"
-      borderColor="purple.300"
+      borderColor="brand.300"
       px={8}
       spacing={4}
       display={{ base: "none", md: "inherit" }}

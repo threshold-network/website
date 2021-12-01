@@ -27,8 +27,8 @@ const MobileDrawer: FC<{
       isOpen={isOpen && isMobileDevice}
     >
       <DrawerOverlay />
-      <DrawerContent bg="purple.700">
-        <DrawerHeader py="44px">
+      <DrawerContent bg="brand.700">
+        <DrawerHeader py="44px" justifyContent="center">
           <ThresholdBrand />
         </DrawerHeader>
         <DrawerBody
@@ -38,7 +38,7 @@ const MobileDrawer: FC<{
           justifyContent="space-between"
           pb={20}
         >
-          <Stack divider={<StackDivider borderColor="purple.800" />}>
+          <Stack divider={<StackDivider borderColor="brand.800" />}>
             {navLinks.map(({ href, text }) => (
               <MobileNavLink key={text} href={href}>
                 {text}

@@ -27,7 +27,7 @@ const Navbar: FC = () => {
   return (
     <>
       {showBanner && <WhatsNextBanner onClose={closeBanner} />}
-      <HStack borderBottom="1px solid" borderColor="purple.300" h="90px">
+      <HStack borderBottom="1px solid" borderColor="brand.300" h="90px">
         <Container maxW="6xl" h="100%" display="flex">
           <MobileDrawer
             isOpen={isDrawerOpen}

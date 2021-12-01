@@ -7,7 +7,7 @@ const HamburgerButton: FC<{ openDrawer: () => void }> = ({ openDrawer }) => {
     <HStack>
       <Icon
         onClick={openDrawer}
-        color="purple.100"
+        color="brand.100"
         _hover={{
           cursor: "pointer",
           color: "white",

@@ -3,7 +3,7 @@ import { Button } from "./Button"
 import { Card } from "./Card"
 
 const colors = {
-  purple: {
+  brand: {
     50: "#FCF9FF",
     100: "#D5C6FF",
     // 200

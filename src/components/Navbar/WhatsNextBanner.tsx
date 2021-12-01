@@ -6,8 +6,8 @@ import { ExternalLink } from "./types"
 const WhatsNextBanner: FC<{ onClose: () => void }> = ({ onClose }) => {
   return (
     <Alert
-      bg="purple.700"
-      color="white"
+      bg="brand.700"
+      color="brand.100"
       justifyContent="center"
       position="relative"
     >
