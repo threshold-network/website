@@ -4,7 +4,8 @@ export interface LinkInfo {
 }
 
 export enum ExternalLink {
-  LEARN_MORE = "/",
+  // TO DO UPDATE THIS
+  LEARN_MORE = "https://blog.threshold.network/",
   THRESHOLD_GITHUB = "https://github.com/threshold-network",
   THRESHOLD_DISCORD = "https://discord.gg/VafbhzJ3vW",
   THRESHOLD_TWITTER = "https://twitter.com/TheTNetwork",
