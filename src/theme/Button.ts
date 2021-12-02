@@ -1,10 +1,6 @@
 export const Button = {
   baseStyle: {
-    paddingX: 5,
-    paddingY: 10,
     borderRadius: 0,
-    height: "auto",
-    width: "auto",
   },
   variants: {
     solid: {

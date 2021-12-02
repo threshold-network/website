@@ -54,10 +54,19 @@ const SplashPage: FC = () => {
         Access cryptographic tools that ensure full control over your digital
         assets.
       </H5>
-      <HStack mt={16}>
+      <Stack
+        mt={16}
+        spacing={8}
+        direction={mediumBreakpoint ? "column" : "row"}
+      >
         <Button
+          height="auto"
+          width="auto"
+          fontSize="lg"
           px="40px"
-          isFullWidth={mediumBreakpoint}
+          py="20px"
+          isFullWidth
+          // ={mediumBreakpoint}
           onClick={() => {
             window.open(ExternalLink.THRESHOLD_DISCORD)
           }}
@@ -66,8 +75,13 @@ const SplashPage: FC = () => {
         </Button>
 
         <Button
+          height="auto"
+          width="auto"
+          fontSize="lg"
           px="40px"
-          isFullWidth={mediumBreakpoint}
+          py="20px"
+          isFullWidth
+          // ={mediumBreakpoint}
           variant="outline"
           onClick={() => {
             window.open(ExternalLink.THRESHOLD_BLOG)
@@ -75,7 +89,7 @@ const SplashPage: FC = () => {
         >
           Read the Blog
         </Button>
-      </HStack>
+      </Stack>
       <H5 color="white" mt={32}>
         Why Threshold Network?
       </H5>

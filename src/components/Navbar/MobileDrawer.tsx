@@ -29,7 +29,7 @@ const MobileDrawer: FC<{
       <DrawerOverlay />
       <DrawerContent bg="brand.700">
         <DrawerHeader py="44px" justifyContent="center">
-          <ThresholdBrand />
+          <ThresholdBrand isDrawerOpen />
         </DrawerHeader>
         <DrawerBody
           h="100%"

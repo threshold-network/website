@@ -43,7 +43,7 @@ export const Label1: FC<TextProps> = (props) => {
       fontWeight={600}
       fontSize="md"
       lineHeight="28px"
-      letterSpacing="10%"
+      letterSpacing="0.075em"
       {...props}
     />
   )
