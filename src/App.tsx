@@ -12,8 +12,7 @@ const App: FC = () => {
     <Router basename={`${process.env.PUBLIC_URL}`}>
       <ChakraProvider theme={theme}>
         <Box
-          w="100vw"
-          h="100%"
+          minHeight="100%"
           bg="linear-gradient(130.52deg, #7D00FF 0%, #7F00AC 100%)"
         >
           <Box
