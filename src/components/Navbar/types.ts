@@ -10,4 +10,5 @@ export enum ExternalLink {
   THRESHOLD_DISCORD = "https://discord.gg/VafbhzJ3vW",
   THRESHOLD_TWITTER = "https://twitter.com/TheTNetwork",
   THRESHOLD_BLOG = "https://blog.threshold.network/",
+  TEMPORARY_UPGRADE_UI = "https://stake.nucypher.network/",
 }
