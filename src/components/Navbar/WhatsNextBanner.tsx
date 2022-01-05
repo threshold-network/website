@@ -12,8 +12,8 @@ const WhatsNextBanner: FC<{ onClose: () => void }> = ({ onClose }) => {
       position="relative"
     >
       Upgrade your NU & KEEP to T on the upgrade UI
-      <Link 
-        ml="5px" 
+      <Link
+        ml="5px"
         textDecoration="underline"
         href={ExternalLink.TEMPORARY_UPGRADE_UI}
       >
