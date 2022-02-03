@@ -6,8 +6,8 @@ const ThresholdBrand: FC<{ isDrawerOpen?: boolean }> = ({ isDrawerOpen }) => {
   return (
     <HStack
       px={{ base: 0, md: 8 }}
-      minW={{ base: "160px", md: "264px" }}
-      width={{ base: "100%", md: "auto" }}
+      minW={{ base: "160px", lg: "264px" }}
+      width={{ base: "100%", lg: "auto" }}
       justifyContent={isDrawerOpen ? "center" : "flex-start"}
     >
       <Link href="/">

@@ -27,20 +27,20 @@ const SocialMediaLinks: FC<{ isMobileDrawerFooter?: boolean }> = ({
       px={8}
       display={{
         base: isMobileDrawerFooter ? "inherit" : "none",
-        md: "inherit",
+        lg: "inherit",
       }}
       justifyContent={{
         base: isMobileDrawerFooter ? "center" : "flex-end",
-        md: "flex-start",
+        lg: "flex-start",
       }}
       borderLeft={{
         base: isMobileDrawerFooter ? "none" : "1px solid",
-        md: "none",
+        lg: "none",
       }}
       borderColor="brand.300"
     >
       {socialMediaLinks.map(({ href, logo }) => (
-        <Link key={href} href={href} target="_blank">
+        <Link key={href} href={href} target="_blank" rel="noreferrer">
           <Icon
             boxSize="25px"
             color="brand.100"

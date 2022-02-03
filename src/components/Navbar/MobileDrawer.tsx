@@ -19,7 +19,7 @@ const MobileDrawer: FC<{
   isOpen: boolean
   navLinks: LinkInfo[]
 }> = ({ onClose, isOpen, navLinks }) => {
-  const isMobileDevice = useChakraBreakpoint("md")
+  const isMobileDevice = useChakraBreakpoint("lg")
   return (
     <Drawer
       placement="left"
