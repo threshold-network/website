@@ -34,7 +34,7 @@ const NavLinks: FC<{ navLinks: LinkInfo[] }> = ({ navLinks }) => {
       borderColor="brand.300"
       px={8}
       spacing={4}
-      display={{ base: "none", md: "inherit" }}
+      display={{ base: "none", lg: "inherit" }}
     >
       {navLinks.map(({ text, href }) => (
         <NavLink key={text} href={href}>

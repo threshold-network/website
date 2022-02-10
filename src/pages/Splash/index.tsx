@@ -68,10 +68,10 @@ const SplashPage: FC = () => {
           isFullWidth
           // ={mediumBreakpoint}
           onClick={() => {
-            window.open(ExternalLink.THRESHOLD_DISCORD)
+            window.open(ExternalLink.STAKE)
           }}
         >
-          Join Discord
+          Start Staking
         </Button>
 
         <Button

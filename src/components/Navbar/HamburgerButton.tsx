@@ -13,7 +13,7 @@ const HamburgerButton: FC<{ openDrawer: () => void }> = ({ openDrawer }) => {
           color: "white",
         }}
         boxSize={6}
-        display={{ base: "block", md: "none" }}
+        display={{ base: "block", lg: "none" }}
         variant="ghost"
         as={HamburgerIcon}
       />

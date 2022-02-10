@@ -22,6 +22,9 @@ const Navbar: FC = () => {
   const navLinks: LinkInfo[] = [
     { href: ExternalLink.THRESHOLD_DISCORD, text: "Community" },
     { href: ExternalLink.THRESHOLD_BLOG, text: "Blog" },
+    { href: ExternalLink.GOVERNANCE, text: "Governance" },
+    { href: ExternalLink.THRESHOLD_TOKEN, text: "Token" },
+    { href: ExternalLink.STAKE, text: "Stake" },
   ]
 
   return (
