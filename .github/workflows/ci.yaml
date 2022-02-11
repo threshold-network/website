@@ -56,7 +56,7 @@ jobs:
           service-key: ${{ secrets.MAINNET_PREVIEW_UPLOADER_SERVICE_KEY_JSON_BASE64 }}
           project: ${{ secrets.MAINNET_PREVIEW_GOOGLE_PROJECT_ID }}
           bucket-name: preview.threshold.network
-          bucket-path: ${{ github.ref_name }}
+          bucket-path: ${{ github.head_ref }}
           build-folder: build
 
       - name: Post preview URL to PR
