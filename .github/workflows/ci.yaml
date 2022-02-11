@@ -1,0 +1,92 @@
+name: Thrershold Website CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build preview
+        if: github.event_name == 'pull_request'
+        run: yarn build
+        env:
+          PUBLIC_URL: /${{ github.ref_name }}
+
+      - name: Build
+        if: github.event_name == 'push'
+        run: yarn build
+        env:
+          PUBLIC_URL: /
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build
+
+  deploy-preview:
+    name: Deploy preview
+    needs: build
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/download-artifact@v2
+
+      - name: Deploy PR to GCP
+        uses: thesis/gcp-storage-bucket-action@v3.1.0
+        with:
+          service-key: ${{ secrets.MAINNET_PREVIEW_UPLOADER_SERVICE_KEY_JSON_BASE64 }}
+          project: ${{ secrets.MAINNET_PREVIEW_GOOGLE_PROJECT_ID }}
+          bucket-name: preview.threshold.network
+          bucket-path: ${{ github.ref_name }}
+          build-folder: build
+
+      - name: Post preview URL to PR
+        uses: actions/github-script@v5
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Preview uploaded to https://preview.threshold.network/${{ github.head_ref }}/index.html.'
+            })
+
+  deploy:
+    name: Deploy
+    needs: build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/download-artifact@v2
+
+      - name: Deploy build to GCP
+        uses: thesis/gcp-storage-bucket-action@v3.1.0
+        with:
+          service-key: ${{ secrets.MAINNET_UPLOADER_SERVICE_KEY_JSON_BASE64 }}
+          project: ${{ secrets.MAINNET_GOOGLE_PROJECT_ID }}
+          bucket-name: threshold.network
+          build-folder: build
+          set-website: true
+          home-page-path: index.html
+          error-page-path: index.html
