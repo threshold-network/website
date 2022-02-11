@@ -28,7 +28,7 @@ jobs:
         if: github.event_name == 'pull_request'
         run: yarn build
         env:
-          PUBLIC_URL: /${{ github.ref_name }}
+          PUBLIC_URL: /${{ github.head_ref }}
 
       - name: Build
         if: github.event_name == 'push'
