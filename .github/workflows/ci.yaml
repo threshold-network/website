@@ -75,6 +75,9 @@ jobs:
     name: Deploy
     needs: build
     if: github.event_name == 'push'
+    # production environment is protected, it requires an approval before execution.
+    environment:
+      name: prod
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
