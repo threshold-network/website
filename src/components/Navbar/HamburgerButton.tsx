@@ -4,16 +4,21 @@ import { HamburgerIcon } from "@chakra-ui/icons"
 
 const HamburgerButton: FC<{ openDrawer: () => void }> = ({ openDrawer }) => {
   return (
-    <HStack>
+    <HStack
+      borderLeft="1px solid"
+      borderColor="gray.700"
+      display={{ base: "inherit", lg: "none" }}
+      pl="28px"
+      pr={2}
+    >
       <Icon
         onClick={openDrawer}
-        color="brand.100"
+        color="gray.300"
         _hover={{
           cursor: "pointer",
           color: "white",
         }}
         boxSize={6}
-        display={{ base: "block", lg: "none" }}
         variant="ghost"
         as={HamburgerIcon}
       />
