@@ -8,6 +8,69 @@ import WhatsNextBanner from "./WhatsNextBanner"
 import MobileDrawer from "./MobileNav/MobileDrawer"
 import DesktopNavLinks from "./DesktopNav/DesktopNavLinks"
 
+const navLinks: LinkInfo[] = [
+  {
+    text: "earn",
+    dropdown: [
+      {
+        text: "How to Earn",
+        href: "/earn",
+      },
+      {
+        text: "Staker",
+        href: "/earn/staker",
+      },
+      {
+        text: "Liquidity Provider",
+        href: "/earn/liquidity-provider",
+      },
+      {
+        text: "BTC/tBTC User",
+        href: "/earn/btc",
+      },
+      {
+        text: "Token Holder",
+        href: "/earn/token-holder",
+      },
+    ],
+  },
+  {
+    text: "Governance",
+    href: "/governance",
+  },
+  {
+    text: "News",
+    dropdown: [
+      {
+        text: "Press",
+        href: "/press",
+      },
+      {
+        text: "Blog",
+        href: ExternalLinkHref.THRESHOLD_BLOG,
+        isExternal: true,
+      },
+    ],
+  },
+  {
+    text: "About",
+    dropdown: [
+      {
+        text: "Contributors",
+        href: "/contributors",
+      },
+      {
+        text: "FAQ",
+        href: "/faq",
+      },
+      {
+        text: "Audits",
+        href: "/audits",
+      },
+    ],
+  },
+]
+
 const Navbar: FC = () => {
   const {
     isOpen: isDrawerOpen,
@@ -18,68 +81,6 @@ const Navbar: FC = () => {
   const { isOpen: showBanner, onClose: closeBanner } = useDisclosure({
     defaultIsOpen: true,
   })
-
-  const navLinks: LinkInfo[] = [
-    {
-      text: "earn",
-      dropdown: [
-        {
-          text: "How to Earn",
-          href: "/earn",
-        },
-        {
-          text: "Staker",
-          href: "/earn/staker",
-        },
-        {
-          text: "Liquidity Provider",
-          href: "/earn/liquidity-provider",
-        },
-        {
-          text: "BTC/tBTC User",
-          href: "/earn/btc",
-        },
-        {
-          text: "Token Holder",
-          href: "/earn/token-holder",
-        },
-      ],
-    },
-    {
-      text: "Governance",
-      href: "/governance",
-    },
-    {
-      text: "News",
-      dropdown: [
-        {
-          text: "Press",
-          href: "/press",
-        },
-        {
-          text: "Blog",
-          href: ExternalLinkHref.THRESHOLD_BLOG,
-        },
-      ],
-    },
-    {
-      text: "About",
-      dropdown: [
-        {
-          text: "Contributors",
-          href: "/contributors",
-        },
-        {
-          text: "FAQ",
-          href: "/faq",
-        },
-        {
-          text: "Audits",
-          href: "/audits",
-        },
-      ],
-    },
-  ]
 
   return (
     <>

@@ -2,6 +2,7 @@ export interface LinkInfo {
   href?: string
   text: string
   dropdown?: LinkInfo[]
+  isExternal?: boolean
 }
 
 export enum ExternalLinkHref {

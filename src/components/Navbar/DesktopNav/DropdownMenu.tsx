@@ -37,25 +37,22 @@ const DropdownMenu: FC<{ dropdown: LinkInfo[]; text: string }> = ({
         </HStack>
       </MenuButton>
       <MenuList bg="gray.900" border="none">
-        {dropdown.map((opt) => {
-          const isExternal = Object.values<string>(ExternalLinkHref).includes(
-            opt.href!
-          )
+        {dropdown.map((link) => {
           return (
             <MenuItem
-              key={opt.text}
+              key={link.text}
               color="gray.300"
               _hover={{ bg: "gray.900", color: "white" }}
               _focus={{
                 bg: "gray.900",
               }}
-              as={isExternal ? Link : RouterLink}
-              href={opt.href}
-              to={opt.href}
-              target={isExternal ? "_blank" : undefined}
+              as={link.isExternal ? Link : RouterLink}
+              href={link.href}
+              to={link.href}
+              target={link.isExternal ? "_blank" : undefined}
             >
-              <Body2>{opt.text}</Body2>
-              {isExternal && <Icon ml={2} as={FiArrowUpRight} />}
+              <Body2>{link.text}</Body2>
+              {link.isExternal && <Icon ml={2} as={FiArrowUpRight} />}
             </MenuItem>
           )
         })}

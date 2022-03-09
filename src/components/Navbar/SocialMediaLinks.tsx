@@ -4,28 +4,28 @@ import { FaTwitter, IoLogoDiscord, IoLogoGithub } from "react-icons/all"
 import { ExternalLinkHref } from "./types"
 import { Telegram } from "../../static/icons/Telegram"
 
+const socialMediaLinks = [
+  {
+    href: ExternalLinkHref.THRESHOLD_TWITTER,
+    logo: FaTwitter,
+  },
+  {
+    href: ExternalLinkHref.TELEGRAM,
+    logo: Telegram,
+  },
+  {
+    href: ExternalLinkHref.THRESHOLD_DISCORD,
+    logo: IoLogoDiscord,
+  },
+  {
+    href: ExternalLinkHref.THRESHOLD_GITHUB,
+    logo: IoLogoGithub,
+  },
+]
+
 const SocialMediaLinks: FC<{ isMobileDrawerFooter?: boolean }> = ({
   isMobileDrawerFooter,
 }) => {
-  const socialMediaLinks = [
-    {
-      href: ExternalLinkHref.THRESHOLD_TWITTER,
-      logo: FaTwitter,
-    },
-    {
-      href: ExternalLinkHref.TELEGRAM,
-      logo: Telegram,
-    },
-    {
-      href: ExternalLinkHref.THRESHOLD_DISCORD,
-      logo: IoLogoDiscord,
-    },
-    {
-      href: ExternalLinkHref.THRESHOLD_GITHUB,
-      logo: IoLogoGithub,
-    },
-  ]
-
   return (
     <HStack
       spacing={6}
