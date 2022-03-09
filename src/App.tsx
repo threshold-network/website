@@ -1,36 +1,32 @@
 import "focus-visible/dist/focus-visible"
 import { FC } from "react"
-import { Box, ChakraProvider, Container, Image } from "@chakra-ui/react"
+import { ChakraProvider } from "@chakra-ui/react"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import theme from "./theme"
 import Navbar from "./components/Navbar"
 import SplashPage from "./pages/Splash"
-import Swoosh from "./static/images/Swoosh.svg"
+import useDarkMode from "./hooks/useDarkMode"
 
-const App: FC = () => {
+const App = () => {
+  useDarkMode()
+  return (
+    <>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={SplashPage} />
+      </Switch>
+    </>
+  )
+}
+
+const ProviderWrapper: FC = () => {
   return (
     <Router basename={`${process.env.PUBLIC_URL}`}>
       <ChakraProvider theme={theme}>
-        <Box
-          minHeight="100%"
-          bg="linear-gradient(130.52deg, #7D00FF 0%, #7F00AC 100%)"
-        >
-          <Box
-            backgroundImage={Swoosh}
-            backgroundPosition="center"
-            backgroundRepeat="repeat"
-          >
-            <Navbar />
-            <Container maxW="6xl">
-              <Switch>
-                <Route exact path="/" component={SplashPage} />
-              </Switch>
-            </Container>
-          </Box>
-        </Box>
+        <App />
       </ChakraProvider>
     </Router>
   )
 }
 
-export default App
+export default ProviderWrapper

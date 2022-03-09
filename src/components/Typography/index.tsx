@@ -6,7 +6,15 @@ export const Headline: FC<HeadingProps> = (props) => {
 }
 
 export const H1: FC<TextProps> = (props) => {
-  return <Text as="h1" fontSize="6xl" lineHeight="64px" {...props} />
+  return (
+    <Text
+      as="h1"
+      fontSize="60px"
+      lineHeight="64px"
+      fontWeight="700"
+      {...props}
+    />
+  )
 }
 
 export const H2: FC<TextProps> = (props) => {

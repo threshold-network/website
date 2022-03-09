@@ -3,7 +3,11 @@ import { createBreakpoints } from "@chakra-ui/theme-tools"
 import { Button } from "./Button"
 import { Card } from "./Card"
 
-// 2. Update the breakpoints as key-value pairs
+const config = {
+  initialColorMode: "dark",
+  useSystemColorMode: true,
+}
+
 const breakpoints = createBreakpoints({
   sm: "30em",
   md: "48em",
@@ -19,16 +23,20 @@ const colors = {
     // 200
     300: "#9974FF",
     // 400
-    500: "#7D00FF", // main Threshold brand color
-    550: "#7C47EE", // main Threshold brand color - DARK MODE
-    // 600
+    500: "#7C47EE", // main Threshold brand color - DARK MODE
     700: "#4E2E99",
     800: "#3B257A",
     900: "#1C0758",
   },
+  gray: {
+    300: "#B1BCCC",
+    700: "#4A5568",
+    900: "#1D2229",
+  },
 }
 
 const index = extendTheme({
+  config,
   breakpoints,
   colors,
   components: {
