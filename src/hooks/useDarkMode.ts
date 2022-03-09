@@ -5,7 +5,6 @@ const useDarkMode = () => {
   const { colorMode, toggleColorMode } = useColorMode()
 
   useEffect(() => {
-    console.log("the color mode: ", colorMode)
     if (colorMode === "light") toggleColorMode()
   }, [colorMode, toggleColorMode])
 }
