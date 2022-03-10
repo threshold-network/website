@@ -1,17 +1,18 @@
 import React from "react"
 import { Box, Container, Stack } from "@chakra-ui/react"
-import { H1, H5 } from "../Typography"
-import heroGradientCurve from "../../static/images/hero-gradient-swoosh.png"
-import useChakraBreakpoint from "../../hooks/useChakraBreakpoint"
-import ExternalButtonLink from "../ExternalButtonLink"
-import { ExternalLinkHref } from "../Navbar/types"
+import { H1, H5 } from "../../../components/Typography"
+import heroGradientCurve from "../../../static/images/hero-gradient-swoosh.png"
+import useChakraBreakpoint from "../../../hooks/useChakraBreakpoint"
+import ExternalButtonLink from "../../../components/ExternalButtonLink"
+import { ExternalLinkHref } from "../../../components/Navbar/types"
 
 const Hero = () => {
   const isMobile = useChakraBreakpoint("md")
 
   return (
-    <Box>
+    <Box height="830px">
       <Box
+        zIndex="-1"
         mt="200px"
         height="785px"
         backgroundImage={heroGradientCurve}

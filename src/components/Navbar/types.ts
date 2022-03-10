@@ -6,8 +6,8 @@ export interface LinkInfo {
 }
 
 export enum ExternalLinkHref {
-  TELEGRAM = "some_telegram_link",
-  LEARN_MORE = "https://blog.threshold.network/",
+  TELEGRAM = "TELEGRAM",
+  STAKER_ROLE_LEARN_MORE = "STAKER_ROLE_LEARN_MORE",
   THRESHOLD_GITHUB = "https://github.com/threshold-network",
   THRESHOLD_DISCORD = "https://discord.gg/VafbhzJ3vW",
   THRESHOLD_TWITTER = "https://twitter.com/TheTNetwork",

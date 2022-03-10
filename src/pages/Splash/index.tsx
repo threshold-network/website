@@ -1,10 +1,14 @@
 import React, { FC } from "react"
-import Hero from "../../components/Hero"
+import { Box } from "@chakra-ui/react"
+import Hero from "./Hero"
+import RoleForEveryoneCard from "./RoleForEveryoneCard"
 
 const SplashPage: FC = () => {
   return (
     <>
       <Hero />
+      <RoleForEveryoneCard />
+      <Box h="300px" w="100%" />
     </>
   )
 }

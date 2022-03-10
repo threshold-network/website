@@ -17,20 +17,20 @@ export const Button = {
       },
     },
     solid: {
-      color: "brand.700",
-      bg: "white",
+      color: "white",
+      bg: "brand.500",
       boxShadow: "md",
       _hover: {
-        bg: "brand.100",
+        bg: "brand.700",
       },
       _active: {
-        bg: "brand.100",
+        bg: "brand.800",
       },
     },
     outline: {
       color: "white",
-      bg: "blackAlpha.300",
-      borderColor: "brand.300",
+      bg: "transparent",
+      borderColor: "white",
       border: "1px solid",
       _hover: {
         bg: "blackAlpha.400",
