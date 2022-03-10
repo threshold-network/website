@@ -1,26 +1,31 @@
 import { FC } from "react"
 import { HStack, Icon, Link } from "@chakra-ui/react"
-import { IoLogoDiscord, IoLogoGithub, FaTwitter } from "react-icons/all"
-import { ExternalLink } from "./types"
+import { FaTwitter, IoLogoDiscord, IoLogoGithub } from "react-icons/all"
+import { ExternalLinkHref } from "./types"
+import { Telegram } from "../../static/icons/Telegram"
+
+const socialMediaLinks = [
+  {
+    href: ExternalLinkHref.THRESHOLD_TWITTER,
+    logo: FaTwitter,
+  },
+  {
+    href: ExternalLinkHref.TELEGRAM,
+    logo: Telegram,
+  },
+  {
+    href: ExternalLinkHref.THRESHOLD_DISCORD,
+    logo: IoLogoDiscord,
+  },
+  {
+    href: ExternalLinkHref.THRESHOLD_GITHUB,
+    logo: IoLogoGithub,
+  },
+]
 
 const SocialMediaLinks: FC<{ isMobileDrawerFooter?: boolean }> = ({
   isMobileDrawerFooter,
 }) => {
-  const socialMediaLinks = [
-    {
-      href: ExternalLink.THRESHOLD_TWITTER,
-      logo: FaTwitter,
-    },
-    {
-      href: ExternalLink.THRESHOLD_DISCORD,
-      logo: IoLogoDiscord,
-    },
-    {
-      href: ExternalLink.THRESHOLD_GITHUB,
-      logo: IoLogoGithub,
-    },
-  ]
-
   return (
     <HStack
       spacing={6}
@@ -38,12 +43,13 @@ const SocialMediaLinks: FC<{ isMobileDrawerFooter?: boolean }> = ({
         lg: "none",
       }}
       borderColor="brand.300"
+      marginBottom={isMobileDrawerFooter ? 8 : undefined}
     >
       {socialMediaLinks.map(({ href, logo }) => (
         <Link key={href} href={href} target="_blank" rel="noreferrer">
           <Icon
             boxSize="25px"
-            color="brand.100"
+            color="gray.300"
             _hover={{ color: "white" }}
             as={logo}
           />

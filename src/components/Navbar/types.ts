@@ -1,10 +1,12 @@
 export interface LinkInfo {
-  href: string
+  href?: string
   text: string
+  dropdown?: LinkInfo[]
+  isExternal?: boolean
 }
 
-export enum ExternalLink {
-  // TO DO UPDATE THIS
+export enum ExternalLinkHref {
+  TELEGRAM = "some_telegram_link",
   LEARN_MORE = "https://blog.threshold.network/",
   THRESHOLD_GITHUB = "https://github.com/threshold-network",
   THRESHOLD_DISCORD = "https://discord.gg/VafbhzJ3vW",

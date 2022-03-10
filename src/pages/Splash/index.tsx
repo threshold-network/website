@@ -17,7 +17,7 @@ import {
   IoShieldCheckmarkSharp,
 } from "react-icons/all"
 import useChakraBreakpoint from "../../hooks/useChakraBreakpoint"
-import { ExternalLink } from "../../components/Navbar/types"
+import { ExternalLinkHref } from "../../components/Navbar/types"
 
 const SplashPage: FC = () => {
   const mediumBreakpoint = useChakraBreakpoint("md")
@@ -68,7 +68,7 @@ const SplashPage: FC = () => {
           isFullWidth
           // ={mediumBreakpoint}
           onClick={() => {
-            window.open(ExternalLink.STAKE)
+            window.open(ExternalLinkHref.STAKE)
           }}
         >
           Start Staking
@@ -84,7 +84,7 @@ const SplashPage: FC = () => {
           // ={mediumBreakpoint}
           variant="outline"
           onClick={() => {
-            window.open(ExternalLink.THRESHOLD_BLOG)
+            window.open(ExternalLinkHref.THRESHOLD_BLOG)
           }}
         >
           Read the Blog
@@ -96,7 +96,7 @@ const SplashPage: FC = () => {
       <Body1 color="brand.100" mt={6}>
         Threshold Network is the first ever on-chain merge between two existing
         networks.{" "}
-        <Link textDecoration="underline" href={ExternalLink.LEARN_MORE}>
+        <Link textDecoration="underline" href={ExternalLinkHref.LEARN_MORE}>
           Learn more ↗
         </Link>
       </Body1>
