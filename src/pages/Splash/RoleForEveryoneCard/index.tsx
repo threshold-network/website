@@ -6,7 +6,7 @@ import RolesTabs from "./RolesTabs"
 
 const RoleForEveryoneCard = () => {
   return (
-    <Box maxW="1040px" margin="auto">
+    <Box maxW="1040px" margin="auto" width={{ base: "100%", md: "90%" }}>
       <DigitalPatternBox
         variant="dark"
         borderRadius={{ base: 0, md: "8px 8px 0 0" }}
