@@ -36,7 +36,7 @@ const navLinks: LinkInfo[] = [
   },
   {
     text: "Governance",
-    href: "/governance",
+    href: "/quiz",
   },
   {
     text: "News",

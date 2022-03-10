@@ -6,6 +6,7 @@ import theme from "./theme"
 import Navbar from "./components/Navbar"
 import SplashPage from "./pages/Splash"
 import Swoosh from "./static/images/Swoosh.svg"
+import RoleQuiz from "./pages/RoleQuiz"
 
 const App: FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: FC = () => {
             <Container maxW="6xl">
               <Switch>
                 <Route exact path="/" component={SplashPage} />
+                <Route exact path="/quiz" component={RoleQuiz} />
               </Switch>
             </Container>
           </Box>
