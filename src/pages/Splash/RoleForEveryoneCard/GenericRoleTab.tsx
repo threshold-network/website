@@ -32,8 +32,12 @@ const GenericRoleTab: FC<{
           {body}
         </Body2>
         <Stack direction={{ base: "column", md: "row" }} spacing={8}>
-          {footerButtons.map((button) => (
-            <ExternalButtonLink variant={button.variant} href={button.href}>
+          {footerButtons.map((button, i) => (
+            <ExternalButtonLink
+              key={i}
+              variant={button.variant}
+              href={button.href}
+            >
               {button.text}
             </ExternalButtonLink>
           ))}
