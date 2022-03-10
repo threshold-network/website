@@ -1,5 +1,17 @@
 import { FC } from "react"
-import { Heading, HeadingProps, Text, TextProps } from "@chakra-ui/react"
+import {
+  Heading,
+  HeadingProps,
+  Text,
+  TextProps,
+  Link,
+  LinkProps,
+  Icon,
+  HStack,
+  StackProps,
+} from "@chakra-ui/react"
+import { FiArrowUpRight } from "react-icons/all"
+import { ExternalLinkHref } from "../Navbar/types"
 
 export const Headline: FC<HeadingProps> = (props) => {
   return <Heading fontSize="7xl" {...props} />
@@ -22,7 +34,15 @@ export const H4: FC<TextProps> = (props) => {
 }
 
 export const H5: FC<TextProps> = (props) => {
-  return <Text as="h5" fontSize="2xl" lineHeight="32px" {...props} />
+  return (
+    <Text
+      as="h5"
+      fontWeight="500"
+      fontSize="24px"
+      lineHeight="32px"
+      {...props}
+    />
+  )
 }
 
 export const Body1: FC<TextProps> = (props) => {
@@ -46,5 +66,31 @@ export const Label1: FC<TextProps> = (props) => {
       letterSpacing="0.075em"
       {...props}
     />
+  )
+}
+
+export const ExternalLink: FC<{
+  href: ExternalLinkHref
+  noUnderline?: boolean
+  linkProps?: LinkProps
+  containerProps?: StackProps
+}> = ({ noUnderline, children, href, linkProps, containerProps }) => {
+  return (
+    <HStack
+      borderBottom={noUnderline ? "none" : "1px solid white"}
+      {...containerProps}
+    >
+      <Link
+        target="_blank"
+        _hover={{
+          textDecoration: "none",
+        }}
+        href={href}
+        {...linkProps}
+      >
+        {children}
+      </Link>
+      <Icon ml="5px" as={FiArrowUpRight} />
+    </HStack>
   )
 }

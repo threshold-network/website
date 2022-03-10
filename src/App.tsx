@@ -1,6 +1,6 @@
 import "focus-visible/dist/focus-visible"
 import { FC } from "react"
-import { Box, ChakraProvider, Container, Image } from "@chakra-ui/react"
+import { Box, ChakraProvider, Container } from "@chakra-ui/react"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import theme from "./theme"
 import Navbar from "./components/Navbar"
