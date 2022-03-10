@@ -6,7 +6,7 @@ import RolesTabs from "./RolesTabs"
 
 const RoleForEveryoneCard = () => {
   return (
-    <Box margin="auto" width={{ base: "100%", md: "90%" }}>
+    <Box margin="auto" maxW="1040px" width={{ base: "100%", md: "90%" }}>
       <DigitalPatternBox
         variant="dark"
         borderRadius={{ base: 0, md: "8px 8px 0 0" }}
@@ -23,7 +23,10 @@ const RoleForEveryoneCard = () => {
             </H5>
           </Box>
           <Button
-            margin={{ base: "24px 0 0 0 !important", md: "auto 0 !important" }}
+            margin={{
+              base: "24px 0 0 0 !important",
+              md: "auto 0 !important",
+            }}
             variant="solid"
           >
             Take the quiz
