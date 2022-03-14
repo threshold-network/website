@@ -4,6 +4,7 @@ import StakerRole from "./UserRoles/StakerRole"
 import LiquidityProviderRole from "./UserRoles/LiquidityProviderRole"
 import BtcRole from "./UserRoles/BtcRole"
 import TokenHolderRole from "./UserRoles/TokenHolderRole"
+import TakeTheQuiz from "./UserRoles/TakeTheQuiz"
 
 const SplashPage: FC = () => {
   return (
@@ -13,7 +14,7 @@ const SplashPage: FC = () => {
       <LiquidityProviderRole />
       <BtcRole />
       <TokenHolderRole />
-      {/*<RoleForEveryoneCard />*/}
+      <TakeTheQuiz />
     </>
   )
 }
