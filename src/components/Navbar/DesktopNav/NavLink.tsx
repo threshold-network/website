@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { Link } from "@chakra-ui/react"
-import { Label1 } from "../../Typography"
+import { LabelMd } from "../../Typography"
 
 const NavLink: FC<{ href: string }> = ({ href, children }) => {
   return (
@@ -16,9 +16,9 @@ const NavLink: FC<{ href: string }> = ({ href, children }) => {
       }}
       height="100%"
     >
-      <Label1 lineHeight="90px" textTransform="uppercase">
+      <LabelMd lineHeight="90px" textTransform="uppercase">
         {children}
-      </Label1>
+      </LabelMd>
     </Link>
   )
 }
