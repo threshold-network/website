@@ -1,7 +1,15 @@
 import { FC } from "react"
-import { Text, TextProps, Link, Icon } from "@chakra-ui/react"
+import {
+  Text,
+  TextProps,
+  Link,
+  Icon,
+  HStack,
+  StackProps,
+} from "@chakra-ui/react"
 import { FiArrowUpRight } from "react-icons/all"
 import { ExternalLinkHref } from "../Navbar/types"
+import { LinkProps } from "react-router-dom"
 
 export const H1: FC<TextProps> = (props) => {
   return (
