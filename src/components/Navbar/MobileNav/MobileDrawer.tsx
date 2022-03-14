@@ -17,7 +17,7 @@ import MobileNavLink from "./MobileNavLink"
 import { LinkInfo } from "../types"
 import SocialMediaLinks from "../SocialMediaLinks"
 import { FaChevronLeft } from "react-icons/all"
-import { Body3, H5 } from "../../Typography"
+import { BodySm, H5 } from "../../Typography"
 
 const MobileDrawer: FC<{
   onClose: () => void
@@ -82,10 +82,10 @@ const MobileDrawer: FC<{
           </Stack>
           <VStack>
             <SocialMediaLinks isMobileDrawerFooter />
-            <Body3 color="gray.300">
+            <BodySm color="gray.300">
               ©{new Date().getFullYear()} | A Thesis Build
-            </Body3>
-            <Body3 color="gray.300">All Rights Reserved</Body3>
+            </BodySm>
+            <BodySm color="gray.300">All Rights Reserved</BodySm>
           </VStack>
         </DrawerBody>
       </DrawerContent>

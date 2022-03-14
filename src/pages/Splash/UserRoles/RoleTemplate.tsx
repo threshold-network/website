@@ -8,7 +8,7 @@ import {
   Stack,
 } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
-import { H2, H5, Label1 } from "../../../components/Typography"
+import { H2, H5, LabelMd } from "../../../components/Typography"
 import ExternalButtonLink from "../../../components/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 
@@ -47,9 +47,9 @@ const RoleTemplate: FC<Props> = ({
           justifyContent="space-around"
         >
           <Box maxW="2xl" margin={{ base: "auto", lg: 0 }} px={4}>
-            <Label1 textTransform="uppercase" color="gray.500">
+            <LabelMd textTransform="uppercase" color="gray.500">
               Get Started
-            </Label1>
+            </LabelMd>
             <H2 mt={3}>{title}</H2>
             <H5 mt={10}>{description}</H5>
             <Stack

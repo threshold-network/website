@@ -23,13 +23,9 @@ const Hero = () => {
         top={0}
         zIndex="-1"
       />
-      <Container maxW="6xl" px="48px">
-        <Stack spacing={8} marginTop={{ base: "48px", md: "120px" }}>
-          <H1
-            noOfLines={2}
-            maxW="740px"
-            fontSize={{ base: "44px", md: "60px" }}
-          >
+      <Container maxW="6xl" paddingTop={{ base: "80px", md: "135px" }} px={8}>
+        <Stack spacing={8}>
+          <H1 noOfLines={2} maxW="740px">
             Full control over your digital assets
           </H1>
           <H5 color="gray.300" noOfLines={2} maxW="540px">
