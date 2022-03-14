@@ -13,8 +13,8 @@ const Hero = () => {
     <Box position="relative" minHeight={{ base: "740px", md: "800px" }}>
       <Box
         backgroundImage={heroGradientCurve}
-        backgroundPosition={{ base: "center bottom", md: "center 300px" }}
-        backgroundSize="contain"
+        backgroundPosition={{ base: "center bottom", md: "center 250px" }}
+        backgroundSize={{ base: "contain", md: "100% 100%" }}
         backgroundRepeat="no-repeat"
         position="absolute"
         left={0}
