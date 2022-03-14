@@ -37,7 +37,7 @@ const RoleTemplate: FC<Props> = ({
   rowReverse,
 }) => {
   return (
-    <Box bg={bgColor} py={{ base: "80px", lg: "150px" }}>
+    <Box bg={bgColor} py={{ base: 20, lg: 40 }}>
       <Container maxW="8xl" paddingY={12} px={{ base: 8, md: 16 }}>
         <Stack
           direction={{
@@ -46,14 +46,14 @@ const RoleTemplate: FC<Props> = ({
           }}
           justifyContent="space-around"
         >
-          <Box maxW="500px" margin={{ base: "auto", lg: 0 }}>
+          <Box maxW="2xl" margin={{ base: "auto", lg: 0 }} px={4}>
             <Label1 textTransform="uppercase" color="gray.500">
               Get Started
             </Label1>
-            <H2 mt="12px">{title}</H2>
-            <H5 mt="40px">{description}</H5>
+            <H2 mt={3}>{title}</H2>
+            <H5 mt={10}>{description}</H5>
             <Stack
-              mt="40px"
+              mt={10}
               direction={{ base: "column", lg: "row" }}
               spacing={8}
             >
@@ -86,7 +86,7 @@ const RoleTemplate: FC<Props> = ({
             w="350px"
             h="250px"
             mx={{ base: "auto !important", lg: "0 !important" }}
-            mb={{ base: "80px", lg: 0 }}
+            mb={{ base: 20, lg: 0 }}
             src={imgSrc}
           />
         </Stack>
