@@ -5,7 +5,7 @@ import { Card } from "./Card"
 
 const config = {
   initialColorMode: "dark",
-  useSystemColorMode: true,
+  useSystemColorMode: false,
 }
 
 const breakpoints = createBreakpoints({

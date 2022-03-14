@@ -8,11 +8,11 @@ const ExternalButtonLink: FC<ButtonProps & { href: ExternalLinkHref }> = ({
 }) => {
   return (
     <Button
-      as="a"
-      href={href}
       rel="noopener noreferrer"
       target="_blank"
       {...props}
+      as="a"
+      href={href}
     />
   )
 }
