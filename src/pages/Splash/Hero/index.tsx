@@ -10,23 +10,21 @@ const Hero = () => {
   const isMobile = useChakraBreakpoint("md")
 
   return (
-    <Box height="830px">
+    <Box position="relative" minHeight={{ base: "740px", md: "800px" }}>
       <Box
-        zIndex="-1"
-        mt="200px"
-        height="785px"
         backgroundImage={heroGradientCurve}
-        backgroundSize="cover"
+        backgroundPosition={{ base: "center bottom", md: "center 300px" }}
+        backgroundSize="contain"
         backgroundRepeat="no-repeat"
-        backgroundPosition="center"
         position="absolute"
-        top="200px"
         left={0}
         right={0}
         bottom={0}
+        top={0}
+        zIndex="-1"
       />
-      <Container maxW="6xl" paddingTop={{ base: "80px", md: "135px" }} px={8}>
-        <Stack spacing={8}>
+      <Container maxW="6xl" px="48px">
+        <Stack spacing={8} marginTop={{ base: "48px", md: "120px" }}>
           <H1
             noOfLines={2}
             maxW="740px"
