@@ -1,4 +1,3 @@
-import { extendTheme } from "@chakra-ui/react"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 import { Button } from "./Button"
 import { Card } from "./Card"
@@ -31,13 +30,13 @@ const colors = {
   },
 }
 
-const index = extendTheme({
+const theme = {
   breakpoints,
   colors,
   components: {
     Button,
     Card,
   },
-})
+}
 
-export default index
+export default theme
