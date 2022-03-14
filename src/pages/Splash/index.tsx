@@ -9,7 +9,14 @@ import {
   Stack,
   StackDivider,
 } from "@chakra-ui/react"
-import { Body1, H1, H5 } from "../../components/Typography"
+import {
+  BodyLg,
+  H1,
+  H5,
+  LabelLg,
+  LabelMd,
+  LabelSm,
+} from "../../components/Typography"
 import SplashCard, { SplashCardInfo } from "./SplashCard"
 import {
   BsStack,
@@ -93,13 +100,13 @@ const SplashPage: FC = () => {
       <H5 color="white" mt={32}>
         Why Threshold Network?
       </H5>
-      <Body1 color="brand.100" mt={6}>
+      <BodyLg color="brand.100" mt={6}>
         Threshold Network is the first ever on-chain merge between two existing
         networks.{" "}
         <Link textDecoration="underline" href={ExternalLinkHref.LEARN_MORE}>
           Learn more ↗
         </Link>
-      </Body1>
+      </BodyLg>
       <Box position="relative">
         {/* Divider that spans all 3 cards on large screen sizes */}
         {!mediumBreakpoint && (
