@@ -1,7 +1,7 @@
 export interface LinkInfo {
-  href?: string
-  text: string
-  dropdown?: LinkInfo[]
+  url?: string
+  label: string
+  subitems?: LinkInfo[]
   isExternal?: boolean
 }
 

@@ -64,19 +64,19 @@ const MobileDrawer: FC<{
           pb={20}
         >
           <Stack divider={<StackDivider borderColor="gray.700" />}>
-            {navLinksToRender.map(({ href, text, dropdown }) => (
+            {navLinksToRender.map(({ url, label, subitems }) => (
               <MobileNavLink
-                key={text}
-                href={href}
-                hasNested={!!dropdown}
+                key={label}
+                href={url}
+                hasNested={!!subitems}
                 onClick={() => {
-                  if (dropdown) {
+                  if (subitems) {
                     setIsNestedRoute(true)
-                    setNavLinksToRender(dropdown)
+                    setNavLinksToRender(subitems)
                   }
                 }}
               >
-                {text}
+                {label}
               </MobileNavLink>
             ))}
           </Stack>

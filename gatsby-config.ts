@@ -18,13 +18,6 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: path.resolve("src/footer"),
-        name: "footer",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         path: path.resolve("src/nav-bar"),
         name: "nav-bar",
       },

@@ -40,7 +40,7 @@ const DropdownMenu: FC<{ dropdown: LinkInfo[]; text: string }> = ({
         {dropdown.map((link) => {
           return (
             <MenuItem
-              key={link.text}
+              key={link.label}
               color="gray.300"
               _hover={{ bg: "gray.900", color: "white" }}
               _focus={{
@@ -48,11 +48,11 @@ const DropdownMenu: FC<{ dropdown: LinkInfo[]; text: string }> = ({
               }}
               as={link.isExternal ? Link : GatsbyLink}
               // @ts-ignore
-              href={link.href}
-              to={link.href}
+              href={link.url}
+              to={link.url}
               target={link.isExternal ? "_blank" : undefined}
             >
-              <Body2>{link.text}</Body2>
+              <Body2>{link.label}</Body2>
               {link.isExternal && <Icon ml={2} as={FiArrowUpRight} />}
             </MenuItem>
           )

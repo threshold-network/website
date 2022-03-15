@@ -65,34 +65,58 @@ collections:
               required: true,
               minimal: true,
             }
-  - name: "footer"
-    label: "Footer"
-    files:
-      - file: "src/footer/index.md"
-        label: "Footer Nav links"
-        name: "footer_nav_links"
+      - file: "src/nav-bar/nav-links.md"
+        label: "Nav Bar links"
+        name: "nav_links"
         fields:
           - {
               label: "Template Key",
               name: "template",
               widget: "hidden",
-              default: "footer-nav",
+              default: "nav-links",
             }
-          - label: "Nav links"
-            name: "nav_links"
-            widget: "list"
-            allow_add: true
-            fields:
-              - { label: "Label", name: "label", widget: "string" }
-              - {
-                  label: "External Link",
-                  name: "is_external_link",
-                  widget: "boolean",
-                  default: false,
-                }
-              - {
-                  label: "URL",
-                  name: "url",
-                  widget: "string",
-                  hint: "Use a relative URL (e.g. /press or #team) if the link is an internal link.",
-                }
+          - {
+              label: "Nav Items",
+              name: "nav_items",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  { label: "Label", name: "label", widget: "string" },
+                  {
+                    label: "URL",
+                    name: "url",
+                    widget: "string",
+                    hint: "Use a relative URL (e.g. /press) if the link is an internal link.",
+                  },
+                  {
+                    label: "External Link",
+                    name: "isExternal",
+                    widget: "boolean",
+                    default: false,
+                  },
+                  {
+                    label: "Sub Items",
+                    name: "subitems",
+                    widget: "list",
+                    allow_add: true,
+                    fields:
+                      [
+                        { label: "Label", name: "label", widget: "string" },
+                        {
+                          label: "External Link",
+                          name: "isExternal",
+                          widget: "boolean",
+                          default: false,
+                        },
+                        {
+                          label: "URL",
+                          name: "url",
+                          widget: "string",
+                          required: true,
+                          hint: "Use a relative URL (e.g. /press) if the link is an internal link.",
+                        },
+                      ],
+                  },
+                ],
+            }
