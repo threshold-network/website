@@ -3,11 +3,13 @@ backend:
   repo: threshold-network/splash-page
   site_domain: threshold.network
   open_authoring: true
-  
+
+local_backend: true
+
 site_url: https://threshold.network
-  
+
 publish_mode: editorial_workflow
-  
+
 media_folder: static/images
 public_folder: /images
 
@@ -20,11 +22,11 @@ collections:
         name: "home"
         fields:
           - {
-            label: "Template",
-            name: "template",
-            widget: "hidden",
-            default: "home-page",
-          }
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "home-page",
+            }
           - { label: "Path", name: "path", widget: "hidden", default: "/" }
           - label: "Hero"
             name: "hero"
@@ -50,11 +52,11 @@ collections:
         name: "footer_nav_links"
         fields:
           - {
-            label: "Template Key",
-            name: "template",
-            widget: "hidden",
-            default: "footer-nav",
-          }
+              label: "Template Key",
+              name: "template",
+              widget: "hidden",
+              default: "footer-nav",
+            }
           - label: "Nav links"
             name: "nav_links"
             widget: "list"

@@ -32,6 +32,7 @@
     "start": "yarn run develop",
     "build": "yarn run clean && gatsby build",
     "develop": "yarn run clean && gatsby develop",
+    "start-local-netlify": "npx netlify-cms-proxy-server",
     "lint": "eslint --ext .js --ext .ts --ext .tsx .",
     "lint:fix": "eslint --ext .js --ext .ts --ext .tsx . --quiet --fix",
     "format": "yarn lint && prettier --check .",

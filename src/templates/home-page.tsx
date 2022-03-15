@@ -4,9 +4,10 @@ import { Footer } from "../components"
 
 const HomePageTemplate: FC<any> = ({ data }) => {
   const {
-    markdownRemark: { frontmatter: hero },
+    markdownRemark: {
+      frontmatter: { hero },
+    },
   } = data
-  console.log("data", hero)
   return (
     <>
       <main>
