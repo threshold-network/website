@@ -19,7 +19,7 @@ const TakeTheQuiz = () => {
         h="150px"
         maxW="6xl"
         w="100%"
-        borderRadius="6px"
+        borderRadius={{ base: 0, md: "6px" }}
       >
         <Stack
           justifyContent="space-around"
