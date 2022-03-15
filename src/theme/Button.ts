@@ -5,8 +5,6 @@ export const Button = {
   variants: {
     special: {
       color: "white",
-      paddingX: "40px",
-      paddingY: "20px",
       background: "linear-gradient(to bottom left, #BD30FF 0%, #7D00FF 100%)",
       boxShadow: "md",
       _hover: {

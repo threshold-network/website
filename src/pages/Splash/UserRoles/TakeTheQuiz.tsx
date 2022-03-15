@@ -8,15 +8,20 @@ const TakeTheQuiz = () => {
   const isMobile = useChakraBreakpoint("md")
   return (
     <Box position="relative">
-      <Box bg="blackAlpha.600" height="75px" w="100%" />
+      <Box
+        display={{ base: "none", md: "block" }}
+        bg="blackAlpha.600"
+        height="75px"
+        w="100%"
+      />
       <DigitalPatternBox
         variant="dark"
-        position="absolute"
+        position={{ base: "relative", md: "absolute" }}
         top={0}
         left={0}
         right={0}
         margin="auto"
-        h="150px"
+        h={{ base: "auto", md: "150px" }}
         maxW="6xl"
         w="100%"
         borderRadius={{ base: 0, md: "6px" }}
@@ -35,7 +40,12 @@ const TakeTheQuiz = () => {
           </Button>
         </Stack>
       </DigitalPatternBox>
-      <Box bg="grey.900" height="75px" w="100%" />
+      <Box
+        display={{ base: "none", md: "block" }}
+        bg="grey.900"
+        height="75px"
+        w="100%"
+      />
     </Box>
   )
 }

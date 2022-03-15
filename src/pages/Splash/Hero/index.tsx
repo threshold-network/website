@@ -6,6 +6,13 @@ import useChakraBreakpoint from "../../../hooks/useChakraBreakpoint"
 import ExternalButtonLink from "../../../components/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 
+const heroButtonProps = {
+  h: "auto",
+  w: "auto",
+  py: "20px",
+  px: "40px",
+}
+
 const Hero = () => {
   const isMobile = useChakraBreakpoint("md")
 
@@ -39,13 +46,14 @@ const Hero = () => {
           spacing={12}
         >
           <ExternalButtonLink
-            height="auto"
+            {...heroButtonProps}
             variant="special"
             href={ExternalLinkHref.DAPP}
           >
             Launch Dapp
           </ExternalButtonLink>
           <ExternalButtonLink
+            {...heroButtonProps}
             variant={isMobile ? "outline" : "link"}
             href={ExternalLinkHref.THRESHOLD_DISCORD}
           >
