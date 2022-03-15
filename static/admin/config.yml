@@ -44,6 +44,27 @@ collections:
                   widget: "markdown",
                   required: false,
                 }
+  - name: "nav-bar"
+    label: "Nav bar"
+    files:
+      - file: "src/nav-bar/announcement-banner.md"
+        label: "Announcement Banner"
+        name: "announcement"
+        fields:
+          - {
+              label: "Template Key",
+              name: "template",
+              widget: "hidden",
+              default: "announcement",
+            }
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              required: true,
+              minimal: true,
+            }
   - name: "footer"
     label: "Footer"
     files:

@@ -23,6 +23,13 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: path.resolve("src/nav-bar"),
+        name: "nav-bar",
+      },
+    },
+    {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
         modulePath: path.resolve("/src/cms/cms.ts"),
