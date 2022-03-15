@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { Box, BoxProps, Divider, HStack, Icon } from "@chakra-ui/react"
-import { Body2, Label1 } from "../../components/Typography"
-import Card from "../../components/Card"
+import { Body2, Label1 } from "./Typography"
+import Card from "./Card"
 
 export interface SplashCardInfo {
   icon?: any
@@ -9,13 +9,9 @@ export interface SplashCardInfo {
   body: string
 }
 
-const SplashCard: FC<SplashCardInfo & BoxProps & { isCardColumn: boolean }> = ({
-  icon,
-  title,
-  body,
-  isCardColumn,
-  ...props
-}) => {
+export const SplashCard: FC<
+  SplashCardInfo & BoxProps & { isCardColumn: boolean }
+> = ({ icon, title, body, isCardColumn, ...props }) => {
   return (
     <Card h="100%" w="100%" {...props}>
       <HStack paddingX={9} paddingY={8} borderColor="brand.300">
@@ -31,5 +27,3 @@ const SplashCard: FC<SplashCardInfo & BoxProps & { isCardColumn: boolean }> = ({
     </Card>
   )
 }
-
-export default SplashCard

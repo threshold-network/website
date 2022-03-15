@@ -1,3 +1,4 @@
+import { extendTheme } from "@chakra-ui/react"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 import { Button } from "./Button"
 import { Card } from "./Card"
@@ -39,4 +40,4 @@ const theme = {
   },
 }
 
-export default theme
+export default extendTheme(theme)

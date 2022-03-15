@@ -1,5 +1,5 @@
-import React, { FC } from "react"
-import { ExternalLinkHref, LinkInfo } from "../types"
+import { FC } from "react"
+import { LinkInfo } from "../types"
 import {
   HStack,
   Icon,
@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react"
 import { Body2, Label1 } from "../../Typography"
 import { ChevronDownIcon } from "@chakra-ui/icons"
-import { Link as RouterLink } from "react-router-dom"
+import { Link as GatsbyLink } from "gatsby"
 import { FiArrowUpRight } from "react-icons/all"
 
 const DropdownMenu: FC<{ dropdown: LinkInfo[]; text: string }> = ({
@@ -46,7 +46,8 @@ const DropdownMenu: FC<{ dropdown: LinkInfo[]; text: string }> = ({
               _focus={{
                 bg: "gray.900",
               }}
-              as={link.isExternal ? Link : RouterLink}
+              as={link.isExternal ? Link : GatsbyLink}
+              // @ts-ignore
               href={link.href}
               to={link.href}
               target={link.isExternal ? "_blank" : undefined}

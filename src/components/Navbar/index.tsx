@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 import { Container, HStack, useDisclosure } from "@chakra-ui/react"
 import ThresholdBrand from "./ThresholdBrand"
 import SocialMediaLinks from "./SocialMediaLinks"
@@ -71,7 +71,7 @@ const navLinks: LinkInfo[] = [
   },
 ]
 
-const Navbar: FC = () => {
+export const Navbar: FC = () => {
   const {
     isOpen: isDrawerOpen,
     onOpen: onDrawOpen,
@@ -107,5 +107,3 @@ const Navbar: FC = () => {
     </>
   )
 }
-
-export default Navbar
