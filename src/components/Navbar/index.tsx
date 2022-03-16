@@ -27,6 +27,14 @@ const query = graphql`
                 isExternal
               }
             }
+            social_links {
+              label
+              url
+              icon {
+                image
+                alt
+              }
+            }
           }
         }
       }
@@ -45,6 +53,8 @@ export const Navbar: FC = () => {
     defaultIsOpen: true,
   })
   const data = useStaticQuery(query)
+  const socialLinks =
+    data.allMarkdownRemark.edges[0].node.frontmatter.social_links
   const navLinks = data.allMarkdownRemark.edges[0].node.frontmatter
     .nav_items as LinkInfo[]
 
@@ -67,7 +77,7 @@ export const Navbar: FC = () => {
             navLinks={navLinks}
           />
           <DesktopNavLinks navLinks={navLinks} />
-          <SocialMediaLinks />
+          <SocialMediaLinks links={socialLinks} />
           <HamburgerButton openDrawer={onDrawOpen} />
         </Container>
       </HStack>

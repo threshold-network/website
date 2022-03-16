@@ -31,4 +31,10 @@ nav_items:
         url: /faq
       - label: Audits
         url: /audits
+social_links:
+  - label: Twitter
+    url: https://twitter.com/TheTNetwork
+    icon:
+      image: /images/twitter.svg
+      alt: Thershold Twitter
 ---

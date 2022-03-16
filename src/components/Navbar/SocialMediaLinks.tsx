@@ -1,31 +1,11 @@
 import { FC } from "react"
-import { HStack, Icon, Link } from "@chakra-ui/react"
-import { FaTwitter, IoLogoDiscord, IoLogoGithub } from "react-icons/all"
-import { ExternalLinkHref } from "./types"
-import { Telegram } from "../../static/icons/Telegram"
+import { HStack, Image, Link } from "@chakra-ui/react"
+import { withPrefix } from "gatsby"
 
-const socialMediaLinks = [
-  {
-    href: ExternalLinkHref.THRESHOLD_TWITTER,
-    logo: FaTwitter,
-  },
-  {
-    href: ExternalLinkHref.TELEGRAM,
-    logo: Telegram,
-  },
-  {
-    href: ExternalLinkHref.THRESHOLD_DISCORD,
-    logo: IoLogoDiscord,
-  },
-  {
-    href: ExternalLinkHref.THRESHOLD_GITHUB,
-    logo: IoLogoGithub,
-  },
-]
-
-const SocialMediaLinks: FC<{ isMobileDrawerFooter?: boolean }> = ({
-  isMobileDrawerFooter,
-}) => {
+const SocialMediaLinks: FC<{
+  isMobileDrawerFooter?: boolean
+  links: { url: string; icon: { image: any; alt: string } }[]
+}> = ({ isMobileDrawerFooter, links }) => {
   return (
     <HStack
       spacing={6}
@@ -45,13 +25,14 @@ const SocialMediaLinks: FC<{ isMobileDrawerFooter?: boolean }> = ({
       borderColor="brand.300"
       marginBottom={isMobileDrawerFooter ? 8 : undefined}
     >
-      {socialMediaLinks.map(({ href, logo }) => (
-        <Link key={href} href={href} target="_blank" rel="noreferrer">
-          <Icon
+      {links.map(({ url, icon: { image, alt } }) => (
+        <Link key={url} href={url} target="_blank" rel="noreferrer">
+          <Image
             boxSize="25px"
             color="gray.300"
             _hover={{ color: "white" }}
-            as={logo}
+            src={withPrefix(image)}
+            alt={alt}
           />
         </Link>
       ))}
