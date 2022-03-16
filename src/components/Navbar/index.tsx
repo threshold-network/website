@@ -31,7 +31,11 @@ const query = graphql`
               label
               url
               icon {
-                image
+                image {
+                  childImageSharp {
+                    gatsbyImageData(width: 20)
+                  }
+                }
                 alt
               }
             }
@@ -55,6 +59,7 @@ export const Navbar: FC = () => {
   const data = useStaticQuery(query)
   const socialLinks =
     data.allMarkdownRemark.edges[0].node.frontmatter.social_links
+  console.log("social Links", socialLinks)
   const navLinks = data.allMarkdownRemark.edges[0].node.frontmatter
     .nav_items as LinkInfo[]
 
