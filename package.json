@@ -31,6 +31,7 @@
     "clean": "gatsby clean",
     "start": "yarn run develop",
     "build": "yarn run clean && gatsby build",
+    "build:prefixed": "yarn run clean && gatsby build --prefix-paths",
     "develop": "yarn run clean && gatsby develop",
     "start-local-netlify": "npx netlify-cms-proxy-server",
     "lint": "eslint --ext .js --ext .ts --ext .tsx .",

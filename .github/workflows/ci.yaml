@@ -27,7 +27,7 @@ jobs:
 
       - name: Build preview
         if: github.event_name == 'pull_request'
-        run: yarn build
+        run: yarn build:prefixed
         env:
           PUBLIC_URL: /${{ github.head_ref }}
 

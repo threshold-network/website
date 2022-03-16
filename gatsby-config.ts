@@ -30,5 +30,6 @@ const config: GatsbyConfig = {
     },
     "gatsby-transformer-remark",
   ],
+  pathPrefix: process.env["PUBLIC_URL"],
 }
 export default config
