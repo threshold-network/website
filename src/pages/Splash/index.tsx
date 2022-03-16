@@ -7,6 +7,8 @@ import TokenHolderRole from "./UserRoles/TokenHolderRole"
 import TakeTheQuiz from "./UserRoles/TakeTheQuiz"
 import MigrationInfoSection from "./MigrationInfoSection"
 import HarnessThePower from "./HarnessThePower"
+import ActiveCommunitySection from "./ActiveCommunity"
+import Index from "./CurrentProposals"
 
 const SplashPage: FC = () => {
   return (
@@ -19,6 +21,8 @@ const SplashPage: FC = () => {
       <TakeTheQuiz />
       <MigrationInfoSection />
       <HarnessThePower />
+      <ActiveCommunitySection />
+      <Index />
     </>
   )
 }
