@@ -25,7 +25,7 @@ const socialMediaLinks = [
 
 const SocialMediaLinks: FC<{ isMobileDrawerFooter?: boolean }> = () => {
   return (
-    <HStack spacing={6}>
+    <HStack spacing={6} justifyContent={{ base: "center", md: "flex-start" }}>
       {socialMediaLinks.map(({ href, logo }) => (
         <Link key={href} href={href} target="_blank" rel="noreferrer">
           <Icon

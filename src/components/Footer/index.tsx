@@ -101,20 +101,41 @@ const FooterContent = () => {
     <PageSection bg="gray.900">
       <Stack
         direction="row"
-        justifyContent="space-between"
+        justifyContent={{ base: "center", md: "space-between" }}
         spacing={{ base: 12, lg: 24 }}
+        w="full"
       >
         <Box>
-          <ThresholdBrand />
-          <Stack mt={28} spacing={6}>
+          <ThresholdBrand display={{ base: "none", md: "block" }} p={0} />
+          <Stack mt={{ base: 0, md: 28 }} spacing={{ base: 12, md: 6 }}>
             <SocialMediaLinks />
+            <ThresholdBrand
+              display={{ base: "block", md: "none" }}
+              justifyContent="center"
+              p={0}
+            />
             <Stack>
-              <BodySm color="gray.300">©2021 | A Thesis Build</BodySm>
-              <BodySm color="gray.300">All Rights Reserved</BodySm>
+              <BodySm
+                textAlign={{ base: "center", md: "left" }}
+                color="gray.300"
+              >
+                ©2021 | A Thesis Build
+              </BodySm>
+              <BodySm
+                textAlign={{ base: "center", md: "left" }}
+                color="gray.300"
+              >
+                All Rights Reserved
+              </BodySm>
             </Stack>
           </Stack>
         </Box>
-        <HStack spacing={4} justifyContent="space-between" w="full">
+        <HStack
+          spacing={4}
+          justifyContent="space-between"
+          w="full"
+          display={{ base: "none", md: "flex" }}
+        >
           {footerLinks.map((info) => {
             return (
               <Stack alignSelf="baseline" spacing={2}>
