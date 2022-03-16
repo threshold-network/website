@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import { Box, Stack } from "@chakra-ui/react"
 import Card from "../../../components/Card"
-import ExternalButtonLink from "../../../components/ExternalButtonLink"
+import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 
 const ProposalCard: FC<{

@@ -1,7 +1,7 @@
 import React from "react"
 import { Stack } from "@chakra-ui/react"
 import { BodyLg, H5 } from "../../components/Typography"
-import ExternalButtonLink from "../../components/ExternalButtonLink"
+import ExternalButtonLink from "../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../components/Navbar/types"
 import {
   PageSection,

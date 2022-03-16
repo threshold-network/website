@@ -2,7 +2,7 @@ import React, { FC } from "react"
 import { Box, BoxProps, Button, ButtonProps, Stack } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 import { H2, H5, LabelMd } from "../../../components/Typography"
-import ExternalButtonLink from "../../../components/ExternalButtonLink"
+import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 import {
   PageSection,

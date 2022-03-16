@@ -3,7 +3,7 @@ import { Box, Container, Stack } from "@chakra-ui/react"
 import { H1, H5 } from "../../../components/Typography"
 import heroGradientCurve from "../../../static/images/hero-gradient-swoosh.png"
 import useChakraBreakpoint from "../../../hooks/useChakraBreakpoint"
-import ExternalButtonLink from "../../../components/ExternalButtonLink"
+import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 
 const heroButtonProps = {

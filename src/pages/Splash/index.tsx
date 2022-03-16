@@ -8,7 +8,8 @@ import TakeTheQuiz from "./UserRoles/TakeTheQuiz"
 import MigrationInfoSection from "./MigrationInfoSection"
 import HarnessThePower from "./HarnessThePower"
 import ActiveCommunitySection from "./ActiveCommunity"
-import Index from "./CurrentProposals"
+import CurrentProposals from "./CurrentProposals"
+import JoinTheCommunity from "./JoinTheCommunity"
 
 const SplashPage: FC = () => {
   return (
@@ -22,7 +23,8 @@ const SplashPage: FC = () => {
       <MigrationInfoSection />
       <HarnessThePower />
       <ActiveCommunitySection />
-      <Index />
+      <CurrentProposals />
+      <JoinTheCommunity />
     </>
   )
 }
