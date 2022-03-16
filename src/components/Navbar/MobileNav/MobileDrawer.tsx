@@ -12,7 +12,7 @@ import {
   StackDivider,
 } from "@chakra-ui/react"
 import useChakraBreakpoint from "../../../hooks/useChakraBreakpoint"
-import ThresholdBrand from "../ThresholdBrand"
+import ThresholdBrand from "../../ThresholdBrand"
 import MobileNavLink from "./MobileNavLink"
 import { LinkInfo } from "../types"
 import SocialMediaLinks from "../SocialMediaLinks"

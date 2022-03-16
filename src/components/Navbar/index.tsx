@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { Container, HStack, useDisclosure } from "@chakra-ui/react"
-import ThresholdBrand from "./ThresholdBrand"
+import ThresholdBrand from "../ThresholdBrand"
 import SocialMediaLinks from "./SocialMediaLinks"
 import HamburgerButton from "./HamburgerButton"
 import { ExternalLinkHref, LinkInfo } from "./types"

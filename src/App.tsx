@@ -6,6 +6,7 @@ import theme from "./theme"
 import Navbar from "./components/Navbar"
 import SplashPage from "./pages/Splash"
 import useDarkMode from "./hooks/useDarkMode"
+import Footer from "./components/Footer"
 
 const App = () => {
   useDarkMode()
@@ -15,6 +16,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={SplashPage} />
       </Switch>
+      <Footer />
     </>
   )
 }
