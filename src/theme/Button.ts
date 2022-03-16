@@ -1,6 +1,7 @@
 export const Button = {
   baseStyle: {
     borderRadius: "6px",
+    width: { base: "auto", md: "fit-content" },
   },
   variants: {
     special: {

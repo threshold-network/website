@@ -29,7 +29,7 @@ const SocialMediaLinks: FC<{ isMobileDrawerFooter?: boolean }> = ({
   return (
     <HStack
       spacing={6}
-      px={8}
+      pl={8}
       display={{
         base: isMobileDrawerFooter ? "inherit" : "none",
         lg: "inherit",

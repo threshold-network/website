@@ -6,6 +6,7 @@ import BtcRole from "./UserRoles/BtcRole"
 import TokenHolderRole from "./UserRoles/TokenHolderRole"
 import TakeTheQuiz from "./UserRoles/TakeTheQuiz"
 import MigrationInfoSection from "./MigrationInfoSection"
+import HarnessThePower from "./HarnessThePower"
 
 const SplashPage: FC = () => {
   return (
@@ -17,6 +18,7 @@ const SplashPage: FC = () => {
       <TokenHolderRole />
       <TakeTheQuiz />
       <MigrationInfoSection />
+      <HarnessThePower />
     </>
   )
 }

@@ -13,12 +13,20 @@ import useChakraBreakpoint from "../hooks/useChakraBreakpoint"
 export const PageSection: FC<BoxProps> = ({ children, ...props }) => {
   return (
     <Box py={{ base: 20, md: 40 }} {...props}>
-      <Container maxW="1040px">{children}</Container>
+      <Container
+        maxW={{
+          base: "640px", // includues 16px padding on each side
+          md: "960px",
+          lg: "1072px",
+        }}
+      >
+        {children}
+      </Container>
     </Box>
   )
 }
 
-export const ResponsiveRow: FC<StackProps & { rowReverse?: boolean }> = ({
+export const ResponsiveStack: FC<StackProps & { rowReverse?: boolean }> = ({
   children,
   rowReverse,
   ...props
@@ -48,4 +56,8 @@ export const SectionImage: FC<ImageProps> = ({ src }) => {
       src={src}
     />
   )
+}
+
+export const SectionTextContainer: FC<BoxProps> = ({ children, ...props }) => {
+  return <Box maxW={{ base: "100%", md: "512px" }}>{children}</Box>
 }

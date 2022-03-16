@@ -17,7 +17,11 @@ const Hero = () => {
   const isMobile = useChakraBreakpoint("md")
 
   return (
-    <Box position="relative" minHeight={{ base: "740px", md: "800px" }}>
+    <Box
+      position="relative"
+      minHeight={{ base: "740px", md: "800px" }}
+      bg="gray.900"
+    >
       <Box
         backgroundImage={heroGradientCurve}
         backgroundPosition={{ base: "center bottom", md: "center 250px" }}
@@ -28,9 +32,16 @@ const Hero = () => {
         right={0}
         bottom={0}
         top={0}
-        zIndex="-1"
       />
-      <Container maxW="6xl" paddingTop={{ base: "80px", md: "135px" }} px={8}>
+      <Container
+        maxW={{
+          base: "640px",
+          md: "960px",
+          lg: "1072px",
+        }}
+        paddingTop={{ base: "80px", md: "135px" }}
+        px={{ base: "16px", lg: "88px" }}
+      >
         <Stack spacing={8}>
           <H1 noOfLines={2} maxW="740px">
             Full control over your digital assets

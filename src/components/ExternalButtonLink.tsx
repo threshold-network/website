@@ -11,7 +11,6 @@ const ExternalButtonLink: FC<ButtonProps & { href: ExternalLinkHref }> = ({
     <Button
       rel="noopener noreferrer"
       target="_blank"
-      w="fit-content"
       rightIcon={<FiArrowUpRight />}
       {...props}
       as="a"

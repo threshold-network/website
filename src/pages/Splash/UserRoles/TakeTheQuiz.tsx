@@ -25,6 +25,7 @@ const TakeTheQuiz = () => {
         maxW="6xl"
         w="100%"
         borderRadius={{ base: 0, md: "6px" }}
+        boxShadow="0px 25px 50px -12px rgba(0, 0, 0, 0.25);"
       >
         <Stack
           justifyContent="space-around"
@@ -42,7 +43,7 @@ const TakeTheQuiz = () => {
       </DigitalPatternBox>
       <Box
         display={{ base: "none", md: "block" }}
-        bg="grey.900"
+        bg="gray.900"
         height="75px"
         w="100%"
       />

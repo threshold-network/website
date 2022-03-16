@@ -91,8 +91,12 @@ const Navbar: FC = () => {
         borderBottom="1px solid"
         borderColor="gray.700"
       >
-        {/* TODO: NEED MAX WITH FROM DESIGN TEAM */}
-        <Container maxW="1440px" h="100%" display="flex">
+        <Container
+          maxW="1072px"
+          h="100%"
+          display="flex"
+          justifyContent="space-between"
+        >
           <ThresholdBrand />
           <MobileDrawer
             isOpen={isDrawerOpen}

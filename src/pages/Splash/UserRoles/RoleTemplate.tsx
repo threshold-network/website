@@ -6,8 +6,9 @@ import ExternalButtonLink from "../../../components/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 import {
   PageSection,
-  ResponsiveRow,
+  ResponsiveStack,
   SectionImage,
+  SectionTextContainer,
 } from "../../../components/PageSection"
 
 interface FooterButton extends ButtonProps {
@@ -36,8 +37,8 @@ const RoleTemplate: FC<Props> = ({
 }) => {
   return (
     <PageSection {...boxProps}>
-      <ResponsiveRow rowReverse={rowReverse} spacing={16}>
-        <Box maxW={{ base: "100%", md: "509px" }}>
+      <ResponsiveStack rowReverse={rowReverse} spacing={16}>
+        <SectionTextContainer>
           <LabelMd textTransform="uppercase" color="gray.500">
             Get Started
           </LabelMd>
@@ -47,12 +48,7 @@ const RoleTemplate: FC<Props> = ({
             {footerButtons.map(({ href, text, to, ...props }) => {
               if (href) {
                 return (
-                  <ExternalButtonLink
-                    key={text}
-                    href={href}
-                    w="auto"
-                    {...props}
-                  >
+                  <ExternalButtonLink key={text} href={href} {...props}>
                     {text}
                   </ExternalButtonLink>
                 )
@@ -73,9 +69,9 @@ const RoleTemplate: FC<Props> = ({
               )
             })}
           </Stack>
-        </Box>
+        </SectionTextContainer>
         <SectionImage src={imgSrc} />
-      </ResponsiveRow>
+      </ResponsiveStack>
     </PageSection>
   )
 }
