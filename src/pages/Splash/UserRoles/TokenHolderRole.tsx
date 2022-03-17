@@ -1,6 +1,9 @@
 import React from "react"
 import RoleTemplate from "./RoleTemplate"
-import { ExternalLinkHref } from "../../../components/Navbar/types"
+import {
+  ExternalLinkHref,
+  InternalLinkHref,
+} from "../../../components/Navbar/types"
 import tokenHolderRole from "../../../static/images/token-holder-role.png"
 
 const TokenHolderRole = () => {
@@ -11,7 +14,11 @@ const TokenHolderRole = () => {
       description="Make the most of your T tokens on the Threshold Network by participating in DAO governance."
       footerButtons={[
         { href: ExternalLinkHref.GOVERNANCE, text: "Governance Forum" },
-        { text: "Learn more", variant: "outline", to: "/token-holder" },
+        {
+          text: "Learn more",
+          variant: "outline",
+          to: InternalLinkHref.TOKEN_HOLDER_ROLE,
+        },
       ]}
       imgSrc={tokenHolderRole}
       rowReverse

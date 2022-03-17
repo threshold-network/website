@@ -1,6 +1,7 @@
 import { FC } from "react"
 import { HStack, Image, Link, StackProps } from "@chakra-ui/react"
 import Threshold from "../static/images/ThresholdBrandFullWhite.svg"
+import { InternalLinkHref } from "./Navbar/types"
 
 const ThresholdBrand: FC<{ isDrawerOpen?: boolean } & StackProps> = ({
   isDrawerOpen,
@@ -13,7 +14,7 @@ const ThresholdBrand: FC<{ isDrawerOpen?: boolean } & StackProps> = ({
       pr="32px"
       {...props}
     >
-      <Link href="/">
+      <Link href={InternalLinkHref.ROOT}>
         <Image src={Threshold} h="18px" />
       </Link>
     </HStack>

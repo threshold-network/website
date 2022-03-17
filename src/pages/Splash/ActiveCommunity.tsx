@@ -9,6 +9,7 @@ import {
 } from "../../components/PageSection"
 import { BodyLg, H3 } from "../../components/Typography"
 import activeCommunityIllustration from "../../static/images/active-community-illustration.png"
+import { InternalLinkHref } from "../../components/Navbar/types"
 
 const ActiveCommunitySection = () => {
   return (
@@ -22,7 +23,7 @@ const ActiveCommunitySection = () => {
               and their delegates who collectively vote to decide what's next
               for the network.
             </BodyLg>
-            <Button variant="solid" to="/governance" as={Link}>
+            <Button variant="solid" to={InternalLinkHref.GOVERNANCE} as={Link}>
               About Governance
             </Button>
           </Stack>

@@ -12,6 +12,7 @@ import secureGrid from "../../../static/images/secure-grid.png"
 import privateGrid from "../../../static/images/private-grid.png"
 import ImageStack from "./ImageStack"
 import useChakraBreakpoint from "../../../hooks/useChakraBreakpoint"
+import { InternalLinkHref } from "../../../components/Navbar/types"
 
 const HarnessThePower = () => {
   const isMobile = useChakraBreakpoint("md")
@@ -26,7 +27,7 @@ const HarnessThePower = () => {
             by distributing operations across independent parties, requiring
             some threshold number of them (t-of-n) to cooperate.
           </BodyLg>
-          <Button variant="solid" to="/about" as={Link}>
+          <Button variant="solid" to={InternalLinkHref.ABOUT} as={Link}>
             About Threshold
           </Button>
         </Stack>

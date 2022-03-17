@@ -19,4 +19,21 @@ export enum ExternalLinkHref {
   GOVERNANCE = "https://forum.threshold.network/",
   THRESHOLD_TOKEN = "https://curve.fi/teth",
   DAPP = "https://dashboard.threshold.network",
+  ROADMAP = "ROADMAP",
+  FORUM = "FORUM",
+}
+
+export enum InternalLinkHref {
+  ROOT = "/",
+  ABOUT = "/about",
+  GOVERNANCE = "/governance",
+  EARN = "/earn",
+  STAKER_ROLE = "/earn/staker-role",
+  LP_ROLE = "/earn/liquidity-provider-role",
+  BTC_ROLE = "/earn/btc-role",
+  TOKEN_HOLDER_ROLE = "/earn/token-holder-role",
+  PRESS = "/in-the-press",
+  CONTRIBUTORS = "/contributors",
+  FAQ = "/faq",
+  AUDITS = "/audits",
 }

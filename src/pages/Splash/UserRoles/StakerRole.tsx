@@ -1,5 +1,8 @@
 import React from "react"
-import { ExternalLinkHref } from "../../../components/Navbar/types"
+import {
+  ExternalLinkHref,
+  InternalLinkHref,
+} from "../../../components/Navbar/types"
 import RoleTemplate from "./RoleTemplate"
 import stakerRole from "../../../static/images/staker-role.png"
 
@@ -12,7 +15,11 @@ const StakerRole = () => {
               earn rewards."
       footerButtons={[
         { href: ExternalLinkHref.DAPP, text: "Start Staking" },
-        { text: "Learn more", variant: "outline", to: "/staker" },
+        {
+          text: "Learn more",
+          variant: "outline",
+          to: InternalLinkHref.STAKER_ROLE,
+        },
       ]}
       imgSrc={stakerRole}
     />

@@ -3,7 +3,7 @@ import { Container, HStack, useDisclosure } from "@chakra-ui/react"
 import ThresholdBrand from "../ThresholdBrand"
 import SocialMediaLinks from "./SocialMediaLinks"
 import HamburgerButton from "./HamburgerButton"
-import { ExternalLinkHref, LinkInfo } from "./types"
+import { ExternalLinkHref, InternalLinkHref, LinkInfo } from "./types"
 import WhatsNextBanner from "./WhatsNextBanner"
 import MobileDrawer from "./MobileNav/MobileDrawer"
 import DesktopNavLinks from "./DesktopNav/DesktopNavLinks"
@@ -14,36 +14,36 @@ const navLinks: LinkInfo[] = [
     dropdown: [
       {
         text: "How to Earn",
-        href: "/earn",
+        href: InternalLinkHref.EARN,
       },
       {
         text: "Staker",
-        href: "/earn/staker",
+        href: InternalLinkHref.STAKER_ROLE,
       },
       {
         text: "Liquidity Provider",
-        href: "/earn/liquidity-provider",
+        href: InternalLinkHref.LP_ROLE,
       },
       {
         text: "BTC/tBTC User",
-        href: "/earn/btc",
+        href: InternalLinkHref.BTC_ROLE,
       },
       {
         text: "Token Holder",
-        href: "/earn/token-holder",
+        href: InternalLinkHref.TOKEN_HOLDER_ROLE,
       },
     ],
   },
   {
     text: "Governance",
-    href: "/governance",
+    href: InternalLinkHref.GOVERNANCE,
   },
   {
     text: "News",
     dropdown: [
       {
         text: "Press",
-        href: "/press",
+        href: InternalLinkHref.PRESS,
       },
       {
         text: "Blog",
@@ -57,15 +57,15 @@ const navLinks: LinkInfo[] = [
     dropdown: [
       {
         text: "Contributors",
-        href: "/contributors",
+        href: InternalLinkHref.CONTRIBUTORS,
       },
       {
         text: "FAQ",
-        href: "/faq",
+        href: InternalLinkHref.FAQ,
       },
       {
         text: "Audits",
-        href: "/audits",
+        href: InternalLinkHref.AUDITS,
       },
     ],
   },

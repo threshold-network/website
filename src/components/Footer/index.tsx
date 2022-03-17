@@ -1,34 +1,44 @@
 import React from "react"
 import { Link as RouterLink } from "react-router-dom"
-import { Box, HStack, Stack, Icon, Link } from "@chakra-ui/react"
+import { Box, HStack, Icon, Link, Stack } from "@chakra-ui/react"
 import NewsletterSubscribe from "./NewsletterSubscribe"
 import { PageSection } from "../PageSection"
 import ThresholdBrand from "../ThresholdBrand"
 import SocialMediaLinks from "./SocialMediaLinks"
 import { BodySm, LabelMd } from "../Typography"
 import { FiArrowUpRight } from "react-icons/all"
+import { ExternalLinkHref, InternalLinkHref } from "../Navbar/types"
 
-const footerLinks = [
+interface FooterLink {
+  title: string
+  links: {
+    text: string
+    href: InternalLinkHref | ExternalLinkHref | string
+    isExternal?: boolean
+  }[]
+}
+
+const footerLinks: FooterLink[] = [
   {
     title: "General",
     links: [
       {
         text: "Dapp",
-        href: "/somewhere",
+        href: ExternalLinkHref.DAPP,
         isExternal: true,
       },
       {
         text: "Press",
-        href: "/somewhere",
+        href: InternalLinkHref.PRESS,
       },
       {
         text: "Roadmap",
-        href: "/somewhere",
+        href: ExternalLinkHref.ROADMAP,
         isExternal: true,
       },
       {
         text: "Blog",
-        href: "/somewhere",
+        href: ExternalLinkHref.THRESHOLD_BLOG,
         isExternal: true,
       },
     ],
@@ -38,22 +48,23 @@ const footerLinks = [
     links: [
       {
         text: "Staker",
-        href: "/somewhere",
+        href: InternalLinkHref.STAKER_ROLE,
       },
       {
         text: "Liquidity Provider",
-        href: "/somewhere",
+        href: InternalLinkHref.LP_ROLE,
       },
       {
         text: "BTC / tBTC User",
-        href: "/somewhere",
+        href: InternalLinkHref.BTC_ROLE,
       },
       {
         text: "Token Holder",
-        href: "/somewhere",
+        href: InternalLinkHref.TOKEN_HOLDER_ROLE,
       },
       {
         text: "Earn Profile Quiz",
+        // TODO: does this open the quiz modal? Or is the quiz on a separate page?
         href: "/somewhere",
       },
     ],
@@ -63,16 +74,16 @@ const footerLinks = [
     links: [
       {
         text: "Governance",
-        href: "/somewhere",
+        href: InternalLinkHref.GOVERNANCE,
       },
       {
         text: "Discord",
-        href: "/somewhere",
+        href: ExternalLinkHref.THRESHOLD_DISCORD,
         isExternal: true,
       },
       {
         text: "Forum",
-        href: "/somewhere",
+        href: ExternalLinkHref.FORUM,
         isExternal: true,
       },
     ],
@@ -82,15 +93,15 @@ const footerLinks = [
     links: [
       {
         text: "Contributors",
-        href: "/somewhere",
+        href: InternalLinkHref.CONTRIBUTORS,
       },
       {
         text: "FAQ",
-        href: "/somewhere",
+        href: InternalLinkHref.FAQ,
       },
       {
         text: "Audits",
-        href: "/somewhere",
+        href: InternalLinkHref.AUDITS,
       },
     ],
   },
