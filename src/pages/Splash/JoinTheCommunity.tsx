@@ -46,13 +46,16 @@ const JoinTheCommunity = () => {
           subTitle="Become a part of our community"
           body="Join our Discord server and our Telegram to get involved and stay up
             to date."
-          footerButtons={[<DiscordButton />, <TelegramButton />]}
+          footerButtons={[
+            <DiscordButton key="1" />,
+            <TelegramButton key="2" />,
+          ]}
         />
         <Content
           title="For developers"
           subTitle="Learn more about the network"
           body="Learn more about the Threshold network by reading the documentation or visiting Github."
-          footerButtons={[<GithubButton />]}
+          footerButtons={[<GithubButton key="3" />]}
         />
       </ResponsiveStack>
     </PageSection>

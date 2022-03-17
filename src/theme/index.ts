@@ -43,6 +43,23 @@ const index = extendTheme({
   components: {
     Button,
     Card,
+    Input: {
+      baseStyle: {
+        field: {
+          bg: "white",
+          color: "gray.700",
+          borderColor: "gray.300",
+          _hover: {
+            borderColor: "gray.500",
+          },
+          ":focus": {
+            borderColor: "#7C47EE !important",
+            boxShadow: "0 0 0 1px #7C47EE !important",
+          },
+          _placeholder: { opacity: 1, color: "gray.500" },
+        },
+      },
+    },
   },
 })
 

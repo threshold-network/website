@@ -26,15 +26,13 @@ export const PageSection: FC<BoxProps> = ({ children, ...props }) => {
   )
 }
 
-export const ResponsiveStack: FC<StackProps & { rowReverse?: boolean }> = ({
-  children,
-  rowReverse,
-  ...props
-}) => {
+export const ResponsiveStack: FC<
+  StackProps & { rowReverse?: boolean; columnReverse?: boolean }
+> = ({ children, rowReverse, columnReverse, ...props }) => {
   return (
     <Stack
       direction={{
-        base: "column-reverse",
+        base: columnReverse ? "column" : "column-reverse",
         md: rowReverse ? "row-reverse" : "row",
       }}
       justifyContent="space-between"

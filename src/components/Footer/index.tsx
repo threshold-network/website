@@ -138,10 +138,11 @@ const FooterContent = () => {
         >
           {footerLinks.map((info) => {
             return (
-              <Stack alignSelf="baseline" spacing={2}>
+              <Stack alignSelf="baseline" spacing={2} key={info.title}>
                 <LabelMd textTransform="uppercase">{info.title}</LabelMd>
                 {info.links.map((link) => (
                   <Link
+                    key={link.href}
                     display="flex"
                     as={link.isExternal ? undefined : RouterLink}
                     to={link.href}
