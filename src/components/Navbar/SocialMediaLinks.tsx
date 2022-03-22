@@ -1,10 +1,13 @@
 import { FC } from "react"
-import { HStack, Image, Link } from "@chakra-ui/react"
-import { withPrefix } from "gatsby"
+import { HStack, Link } from "@chakra-ui/react"
+import { Image, ImageProps } from "../Image"
 
 const SocialMediaLinks: FC<{
   isMobileDrawerFooter?: boolean
-  links: { url: string; icon: { image: any; alt: string } }[]
+  links: {
+    url: string
+    icon: { image: Omit<ImageProps, "alt">; alt: string }
+  }[]
 }> = ({ isMobileDrawerFooter, links }) => {
   return (
     <HStack
@@ -31,7 +34,7 @@ const SocialMediaLinks: FC<{
             boxSize="25px"
             color="gray.300"
             _hover={{ color: "white" }}
-            src={withPrefix(image)}
+            {...image}
             alt={alt}
           />
         </Link>
