@@ -5,136 +5,117 @@ import {
   Button,
   Container,
   Divider,
-  Link,
   Stack,
   StackDivider,
 } from "@chakra-ui/react"
-import { Body1, H1, H5, SplashCard, SplashCardInfo } from "../components"
-import {
-  BsStack,
-  IoLockClosedSharp,
-  IoShieldCheckmarkSharp,
-} from "react-icons/all"
+import { Body1, H1, H5, ImageProps, SplashCard } from "../components"
 import useChakraBreakpoint from "../hooks/useChakraBreakpoint"
-import { ExternalLinkHref } from "../components/Navbar/types"
 
 const HomePageTemplate: FC<any> = ({ data }) => {
-  console.log("data", "")
+  const { hero, summary } = data.markdownRemark.frontmatter
   const mediumBreakpoint = useChakraBreakpoint("md")
-
-  const splashCardContent: SplashCardInfo[] = [
-    {
-      title: "Decentralized",
-      icon: BsStack,
-      body: "Threshold is the only bridge protocol that is truly decentralized.",
-    },
-    {
-      title: "Secure",
-      icon: IoShieldCheckmarkSharp,
-      body: "Threshold is audited by the strongest firms in the space.",
-    },
-    {
-      title: "Private",
-      icon: IoLockClosedSharp,
-      body: "Threshold preserves privacy on the public blockchain.",
-    },
-  ]
 
   return (
     <Container maxW="4xl" mt={20} paddingBottom={36}>
-      <H1
-        color="white"
-        fontWeight="700"
-        fontSize={{ base: "44px", sm: "52px", lg: "60px" }}
-        maxW="688px"
-      >
-        Threshold powers user sovereignty on the public blockchain.
-      </H1>
-      <H5 color="brand.100" mt={6}>
-        Access cryptographic tools that ensure full control over your digital
-        assets.
-      </H5>
-      <Stack
-        mt={16}
-        spacing={8}
-        direction={mediumBreakpoint ? "column" : "row"}
-      >
-        <Button
-          height="auto"
-          width="auto"
-          fontSize="lg"
-          px="40px"
-          py="20px"
-          isFullWidth
-          // ={mediumBreakpoint}
-          onClick={() => {
-            window.open(ExternalLinkHref.STAKE)
-          }}
+      <Box as="section">
+        <H1
+          color="white"
+          fontWeight="700"
+          fontSize={{ base: "44px", sm: "52px", lg: "60px" }}
+          maxW="688px"
         >
-          Start Staking
-        </Button>
-
-        <Button
-          height="auto"
-          width="auto"
-          fontSize="lg"
-          px="40px"
-          py="20px"
-          isFullWidth
-          // ={mediumBreakpoint}
-          variant="outline"
-          onClick={() => {
-            window.open(ExternalLinkHref.THRESHOLD_BLOG)
-          }}
-        >
-          Read the Blog
-        </Button>
-      </Stack>
-      <H5 color="white" mt={32}>
-        Why Threshold Network?
-      </H5>
-      <Body1 color="brand.100" mt={6}>
-        Threshold Network is the first ever on-chain merge between two existing
-        networks.{" "}
-        <Link textDecoration="underline" href={ExternalLinkHref.LEARN_MORE}>
-          Learn more ↗
-        </Link>
-      </Body1>
-      <Box position="relative">
-        {/* Divider that spans all 3 cards on large screen sizes */}
-        {!mediumBreakpoint && (
-          <Divider
-            position="absolute"
-            top="88px"
-            zIndex="1"
-            direction="horizontal"
-            borderColor="brand.300"
-          />
-        )}
+          {hero.title}
+        </H1>
+        <H5
+          color="brand.100"
+          mt={6}
+          dangerouslySetInnerHTML={{ __html: hero.body }}
+        />
         <Stack
-          direction={{ base: "column", md: "row" }}
-          mt={8}
-          bg="blackAlpha.300"
-          divider={<StackDivider borderColor="brand.300" />}
-          border="1px solid"
-          borderColor="brand.300"
+          mt={16}
+          spacing={8}
+          direction={mediumBreakpoint ? "column" : "row"}
         >
-          {splashCardContent.map((card, i) => (
-            <SplashCard
-              {...card}
-              key={card.title}
-              borderTop={mediumBreakpoint && i !== 0 ? "1px solid #9974FF" : 0}
-              borderBottom={mediumBreakpoint ? "1px solid #9974FF" : 0}
-              borderLeft={mediumBreakpoint || i === 0 ? 0 : undefined}
-              borderRight={
-                mediumBreakpoint || i === splashCardContent.length - 1
-                  ? 0
-                  : undefined
-              }
-              isCardColumn={mediumBreakpoint}
-            />
-          ))}
+          {hero.ctaButtons.map(
+            (_: { label: string; url: string }, index: number) => (
+              // TODO: Replace with `ExternalButtonLink` component.
+              <Button
+                key={_.label}
+                variant={index > 0 ? "outline" : undefined}
+                height="auto"
+                width="auto"
+                fontSize="lg"
+                px="40px"
+                py="20px"
+                isFullWidth
+                onClick={() => {
+                  window.open(_.url)
+                }}
+              >
+                {_.label}
+              </Button>
+            )
+          )}
         </Stack>
+      </Box>
+      <Box as="section">
+        <H5 color="white" mt={32}>
+          {summary.title}
+        </H5>
+        <Body1
+          color="brand.100"
+          mt={6}
+          dangerouslySetInnerHTML={{ __html: summary.body }}
+        />
+        <Box position="relative">
+          {/* Divider that spans all 3 cards on large screen sizes */}
+          {!mediumBreakpoint && (
+            <Divider
+              position="absolute"
+              top="88px"
+              zIndex="1"
+              direction="horizontal"
+              borderColor="brand.300"
+            />
+          )}
+          <Stack
+            direction={{ base: "column", md: "row" }}
+            mt={8}
+            bg="blackAlpha.300"
+            divider={<StackDivider borderColor="brand.300" />}
+            border="1px solid"
+            borderColor="brand.300"
+          >
+            {summary.cards.map(
+              (
+                card: {
+                  title: string
+                  body: string
+                  icon: { alt: string; image: Omit<ImageProps, "alt"> }
+                },
+                i: number
+              ) => (
+                <SplashCard
+                  key={card.title}
+                  title={card.title}
+                  body={card.body}
+                  icon={{ ...card.icon.image, alt: card.icon.alt }}
+                  borderTop={
+                    mediumBreakpoint && i !== 0 ? "1px solid #9974FF" : 0
+                  }
+                  borderBottom={mediumBreakpoint ? "1px solid #9974FF" : 0}
+                  borderLeft={mediumBreakpoint || i === 0 ? 0 : undefined}
+                  borderRight={
+                    mediumBreakpoint || i === summary.cards.length - 1
+                      ? 0
+                      : undefined
+                  }
+                  isCardColumn={mediumBreakpoint}
+                />
+              )
+            )}
+          </Stack>
+        </Box>
       </Box>
     </Container>
   )
@@ -148,6 +129,44 @@ export const query = graphql`
         hero {
           title
           body
+          ctaButtons {
+            label
+            url
+          }
+        }
+        summary {
+          title
+          body
+          cards {
+            title
+            body
+            icon {
+              image {
+                id
+                absolutePath
+                internal {
+                  mediaType
+                }
+                svg {
+                  name
+                  attributes {
+                    key
+                    value
+                  }
+                  children {
+                    name
+                    type
+                    value
+                    attributes {
+                      key
+                      value
+                    }
+                  }
+                }
+              }
+              alt
+            }
+          }
         }
       }
     }
