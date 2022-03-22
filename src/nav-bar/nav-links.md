@@ -37,4 +37,14 @@ social_links:
     icon:
       image: /images/twitter.svg
       alt: Thershold Twitter
+  - label: Discord
+    url: https://discord.gg/VafbhzJ3vW
+    icon:
+      image: /images/discord.svg
+      alt: Threshold Discord
+  - label: GitHub
+    url: https://github.com/threshold-network
+    icon:
+      image: /images/github.svg
+      alt: Threshold GitHub
 ---
