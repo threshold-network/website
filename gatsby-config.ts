@@ -7,7 +7,38 @@ const config: GatsbyConfig = {
     url: "https://threshold.network",
   },
   plugins: [
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-relative-images",
+            options: {
+              name: "uploads",
+            },
+          },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 2048,
+            },
+          },
+        ],
+      },
+    },
     "@chakra-ui/gatsby-plugin",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: path.resolve("static/images"),
+        name: "uploads",
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -28,7 +59,6 @@ const config: GatsbyConfig = {
         modulePath: path.resolve("/src/cms/cms.ts"),
       },
     },
-    "gatsby-transformer-remark",
   ],
   pathPrefix: process.env["PUBLIC_URL"],
 }

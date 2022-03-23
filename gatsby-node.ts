@@ -1,6 +1,9 @@
 import { GatsbyNode } from "gatsby"
 import path from "path"
 import { createFilePath } from "gatsby-source-filesystem"
+import { parse } from "svgson"
+import { pathThatSvg } from "path-that-svg"
+import fs from "fs"
 
 export const createPages: GatsbyNode["createPages"] = async ({
   actions,
@@ -49,9 +52,10 @@ export const createPages: GatsbyNode["createPages"] = async ({
   })
 }
 
-export const createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
-  const typeDefs = `
+export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
+  ({ actions }) => {
+    const { createTypes } = actions
+    const typeDefs = `
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
     }
@@ -68,9 +72,20 @@ export const createSchemaCustomization = ({ actions }) => {
       alt: String
       image: File @fileByRelativePath
     }
+    type SVGAttributes {
+      key: String
+      value: String
+    }
+    type SVG {
+      name: String,
+      type: String,
+      value: String,
+      attributes: [SVGAttributes]
+      children: [SVG]
+    }
   `
-  createTypes(typeDefs)
-}
+    createTypes(typeDefs)
+  }
 
 export const onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -85,11 +100,78 @@ export const onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-export const onCreateBabelConfig = ({ actions }) => {
+export const onCreateBabelConfig: GatsbyNode["onCreateBabelConfig"] = ({
+  actions,
+}) => {
   actions.setBabelPlugin({
     name: "@babel/plugin-transform-react-jsx",
     options: {
       runtime: "automatic",
+    },
+  })
+}
+
+const svgCache = {}
+const SVG_CACHE_ID_PREFIX = "svg-data-cache"
+const convertSvgAttributesToArray = (object) => {
+  for (const key in object) {
+    if (typeof object[key] === "object")
+      object[key] = convertSvgAttributesToArray(object[key])
+  }
+
+  if (object.hasOwnProperty("attributes"))
+    object.attributes = Object.entries(object.attributes).map(
+      ([key, value]) => ({
+        key,
+        value,
+      })
+    )
+
+  return object
+}
+
+export const createResolvers: GatsbyNode["createResolvers"] = ({
+  createResolvers,
+  reporter,
+}) => {
+  createResolvers({
+    File: {
+      svg: {
+        type: "SVG",
+        resolve: async (source) => {
+          if (source.internal.mediaType !== "image/svg+xml") {
+            return null
+          }
+
+          try {
+            const cacheId = `${SVG_CACHE_ID_PREFIX}-${source.id}`
+            const cachedData = svgCache[cacheId]
+
+            if (cachedData) {
+              reporter.info(`Loading data from cache; id: ${cacheId}`)
+              return cachedData
+            }
+
+            const data = fs.readFileSync(source.absolutePath, {
+              encoding: "utf-8",
+            })
+            // Convert svg elements such as `rect`, `circle`, `ellipse`, `line`,
+            // `polyline` or `polygon` to `path`. It will help to build the
+            // styleable svg icon components with Chakra.
+            const path = await pathThatSvg(data)
+            // Convert svg to an object.
+            const parsedSvgElement = await parse(path)
+
+            const svgEelement = convertSvgAttributesToArray(parsedSvgElement)
+            svgCache[cacheId] = svgEelement
+            reporter.info(`Saving svg data in cache; id ${cacheId}`)
+            return svgEelement
+          } catch (error) {
+            reporter.panic(error)
+            return null
+          }
+        },
+      },
     },
   })
 }
