@@ -1,0 +1,212 @@
+backend:
+  name: github
+  repo: threshold-network/splash-page
+  site_domain: threshold.network
+  open_authoring: true
+
+local_backend: true
+
+site_url: https://threshold.network
+
+publish_mode: editorial_workflow
+
+media_folder: static/images
+public_folder: /images
+
+collections:
+  - name: pages
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "home-page",
+            }
+          - { label: "Path", name: "path", widget: "hidden", default: "/" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  minimal: true,
+                }
+              - {
+                  label: "Body",
+                  name: "body",
+                  widget: "markdown",
+                  required: false,
+                }
+              - {
+                  label: "CTA Buttons",
+                  name: "ctaButtons",
+                  widget: "list",
+                  allow_add: true,
+                  required: false,
+                  fields:
+                    [
+                      { label: Label, name: label, widget: string },
+                      { label: URL, name: url, widget: string },
+                    ],
+                }
+          - label: "Summary"
+            name: "summary"
+            widget: "object"
+            fields:
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  minimal: true,
+                }
+              - {
+                  label: "Body",
+                  name: "body",
+                  widget: "markdown",
+                  required: false,
+                }
+              - {
+                  label: "Cards",
+                  name: "cards",
+                  widget: "list",
+                  allow_add: true,
+                  fields:
+                    [
+                      { label: Title, name: title, widget: string },
+                      {
+                        label: Left Title Icon,
+                        name: icon,
+                        widget: object,
+                        fields:
+                          [
+                            {
+                              label: "Image",
+                              name: "image",
+                              widget: file,
+                              media_library: { config: { multiple: false } },
+                              hint: "SVG only. SVG must have width and height attributes set in the file.",
+                            },
+                            { label: "Alt", name: "alt", widget: "string" },
+                          ],
+                      },
+                      { label: Body, name: body, widget: "markdown" },
+                    ],
+                }
+  - name: "nav-bar"
+    label: "Nav bar"
+    files:
+      - file: "src/nav-bar/announcement-banner.md"
+        label: "Announcement Banner"
+        name: "announcement"
+        fields:
+          - {
+              label: "Template Key",
+              name: "template",
+              widget: "hidden",
+              default: "announcement",
+            }
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              required: true,
+              minimal: true,
+            }
+      - file: "src/nav-bar/nav-links.md"
+        label: "Nav Bar links"
+        name: "nav_links"
+        fields:
+          - {
+              label: "Template Key",
+              name: "template",
+              widget: "hidden",
+              default: "nav-links",
+            }
+          - {
+              label: "Nav Items",
+              name: "nav_items",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  { label: "Label", name: "label", widget: "string" },
+                  {
+                    label: "URL",
+                    name: "url",
+                    widget: "string",
+                    required: false,
+                    hint: "Use a relative URL (e.g. /press) if the link is an internal link.",
+                  },
+                  {
+                    label: "External Link",
+                    name: "isExternal",
+                    widget: "boolean",
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Sub Items",
+                    name: "subitems",
+                    widget: "list",
+                    allow_add: true,
+                    fields:
+                      [
+                        { label: "Label", name: "label", widget: "string" },
+                        {
+                          label: "External Link",
+                          name: "isExternal",
+                          widget: "boolean",
+                          default: false,
+                          required: false,
+                        },
+                        {
+                          label: "URL",
+                          name: "url",
+                          widget: "string",
+                          hint: "Use a relative URL (e.g. /press) if the link is an internal link.",
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Social Media Links",
+              name: "social_links",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  {
+                    label: "Label",
+                    name: "label",
+                    widget: "string",
+                    required: false,
+                  },
+                  { label: "URL", name: "url", widget: "string" },
+                  {
+                    label: Icon,
+                    name: icon,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          required: true,
+                          media_library: { config: { multiple: false } },
+                          hint: "SVG only. SVG must have width and height attributes set in the file.",
+                        },
+                        { label: "Alt", name: "alt", widget: "string" },
+                      ],
+                  },
+                ],
+            }
