@@ -14,5 +14,5 @@ export enum ExternalLinkHref {
   THRESHOLD_BLOG = "https://blog.threshold.network/",
   GOVERNANCE = "https://forum.threshold.network/",
   THRESHOLD_TOKEN = "https://curve.fi/teth",
-  STAKE = "https://dashboard.threshold.network",
+  DAPP = "https://dashboard.threshold.network",
 }

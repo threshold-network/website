@@ -9,7 +9,7 @@ import {
   MenuItem,
   MenuList,
 } from "@chakra-ui/react"
-import { Body2, Label1 } from "../../Typography"
+import { BodyMd, LabelMd } from "../../Typography"
 import { ChevronDownIcon } from "@chakra-ui/icons"
 import { Link as GatsbyLink } from "gatsby"
 import { FiArrowUpRight } from "react-icons/all"
@@ -30,9 +30,9 @@ const DropdownMenu: FC<{ dropdown: LinkInfo[]; text: string }> = ({
         }}
       >
         <HStack>
-          <Label1 lineHeight="90px" textTransform="uppercase">
+          <LabelMd lineHeight="90px" textTransform="uppercase">
             {text}
-          </Label1>
+          </LabelMd>
           <ChevronDownIcon color="gray.300" />
         </HStack>
       </MenuButton>
@@ -52,7 +52,7 @@ const DropdownMenu: FC<{ dropdown: LinkInfo[]; text: string }> = ({
               to={link.url}
               target={link.isExternal ? "_blank" : undefined}
             >
-              <Body2>{link.label}</Body2>
+              <BodyMd>{link.label}</BodyMd>
               {link.isExternal && <Icon ml={2} as={FiArrowUpRight} />}
             </MenuItem>
           )

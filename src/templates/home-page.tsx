@@ -8,7 +8,7 @@ import {
   Stack,
   StackDivider,
 } from "@chakra-ui/react"
-import { Body1, H1, H5, ImageProps, SplashCard } from "../components"
+import { BodyLg, H1, H5, ImageProps, SplashCard } from "../components"
 import useChakraBreakpoint from "../hooks/useChakraBreakpoint"
 
 const HomePageTemplate: FC<any> = ({ data }) => {
@@ -62,7 +62,7 @@ const HomePageTemplate: FC<any> = ({ data }) => {
         <H5 color="white" mt={32}>
           {summary.title}
         </H5>
-        <Body1
+        <BodyLg
           color="brand.100"
           mt={6}
           dangerouslySetInnerHTML={{ __html: summary.body }}
