@@ -10,9 +10,9 @@ import MobileDrawer from "./MobileNav/MobileDrawer"
 import DesktopNavLinks from "./DesktopNav/DesktopNavLinks"
 
 const query = graphql`
-  query NavbarLinks {
+  query Navbar {
     allMarkdownRemark(
-      filter: { frontmatter: { template: { eq: "nav-links" } } }
+      filter: { frontmatter: { template: { eq: "nav-bar" } } }
     ) {
       edges {
         node {

@@ -17,7 +17,7 @@ collections:
   - name: pages
     label: "Pages"
     files:
-      - file: "src/pages/index.md"
+      - file: "src/content/pages/index.md"
         label: "Home"
         name: "home"
         fields:
@@ -99,10 +99,10 @@ collections:
                       { label: Body, name: body, widget: "markdown" },
                     ],
                 }
-  - name: "nav-bar"
-    label: "Nav bar"
+  - name: "components"
+    label: "Components"
     files:
-      - file: "src/nav-bar/announcement-banner.md"
+      - file: "src/content/components/announcement-banner.md"
         label: "Announcement Banner"
         name: "announcement"
         fields:
@@ -120,15 +120,15 @@ collections:
               required: true,
               minimal: true,
             }
-      - file: "src/nav-bar/nav-links.md"
-        label: "Nav Bar links"
-        name: "nav_links"
+      - file: "src/content/components/nav-bar.md"
+        label: "Navigation Bar"
+        name: "nav"
         fields:
           - {
               label: "Template Key",
               name: "template",
               widget: "hidden",
-              default: "nav-links",
+              default: "nav-bar",
             }
           - {
               label: "Nav Items",
