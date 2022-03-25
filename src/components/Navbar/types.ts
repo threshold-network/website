@@ -1,8 +1,15 @@
+import { ImageProps } from "../Image"
+
 export interface LinkInfo {
   url?: string
   label: string
   subitems?: LinkInfo[]
   isExternal?: boolean
+}
+
+export interface SocialLink {
+  url: string
+  icon: { image: Omit<ImageProps, "alt">; alt: string }
 }
 
 export enum ExternalLinkHref {

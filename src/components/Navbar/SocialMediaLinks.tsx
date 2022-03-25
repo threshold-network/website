@@ -1,13 +1,11 @@
 import { FC } from "react"
 import { HStack, Link } from "@chakra-ui/react"
 import { Image, ImageProps } from "../Image"
+import { SocialLink } from "./types"
 
 const SocialMediaLinks: FC<{
   isMobileDrawerFooter?: boolean
-  links: {
-    url: string
-    icon: { image: Omit<ImageProps, "alt">; alt: string }
-  }[]
+  links: SocialLink[]
 }> = ({ isMobileDrawerFooter, links }) => {
   return (
     <HStack

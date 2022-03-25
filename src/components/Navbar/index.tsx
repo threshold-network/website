@@ -101,6 +101,7 @@ export const Navbar: FC = () => {
             isOpen={isDrawerOpen}
             onClose={onDrawerClose}
             navLinks={navLinks}
+            socialLinks={socialLinks}
           />
           <DesktopNavLinks navLinks={navLinks} />
           <SocialMediaLinks links={socialLinks} />
