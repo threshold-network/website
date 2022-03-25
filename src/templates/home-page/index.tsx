@@ -8,8 +8,8 @@ import {
   Stack,
   StackDivider,
 } from "@chakra-ui/react"
-import { BodyLg, H1, H5, ImageProps, SplashCard } from "../components"
-import useChakraBreakpoint from "../hooks/useChakraBreakpoint"
+import { BodyLg, H1, H5, ImageProps, SplashCard } from "../../components"
+import useChakraBreakpoint from "../../hooks/useChakraBreakpoint"
 
 const HomePageTemplate: FC<any> = ({ data }) => {
   const { hero, summary } = data.markdownRemark.frontmatter
