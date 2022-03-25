@@ -55,23 +55,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
   ({ actions }) => {
     const { createTypes } = actions
+
     const typeDefs = `
-    type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
-    }
-    type Frontmatter {
-      hero: Hero
-    }
-    type Hero {
-      cta: Cta
-    }
-    type Cta {
-      icon: Icon
-    }
-    type Icon {
-      alt: String
-      image: File @fileByRelativePath
-    }
     type SVGAttributes {
       key: String
       value: String
