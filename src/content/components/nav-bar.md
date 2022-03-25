@@ -1,5 +1,5 @@
 ---
-template: nav-links
+template: nav-bar
 nav_items:
   - label: Earn
     isExternal: false

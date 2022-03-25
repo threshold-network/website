@@ -12,11 +12,13 @@ export const createPages: GatsbyNode["createPages"] = async ({
 }) => {
   const { createPage } = actions
 
-  // Filter only for md files in the src/pages directory. Any md files found
-  // outside of that should not have a page created for it
+  // Filter only for md files in the `src/content/pages` directory. Any md files
+  // found outside of that should not have a page created for it.
   const result = await graphql(`
     {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(pages)/" } }) {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/content/(pages)/" } }
+      ) {
         edges {
           node {
             id
@@ -42,7 +44,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const templateName = node.frontmatter.template || `default`
     const template = path.resolve(
-      path.join("src/templates/", `${templateName}.tsx`)
+      path.join(`src/templates/${templateName}`, "index.tsx")
     )
     createPage({
       path: node.fields.slug,
@@ -55,23 +57,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
   ({ actions }) => {
     const { createTypes } = actions
+
     const typeDefs = `
-    type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
-    }
-    type Frontmatter {
-      hero: Hero
-    }
-    type Hero {
-      cta: Cta
-    }
-    type Cta {
-      icon: Icon
-    }
-    type Icon {
-      alt: String
-      image: File @fileByRelativePath
-    }
     type SVGAttributes {
       key: String
       value: String

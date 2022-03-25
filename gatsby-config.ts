@@ -42,15 +42,15 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: path.resolve("src/pages"),
+        path: path.resolve("src/content/pages"),
         name: "pages",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: path.resolve("src/nav-bar"),
-        name: "nav-bar",
+        path: path.resolve("src/content/components"),
+        name: "components",
       },
     },
     {
