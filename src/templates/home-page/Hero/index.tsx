@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import { Box, Container, Stack } from "@chakra-ui/react"
 import { H1, H5 } from "../../../components/Typography"
 import heroGradientCurve from "../../../static/images/hero-gradient-swoosh.png"
@@ -13,7 +13,11 @@ const heroButtonProps = {
   px: "40px",
 }
 
-const Hero = () => {
+const Hero: FC<{ title: string; body: string; ctaButtons: any }> = ({
+  title,
+  body,
+  ctaButtons,
+}) => {
   const isMobile = useChakraBreakpoint("md")
 
   return (
@@ -44,11 +48,10 @@ const Hero = () => {
       >
         <Stack spacing={8}>
           <H1 noOfLines={2} maxW="740px">
-            Full control over your digital assets
+            {title}
           </H1>
           <H5 color="gray.300" noOfLines={2} maxW="540px">
-            Use threshold cryptographic tools that power user sovereignty on the
-            blockchain.
+            {body}
           </H5>
         </Stack>
         <Stack
@@ -56,20 +59,22 @@ const Hero = () => {
           direction={{ base: "column", md: "row" }}
           spacing={12}
         >
-          <ExternalButtonLink
-            {...heroButtonProps}
-            variant="special"
-            href={ExternalLinkHref.DAPP}
-          >
-            Launch Dapp
-          </ExternalButtonLink>
-          <ExternalButtonLink
-            {...heroButtonProps}
-            variant={isMobile ? "outline" : "link"}
-            href={ExternalLinkHref.THRESHOLD_DISCORD}
-          >
-            Join Discord
-          </ExternalButtonLink>
+          {ctaButtons.map(
+            (_: { label: string; url: string }, index: number) => {
+              return (
+                <ExternalButtonLink
+                  key={_.label}
+                  {...heroButtonProps}
+                  variant={
+                    index === 0 ? "special" : isMobile ? "outline" : "link"
+                  }
+                  href={_.url as ExternalLinkHref}
+                >
+                  {_.label}
+                </ExternalButtonLink>
+              )
+            }
+          )}
         </Stack>
       </Container>
     </Box>
