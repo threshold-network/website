@@ -1,21 +1,25 @@
 import React, { FC } from "react"
-import { Box, BoxProps, Button, ButtonProps, Stack } from "@chakra-ui/react"
-import { Link } from "react-router-dom"
+import { Box, BoxProps, ButtonProps, Stack } from "@chakra-ui/react"
+import { Link } from "gatsby"
+import {
+  CmsButtonLink,
+  ButtonType,
+} from "../../../components/Buttons/CmsButtonLink"
 import { H2, H5, LabelMd } from "../../../components/Typography"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
-import { ExternalLinkHref } from "../../../components/Navbar/types"
 import {
   PageSection,
   ResponsiveStack,
   SectionImage,
   SectionTextContainer,
 } from "../../../components/PageSection"
+import { ImageProps } from "../../../components"
+import { ExternalLinkHref } from "../../../components/Navbar/types"
 
-interface FooterButton extends ButtonProps {
-  text: string
-  href?: ExternalLinkHref
-  to?: string
-  onClick?: () => void
+export interface FooterButton {
+  label: string
+  url: string
+  variant: string
 }
 
 interface Props extends BoxProps {
@@ -23,7 +27,7 @@ interface Props extends BoxProps {
   title: string
   description: string
   footerButtons: FooterButton[]
-  imgSrc: any
+  image: ImageProps
   rowReverse?: boolean
 }
 
@@ -31,7 +35,7 @@ const RoleTemplate: FC<Props> = ({
   title,
   description,
   footerButtons,
-  imgSrc,
+  image,
   rowReverse,
   ...boxProps
 }) => {
@@ -45,32 +49,37 @@ const RoleTemplate: FC<Props> = ({
           <H2 mt={3}>{title}</H2>
           <H5 mt={10}>{description}</H5>
           <Stack mt={10} direction={{ base: "column", md: "row" }} spacing={8}>
-            {footerButtons.map(({ href, text, to, ...props }) => {
-              if (href) {
-                return (
-                  <ExternalButtonLink key={text} href={href} {...props}>
-                    {text}
-                  </ExternalButtonLink>
-                )
-              }
-
-              if (to) {
-                return (
-                  <Button to={to} key={text} as={Link} {...props}>
-                    {text}
-                  </Button>
-                )
-              }
-
+            {footerButtons.map((_: FooterButton, i) => {
               return (
-                <Button key={text} {...props}>
-                  {text}
-                </Button>
+                <CmsButtonLink
+                  key={_.label}
+                  cmsVariant={_.variant as ButtonType}
+                  url={_.url}
+                >
+                  {_.label}
+                </CmsButtonLink>
               )
+              // if (i === 0) {
+              //   return (
+              //     <ExternalButtonLink
+              //       key={_.label}
+              //       href={_.url as ExternalLinkHref}
+              //       variant={_.variant}
+              //     >
+              //       {_.label}
+              //     </ExternalButtonLink>
+              //   )
+              // }
+              //
+              // return (
+              //   <CmsButtonLink key={_.label} to={_.url} as={Link} variant={_.variant}>
+              //     {_.label}
+              //   </CmsButtonLink>
+              // )
             })}
           </Stack>
         </SectionTextContainer>
-        <SectionImage src={imgSrc} />
+        <SectionImage {...image} />
       </ResponsiveStack>
     </PageSection>
   )

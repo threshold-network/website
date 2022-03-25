@@ -1,14 +1,8 @@
 import React, { FC } from "react"
-import {
-  Box,
-  BoxProps,
-  Container,
-  Image,
-  ImageProps,
-  Stack,
-  StackProps,
-} from "@chakra-ui/react"
+import { Box, BoxProps, Container, Stack, StackProps } from "@chakra-ui/react"
+import { Image } from "../components/Image"
 import useChakraBreakpoint from "../hooks/useChakraBreakpoint"
+import { ImageProps } from "./Image"
 
 export const PageSection: FC<BoxProps> = ({ children, ...props }) => {
   return (
@@ -45,7 +39,7 @@ export const ResponsiveStack: FC<StackProps & { rowReverse?: boolean }> = ({
   )
 }
 
-export const SectionImage: FC<ImageProps> = ({ src }) => {
+export const SectionImage: FC<ImageProps> = (imageProps) => {
   const mdSize = useChakraBreakpoint("md")
 
   return (
@@ -53,7 +47,7 @@ export const SectionImage: FC<ImageProps> = ({ src }) => {
       maxW="350px"
       maxH="250px"
       mx={mdSize ? "auto !important" : undefined}
-      src={src}
+      {...imageProps}
     />
   )
 }

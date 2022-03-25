@@ -1,13 +1,15 @@
 import React, { FC } from "react"
 import { graphql } from "gatsby"
 import Hero from "./Hero"
+import StakerRole from "./UserRoles/StakerRole"
 
 const SplashPageTemplate: FC<any> = ({ data }) => {
-  const { hero } = data.markdownRemark.frontmatter
+  const { hero, stakerRole } = data.markdownRemark.frontmatter
+
   return (
     <>
-      <Hero title={hero.title} body={hero.body} ctaButtons={hero.ctaButtons} />
-      {/*<StakerRole />*/}
+      <Hero {...hero} />
+      <StakerRole {...stakerRole} />
       {/*<LiquidityProviderRole />*/}
       {/*<BtcRole />*/}
       {/*<TokenHolderRole />*/}
@@ -32,6 +34,38 @@ export const query = graphql`
           ctaButtons {
             label
             url
+          }
+        }
+        stakerRole {
+          title
+          description
+          image {
+            id
+            absolutePath
+            internal {
+              mediaType
+            }
+            svg {
+              name
+              attributes {
+                key
+                value
+              }
+              children {
+                name
+                type
+                value
+                attributes {
+                  key
+                  value
+                }
+              }
+            }
+          }
+          buttons {
+            label
+            url
+            variant
           }
         }
       }
