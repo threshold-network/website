@@ -143,7 +143,7 @@ export const query = graphql`
             icon {
               image {
                 id
-                absolutePath
+                relativePath
                 internal {
                   mediaType
                 }

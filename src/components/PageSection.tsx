@@ -43,12 +43,9 @@ export const SectionImage: FC<ImageProps> = (imageProps) => {
   const mdSize = useChakraBreakpoint("md")
 
   return (
-    <Image
-      maxW="350px"
-      maxH="250px"
-      mx={mdSize ? "auto !important" : undefined}
-      {...imageProps}
-    />
+    <Box maxW="415px" maxH="300px" mx={mdSize ? "auto !important" : undefined}>
+      <Image {...imageProps} />
+    </Box>
   )
 }
 

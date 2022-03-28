@@ -12,7 +12,8 @@ hero:
       url: https://discord.gg/VafbhzJ3vW
 stakerRole:
   title: Threshold Staking
-  description: Stakers escrow T tokens to run a node on the Threshold Network and
+  description:
+    Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards.
   image: /images/staking-threshold.png
   buttons:
@@ -22,4 +23,44 @@ stakerRole:
     - variant: INTERNAL_OUTLINE
       label: Learn More
       url: /earn/staker
+  rowReverse: false
+  bgColor: "#141414"
+lpRole:
+  title: Provide Liquidity
+  description: Liquidity providers earn yields by depositing assets into liquidity pools.
+  image: /images/liquidity.png
+  buttons:
+    - label: Learn More
+      url: /earn/liquidity-provider
+      variant: INTERNAL_SOLID
+  rowReverse: true
+  bgColor: "#858585"
+btcRole:
+  title: Bridge BTC to Ethereum
+  description: tBTC is Threshold’s decentralized bridge to bring BTC to the
+    Ethereum network.
+  image: /images/tbtc.png
+  buttons:
+    - label: Mint tBTC
+      url: NEED_URL
+      variant: EXTERNAL_SOLID
+    - label: Learn More
+      url: /earn/btc
+      variant: INTERNAL_OUTLINE
+  rowReverse: false
+  bgColor: "#333333"
+tokenHolderRole:
+  title: Token Holder DAO
+  description: Make the most of your T tokens on the Threshold Network by
+    participating in DAO governance.
+  image: /images/token-holder.png
+  buttons:
+    - label: Governance Forum
+      url: NEED_URL
+      variant: EXTERNAL_SOLID
+    - label: Learn More
+      url: /earn/token-holder
+      variant: INTERNAL_OUTLINE
+  rowReverse: true
+  bgColor: "#141414"
 ---

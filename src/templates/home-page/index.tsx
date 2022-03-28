@@ -2,17 +2,24 @@ import React, { FC } from "react"
 import { graphql } from "gatsby"
 import Hero from "./Hero"
 import StakerRole from "./UserRoles/StakerRole"
+import LiquidityProviderRole from "./UserRoles/LiquidityProviderRole"
+import BtcRole from "./UserRoles/BtcRole"
+import TokenHolderRole from "./UserRoles/TokenHolderRole"
 
 const SplashPageTemplate: FC<any> = ({ data }) => {
-  const { hero, stakerRole } = data.markdownRemark.frontmatter
+  const { hero, stakerRole, lpRole, btcRole, tokenHolderRole } =
+    data.markdownRemark.frontmatter
 
   return (
     <>
       <Hero {...hero} />
-      <StakerRole {...stakerRole} />
-      {/*<LiquidityProviderRole />*/}
-      {/*<BtcRole />*/}
-      {/*<TokenHolderRole />*/}
+      <StakerRole {...stakerRole} footerButtons={stakerRole.buttons} />
+      <LiquidityProviderRole {...lpRole} footerButtons={lpRole.buttons} />
+      <BtcRole {...btcRole} footerButtons={btcRole.buttons} />
+      <TokenHolderRole
+        {...tokenHolderRole}
+        footerButtons={tokenHolderRole.buttons}
+      />
       {/*<TakeTheQuiz />*/}
       {/*<MigrationInfoSection />*/}
       {/*<HarnessThePower />*/}
@@ -37,29 +44,81 @@ export const query = graphql`
           }
         }
         stakerRole {
+          rowReverse
+          bgColor
           title
           description
           image {
             id
-            absolutePath
+            relativePath
             internal {
               mediaType
             }
-            svg {
-              name
-              attributes {
-                key
-                value
-              }
-              children {
-                name
-                type
-                value
-                attributes {
-                  key
-                  value
-                }
-              }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
+            label
+            url
+            variant
+          }
+        }
+        lpRole {
+          rowReverse
+          bgColor
+          title
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
+            label
+            url
+            variant
+          }
+        }
+        btcRole {
+          rowReverse
+          bgColor
+          title
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
+            label
+            url
+            variant
+          }
+        }
+        tokenHolderRole {
+          rowReverse
+          bgColor
+          title
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
             }
           }
           buttons {

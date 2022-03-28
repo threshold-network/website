@@ -1,27 +1,22 @@
 import React, { FC } from "react"
-import RoleTemplate, { FooterButton } from "./RoleTemplate"
-import { ImageProps } from "../../../components"
+import RoleTemplate, { RoleTemplateProps } from "./RoleTemplate"
 
-interface StakerRoleProps {
-  title: string
-  description: string
-  image: ImageProps
-  buttons: FooterButton[]
-}
-
-const StakerRole: FC<StakerRoleProps> = ({
+const StakerRole: FC<RoleTemplateProps> = ({
   title,
   description,
   image,
-  buttons,
+  footerButtons,
+  rowReverse,
+  bgColor,
 }) => {
   return (
     <RoleTemplate
-      bgColor="gray.900"
+      bgColor={bgColor}
       title={title}
       description={description}
-      footerButtons={buttons}
+      footerButtons={footerButtons}
       image={image}
+      rowReverse={rowReverse}
     />
   )
 }

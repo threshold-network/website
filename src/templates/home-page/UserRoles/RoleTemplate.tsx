@@ -1,12 +1,10 @@
 import React, { FC } from "react"
-import { Box, BoxProps, ButtonProps, Stack } from "@chakra-ui/react"
-import { Link } from "gatsby"
+import { BoxProps, Stack } from "@chakra-ui/react"
 import {
-  CmsButtonLink,
   ButtonType,
+  CmsButtonLink,
 } from "../../../components/Buttons/CmsButtonLink"
 import { H2, H5, LabelMd } from "../../../components/Typography"
-import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import {
   PageSection,
   ResponsiveStack,
@@ -14,7 +12,6 @@ import {
   SectionTextContainer,
 } from "../../../components/PageSection"
 import { ImageProps } from "../../../components"
-import { ExternalLinkHref } from "../../../components/Navbar/types"
 
 export interface FooterButton {
   label: string
@@ -22,7 +19,7 @@ export interface FooterButton {
   variant: string
 }
 
-interface Props extends BoxProps {
+export interface RoleTemplateProps extends BoxProps {
   bgColor: string
   title: string
   description: string
@@ -31,10 +28,10 @@ interface Props extends BoxProps {
   rowReverse?: boolean
 }
 
-const RoleTemplate: FC<Props> = ({
+const RoleTemplate: FC<RoleTemplateProps> = ({
   title,
   description,
-  footerButtons,
+  footerButtons = [],
   image,
   rowReverse,
   ...boxProps
@@ -49,34 +46,15 @@ const RoleTemplate: FC<Props> = ({
           <H2 mt={3}>{title}</H2>
           <H5 mt={10}>{description}</H5>
           <Stack mt={10} direction={{ base: "column", md: "row" }} spacing={8}>
-            {footerButtons.map((_: FooterButton, i) => {
-              return (
-                <CmsButtonLink
-                  key={_.label}
-                  cmsVariant={_.variant as ButtonType}
-                  url={_.url}
-                >
-                  {_.label}
-                </CmsButtonLink>
-              )
-              // if (i === 0) {
-              //   return (
-              //     <ExternalButtonLink
-              //       key={_.label}
-              //       href={_.url as ExternalLinkHref}
-              //       variant={_.variant}
-              //     >
-              //       {_.label}
-              //     </ExternalButtonLink>
-              //   )
-              // }
-              //
-              // return (
-              //   <CmsButtonLink key={_.label} to={_.url} as={Link} variant={_.variant}>
-              //     {_.label}
-              //   </CmsButtonLink>
-              // )
-            })}
+            {footerButtons.map((_: FooterButton, i) => (
+              <CmsButtonLink
+                key={_.label}
+                cmsVariant={_.variant as ButtonType}
+                url={_.url}
+              >
+                {_.label}
+              </CmsButtonLink>
+            ))}
           </Stack>
         </SectionTextContainer>
         <SectionImage {...image} />
