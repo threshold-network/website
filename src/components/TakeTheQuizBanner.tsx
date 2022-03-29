@@ -48,9 +48,10 @@ const query = graphql`
     allMarkdownRemark(
       filter: { frontmatter: { template: { eq: "takeTheQuizBanner" } } }
     ) {
-      edges {
-        node {
-          id
+      nodes {
+        frontmatter {
+          buttonText
+          description
         }
       }
     }
@@ -61,8 +62,9 @@ const TakeTheQuizBanner: FC<
   Omit<TakeTheQuizBannerProps, "description" | "buttonText"> & BoxProps
 > = (props) => {
   const data = useStaticQuery(query)
-  // const body = data.allMarkdownRemark.edges[0].node.html
+  const body = data.allMarkdownRemark.nodes
   console.log("CANNOT FIGURE THIS OUT", data)
+  console.log("body", body)
   return (
     // @ts-ignore
     <TakeTheQuizBannerTemplate description="boo" buttonText="haha" {...props} />

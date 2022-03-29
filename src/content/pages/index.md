@@ -61,7 +61,7 @@ tokenHolderRole:
       url: /earn/token-holder
       variant: INTERNAL_OUTLINE
   rowReverse: true
-  bgColor: "#141414"
+  bgColor: "#3c3c3c"
 migrationInfo:
   title: Do you own KEEP or NU?
   description: Keep and NuCypher merged to form the Threshold Network. Migrate

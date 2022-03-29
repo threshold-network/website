@@ -4,4 +4,4 @@ description: There’s a role for everyone. Take this brief quiz and see which
 buttonText: Take the quiz
 ---
 
-template: take-the-quiz-banner
+template: takeTheQuizBanner
