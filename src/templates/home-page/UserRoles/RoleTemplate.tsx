@@ -23,7 +23,7 @@ export interface RoleTemplateProps extends BoxProps {
   bgColor: string
   title: string
   description: string
-  footerButtons: FooterButton[]
+  buttons: FooterButton[]
   image: ImageProps
   rowReverse?: boolean
 }
@@ -31,7 +31,7 @@ export interface RoleTemplateProps extends BoxProps {
 const RoleTemplate: FC<RoleTemplateProps> = ({
   title,
   description,
-  footerButtons = [],
+  buttons = [],
   image,
   rowReverse,
   ...boxProps
@@ -46,7 +46,7 @@ const RoleTemplate: FC<RoleTemplateProps> = ({
           <H2 mt={3}>{title}</H2>
           <H5 mt={10}>{description}</H5>
           <Stack mt={10} direction={{ base: "column", md: "row" }} spacing={8}>
-            {footerButtons.map((_: FooterButton, i) => (
+            {buttons.map((_: FooterButton, i) => (
               <CmsButtonLink
                 key={_.label}
                 cmsVariant={_.variant as ButtonType}

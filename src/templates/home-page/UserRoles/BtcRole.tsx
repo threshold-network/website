@@ -7,7 +7,7 @@ const BtcRole: FC<RoleTemplateProps> = ({
   title,
   description,
   image,
-  footerButtons,
+  buttons,
   rowReverse,
   bgColor,
 }) => {
@@ -16,7 +16,7 @@ const BtcRole: FC<RoleTemplateProps> = ({
       bgColor={bgColor}
       title={title}
       description={description}
-      footerButtons={footerButtons}
+      buttons={buttons}
       image={image}
       rowReverse={rowReverse}
     />

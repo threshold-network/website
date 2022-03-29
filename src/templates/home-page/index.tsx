@@ -7,26 +7,27 @@ import BtcRole from "./UserRoles/BtcRole"
 import TokenHolderRole from "./UserRoles/TokenHolderRole"
 import RoleTemplate from "./UserRoles/RoleTemplate"
 import TakeTheQuiz from "./UserRoles/TakeTheQuiz"
+import MigrationInfoSection from "./MigrationInfoSection"
 
 const SplashPageTemplate: FC<any> = ({ data }) => {
-  const { hero, stakerRole, lpRole, btcRole, tokenHolderRole } =
+  const { hero, stakerRole, lpRole, btcRole, tokenHolderRole, migrationInfo } =
     data.markdownRemark.frontmatter
 
   return (
     <>
       <Hero {...hero} />
 
-      <StakerRole {...stakerRole} footerButtons={stakerRole.buttons} />
-      <LiquidityProviderRole {...lpRole} footerButtons={lpRole.buttons} />
-      <BtcRole {...btcRole} footerButtons={btcRole.buttons} />
-      <TokenHolderRole
-        {...tokenHolderRole}
-        footerButtons={tokenHolderRole.buttons}
+      <StakerRole {...stakerRole} />
+      <LiquidityProviderRole {...lpRole} />
+      <BtcRole {...btcRole} />
+      <TokenHolderRole {...tokenHolderRole} />
+
+      <TakeTheQuiz
+        topBgColor={tokenHolderRole.bgColor}
+        bottomBgColor={migrationInfo.bgColor}
       />
 
-      <TakeTheQuiz topBgColor={tokenHolderRole.bgColor} />
-
-      {/*<MigrationInfoSection />*/}
+      <MigrationInfoSection {...migrationInfo} />
       {/*<HarnessThePower />*/}
       {/*<ActiveCommunitySection />*/}
       {/*<CurrentProposals />*/}
@@ -112,6 +113,27 @@ export const query = graphql`
           }
         }
         tokenHolderRole {
+          rowReverse
+          bgColor
+          title
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
+            label
+            url
+            variant
+          }
+        }
+        migrationInfo {
           rowReverse
           bgColor
           title

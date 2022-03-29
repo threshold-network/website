@@ -5,7 +5,7 @@ const StakerRole: FC<RoleTemplateProps> = ({
   title,
   description,
   image,
-  footerButtons,
+  buttons,
   rowReverse,
   bgColor,
 }) => {
@@ -14,7 +14,7 @@ const StakerRole: FC<RoleTemplateProps> = ({
       bgColor={bgColor}
       title={title}
       description={description}
-      footerButtons={footerButtons}
+      buttons={buttons}
       image={image}
       rowReverse={rowReverse}
     />
