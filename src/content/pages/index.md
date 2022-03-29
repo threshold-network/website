@@ -73,6 +73,29 @@ migrationInfo:
       variant: EXTERNAL_OUTLINE
   bgColor: "#141414"
   rowReverse: false
+harnessThePower:
+  title: Harness the power of Threshold
+  description: Threshold leverages threshold cryptography to protect digital
+    assets by distributing operations across independent parties, requiring some
+    threshold number of them (t-of-n) to cooperate.
+  buttons:
+    - label: About Threshold
+      url: /about
+      variant: INTERNAL_SOLID
+  subitems:
+    - title: Decentralized
+      description: Threshold utilizes a network of independent nodes to provide
+        threshold cryptographic services without a central authority.
+      image: /images/decentralized-icon.png
+    - title: Secure
+      description: Splitting cryptographic operations across nodes increases security
+        and availability and reduces trust assumptions. Threshold is
+        [audited](/audits) by the best firms in the space.
+      image: /images/secure-icon.png
+    - title: Private
+      description: Cryptographic protocols eradicate the trust burden forced on
+        end-users and ensure privacy on the public blockchain.
+      image: /images/private-icon.png
 hardnessThePower:
   description: Threshold leverages threshold cryptography to protect digital
     assets by distributing operations across independent parties, requiring some

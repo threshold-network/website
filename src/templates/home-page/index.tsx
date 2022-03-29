@@ -23,19 +23,16 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
 
   return (
     <>
-      {/*<Hero {...hero} />*/}
-
-      {/*<StakerRole {...stakerRole} />*/}
-      {/*<LiquidityProviderRole {...lpRole} />*/}
-      {/*<BtcRole {...btcRole} />*/}
-      {/*<TokenHolderRole {...tokenHolderRole} />*/}
-
-      {/*<TakeTheQuiz*/}
-      {/*  topBgColor={tokenHolderRole.bgColor}*/}
-      {/*  bottomBgColor={migrationInfo.bgColor}*/}
-      {/*/>*/}
-
-      {/*<MigrationInfoSection {...migrationInfo} />*/}
+      <Hero {...hero} />
+      <StakerRole {...stakerRole} />
+      <LiquidityProviderRole {...lpRole} />
+      <BtcRole {...btcRole} />
+      <TokenHolderRole {...tokenHolderRole} />
+      <TakeTheQuiz
+        topBgColor={tokenHolderRole.bgColor}
+        bottomBgColor={migrationInfo.bgColor}
+      />
+      <MigrationInfoSection {...migrationInfo} />
       <HarnessThePower {...harnessThePower} />
       {/*<ActiveCommunitySection />*/}
       {/*<CurrentProposals />*/}
