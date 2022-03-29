@@ -6,7 +6,7 @@ import { ImageProps } from "./Image"
 
 export const PageSection: FC<BoxProps> = ({ children, ...props }) => {
   return (
-    <Box py={{ base: 20, md: 40 }} {...props}>
+    <Box py={{ base: 20, md: 40 }} as="section" {...props}>
       <Container
         maxW={{
           base: "640px", // includues 16px padding on each side
