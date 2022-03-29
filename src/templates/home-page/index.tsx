@@ -1,15 +1,10 @@
 import React, { FC } from "react"
 import { graphql } from "gatsby"
 import Hero from "./Hero"
-import StakerRole from "./StakerRole"
-import LiquidityProviderRole from "./LiquidityProviderRole"
-import BtcRole from "./BtcRole"
-import TokenHolderRole from "./TokenHolderRole"
 import SectionTemplate from "./SectionTemplate"
 import TakeTheQuiz from "./TakeTheQuiz"
 import MigrationInfoSection from "./MigrationInfoSection"
 import HarnessThePower from "./HarnessThePower"
-import ActiveCommunitySection from "./ActiveCommunity"
 import CurrentProposals from "./CurrentProposals"
 import JoinTheCommunity from "./JoinTheCommunity"
 
@@ -26,22 +21,20 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
     joinTheCommunity,
   } = data.markdownRemark.frontmatter
 
-  console.log(data)
-
   return (
     <>
       <Hero {...hero} />
-      <StakerRole {...stakerRole} />
-      <LiquidityProviderRole {...lpRole} />
-      <BtcRole {...btcRole} />
-      <TokenHolderRole {...tokenHolderRole} />
+      <SectionTemplate {...stakerRole} />
+      <SectionTemplate {...lpRole} />
+      <SectionTemplate {...btcRole} />
+      <SectionTemplate {...tokenHolderRole} />
       <TakeTheQuiz
         topBgColor={tokenHolderRole.bgColor}
         bottomBgColor={migrationInfo.bgColor}
       />
       <MigrationInfoSection {...migrationInfo} />
       <HarnessThePower {...harnessThePower} />
-      <ActiveCommunitySection {...activeCommunity} />
+      <SectionTemplate {...activeCommunity} />
       <CurrentProposals />
       <JoinTheCommunity {...joinTheCommunity} />
     </>

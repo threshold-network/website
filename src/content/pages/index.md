@@ -12,7 +12,8 @@ hero:
       url: https://discord.gg/VafbhzJ3vW
 stakerRole:
   title: Threshold Staking
-  description: Stakers escrow T tokens to run a node on the Threshold Network and
+  description:
+    Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards.
   image: /images/staking-threshold.png
   buttons:
@@ -88,7 +89,8 @@ harnessThePower:
         threshold cryptographic services without a central authority.
       image: /images/decentralized-icon.png
     - title: Secure
-      description: Splitting cryptographic operations across nodes increases security
+      description:
+        Splitting cryptographic operations across nodes increases security
         and availability and reduces trust assumptions. Threshold is
         [audited](/audits) by the best firms in the space.
       image: /images/secure-icon.png
@@ -112,7 +114,8 @@ joinTheCommunity:
   left:
     - label: Get involved
       title: Become a part of our community
-      description: Join our Discord server and our Telegram to get involved and stay
+      description:
+        Join our Discord server and our Telegram to get involved and stay
         up to date.
       buttons:
         - label: Discord
@@ -132,7 +135,8 @@ joinTheCommunity:
   right:
     - label: For Developers
       title: Learn more about the network
-      description: Learn more about the Threshold network by reading the documentation
+      description:
+        Learn more about the Threshold network by reading the documentation
         or visiting Github.
       buttons:
         - label: Github
