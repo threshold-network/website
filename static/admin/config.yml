@@ -388,6 +388,28 @@ collections:
   - name: "components"
     label: "Components"
     files:
+      - file: "src/content/components/take-the-quiz-banner.md"
+        label: "Take the quiz banner"
+        name: "takeTheQuizBanner"
+        fields:
+          - {
+              label: "Template Key",
+              name: "template",
+              widget: "hidden",
+              default: "take-the-quiz-banner",
+            }
+          - {
+              label: "Description",
+              name: "description",
+              widget: "string",
+              required: true,
+            }
+          - {
+              label: "Button Text",
+              name: "buttonText",
+              widget: "string",
+              required: true,
+            }
       - file: "src/content/components/announcement-banner.md"
         label: "Announcement Banner"
         name: "announcement"

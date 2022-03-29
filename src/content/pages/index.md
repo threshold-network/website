@@ -12,8 +12,7 @@ hero:
       url: https://discord.gg/VafbhzJ3vW
 stakerRole:
   title: Threshold Staking
-  description:
-    Stakers escrow T tokens to run a node on the Threshold Network and
+  description: Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards.
   image: /images/staking-threshold.png
   buttons:
@@ -23,7 +22,7 @@ stakerRole:
     - variant: INTERNAL_OUTLINE
       label: Learn More
       url: /earn/staker
-  rowReverse: false
+  rowReverse: true
   bgColor: "#141414"
 lpRole:
   title: Provide Liquidity

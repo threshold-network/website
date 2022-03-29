@@ -5,6 +5,8 @@ import StakerRole from "./UserRoles/StakerRole"
 import LiquidityProviderRole from "./UserRoles/LiquidityProviderRole"
 import BtcRole from "./UserRoles/BtcRole"
 import TokenHolderRole from "./UserRoles/TokenHolderRole"
+import RoleTemplate from "./UserRoles/RoleTemplate"
+import TakeTheQuiz from "./UserRoles/TakeTheQuiz"
 
 const SplashPageTemplate: FC<any> = ({ data }) => {
   const { hero, stakerRole, lpRole, btcRole, tokenHolderRole } =
@@ -13,6 +15,7 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
   return (
     <>
       <Hero {...hero} />
+
       <StakerRole {...stakerRole} footerButtons={stakerRole.buttons} />
       <LiquidityProviderRole {...lpRole} footerButtons={lpRole.buttons} />
       <BtcRole {...btcRole} footerButtons={btcRole.buttons} />
@@ -20,7 +23,9 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
         {...tokenHolderRole}
         footerButtons={tokenHolderRole.buttons}
       />
-      {/*<TakeTheQuiz />*/}
+
+      <TakeTheQuiz topBgColor={tokenHolderRole.bgColor} />
+
       {/*<MigrationInfoSection />*/}
       {/*<HarnessThePower />*/}
       {/*<ActiveCommunitySection />*/}
