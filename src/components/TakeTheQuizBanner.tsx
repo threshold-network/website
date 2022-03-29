@@ -62,12 +62,16 @@ const TakeTheQuizBanner: FC<
   Omit<TakeTheQuizBannerProps, "description" | "buttonText"> & BoxProps
 > = (props) => {
   const data = useStaticQuery(query)
-  const body = data.allMarkdownRemark.nodes
-  console.log("CANNOT FIGURE THIS OUT", data)
-  console.log("body", body)
+
+  const { buttonText, description } =
+    data.allMarkdownRemark.nodes[0].frontmatter
+
   return (
-    // @ts-ignore
-    <TakeTheQuizBannerTemplate description="boo" buttonText="haha" {...props} />
+    <TakeTheQuizBannerTemplate
+      description={description}
+      buttonText={buttonText}
+      {...props}
+    />
   )
 }
 
