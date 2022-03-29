@@ -31,6 +31,7 @@ collections:
           - label: "Hero"
             name: "hero"
             widget: "object"
+            collapsed: true
             fields:
               - {
                   label: "Title",
@@ -59,6 +60,7 @@ collections:
           - label: "Staker Role"
             name: "stakerRole"
             widget: "object"
+            collapsed: true
             fields:
               - {
                   label: "Row Reverse",
@@ -142,6 +144,7 @@ collections:
           - label: "Liquidity Provider Role"
             name: "lpRole"
             widget: "object"
+            collapsed: true
             fields:
               - {
                   label: "Row Reverse",
@@ -224,6 +227,7 @@ collections:
           - label: "Bitcoin User Role"
             name: "btcRole"
             widget: "object"
+            collapsed: true
             fields:
               - {
                   label: "Row Reverse",
@@ -306,6 +310,7 @@ collections:
           - label: "Token Holder Role"
             name: "tokenHolderRole"
             widget: "object"
+            collapsed: true
             fields:
               - {
                   label: "Row Reverse",
@@ -388,6 +393,7 @@ collections:
           - label: "Migration Info"
             name: "migrationInfo"
             widget: "object"
+            collapsed: true
             fields:
               - {
                   label: "Row Reverse",
@@ -467,6 +473,83 @@ collections:
                       },
                     ],
                 }
+          - label: "Harness The Power Section"
+            name: "harnessThePower"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  minimal: true,
+                }
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "markdown",
+                  required: false,
+                }
+              - {
+                  label: "Buttons",
+                  name: "buttons",
+                  widget: "list",
+                  allow_add: true,
+                  required: false,
+                  fields:
+                    [
+                      { label: Label, name: label, widget: string },
+                      { label: URL, name: url, widget: string },
+                      {
+                        label: Variant,
+                        name: variant,
+                        widget: select,
+                        required: true,
+                        options:
+                          [
+                            {
+                              label: "External Solid",
+                              value: "EXTERNAL_SOLID",
+                            },
+                            {
+                              label: "Internal Solid",
+                              value: "INTERNAL_SOLID",
+                            },
+                            {
+                              label: "External Outline",
+                              value: "EXTERNAL_OUTLINE",
+                            },
+                            {
+                              label: "Internal Outline",
+                              value: "INTERNAL_OUTLINE",
+                            },
+                          ],
+                      },
+                    ],
+                }
+              - {
+                  label: "Sub Items",
+                  name: "subitems",
+                  widget: "list",
+                  hint: "Do not add more than 3",
+                  allow_add: true,
+                  fields:
+                    [
+                      { label: "Title", name: "title", widget: "string" },
+                      {
+                        label: "Description",
+                        name: "description",
+                        widget: "markdown",
+                      },
+                      {
+                        label: "Image",
+                        name: "image",
+                        widget: file,
+                        media_library: { config: { multiple: false } },
+                      },
+                    ],
+                }
+
   - name: "components"
     label: "Components"
     files:

@@ -1,7 +1,13 @@
 import { FC } from "react"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import { withPrefix } from "gatsby"
-import { Box, Icon, IconProps, Image as ChakraImage } from "@chakra-ui/react"
+import {
+  Box,
+  chakra,
+  Icon,
+  IconProps,
+  Image as ChakraImage,
+} from "@chakra-ui/react"
 import { createIcon } from "@chakra-ui/react"
 
 interface SVGAttributes {
@@ -57,22 +63,32 @@ const buildIcon = (id: string, svg: SVG) => {
   return iconCache[id]
 }
 
+const ChakraGatsbyImage = chakra(GatsbyImage)
+
 // @ts-ignore
-export const Image: FC<ImageProps & IconProps> = ({
+export const Image: FC<ImageProps & IconProps & { childImageSharp: any }> = ({
   id,
   relativePath,
   internal,
   svg,
   gatsbyImageData,
   alt,
+  childImageSharp,
   ...restProps
 }) => {
   if (internal.mediaType === "image/svg+xml" && svg) {
     const IconComponent = buildIcon(id, svg)
     return <IconComponent {...restProps} />
   } else if (gatsbyImageData) {
-    return <GatsbyImage image={gatsbyImageData!} alt={alt} />
+    return <ChakraGatsbyImage image={gatsbyImageData!} alt={alt} />
   }
 
-  return <ChakraImage src={withPrefix(`/images/${relativePath}`)} alt={alt} />
+  return (
+    <ChakraImage
+      src={withPrefix(`/images/${relativePath}`)}
+      // @ts-ignore
+      alt={alt}
+      {...(restProps as ImageProps)}
+    />
+  )
 }

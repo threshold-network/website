@@ -22,8 +22,8 @@ stakerRole:
     - variant: INTERNAL_OUTLINE
       label: Learn More
       url: /earn/staker
-  rowReverse: true
-  bgColor: "#141414"
+  rowReverse: false
+  bgColor: "#858585"
 lpRole:
   title: Provide Liquidity
   description: Liquidity providers earn yields by depositing assets into liquidity pools.
@@ -73,4 +73,28 @@ migrationInfo:
       variant: EXTERNAL_OUTLINE
   bgColor: "#141414"
   rowReverse: false
+hardnessThePower:
+  description: Threshold leverages threshold cryptography to protect digital
+    assets by distributing operations across independent parties, requiring some
+    threshold number of them (t-of-n) to cooperate.
+  title: Harness the power of Threshold
+  buttons:
+    - label: About Threshold
+      url: /about
+      variant: INTERNAL_SOLID
+  subitems:
+    - title: Decentralized
+      description: Threshold utilizes a network of independent nodes to provide
+        threshold cryptographic services without a central authority.
+      image: /images/decentralized-icon.png
+    - title: Secure
+      description: Splitting cryptographic operations across nodes increases security
+        and availability and reduces trust assumptions. Threshold is
+        [audited](https://threshold.network/audits) by the best firms in the
+        space.
+      image: /images/secure-icon.png
+    - title: Private
+      description: Cryptographic protocols eradicate the trust burden forced on
+        end-users and ensure privacy on the public blockchain.
+      image: /images/private-icon.png
 ---

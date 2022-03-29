@@ -8,27 +8,35 @@ import TokenHolderRole from "./UserRoles/TokenHolderRole"
 import RoleTemplate from "./UserRoles/RoleTemplate"
 import TakeTheQuiz from "./UserRoles/TakeTheQuiz"
 import MigrationInfoSection from "./MigrationInfoSection"
+import HarnessThePower from "./HarnessThePower"
 
 const SplashPageTemplate: FC<any> = ({ data }) => {
-  const { hero, stakerRole, lpRole, btcRole, tokenHolderRole, migrationInfo } =
-    data.markdownRemark.frontmatter
+  const {
+    hero,
+    stakerRole,
+    lpRole,
+    btcRole,
+    tokenHolderRole,
+    migrationInfo,
+    harnessThePower,
+  } = data.markdownRemark.frontmatter
 
   return (
     <>
-      <Hero {...hero} />
+      {/*<Hero {...hero} />*/}
 
-      <StakerRole {...stakerRole} />
-      <LiquidityProviderRole {...lpRole} />
-      <BtcRole {...btcRole} />
-      <TokenHolderRole {...tokenHolderRole} />
+      {/*<StakerRole {...stakerRole} />*/}
+      {/*<LiquidityProviderRole {...lpRole} />*/}
+      {/*<BtcRole {...btcRole} />*/}
+      {/*<TokenHolderRole {...tokenHolderRole} />*/}
 
-      <TakeTheQuiz
-        topBgColor={tokenHolderRole.bgColor}
-        bottomBgColor={migrationInfo.bgColor}
-      />
+      {/*<TakeTheQuiz*/}
+      {/*  topBgColor={tokenHolderRole.bgColor}*/}
+      {/*  bottomBgColor={migrationInfo.bgColor}*/}
+      {/*/>*/}
 
-      <MigrationInfoSection {...migrationInfo} />
-      {/*<HarnessThePower />*/}
+      {/*<MigrationInfoSection {...migrationInfo} />*/}
+      <HarnessThePower {...harnessThePower} />
       {/*<ActiveCommunitySection />*/}
       {/*<CurrentProposals />*/}
       {/*<JoinTheCommunity />*/}
@@ -148,6 +156,29 @@ export const query = graphql`
               gatsbyImageData(width: 200)
             }
           }
+          buttons {
+            label
+            url
+            variant
+          }
+        }
+        harnessThePower {
+          title
+          subitems {
+            description
+            title
+            image {
+              id
+              relativePath
+              internal {
+                mediaType
+              }
+              childImageSharp {
+                gatsbyImageData(width: 200)
+              }
+            }
+          }
+          description
           buttons {
             label
             url
