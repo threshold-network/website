@@ -12,8 +12,7 @@ hero:
       url: https://discord.gg/VafbhzJ3vW
 stakerRole:
   title: Threshold Staking
-  description:
-    Stakers escrow T tokens to run a node on the Threshold Network and
+  description: Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards.
   image: /images/staking-threshold.png
   buttons:
@@ -89,8 +88,7 @@ harnessThePower:
         threshold cryptographic services without a central authority.
       image: /images/decentralized-icon.png
     - title: Secure
-      description:
-        Splitting cryptographic operations across nodes increases security
+      description: Splitting cryptographic operations across nodes increases security
         and availability and reduces trust assumptions. Threshold is
         [audited](/audits) by the best firms in the space.
       image: /images/secure-icon.png
@@ -98,29 +96,50 @@ harnessThePower:
       description: Cryptographic protocols eradicate the trust burden forced on
         end-users and ensure privacy on the public blockchain.
       image: /images/private-icon.png
-hardnessThePower:
-  description: Threshold leverages threshold cryptography to protect digital
-    assets by distributing operations across independent parties, requiring some
-    threshold number of them (t-of-n) to cooperate.
-  title: Harness the power of Threshold
+activeCommunity:
+  title: Threshold is run by an  active community.
+  bgColor: "#141414"
+  description: The Threshold DAO is a decentralized community of T token holders
+    and their delegates who collectively vote to decide what's next for the
+    network.
+  image: /images/governance.png
   buttons:
-    - label: About Threshold
-      url: /about
+    - label: About Governance
+      url: /governance
       variant: INTERNAL_SOLID
-  subitems:
-    - title: Decentralized
-      description: Threshold utilizes a network of independent nodes to provide
-        threshold cryptographic services without a central authority.
-      image: /images/decentralized-icon.png
-    - title: Secure
-      description:
-        Splitting cryptographic operations across nodes increases security
-        and availability and reduces trust assumptions. Threshold is
-        [audited](https://threshold.network/audits) by the best firms in the
-        space.
-      image: /images/secure-icon.png
-    - title: Private
-      description: Cryptographic protocols eradicate the trust burden forced on
-        end-users and ensure privacy on the public blockchain.
-      image: /images/private-icon.png
+  rowReverse: false
+joinTheCommunity:
+  left:
+    - label: Get involved
+      title: Become a part of our community
+      description: Join our Discord server and our Telegram to get involved and stay
+        up to date.
+      buttons:
+        - label: Discord
+          url: https://discord.gg/VafbhzJ3vW
+          image: /images/discord.svg
+          variant: EXTERNAL_OUTLINE
+          icon:
+            image: /images/discord.svg
+            alt: discord
+        - label: Telegram
+          url: NEED_URL
+          image: /images/telegram.svg
+          variant: EXTERNAL_OUTLINE
+          icon:
+            image: /images/telegram.svg
+            alt: telegram
+  right:
+    - label: For Developers
+      title: Learn more about the network
+      description: Learn more about the Threshold network by reading the documentation
+        or visiting Github.
+      buttons:
+        - label: Github
+          url: https://github.com/threshold-network
+          image: /images/github.svg
+          variant: EXTERNAL_OUTLINE
+          icon:
+            image: /images/github.svg
+            alt: github
 ---

@@ -1,7 +1,7 @@
 import React, { FC } from "react"
-import { ExternalLinkHref } from "../../../components/Navbar/types"
-import RoleTemplate, { RoleTemplateProps } from "./RoleTemplate"
-import btcRole from "../../../static/images/btc-role.png"
+import { ExternalLinkHref } from "../../components/Navbar/types"
+import SectionTemplate, { RoleTemplateProps } from "./SectionTemplate"
+import btcRole from "../../static/images/btc-role.png"
 
 const TokenHolderRole: FC<RoleTemplateProps> = ({
   title,
@@ -12,7 +12,7 @@ const TokenHolderRole: FC<RoleTemplateProps> = ({
   bgColor,
 }) => {
   return (
-    <RoleTemplate
+    <SectionTemplate
       bgColor={bgColor}
       title={title}
       description={description}

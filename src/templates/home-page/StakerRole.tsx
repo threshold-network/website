@@ -1,7 +1,7 @@
 import React, { FC } from "react"
-import RoleTemplate, { RoleTemplateProps } from "./RoleTemplate"
+import SectionTemplate, { RoleTemplateProps } from "./SectionTemplate"
 
-const LiquidityProviderRole: FC<RoleTemplateProps> = ({
+const StakerRole: FC<RoleTemplateProps> = ({
   title,
   description,
   image,
@@ -10,7 +10,7 @@ const LiquidityProviderRole: FC<RoleTemplateProps> = ({
   bgColor,
 }) => {
   return (
-    <RoleTemplate
+    <SectionTemplate
       bgColor={bgColor}
       title={title}
       description={description}
@@ -21,4 +21,4 @@ const LiquidityProviderRole: FC<RoleTemplateProps> = ({
   )
 }
 
-export default LiquidityProviderRole
+export default StakerRole

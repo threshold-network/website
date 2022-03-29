@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { Box } from "@chakra-ui/react"
-import TakeTheQuizBanner from "../../../components/TakeTheQuizBanner"
+import TakeTheQuizBanner from "../../components/TakeTheQuizBanner"
 
 const TakeTheQuiz: FC<{ topBgColor: string; bottomBgColor: string }> = ({
   topBgColor,

@@ -10,10 +10,10 @@ import {
   SectionTextContainer,
 } from "../../components/PageSection"
 import keepNuIllustration from "../../static/images/Keep-Nu-illustration.png"
-import RoleTemplate, {
+import SectionTemplate, {
   FooterButton,
   RoleTemplateProps,
-} from "./UserRoles/RoleTemplate"
+} from "./SectionTemplate"
 import {
   ButtonType,
   CmsButtonLink,

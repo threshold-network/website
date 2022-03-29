@@ -66,7 +66,7 @@ const buildIcon = (id: string, svg: SVG) => {
 const ChakraGatsbyImage = chakra(GatsbyImage)
 
 // @ts-ignore
-export const Image: FC<ImageProps & IconProps & { childImageSharp: any }> = ({
+export const Image: FC<ImageProps & IconProps & { childImageSharp?: any }> = ({
   id,
   relativePath,
   internal,

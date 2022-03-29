@@ -1,21 +1,41 @@
 import React, { FC } from "react"
-import {
-  PageSection,
-  ResponsiveStack,
-  SectionTextContainer,
-} from "../../components/PageSection"
-import { BodyLg, H5, LabelMd } from "../../components/Typography"
-import DiscordButton from "../../components/Buttons/DiscordButton"
-import GithubButton from "../../components/Buttons/GithubButton"
-import TelegramButton from "../../components/Buttons/TelegramButton"
 import { Box, StackDivider } from "@chakra-ui/react"
+import { PageSection, ResponsiveStack } from "../../components/PageSection"
+import { BodyLg, H5, LabelMd } from "../../components/Typography"
 import useChakraBreakpoint from "../../hooks/useChakraBreakpoint"
+import { Image, ImageProps } from "../../components"
+import {
+  ButtonType,
+  CmsButtonLink,
+} from "../../components/Buttons/CmsButtonLink"
+
+interface ButtonInterface {
+  label: string
+  url: string
+  variant: string
+  icon: {
+    image: ImageProps
+    alt: string
+  }
+}
+
+interface JoinTheCommunitySection {
+  label: string
+  title: string
+  description: string
+  buttons: ButtonInterface[]
+}
+
+interface JoinTheCommunityProps {
+  left: JoinTheCommunitySection[]
+  right: JoinTheCommunitySection[]
+}
 
 const Content: FC<{
   title: string
   subTitle: string
   body: string
-  footerButtons: JSX.Element[]
+  footerButtons: ButtonInterface[]
 }> = ({ title, subTitle, body, footerButtons }) => (
   <Box maxW={{ base: "100%", md: "424px" }}>
     <LabelMd textTransform="uppercase" color="gray.300">
@@ -28,13 +48,26 @@ const Content: FC<{
       {body}
     </BodyLg>
     <ResponsiveStack justifyContent="flex-start" mt={6}>
-      {footerButtons.map((Button) => Button)}
+      {footerButtons.map((_) => (
+        <CmsButtonLink
+          leftIcon={<Image boxSize="20px" {..._.icon.image} />}
+          key={_.label}
+          cmsVariant={_.variant as ButtonType}
+          url={_.url}
+        >
+          {_.label}
+        </CmsButtonLink>
+      ))}
     </ResponsiveStack>
   </Box>
 )
 
-const JoinTheCommunity = () => {
+const JoinTheCommunity: FC<JoinTheCommunityProps> = (props) => {
   const mdScreen = useChakraBreakpoint("md")
+
+  const left = props.left[0]
+  const right = props.right[0]
+
   return (
     <PageSection bg="gray.800">
       <ResponsiveStack
@@ -42,17 +75,16 @@ const JoinTheCommunity = () => {
         spacing={16}
       >
         <Content
-          title="Get Involved"
-          subTitle="Become a part of our community"
-          body="Join our Discord server and our Telegram to get involved and stay up
-            to date."
-          footerButtons={[<DiscordButton />, <TelegramButton />]}
+          title={left.label}
+          subTitle={left.title}
+          body={left.description}
+          footerButtons={left.buttons}
         />
         <Content
-          title="For developers"
-          subTitle="Learn more about the network"
-          body="Learn more about the Threshold network by reading the documentation or visiting Github."
-          footerButtons={[<GithubButton />]}
+          title={right.label}
+          subTitle={right.title}
+          body={right.description}
+          footerButtons={right.buttons}
         />
       </ResponsiveStack>
     </PageSection>

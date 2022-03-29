@@ -1,19 +1,15 @@
 import React, { FC } from "react"
-import { Link } from "react-router-dom"
-import { Button, Stack, StackDivider } from "@chakra-ui/react"
+import { Stack, StackDivider } from "@chakra-ui/react"
 import {
   PageSection,
   ResponsiveStack,
   SectionTextContainer,
 } from "../../../components/PageSection"
 import { BodyLg, H3 } from "../../../components/Typography"
-import decentralizedGrid from "../../../static/images/decentralized-grid.png"
-import secureGrid from "../../../static/images/secure-grid.png"
-import privateGrid from "../../../static/images/private-grid.png"
 import ImageStack from "./ImageStack"
 import useChakraBreakpoint from "../../../hooks/useChakraBreakpoint"
 import { ImageProps } from "../../../components"
-import { FooterButton } from "../UserRoles/RoleTemplate"
+import { FooterButton } from "../SectionTemplate"
 import {
   ButtonType,
   CmsButtonLink,

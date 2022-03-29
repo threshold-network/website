@@ -3,15 +3,15 @@ import { BoxProps, Stack } from "@chakra-ui/react"
 import {
   ButtonType,
   CmsButtonLink,
-} from "../../../components/Buttons/CmsButtonLink"
-import { H2, H5, LabelMd } from "../../../components/Typography"
+} from "../../components/Buttons/CmsButtonLink"
+import { H2, H5, LabelMd } from "../../components/Typography"
 import {
   PageSection,
   ResponsiveStack,
   SectionImage,
   SectionTextContainer,
-} from "../../../components/PageSection"
-import { ImageProps } from "../../../components"
+} from "../../components/PageSection"
+import { ImageProps } from "../../components"
 
 export interface FooterButton {
   label: string
@@ -28,7 +28,7 @@ export interface RoleTemplateProps extends BoxProps {
   rowReverse?: boolean
 }
 
-const RoleTemplate: FC<RoleTemplateProps> = ({
+const SectionTemplate: FC<RoleTemplateProps> = ({
   title,
   description,
   buttons = [],
@@ -44,7 +44,9 @@ const RoleTemplate: FC<RoleTemplateProps> = ({
             Get Started
           </LabelMd>
           <H2 mt={3}>{title}</H2>
-          <H5 mt={10}>{description}</H5>
+          <H5 mt={10} color="gray.300">
+            {description}
+          </H5>
           <Stack mt={10} direction={{ base: "column", md: "row" }} spacing={8}>
             {buttons.map((_: FooterButton, i) => (
               <CmsButtonLink
@@ -63,4 +65,4 @@ const RoleTemplate: FC<RoleTemplateProps> = ({
   )
 }
 
-export default RoleTemplate
+export default SectionTemplate

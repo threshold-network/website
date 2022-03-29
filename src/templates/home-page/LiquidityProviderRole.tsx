@@ -1,9 +1,7 @@
 import React, { FC } from "react"
-import { ExternalLinkHref } from "../../../components/Navbar/types"
-import RoleTemplate, { RoleTemplateProps } from "./RoleTemplate"
-import btcRole from "../../../static/images/btc-role.png"
+import SectionTemplate, { RoleTemplateProps } from "./SectionTemplate"
 
-const BtcRole: FC<RoleTemplateProps> = ({
+const LiquidityProviderRole: FC<RoleTemplateProps> = ({
   title,
   description,
   image,
@@ -12,7 +10,7 @@ const BtcRole: FC<RoleTemplateProps> = ({
   bgColor,
 }) => {
   return (
-    <RoleTemplate
+    <SectionTemplate
       bgColor={bgColor}
       title={title}
       description={description}
@@ -23,4 +21,4 @@ const BtcRole: FC<RoleTemplateProps> = ({
   )
 }
 
-export default BtcRole
+export default LiquidityProviderRole

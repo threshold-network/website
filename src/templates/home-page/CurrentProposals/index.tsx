@@ -4,6 +4,8 @@ import { PageSection, ResponsiveStack } from "../../../components/PageSection"
 import ProposalCard from "./ProposalCard"
 
 const CurrentProposals = () => {
+  // TODO: This data should be requested from discourse, probably via CMS
+
   return (
     <PageSection bg="gray.900">
       <H5 color="gray.300">Current Proposals</H5>
