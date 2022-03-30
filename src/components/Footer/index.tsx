@@ -64,7 +64,7 @@ const FooterContent: FC<{
                 <LabelMd textTransform="uppercase">{column.title}</LabelMd>
                 {column.links.map((_) => (
                   <Link
-                    key={_.url}
+                    key={_.label}
                     display="flex"
                     as={_.isExternal ? Link : GatsbyLink}
                     to={_.url}
