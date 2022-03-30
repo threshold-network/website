@@ -809,6 +809,166 @@ collections:
                       },
                     ],
                 }
+      # Earn Page
+      - file: "src/content/pages/earn/index.md"
+        name: "earn"
+        label: "Earn"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "earn-page",
+            }
+          - { label: "Path", name: "path", widget: "hidden", default: "/earn" }
+          - { label: "Title", name: "title", widget: "string" }
+      # BTC Page
+      - file: "src/content/pages/earn/btc.md"
+        name: "btc"
+        label: "BTC"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "earn-page/btc",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/earn/btc",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+      # Liquidity Provider Page
+      - file: "src/content/pages/earn/liquidity-provider.md"
+        name: "liquidityProvider"
+        label: "Liquidity Provider"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "earn-page/liquidity-provider",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/earn/liquidity-provider",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+      # Staker Page
+      - file: "src/content/pages/earn/staker.md"
+        name: "staker"
+        label: "Staker"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "earn-page/staker",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/earn/staker",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+      # Token Holder Page
+      - file: "src/content/pages/earn/token-holder.md"
+        name: "tokenHolder"
+        label: "Token Holder"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "earn-page/token-holder",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/earn/token-holder",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+      # About Page
+      - file: "src/content/pages/about/index.md"
+        name: "about"
+        label: "About"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "Path", name: "path", widget: "hidden", default: "/about" }
+          - { label: "Title", name: "title", widget: "string" }
+      # Audits Page
+      - file: "src/content/pages/audits/index.md"
+        name: "audits"
+        label: "Audits"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "audits-page",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/audits",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+      # FAQ Page
+      - file: "src/content/pages/faq/index.md"
+        name: "faq"
+        label: "FAQ"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "faq-page",
+            }
+          - { label: "Path", name: "path", widget: "hidden", default: "/faq" }
+          - { label: "Title", name: "title", widget: "string" }
+      # Governance Page
+      - file: "src/content/pages/governance/index.md"
+        name: "governance"
+        label: "Governance"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "governance-page",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/governance",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+      # Press Page
+      - file: "src/content/pages/press/index.md"
+        name: "press"
+        label: "Press"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "press-page",
+            }
+          - { label: "Path", name: "path", widget: "hidden", default: "/press" }
+          - { label: "Title", name: "title", widget: "string" }
   - name: "components"
     label: "Components"
     files:
