@@ -1102,3 +1102,45 @@ collections:
                   },
                 ],
             }
+      - file: "src/content/components/footer.md"
+        label: "Footer"
+        name: "footer"
+        fields:
+          - {
+              label: "Template Key",
+              name: "template",
+              widget: "hidden",
+              default: "footer",
+            }
+          - {
+              label: "Columns",
+              name: "columns",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Links",
+                    name: "links",
+                    widget: "list",
+                    allow_add: true,
+                    fields:
+                      [
+                        {
+                          label: "Label",
+                          name: "label",
+                          widget: "string",
+                          required: false,
+                        },
+                        { label: "URL", name: "url", widget: "string" },
+                        {
+                          label: "External",
+                          name: "isExternal",
+                          widget: boolean,
+                          required: false,
+                        },
+                      ],
+                  },
+                ],
+            }

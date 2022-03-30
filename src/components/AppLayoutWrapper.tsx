@@ -5,6 +5,7 @@ import theme from "../theme"
 import { Navbar } from "./Navbar"
 import Swoosh from "../static/images/Swoosh.svg"
 import useDarkMode from "../hooks/useDarkMode"
+import Footer from "./Footer"
 
 const App: FC = ({ children }) => {
   useDarkMode()
@@ -20,6 +21,7 @@ const App: FC = ({ children }) => {
       >
         <Navbar />
         {children}
+        <Footer />
       </Box>
     </Box>
   )
