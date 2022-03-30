@@ -14,7 +14,7 @@ import {
 import useChakraBreakpoint from "../../../hooks/useChakraBreakpoint"
 import ThresholdBrand from "../../ThresholdBrand"
 import MobileNavLink from "./MobileNavLink"
-import { LinkInfo } from "../types"
+import { LinkInfo, SocialLink } from "../types"
 import SocialMediaLinks from "../SocialMediaLinks"
 import { FaChevronLeft } from "react-icons/all"
 import { BodySm, H5 } from "../../Typography"
@@ -23,7 +23,8 @@ const MobileDrawer: FC<{
   onClose: () => void
   isOpen: boolean
   navLinks: LinkInfo[]
-}> = ({ onClose, isOpen, navLinks }) => {
+  socialLinks: SocialLink[]
+}> = ({ onClose, isOpen, navLinks, socialLinks }) => {
   const isMobileDevice = useChakraBreakpoint("lg")
 
   const [navLinksToRender, setNavLinksToRender] = useState(navLinks)
@@ -81,7 +82,7 @@ const MobileDrawer: FC<{
             ))}
           </Stack>
           <VStack>
-            <SocialMediaLinks isMobileDrawerFooter />
+            <SocialMediaLinks isMobileDrawerFooter links={socialLinks} />
             <BodySm color="gray.300">
               ©{new Date().getFullYear()} | A Thesis Build
             </BodySm>

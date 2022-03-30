@@ -1,7 +1,6 @@
 import { FC } from "react"
 import { Button, ButtonProps } from "@chakra-ui/react"
 import { ExternalLinkHref } from "../Navbar/types"
-import { Telegram } from "../../static/icons/Telegram"
 
 const TelegramButton: FC<ButtonProps> = ({ ...props }) => {
   return (
@@ -9,7 +8,7 @@ const TelegramButton: FC<ButtonProps> = ({ ...props }) => {
       variant="outline"
       rel="noopener noreferrer"
       target="_blank"
-      leftIcon={<Telegram />}
+      // leftIcon={<Telegram />}
       {...props}
       as="a"
       href={ExternalLinkHref.TELEGRAM}

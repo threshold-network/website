@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { Button, ButtonProps } from "@chakra-ui/react"
-import { FaTwitter, IoLogoDiscord, IoLogoGithub } from "react-icons/all"
+import { IoLogoDiscord } from "react-icons/all"
 import { ExternalLinkHref } from "../Navbar/types"
 
 const DiscordButton: FC<ButtonProps> = ({ ...props }) => {

@@ -33,7 +33,7 @@ const query = graphql`
               icon {
                 image {
                   id
-                  absolutePath
+                  relativePath
                   internal {
                     mediaType
                   }
@@ -101,6 +101,7 @@ export const Navbar: FC = () => {
             isOpen={isDrawerOpen}
             onClose={onDrawerClose}
             navLinks={navLinks}
+            socialLinks={socialLinks}
           />
           <DesktopNavLinks navLinks={navLinks} />
           <SocialMediaLinks links={socialLinks} />
