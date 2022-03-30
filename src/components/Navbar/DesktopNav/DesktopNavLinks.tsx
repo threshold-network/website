@@ -16,16 +16,16 @@ const DesktopNavLinks: FC<{ navLinks: LinkInfo[] }> = ({ navLinks }) => {
       display={{ base: "none", lg: "inherit" }}
       as="nav"
     >
-      {navLinks.map(({ dropdown, text, href }) => {
-        if (dropdown) {
+      {navLinks.map(({ subitems, label, url }) => {
+        if (subitems) {
           return (
-            <DropdownLabelLink key={text} text={text} dropdown={dropdown} />
+            <DropdownLabelLink key={label} text={label} dropdown={subitems} />
           )
         }
 
         return (
-          <NavLink key={text} href={href!}>
-            {text}
+          <NavLink key={label} href={url!}>
+            {label}
           </NavLink>
         )
       })}

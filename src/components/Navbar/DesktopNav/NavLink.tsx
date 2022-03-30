@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 import { Link } from "@chakra-ui/react"
 import { LabelMd } from "../../Typography"
 

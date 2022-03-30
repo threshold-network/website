@@ -1,5 +1,5 @@
-import React, { FC } from "react"
-import { ExternalLinkHref, LinkInfo } from "../types"
+import { FC } from "react"
+import { LinkInfo } from "../types"
 import {
   HStack,
   Icon,
@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react"
 import { BodyMd, LabelMd } from "../../Typography"
 import { ChevronDownIcon } from "@chakra-ui/icons"
-import { Link as RouterLink } from "react-router-dom"
+import { Link as GatsbyLink } from "gatsby"
 import { FiArrowUpRight } from "react-icons/all"
 
 const DropdownMenu: FC<{ dropdown: LinkInfo[]; text: string }> = ({
@@ -40,18 +40,19 @@ const DropdownMenu: FC<{ dropdown: LinkInfo[]; text: string }> = ({
         {dropdown.map((link) => {
           return (
             <MenuItem
-              key={link.text}
+              key={link.label}
               color="gray.300"
               _hover={{ bg: "gray.900", color: "white" }}
               _focus={{
                 bg: "gray.900",
               }}
-              as={link.isExternal ? Link : RouterLink}
-              href={link.href}
-              to={link.href}
+              as={link.isExternal ? Link : GatsbyLink}
+              // @ts-ignore
+              href={link.url}
+              to={link.url}
               target={link.isExternal ? "_blank" : undefined}
             >
-              <BodyMd>{link.text}</BodyMd>
+              <BodyMd>{link.label}</BodyMd>
               {link.isExternal && <Icon ml={2} as={FiArrowUpRight} />}
             </MenuItem>
           )
