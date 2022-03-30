@@ -4,10 +4,12 @@ import { Link as GatsbyLink } from "gatsby"
 import NewsletterSubscribe from "./NewsletterSubscribe"
 import { PageSection } from "../PageSection"
 import ThresholdBrand from "../ThresholdBrand"
-import SocialMediaLinks from "./SocialMediaLinks"
+import SocialMediaLinks from "../../components/Navbar/SocialMediaLinks"
 import { BodySm, LabelMd } from "../Typography"
 import { FiArrowUpRight } from "react-icons/all"
 import { graphql, useStaticQuery } from "gatsby"
+import { ImageProps } from "../Image"
+import useChakraBreakpoint from "../../hooks/useChakraBreakpoint"
 
 const FooterContent: FC<{
   columns: {
@@ -18,7 +20,16 @@ const FooterContent: FC<{
     }[]
     title: string
   }[]
-}> = ({ columns }) => {
+  socialLinks: {
+    icon: {
+      alt: string
+      image: ImageProps
+    }
+    label: string
+    url: string
+  }[]
+}> = ({ columns, socialLinks }) => {
+  const smScreen = useChakraBreakpoint("md")
   return (
     <PageSection bg="gray.900">
       <Stack
@@ -30,7 +41,10 @@ const FooterContent: FC<{
         <Box>
           <ThresholdBrand display={{ base: "none", md: "block" }} p={0} />
           <Stack mt={{ base: 0, md: 28 }} spacing={{ base: 12, md: 6 }}>
-            <SocialMediaLinks />
+            <SocialMediaLinks
+              links={socialLinks}
+              isMobileDrawerFooter={smScreen}
+            />
             <ThresholdBrand
               display={{ base: "block", md: "none" }}
               justifyContent="center"
@@ -100,6 +114,36 @@ const query = graphql`
               }
               title
             }
+            social_links {
+              label
+              url
+              icon {
+                image {
+                  id
+                  relativePath
+                  internal {
+                    mediaType
+                  }
+                  svg {
+                    name
+                    attributes {
+                      key
+                      value
+                    }
+                    children {
+                      name
+                      type
+                      value
+                      attributes {
+                        key
+                        value
+                      }
+                    }
+                  }
+                }
+                alt
+              }
+            }
           }
         }
       }
@@ -109,14 +153,13 @@ const query = graphql`
 
 const Footer = () => {
   const data = useStaticQuery(query)
-  const { columns } = data.allMarkdownRemark.edges[0].node.frontmatter
-
-  console.log("magical footer content from graphql ", columns)
+  const { columns, social_links: socialLinks } =
+    data.allMarkdownRemark.edges[0].node.frontmatter
 
   return (
     <Box>
       {/*<NewsletterSubscribe />*/}
-      <FooterContent columns={columns} />
+      <FooterContent columns={columns} socialLinks={socialLinks} />
     </Box>
   )
 }

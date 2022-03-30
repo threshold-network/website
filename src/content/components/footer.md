@@ -54,4 +54,25 @@ columns:
       - label: Audits
         url: /audits
         isExternal: false
+social_links:
+  - url: twitter
+    icon:
+      image: /images/twitter.svg
+      alt: twitter
+    label: Twitter
+  - label: Telegram
+    url: telegram
+    icon:
+      image: /images/telegram.svg
+      alt: telegram
+  - label: Discord
+    url: discord
+    icon:
+      image: /images/discord.svg
+      alt: discord
+  - label: Github
+    url: github
+    icon:
+      image: /images/github.svg
+      alt: github
 ---

@@ -1144,3 +1144,36 @@ collections:
                   },
                 ],
             }
+          - {
+              label: "Social Media Links",
+              name: "social_links",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  {
+                    label: "Label",
+                    name: "label",
+                    widget: "string",
+                    required: false,
+                  },
+                  { label: "URL", name: "url", widget: "string" },
+                  {
+                    label: Icon,
+                    name: icon,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          required: true,
+                          media_library: { config: { multiple: false } },
+                          hint: "SVG only. SVG must have width and height attributes set in the file.",
+                        },
+                        { label: "Alt", name: "alt", widget: "string" },
+                      ],
+                  },
+                ],
+            }

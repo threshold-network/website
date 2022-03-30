@@ -1,13 +1,6 @@
 import { FC } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import {
-  Container,
-  HStack,
-  useDisclosure,
-  H1,
-  LabelMd,
-  ExternalLink,
-} from "@chakra-ui/react"
+import { Container, HStack, useDisclosure } from "@chakra-ui/react"
 import ThresholdBrand from "../ThresholdBrand"
 import SocialMediaLinks from "./SocialMediaLinks"
 import HamburgerButton from "./HamburgerButton"
@@ -111,7 +104,7 @@ export const Navbar: FC = () => {
             socialLinks={socialLinks}
           />
           <DesktopNavLinks navLinks={navLinks} />
-          <SocialMediaLinks links={socialLinks} />
+          <SocialMediaLinks links={socialLinks} pl={8} />
           <HamburgerButton openDrawer={onDrawOpen} />
         </Container>
       </HStack>
