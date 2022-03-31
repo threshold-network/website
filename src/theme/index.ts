@@ -36,6 +36,13 @@ const colors = {
   },
 }
 
+const layerStyles = {
+  bodyMd: {
+    fontSize: "16px",
+    lineHeight: "24px",
+  },
+}
+
 const index = extendTheme({
   config,
   breakpoints,
@@ -44,6 +51,7 @@ const index = extendTheme({
     Button,
     Card,
   },
+  layerStyles,
 })
 
 export default index
