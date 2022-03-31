@@ -20,7 +20,6 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
     activeCommunity,
     joinTheCommunity,
   } = data.markdownRemark.frontmatter
-
   return (
     <>
       <Hero {...hero} />
@@ -162,7 +161,7 @@ export const query = graphql`
         harnessThePower {
           title
           subitems {
-            description
+            description(from: "description")
             title
             image {
               id

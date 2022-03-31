@@ -44,6 +44,22 @@ const index = extendTheme({
     Button,
     Card,
   },
+  styles: {
+    global: {
+      a: {
+        // To style the `a` tag from cms we assume that these tags don't include
+        // `class` attribute.
+        ":not([class])": {
+          textDecoration: "underline !important",
+          // Add an arrow if it is an external link.
+          '&[href^="http"]::after': {
+            content: '" ↗"',
+            whiteSpace: "pre",
+          },
+        },
+      },
+    },
+  },
 })
 
 export default index
