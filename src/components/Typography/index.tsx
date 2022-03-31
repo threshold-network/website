@@ -160,3 +160,7 @@ export const ExternalLink: FC<{
     </HStack>
   )
 }
+
+export const ButtonLg: FC<TextProps> = (props) => {
+  return <Text fontWeight={600} fontSize="18px" lineHeight="28px" {...props} />
+}

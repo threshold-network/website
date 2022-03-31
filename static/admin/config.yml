@@ -876,6 +876,187 @@ collections:
               default: "/earn/staker",
             }
           - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Staker Info Section",
+              name: "stakerInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "markdown",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Getting Started Section",
+              name: "gettingStarted",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Left Side",
+                    name: "left",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Title", name: "title", widget: "string" },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                        },
+                        {
+                          label: "Links",
+                          name: "links",
+                          widget: "list",
+                          fields:
+                            [
+                              {
+                                label: "Left Icon",
+                                name: "leftIcon",
+                                widget: file,
+                                required: true,
+                                media_library: { config: { multiple: false } },
+                                hint: "SVG only. SVG must have width and height attributes set in the file.",
+                              },
+                              {
+                                label: "Label",
+                                name: "label",
+                                widget: "string",
+                                minimal: true,
+                              },
+                              {
+                                label: "Url",
+                                name: "url",
+                                widget: "string",
+                                required: true,
+                              },
+                              {
+                                label: "Right Icon",
+                                name: "rightIcon",
+                                widget: file,
+                                required: true,
+                                media_library: { config: { multiple: false } },
+                                hint: "SVG only. SVG must have width and height attributes set in the file.",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Right Side",
+                    name: "right",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Title", name: "title", widget: "string" },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                        },
+                        {
+                          label: "Links",
+                          name: "links",
+                          widget: "list",
+                          fields:
+                            [
+                              {
+                                label: "Left Icon",
+                                name: "leftIcon",
+                                widget: file,
+                                required: true,
+                                media_library: { config: { multiple: false } },
+                                hint: "SVG only. SVG must have width and height attributes set in the file.",
+                              },
+                              {
+                                label: "Label",
+                                name: "label",
+                                widget: "string",
+                                minimal: true,
+                              },
+                              {
+                                label: "Url",
+                                name: "url",
+                                widget: "string",
+                                required: true,
+                              },
+                              {
+                                label: "Right Icon",
+                                name: "rightIcon",
+                                widget: file,
+                                required: true,
+                                media_library: { config: { multiple: false } },
+                                hint: "SVG only. SVG must have width and height attributes set in the file.",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+
       # Token Holder Page
       - file: "src/content/pages/earn/token-holder.md"
         name: "tokenHolder"

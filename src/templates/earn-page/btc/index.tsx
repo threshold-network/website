@@ -1,10 +1,11 @@
 import { FC } from "react"
 import { graphql } from "gatsby"
+import RolePageTemplate from "../RolePageTemplate"
 
 const BTCPageTemplate: FC<any> = ({ data }) => {
   const { title } = data.markdownRemark.frontmatter
 
-  return <>{title}</>
+  return <RolePageTemplate>{title}</RolePageTemplate>
 }
 
 export default BTCPageTemplate
