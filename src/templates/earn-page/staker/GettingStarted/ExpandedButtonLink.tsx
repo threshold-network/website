@@ -33,7 +33,7 @@ const ExpandedButtonLink: FC<GettingStartedButtonLink> = ({
       w="full"
     >
       <HStack>
-        <Image boxSize="25px" {...leftIcon} />
+        <Image boxSize="25px" {...leftIcon} fill="white" />
         <ButtonLg>{label}</ButtonLg>
       </HStack>
       <Image boxSize="25px" {...rightIcon} />

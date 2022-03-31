@@ -4,8 +4,7 @@ path: /earn/staker
 title: Earn Staker Page
 activeCommunity:
   title: Threshold Staker
-  description:
-    Stakers escrow T tokens to run a node on the Threshold Network and
+  description: Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards. Running a node helps to provide cryptography services on
     Threshold and secure the network. Take on a role as a Staker with Threshold
     and be a core component of the network.
@@ -16,8 +15,7 @@ activeCommunity:
       variant: EXTERNAL_SOLID
 stakerInfo:
   title: Threshold Staker
-  description:
-    Stakers escrow T tokens to run a node on the Threshold Network and
+  description: Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards. Running a node helps to provide cryptography services on
     Threshold and secure the network. Take on a role as a Staker with Threshold
     and be a core component of the network.
@@ -52,8 +50,7 @@ gettingStarted:
         rightIcon: /images/external-arrow.svg
   right:
     title: Apps to stake on
-    description:
-      Threshold stakers can authorize several different applications to
+    description: Threshold stakers can authorize several different applications to
       stake on with their T stakes.
     links:
       - leftIcon: /images/threshold.svg
@@ -72,4 +69,52 @@ gettingStarted:
         label: tBTC v2
         url: NEED_URL
         rightIcon: /images/github.svg
+techRequirements:
+  title: Technical Requirements
+  cta:
+    ctaTitle: Ready to stake with Threshold?
+    label: Start Staking
+    url: https://dashboard.threshold.network/
+    variant: EXTERNAL_SOLID
+  requirements:
+    - label: CPU
+      images:
+        image: /images/cpu-icon.png
+        alt: cpu
+      requirement:
+        alt: cpu
+        image: /images/cpu-icon.png
+      image:
+        image: /images/cpu-icon.png
+        alt: cpu
+    - label: Node Operation
+      images:
+        image: /images/node-icon.png
+        alt: node
+      requirement:
+        image: /images/node-icon.png
+        alt: node
+      image:
+        image: /images/node-icon.png
+        alt: node
+    - label: Uptime
+      images:
+        image: /images/uptime-icon.png
+        alt: uptime
+      requirement:
+        alt: uptime
+        image: /images/uptime-icon.png
+      image:
+        image: /images/uptime-icon.png
+        alt: uptime
+    - label: GBs Storage
+      images:
+        image: /images/gb-icon.png
+        alt: storage
+      requirement:
+        image: /images/gb-icon.png
+        alt: storage
+      image:
+        image: /images/gb-icon.png
+        alt: storage
 ---

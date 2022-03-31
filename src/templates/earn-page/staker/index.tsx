@@ -6,9 +6,10 @@ import NetworkDistribution from "./NetworkDistribution"
 import GettingStarted from "./GettingStarted"
 
 const StakerPageTemplate: FC<any> = ({ data }) => {
-  const { stakerInfo, gettingStarted } = data.markdownRemark.frontmatter
+  const { stakerInfo, gettingStarted, techRequirements } =
+    data.markdownRemark.frontmatter
 
-  console.log(gettingStarted)
+  console.log(techRequirements)
 
   return (
     <RolePageTemplate>
@@ -156,6 +157,31 @@ export const query = graphql`
                 }
               }
             }
+          }
+        }
+        techRequirements {
+          title
+          requirements {
+            label
+            image {
+              image {
+                id
+                relativePath
+                internal {
+                  mediaType
+                }
+                childImageSharp {
+                  gatsbyImageData(width: 200)
+                }
+              }
+              alt
+            }
+          }
+          cta {
+            ctaTitle
+            label
+            url
+            variant
           }
         }
       }

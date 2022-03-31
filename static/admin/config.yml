@@ -1056,7 +1056,79 @@ collections:
                   },
                 ],
             }
+          - {
+              label: "Technical Requirements Section",
+              name: "techRequirements",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Requirements",
+                    name: "requirements",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: "Label", name: "label", widget: "string" },
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: "object",
+                          fields:
+                            [
+                              {
+                                label: "Image",
+                                name: "image",
+                                widget: file,
+                                required: true,
+                                media_library: { config: { multiple: false } },
+                              },
+                              { label: "Alt", name: "alt", widget: "string" },
+                            ],
+                        },
+                      ],
+                  },
 
+                  {
+                    label: "CTA",
+                    name: "cta",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Title", name: "ctaTitle", widget: "string" },
+                        { label: "Button Label", name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
       # Token Holder Page
       - file: "src/content/pages/earn/token-holder.md"
         name: "tokenHolder"
