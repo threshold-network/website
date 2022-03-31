@@ -24,7 +24,7 @@ const GettingStartedSection: FC<GettingStartedSectionProps> = ({
   links,
 }) => {
   return (
-    <Box>
+    <Box w="100%">
       <H5 color="gray.300">{title}</H5>
       <BodyLg color="gray.300" mt={4}>
         {description}

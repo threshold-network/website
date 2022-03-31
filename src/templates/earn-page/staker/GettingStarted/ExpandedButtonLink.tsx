@@ -30,6 +30,7 @@ const ExpandedButtonLink: FC<GettingStartedButtonLink> = ({
       as={Link}
       href={url}
       target="_blank"
+      w="full"
     >
       <HStack>
         <Image boxSize="25px" {...leftIcon} />

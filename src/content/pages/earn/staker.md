@@ -4,7 +4,8 @@ path: /earn/staker
 title: Earn Staker Page
 activeCommunity:
   title: Threshold Staker
-  description: Stakers escrow T tokens to run a node on the Threshold Network and
+  description:
+    Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards. Running a node helps to provide cryptography services on
     Threshold and secure the network. Take on a role as a Staker with Threshold
     and be a core component of the network.
@@ -15,7 +16,8 @@ activeCommunity:
       variant: EXTERNAL_SOLID
 stakerInfo:
   title: Threshold Staker
-  description: Stakers escrow T tokens to run a node on the Threshold Network and
+  description:
+    Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards. Running a node helps to provide cryptography services on
     Threshold and secure the network. Take on a role as a Staker with Threshold
     and be a core component of the network.
@@ -50,7 +52,8 @@ gettingStarted:
         rightIcon: /images/external-arrow.svg
   right:
     title: Apps to stake on
-    description: Threshold stakers can authorize several different applications to
+    description:
+      Threshold stakers can authorize several different applications to
       stake on with their T stakes.
     links:
       - leftIcon: /images/threshold.svg
