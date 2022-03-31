@@ -1,6 +1,6 @@
 import { FC } from "react"
-import { HStack, Stack, Square, Box } from "@chakra-ui/react"
-import { LabelMd } from "../../../components/Typography"
+import { HStack, Stack, Square } from "@chakra-ui/react"
+import { BodyMd, LabelMd } from "../../../components/Typography"
 import { Image, ImageProps } from "../../../components"
 
 const ImageStack: FC<{
@@ -24,9 +24,9 @@ const ImageStack: FC<{
           <Square bg="brand.500" w="20px" h="20px" />
           <LabelMd>{title}</LabelMd>
         </HStack>
-        <Box
+        <BodyMd
           mt="1rem"
-          layerStyle="bodyMd"
+          as="div"
           dangerouslySetInnerHTML={{ __html: description }}
         />
       </Stack>
