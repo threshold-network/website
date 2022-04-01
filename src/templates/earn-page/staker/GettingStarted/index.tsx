@@ -40,7 +40,7 @@ const GettingStartedSection: FC<GettingStartedSectionProps> = ({
 
 const GettingStarted: FC<GettingStartedProps> = ({ left, right, title }) => {
   return (
-    <Box>
+    <Box mt={20}>
       <H3>{title}</H3>
       <ResponsiveStack divider={<StackDivider />} spacing={16} mt={20}>
         <GettingStartedSection {...left} />

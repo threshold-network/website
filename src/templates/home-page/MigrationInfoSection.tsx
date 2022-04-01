@@ -1,19 +1,14 @@
 import React, { FC } from "react"
-import { Stack } from "@chakra-ui/react"
-import { BodyLg, H5 } from "../../components/Typography"
-import ExternalButtonLink from "../../components/Buttons/ExternalButtonLink"
-import { ExternalLinkHref } from "../../components/Navbar/types"
+import { HStack, Stack } from "@chakra-ui/react"
+import { BodyLg, H5, LabelMd } from "../../components/Typography"
 import {
   PageSection,
   ResponsiveStack,
   SectionImage,
   SectionTextContainer,
 } from "../../components/PageSection"
-import keepNuIllustration from "../../static/images/Keep-Nu-illustration.png"
-import SectionTemplate, {
-  FooterButton,
-  RoleTemplateProps,
-} from "./SectionTemplate"
+
+import { FooterButton, RoleTemplateProps } from "./SectionTemplate"
 import {
   ButtonType,
   CmsButtonLink,
@@ -26,23 +21,29 @@ const MigrationInfoSection: FC<RoleTemplateProps> = ({
   buttons,
   image,
   rowReverse,
+  preTitle,
 }) => {
   return (
     <PageSection bg={bgColor}>
       <ResponsiveStack spacing={16} rowReverse={rowReverse}>
         <SectionTextContainer>
+          <LabelMd textTransform="uppercase" color="gray.500">
+            {preTitle}
+          </LabelMd>
           <Stack spacing={6}>
             <H5 color="white">{title}</H5>
             <BodyLg color="gray.300">{description}</BodyLg>
-            {buttons.map((_: FooterButton, i) => (
-              <CmsButtonLink
-                key={_.label}
-                cmsVariant={_.variant as ButtonType}
-                url={_.url}
-              >
-                {_.label}
-              </CmsButtonLink>
-            ))}
+            <HStack>
+              {buttons.map((_: FooterButton, i) => (
+                <CmsButtonLink
+                  key={_.label}
+                  cmsVariant={_.variant as ButtonType}
+                  url={_.url}
+                >
+                  {_.label}
+                </CmsButtonLink>
+              ))}
+            </HStack>
           </Stack>
         </SectionTextContainer>
         <SectionImage {...image} />

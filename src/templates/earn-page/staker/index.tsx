@@ -4,18 +4,20 @@ import SectionTemplate from "../../home-page/SectionTemplate"
 import RolePageTemplate from "../RolePageTemplate"
 import NetworkDistribution from "./NetworkDistribution"
 import GettingStarted from "./GettingStarted"
+import TechnicalRequirements from "./TechnicalRequirements"
+import MigrationInfoSection from "../../home-page/MigrationInfoSection"
 
 const StakerPageTemplate: FC<any> = ({ data }) => {
-  const { stakerInfo, gettingStarted, techRequirements } =
+  const { stakerInfo, gettingStarted, techRequirements, legacyStakers } =
     data.markdownRemark.frontmatter
-
-  console.log(techRequirements)
 
   return (
     <RolePageTemplate>
       <SectionTemplate {...stakerInfo} />
       <NetworkDistribution />
       <GettingStarted {...gettingStarted} />
+      <TechnicalRequirements {...techRequirements} />
+      <MigrationInfoSection bgColor="gray.900" {...legacyStakers} />
     </RolePageTemplate>
   )
 }
@@ -179,6 +181,26 @@ export const query = graphql`
           }
           cta {
             ctaTitle
+            label
+            url
+            variant
+          }
+        }
+        legacyStakers {
+          preTitle
+          title
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
             label
             url
             variant

@@ -117,4 +117,17 @@ techRequirements:
       image:
         image: /images/gb-icon.png
         alt: storage
+legacyStakers:
+  preTitle: Legacy Stakers
+  title: Currently Staking with KEEP or NU?
+  description: Stake your legacy KEEP and NU stakes on T using the respective
+    legacy dashboards.
+  image: /images/legacy-tokens.png
+  buttons:
+    - label: Keep Dapp
+      url: https://dashboard.keep.network/
+      variant: EXTERNAL_OUTLINE
+    - label: NuCypher Dapp
+      url: NEED_URL
+      variant: EXTERNAL_OUTLINE
 ---
