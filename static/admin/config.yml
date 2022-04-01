@@ -761,7 +761,40 @@ collections:
               widget: "hidden",
               default: "/earn/liquidity-provider",
             }
-          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Liquidity Provider Info Section",
+              name: "lpInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "markdown",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                ],
+            }
       # Staker Page
       - file: "src/content/pages/earn/staker.md"
         name: "staker"
