@@ -44,7 +44,7 @@ const HarnessThePower: FC<HarnessThePowerProps> = ({
 
   return (
     <SectionTemplate
-      bgColor="gray.900"
+      bgColor="gray.800"
       title={title}
       description={description}
       buttons={buttons}
