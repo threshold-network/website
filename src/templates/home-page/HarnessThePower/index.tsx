@@ -9,7 +9,7 @@ import { BodyLg, H3 } from "../../../components/Typography"
 import ImageStack from "./ImageStack"
 import useChakraBreakpoint from "../../../hooks/useChakraBreakpoint"
 import { ImageProps } from "../../../components"
-import { FooterButton } from "../SectionTemplate"
+import SectionTemplate, { FooterButton } from "../SectionTemplate"
 import {
   ButtonType,
   CmsButtonLink,
@@ -43,22 +43,12 @@ const HarnessThePower: FC<HarnessThePowerProps> = ({
   const isMobile = useChakraBreakpoint("md")
 
   return (
-    <PageSection bg="gray.800">
-      <SectionTextContainer>
-        <Stack spacing={6}>
-          <H3 color="white">{title}</H3>
-          <BodyLg color="gray.300">{description}</BodyLg>
-          {buttons.map((_: FooterButton) => (
-            <CmsButtonLink
-              key={_.label}
-              cmsVariant={_.variant as ButtonType}
-              url={_.url}
-            >
-              {_.label}
-            </CmsButtonLink>
-          ))}
-        </Stack>
-      </SectionTextContainer>
+    <SectionTemplate
+      bgColor="gray.800"
+      title={title}
+      description={description}
+      buttons={buttons}
+    >
       <ResponsiveStack
         spacing="32px !important"
         mt={16}
@@ -73,7 +63,7 @@ const HarnessThePower: FC<HarnessThePowerProps> = ({
           />
         ))}
       </ResponsiveStack>
-    </PageSection>
+    </SectionTemplate>
   )
 }
 
