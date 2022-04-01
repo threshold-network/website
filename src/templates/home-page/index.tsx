@@ -5,8 +5,8 @@ import SectionTemplate from "./SectionTemplate"
 import TakeTheQuiz from "./TakeTheQuiz"
 import MigrationInfoSection from "./MigrationInfoSection"
 import HarnessThePower from "./HarnessThePower"
-import CurrentProposals from "./CurrentProposals"
 import JoinTheCommunity from "./JoinTheCommunity"
+import ActiveCommunity from "./ActiveCommunity"
 
 const SplashPageTemplate: FC<any> = ({ data }) => {
   const {
@@ -33,8 +33,7 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
       />
       <MigrationInfoSection {...migrationInfo} />
       <HarnessThePower {...harnessThePower} />
-      <SectionTemplate {...activeCommunity} />
-      <CurrentProposals />
+      <ActiveCommunity {...activeCommunity} />
       <JoinTheCommunity {...joinTheCommunity} />
     </>
   )
