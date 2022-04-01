@@ -33,7 +33,7 @@ const query = graphql`
               icon {
                 image {
                   id
-                  absolutePath
+                  relativePath
                   internal {
                     mediaType
                   }
@@ -90,13 +90,18 @@ export const Navbar: FC = () => {
         borderColor="gray.700"
         as="header"
       >
-        {/* TODO: NEED MAX WITH FROM DESIGN TEAM */}
-        <Container maxW="1440px" h="100%" display="flex">
+        <Container
+          maxW="1072px"
+          h="100%"
+          display="flex"
+          justifyContent="space-between"
+        >
           <ThresholdBrand />
           <MobileDrawer
             isOpen={isDrawerOpen}
             onClose={onDrawerClose}
             navLinks={navLinks}
+            socialLinks={socialLinks}
           />
           <DesktopNavLinks navLinks={navLinks} />
           <SocialMediaLinks links={socialLinks} />

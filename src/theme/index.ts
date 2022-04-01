@@ -31,6 +31,7 @@ const colors = {
   gray: {
     300: "#B1BCCC",
     700: "#4A5568",
+    800: "#323A47",
     900: "#1D2229",
   },
 }
@@ -42,6 +43,22 @@ const index = extendTheme({
   components: {
     Button,
     Card,
+  },
+  styles: {
+    global: {
+      a: {
+        // To style the `a` tag from cms we assume that these tags don't include
+        // `class` attribute.
+        ":not([class])": {
+          textDecoration: "underline !important",
+          // Add an arrow if it is an external link.
+          '&[href^="http"]::after': {
+            content: '" ↗"',
+            whiteSpace: "pre",
+          },
+        },
+      },
+    },
   },
 })
 

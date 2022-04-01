@@ -1,3 +1,5 @@
+import { ImageProps } from "../Image"
+
 export interface LinkInfo {
   url?: string
   label: string
@@ -5,9 +7,18 @@ export interface LinkInfo {
   isExternal?: boolean
 }
 
+export interface SocialLink {
+  url: string
+  icon: { image: Omit<ImageProps, "alt">; alt: string }
+}
+
 export enum ExternalLinkHref {
-  TELEGRAM = "some_telegram_link",
-  LEARN_MORE = "https://blog.threshold.network/",
+  TELEGRAM = "TELEGRAM",
+  STAKER_ROLE_LEARN_MORE = "STAKER_ROLE_LEARN_MORE",
+  LP_ROLE_LEARN_MORE = "LP_ROLE_LEARN_MORE",
+  MINT_TBC = "MINT_TBC",
+  BTC_ROLE_LEARN_MORE = "BTC_ROLE_LEARN_MORE",
+  TOKEN_HOLDER_ROLE_LEARN_MORE = "TOKEN_HOLDER_ROLE_LEARN_MORE",
   THRESHOLD_GITHUB = "https://github.com/threshold-network",
   THRESHOLD_DISCORD = "https://discord.gg/VafbhzJ3vW",
   THRESHOLD_TWITTER = "https://twitter.com/TheTNetwork",

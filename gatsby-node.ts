@@ -4,6 +4,7 @@ import { createFilePath } from "gatsby-source-filesystem"
 import { parse } from "svgson"
 import { pathThatSvg } from "path-that-svg"
 import fs from "fs"
+import MarkdownIt from "markdown-it"
 
 export const createPages: GatsbyNode["createPages"] = async ({
   actions,
@@ -55,10 +56,52 @@ export const createPages: GatsbyNode["createPages"] = async ({
 }
 
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
-  ({ actions }) => {
-    const { createTypes } = actions
+  ({ actions, reporter }) => {
+    const { createTypes, createFieldExtension } = actions
+
+    createFieldExtension({
+      name: "md",
+      args: {
+        from: {
+          type: "String!",
+          defaultValue: "",
+        },
+      },
+      extend() {
+        return {
+          args: {
+            from: "String",
+          },
+          resolve: async (source: any, args: { from: string }) => {
+            const fieldValue = source[args.from]
+            try {
+              const md = new MarkdownIt()
+              return md.render(fieldValue)
+            } catch (error) {
+              reporter.warn(
+                `Could not render content from the "${args.from}" field... Using original value`
+              )
+              return fieldValue
+            }
+          },
+        }
+      },
+    })
 
     const typeDefs = `
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter {
+      harnessThePower: Subitems
+    }
+    type Subitems {
+      subitems: [Item]
+    }
+    type Item {
+      title: String
+      description: String @md(from: "description")
+    }
     type SVGAttributes {
       key: String
       value: String

@@ -1,18 +1,16 @@
 import { FC } from "react"
 import { HStack, Link } from "@chakra-ui/react"
 import { Image, ImageProps } from "../Image"
+import { SocialLink } from "./types"
 
 const SocialMediaLinks: FC<{
   isMobileDrawerFooter?: boolean
-  links: {
-    url: string
-    icon: { image: Omit<ImageProps, "alt">; alt: string }
-  }[]
+  links: SocialLink[]
 }> = ({ isMobileDrawerFooter, links }) => {
   return (
     <HStack
       spacing={6}
-      px={8}
+      pl={8}
       display={{
         base: isMobileDrawerFooter ? "inherit" : "none",
         lg: "inherit",

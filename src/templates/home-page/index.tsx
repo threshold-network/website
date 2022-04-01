@@ -1,123 +1,38 @@
-import { FC } from "react"
+import React, { FC } from "react"
 import { graphql } from "gatsby"
-import {
-  Box,
-  Button,
-  Container,
-  Divider,
-  Stack,
-  StackDivider,
-} from "@chakra-ui/react"
-import { BodyLg, H1, H5, ImageProps, SplashCard } from "../../components"
-import useChakraBreakpoint from "../../hooks/useChakraBreakpoint"
+import Hero from "./Hero"
+import SectionTemplate from "./SectionTemplate"
+import TakeTheQuiz from "./TakeTheQuiz"
+import MigrationInfoSection from "./MigrationInfoSection"
+import HarnessThePower from "./HarnessThePower"
+import JoinTheCommunity from "./JoinTheCommunity"
+import ActiveCommunity from "./ActiveCommunity"
 
-const HomePageTemplate: FC<any> = ({ data }) => {
-  const { hero, summary } = data.markdownRemark.frontmatter
-  const mediumBreakpoint = useChakraBreakpoint("md")
-
+const SplashPageTemplate: FC<any> = ({ data }) => {
+  const {
+    hero,
+    stakerRole,
+    lpRole,
+    btcRole,
+    tokenHolderRole,
+    migrationInfo,
+    harnessThePower,
+    activeCommunity,
+    joinTheCommunity,
+  } = data.markdownRemark.frontmatter
   return (
-    <Container maxW="4xl" mt={20} paddingBottom={36}>
-      <Box as="section">
-        <H1
-          color="white"
-          fontWeight="700"
-          fontSize={{ base: "44px", sm: "52px", lg: "60px" }}
-          maxW="688px"
-        >
-          {hero.title}
-        </H1>
-        <H5
-          color="brand.100"
-          mt={6}
-          dangerouslySetInnerHTML={{ __html: hero.body }}
-        />
-        <Stack
-          mt={16}
-          spacing={8}
-          direction={mediumBreakpoint ? "column" : "row"}
-        >
-          {hero.ctaButtons.map(
-            (_: { label: string; url: string }, index: number) => (
-              // TODO: Replace with `ExternalButtonLink` component.
-              <Button
-                key={_.label}
-                variant={index > 0 ? "outline" : undefined}
-                height="auto"
-                width="auto"
-                fontSize="lg"
-                px="40px"
-                py="20px"
-                isFullWidth
-                onClick={() => {
-                  window.open(_.url)
-                }}
-              >
-                {_.label}
-              </Button>
-            )
-          )}
-        </Stack>
-      </Box>
-      <Box as="section">
-        <H5 color="white" mt={32}>
-          {summary.title}
-        </H5>
-        <BodyLg
-          color="brand.100"
-          mt={6}
-          dangerouslySetInnerHTML={{ __html: summary.body }}
-        />
-        <Box position="relative">
-          {/* Divider that spans all 3 cards on large screen sizes */}
-          {!mediumBreakpoint && (
-            <Divider
-              position="absolute"
-              top="88px"
-              zIndex="1"
-              direction="horizontal"
-              borderColor="brand.300"
-            />
-          )}
-          <Stack
-            direction={{ base: "column", md: "row" }}
-            mt={8}
-            bg="blackAlpha.300"
-            divider={<StackDivider borderColor="brand.300" />}
-            border="1px solid"
-            borderColor="brand.300"
-          >
-            {summary.cards.map(
-              (
-                card: {
-                  title: string
-                  body: string
-                  icon: { alt: string; image: Omit<ImageProps, "alt"> }
-                },
-                i: number
-              ) => (
-                <SplashCard
-                  key={card.title}
-                  title={card.title}
-                  body={card.body}
-                  icon={{ ...card.icon.image, alt: card.icon.alt }}
-                  borderTop={
-                    mediumBreakpoint && i !== 0 ? "1px solid #9974FF" : 0
-                  }
-                  borderBottom={mediumBreakpoint ? "1px solid #9974FF" : 0}
-                  borderLeft={mediumBreakpoint || i === 0 ? 0 : undefined}
-                  borderRight={
-                    mediumBreakpoint || i === summary.cards.length - 1
-                      ? 0
-                      : undefined
-                  }
-                  isCardColumn={mediumBreakpoint}
-                />
-              )
-            )}
-          </Stack>
-        </Box>
-      </Box>
-    </Container>
+    <>
+      <Hero {...hero} />
+      <SectionTemplate {...stakerRole} bgColor="gray.900" />
+      <SectionTemplate {...lpRole} bgColor="blackAlpha.300" />
+      <SectionTemplate {...btcRole} bgColor="blackAlpha.700" />
+      <SectionTemplate {...tokenHolderRole} bgColor="blackAlpha.400" />
+      <TakeTheQuiz topBgColor="blackAlpha.400" bottomBgColor="blackAlpha.400" />
+      <MigrationInfoSection {...migrationInfo} bgColor="blackAlpha.400" />
+      <HarnessThePower {...harnessThePower} />
+      <ActiveCommunity {...activeCommunity} />
+      <JoinTheCommunity {...joinTheCommunity} />
+    </>
   )
 }
 
@@ -134,37 +49,220 @@ export const query = graphql`
             url
           }
         }
-        summary {
+        stakerRole {
+          rowReverse
           title
-          body
-          cards {
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
+            label
+            url
+            variant
+          }
+        }
+        lpRole {
+          rowReverse
+          title
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
+            label
+            url
+            variant
+          }
+        }
+        btcRole {
+          rowReverse
+          title
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
+            label
+            url
+            variant
+          }
+        }
+        tokenHolderRole {
+          rowReverse
+          title
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
+            label
+            url
+            variant
+          }
+        }
+        migrationInfo {
+          rowReverse
+          title
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
+            label
+            url
+            variant
+          }
+        }
+        harnessThePower {
+          title
+          subitems {
+            description(from: "description")
             title
-            body
-            icon {
-              image {
-                id
-                absolutePath
-                internal {
-                  mediaType
-                }
-                svg {
-                  name
-                  attributes {
-                    key
-                    value
+            image {
+              id
+              relativePath
+              internal {
+                mediaType
+              }
+              childImageSharp {
+                gatsbyImageData(width: 200)
+              }
+            }
+          }
+          description
+          buttons {
+            label
+            url
+            variant
+          }
+        }
+        activeCommunity {
+          rowReverse
+          title
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
+            label
+            url
+            variant
+          }
+        }
+        joinTheCommunity {
+          left {
+            label
+            title
+            description
+            buttons {
+              label
+              url
+              variant
+              icon {
+                image {
+                  id
+                  relativePath
+                  internal {
+                    mediaType
                   }
-                  children {
+                  svg {
                     name
-                    type
-                    value
                     attributes {
                       key
                       value
                     }
+                    children {
+                      name
+                      type
+                      value
+                      attributes {
+                        key
+                        value
+                      }
+                    }
                   }
                 }
+                alt
               }
-              alt
+            }
+          }
+          right {
+            label
+            title
+            description
+            buttons {
+              label
+              url
+              variant
+              icon {
+                image {
+                  id
+                  relativePath
+                  internal {
+                    mediaType
+                  }
+                  svg {
+                    name
+                    attributes {
+                      key
+                      value
+                    }
+                    children {
+                      name
+                      type
+                      value
+                      attributes {
+                        key
+                        value
+                      }
+                    }
+                  }
+                }
+                alt
+              }
             }
           }
         }
@@ -173,4 +271,4 @@ export const query = graphql`
   }
 `
 
-export default HomePageTemplate
+export default SplashPageTemplate

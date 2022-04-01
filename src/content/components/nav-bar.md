@@ -37,6 +37,11 @@ social_links:
     icon:
       image: /images/twitter.svg
       alt: Thershold Twitter
+  - label: Telegram
+    url: TELEGRAM
+    icon:
+      image: /images/telegram.svg
+      alt: Telegram
   - label: Discord
     url: https://discord.gg/VafbhzJ3vW
     icon:
