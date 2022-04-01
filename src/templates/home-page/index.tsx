@@ -5,8 +5,8 @@ import SectionTemplate from "./SectionTemplate"
 import TakeTheQuiz from "./TakeTheQuiz"
 import MigrationInfoSection from "./MigrationInfoSection"
 import HarnessThePower from "./HarnessThePower"
-import CurrentProposals from "./CurrentProposals"
 import JoinTheCommunity from "./JoinTheCommunity"
+import ActiveCommunity from "./ActiveCommunity"
 
 const SplashPageTemplate: FC<any> = ({ data }) => {
   const {
@@ -23,18 +23,14 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
   return (
     <>
       <Hero {...hero} />
-      <SectionTemplate {...stakerRole} />
-      <SectionTemplate {...lpRole} />
-      <SectionTemplate {...btcRole} />
-      <SectionTemplate {...tokenHolderRole} />
-      <TakeTheQuiz
-        topBgColor={tokenHolderRole.bgColor}
-        bottomBgColor={migrationInfo.bgColor}
-      />
-      <MigrationInfoSection {...migrationInfo} />
+      <SectionTemplate {...stakerRole} bgColor="gray.900" />
+      <SectionTemplate {...lpRole} bgColor="blackAlpha.300" />
+      <SectionTemplate {...btcRole} bgColor="blackAlpha.700" />
+      <SectionTemplate {...tokenHolderRole} bgColor="blackAlpha.400" />
+      <TakeTheQuiz topBgColor="blackAlpha.400" bottomBgColor="blackAlpha.400" />
+      <MigrationInfoSection {...migrationInfo} bgColor="blackAlpha.400" />
       <HarnessThePower {...harnessThePower} />
-      <SectionTemplate {...activeCommunity} />
-      <CurrentProposals />
+      <ActiveCommunity {...activeCommunity} />
       <JoinTheCommunity {...joinTheCommunity} />
     </>
   )
@@ -55,7 +51,6 @@ export const query = graphql`
         }
         stakerRole {
           rowReverse
-          bgColor
           title
           description
           image {
@@ -76,7 +71,6 @@ export const query = graphql`
         }
         lpRole {
           rowReverse
-          bgColor
           title
           description
           image {
@@ -97,7 +91,6 @@ export const query = graphql`
         }
         btcRole {
           rowReverse
-          bgColor
           title
           description
           image {
@@ -118,7 +111,6 @@ export const query = graphql`
         }
         tokenHolderRole {
           rowReverse
-          bgColor
           title
           description
           image {
@@ -139,7 +131,6 @@ export const query = graphql`
         }
         migrationInfo {
           rowReverse
-          bgColor
           title
           description
           image {
@@ -183,7 +174,6 @@ export const query = graphql`
         }
         activeCommunity {
           rowReverse
-          bgColor
           title
           description
           image {

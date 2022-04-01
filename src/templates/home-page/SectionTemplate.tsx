@@ -24,7 +24,7 @@ export interface RoleTemplateProps extends BoxProps {
   title: string
   description: string
   buttons: FooterButton[]
-  image: ImageProps
+  image?: ImageProps
   rowReverse?: boolean
 }
 
@@ -34,6 +34,7 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
   buttons = [],
   image,
   rowReverse,
+  children,
   ...boxProps
 }) => {
   return (
@@ -59,8 +60,9 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
             ))}
           </Stack>
         </SectionTextContainer>
-        <SectionImage {...image} />
+        {image && <SectionImage {...image} />}
       </ResponsiveStack>
+      {children}
     </PageSection>
   )
 }
