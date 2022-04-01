@@ -1,13 +1,7 @@
 import { FC } from "react"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import { withPrefix } from "gatsby"
-import {
-  Box,
-  chakra,
-  Icon,
-  IconProps,
-  Image as ChakraImage,
-} from "@chakra-ui/react"
+import { chakra, Icon, IconProps, Image as ChakraImage } from "@chakra-ui/react"
 import { createIcon } from "@chakra-ui/react"
 
 interface SVGAttributes {

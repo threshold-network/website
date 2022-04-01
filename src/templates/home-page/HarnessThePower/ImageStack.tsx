@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 import { HStack, Stack, Square } from "@chakra-ui/react"
 import { BodyMd, LabelMd } from "../../../components/Typography"
 import { Image, ImageProps } from "../../../components"
@@ -24,7 +24,11 @@ const ImageStack: FC<{
           <Square bg="brand.500" w="20px" h="20px" />
           <LabelMd>{title}</LabelMd>
         </HStack>
-        <BodyMd mt="1rem !important">{description}</BodyMd>
+        <BodyMd
+          mt="1rem"
+          as="div"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
       </Stack>
     </Stack>
   )
