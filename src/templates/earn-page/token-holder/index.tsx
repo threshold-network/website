@@ -8,7 +8,7 @@ const TokenHolderPageTemplate: FC<any> = ({ data }) => {
 
   return (
     <RolePageTemplate>
-      <SectionTemplate {...tokenHolderInfo} preTitle={null} />
+      <SectionTemplate {...tokenHolderInfo} preTitle={null} columnReverse />
     </RolePageTemplate>
   )
 }

@@ -26,6 +26,7 @@ export interface RoleTemplateProps extends BoxProps {
   buttons: FooterButton[]
   image?: ImageProps
   rowReverse?: boolean
+  columnReverse?: boolean
   preTitle?: string
 }
 
@@ -35,13 +36,18 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
   buttons = [],
   image,
   rowReverse,
+  columnReverse,
   preTitle = "Getting Started",
   children,
   ...boxProps
 }) => {
   return (
     <PageSection {...boxProps}>
-      <ResponsiveStack rowReverse={rowReverse} spacing={16}>
+      <ResponsiveStack
+        rowReverse={rowReverse}
+        columnReverse={columnReverse}
+        spacing={16}
+      >
         <SectionTextContainer>
           <LabelMd textTransform="uppercase" color="gray.500">
             {preTitle}

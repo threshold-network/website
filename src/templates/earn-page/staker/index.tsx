@@ -13,7 +13,7 @@ const StakerPageTemplate: FC<any> = ({ data }) => {
 
   return (
     <RolePageTemplate>
-      <SectionTemplate {...stakerInfo} preTitle={null} />
+      <SectionTemplate {...stakerInfo} preTitle={null} columnReverse />
       <NetworkDistribution />
       <GettingStarted {...gettingStarted} />
       <TechnicalRequirements {...techRequirements} />

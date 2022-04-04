@@ -8,7 +8,7 @@ const BTCPageTemplate: FC<any> = ({ data }) => {
 
   return (
     <RolePageTemplate>
-      <SectionTemplate {...btcInfo} preTitle={null} />
+      <SectionTemplate {...btcInfo} preTitle={null} columnReverse />
     </RolePageTemplate>
   )
 }
