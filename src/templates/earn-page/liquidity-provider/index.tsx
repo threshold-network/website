@@ -6,11 +6,9 @@ import SectionTemplate from "../../home-page/SectionTemplate"
 const LiquidityProviderPageTemplate: FC<any> = ({ data }) => {
   const { lpInfo } = data.markdownRemark.frontmatter
 
-  console.log("lp info ", lpInfo)
-
   return (
     <RolePageTemplate>
-      <SectionTemplate {...lpInfo} />
+      <SectionTemplate {...lpInfo} preTitle={null} />
     </RolePageTemplate>
   )
 }
