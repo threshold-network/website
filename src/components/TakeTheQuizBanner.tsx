@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import { H5 } from "./Typography"
 import DigitalPatternBox from "./DigitalPatternBox"
 import useChakraBreakpoint from "../hooks/useChakraBreakpoint"
+import { useQuizModal } from "../contexts/QuizModalContext"
 
 export type TakeTheQuizBannerProps = {
   description: string
@@ -16,6 +17,8 @@ const TakeTheQuizBannerTemplate: FC<TakeTheQuizBannerProps & BoxProps> = ({
   ...containerProps
 }) => {
   const isMobile = useChakraBreakpoint("md")
+  const { setIsOpen } = useQuizModal()
+
   return (
     <DigitalPatternBox
       variant="dark"
@@ -35,7 +38,14 @@ const TakeTheQuizBannerTemplate: FC<TakeTheQuizBannerProps & BoxProps> = ({
         <H5 color="gray.500" maxW="645px">
           {description}
         </H5>
-        <Button variant={isMobile ? "solid" : "outline"} minW="170px">
+        <Button
+          variant={isMobile ? "solid" : "outline"}
+          minW="170px"
+          onClick={() => {
+            console.log("opening")
+            setIsOpen(true)
+          }}
+        >
           {buttonText}
         </Button>
       </Stack>

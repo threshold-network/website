@@ -2,6 +2,7 @@ import { FC } from "react"
 import TakeTheQuizBanner from "../../components/TakeTheQuizBanner"
 import RolesNav from "./RolesNav"
 import { PageSection } from "../../components/PageSection"
+import { useQuizModal } from "../../contexts/QuizModalContext"
 
 const RolePageTemplate: FC = ({ children }) => {
   return (
