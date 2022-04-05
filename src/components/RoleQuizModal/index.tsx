@@ -1,7 +1,7 @@
 import React, { FC, useMemo, useState } from "react"
 import QuizStage from "./QuizStage"
 import { GoBack, GoForward, QuizStageData, Role } from "./types"
-import QuizResult from "./QuizResult"
+import QuizResult, { ResultPageProps } from "./QuizResult"
 import { graphql, useStaticQuery } from "gatsby"
 import {
   Modal,
@@ -16,9 +16,7 @@ import { useQuizModal } from "../../contexts/QuizModalContext"
 interface Props {
   stages: {
     questionPage: QuizStageData
-    resultPage: {
-      title: string
-    }
+    resultPage: ResultPageProps
   }[]
 }
 
@@ -27,6 +25,11 @@ const RoleQuizModalTemplate: FC<Props> = ({ stages }) => {
   const currentStage = useMemo(() => stages[currentStageIdx], [currentStageIdx])
 
   const [result, setResult] = useState<Role | undefined>()
+
+  const resetQuizState = () => {
+    setResult(undefined)
+    setCurrentStageIdx(0)
+  }
 
   const goForward: GoForward = (result) => {
     if (result === "NEXT") {
@@ -42,8 +45,15 @@ const RoleQuizModalTemplate: FC<Props> = ({ stages }) => {
     }
   }
 
+  console.log(currentStage)
+
   if (result) {
-    return <QuizResult result={result} />
+    return (
+      <QuizResult
+        {...currentStage.resultPage}
+        resetQuizState={resetQuizState}
+      />
+    )
   }
 
   return (
@@ -75,6 +85,22 @@ const query = graphql`
               }
               resultPage {
                 title
+                description
+                button {
+                  label
+                  variant
+                  url
+                }
+                image {
+                  id
+                  relativePath
+                  internal {
+                    mediaType
+                  }
+                  childImageSharp {
+                    gatsbyImageData(width: 200)
+                  }
+                }
               }
             }
           }
@@ -92,7 +118,7 @@ const RoleQuiz = () => {
   const { setIsOpen, isOpen } = useQuizModal()
 
   return (
-    <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} size="3xl">
+    <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} size="6xl">
       <ModalOverlay />
       <ModalContent bg="gray.900" minH="500px">
         <ModalHeader>Quiz</ModalHeader>
