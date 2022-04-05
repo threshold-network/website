@@ -1,15 +1,31 @@
-import React, { FC } from "react"
-import { Box, Stack } from "@chakra-ui/react"
+import { FC } from "react"
+import { Stack } from "@chakra-ui/react"
 import Card from "../../../components/Card"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 
-const ProposalCard: FC<{
+export interface Proposal {
+  id: string
   title: string
-  subTitle: string
-  body: string
-  href: string
-}> = ({ title, subTitle, body, href }) => {
+  createdAt: string
+  createdBy: string
+  content: string | { raw: string; html: string }
+  url: string
+}
+
+const ProposalCard: FC<Proposal> = ({
+  title,
+  createdAt,
+  createdBy,
+  content,
+  url,
+}) => {
+  const _createdAt = new Date(createdAt).toLocaleDateString("en-gb", {
+    year: "numeric",
+    month: "short",
+  })
+  const subTitle = `${_createdAt} · ${createdBy}`
+  const _content = typeof content === "string" ? content : content.raw
   return (
     <Card maxW={{ base: "100%", md: "336px" }}>
       <Stack spacing={6}>
@@ -18,13 +34,13 @@ const ProposalCard: FC<{
           <Card.SubTitle>{subTitle}</Card.SubTitle>
         </Stack>
         <Card.Divider />
-        <Card.Body>{body}</Card.Body>
+        <Card.Body
+          as="div"
+          dangerouslySetInnerHTML={{ __html: _content }}
+          noOfLines={6}
+        />
       </Stack>
-      <ExternalButtonLink
-        mt={16}
-        href={href as ExternalLinkHref}
-        variant="link"
-      >
+      <ExternalButtonLink mt={16} href={url as ExternalLinkHref} variant="link">
         View Proposal
       </ExternalButtonLink>
     </Card>
