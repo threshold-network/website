@@ -1,10 +1,11 @@
-import { GatsbyNode } from "gatsby"
+import { GatsbyNode, Node } from "gatsby"
 import path from "path"
 import { createFilePath } from "gatsby-source-filesystem"
 import { parse } from "svgson"
 import { pathThatSvg } from "path-that-svg"
 import fs from "fs"
 import MarkdownIt from "markdown-it"
+import axios from "axios"
 
 export const createPages: GatsbyNode["createPages"] = async ({
   actions,
@@ -94,6 +95,17 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
     }
     type Frontmatter {
       harnessThePower: Subitems
+    }
+    type ProposalContent {
+      html: String
+      raw: String
+    }
+    type Proposal implements Node {
+      title: String
+      createdAt: String
+      createdBy: String
+      content: ProposalContent
+      url: String
     }
     type Subitems {
       subitems: [Item]
@@ -204,4 +216,62 @@ export const createResolvers: GatsbyNode["createResolvers"] = ({
       },
     },
   })
+}
+
+export const sourceNodes: GatsbyNode["sourceNodes"] = async ({
+  actions,
+  createNodeId,
+  getNodes,
+  reporter,
+  createContentDigest,
+}) => {
+  const { createNode } = actions
+
+  const nodes = getNodes()
+  const proposalsMdFile: Node & {
+    frontmatter?: { template: string; proposals: Array<{ url: string }> }
+  } = nodes.find(
+    (
+      node: Node & {
+        frontmatter?: { template: string }
+      }
+    ) => node?.frontmatter?.template === "proposals"
+  )
+
+  if (!proposalsMdFile) {
+    return
+  }
+
+  proposalsMdFile?.frontmatter?.proposals?.forEach(
+    async (proposal: { url: string; title?: string; description?: string }) => {
+      const url = `${proposal.url}.json`
+      const { data, status } = await axios.get(url)
+
+      const proposalPostId = data.post_stream.posts[0].id
+
+      const { data: postData, status: postRequestStatus } = await axios.get(
+        `https://forum.threshold.network/posts/${proposalPostId}.json`
+      )
+
+      if (status !== 200 || postRequestStatus !== 200) {
+        reporter.panicOnBuild(`Could not fetch the proposal: ${url}`)
+      }
+
+      createNode({
+        id: createNodeId(data.id),
+        internal: {
+          type: "Proposal",
+          contentDigest: createContentDigest(data),
+        },
+        title: proposal.title || data.title,
+        createdAt: data.created_at,
+        createdBy: data.details.created_by.username,
+        content: {
+          raw: proposal.description || postData.raw,
+          html: proposal.description || postData.cooked,
+        },
+        url: proposal.url,
+      })
+    }
+  )
 }
