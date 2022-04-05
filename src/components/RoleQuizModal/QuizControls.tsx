@@ -9,17 +9,18 @@ interface Props {
 }
 
 const QuizControls: FC<Props> = ({ selectedOption, goBack, goForward }) => {
+  console.log("quiz control ", selectedOption)
   return (
     <HStack>
       <Button onClick={goBack}>Back</Button>
       <Button
         onClick={() => {
           if (selectedOption) {
-            goForward(selectedOption.deadEnd)
+            goForward(selectedOption.result)
           }
         }}
       >
-        Fwd
+        Continue
       </Button>
     </HStack>
   )

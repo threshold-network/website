@@ -1,13 +1,13 @@
 import React, { FC } from "react"
 import { HStack, Radio, RadioGroup } from "@chakra-ui/react"
-import { Body2 } from "../../components/Typography"
+import { BodyMd } from "../../components/Typography"
 import { QuizOption, QuizStageData } from "./types"
 
-const QuizRadio: FC<QuizOption> = ({ text }) => {
+const QuizRadio: FC<QuizOption> = ({ label }) => {
   return (
     <HStack>
-      <Body2>{text}</Body2>
-      <Radio value={text} size="md" />
+      <BodyMd>{label}</BodyMd>
+      <Radio value={label} size="md" />
     </HStack>
   )
 }
@@ -20,7 +20,7 @@ const QuizRadioGroup: FC<{
   return (
     <RadioGroup onChange={setValue} value={value}>
       {stage.options.map((option) => (
-        <QuizRadio key={option.text} {...option} />
+        <QuizRadio key={option.label} {...option} />
       ))}
     </RadioGroup>
   )

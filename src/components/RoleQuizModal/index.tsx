@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react"
+import React, { FC, useMemo, useState } from "react"
 import QuizStage from "./QuizStage"
 import { GoBack, GoForward, QuizStageData, Role } from "./types"
 import QuizResult from "./QuizResult"
@@ -16,67 +16,27 @@ import {
 } from "@chakra-ui/react"
 import { useQuizModal } from "../../contexts/QuizModalContext"
 
-const quizStages: QuizStageData[] = [
-  {
-    stage: "BTC",
-    title: "Do you own btc",
-    options: [
-      {
-        text: "yes - btc",
-        deadEnd: "BTC_ROLE",
-      },
-      {
-        text: "no - btc",
-      },
-    ],
-  },
-  {
-    stage: "STAKE",
-    title: "are you comfortable staking",
-    options: [
-      {
-        text: "yes run node myself",
-        deadEnd: "STAKER_ROLE",
-      },
-      {
-        text: "yes someone else runs node",
-        deadEnd: "STAKER_ROLE",
-      },
-      {
-        text: "no  i dont to stake",
-      },
-    ],
-  },
-  {
-    stage: "LIQUIDITY",
-    title: "is liquidity important",
-    options: [
-      {
-        text: "yes i like liquidity",
-        deadEnd: "LIQUIDITY_PROVIDER_ROLE",
-      },
-      {
-        text: "no what else",
-        deadEnd: "TOKEN_HOLDER_ROLE",
-      },
-    ],
-  },
-]
+interface Props {
+  stages: {
+    questionPage: QuizStageData
+    resultPage: {
+      title: string
+    }
+  }[]
+}
 
-const RoleQuizModalTemplate = () => {
+const RoleQuizModalTemplate: FC<Props> = ({ stages }) => {
   const [currentStageIdx, setCurrentStageIdx] = useState(0)
-  const currentStage = useMemo(
-    () => quizStages[currentStageIdx],
-    [currentStageIdx]
-  )
+  const currentStage = useMemo(() => stages[currentStageIdx], [currentStageIdx])
 
   const [result, setResult] = useState<Role | undefined>()
 
-  const goForward: GoForward = (deadEndRole) => {
-    if (deadEndRole) {
-      setResult(deadEndRole)
-    } else if (currentStageIdx !== quizStages.length - 1) {
+  const goForward: GoForward = (result) => {
+    console.log("going forward witht he result ", result)
+    if (result === "NEXT") {
       setCurrentStageIdx(currentStageIdx + 1)
+    } else if (currentStageIdx !== stages.length - 1) {
+      setResult(result)
     }
   }
 
@@ -91,7 +51,11 @@ const RoleQuizModalTemplate = () => {
   }
 
   return (
-    <QuizStage stage={currentStage} goForward={goForward} goBack={goBack} />
+    <QuizStage
+      stage={currentStage.questionPage}
+      goForward={goForward}
+      goBack={goBack}
+    />
   )
 }
 
@@ -105,6 +69,16 @@ const query = graphql`
           frontmatter {
             stages {
               stageId
+              questionPage {
+                title
+                options {
+                  label
+                  result
+                }
+              }
+              resultPage {
+                title
+              }
             }
           }
         }
@@ -115,18 +89,20 @@ const query = graphql`
 
 const RoleQuiz = () => {
   const data = useStaticQuery(query)
-  // const { stages } = data.allMarkdownRemark.edges[0].node.frontmatter
+
+  const { stages } = data.allMarkdownRemark.edges[0].node.frontmatter
+  console.log(stages)
   const { setIsOpen, isOpen } = useQuizModal()
 
-  // console.log("stages", stages)
-  console.log("isOpen", isOpen)
   return (
     <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Modal Title</ModalHeader>
         <ModalCloseButton />
-        <ModalBody>{/*<RoleQuizModalTemplate />*/}</ModalBody>
+        <ModalBody>
+          <RoleQuizModalTemplate stages={stages} />
+        </ModalBody>
         <ModalFooter>
           <Button colorScheme="blue" mr={3} onClick={() => setIsOpen(false)}>
             Close

@@ -1742,9 +1742,10 @@ collections:
                     required: true,
                     options:
                       [
-                        { label: "BTC STAGE", value: "BTC_STAGE" },
-                        { label: "LP STAGE", value: "LP_STAGE" },
-                        { label: "STAKER STAGE", value: "STAKER_STAGE" },
+                        { label: "BTC STAGE", value: "BTC" },
+                        { label: "LP STAGE", value: "LIQUIDITY" },
+                        { label: "STAKER STAGE", value: "STAKER" },
+                        { label: "TOKEN HOLDER STAGE", value: "TOKEN_HOLDER" },
                       ],
                   },
                   {
@@ -1753,7 +1754,12 @@ collections:
                     widget: "object",
                     fields:
                       [
-                        { label: "Title", name: "title", widget: "string" },
+                        {
+                          label: "Title",
+                          name: "title",
+                          widget: "string",
+                          required: false,
+                        },
                         {
                           label: "Options",
                           name: "options",
@@ -1773,7 +1779,7 @@ collections:
                                   [
                                     { label: "Next", value: "NEXT" },
                                     { label: "BTC Result", value: "BTC" },
-                                    { label: "LP Result", value: "LP" },
+                                    { label: "LP Result", value: "LIQUIDITY" },
                                     { label: "Staker Result", value: "STAKER" },
                                     {
                                       label: "Token Holder Result",

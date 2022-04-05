@@ -1,23 +1,20 @@
-export type QuizStageName = "BTC" | "STAKE" | "LIQUIDITY" | "TOKEN_HOLDER"
-export type Role =
-  | "BTC_ROLE"
-  | "STAKER_ROLE"
-  | "LIQUIDITY_PROVIDER_ROLE"
-  | "TOKEN_HOLDER_ROLE"
+export type Role = "BTC" | "STAKER" | "LIQUIDITY" | "TOKEN_HOLDER"
+
+export type Result = Role | "NEXT"
 
 export interface QuizOption {
-  text: string
-  deadEnd?: Role
+  label: string
+  result: Result
 }
 
 export interface QuizStageData {
-  stage: QuizStageName
+  stageId: Role
   title: string
   options: QuizOption[]
 }
 
 export interface GoForward {
-  (deadEndRole?: Role): void
+  (result: Result): void
 }
 
 export interface GoBack {
