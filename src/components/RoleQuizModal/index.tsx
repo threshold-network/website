@@ -4,13 +4,10 @@ import { GoBack, GoForward, QuizStageData, Role } from "./types"
 import QuizResult from "./QuizResult"
 import { graphql, useStaticQuery } from "gatsby"
 import {
-  Box,
-  Button,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
 } from "@chakra-ui/react"
@@ -32,7 +29,6 @@ const RoleQuizModalTemplate: FC<Props> = ({ stages }) => {
   const [result, setResult] = useState<Role | undefined>()
 
   const goForward: GoForward = (result) => {
-    console.log("going forward witht he result ", result)
     if (result === "NEXT") {
       setCurrentStageIdx(currentStageIdx + 1)
     } else if (currentStageIdx !== stages.length - 1) {
@@ -52,6 +48,7 @@ const RoleQuizModalTemplate: FC<Props> = ({ stages }) => {
 
   return (
     <QuizStage
+      displayBackButton={currentStageIdx > 0}
       stage={currentStage.questionPage}
       goForward={goForward}
       goBack={goBack}
@@ -95,20 +92,14 @@ const RoleQuiz = () => {
   const { setIsOpen, isOpen } = useQuizModal()
 
   return (
-    <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+    <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} size="3xl">
       <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>Modal Title</ModalHeader>
+      <ModalContent bg="gray.900" minH="500px">
+        <ModalHeader>Quiz</ModalHeader>
         <ModalCloseButton />
-        <ModalBody>
+        <ModalBody p={20}>
           <RoleQuizModalTemplate stages={stages} />
         </ModalBody>
-        <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={() => setIsOpen(false)}>
-            Close
-          </Button>
-          <Button variant="ghost">Secondary Action</Button>
-        </ModalFooter>
       </ModalContent>
     </Modal>
   )

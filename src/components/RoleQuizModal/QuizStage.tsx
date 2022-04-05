@@ -1,16 +1,16 @@
 import React, { FC, useMemo, useState } from "react"
-import { Box, RadioGroup } from "@chakra-ui/react"
-import QuizRadio from "./QuizRadio"
+import { Box } from "@chakra-ui/react"
 import QuizControls from "./QuizControls"
-import { BodyLg } from "../../components/Typography"
-import { GoBack, GoForward, QuizOption, QuizStageData } from "./types"
+import { H5 } from "../../components/Typography"
+import { GoBack, GoForward, QuizOption, QuizStageData, Result } from "./types"
 import QuizRadioGroup from "./QuizRadio"
 
 const QuizStage: FC<{
   stage: QuizStageData
   goForward: GoForward
   goBack: GoBack
-}> = ({ stage, goBack, goForward }) => {
+  displayBackButton: boolean
+}> = ({ stage, goBack, goForward, displayBackButton }) => {
   const [value, setValue] = useState("")
 
   const selectedOption: QuizOption = useMemo(
@@ -18,13 +18,19 @@ const QuizStage: FC<{
     [value]
   )
 
+  const goForwardAndClearSelectedOption = (result: Result) => {
+    setValue("")
+    goForward(result)
+  }
+
   return (
     <Box>
-      <BodyLg>{stage.title}</BodyLg>
+      <H5>{stage.title}</H5>
       <QuizRadioGroup stage={stage} setValue={setValue} value={value} />
       <QuizControls
+        displayBackButton={displayBackButton}
         selectedOption={selectedOption}
-        goForward={goForward}
+        goForward={goForwardAndClearSelectedOption}
         goBack={goBack}
       />
     </Box>
