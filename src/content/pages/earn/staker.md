@@ -35,7 +35,7 @@ gettingStarted:
       staking on Threshold.
     links:
       - label: How to Run a Node
-        url: NEED_URL
+        url: https://docs.nucypher.com/en/latest/pre_application/running_a_node.html
         rightIcon: /images/external-arrow.svg
         leftIcon: /images/document.svg
       - leftIcon: /images/hardware-chip-sharp.svg
@@ -44,11 +44,11 @@ gettingStarted:
         rightIcon: /images/external-arrow.svg
       - leftIcon: /images/discord.svg
         label: Ask Questions in Discord
-        url: NEED_URL
+        url: https://discord.gg/VafbhzJ3vW
         rightIcon: /images/external-arrow.svg
       - leftIcon: /images/pencil-sharp.svg
         label: Threshold Forum
-        url: NEED_URL
+        url: https://forum.threshold.network/
         rightIcon: /images/external-arrow.svg
   right:
     title: Apps to stake on
