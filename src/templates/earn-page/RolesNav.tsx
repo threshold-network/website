@@ -7,7 +7,7 @@ import useChakraBreakpoint from "../../hooks/useChakraBreakpoint"
 // @ts-ignore
 const RolesNav = ({ location, ...props }) => {
   const { pathname } = location
-  const smallScreen = useChakraBreakpoint("md")
+  const isSmallScreen = useChakraBreakpoint("md")
 
   return (
     <HStack
@@ -31,7 +31,7 @@ const RolesNav = ({ location, ...props }) => {
         variant={pathname.includes("/liquidity-provider") ? "outline" : "ghost"}
         width="full"
       >
-        Liquidity {!smallScreen && "Provider"}
+        Liquidity {!isSmallScreen && "Provider"}
       </Button>
       <Button
         as={GatsbyLink}
@@ -39,7 +39,7 @@ const RolesNav = ({ location, ...props }) => {
         variant={pathname.includes("/btc") ? "outline" : "ghost"}
         width="full"
       >
-        BTC/tBTC {!smallScreen && "User"}
+        BTC/tBTC {!isSmallScreen && "User"}
       </Button>
       <Button
         as={GatsbyLink}

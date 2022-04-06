@@ -22,7 +22,7 @@ secondaryInfo:
     buttons:
       - label: About Governance
         url: /governance
-        variant: EXTERNAL_OUTLINE
+        variant: INTERNAL_OUTLINE
   right:
     label: Legacy Token Holders
     title: Migrate your KEEP to T
