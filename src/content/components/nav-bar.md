@@ -5,9 +5,9 @@ nav_items:
     isExternal: false
     subitems:
       - label: Staker
-        url: earn/staker
+        url: /earn/staker
       - label: Liquidity Provider
-        url: earn/liquidity-provider
+        url: /earn/liquidity-provider
       - label: BTC/tBTC User
         url: /earn/btc
       - label: Token Holder
