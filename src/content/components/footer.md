@@ -4,7 +4,7 @@ columns:
   - title: General
     links:
       - label: Dapp
-        url: https://threshold.network/
+        url: https://dashboard.threshold.network/
         isExternal: true
       - label: Press
         url: /press
@@ -13,7 +13,7 @@ columns:
         url: NEED_URL
         isExternal: true
       - label: Blog
-        url: NEED_URL
+        url: https://blog.threshold.network/
         isExternal: true
   - title: Earn
     links:
@@ -21,7 +21,7 @@ columns:
         url: /earn/staker
         isExternal: false
       - label: Liquidity Provider
-        url: "/earn/liquidity-provider "
+        url: /earn/liquidity-provider
         isExternal: false
       - label: BTC/tBTC User
         url: /earn/btc
@@ -38,10 +38,10 @@ columns:
         url: /governance
         isExternal: false
       - label: Discord
-        url: NEED_URL
+        url: https://discord.gg/VafbhzJ3vW
         isExternal: true
       - label: Forum
-        url: NEED_URL
+        url: https://forum.threshold.network/
         isExternal: true
   - title: About
     links:
@@ -55,7 +55,7 @@ columns:
         url: /audits
         isExternal: false
 social_links:
-  - url: twitter
+  - url: https://twitter.com/TheTNetwork
     icon:
       image: /images/twitter.svg
       alt: twitter
@@ -66,12 +66,12 @@ social_links:
       image: /images/telegram.svg
       alt: telegram
   - label: Discord
-    url: discord
+    url: " https://discord.gg/VafbhzJ3vW"
     icon:
       image: /images/discord.svg
       alt: discord
   - label: Github
-    url: github
+    url: https://github.com/threshold-network
     icon:
       image: /images/github.svg
       alt: github
