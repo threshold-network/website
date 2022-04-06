@@ -27,7 +27,12 @@ const ProposalCard: FC<Proposal> = ({
   const subTitle = `${_createdAt} · ${createdBy}`
   const _content = typeof content === "string" ? content : content.raw
   return (
-    <Card maxW={{ base: "100%", md: "336px" }}>
+    <Card
+      maxW={{ base: "100%", md: "336px" }}
+      display="flex"
+      flexDirection="column"
+      justifyContent="space-between"
+    >
       <Stack spacing={6}>
         <Stack spacing={4}>
           <Card.Title>{title}</Card.Title>

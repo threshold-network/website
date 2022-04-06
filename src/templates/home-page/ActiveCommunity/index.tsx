@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import { Box } from "@chakra-ui/react"
+import { Box, SimpleGrid } from "@chakra-ui/react"
 import { ResponsiveStack } from "../../../components/PageSection"
 import { H5 } from "../../../components/Typography"
 import SectionTemplate from "../SectionTemplate"
@@ -37,11 +37,11 @@ const ActiveCommunity: FC<ActiveCommunityProps> = ({
     >
       <Box mt={24}>
         <H5 color="gray.300">Current Proposals</H5>
-        <ResponsiveStack mt={8} spacing={8}>
+        <SimpleGrid columns={{ base: 1, md: 3 }} mt={8} spacing={8}>
           {proposals.map((proposal) => (
             <ProposalCard key={proposal.id} {...proposal} />
           ))}
-        </ResponsiveStack>
+        </SimpleGrid>
       </Box>
     </SectionTemplate>
   )
