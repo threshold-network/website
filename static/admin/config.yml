@@ -78,7 +78,7 @@ collections:
               - {
                   label: "Description",
                   name: "description",
-                  widget: "markdown",
+                  widget: "string",
                   required: false,
                 }
               - {
@@ -146,7 +146,7 @@ collections:
               - {
                   label: "Description",
                   name: "description",
-                  widget: "markdown",
+                  widget: "string",
                   required: false,
                 }
               - {
@@ -213,7 +213,7 @@ collections:
               - {
                   label: "Description",
                   name: "description",
-                  widget: "markdown",
+                  widget: "string",
                   required: false,
                 }
               - {
@@ -280,7 +280,7 @@ collections:
               - {
                   label: "Description",
                   name: "description",
-                  widget: "markdown",
+                  widget: "string",
                   required: false,
                 }
               - {
@@ -347,7 +347,7 @@ collections:
               - {
                   label: "Description",
                   name: "description",
-                  widget: "markdown",
+                  widget: "string",
                   required: false,
                 }
               - {
@@ -407,7 +407,7 @@ collections:
               - {
                   label: "Description",
                   name: "description",
-                  widget: "markdown",
+                  widget: "string",
                   required: false,
                 }
               - {
@@ -490,7 +490,7 @@ collections:
               - {
                   label: "Description",
                   name: "description",
-                  widget: "markdown",
+                  widget: "string",
                   required: false,
                 }
               - {
@@ -564,7 +564,7 @@ collections:
                       {
                         label: "Description",
                         name: "description",
-                        widget: "markdown",
+                        widget: "string",
                         required: false,
                       },
                       {
@@ -649,7 +649,7 @@ collections:
                       {
                         label: "Description",
                         name: "description",
-                        widget: "markdown",
+                        widget: "string",
                         required: false,
                       },
                       {
@@ -803,7 +803,7 @@ collections:
                   {
                     label: "Description",
                     name: "description",
-                    widget: "markdown",
+                    widget: "string",
                     required: false,
                   },
                   {
@@ -1056,7 +1056,7 @@ collections:
                   {
                     label: "Description",
                     name: "description",
-                    widget: "markdown",
+                    widget: "string",
                     required: false,
                   },
                   {

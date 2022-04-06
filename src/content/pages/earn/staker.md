@@ -4,8 +4,7 @@ path: /earn/staker
 title: Earn Staker Page
 activeCommunity:
   title: Threshold Staker
-  description:
-    Stakers escrow T tokens to run a node on the Threshold Network and
+  description: Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards. Running a node helps to provide cryptography services on
     Threshold and secure the network. Take on a role as a Staker with Threshold
     and be a core component of the network.
@@ -16,8 +15,7 @@ activeCommunity:
       variant: EXTERNAL_SOLID
 stakerInfo:
   title: Threshold Staker
-  description:
-    Stakers escrow T tokens to run a node on the Threshold Network and
+  description: Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards. Running a node helps to provide cryptography services on
     Threshold and secure the network. Take on a role as a Staker with Threshold
     and be a core component of the network.
@@ -35,7 +33,7 @@ gettingStarted:
       staking on Threshold.
     links:
       - label: How to Run a Node
-        url: NEED_URL
+        url: https://docs.nucypher.com/en/latest/pre_application/running_a_node.html
         rightIcon: /images/external-arrow.svg
         leftIcon: /images/document.svg
       - leftIcon: /images/hardware-chip-sharp.svg
@@ -44,16 +42,15 @@ gettingStarted:
         rightIcon: /images/external-arrow.svg
       - leftIcon: /images/discord.svg
         label: Ask Questions in Discord
-        url: NEED_URL
+        url: https://discord.gg/VafbhzJ3vW
         rightIcon: /images/external-arrow.svg
       - leftIcon: /images/pencil-sharp.svg
         label: Threshold Forum
-        url: NEED_URL
+        url: https://forum.threshold.network/
         rightIcon: /images/external-arrow.svg
   right:
     title: Apps to stake on
-    description:
-      Threshold stakers can authorize several different applications to
+    description: Threshold stakers can authorize several different applications to
       stake on with their T stakes.
     links:
       - leftIcon: /images/threshold.svg

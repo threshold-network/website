@@ -29,7 +29,13 @@ const SocialMediaLinks: FC<
       {...stackProps}
     >
       {links.map(({ url, icon: { image, alt } }) => (
-        <Link key={url} href={url} target="_blank" rel="noreferrer">
+        <Link
+          key={url}
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          sx={{ "svg path": { fill: "currentColor" } }}
+        >
           <Image
             boxSize="25px"
             color="gray.300"
