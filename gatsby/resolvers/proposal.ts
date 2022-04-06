@@ -4,7 +4,10 @@ const BASE_API_URL = "https://forum.threshold.network"
 const PROPOSAL_CATEGORY_URL = `${BASE_API_URL}/c/governance-proposals/7.json`
 
 const getTopicUrl = (slug: string, id: string) =>
-  `${BASE_API_URL}/t/${slug}/${id}.json`
+  `${BASE_API_URL}/t/${slug}/${id}`
+
+const getTopicJsonUrl = (slug: string, id: string) =>
+  `${getTopicUrl(slug, id)}.json`
 
 const getPostUrl = (id: string) => `${BASE_API_URL}/posts/${id}.json`
 
@@ -37,7 +40,7 @@ export const proposalResolver =
       const latestTopics = data.topic_list.topics.slice(1, args?.limit + 1 || 4)
       const topics: { data: TopicResponseData }[] = await Promise.all(
         latestTopics.map((topic: { slug: string; id: string }) =>
-          axios.get(getTopicUrl(topic.slug, topic.id))
+          axios.get(getTopicJsonUrl(topic.slug, topic.id))
         )
       )
       const posts: { data: PostResponseData }[] = await Promise.all(
