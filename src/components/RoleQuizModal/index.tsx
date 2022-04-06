@@ -45,8 +45,6 @@ const RoleQuizModalTemplate: FC<Props> = ({ stages }) => {
     }
   }
 
-  console.log(currentStage)
-
   if (result) {
     return (
       <QuizResult
