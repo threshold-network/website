@@ -157,7 +157,7 @@ const Footer = () => {
     data.allMarkdownRemark.edges[0].node.frontmatter
 
   return (
-    <Box>
+    <Box as="footer">
       {/*<NewsletterSubscribe />*/}
       <FooterContent columns={columns} socialLinks={socialLinks} />
     </Box>
