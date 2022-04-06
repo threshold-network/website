@@ -20,7 +20,7 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
     activeCommunity,
     joinTheCommunity,
   } = data.markdownRemark.frontmatter
-  const proposals = data.allProposal.nodes
+  const proposals = data.allProposals
 
   return (
     <>
@@ -270,18 +270,16 @@ export const query = graphql`
         }
       }
     }
-    allProposal {
-      nodes {
-        id
-        title
-        content {
-          raw
-          html
-        }
-        createdBy
-        createdAt
-        url
+    allProposals {
+      id
+      title
+      content {
+        raw
+        html
       }
+      createdBy
+      createdAt
+      url
     }
   }
 `

@@ -1,11 +1,8 @@
-import { GatsbyNode, Node } from "gatsby"
+import { GatsbyNode } from "gatsby"
 import path from "path"
 import { createFilePath } from "gatsby-source-filesystem"
-import { parse } from "svgson"
-import { pathThatSvg } from "path-that-svg"
-import fs from "fs"
 import MarkdownIt from "markdown-it"
-import axios from "axios"
+import { proposalResolver, svgResolver } from "./gatsby/resolvers"
 
 export const createPages: GatsbyNode["createPages"] = async ({
   actions,
@@ -100,7 +97,8 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       html: String
       raw: String
     }
-    type Proposal implements Node {
+    type Proposal {
+      id: String
       title: String
       createdAt: String
       createdBy: String
@@ -153,125 +151,28 @@ export const onCreateBabelConfig: GatsbyNode["onCreateBabelConfig"] = ({
   })
 }
 
-const svgCache = {}
-const SVG_CACHE_ID_PREFIX = "svg-data-cache"
-const convertSvgAttributesToArray = (object) => {
-  for (const key in object) {
-    if (typeof object[key] === "object")
-      object[key] = convertSvgAttributesToArray(object[key])
-  }
-
-  if (object.hasOwnProperty("attributes"))
-    object.attributes = Object.entries(object.attributes).map(
-      ([key, value]) => ({
-        key,
-        value,
-      })
-    )
-
-  return object
-}
-
 export const createResolvers: GatsbyNode["createResolvers"] = ({
   createResolvers,
   reporter,
 }) => {
   createResolvers({
+    Query: {
+      allProposals: {
+        type: "[Proposal]",
+        args: {
+          limit: {
+            type: "Int",
+            default: 3,
+          },
+        },
+        resolve: proposalResolver(reporter),
+      },
+    },
     File: {
       svg: {
         type: "SVG",
-        resolve: async (source) => {
-          if (source.internal.mediaType !== "image/svg+xml") {
-            return null
-          }
-
-          try {
-            const cacheId = `${SVG_CACHE_ID_PREFIX}-${source.id}`
-            const cachedData = svgCache[cacheId]
-
-            if (cachedData) {
-              reporter.info(`Loading data from cache; id: ${cacheId}`)
-              return cachedData
-            }
-
-            const data = fs.readFileSync(source.absolutePath, {
-              encoding: "utf-8",
-            })
-            // Convert svg elements such as `rect`, `circle`, `ellipse`, `line`,
-            // `polyline` or `polygon` to `path`. It will help to build the
-            // styleable svg icon components with Chakra.
-            const path = await pathThatSvg(data)
-            // Convert svg to an object.
-            const parsedSvgElement = await parse(path)
-
-            const svgEelement = convertSvgAttributesToArray(parsedSvgElement)
-            svgCache[cacheId] = svgEelement
-            reporter.info(`Saving svg data in cache; id ${cacheId}`)
-            return svgEelement
-          } catch (error) {
-            reporter.panic(error)
-            return null
-          }
-        },
+        resolve: svgResolver(reporter),
       },
     },
   })
-}
-
-export const sourceNodes: GatsbyNode["sourceNodes"] = async ({
-  actions,
-  createNodeId,
-  getNodes,
-  reporter,
-  createContentDigest,
-}) => {
-  const { createNode } = actions
-
-  const nodes = getNodes()
-  const proposalsMdFile: Node & {
-    frontmatter?: { template: string; proposals: Array<{ url: string }> }
-  } = nodes.find(
-    (
-      node: Node & {
-        frontmatter?: { template: string }
-      }
-    ) => node?.frontmatter?.template === "proposals"
-  )
-
-  if (!proposalsMdFile) {
-    return
-  }
-
-  proposalsMdFile?.frontmatter?.proposals?.forEach(
-    async (proposal: { url: string; title?: string; description?: string }) => {
-      const url = `${proposal.url}.json`
-      const { data, status } = await axios.get(url)
-
-      const proposalPostId = data.post_stream.posts[0].id
-
-      const { data: postData, status: postRequestStatus } = await axios.get(
-        `https://forum.threshold.network/posts/${proposalPostId}.json`
-      )
-
-      if (status !== 200 || postRequestStatus !== 200) {
-        reporter.panicOnBuild(`Could not fetch the proposal: ${url}`)
-      }
-
-      createNode({
-        id: createNodeId(data.id),
-        internal: {
-          type: "Proposal",
-          contentDigest: createContentDigest(data),
-        },
-        title: proposal.title || data.title,
-        createdAt: data.created_at,
-        createdBy: data.details.created_by.username,
-        content: {
-          raw: proposal.description || postData.raw,
-          html: proposal.description || postData.cooked,
-        },
-        url: proposal.url,
-      })
-    }
-  )
 }

@@ -876,43 +876,6 @@ collections:
   - name: "components"
     label: "Components"
     files:
-      - file: "src/content/components/proposals.md"
-        label: "Proposals"
-        name: "proposals"
-        fields:
-          - {
-              label: "Template Key",
-              name: "template",
-              widget: "hidden",
-              default: "proposals",
-            }
-          - {
-              label: "List of proposals",
-              name: "proposals",
-              widget: "list",
-              allow_add: true,
-              fields:
-                [
-                  {
-                    label: "Proposal link",
-                    name: "url",
-                    widget: "string",
-                    hint: "Get the link to a given proposal at https://forum.threshold.network/c/governance-proposals/7.",
-                  },
-                  {
-                    label: "Title",
-                    name: "title",
-                    widget: "string",
-                    required: false,
-                  },
-                  {
-                    label: "Description",
-                    name: "description",
-                    widget: "string",
-                    required: false,
-                  },
-                ],
-            }
       - file: "src/content/components/take-the-quiz-banner.md"
         label: "Take the quiz banner"
         name: "takeTheQuizBanner"
