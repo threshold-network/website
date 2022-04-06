@@ -1761,6 +1761,12 @@ collections:
                           required: false,
                         },
                         {
+                          label: "Include Defi Accordion",
+                          name: "includeAccordion",
+                          widget: "boolean",
+                          required: false,
+                        },
+                        {
                           label: "Options",
                           name: "options",
                           widget: "list",

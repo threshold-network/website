@@ -11,6 +11,7 @@ export interface QuizStageData {
   stageId: Role
   title: string
   options: QuizOption[]
+  includeAccordion: boolean
 }
 
 export interface GoForward {

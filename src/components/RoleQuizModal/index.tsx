@@ -80,6 +80,7 @@ const query = graphql`
                   label
                   result
                 }
+                includeAccordion
               }
               resultPage {
                 title

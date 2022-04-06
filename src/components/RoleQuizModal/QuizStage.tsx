@@ -4,6 +4,7 @@ import QuizControls from "./QuizControls"
 import { H5 } from "../../components/Typography"
 import { GoBack, GoForward, QuizOption, QuizStageData, Result } from "./types"
 import QuizRadioGroup from "./QuizRadio"
+import DefiAccordion from "./DefiAccordion"
 
 const QuizStage: FC<{
   stage: QuizStageData
@@ -33,6 +34,7 @@ const QuizStage: FC<{
         goForward={goForwardAndClearSelectedOption}
         goBack={goBack}
       />
+      {stage.includeAccordion && <DefiAccordion />}
     </Box>
   )
 }
