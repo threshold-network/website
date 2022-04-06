@@ -4,6 +4,7 @@ import { Box, ChakraProvider } from "@chakra-ui/react"
 import theme from "../theme"
 import { Navbar } from "./Navbar"
 import useDarkMode from "../hooks/useDarkMode"
+import Footer from "./Footer"
 
 const App: FC = ({ children }) => {
   useDarkMode()
@@ -12,6 +13,7 @@ const App: FC = ({ children }) => {
       <Box as="main">
         <Navbar />
         {children}
+        <Footer />
       </Box>
     </Box>
   )

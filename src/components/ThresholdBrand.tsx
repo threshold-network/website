@@ -1,14 +1,17 @@
 import { FC } from "react"
-import { HStack, Image, Link } from "@chakra-ui/react"
-import Threshold from "../../static/images/ThresholdBrandFullWhite.svg"
+import { HStack, Image, Link, StackProps } from "@chakra-ui/react"
+import Threshold from "../static/images/ThresholdBrandFullWhite.svg"
 
-const ThresholdBrand: FC<{ isDrawerOpen?: boolean }> = ({ isDrawerOpen }) => {
+const ThresholdBrand: FC<{ isDrawerOpen?: boolean } & StackProps> = ({
+  isDrawerOpen,
+  ...props
+}) => {
   return (
     <HStack
       minW={{ base: "184px", lg: "200px" }}
-      // width={{ base: "100%", lg: "auto" }}
       justifyContent={isDrawerOpen ? "center" : "flex-start"}
       pr="32px"
+      {...props}
     >
       <Link href="/">
         <Image src={Threshold} h="18px" />
