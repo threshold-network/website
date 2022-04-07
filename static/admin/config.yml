@@ -743,7 +743,77 @@ collections:
               widget: "hidden",
               default: "/earn/btc",
             }
-          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "BTC User Info Section",
+              name: "btcInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
       # Liquidity Provider Page
       - file: "src/content/pages/earn/liquidity-provider.md"
         name: "liquidityProvider"
@@ -761,7 +831,40 @@ collections:
               widget: "hidden",
               default: "/earn/liquidity-provider",
             }
-          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Liquidity Provider Info Section",
+              name: "lpInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                ],
+            }
       # Staker Page
       - file: "src/content/pages/earn/staker.md"
         name: "staker"
@@ -1122,7 +1225,216 @@ collections:
               widget: "hidden",
               default: "/earn/token-holder",
             }
-          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Token Holder Info Section",
+              name: "tokenHolderInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+
+          - {
+              label: "Secondary Token Holder Info",
+              name: "secondaryInfo",
+              widget: "object",
+              collapsed: true,
+              allow_add: false,
+              required: true,
+              fields:
+                [
+                  {
+                    label: "Left Side",
+                    name: "left",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Label",
+                          name: "label",
+                          widget: "string",
+                          minimal: true,
+                        },
+                        {
+                          label: "Title",
+                          name: "title",
+                          widget: "string",
+                          minimal: true,
+                        },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                          required: false,
+                        },
+                        {
+                          label: "Buttons",
+                          name: "buttons",
+                          widget: "list",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              { label: Label, name: label, widget: string },
+                              { label: URL, name: url, widget: string },
+                              {
+                                label: Variant,
+                                name: variant,
+                                widget: select,
+                                required: true,
+                                options:
+                                  [
+                                    {
+                                      label: "External Solid",
+                                      value: "EXTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "Internal Solid",
+                                      value: "INTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "External Outline",
+                                      value: "EXTERNAL_OUTLINE",
+                                    },
+                                    {
+                                      label: "Internal Outline",
+                                      value: "INTERNAL_OUTLINE",
+                                    },
+                                  ],
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Right Side",
+                    name: "right",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Label",
+                          name: "label",
+                          widget: "string",
+                          minimal: true,
+                        },
+                        {
+                          label: "Title",
+                          name: "title",
+                          widget: "string",
+                          minimal: true,
+                        },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                          required: false,
+                        },
+                        {
+                          label: "Buttons",
+                          name: "buttons",
+                          widget: "list",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              { label: Label, name: label, widget: string },
+                              { label: URL, name: url, widget: string },
+                              {
+                                label: Variant,
+                                name: variant,
+                                widget: select,
+                                required: true,
+                                options:
+                                  [
+                                    {
+                                      label: "External Solid",
+                                      value: "EXTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "Internal Solid",
+                                      value: "INTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "External Outline",
+                                      value: "EXTERNAL_OUTLINE",
+                                    },
+                                    {
+                                      label: "Internal Outline",
+                                      value: "INTERNAL_OUTLINE",
+                                    },
+                                  ],
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+
       # About Page
       - file: "src/content/pages/about/index.md"
         name: "about"

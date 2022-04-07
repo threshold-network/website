@@ -2,10 +2,12 @@ import { FC } from "react"
 import { Button, HStack, StackProps } from "@chakra-ui/react"
 import { Link as GatsbyLink } from "gatsby"
 import { Location } from "@reach/router"
+import useChakraBreakpoint from "../../hooks/useChakraBreakpoint"
 
 // @ts-ignore
 const RolesNav = ({ location, ...props }) => {
   const { pathname } = location
+  const isSmallScreen = useChakraBreakpoint("md")
 
   return (
     <HStack
@@ -29,7 +31,7 @@ const RolesNav = ({ location, ...props }) => {
         variant={pathname.includes("/liquidity-provider") ? "outline" : "ghost"}
         width="full"
       >
-        Liquidity Provider
+        Liquidity {!isSmallScreen && "Provider"}
       </Button>
       <Button
         as={GatsbyLink}
@@ -37,7 +39,7 @@ const RolesNav = ({ location, ...props }) => {
         variant={pathname.includes("/btc") ? "outline" : "ghost"}
         width="full"
       >
-        BTC/tBTC User
+        BTC/tBTC {!isSmallScreen && "User"}
       </Button>
       <Button
         as={GatsbyLink}

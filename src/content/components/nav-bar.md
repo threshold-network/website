@@ -4,8 +4,6 @@ nav_items:
   - label: Earn
     isExternal: false
     subitems:
-      - label: How to Earn
-        url: /earn
       - label: Staker
         url: earn/staker
       - label: Liquidity Provider
