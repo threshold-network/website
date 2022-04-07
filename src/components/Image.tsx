@@ -46,7 +46,12 @@ const buildIcon = (id: string, svg: SVG) => {
       const Tag = name
       const _attribute = convertAttrToObj(attributes)
       // @ts-ignore
-      return <Tag {..._attribute} fill="currentColor" />
+      return (
+        <Tag
+          {..._attribute}
+          // fill="currentColor"
+        />
+      )
     })
     iconCache[id] = createIcon({
       defaultProps: svgAttributes,
