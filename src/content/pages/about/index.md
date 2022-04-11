@@ -1,5 +1,5 @@
 ---
 template: about-page
 path: /about
-title: About Page
+title: About
 ---
