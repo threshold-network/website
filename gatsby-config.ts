@@ -7,6 +7,20 @@ const config: GatsbyConfig = {
     url: "https://threshold.network",
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "Threshold Network",
+        short_name: "T Network",
+        description:
+          "Threshold powers user sovereignty on the public blockchain.",
+        start_url: "/",
+        background_color: "#1D2229", // grey 900
+        theme_color: "#7C47EE", // brand purple
+        display: "standalone",
+        icon: "src/static/images/favicon.png",
+      },
+    },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     {
