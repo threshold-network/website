@@ -4,9 +4,14 @@ import path from "path"
 const config: GatsbyConfig = {
   siteMetadata: {
     title: "Threshold Network",
+    titleTemplate: "Threshold · %s",
+    description: "Threshold powers user sovereignty on the public blockchain.",
+    image: "meta-banner.jpg",
     url: "https://threshold.network",
+    twitterUsername: "@TheTNetwork",
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
