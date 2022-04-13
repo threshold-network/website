@@ -7,18 +7,18 @@ interface Props {
   selectedOption: QuizOption
   goBack: GoBack
   goForward: GoForward
-  displayBackButton?: boolean
+  shouldDisplayBackButton?: boolean
 }
 
 const QuizControls: FC<Props> = ({
   selectedOption,
   goBack,
   goForward,
-  displayBackButton,
+  shouldDisplayBackButton,
 }) => {
   return (
     <HStack>
-      {displayBackButton && <Button onClick={goBack}>Back</Button>}
+      {shouldDisplayBackButton && <Button onClick={goBack}>Back</Button>}
       <Button
         disabled={!selectedOption}
         onClick={() => {

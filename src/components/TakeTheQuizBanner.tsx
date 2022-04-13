@@ -17,7 +17,7 @@ const TakeTheQuizBannerTemplate: FC<TakeTheQuizBannerProps & BoxProps> = ({
   ...containerProps
 }) => {
   const isMobile = useChakraBreakpoint("md")
-  const { setIsOpen } = useQuizModal()
+  const { openModal } = useQuizModal()
 
   return (
     <DigitalPatternBox
@@ -41,10 +41,7 @@ const TakeTheQuizBannerTemplate: FC<TakeTheQuizBannerProps & BoxProps> = ({
         <Button
           variant={isMobile ? "solid" : "outline"}
           minW="170px"
-          onClick={() => {
-            console.log("opening")
-            setIsOpen(true)
-          }}
+          onClick={openModal}
         >
           {buttonText}
         </Button>

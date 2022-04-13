@@ -2,19 +2,22 @@ import React, { useContext, createContext, useState } from "react"
 
 export const QuizModalContext = createContext<{
   isOpen: boolean
-  setIsOpen: (value: boolean) => void
+  openModal: () => void
+  closeModal: () => void
 }>({
   isOpen: false,
-  setIsOpen: () => {},
+  openModal: () => {},
+  closeModal: () => {},
 })
 
 export const QuizModalContextProvider: React.FC = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  console.log("the wquiz contet ", isOpen)
+  const openModal = () => setIsOpen(true)
+  const closeModal = () => setIsOpen(false)
 
   return (
-    <QuizModalContext.Provider value={{ isOpen, setIsOpen }}>
+    <QuizModalContext.Provider value={{ isOpen, openModal, closeModal }}>
       {children}
     </QuizModalContext.Provider>
   )

@@ -1,6 +1,8 @@
 export type Role = "BTC" | "STAKER" | "LIQUIDITY" | "TOKEN_HOLDER"
 
-export type Result = Role | "NEXT"
+export const NEXT = "NEXT"
+
+export type Result = Role | typeof NEXT
 
 export interface QuizOption {
   label: string

@@ -10,12 +10,12 @@ const QuizStage: FC<{
   stage: QuizStageData
   goForward: GoForward
   goBack: GoBack
-  displayBackButton: boolean
-}> = ({ stage, goBack, goForward, displayBackButton }) => {
+  shouldDisplayBackButton: boolean
+}> = ({ stage, goBack, goForward, shouldDisplayBackButton }) => {
   const [value, setValue] = useState("")
 
   const selectedOption: QuizOption = useMemo(
-    () => stage.options.filter((option) => option.label === value)[0],
+    () => stage.options.find((option) => option.label === value) as QuizOption,
     [value]
   )
 
@@ -29,7 +29,7 @@ const QuizStage: FC<{
       <H5>{stage.title}</H5>
       <QuizRadioGroup stage={stage} setValue={setValue} value={value} />
       <QuizControls
-        displayBackButton={displayBackButton}
+        shouldDisplayBackButton={shouldDisplayBackButton}
         selectedOption={selectedOption}
         goForward={goForwardAndClearSelectedOption}
         goBack={goBack}

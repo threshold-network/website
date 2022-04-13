@@ -25,10 +25,7 @@ const QuizResult: FC<ResultPageProps & { resetQuizState: () => void }> = ({
   image,
   resetQuizState,
 }) => {
-  const { setIsOpen } = useQuizModal()
-  const closeModal = () => {
-    setIsOpen(false)
-  }
+  const { closeModal } = useQuizModal()
 
   return (
     <ResponsiveStack spacing={16}>
