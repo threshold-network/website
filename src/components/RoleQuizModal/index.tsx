@@ -113,7 +113,6 @@ const RoleQuiz = () => {
   const data = useStaticQuery(query)
 
   const { stages } = data.allMarkdownRemark.edges[0].node.frontmatter
-  console.log(stages)
   const { setIsOpen, isOpen } = useQuizModal()
 
   return (

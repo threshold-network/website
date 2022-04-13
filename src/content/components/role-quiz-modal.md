@@ -1,5 +1,9 @@
 ---
 template: roleQuizModal
+defiAccordion:
+  buttonText: What is DeFi?
+  accordionText: Short for decentralized finance, DeFi is an umbrella term for
+    peer-to-peer financial services on public blockchains, primarily Ethereum.
 stages:
   - stageId: BTC
     questionPage:

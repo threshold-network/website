@@ -1729,6 +1729,24 @@ collections:
               default: "role-quiz-modal",
             }
           - {
+              label: "Defi Accordion",
+              name: "defiAccordion",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Button Text",
+                    name: "buttonText",
+                    widget: "string",
+                  },
+                  {
+                    label: "Accordion Text",
+                    name: "accordionText",
+                    widget: "string",
+                  },
+                ],
+            }
+          - {
               label: "Stages",
               name: "stages",
               widget: "list",
