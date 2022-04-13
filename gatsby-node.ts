@@ -1,10 +1,8 @@
 import { GatsbyNode } from "gatsby"
 import path from "path"
 import { createFilePath } from "gatsby-source-filesystem"
-import { parse } from "svgson"
-import { pathThatSvg } from "path-that-svg"
-import fs from "fs"
 import MarkdownIt from "markdown-it"
+import { proposalResolver, svgResolver } from "./gatsby/resolvers"
 
 export const createPages: GatsbyNode["createPages"] = async ({
   actions,
@@ -95,6 +93,18 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
     type Frontmatter {
       harnessThePower: Subitems
     }
+    type ProposalContent {
+      html: String
+      raw: String
+    }
+    type Proposal {
+      id: String
+      title: String
+      createdAt: String
+      createdBy: String
+      content: ProposalContent
+      url: String
+    }
     type Subitems {
       subitems: [Item]
     }
@@ -141,66 +151,27 @@ export const onCreateBabelConfig: GatsbyNode["onCreateBabelConfig"] = ({
   })
 }
 
-const svgCache = {}
-const SVG_CACHE_ID_PREFIX = "svg-data-cache"
-const convertSvgAttributesToArray = (object) => {
-  for (const key in object) {
-    if (typeof object[key] === "object")
-      object[key] = convertSvgAttributesToArray(object[key])
-  }
-
-  if (object.hasOwnProperty("attributes"))
-    object.attributes = Object.entries(object.attributes).map(
-      ([key, value]) => ({
-        key,
-        value,
-      })
-    )
-
-  return object
-}
-
 export const createResolvers: GatsbyNode["createResolvers"] = ({
   createResolvers,
   reporter,
 }) => {
   createResolvers({
+    Query: {
+      allProposals: {
+        type: "[Proposal]",
+        args: {
+          limit: {
+            type: "Int",
+            default: 3,
+          },
+        },
+        resolve: proposalResolver(reporter),
+      },
+    },
     File: {
       svg: {
         type: "SVG",
-        resolve: async (source) => {
-          if (source.internal.mediaType !== "image/svg+xml") {
-            return null
-          }
-
-          try {
-            const cacheId = `${SVG_CACHE_ID_PREFIX}-${source.id}`
-            const cachedData = svgCache[cacheId]
-
-            if (cachedData) {
-              reporter.info(`Loading data from cache; id: ${cacheId}`)
-              return cachedData
-            }
-
-            const data = fs.readFileSync(source.absolutePath, {
-              encoding: "utf-8",
-            })
-            // Convert svg elements such as `rect`, `circle`, `ellipse`, `line`,
-            // `polyline` or `polygon` to `path`. It will help to build the
-            // styleable svg icon components with Chakra.
-            const path = await pathThatSvg(data)
-            // Convert svg to an object.
-            const parsedSvgElement = await parse(path)
-
-            const svgEelement = convertSvgAttributesToArray(parsedSvgElement)
-            svgCache[cacheId] = svgEelement
-            reporter.info(`Saving svg data in cache; id ${cacheId}`)
-            return svgEelement
-          } catch (error) {
-            reporter.panic(error)
-            return null
-          }
-        },
+        resolve: svgResolver(reporter),
       },
     },
   })

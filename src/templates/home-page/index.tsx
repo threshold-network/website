@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC } from "react"
 import { graphql } from "gatsby"
 import Hero from "./Hero"
 import SectionTemplate from "./SectionTemplate"
@@ -20,6 +20,8 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
     activeCommunity,
     joinTheCommunity,
   } = data.markdownRemark.frontmatter
+  const proposals = data.allProposals
+
   return (
     <>
       <Hero {...hero} />
@@ -30,7 +32,7 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
       <TakeTheQuiz topBgColor="blackAlpha.400" bottomBgColor="blackAlpha.400" />
       <MigrationInfoSection {...migrationInfo} bgColor="blackAlpha.400" />
       <HarnessThePower {...harnessThePower} />
-      <ActiveCommunity {...activeCommunity} />
+      <ActiveCommunity {...activeCommunity} proposals={proposals} />
       <JoinTheCommunity {...joinTheCommunity} />
     </>
   )
@@ -267,6 +269,17 @@ export const query = graphql`
           }
         }
       }
+    }
+    allProposals {
+      id
+      title
+      content {
+        raw
+        html
+      }
+      createdBy
+      createdAt
+      url
     }
   }
 `
