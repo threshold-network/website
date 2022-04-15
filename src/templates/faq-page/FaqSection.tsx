@@ -1,8 +1,12 @@
 import React, { FC } from "react"
-import { Button } from "@chakra-ui/react"
-import { BodyMd, H3, ImageProps, Image } from "../../components"
+import { Box, Button, Stack } from "@chakra-ui/react"
+import { BodyLg, BodyMd, H3, Image, ImageProps } from "../../components"
 import { PageSection } from "../../components/PageSection"
 import Accordion from "../../components/Accordion"
+import {
+  ButtonType,
+  CmsButtonLink,
+} from "../../components/Buttons/CmsButtonLink"
 
 interface Props {
   title: string
@@ -16,9 +20,19 @@ interface Props {
       leftIcon: { image: ImageProps }
     }[]
   }[]
+  additionalHelp: {
+    button: {
+      label: string
+      url: string
+      variant: ButtonType
+      icon: { image: ImageProps }
+    }
+    text: string
+  }
 }
 
-const FaqSection: FC<Props> = ({ title, faq }) => {
+const FaqSection: FC<Props> = ({ title, faq, additionalHelp }) => {
+  console.log(additionalHelp.button)
   return (
     <PageSection bg="gray.900" pt={{ base: 0, md: 16 }}>
       <H3>{title}</H3>
@@ -26,12 +40,13 @@ const FaqSection: FC<Props> = ({ title, faq }) => {
         items={faq.map((faq) => ({
           title: faq.question,
           body: (
-            <>
+            <Box key={faq.question} mb={6}>
               <BodyMd color="gray.300">{faq.answer}</BodyMd>
               {faq.buttons &&
                 faq.buttons.map((button) => {
                   return (
                     <Button
+                      key={button.label}
                       mt={8}
                       px={4}
                       py={6}
@@ -48,10 +63,22 @@ const FaqSection: FC<Props> = ({ title, faq }) => {
                     </Button>
                   )
                 })}
-            </>
+            </Box>
           ),
         }))}
       />
+      <Stack mt={20}>
+        <BodyLg mb={8}>{additionalHelp.text}</BodyLg>
+        <CmsButtonLink
+          leftIcon={
+            <Image fill="white" {...additionalHelp.button.icon.image} />
+          }
+          cmsVariant={additionalHelp.button.variant}
+          url={additionalHelp.button.url}
+        >
+          {additionalHelp.button.label}
+        </CmsButtonLink>
+      </Stack>
     </PageSection>
   )
 }

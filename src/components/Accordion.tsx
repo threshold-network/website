@@ -19,9 +19,9 @@ interface Props extends AccordionProps {
 const Accordion: FC<Props> = ({ items, ...accordionProps }) => {
   return (
     <ChakraAccordion allowMultiple mt={12} {...accordionProps}>
-      {items.map((item) => {
+      {items.map((item, i) => {
         return (
-          <AccordionItem>
+          <AccordionItem key={i}>
             {({ isExpanded }) => {
               return (
                 <>

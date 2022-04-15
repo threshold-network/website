@@ -8,6 +8,8 @@ import FaqSection from "./FaqSection"
 const FAQPageTemplate: FC<any> = ({ data }) => {
   const { aboutInfo, teamsSection, faq } = data.markdownRemark.frontmatter
 
+  console.log(data.markdownRemark.frontmatter)
+
   return (
     <Box>
       <SectionTemplate
@@ -119,6 +121,27 @@ export const query = graphql`
                     gatsbyImageData(width: 200)
                   }
                 }
+              }
+            }
+          }
+          additionalHelp {
+            text
+            button {
+              label
+              url
+              variant
+              icon {
+                image {
+                  id
+                  relativePath
+                  internal {
+                    mediaType
+                  }
+                  childImageSharp {
+                    gatsbyImageData(width: 200)
+                  }
+                }
+                alt
               }
             }
           }
