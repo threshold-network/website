@@ -6,6 +6,7 @@ import MailchimpSubscribe, {
 import { Button, Box, Input } from "@chakra-ui/react"
 import { ResponsiveStack, SectionTextContainer } from "../PageSection"
 import { BodyLg, BodyMd, H5 } from "../Typography"
+import { MAILCHIMP_POST_URL } from "../../config/newsletterConfig"
 
 const CustomForm: FC<FormHooks<EmailFormFields>> = ({
   status,
@@ -52,7 +53,9 @@ const CustomForm: FC<FormHooks<EmailFormFields>> = ({
         {status === "error" && (
           <BodyMd
             color="red.500"
-            dangerouslySetInnerHTML={{ __html: (message as string).slice(3) }}
+            // slice first 4 chars to scrub the mailchimp error
+            // example mailchimp error: "0 - Invalid Email"
+            dangerouslySetInnerHTML={{ __html: (message as string).slice(4) }}
           />
         )}
 
@@ -66,15 +69,10 @@ const CustomForm: FC<FormHooks<EmailFormFields>> = ({
   )
 }
 
-const MAILCHIMP_U = "91424e686e0fd39bbbe65dd6d"
-const MAILCHIMP_ID = "b61f1ff979"
-
 const MailchimpForm = () => {
-  const url = `https://network.us3.list-manage.com/subscribe/post?u=${MAILCHIMP_U}&amp;id=${MAILCHIMP_ID}`
-
   return (
     <MailchimpSubscribe
-      url={url}
+      url={MAILCHIMP_POST_URL}
       render={(mailChimpProps) => <CustomForm {...mailChimpProps} />}
     />
   )
