@@ -3,10 +3,10 @@ import { graphql } from "gatsby"
 import SectionTemplate from "../home-page/SectionTemplate"
 import { Box } from "@chakra-ui/react"
 import ContributingTeamsSection from "./ContributingTeamsSection"
+import FaqSection from "./FaqSection"
 
 const FAQPageTemplate: FC<any> = ({ data }) => {
-  const { aboutInfo, teamsSection } = data.markdownRemark.frontmatter
-  console.log("tea ", teamsSection)
+  const { aboutInfo, teamsSection, faq } = data.markdownRemark.frontmatter
 
   return (
     <Box>
@@ -17,6 +17,7 @@ const FAQPageTemplate: FC<any> = ({ data }) => {
         bgColor="gray.900"
       />
       <ContributingTeamsSection {...teamsSection} />
+      <FaqSection {...faq} />
     </Box>
   )
 }
@@ -84,6 +85,41 @@ export const query = graphql`
               label
               url
               variant
+            }
+          }
+        }
+        faq {
+          title
+          faq {
+            question
+            answer
+            buttons {
+              label
+              url
+              leftIcon {
+                image {
+                  id
+                  relativePath
+                  internal {
+                    mediaType
+                  }
+                  childImageSharp {
+                    gatsbyImageData(width: 200)
+                  }
+                }
+              }
+              rightIcon {
+                image {
+                  id
+                  relativePath
+                  internal {
+                    mediaType
+                  }
+                  childImageSharp {
+                    gatsbyImageData(width: 200)
+                  }
+                }
+              }
             }
           }
         }
