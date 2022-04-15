@@ -10,7 +10,12 @@ const TokenHolderPageTemplate: FC<any> = ({ data }) => {
 
   return (
     <RolePageTemplate>
-      <SectionTemplate {...tokenHolderInfo} preTitle={null} columnReverse />
+      <SectionTemplate
+        {...tokenHolderInfo}
+        preTitle={null}
+        columnReverse
+        isSmallSize
+      />
       <ResponsiveStack spacing={12}>
         <SecondaryInfoColumn {...secondaryInfo.left} />
         <SecondaryInfoColumn {...secondaryInfo.right} />

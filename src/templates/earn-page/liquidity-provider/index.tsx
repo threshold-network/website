@@ -8,7 +8,7 @@ const LiquidityProviderPageTemplate: FC<any> = ({ data }) => {
 
   return (
     <RolePageTemplate>
-      <SectionTemplate {...lpInfo} preTitle={null} columnReverse />
+      <SectionTemplate {...lpInfo} preTitle={null} columnReverse isSmallSize />
     </RolePageTemplate>
   )
 }

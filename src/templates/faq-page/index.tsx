@@ -15,6 +15,7 @@ const FAQPageTemplate: FC<any> = ({ data }) => {
         preTitle={null}
         columnReverse
         bgColor="gray.900"
+        isSmallSize
       />
       <ContributingTeamsSection {...teamsSection} />
       <FaqSection {...faq} />
