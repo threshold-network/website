@@ -31,72 +31,75 @@ const FooterContent: FC<{
 }> = ({ columns, socialLinks }) => {
   const smScreen = useChakraBreakpoint("md")
   return (
-    <PageSection bg="gray.900">
-      <Stack
-        direction="row"
-        justifyContent={{ base: "center", md: "space-between" }}
-        spacing={{ base: 12, lg: 24 }}
-        w="full"
-      >
-        <Box>
-          <ThresholdBrand display={{ base: "none", md: "block" }} p={0} />
-          <Stack mt={{ base: 0, md: 28 }} spacing={{ base: 12, md: 6 }}>
-            <SocialMediaLinks
-              links={socialLinks}
-              isMobileDrawerFooter={smScreen}
-            />
-            <ThresholdBrand
-              display={{ base: "block", md: "none" }}
-              justifyContent="center"
-              p={0}
-            />
-            <Stack>
-              <BodySm
-                textAlign={{ base: "center", md: "left" }}
-                color="gray.300"
-              >
-                ©2021 | A Thesis Build
-              </BodySm>
-              <BodySm
-                textAlign={{ base: "center", md: "left" }}
-                color="gray.300"
-              >
-                All Rights Reserved
-              </BodySm>
-            </Stack>
-          </Stack>
-        </Box>
-        <HStack
-          spacing={4}
-          justifyContent="space-between"
+    <Box>
+      <NewsletterSubscribe />
+      <PageSection bg="gray.900">
+        <Stack
+          direction="row"
+          justifyContent={{ base: "center", md: "space-between" }}
+          spacing={{ base: 12, lg: 24 }}
           w="full"
-          display={{ base: "none", md: "flex" }}
         >
-          {columns.map((column) => {
-            return (
-              <Stack alignSelf="baseline" spacing={2} key={column.title}>
-                <LabelMd textTransform="uppercase">{column.title}</LabelMd>
-                {column.links.map((_) => (
-                  <Link
-                    key={_.label}
-                    display="flex"
-                    as={_.isExternal ? Link : GatsbyLink}
-                    to={_.url}
-                    href={_.url}
-                    target={_.isExternal ? "_blank" : undefined}
-                  >
-                    <BodySm color="gray.300">{_.label}</BodySm>
-                    {_.isExternal && (
-                      <Icon ml={1} color="gray.300" as={FiArrowUpRight} />
-                    )}
-                  </Link>
-                ))}
+          <Box>
+            <ThresholdBrand display={{ base: "none", md: "block" }} p={0} />
+            <Stack mt={{ base: 0, md: 28 }} spacing={{ base: 12, md: 6 }}>
+              <SocialMediaLinks
+                links={socialLinks}
+                isMobileDrawerFooter={smScreen}
+              />
+              <ThresholdBrand
+                display={{ base: "block", md: "none" }}
+                justifyContent="center"
+                p={0}
+              />
+              <Stack>
+                <BodySm
+                  textAlign={{ base: "center", md: "left" }}
+                  color="gray.300"
+                >
+                  ©{new Date().getFullYear()} | A Thesis Build
+                </BodySm>
+                <BodySm
+                  textAlign={{ base: "center", md: "left" }}
+                  color="gray.300"
+                >
+                  All Rights Reserved
+                </BodySm>
               </Stack>
-            )
-          })}
-        </HStack>
-      </Stack>
-    </PageSection>
+            </Stack>
+          </Box>
+          <HStack
+            spacing={4}
+            justifyContent="space-between"
+            w="full"
+            display={{ base: "none", md: "flex" }}
+          >
+            {columns.map((column) => {
+              return (
+                <Stack alignSelf="baseline" spacing={2} key={column.title}>
+                  <LabelMd textTransform="uppercase">{column.title}</LabelMd>
+                  {column.links.map((_) => (
+                    <Link
+                      key={_.label}
+                      display="flex"
+                      as={_.isExternal ? Link : GatsbyLink}
+                      to={_.url}
+                      href={_.url}
+                      target={_.isExternal ? "_blank" : undefined}
+                    >
+                      <BodySm color="gray.300">{_.label}</BodySm>
+                      {_.isExternal && (
+                        <Icon ml={1} color="gray.300" as={FiArrowUpRight} />
+                      )}
+                    </Link>
+                  ))}
+                </Stack>
+              )
+            })}
+          </HStack>
+        </Stack>
+      </PageSection>
+    </Box>
   )
 }
 
