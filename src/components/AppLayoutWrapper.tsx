@@ -5,17 +5,22 @@ import theme from "../theme"
 import { Navbar } from "./Navbar"
 import useDarkMode from "../hooks/useDarkMode"
 import Footer from "./Footer"
+import { QuizModalContextProvider } from "../contexts/QuizModalContext"
+import RoleQuizModal from "./RoleQuizModal"
 
 const App: FC = ({ children }) => {
   useDarkMode()
   return (
-    <Box minHeight="100%">
-      <Box as="main">
-        <Navbar />
-        {children}
-        <Footer />
+    <QuizModalContextProvider>
+      <Box minHeight="100%">
+        <Box as="main">
+          <RoleQuizModal />
+          <Navbar />
+          {children}
+          <Footer />
+        </Box>
       </Box>
-    </Box>
+    </QuizModalContextProvider>
   )
 }
 

@@ -5,7 +5,7 @@ import { Location } from "@reach/router"
 import useChakraBreakpoint from "../../hooks/useChakraBreakpoint"
 
 // @ts-ignore
-const RolesNav = ({ location, ...props }) => {
+const RolesNav = ({ location }) => {
   const { pathname } = location
   const isSmallScreen = useChakraBreakpoint("md")
 
@@ -13,9 +13,9 @@ const RolesNav = ({ location, ...props }) => {
     <HStack
       bg="gray.800"
       p={2}
+      mt={8}
       borderRadius="md"
       justifyContent="space-between"
-      {...props}
     >
       <Button
         as={GatsbyLink}

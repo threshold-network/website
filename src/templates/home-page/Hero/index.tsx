@@ -54,6 +54,7 @@ const Hero: FC<{ title: string; body: string; ctaButtons: any }> = ({
             {body}
           </H5>
         </Stack>
+
         <Stack
           mt={{ base: 12, md: 20 }}
           direction={{ base: "column", md: "row" }}

@@ -1718,3 +1718,160 @@ collections:
                   },
                 ],
             }
+      - file: "src/content/components/role-quiz-modal.md"
+        label: "Role Quiz Modal"
+        name: "roleQuizModal"
+        fields:
+          - {
+              label: "Template Key",
+              name: "template",
+              widget: "hidden",
+              default: "role-quiz-modal",
+            }
+          - {
+              label: "Defi Accordion",
+              name: "defiAccordion",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Button Text",
+                    name: "buttonText",
+                    widget: "string",
+                  },
+                  {
+                    label: "Accordion Text",
+                    name: "accordionText",
+                    widget: "string",
+                  },
+                ],
+            }
+          - {
+              label: "Stages",
+              name: "stages",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  {
+                    label: Stage,
+                    name: stageId,
+                    widget: select,
+                    required: true,
+                    options:
+                      [
+                        { label: "BTC STAGE", value: "BTC" },
+                        { label: "LP STAGE", value: "LIQUIDITY" },
+                        { label: "STAKER STAGE", value: "STAKER" },
+                        { label: "TOKEN HOLDER STAGE", value: "TOKEN_HOLDER" },
+                      ],
+                  },
+                  {
+                    label: "Question Page",
+                    name: "questionPage",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Title",
+                          name: "title",
+                          widget: "string",
+                          required: false,
+                        },
+                        {
+                          label: "Include Defi Accordion",
+                          name: "includeAccordion",
+                          widget: "boolean",
+                          required: false,
+                        },
+                        {
+                          label: "Options",
+                          name: "options",
+                          widget: "list",
+                          fields:
+                            [
+                              {
+                                label: "Label",
+                                name: "label",
+                                widget: "string",
+                              },
+                              {
+                                label: "Result",
+                                name: "result",
+                                widget: select,
+                                options:
+                                  [
+                                    { label: "Next", value: "NEXT" },
+                                    { label: "BTC Result", value: "BTC" },
+                                    { label: "LP Result", value: "LIQUIDITY" },
+                                    { label: "Staker Result", value: "STAKER" },
+                                    {
+                                      label: "Token Holder Result",
+                                      value: "TOKEN_HOLDER",
+                                    },
+                                  ],
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Result Page",
+                    name: "resultPage",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Title", widget: "string", name: "title" },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                          required: false,
+                        },
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
+                        {
+                          label: "Button",
+                          name: "button",
+                          widget: "object",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              { label: Label, name: label, widget: string },
+                              { label: URL, name: url, widget: string },
+                              {
+                                label: Variant,
+                                name: variant,
+                                widget: select,
+                                required: true,
+                                options:
+                                  [
+                                    {
+                                      label: "External Solid",
+                                      value: "EXTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "Internal Solid",
+                                      value: "INTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "External Outline",
+                                      value: "EXTERNAL_OUTLINE",
+                                    },
+                                    {
+                                      label: "Internal Outline",
+                                      value: "INTERNAL_OUTLINE",
+                                    },
+                                  ],
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
