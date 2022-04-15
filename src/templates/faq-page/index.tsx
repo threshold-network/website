@@ -8,8 +8,6 @@ import FaqSection from "./FaqSection"
 const FAQPageTemplate: FC<any> = ({ data }) => {
   const { aboutInfo, teamsSection, faq } = data.markdownRemark.frontmatter
 
-  console.log(data.markdownRemark.frontmatter)
-
   return (
     <Box>
       <SectionTemplate

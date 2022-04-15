@@ -32,7 +32,6 @@ interface Props {
 }
 
 const FaqSection: FC<Props> = ({ title, faq, additionalHelp }) => {
-  console.log(additionalHelp.button)
   return (
     <PageSection bg="gray.900" pt={{ base: 0, md: 16 }}>
       <H3>{title}</H3>
