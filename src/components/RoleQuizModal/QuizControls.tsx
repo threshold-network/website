@@ -17,7 +17,7 @@ const QuizControls: FC<Props> = ({
   shouldDisplayBackButton,
 }) => {
   return (
-    <HStack>
+    <HStack mt={8}>
       {shouldDisplayBackButton && <Button onClick={goBack}>Back</Button>}
       <Button
         disabled={!selectedOption}

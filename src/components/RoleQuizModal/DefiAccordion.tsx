@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Collapse,
-  HStack,
-  Icon,
-  useDisclosure,
-} from "@chakra-ui/react"
+import { Box, Button, Collapse, Icon, useDisclosure } from "@chakra-ui/react"
 import { BodyMd } from "../Typography"
 import { IoChevronDownSharp, IoChevronForwardSharp } from "react-icons/all"
 import React from "react"
