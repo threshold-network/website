@@ -57,7 +57,7 @@ const FooterContent: FC<{
                   textAlign={{ base: "center", md: "left" }}
                   color="gray.300"
                 >
-                  ©2021 | A Thesis Build
+                  ©{new Date().getFullYear()} | A Thesis Build
                 </BodySm>
                 <BodySm
                   textAlign={{ base: "center", md: "left" }}

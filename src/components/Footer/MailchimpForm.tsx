@@ -3,9 +3,15 @@ import MailchimpSubscribe, {
   EmailFormFields,
   FormHooks,
 } from "react-mailchimp-subscribe"
-import { Button, Box, Input } from "@chakra-ui/react"
+import {
+  Button,
+  Box,
+  Input,
+  FormControl,
+  FormHelperText,
+} from "@chakra-ui/react"
 import { ResponsiveStack, SectionTextContainer } from "../PageSection"
-import { BodyLg, BodyMd, H5 } from "../Typography"
+import { BodyLg, H5 } from "../Typography"
 import { MAILCHIMP_POST_URL } from "../../config/newsletterConfig"
 
 const CustomForm: FC<FormHooks<EmailFormFields>> = ({
@@ -37,33 +43,35 @@ const CustomForm: FC<FormHooks<EmailFormFields>> = ({
         w="full"
         maxW={{ base: "100%", md: "320px", lg: "512px" }}
       >
-        <ResponsiveStack columnReverse>
-          <Input
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            value={email}
-            bg="white"
-            placeholder="Enter an email address"
-          />
-          <Button px={6} type="submit" isLoading={status === "sending"}>
-            Submit
-          </Button>
-        </ResponsiveStack>
+        <FormControl>
+          <ResponsiveStack columnReverse>
+            <Input
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              value={email}
+              bg="white"
+              placeholder="Enter an email address"
+            />
+            <Button px={6} type="submit" isLoading={status === "sending"}>
+              Submit
+            </Button>
+          </ResponsiveStack>
 
-        {status === "error" && (
-          <BodyMd
-            color="red.500"
-            // slice first 4 chars to scrub the mailchimp error
-            // example mailchimp error: "0 - Invalid Email"
-            dangerouslySetInnerHTML={{ __html: (message as string).slice(4) }}
-          />
-        )}
+          {status === "error" && (
+            <FormHelperText
+              color="red.500"
+              // slice first 4 chars to scrub the mailchimp error
+              // example mailchimp error: "0 - Invalid Email"
+              dangerouslySetInnerHTML={{ __html: (message as string).slice(4) }}
+            />
+          )}
 
-        {status === "success" && (
-          <BodyMd color="green.500">
-            Please check your email to verify and join the newsletter.
-          </BodyMd>
-        )}
+          {status === "success" && (
+            <FormHelperText color="green.500">
+              Please check your email to verify and join the newsletter.
+            </FormHelperText>
+          )}
+        </FormControl>
       </Box>
     </ResponsiveStack>
   )
