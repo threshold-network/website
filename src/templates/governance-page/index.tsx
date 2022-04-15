@@ -2,6 +2,7 @@ import { FC } from "react"
 import { graphql } from "gatsby"
 import SectionTemplate from "../home-page/SectionTemplate"
 import { Box } from "@chakra-ui/react"
+import ThresholdDaoDataSection from "./ThresholdDaoDataSection"
 
 const GovernancePageTemplate: FC<any> = ({ data }) => {
   const { governanceInfo } = data.markdownRemark.frontmatter
@@ -15,6 +16,7 @@ const GovernancePageTemplate: FC<any> = ({ data }) => {
         bgColor="gray.900"
         isSmallSize
       />
+      <ThresholdDaoDataSection />
     </Box>
   )
 }
