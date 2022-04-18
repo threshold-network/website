@@ -2,6 +2,7 @@ import { extendTheme } from "@chakra-ui/react"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 import { Button } from "./Button"
 import { Card } from "./Card"
+import { Progress } from "./Progress"
 
 const config = {
   initialColorMode: "dark",
@@ -28,6 +29,17 @@ const colors = {
     800: "#3B257A",
     900: "#1C0758",
   },
+  purple: {
+    50: "#FCF9FF",
+    100: "#D5C6FF",
+    // 200
+    300: "#9974FF",
+    // 400
+    500: "#7C47EE", // main Threshold brand color - DARK MODE
+    700: "#4E2E99",
+    800: "#3B257A",
+    900: "#1C0758",
+  },
   gray: {
     300: "#B1BCCC",
     700: "#4A5568",
@@ -43,6 +55,7 @@ const index = extendTheme({
   components: {
     Button,
     Card,
+    Progress,
     Input: {
       baseStyle: {
         field: {

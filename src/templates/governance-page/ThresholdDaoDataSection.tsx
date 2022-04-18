@@ -35,6 +35,7 @@ const ThresholdDaoDataSection = () => {
             <H2>{totalTreasuryHoldings}</H2>
           </Stack>
           <ExternalButtonLink
+            display={{ base: "none", md: "inherit" }}
             variant="outline"
             leftIcon={<Icon as={IoDocument} />}
             href={"" as ExternalLinkHref}
