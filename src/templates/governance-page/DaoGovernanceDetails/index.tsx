@@ -9,7 +9,7 @@ const DaoGovernanceDetails = () => {
   const [selectedDao, setSelectedDao] = useState<DAO>("STAKER")
 
   return (
-    <PageSection bg="gray.900" pt={{ base: 0, md: 16 }}>
+    <PageSection bg="gray.900" withSmallPadding>
       <DaoSelector selectedDao={selectedDao} setSelectedDao={setSelectedDao} />
       <DaoDelegation selectedDao={selectedDao} />
       <DaoVotes />

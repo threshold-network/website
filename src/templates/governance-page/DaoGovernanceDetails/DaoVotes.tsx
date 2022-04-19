@@ -1,6 +1,4 @@
-import { DAO } from "./types"
 import { FC } from "react"
-import { HStack, Progress, Stack } from "@chakra-ui/react"
 import { PageSection, ResponsiveStack } from "../../../components/PageSection"
 import { H4 } from "../../../components"
 import VoteResultsCard from "./VoteResultsCard"
@@ -28,7 +26,7 @@ const DaoVotes: FC = () => {
   ]
 
   return (
-    <PageSection bg="gray.900">
+    <PageSection bg="gray.900" withSmallPadding>
       <H4>Votes</H4>
       <ResponsiveStack spacing={12} mt={12}>
         {completedProposals.map((p) => (

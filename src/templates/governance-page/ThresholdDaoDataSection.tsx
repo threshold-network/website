@@ -26,7 +26,7 @@ const ThresholdDaoDataSection = () => {
   ]
 
   return (
-    <PageSection bg="gray.900" pt={{ base: 0, md: 16 }}>
+    <PageSection bg="gray.900" withSmallPadding>
       <H3>Threshold DAO</H3>
       <Card mt={8} p={12} boxShadow="rgba(159, 162, 166, 0.1) 0px 0px 96px;">
         <HStack justifyContent="space-between" mb={16}>

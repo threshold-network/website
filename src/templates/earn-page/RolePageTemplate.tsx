@@ -2,11 +2,10 @@ import { FC } from "react"
 import TakeTheQuizBanner from "../../components/TakeTheQuizBanner"
 import RolesNav from "./RolesNav"
 import { PageSection } from "../../components/PageSection"
-import { useQuizModal } from "../../contexts/QuizModalContext"
 
 const RolePageTemplate: FC = ({ children }) => {
   return (
-    <PageSection bg="gray.900" pt={{ base: 0, md: 16 }}>
+    <PageSection bg="gray.900" withSmallPadding>
       <TakeTheQuizBanner />
       <RolesNav />
       {children}

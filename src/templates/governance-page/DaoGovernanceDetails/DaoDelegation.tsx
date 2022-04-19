@@ -14,7 +14,7 @@ const DaoDelegation: FC<{ selectedDao: DAO }> = ({ selectedDao }) => {
   const percentDelegated = 20
 
   return (
-    <PageSection bg="gray.900">
+    <PageSection bg="gray.900" withSmallPadding>
       <H4>
         {selectedDao === "STAKER" ? "Staker" : "Token Holder"} DAO Delegation
       </H4>
