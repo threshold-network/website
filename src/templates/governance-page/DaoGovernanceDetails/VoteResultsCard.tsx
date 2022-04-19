@@ -3,25 +3,24 @@ import Card from "../../../components/Card"
 import { Stack } from "@chakra-ui/react"
 import { BodyLg, LabelSm } from "../../../components"
 import ProgressWithPercentage from "./ProgressWithPercentage"
+import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
+import { Proposal } from "./types"
+import { ExternalLinkHref } from "../../../components/Navbar/types"
 
-interface Props {
-  title: string
-  dateRange: string
-  yesPercent: number
-  noPercent: number
-  abstainPercent: number
-  proposalUrl: string
-}
-
-const VoteResultsCard: FC<Props> = ({
+const VoteResultsCard: FC<Proposal> = ({
   title,
   dateRange,
+  proposalUrl,
   yesPercent,
   noPercent,
-  abstainPercent,
 }) => {
   return (
-    <Card w="100%">
+    <Card
+      w="100%"
+      display="flex"
+      flexDirection="column"
+      justifyContent="space-between"
+    >
       <BodyLg color="gray.50" noOfLines={2}>
         {title}
       </BodyLg>
@@ -39,12 +38,14 @@ const VoteResultsCard: FC<Props> = ({
           value={noPercent}
           colorScheme="red"
         />
-        <ProgressWithPercentage
-          height="12px"
-          value={abstainPercent}
-          colorScheme="gray"
-        />
       </Stack>
+      <ExternalButtonLink
+        mt={4}
+        variant="link"
+        href={proposalUrl as ExternalLinkHref}
+      >
+        View
+      </ExternalButtonLink>
     </Card>
   )
 }
