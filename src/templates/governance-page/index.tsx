@@ -4,9 +4,11 @@ import SectionTemplate from "../home-page/SectionTemplate"
 import { Box } from "@chakra-ui/react"
 import ThresholdDaoDataSection from "./ThresholdDaoDataSection"
 import DaoGovernanceDetails from "./DaoGovernanceDetails"
+import ProposalsSection from "./DaoGovernanceDetails/ProposalsSection"
 
 const GovernancePageTemplate: FC<any> = ({ data }) => {
   const { governanceInfo } = data.markdownRemark.frontmatter
+  const proposals = data.allProposals
 
   return (
     <Box>
@@ -18,7 +20,7 @@ const GovernancePageTemplate: FC<any> = ({ data }) => {
         isSmallSize
       />
       <ThresholdDaoDataSection />
-      <DaoGovernanceDetails />
+      <DaoGovernanceDetails proposals={proposals} />
     </Box>
   )
 }
@@ -51,6 +53,17 @@ export const query = graphql`
           }
         }
       }
+    }
+    allProposals {
+      id
+      title
+      content {
+        raw
+        html
+      }
+      createdBy
+      createdAt
+      url
     }
   }
 `

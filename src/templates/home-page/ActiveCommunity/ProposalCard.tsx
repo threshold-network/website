@@ -35,7 +35,7 @@ const ProposalCard: FC<Proposal> = ({
     >
       <Stack spacing={6}>
         <Stack spacing={4}>
-          <Card.Title>{title}</Card.Title>
+          <Card.Title noOfLines={2}>{title}</Card.Title>
           <Card.SubTitle>{subTitle}</Card.SubTitle>
         </Stack>
         <Card.Divider />

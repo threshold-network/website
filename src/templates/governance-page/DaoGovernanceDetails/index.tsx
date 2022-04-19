@@ -4,8 +4,9 @@ import { DAO } from "./types"
 import DaoSelector from "./DaoSelector"
 import DaoDelegation from "./DaoDelegation"
 import DaoVotes from "./DaoVotes"
+import ProposalsSection from "./ProposalsSection"
 
-const DaoGovernanceDetails = () => {
+const DaoGovernanceDetails = ({ proposals }: any) => {
   const [selectedDao, setSelectedDao] = useState<DAO>("STAKER")
 
   return (
@@ -13,6 +14,7 @@ const DaoGovernanceDetails = () => {
       <DaoSelector selectedDao={selectedDao} setSelectedDao={setSelectedDao} />
       <DaoDelegation selectedDao={selectedDao} />
       <DaoVotes />
+      <ProposalsSection proposals={proposals} />
     </PageSection>
   )
 }

@@ -15,7 +15,7 @@ const DaoDelegation: FC<{ selectedDao: DAO }> = ({ selectedDao }) => {
 
   return (
     <PageSection bg="gray.900" withSmallPadding>
-      <H4>
+      <H4 color="gray.300">
         {selectedDao === "STAKER" ? "Staker" : "Token Holder"} DAO Delegation
       </H4>
       <ResponsiveStack spacing={12} mt={12}>
