@@ -1,18 +1,5 @@
-import { ResponsiveStack } from "../../../components/PageSection"
 import { FC } from "react"
-import {
-  ButtonType,
-  CmsButtonLink,
-} from "../../../components/Buttons/CmsButtonLink"
-import {
-  BodyLg,
-  BodyMd,
-  BodySm,
-  H2,
-  H3,
-  Image,
-  ImageProps,
-} from "../../../components"
+import { BodyLg, BodySm, ImageProps } from "../../../components"
 import {
   Avatar,
   AvatarGroup,
@@ -20,13 +7,13 @@ import {
   SimpleGrid,
   Stack,
   useBreakpointValue,
-  VStack,
 } from "@chakra-ui/react"
 import Card from "../../../components/Card"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
+import { withPrefix } from "gatsby"
 
-interface GuildCard {
+export interface GuildCard {
   title: string
   description: string
   memberAvatars: {
@@ -61,11 +48,7 @@ const GuildCards: FC<GuildCardsProps> = ({ cards }) => {
                     bg="linear-gradient(120.19deg, #BD30FF 3.32%, #7D00FF 95.02%)"
                     color="white"
                     name={avatar.memberName}
-                    src={
-                      // @ts-ignore
-                      avatar?.image?.childImageSharp?.gatsbyImageData?.images
-                        ?.fallback?.src
-                    }
+                    src={withPrefix(`/images/${avatar?.image?.relativePath}`)}
                   />
                 ))}
               </AvatarGroup>

@@ -2,11 +2,11 @@ import { FC } from "react"
 import { Stack } from "@chakra-ui/react"
 import { PageSection } from "../../../components/PageSection"
 import GuildHero, { GuildHeroProps } from "./GuildHero"
-import GuildCards, { GuildCardsProps } from "./GuildCards"
+import GuildCards, { GuildCard } from "./GuildCards"
 
 interface GuildsSectionProps {
   heroSection: GuildHeroProps
-  GuildCards: GuildCardsProps
+  guildCards: GuildCard[]
 }
 
 const GuildsSection: FC<GuildsSectionProps> = ({ heroSection, guildCards }) => {
