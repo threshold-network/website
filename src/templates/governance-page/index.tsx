@@ -4,10 +4,10 @@ import SectionTemplate from "../home-page/SectionTemplate"
 import { Box } from "@chakra-ui/react"
 import ThresholdDaoDataSection from "./ThresholdDaoDataSection"
 import DaoGovernanceDetails from "./DaoGovernanceDetails"
-import ProposalsSection from "./DaoGovernanceDetails/ProposalsSection"
+import GuildsSection from "./GuildsSection"
 
-const GovernancePageTemplate: FC<any> = ({ data }) => {
-  const { governanceInfo } = data.markdownRemark.frontmatter
+const GovernancePageTemplate: FC = ({ data }: any) => {
+  const { governanceInfo, guildsInfo } = data.markdownRemark.frontmatter
   const proposals = data.allProposals
 
   return (
@@ -21,6 +21,7 @@ const GovernancePageTemplate: FC<any> = ({ data }) => {
       />
       <ThresholdDaoDataSection />
       <DaoGovernanceDetails proposals={proposals} />
+      <GuildsSection {...guildsInfo} />
     </Box>
   )
 }
@@ -50,6 +51,39 @@ export const query = graphql`
             label
             url
             variant
+          }
+        }
+        guildsInfo {
+          heroSection {
+            title
+            description
+            buttons {
+              label
+              url
+              variant
+            }
+            guildStats {
+              value
+              label
+            }
+          }
+          guildCards {
+            title
+            description
+            memberAvatars {
+              image {
+                id
+                relativePath
+                internal {
+                  mediaType
+                }
+                childImageSharp {
+                  gatsbyImageData(width: 200)
+                }
+              }
+              memberName
+            }
+            joinUrl
           }
         }
       }

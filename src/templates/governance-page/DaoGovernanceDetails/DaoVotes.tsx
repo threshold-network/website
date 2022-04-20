@@ -83,7 +83,7 @@ const DaoVotes: FC = () => {
       <H4 color="gray.300">Votes</H4>
       <ResponsiveStack spacing={12} mt={12}>
         {proposals.map((p) => (
-          <VoteResultsCard {...p} />
+          <VoteResultsCard key={p.title} {...p} />
         ))}
       </ResponsiveStack>
     </PageSection>

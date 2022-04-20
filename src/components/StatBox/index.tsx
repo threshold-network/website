@@ -20,7 +20,7 @@ export const StatBoxGroup: FC<{ stats: Stat[] }> = ({ stats }) => {
   return (
     <SimpleGrid columns={{ base: 1, md: 3 }} mt={8} spacing={8}>
       {stats.map((stat) => (
-        <StatBox {...stat} />
+        <StatBox key={stat.label} {...stat} />
       ))}
     </SimpleGrid>
   )
