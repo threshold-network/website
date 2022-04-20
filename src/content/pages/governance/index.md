@@ -52,5 +52,31 @@ guildsInfo:
           memberName: George
         - image: /images/15269424.jpg
           memberName: George
+        - memberName: George
       joinUrl: NEED_URL
+    - title: Treasury Guild
+      description: This guild manages the Threshold DAO treasury, drafts budgets,
+        proposes financial strategies, and more.
+      memberAvatars:
+        - memberName: Alice
+        - memberName: Bob
+      joinUrl: NEED_URL
+    - title: Integrations Guild
+      description: This guild develops DAO to DAO relationships for Threshold and
+        creates partnerships for the network with a current focus on tBTC v2
+        opportunities.
+      memberAvatars:
+        - memberName: Rusty
+        - memberName: Doug
+        - memberName: George
+          image: /images/15269424.jpg
+      joinUrl: NEED_URL
+migrationInfo:
+  title: Do you own KEEP or Nu and want to participate in Threshold Goverance?
+  description: Migrate your tokens to T so you can take full advantage of the Threshold DAO.
+  image: /images/illustration.png
+  buttons:
+    - label: Migrate to T
+      url: https://dashboard.threshold.network/
+      variant: EXTERNAL_OUTLINE
 ---
