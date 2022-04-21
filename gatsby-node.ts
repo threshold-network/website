@@ -25,6 +25,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
               slug
             }
             frontmatter {
+              title
+              description
               template
             }
           }
@@ -48,7 +50,13 @@ export const createPages: GatsbyNode["createPages"] = async ({
     createPage({
       path: node.fields.slug,
       component: template,
-      context: { id: node.id }, // additional data can be passed via context
+      context: {
+        id: node.id,
+        seo: {
+          title: node.frontmatter.title,
+          description: node.frontmatter.description,
+        },
+      }, // additional data can be passed via context
     })
   })
 }

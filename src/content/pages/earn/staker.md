@@ -1,7 +1,11 @@
 ---
 template: earn-page/staker
 path: /earn/staker
-title: Earn Staker Page
+title: Threshold Staker
+description: Stakers escrow T tokens to run a node on the Threshold Network and
+  earn rewards. Running a node helps to provide cryptography services on
+  Threshold and secure the network. Take on a role as a Staker with Threshold
+  and be a core component of the network.
 activeCommunity:
   title: Threshold Staker
   description:
