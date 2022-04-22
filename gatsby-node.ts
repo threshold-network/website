@@ -47,6 +47,10 @@ export const createPages: GatsbyNode["createPages"] = async ({
     const template = path.resolve(
       path.join(`src/templates/${templateName}`, "index.tsx")
     )
+    console.log("adding this to the page context ", {
+      title: node.frontmatter.title,
+      description: node.frontmatter.description,
+    })
     createPage({
       path: node.fields.slug,
       component: template,
