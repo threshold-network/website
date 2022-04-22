@@ -1,7 +1,11 @@
 ---
 template: earn-page/btc
 path: /earn/btc
-title: Earn BTC Page
+title: Earn BTC
+description: BTC is Threshold’s decentralized bridge to bring BTC to the
+  Ethereum network; the only permissionless solution on the market today.
+  Bridge your Bitcoin to Ethereum in a secure and trustless way to participate
+  in DeFi.
 btcInfo:
   rowReverse: false
   title: BTC/ tBTC User

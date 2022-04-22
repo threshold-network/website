@@ -1,6 +1,8 @@
 ---
 template: home-page
 path: /
+title: Threshold Network
+description: Threshold powers user sovereignty on the public blockchain.
 hero:
   title: Full control over your digital assets
   body: Use threshold cryptographic tools that power user sovereignty on the

@@ -1,5 +1,5 @@
 ---
 template: press-page
 path: /press
-title: Press Page
+title: Press
 ---

@@ -1,7 +1,7 @@
 ---
 template: faq-page
 path: /faq
-title: FAQ page
+title: FAQ
 aboutInfo:
   rowReverse: false
   title: About

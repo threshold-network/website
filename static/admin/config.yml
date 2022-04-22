@@ -28,6 +28,20 @@ collections:
               default: "home-page",
             }
           - { label: "Path", name: "path", widget: "hidden", default: "/" }
+          - {
+              label: "SEO Title",
+              name: "title",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "description",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
           - label: "Hero"
             name: "hero"
             widget: "object"
@@ -726,6 +740,20 @@ collections:
             }
           - { label: "Path", name: "path", widget: "hidden", default: "/earn" }
           - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "SEO Title",
+              name: "title",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "description",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
       # BTC Page
       - file: "src/content/pages/earn/btc.md"
         name: "btc"
@@ -742,6 +770,20 @@ collections:
               name: "path",
               widget: "hidden",
               default: "/earn/btc",
+            }
+          - {
+              label: "SEO Title",
+              name: "title",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "description",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
             }
           - {
               label: "BTC User Info Section",
@@ -832,6 +874,20 @@ collections:
               default: "/earn/liquidity-provider",
             }
           - {
+              label: "SEO Title",
+              name: "title",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "description",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
+          - {
               label: "Liquidity Provider Info Section",
               name: "lpInfo",
               widget: "object",
@@ -882,7 +938,20 @@ collections:
               widget: "hidden",
               default: "/earn/staker",
             }
-          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "SEO Title",
+              name: "title",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "description",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
           - {
               label: "Staker Info Section",
               name: "stakerInfo",
@@ -1226,6 +1295,20 @@ collections:
               default: "/earn/token-holder",
             }
           - {
+              label: "SEO Title",
+              name: "title",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "description",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
+          - {
               label: "Token Holder Info Section",
               name: "tokenHolderInfo",
               widget: "object",
@@ -1447,7 +1530,20 @@ collections:
               default: "about-page",
             }
           - { label: "Path", name: "path", widget: "hidden", default: "/about" }
-          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "SEO Title",
+              name: "title",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "description",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
       # Audits Page
       - file: "src/content/pages/audits/index.md"
         name: "audits"
@@ -1465,7 +1561,20 @@ collections:
               widget: "hidden",
               default: "/audits",
             }
-          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "SEO Title",
+              name: "title",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "description",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
       # FAQ Page
       - file: "src/content/pages/faq/index.md"
         name: "faq"
@@ -1479,6 +1588,20 @@ collections:
               default: "faq-page",
             },
             { label: "Path", name: "path", widget: "hidden", default: "/faq" },
+            {
+              label: "SEO Title",
+              name: "title",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            },
+            {
+              label: "SEO Description",
+              name: "description",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            },
             {
               label: "About Section",
               name: "aboutInfo",
@@ -1837,6 +1960,20 @@ collections:
               default: "/governance",
             }
           - {
+              label: "SEO Title",
+              name: "title",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "description",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
+          - {
               label: "Hero Section",
               name: "governanceInfo",
               widget: "object",
@@ -2096,7 +2233,6 @@ collections:
                   },
                 ],
             }
-
       # Press Page
       - file: "src/content/pages/press/index.md"
         name: "press"
@@ -2109,7 +2245,20 @@ collections:
               default: "press-page",
             }
           - { label: "Path", name: "path", widget: "hidden", default: "/press" }
-          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "SEO Title",
+              name: "title",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "description",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
   - name: "components"
     label: "Components"
     files:
