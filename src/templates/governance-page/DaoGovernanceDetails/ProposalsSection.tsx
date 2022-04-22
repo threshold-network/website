@@ -1,7 +1,7 @@
 import { SimpleGrid } from "@chakra-ui/react"
 import { PageSection } from "../../../components/PageSection"
 import { H4 } from "../../../components"
-import ProposalCard from "../../home-page/ActiveCommunity/ProposalCard"
+import ProposalForumCard from "../../../components/ProposalForumCard"
 import React, { FC } from "react"
 
 const ProposalsSection: FC<{ proposals: any }> = ({ proposals }) => {
@@ -10,7 +10,7 @@ const ProposalsSection: FC<{ proposals: any }> = ({ proposals }) => {
       <H4 color="gray.300">Proposals</H4>
       <SimpleGrid columns={{ base: 1, md: 3 }} mt={8} spacing={8}>
         {proposals.map((proposal: any) => (
-          <ProposalCard key={proposal.id} {...proposal} />
+          <ProposalForumCard key={proposal.id} {...proposal} />
         ))}
       </SimpleGrid>
     </PageSection>

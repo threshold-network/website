@@ -1,10 +1,11 @@
 import { FC } from "react"
 import { Stack } from "@chakra-ui/react"
-import Card from "../../../components/Card"
-import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
-import { ExternalLinkHref } from "../../../components/Navbar/types"
+import Card from "./Card"
+import ExternalButtonLink from "./Buttons/ExternalButtonLink"
+import { ExternalLinkHref } from "./Navbar/types"
+import useFormatDate from "../hooks/useFormatDate"
 
-export interface Proposal {
+export interface ProposalForum {
   id: string
   title: string
   createdAt: string
@@ -13,17 +14,15 @@ export interface Proposal {
   url: string
 }
 
-const ProposalCard: FC<Proposal> = ({
+const ProposalForumCard: FC<ProposalForum> = ({
   title,
   createdAt,
   createdBy,
   content,
   url,
 }) => {
-  const _createdAt = new Date(createdAt).toLocaleDateString("en-gb", {
-    year: "numeric",
-    month: "short",
-  })
+  const formatDate = useFormatDate()
+  const _createdAt = formatDate(createdAt)
   const subTitle = `${_createdAt} · ${createdBy}`
   const _content = typeof content === "string" ? content : content.raw
   return (
@@ -52,4 +51,4 @@ const ProposalCard: FC<Proposal> = ({
   )
 }
 
-export default ProposalCard
+export default ProposalForumCard

@@ -4,16 +4,22 @@ import { Stack } from "@chakra-ui/react"
 import { BodyLg, LabelSm } from "../../../components"
 import ProgressWithPercentage from "./ProgressWithPercentage"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
-import { Proposal } from "./types"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
+import useFormatDate from "../../../hooks/useFormatDate"
+import { Proposal } from "../../../hooks/useSnapshotProposals"
 
 const VoteResultsCard: FC<Proposal> = ({
   title,
-  dateRange,
+  start,
+  end,
   proposalUrl,
   yesPercent,
   noPercent,
 }) => {
+  const formatDate = useFormatDate()
+  const startDate = formatDate(start * 1000)
+  const endDate = formatDate(end * 1000)
+  const dateRange = `${startDate} - ${endDate}`
   return (
     <Card
       w="100%"
