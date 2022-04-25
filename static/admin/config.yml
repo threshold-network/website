@@ -2035,6 +2035,21 @@ collections:
                         { label: "url", name: "url", widget: "string" },
                       ],
                   },
+                  {
+                    label: "Featured In Images",
+                    name: "featuredIn",
+                    widget: "list",
+                    allow_add: true,
+                    fields:
+                      [
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
+                      ],
+                  },
                 ],
             }
   - name: "components"

@@ -1,9 +1,10 @@
 import { FC } from "react"
 import { graphql } from "gatsby"
-import { PageSection } from "../../components/PageSection"
-import { H2, H5 } from "../../components"
-import PressCard from "./PressCard"
 import { SimpleGrid } from "@chakra-ui/react"
+import { PageSection } from "../../components/PageSection"
+import { H2, H5, ImageProps } from "../../components"
+import PressCard from "./PressCard"
+import FeaturedIn from "./FeaturedIn"
 
 const PressPageTemplate: FC<any> = ({ data }) => {
   const { title, subTitle, featuredPress } = data.markdownRemark.frontmatter
@@ -18,6 +19,11 @@ const PressPageTemplate: FC<any> = ({ data }) => {
           <PressCard {...article} />
         ))}
       </SimpleGrid>
+      <FeaturedIn
+        pressImages={featuredPress.featuredIn.map(
+          ({ image }: { image: ImageProps }) => image
+        )}
+      />
     </PageSection>
   )
 }
@@ -38,6 +44,18 @@ export const query = graphql`
             subTitle
             description
             url
+            image {
+              id
+              relativePath
+              internal {
+                mediaType
+              }
+              childImageSharp {
+                gatsbyImageData(width: 200)
+              }
+            }
+          }
+          featuredIn {
             image {
               id
               relativePath

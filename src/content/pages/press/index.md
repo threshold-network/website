@@ -31,4 +31,9 @@ featuredPress:
       subTitle: oct 2021 · Arj
       url: NEED_URL
       image: /images/john-schnobrich-flpc9_vocj4-unsplash-1.png
+  featuredIn:
+    - image: /images/logo-1.png
+    - image: /images/logo-2.png
+    - image: /images/logo-3.png
+    - image: /images/logo-4.png
 ---
