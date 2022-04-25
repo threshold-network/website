@@ -1,11 +1,11 @@
 import { FC } from "react"
-import { Box, Stack } from "@chakra-ui/react"
+import { Box, SimpleGrid, Stack } from "@chakra-ui/react"
 import Card from "../../components/Card"
 import ExternalButtonLink from "../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../components/Navbar/types"
 import { Image, ImageProps } from "../../components"
 
-export interface PressCardProps {
+export interface PressArticle {
   image: ImageProps
   title: string
   subTitle: string
@@ -13,7 +13,7 @@ export interface PressCardProps {
   url: string
 }
 
-const PressCard: FC<PressCardProps> = ({
+const PressCard: FC<PressArticle> = ({
   title,
   subTitle,
   description,
@@ -52,4 +52,15 @@ const PressCard: FC<PressCardProps> = ({
     </Card>
   )
 }
-export default PressCard
+
+const FeaturedPress: FC<{ pressArticles: PressArticle[] }> = ({
+  pressArticles,
+}) => (
+  <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} mt={8}>
+    {pressArticles.map((article: any, i) => (
+      <PressCard key={i} {...article} />
+    ))}
+  </SimpleGrid>
+)
+
+export default FeaturedPress
