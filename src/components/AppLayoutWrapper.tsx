@@ -35,7 +35,6 @@ export const AppLayoutWrapper: FC<AppLayoutWrapperProps> = ({
   pageContext,
   children,
 }) => {
-  console.log("page context", pageContext)
   const { seo } = pageContext
 
   return (
