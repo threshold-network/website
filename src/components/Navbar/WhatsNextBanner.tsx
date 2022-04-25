@@ -1,7 +1,14 @@
-import { Alert, CloseButton, Icon, Link } from "@chakra-ui/react"
+import {
+  Alert,
+  Box,
+  Text,
+  CloseButton,
+  Icon,
+  Link,
+  Stack,
+} from "@chakra-ui/react"
 import { FC } from "react"
 import { HiOutlineExternalLink } from "react-icons/all"
-import { ExternalLink } from "./types"
 
 const WhatsNextBanner: FC<{ onClose: () => void }> = ({ onClose }) => {
   return (
@@ -11,11 +18,22 @@ const WhatsNextBanner: FC<{ onClose: () => void }> = ({ onClose }) => {
       justifyContent="center"
       position="relative"
     >
-      Find out what's next...
-      <Link ml="5px" textDecoration="underline" href={ExternalLink.LEARN_MORE}>
-        Learn More
-      </Link>
-      <Icon ml="5px" as={HiOutlineExternalLink} />
+      <Stack direction={{ base: "column", lg: "row" }} pr={8}>
+        <Text>
+          The Threshold DAO is looking for delegates! Find out how to get
+          involved on the Forum:
+        </Text>
+        <Box>
+          <Link
+            ml="5px"
+            textDecoration="underline"
+            href="https://forum.threshold.network/t/threshold-dao-delegates/325"
+          >
+            Learn More
+          </Link>
+          <Icon ml="5px" as={HiOutlineExternalLink} />
+        </Box>
+      </Stack>
       <CloseButton position="absolute" right="10px" onClick={onClose} />
     </Alert>
   )
