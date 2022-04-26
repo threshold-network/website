@@ -1944,8 +1944,8 @@ collections:
 
       # Governance Page
       - file: "src/content/pages/governance/index.md"
-        name: "governance"
-        label: "Governance"
+        name: "governancePage"
+        label: "Governance Page"
         fields:
           - {
               label: "Template",
