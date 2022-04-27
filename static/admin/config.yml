@@ -30,14 +30,14 @@ collections:
           - { label: "Path", name: "path", widget: "hidden", default: "/" }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -742,14 +742,14 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -773,14 +773,14 @@ collections:
             }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -875,14 +875,14 @@ collections:
             }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -940,14 +940,14 @@ collections:
             }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -1296,14 +1296,14 @@ collections:
             }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -1532,14 +1532,14 @@ collections:
           - { label: "Path", name: "path", widget: "hidden", default: "/about" }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -1563,14 +1563,14 @@ collections:
             }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -1590,14 +1590,14 @@ collections:
             { label: "Path", name: "path", widget: "hidden", default: "/faq" },
             {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             },
             {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -1961,14 +1961,14 @@ collections:
             }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -1987,17 +1987,70 @@ collections:
           - { label: "Path", name: "path", widget: "hidden", default: "/press" }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Sub Title", name: "subTitle", widget: "string" }
+          - {
+              label: "Featured Press Section",
+              name: "featuredPress",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Press Articles",
+                    name: "pressArticles",
+                    widget: "list",
+                    allow_add: true,
+                    fields:
+                      [
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
+                        { label: "Title", name: "title", widget: "string" },
+                        {
+                          label: "Sub Title",
+                          name: "subTitle",
+                          widget: "string",
+                        },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                        },
+                        { label: "url", name: "url", widget: "string" },
+                      ],
+                  },
+                  {
+                    label: "Featured In Images",
+                    name: "featuredIn",
+                    widget: "list",
+                    allow_add: true,
+                    fields:
+                      [
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
+                      ],
+                  },
+                ],
             }
   - name: "components"
     label: "Components"
