@@ -26,10 +26,12 @@ const useGhostBlogPosts = () => {
                 month: "short",
               }
             )
+
             return {
               title: post.title,
               subTitle: `${date} - ${post.authors[0].slug}`,
               description: post.excerpt,
+              url: post.url,
             }
           })
         )
