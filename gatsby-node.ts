@@ -53,8 +53,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
       context: {
         id: node.id,
         seo: {
-          title: node.frontmatter.title,
-          description: node.frontmatter.description,
+          title: node.frontmatter.seoTitle,
+          description: node.frontmatter.seoDescription,
         },
       }, // additional data can be passed via context
     })

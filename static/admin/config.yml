@@ -30,14 +30,14 @@ collections:
           - { label: "Path", name: "path", widget: "hidden", default: "/" }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -742,14 +742,14 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -773,14 +773,14 @@ collections:
             }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -875,14 +875,14 @@ collections:
             }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -940,14 +940,14 @@ collections:
             }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -1296,14 +1296,14 @@ collections:
             }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -1532,14 +1532,14 @@ collections:
           - { label: "Path", name: "path", widget: "hidden", default: "/about" }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -1563,14 +1563,14 @@ collections:
             }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -1590,14 +1590,14 @@ collections:
             { label: "Path", name: "path", widget: "hidden", default: "/faq" },
             {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             },
             {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
@@ -1944,8 +1944,8 @@ collections:
 
       # Governance Page
       - file: "src/content/pages/governance/index.md"
-        name: "governance"
-        label: "Governance"
+        name: "governancePage"
+        label: "Governance Page"
         fields:
           - {
               label: "Template",
@@ -1961,17 +1961,277 @@ collections:
             }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
+            }
+          - {
+              label: "Hero Section",
+              name: "governanceInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Guilds Section",
+              name: "guildsInfo",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Hero Section",
+                    name: "heroSection",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Title", name: "title", widget: "string" },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                        },
+                        {
+                          label: "Buttons",
+                          name: "buttons",
+                          widget: "list",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              { label: Label, name: label, widget: string },
+                              { label: URL, name: url, widget: string },
+                              {
+                                label: Variant,
+                                name: variant,
+                                widget: select,
+                                required: true,
+                                options:
+                                  [
+                                    {
+                                      label: "External Solid",
+                                      value: "EXTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "Internal Solid",
+                                      value: "INTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "External Outline",
+                                      value: "EXTERNAL_OUTLINE",
+                                    },
+                                    {
+                                      label: "Internal Outline",
+                                      value: "INTERNAL_OUTLINE",
+                                    },
+                                  ],
+                              },
+                            ],
+                        },
+                        {
+                          label: "Guild Stats",
+                          name: "guildStats",
+                          widget: "list",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              {
+                                label: "value",
+                                name: "value",
+                                widget: "string",
+                              },
+                              {
+                                label: "label",
+                                name: "label",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Guild Cards",
+                    name: "guildCards",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: "Title", name: "title", widget: string },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: string,
+                        },
+                        {
+                          label: "Member Avatars",
+                          name: "memberAvatars",
+                          widget: "list",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              {
+                                label: "Image",
+                                name: "image",
+                                widget: file,
+                                required: false,
+                                media_library: { config: { multiple: false } },
+                              },
+                              {
+                                label: "Member Name",
+                                name: "memberName",
+                                widget: string,
+                              },
+                            ],
+                        },
+                        { label: "Join URL", name: "joinUrl", widget: string },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Migration Info",
+              name: "migrationInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
             }
       # Press Page
       - file: "src/content/pages/press/index.md"
@@ -1987,17 +2247,70 @@ collections:
           - { label: "Path", name: "path", widget: "hidden", default: "/press" }
           - {
               label: "SEO Title",
-              name: "title",
+              name: "seoTitle",
               widget: "string",
               hint: "SEO title",
               required: false,
             }
           - {
               label: "SEO Description",
-              name: "description",
+              name: "seoDescription",
               widget: "string",
               hint: "SEO description",
               required: false,
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Sub Title", name: "subTitle", widget: "string" }
+          - {
+              label: "Featured Press Section",
+              name: "featuredPress",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Press Articles",
+                    name: "pressArticles",
+                    widget: "list",
+                    allow_add: true,
+                    fields:
+                      [
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
+                        { label: "Title", name: "title", widget: "string" },
+                        {
+                          label: "Sub Title",
+                          name: "subTitle",
+                          widget: "string",
+                        },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                        },
+                        { label: "url", name: "url", widget: "string" },
+                      ],
+                  },
+                  {
+                    label: "Featured In Images",
+                    name: "featuredIn",
+                    widget: "list",
+                    allow_add: true,
+                    fields:
+                      [
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
+                      ],
+                  },
+                ],
             }
   - name: "components"
     label: "Components"
