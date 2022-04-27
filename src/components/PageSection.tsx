@@ -4,9 +4,17 @@ import { Image } from "../components/Image"
 import useChakraBreakpoint from "../hooks/useChakraBreakpoint"
 import { ImageProps } from "./Image"
 
-export const PageSection: FC<BoxProps> = ({ children, ...props }) => {
+export const PageSection: FC<BoxProps & { withSmallPadding?: boolean }> = ({
+  withSmallPadding,
+  children,
+  ...props
+}) => {
   return (
-    <Box py={{ base: 20, md: 40 }} as="section" {...props}>
+    <Box
+      py={withSmallPadding ? { base: 8, md: 16 } : { base: 20, md: 40 }}
+      as="section"
+      {...props}
+    >
       <Container
         maxW={{
           base: "640px", // includues 16px padding on each side

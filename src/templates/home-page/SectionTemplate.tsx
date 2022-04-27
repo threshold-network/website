@@ -4,7 +4,7 @@ import {
   ButtonType,
   CmsButtonLink,
 } from "../../components/Buttons/CmsButtonLink"
-import { H2, H5, LabelMd } from "../../components/Typography"
+import { BodyLg, H2, H5, LabelMd } from "../../components/Typography"
 import {
   PageSection,
   ResponsiveStack,
@@ -26,6 +26,7 @@ export interface RoleTemplateProps extends BoxProps {
   buttons: FooterButton[]
   image?: ImageProps
   rowReverse?: boolean
+  isSmallSize?: boolean
   columnReverse?: boolean
   preTitle?: string
 }
@@ -37,6 +38,7 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
   image,
   rowReverse,
   columnReverse,
+  isSmallSize,
   preTitle = "Getting Started",
   children,
   ...boxProps
@@ -53,9 +55,16 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
             {preTitle}
           </LabelMd>
           <H2 mt={3}>{title}</H2>
-          <H5 mt={10} color="gray.300">
-            {description}
-          </H5>
+          {isSmallSize ? (
+            <BodyLg mt={10} color="gray.300">
+              {description}
+            </BodyLg>
+          ) : (
+            <H5 mt={10} color="gray.300">
+              {description}
+            </H5>
+          )}
+
           <Stack mt={10} direction={{ base: "column", md: "row" }} spacing={8}>
             {buttons.map((_: FooterButton, i) => (
               <CmsButtonLink

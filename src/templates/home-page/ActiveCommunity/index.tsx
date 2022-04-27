@@ -3,7 +3,9 @@ import { Box, SimpleGrid } from "@chakra-ui/react"
 import { ResponsiveStack } from "../../../components/PageSection"
 import { H5 } from "../../../components/Typography"
 import SectionTemplate from "../SectionTemplate"
-import ProposalCard, { Proposal } from "./ProposalCard"
+import ProposalForumCard, {
+  ProposalForum,
+} from "../../../components/ProposalForumCard"
 import { ImageProps } from "../../../components"
 
 interface ButtonInfo {
@@ -17,7 +19,7 @@ interface ActiveCommunityProps {
   description: string
   title: string
   image: ImageProps
-  proposals: Proposal[]
+  proposals: ProposalForum[]
 }
 
 const ActiveCommunity: FC<ActiveCommunityProps> = ({
@@ -39,7 +41,7 @@ const ActiveCommunity: FC<ActiveCommunityProps> = ({
         <H5 color="gray.300">Current Proposals</H5>
         <SimpleGrid columns={{ base: 1, md: 3 }} mt={8} spacing={8}>
           {proposals.map((proposal) => (
-            <ProposalCard key={proposal.id} {...proposal} />
+            <ProposalForumCard key={proposal.id} {...proposal} />
           ))}
         </SimpleGrid>
       </Box>

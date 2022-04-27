@@ -33,7 +33,7 @@ interface Props {
 
 const FaqSection: FC<Props> = ({ title, faq, additionalHelp }) => {
   return (
-    <PageSection bg="gray.900" pt={{ base: 0, md: 16 }}>
+    <PageSection bg="gray.900" withSmallPadding>
       <H3>{title}</H3>
       <Accordion
         items={faq.map((faq) => ({
