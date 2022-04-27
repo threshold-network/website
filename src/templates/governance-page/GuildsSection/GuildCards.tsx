@@ -33,8 +33,8 @@ const GuildCards: FC<GuildCardsProps> = ({ cards }) => {
   return (
     <Box>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} mt={8}>
-        {cards.map((card) => (
-          <Card key={card.title}>
+        {cards.map((card, i) => (
+          <Card key={i}>
             <Stack h="full" spacing={8} justifyContent="space-between">
               <Box>
                 <BodyLg color="gray.50" mb={4}>
@@ -43,8 +43,9 @@ const GuildCards: FC<GuildCardsProps> = ({ cards }) => {
                 <BodySm color="gray.100">{card.description}</BodySm>
               </Box>
               <AvatarGroup max={maxAvatarCount}>
-                {card.memberAvatars.map((avatar) => (
+                {card.memberAvatars.map((avatar, i) => (
                   <Avatar
+                    key={i}
                     bg="linear-gradient(120.19deg, #BD30FF 3.32%, #7D00FF 95.02%)"
                     color="white"
                     name={avatar.memberName}
