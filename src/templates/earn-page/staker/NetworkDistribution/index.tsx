@@ -13,141 +13,12 @@ import {
 } from "chart.js"
 import numeral from "numeral"
 import { Chart } from "react-chartjs-2"
-import { Box, Button, HStack } from "@chakra-ui/react"
+import { Box, Button, HStack, Spinner } from "@chakra-ui/react"
+import BigNumber from "bignumber.js"
+import { formatEther } from "ethers/lib/utils"
 import { H5 } from "../../../../components"
-
-const realData = {
-  first: [
-    {
-      x: "1056341907301545575042174553",
-      y: "1650455994",
-    },
-  ],
-  second: [
-    {
-      x: "1056795129252241744698724153",
-      y: "1650533834",
-    },
-  ],
-  third: [
-    {
-      x: "1056862107022716244698724153",
-      y: "1650665362",
-    },
-  ],
-  forth: [],
-  fifth: [
-    {
-      x: "1057437177937445324200088365",
-      y: "1650858444",
-    },
-  ],
-  sixth: [
-    {
-      x: "1060188125097993225351056621",
-      y: "1650935226",
-    },
-  ],
-  seventh: [
-    {
-      x: "1065863002499738745782524254",
-      y: "1651006819",
-    },
-  ],
-}
-
-const tDataWeek = [
-  {
-    x: "2022-1-13",
-    y: 2100000,
-  },
-  {
-    x: "2022-1-14",
-    y: 2900000,
-  },
-  {
-    x: "2022-1-15",
-    y: 3600000,
-  },
-  {
-    x: "2022-1-16",
-    y: 5700000,
-  },
-  {
-    x: "2022-1-17",
-    y: 5900000,
-  },
-  {
-    x: "2022-1-18",
-    y: 5900000,
-  },
-  {
-    x: "2022-1-19",
-    y: 8000000,
-  },
-]
-
-const tDataMonth = [
-  {
-    x: "2022-1-13",
-    y: 1200000,
-  },
-  {
-    x: "2022-1-14",
-    y: 1900000,
-  },
-  {
-    x: "2022-1-15",
-    y: 2500000,
-  },
-  {
-    x: "2022-1-16",
-    y: 2900000,
-  },
-  {
-    x: "2022-1-17",
-    y: 3800000,
-  },
-  {
-    x: "2022-1-18",
-    y: 3900000,
-  },
-  {
-    x: "2022-1-19",
-    y: 5400000,
-  },
-]
-
-const tDataYear = [
-  {
-    x: "2022-1-13",
-    y: 5500000,
-  },
-  {
-    x: "2022-1-14",
-    y: 5200000,
-  },
-  {
-    x: "2022-1-15",
-    y: 4100000,
-  },
-  {
-    x: "2022-1-16",
-    y: 5700000,
-  },
-  {
-    x: "2022-1-17",
-    y: 6300000,
-  },
-  {
-    x: "2022-1-18",
-    y: 5900000,
-  },
-  {
-    x: "2022-1-19",
-    y: 8000000,
-  },
-]
+import { DUMMY_DATA } from "./dummyData"
+import useFetchStakedT from "../../../../hooks/useFetchStakedT"
 
 function createGradient(ctx: CanvasRenderingContext2D, area: ChartArea) {
   const colorStart = "#52545a"
@@ -168,14 +39,15 @@ const options = {
       ticks: {
         fontColor: "white",
         padding: 20,
-        callback: (value, index, tick) => {
-          if (index === 0) {
-            return "FIRST"
+        // @ts-ignore
+        callback: function (val, index, tick) {
+          // only show label for first and last of the data set
+          if (index === 0 || index === tick.length - 1) {
+            // @ts-ignore
+            return this.getLabelForValue(val)
           }
 
-          if (index === tick.length - 1) {
-            return "LAST"
-          }
+          return ""
         },
       },
     },
@@ -184,13 +56,13 @@ const options = {
         fontColor: "white",
         maxTicksLimit: 5,
         padding: 20,
-        callback: (value: number) => {
+        callback: (value: string | number) => {
           return numeral(value).format("0a")
         },
       },
       grid: {
         borderDash: [18, 18],
-        borderDashOffset: [18],
+        borderDashOffset: 18,
         color: function (context: any) {
           // removes the bottom horizontal line - may be needed if gradient cannot be transparent
           // if (context.index === 0) {
@@ -213,79 +85,111 @@ ChartJS.register(
   Filler
 )
 
+type Filter = "Week" | "Month" | "Year"
+
 function NetworkDistribution() {
   const chartRef = useRef<ChartJS>(null)
-  const [filter, setFilter] = useState("YEAR")
+  const [filter, setFilter] = useState<Filter>("Year")
+  const [isLoading, setLoading] = useState(false)
   const [chartData, setChartData] = useState<ChartData<"bar">>({
     datasets: [],
   })
+  const { fetchWeeklyData, fetchMonthlyData, fetchYearlyData } =
+    useFetchStakedT()
 
-  useEffect(() => {
+  const fetchCumulativeTStaked = async (filter: Filter) => {
     const chart = chartRef.current
-
-    const filterData =
-      filter === "YEAR"
-        ? tDataYear
-        : filter === "MONTH"
-        ? tDataMonth
-        : tDataWeek
-
-    const data = {
-      labels: [],
-      datasets: [
-        {
-          lineTension: 0.5,
-          data: filterData,
-        },
-      ],
-    }
 
     if (!chart) {
       return
     }
 
-    const chartData = {
-      ...data,
-      datasets: data.datasets.map((dataset) => ({
-        ...dataset,
-        // backgroundColor: createGradient(chart.ctx, chart.chartArea),
-        borderColor: "#9974FF",
-        pointRadius: 0,
-        fill: true,
-      })),
+    setLoading(true)
+
+    const dataFetcher =
+      filter === "Week"
+        ? fetchWeeklyData
+        : filter === "Month"
+        ? fetchMonthlyData
+        : fetchYearlyData
+
+    const data = await dataFetcher()
+
+    const scrubbedData = Object.values(data).flatMap((datum) => {
+      const { x: amountStaked, y: date } = datum[0] || {}
+      const amountBn = new BigNumber(amountStaked)
+      const amountToken = Math.floor(+formatEther(amountStaked || "0") / 1000)
+
+      // flat map wil skip over this element, as the data is not valid
+      if (isNaN(amountBn.toNumber())) {
+        return []
+      }
+
+      return {
+        y: amountToken.toString(),
+        x: new Date(+date * 1000).toLocaleDateString("en-gb", {
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+        }),
+      }
+    })
+
+    const dataWithConfig = {
+      labels: [],
+      datasets: [
+        {
+          // backgroundColor: createGradient(chart.ctx, chart.chartArea),
+          borderColor: "#9974FF",
+          pointRadius: 0,
+          fill: true,
+          lineTension: 0.5,
+          data: scrubbedData,
+        },
+      ],
     }
 
     // @ts-ignore
-    setChartData(chartData)
+    setChartData(dataWithConfig)
+    setLoading(false)
+  }
+
+  useEffect(() => {
+    fetchCumulativeTStaked(filter)
   }, [filter])
+
+  const changeFilter = (filter: Filter) => {
+    if (!isLoading) {
+      setFilter(filter)
+    }
+  }
 
   return (
     <Card mt={8}>
       <HStack justifyContent="space-between">
         <H5>Cumulative T Staked</H5>
         <HStack>
-          <Button
-            onClick={() => setFilter("WEEK")}
-            variant={filter === "WEEK" ? "outline" : "ghost"}
-          >
-            Week
-          </Button>
-          <Button
-            onClick={() => setFilter("MONTH")}
-            variant={filter === "MONTH" ? "outline" : "ghost"}
-          >
-            Month
-          </Button>
-          <Button
-            onClick={() => setFilter("YEAR")}
-            variant={filter === "YEAR" ? "outline" : "ghost"}
-          >
-            Year
-          </Button>
+          {(["Week", "Month", "Year"] as Filter[]).map((btn) => (
+            <Button
+              onClick={() => changeFilter(btn)}
+              variant={btn === filter ? "outline" : "ghost"}
+            >
+              {btn}
+            </Button>
+          ))}
         </HStack>
       </HStack>
       <Box height="200px" mt={8}>
-        <Chart ref={chartRef} type="line" data={chartData} options={options} />
+        {isLoading ? (
+          <Spinner m="auto" display="flex" />
+        ) : (
+          <Chart
+            ref={chartRef}
+            type="line"
+            data={chartData}
+            options={options}
+          />
+        )}
       </Box>
     </Card>
   )
