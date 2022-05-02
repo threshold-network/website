@@ -12,12 +12,12 @@ import {
   Tooltip,
 } from "chart.js"
 import numeral from "numeral"
+import { Chart } from "react-chartjs-2"
+import { Box, Button, HStack, Spinner } from "@chakra-ui/react"
 import BigNumber from "bignumber.js"
 import { formatEther } from "ethers/lib/utils"
+import { H5 } from "../../../../components"
 import useFetchStakedT from "../../../../hooks/useFetchStakedT"
-import TStakedChart from "./TStakedChart"
-import { Stack } from "@chakra-ui/react"
-import { H2, H5, LabelMd } from "../../../../components"
 
 ChartJS.register(
   CategoryScale,
@@ -68,7 +68,7 @@ const options = {
         maxTicksLimit: 5,
         padding: 20,
         callback: (value: string | number) => {
-          return numeral(value).format("0a")
+          return numeral(value).format("0.00a")
         },
       },
       grid: {
@@ -86,7 +86,7 @@ const options = {
   },
 }
 
-function NetworkDistribution() {
+function TStakedChart() {
   const chartRef = useRef<ChartJS>(null)
   const [filter, setFilter] = useState<Filter>("Year")
   const [isLoading, setLoading] = useState(false)
@@ -168,21 +168,35 @@ function NetworkDistribution() {
   }, [filter])
 
   return (
-    <Card mt={8}>
-      <Stack justifyContent="space-between" direction="row" mb={12}>
-        <Stack spacing={4}>
-          <LabelMd color="gray.500">Total Value Locked</LabelMd>
-          <H2 color="gray.50">$2,400,000</H2>
-        </Stack>
-        <Stack spacing={4}>
-          <LabelMd color="gray.500">Total Value Staked</LabelMd>
-          <H2 color="gray.50">118,000,000 T</H2>
-          <H5 color="gray.500">$15,300,000</H5>
-        </Stack>
-      </Stack>
-      <TStakedChart />
-    </Card>
+    <Box mt={8}>
+      <HStack justifyContent="space-between">
+        <H5>Cumulative T Staked</H5>
+        <HStack>
+          {(["Week", "Month", "Year"] as Filter[]).map((btn) => (
+            <Button
+              key={btn}
+              onClick={() => changeFilter(btn)}
+              variant={btn === filter ? "outline" : "ghost"}
+            >
+              {btn}
+            </Button>
+          ))}
+        </HStack>
+      </HStack>
+      <Box height="200px" mt={8}>
+        {isLoading ? (
+          <Spinner m="auto" display="flex" />
+        ) : (
+          <Chart
+            ref={chartRef}
+            type="line"
+            data={chartData}
+            options={options}
+          />
+        )}
+      </Box>
+    </Box>
   )
 }
 
-export default NetworkDistribution
+export default TStakedChart
