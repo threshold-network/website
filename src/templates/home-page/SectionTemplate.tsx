@@ -39,7 +39,7 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
   rowReverse,
   columnReverse,
   isSmallSize,
-  preTitle = "Getting Started",
+  preTitle = "Get Started",
   children,
   ...boxProps
 }) => {

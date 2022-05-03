@@ -6,7 +6,7 @@ import MailchimpForm from "./MailchimpForm"
 const NewsletterSubscribe = () => {
   return (
     <DigitalPatternBox variant="light">
-      <PageSection py={16}>
+      <PageSection py={8}>
         <MailchimpForm />
       </PageSection>
     </DigitalPatternBox>

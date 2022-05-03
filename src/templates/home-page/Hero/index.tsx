@@ -47,10 +47,8 @@ const Hero: FC<{ title: string; body: string; ctaButtons: any }> = ({
         px={{ base: "16px", lg: "88px" }}
       >
         <Stack spacing={8}>
-          <H1 noOfLines={2} maxW="740px">
-            {title}
-          </H1>
-          <H5 color="gray.300" noOfLines={2} maxW="540px">
+          <H1 maxW="740px">{title}</H1>
+          <H5 color="gray.300" maxW="540px">
             {body}
           </H5>
         </Stack>
@@ -66,9 +64,7 @@ const Hero: FC<{ title: string; body: string; ctaButtons: any }> = ({
                 <ExternalButtonLink
                   key={_.label}
                   {...heroButtonProps}
-                  variant={
-                    index === 0 ? "special" : isMobile ? "outline" : "link"
-                  }
+                  variant={index === 0 ? "special" : "outline"}
                   href={_.url as ExternalLinkHref}
                 >
                   {_.label}

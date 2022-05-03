@@ -30,9 +30,11 @@ const MigrationInfoSection: FC<RoleTemplateProps> = ({
           <LabelMd textTransform="uppercase" color="gray.500">
             {preTitle}
           </LabelMd>
-          <Stack spacing={6}>
+          <Stack spacing={6} justifyContent="center" display="flex" h="100%">
             <H5 color="white">{title}</H5>
-            <BodyLg color="gray.300">{description}</BodyLg>
+            <BodyLg color="gray.300" maxW="400px">
+              {description}
+            </BodyLg>
             <HStack>
               {buttons.map((_: FooterButton, i) => (
                 <CmsButtonLink
