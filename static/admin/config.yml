@@ -273,6 +273,7 @@ collections:
                       },
                     ],
                 }
+
           - label: "Token Holder Role"
             name: "tokenHolderRole"
             widget: "object"
@@ -856,6 +857,35 @@ collections:
                   },
                 ],
             }
+          - {
+              label: "Liquidity Pools",
+              name: "interestedPools",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  {
+                    label: "Image 1",
+                    name: "image1",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Image 2",
+                    name: "image2",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Sub Title", name: "subTitle", widget: "string" },
+                  {
+                    label: "Button Text",
+                    name: "buttonText",
+                    widget: "string",
+                  },
+                  { label: "Button URL", name: "buttonUrl", widget: "string" },
+                ],
+            }
       # Liquidity Provider Page
       - file: "src/content/pages/earn/liquidity-provider.md"
         name: "liquidityProvider"
@@ -919,6 +949,36 @@ collections:
                     widget: file,
                     media_library: { config: { multiple: false } },
                   },
+                ],
+            }
+
+          - {
+              label: "Liquidity Pools",
+              name: "interestedPools",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  {
+                    label: "Image 1",
+                    name: "image1",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Image 2",
+                    name: "image2",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Sub Title", name: "subTitle", widget: "string" },
+                  {
+                    label: "Button Text",
+                    name: "buttonText",
+                    widget: "string",
+                  },
+                  { label: "Button URL", name: "buttonUrl", widget: "string" },
                 ],
             }
       # Staker Page
@@ -1518,6 +1578,35 @@ collections:
                 ],
             }
 
+          - {
+              label: "Liquidity Pools",
+              name: "interestedPools",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  {
+                    label: "Image 1",
+                    name: "image1",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Image 2",
+                    name: "image2",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Sub Title", name: "subTitle", widget: "string" },
+                  {
+                    label: "Button Text",
+                    name: "buttonText",
+                    widget: "string",
+                  },
+                  { label: "Button URL", name: "buttonUrl", widget: "string" },
+                ],
+            }
       # About Page
       - file: "src/content/pages/about/index.md"
         name: "about"

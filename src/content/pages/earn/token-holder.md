@@ -36,4 +36,23 @@ secondaryInfo:
       - label: Migrate your tokens
         url: https://dashboard.threshold.network/
         variant: EXTERNAL_OUTLINE
+interestedPools:
+  - image1: /images/threshold.svg
+    image2: /images/ethereum.svg
+    title: T + ETH
+    subTitle: Curve
+    buttonText: View Pool on Curve
+    buttonUrl: NEED_URL
+  - image1: /images/tbtc-v2.svg
+    image2: /images/group-81037904.svg
+    title: TBTCv2 + Saddle
+    subTitle: Saddle
+    buttonText: View Pool on Saddle
+    buttonUrl: NEED_URL
+  - image1: /images/tbtc-v2.svg
+    image2: /images/mbtc.svg
+    title: TBTCv2 + mBTC
+    subTitle: MSTABLE
+    buttonText: View Pool on mStable
+    buttonUrl: NEED_URL
 ---
