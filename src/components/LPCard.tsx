@@ -52,7 +52,7 @@ const LPCard: FC<LPCardProps> = ({
         </Stack>
       </Stack>
       <ExternalButtonLink
-        isFullWidth
+        width="100%"
         href={buttonUrl as ExternalLinkHref}
         mt={8}
       >

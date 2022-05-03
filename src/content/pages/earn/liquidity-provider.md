@@ -9,7 +9,8 @@ description: Liquidity providers earn yield by depositing assets into liquidity
 seoTitle: Liquidity Provider
 lpInfo:
   title: Liquidity Provider
-  description: Liquidity providers earn yield by depositing assets into liquidity
+  description:
+    Liquidity providers earn yield by depositing assets into liquidity
     pools to provide liquidity for automated market making and ease of trading
     in the DeFi ecosystem. Take on a role as a liquidity provider by depositing
     into one of the many Threshold liquidity pools.
@@ -17,23 +18,22 @@ lpInfo:
   buttons: []
   rowReverse: false
 interestedPools:
-- image1: /images/threshold.svg
-  image2: /images/ethereum.svg
-  title: T + ETH
-  subTitle: Curve
-  buttonText: View Pool on Curve
-  buttonUrl: NEED_URL
-- image1: /images/tbtc-v2.svg
-  image2: /images/group-81037904.svg
-  title: TBTCv2 + Saddle
-  subTitle: Saddle
-  buttonText: View Pool on Saddle
-  buttonUrl: NEED_URL
-- image1: /images/tbtc-v2.svg
-  image2: /images/mbtc.svg
-  title: TBTCv2 + mBTC
-  subTitle: MSTABLE
-  buttonText: View Pool on mStable
-  buttonUrl: NEED_URL
+  - image1: /images/threshold.svg
+    image2: /images/ethereum.svg
+    title: T + ETH
+    subTitle: Curve
+    buttonText: View Pool on Curve
+    buttonUrl: NEED_URL
+  - image1: /images/tbtc-v2.svg
+    image2: /images/group-81037904.svg
+    title: TBTCv2 + Saddle
+    subTitle: Saddle
+    buttonText: View Pool on Saddle
+    buttonUrl: NEED_URL
+  - image1: /images/tbtc-v2.svg
+    image2: /images/mbtc.svg
+    title: TBTCv2 + mBTC
+    subTitle: MSTABLE
+    buttonText: View Pool on mStable
+    buttonUrl: NEED_URL
 ---
-
