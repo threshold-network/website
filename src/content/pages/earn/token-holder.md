@@ -2,10 +2,10 @@
 template: earn-page/token-holder
 path: /earn/token-holder
 title: Token Holder
-description: As a Token Holder, you can make the most of your tokens on the
+seoDescription: As a Token Holder, you can make the most of your tokens on the
   Threshold Network by participating in DAO governance and voting on what’s next
   for Threshold. Legacy NU or KEEP tokens should first be migrated to T.
-seoTitle: Token Holder
+seoTitle: Threshold Token Holder
 tokenHolderInfo:
   title: Token Holder
   description: As a Token Holder, you can make the most of your tokens on the
