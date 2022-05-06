@@ -2,10 +2,10 @@
 template: earn-page/btc
 path: /earn/btc
 title: Earn BTC
+seoTitle: BTC Role
 seoDescription: BTC is Threshold’s decentralized bridge to bring BTC to the
   Ethereum network; the only permissionless solution on the market today. Bridge
   your Bitcoin to Ethereum in a secure and trustless way to participate in DeFi.
-seoTitle: BTC Role
 btcInfo:
   rowReverse: false
   title: BTC/ tBTC User
@@ -30,5 +30,5 @@ interestedPools:
     title: TBTCv2 + mBTC
     subTitle: MSTABLE
     buttonText: View Pool on mStable
-    buttonUrl: NEED_URL
+    buttonUrl: https://mstable.app/#/mbtc/pools/0xc3280306b6218031e61752d060b091278d45c329
 ---
