@@ -25,8 +25,8 @@ export const createPages: GatsbyNode["createPages"] = async ({
               slug
             }
             frontmatter {
-              title
-              description
+              seoTitle
+              seoDescription
               template
             }
           }
