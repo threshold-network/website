@@ -31,6 +31,8 @@ const ActiveCommunity: FC<ActiveCommunityProps> = ({
 }) => {
   return (
     <SectionTemplate
+      preTitle=""
+      isSmallSize
       bgColor="gray.900"
       title={title}
       description={description}

@@ -4,8 +4,8 @@ path: /
 seoTitle: Threshold Network
 hero:
   title: Full control over your digital assets
-  body: Use threshold cryptographic tools that power user sovereignty on the
-    blockchain.
+  body: Threshold provides a suite of threshold cryptography services that power
+    user sovereignty on the blockchain.
   ctaButtons:
     - label: Launch Dapp
       url: https://dashboard.threshold.network
@@ -57,7 +57,7 @@ tokenHolderRole:
   image: /images/token-holder.png
   buttons:
     - label: Governance Forum
-      url: NEED_URL
+      url: https://forum.threshold.network/
       variant: EXTERNAL_SOLID
     - label: Learn More
       url: /earn/token-holder

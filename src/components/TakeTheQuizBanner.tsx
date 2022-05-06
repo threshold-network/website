@@ -35,7 +35,7 @@ const TakeTheQuizBannerTemplate: FC<TakeTheQuizBannerProps & BoxProps> = ({
         direction={{ base: "column", md: "row" }}
         spacing={6}
       >
-        <H5 color="gray.500" maxW="645px">
+        <H5 color="gray.300" maxW="645px">
           {description}
         </H5>
         <Button

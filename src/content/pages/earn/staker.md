@@ -125,7 +125,7 @@ gettingStarted:
     links:
       - leftIcon: /images/threshold.svg
         label: Threshold
-        url: NEED_URL
+        url: https://dashboard.threshold.network/
         rightIcon: /images/github.svg
       - leftIcon: /images/nu-token-symbol-1-.svg
         label: PRE
@@ -133,7 +133,7 @@ gettingStarted:
         rightIcon: /images/github.svg
       - leftIcon: /images/keep-token-symbol.svg
         label: Random Beacon
-        url: NEED_URL
+        url: https://dashboard.keep.network/
         rightIcon: /images/github.svg
       - leftIcon: /images/tbtc-v2.svg
         label: tBTC v2
