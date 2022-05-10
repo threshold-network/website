@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { Box, Container, Stack } from "@chakra-ui/react"
-import { H1, H5 } from "../../../components/Typography"
+import { ButtonLg, H1, H5 } from "../../../components/Typography"
 import heroGradientCurve from "../../../static/images/hero-gradient-swoosh.png"
 import useChakraBreakpoint from "../../../hooks/useChakraBreakpoint"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
@@ -48,7 +48,7 @@ const Hero: FC<{ title: string; body: string; ctaButtons: any }> = ({
       >
         <Stack spacing={8}>
           <H1 maxW="740px">{title}</H1>
-          <H5 color="gray.300" maxW="540px">
+          <H5 color="gray.300" maxW="590px">
             {body}
           </H5>
         </Stack>
@@ -67,7 +67,7 @@ const Hero: FC<{ title: string; body: string; ctaButtons: any }> = ({
                   variant={index === 0 ? "special" : "outline"}
                   href={_.url as ExternalLinkHref}
                 >
-                  {_.label}
+                  <ButtonLg>{_.label}</ButtonLg>
                 </ExternalButtonLink>
               )
             }

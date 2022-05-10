@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import { BoxProps, Button, Stack } from "@chakra-ui/react"
 import { graphql, useStaticQuery } from "gatsby"
-import { H5 } from "./Typography"
+import { ButtonLg, H5 } from "./Typography"
 import DigitalPatternBox from "./DigitalPatternBox"
 import useChakraBreakpoint from "../hooks/useChakraBreakpoint"
 import { useQuizModal } from "../contexts/QuizModalContext"
@@ -40,10 +40,12 @@ const TakeTheQuizBannerTemplate: FC<TakeTheQuizBannerProps & BoxProps> = ({
         </H5>
         <Button
           variant={isMobile ? "solid" : "outline"}
-          minW="170px"
           onClick={openModal}
+          h="auto"
+          px={6}
+          py={2}
         >
-          {buttonText}
+          <ButtonLg>{buttonText}</ButtonLg>
         </Button>
       </Stack>
     </DigitalPatternBox>

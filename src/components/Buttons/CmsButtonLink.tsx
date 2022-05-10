@@ -18,12 +18,21 @@ interface Props extends ButtonProps {
 export const CmsButtonLink: FC<Props> = ({ cmsVariant, url, ...props }) => {
   switch (cmsVariant) {
     case "EXTERNAL_SOLID":
-      return <ExternalButtonLink href={url as ExternalLinkHref} {...props} />
+      return (
+        <ExternalButtonLink
+          size="lg"
+          href={url as ExternalLinkHref}
+          {...props}
+        />
+      )
     case "INTERNAL_SOLID":
-      return <ChakraButton as={GatsbyLink} to={url} {...props} />
+      return <ChakraButton size="lg" as={GatsbyLink} to={url} {...props} />
     case "EXTERNAL_OUTLINE":
       return (
         <ExternalButtonLink
+          h="auto"
+          px={6}
+          py={4}
           variant="outline"
           href={url as ExternalLinkHref}
           {...props}
@@ -31,9 +40,15 @@ export const CmsButtonLink: FC<Props> = ({ cmsVariant, url, ...props }) => {
       )
     case "INTERNAL_OUTLINE":
       return (
-        <ChakraButton variant="outline" as={GatsbyLink} to={url} {...props} />
+        <ChakraButton
+          size="lg"
+          variant="outline"
+          as={GatsbyLink}
+          to={url}
+          {...props}
+        />
       )
     default:
-      return <ChakraButton {...props} />
+      return <ChakraButton h="auto" px={6} py={3} {...props} />
   }
 }

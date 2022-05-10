@@ -22,7 +22,7 @@ const ImageStack: FC<{
       <Stack direction="column">
         <HStack>
           <Square bg="brand.500" w="20px" h="20px" />
-          <LabelMd>{title}</LabelMd>
+          <LabelMd textTransform="uppercase">{title}</LabelMd>
         </HStack>
         <BodyMd
           mt="1rem"

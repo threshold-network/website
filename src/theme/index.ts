@@ -48,10 +48,20 @@ const colors = {
   },
 }
 
-const index = extendTheme({
+const theme = extendTheme({
   config,
   breakpoints,
   colors,
+  textStyles: {
+    buttonLg: {
+      fontWeight: 600,
+      fontSize: "18px",
+      lineHeight: "28px",
+      h: "auto",
+      px: 6,
+      py: 3,
+    },
+  },
   components: {
     Button,
     Card,
@@ -92,4 +102,4 @@ const index = extendTheme({
   },
 })
 
-export default index
+export default theme

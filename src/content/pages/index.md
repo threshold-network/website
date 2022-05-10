@@ -13,8 +13,7 @@ hero:
       url: https://discord.gg/VafbhzJ3vW
 stakerRole:
   title: Threshold Staking
-  description:
-    Stakers escrow T tokens to run a node on the Threshold Network and
+  description: Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards.
   image: /images/staking-threshold.png
   buttons:
@@ -90,8 +89,7 @@ harnessThePower:
         threshold cryptographic services without a central authority.
       image: /images/decentralized-icon.png
     - title: Secure
-      description:
-        Splitting cryptographic operations across nodes increases security
+      description: Splitting cryptographic operations across nodes increases security
         and availability and reduces trust assumptions. Threshold is
         [audited](/audits) by the best firms in the space.
       image: /images/secure-icon.png
@@ -115,37 +113,35 @@ joinTheCommunity:
   left:
     - label: Get involved
       title: Become a part of our community
-      description:
-        Join our Discord server and our Telegram to get involved and stay
+      description: Join our Discord server and our Telegram to get involved and stay
         up to date.
       buttons:
         - label: Discord
           url: https://discord.gg/VafbhzJ3vW
           image: /images/discord.svg
-          variant: EXTERNAL_OUTLINE
+          variant: INTERNAL_OUTLINE
           icon:
-            image: /images/discord.svg
+            image: /images/logo-discord.png
             alt: discord
         - label: Telegram
           url: NEED_URL
           image: /images/telegram.svg
-          variant: EXTERNAL_OUTLINE
+          variant: INTERNAL_OUTLINE
           icon:
-            image: /images/telegram.svg
+            image: /images/paper-plane-sharp.png
             alt: telegram
   right:
     - label: For Developers
       title: Learn more about the network
-      description:
-        Learn more about the Threshold network by reading the documentation
+      description: Learn more about the Threshold network by reading the documentation
         or visiting Github.
       buttons:
         - label: Github
           url: https://github.com/threshold-network
           image: /images/github.svg
-          variant: EXTERNAL_OUTLINE
+          variant: INTERNAL_OUTLINE
           icon:
-            image: /images/github.svg
+            image: /images/logo-github.png
             alt: github
 title: Threshold Network
 description: Threshold powers user sovereignty on the public blockchain.

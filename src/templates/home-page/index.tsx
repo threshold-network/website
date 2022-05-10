@@ -26,11 +26,11 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
     <>
       <Hero {...hero} />
       <SectionTemplate {...stakerRole} bgColor="gray.900" />
-      <SectionTemplate {...lpRole} bgColor="blackAlpha.400" />
-      <SectionTemplate {...btcRole} bgColor="blackAlpha.700" />
-      <SectionTemplate {...tokenHolderRole} bgColor="blackAlpha.600" />
-      <TakeTheQuiz topBgColor="blackAlpha.600" bottomBgColor="blackAlpha.400" />
-      <MigrationInfoSection {...migrationInfo} bgColor="blackAlpha.400" />
+      <SectionTemplate {...lpRole} bgColor="#181D22" />
+      <SectionTemplate {...btcRole} bgColor="#0A0C0F" />
+      <SectionTemplate {...tokenHolderRole} bgColor="#161A1F" />
+      <TakeTheQuiz topBgColor="#161A1F" bottomBgColor="#181D22" />
+      <MigrationInfoSection {...migrationInfo} bgColor="#181D22" />
       <HarnessThePower {...harnessThePower} />
       <ActiveCommunity {...activeCommunity} proposals={proposals} />
       <JoinTheCommunity {...joinTheCommunity} />

@@ -46,13 +46,19 @@ const CustomForm: FC<FormHooks<EmailFormFields>> = ({
         <FormControl>
           <ResponsiveStack columnReverse>
             <Input
+              size="lg"
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               value={email}
               bg="white"
-              placeholder="Enter an email address"
+              placeholder="Enter an email"
             />
-            <Button px={6} type="submit" isLoading={status === "sending"}>
+            <Button
+              size="lg"
+              px={6}
+              type="submit"
+              isLoading={status === "sending"}
+            >
               Submit
             </Button>
           </ResponsiveStack>
