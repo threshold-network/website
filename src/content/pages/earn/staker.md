@@ -1,8 +1,7 @@
 ---
 activeCommunity:
   title: Threshold Staker
-  description:
-    Stakers escrow T tokens to run a node on the Threshold Network and
+  description: Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards. Running a node helps to provide cryptography services on
     Threshold and secure the network. Take on a role as a Staker with Threshold
     and be a core component of the network.
@@ -12,10 +11,13 @@ activeCommunity:
       url: https://dashboard.threshold.network/
       variant: EXTERNAL_SOLID
 path: /earn/staker
+seoDescription: Stakers escrow T tokens to run a node on the Threshold Network
+  and earn rewards. Running a node helps to provide cryptography services on
+  Threshold and secure the network. Take on a role as a Staker with Threshold
+  and be a core component of the network.
 stakerInfo:
   title: Threshold Staker
-  description:
-    Stakers escrow T tokens to run a node on the Threshold Network and
+  description: Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards. Running a node helps to provide cryptography services on
     Threshold and secure the network. Take on a role as a Staker with Threshold
     and be a core component of the network.
@@ -89,11 +91,6 @@ legacyStakers:
 title: Threshold Staker
 template: earn-page/staker
 seoTitle: Threshold Staker
-seoDescription:
-  Stakers escrow T tokens to run a node on the Threshold Network and
-  earn rewards. Running a node helps to provide cryptography services on
-  Threshold and secure the network. Take on a role as a Staker with Threshold
-  and be a core component of the network.
 gettingStarted:
   title: Getting Started
   left:
@@ -109,7 +106,7 @@ gettingStarted:
         label: Staking Providers
         url: NEED_URL
         rightIcon: /images/external-arrow.svg
-      - leftIcon: /images/discord.svg
+      - leftIcon: /images/logo-discord.png
         label: Ask Questions in Discord
         url: https://discord.gg/VafbhzJ3vW
         rightIcon: /images/external-arrow.svg
@@ -119,24 +116,23 @@ gettingStarted:
         rightIcon: /images/external-arrow.svg
   right:
     title: Apps to stake on
-    description:
-      Threshold stakers can authorize several different applications to
+    description: Threshold stakers can authorize several different applications to
       stake on with their T stakes.
     links:
       - leftIcon: /images/threshold.svg
         label: Threshold
         url: https://dashboard.threshold.network/
-        rightIcon: /images/github.svg
+        rightIcon: /images/logo-github.png
       - leftIcon: /images/nu-token-symbol-1-.svg
         label: PRE
         url: NEED_URL
-        rightIcon: /images/github.svg
+        rightIcon: /images/logo-github.png
       - leftIcon: /images/keep-token-symbol.svg
         label: Random Beacon
         url: https://dashboard.keep.network/
-        rightIcon: /images/github.svg
+        rightIcon: /images/logo-github.png
       - leftIcon: /images/tbtc-v2.svg
         label: tBTC v2
         url: NEED_URL
-        rightIcon: /images/github.svg
+        rightIcon: /images/logo-github.png
 ---

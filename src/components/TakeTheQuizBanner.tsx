@@ -41,11 +41,10 @@ const TakeTheQuizBannerTemplate: FC<TakeTheQuizBannerProps & BoxProps> = ({
         <Button
           variant={isMobile ? "solid" : "outline"}
           onClick={openModal}
-          h="auto"
-          px={6}
-          py={2}
+          size="lg"
+          m="auto 0"
         >
-          <ButtonLg>{buttonText}</ButtonLg>
+          {buttonText}
         </Button>
       </Stack>
     </DigitalPatternBox>

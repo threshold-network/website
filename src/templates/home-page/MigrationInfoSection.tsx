@@ -1,18 +1,14 @@
 import React, { FC } from "react"
-import { HStack, Stack } from "@chakra-ui/react"
+import { Box, HStack, Stack } from "@chakra-ui/react"
 import { BodyLg, H5, LabelMd } from "../../components/Typography"
-import {
-  PageSection,
-  ResponsiveStack,
-  SectionImage,
-  SectionTextContainer,
-} from "../../components/PageSection"
+import { PageSection } from "../../components/PageSection"
 
 import { FooterButton, RoleTemplateProps } from "./SectionTemplate"
 import {
   ButtonType,
   CmsButtonLink,
 } from "../../components/Buttons/CmsButtonLink"
+import { Image } from "../../components"
 
 const MigrationInfoSection: FC<RoleTemplateProps> = ({
   bgColor,
@@ -20,17 +16,27 @@ const MigrationInfoSection: FC<RoleTemplateProps> = ({
   description,
   buttons,
   image,
-  rowReverse,
   preTitle,
 }) => {
   return (
     <PageSection bg={bgColor}>
-      <ResponsiveStack spacing={16} rowReverse={rowReverse}>
-        <SectionTextContainer>
+      <Box
+        display="flex"
+        flexDirection={{
+          base: "column-reverse",
+          md: "row",
+        }}
+        justifyContent="space-between"
+      >
+        <Stack
+          margin={{ base: "48px 0 0 0", md: "auto 0 !important" }}
+          maxW={{ base: "100%", md: "512px" }}
+          spacing={0}
+        >
           <LabelMd textTransform="uppercase" color="gray.500">
             {preTitle}
           </LabelMd>
-          <Stack spacing={6} justifyContent="center" display="flex" h="100%">
+          <Stack spacing={6}>
             <H5 color="white">{title}</H5>
             <BodyLg color="gray.300" maxW="400px">
               {description}
@@ -47,9 +53,14 @@ const MigrationInfoSection: FC<RoleTemplateProps> = ({
               ))}
             </HStack>
           </Stack>
-        </SectionTextContainer>
-        <SectionImage {...image} />
-      </ResponsiveStack>
+        </Stack>
+        <Image
+          px={8}
+          w={{ base: "380px", lg: "415px" }}
+          m={{ base: "auto !important", md: "0 !important" }}
+          {...image}
+        />
+      </Box>
     </PageSection>
   )
 }
