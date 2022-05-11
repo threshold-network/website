@@ -21,10 +21,11 @@ const colors = {
   brand: {
     50: "#FCF9FF",
     100: "#D5C6FF",
-    // 200
+    200: "#9974FF", // duplicate of 300
     300: "#9974FF",
-    // 400
+    400: "#7C47EE", // duplicate of 500
     500: "#7C47EE", // main Threshold brand color - DARK MODE
+    600: "#4E2E99", // duplicate of 700
     700: "#4E2E99",
     800: "#3B257A",
     900: "#1C0758",

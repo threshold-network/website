@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { Button, Stack } from "@chakra-ui/react"
-import { H2, H5 } from "../../components/Typography"
+import { BodyMd, H2, H3, H5 } from "../../components/Typography"
 import {
   ResponsiveStack,
   SectionImage,
@@ -30,12 +30,14 @@ const QuizResult: FC<ResultPageProps & { resetQuizState: () => void }> = ({
   return (
     <ResponsiveStack spacing={16}>
       <SectionTextContainer>
-        <H2 mt={3}>{title}</H2>
-        <H5 mt={10} color="gray.300">
+        <H3 color="gray.50" mt={3}>
+          {title}
+        </H3>
+        <BodyMd mt={10} color="gray.300" maxW="330px">
           {description}
-        </H5>
+        </BodyMd>
         <Stack mt={10} direction={{ base: "column", md: "row" }} spacing={8}>
-          <Button variant="outline" onClick={resetQuizState}>
+          <Button variant="outline" onClick={resetQuizState} size="lg">
             Retry Quiz
           </Button>
           <CmsButtonLink

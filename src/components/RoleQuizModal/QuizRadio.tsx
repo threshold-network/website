@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import { Box, Radio, RadioGroup, VStack } from "@chakra-ui/react"
+import { Box, LightMode, Radio, RadioGroup, Stack } from "@chakra-ui/react"
 import { BodyLg } from "../../components/Typography"
 import { QuizOption, QuizStageData } from "./types"
 
@@ -16,9 +16,11 @@ const QuizRadio: FC<QuizOption & { isActive: boolean }> = ({
       bg={isActive ? "blackAlpha.400" : undefined}
       w="100%"
     >
-      <Radio value={label} size="md" w="100%" p={4}>
-        <BodyLg>{label}</BodyLg>
-      </Radio>
+      <LightMode>
+        <Radio colorScheme="brand" value={label} size="md" w="100%" p={4}>
+          <BodyLg>{label}</BodyLg>
+        </Radio>
+      </LightMode>
     </Box>
   )
 }
@@ -30,15 +32,13 @@ const QuizRadioGroup: FC<{
 }> = ({ value, setValue, stage }) => {
   return (
     <RadioGroup onChange={setValue} value={value}>
-      <VStack align="self-start">
-        {stage.options.map((option) => (
-          <QuizRadio
-            isActive={value === option.label}
-            key={option.label}
-            {...option}
-          />
-        ))}
-      </VStack>
+      {stage.options.map((option) => (
+        <QuizRadio
+          isActive={value === option.label}
+          key={option.label}
+          {...option}
+        />
+      ))}
     </RadioGroup>
   )
 }
