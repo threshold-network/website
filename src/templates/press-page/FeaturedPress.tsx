@@ -23,7 +23,6 @@ const PressCard: FC<PressArticle> = ({
   return (
     <Card
       m="auto"
-      maxW="336px"
       display="flex"
       flexDirection="column"
       justifyContent="space-between"

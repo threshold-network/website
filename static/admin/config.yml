@@ -2349,7 +2349,13 @@ collections:
               required: false,
             }
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Sub Title", name: "subTitle", widget: "string" }
+          - {
+              label: "Sub Title",
+              name: "subTitle",
+              widget: "markdown",
+              required: true,
+              minimal: true,
+            }
           - {
               label: "Featured Press Section",
               name: "featuredPress",

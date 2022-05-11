@@ -17,10 +17,21 @@ const FeaturedIn: FC<{
           width="100vw"
           justifyContent="space-around"
           direction="row"
+          h="124px"
         >
           <LabelMd m={{ base: "auto", md: "auto 24px" }}>Featured In</LabelMd>
           {pressImages.map((image) => (
-            <Image key={image.id} m="auto" maxW="200px" {...image} />
+            <Image
+              key={image.id}
+              display="block"
+              maxWidth="140px"
+              maxHeight="60px"
+              width="auto"
+              height="auto"
+              marginTop="auto !important"
+              marginBottom="auto !important"
+              {...image}
+            />
           ))}
         </Stack>
       </Box>

@@ -17,7 +17,6 @@ const BlogCard: FC<BlogPost> = ({ title, subTitle, description, url }) => {
   return (
     <Card
       m="auto"
-      maxW="336px"
       display="flex"
       flexDirection="column"
       justifyContent="space-between"
@@ -46,7 +45,9 @@ const BlogPosts: FC = () => {
   return (
     <Box>
       <H3>Blog Highlights</H3>
-      <H5 color="gray.300">Hand Selected posts by the Threshold team.</H5>
+      <H5 mt={4} color="gray.300">
+        Hand Selected posts by the Threshold team.
+      </H5>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} mt={8}>
         {blogPosts.slice(0, 3).map((post: any, i) => (
           <BlogCard key={i} {...post} />

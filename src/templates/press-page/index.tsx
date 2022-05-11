@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { graphql } from "gatsby"
 import { PageSection } from "../../components/PageSection"
-import { H2, H5, ImageProps } from "../../components"
+import { H2, H3, H5, ImageProps } from "../../components"
 import FeaturedPress from "./FeaturedPress"
 import FeaturedIn from "./FeaturedIn"
 import BlogPosts from "./BlogPosts"
@@ -13,10 +13,19 @@ const PressPageTemplate: FC<any> = ({ data }) => {
     featuredPress: { pressArticles, featuredIn },
   } = data.markdownRemark.frontmatter
 
+  console.log("data", data)
+
   return (
     <PageSection bg="gray.900">
       <H2>{title}</H2>
-      <H5 color="gray.300">{subTitle}</H5>
+      <H5
+        mt={8}
+        color="gray.300"
+        dangerouslySetInnerHTML={{ __html: subTitle }}
+      />
+      <H3 fontWeight={600} mt={16} color="gray.50">
+        Featured Press
+      </H3>
       <FeaturedPress pressArticles={pressArticles} />
       <FeaturedIn
         pressImages={featuredIn.map(

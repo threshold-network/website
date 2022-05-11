@@ -4,8 +4,7 @@ import RolePageTemplate from "../RolePageTemplate"
 import SectionTemplate from "../../home-page/SectionTemplate"
 import { PageSection } from "../../../components/PageSection"
 import { H3 } from "../../../components"
-import { SimpleGrid } from "@chakra-ui/react"
-import LPCard from "../../../components/LPCard"
+import { LPCardGroup } from "../../../components/LPCard"
 
 const LiquidityProviderPageTemplate: FC<any> = ({ data }) => {
   const { lpInfo, interestedPools } = data.markdownRemark.frontmatter
@@ -15,11 +14,7 @@ const LiquidityProviderPageTemplate: FC<any> = ({ data }) => {
       <SectionTemplate {...lpInfo} preTitle={null} columnReverse isSmallSize />
       <PageSection withSmallPadding>
         <H3 color="gray.300">Pools you may be interested in</H3>
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6} mt={6}>
-          {interestedPools.map((pool: any, i) => (
-            <LPCard key={i} {...pool} />
-          ))}
-        </SimpleGrid>
+        <LPCardGroup cards={interestedPools} />
       </PageSection>
     </RolePageTemplate>
   )

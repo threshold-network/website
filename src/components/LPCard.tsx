@@ -4,7 +4,8 @@ import Card from "./Card"
 import { H5, LabelMd } from "./Typography"
 import ExternalButtonLink from "./Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "./Navbar/types"
-import { Box, Stack } from "@chakra-ui/react"
+import { Box, SimpleGrid, Stack, useMediaQuery } from "@chakra-ui/react"
+import useChakraBreakpoint from "../hooks/useChakraBreakpoint"
 
 interface LPCardProps {
   image1: ImageProps
@@ -22,9 +23,10 @@ const LPCard: FC<LPCardProps> = ({
   subTitle,
   buttonUrl,
   buttonText,
+  ...props
 }) => {
   return (
-    <Card>
+    <Card minW="320px" {...props}>
       <Stack direction="row">
         <Box position="relative" w="48px" h="48px" mr={2}>
           <Image
@@ -62,6 +64,21 @@ const LPCard: FC<LPCardProps> = ({
         {buttonText}
       </ExternalButtonLink>
     </Card>
+  )
+}
+
+export const LPCardGroup: FC<{ cards: LPCardProps[] }> = ({ cards }) => {
+  const [isLargerThan1120] = useMediaQuery("(min-width: 1120px)")
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)")
+  const isInBetweenSizes = isLargerThan768 && !isLargerThan1120
+  const columns = isLargerThan1120 ? 3 : isInBetweenSizes ? 2 : 1
+
+  return (
+    <SimpleGrid columns={columns} spacing={6} mt={6}>
+      {cards.map((card: any, i) => (
+        <LPCard key={i} {...card} />
+      ))}
+    </SimpleGrid>
   )
 }
 
