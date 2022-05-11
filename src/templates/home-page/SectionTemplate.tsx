@@ -44,7 +44,7 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
   ...boxProps
 }) => {
   return (
-    <PageSection {...boxProps}>
+    <PageSection withSmallPadding={isSmallSize} {...boxProps}>
       <ResponsiveStack
         rowReverse={rowReverse}
         columnReverse={columnReverse}

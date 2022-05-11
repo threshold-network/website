@@ -13,7 +13,7 @@ const LiquidityProviderPageTemplate: FC<any> = ({ data }) => {
   return (
     <RolePageTemplate>
       <SectionTemplate {...lpInfo} preTitle={null} columnReverse isSmallSize />
-      <PageSection>
+      <PageSection withSmallPadding>
         <H3 color="gray.300">Pools you may be interested in</H3>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6} mt={6}>
           {interestedPools.map((pool: any, i) => (

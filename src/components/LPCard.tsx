@@ -26,14 +26,14 @@ const LPCard: FC<LPCardProps> = ({
   return (
     <Card>
       <Stack direction="row">
-        <Box position="relative" w="48px" h="48px">
+        <Box position="relative" w="48px" h="48px" mr={2}>
           <Image
             left={0}
             top={0}
             position="absolute"
             boxSize="32px"
             h="32px"
-            w="32 px"
+            w="32px"
             {...image1}
           />
           <Image
@@ -42,16 +42,19 @@ const LPCard: FC<LPCardProps> = ({
             position="absolute"
             boxSize="48px"
             h="32px"
-            w="32 px"
+            w="32px"
             {...image2}
           />
         </Box>
-        <Stack>
+        <Stack spacing={0}>
           <H5 color="gray.100">{title}</H5>
-          <LabelMd color="gray.500">{subTitle}</LabelMd>
+          <LabelMd textTransform="uppercase" color="gray.500">
+            {subTitle}
+          </LabelMd>
         </Stack>
       </Stack>
       <ExternalButtonLink
+        size="lg"
         width="100%"
         href={buttonUrl as ExternalLinkHref}
         mt={8}
