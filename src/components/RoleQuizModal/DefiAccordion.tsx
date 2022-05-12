@@ -32,7 +32,7 @@ const DefiAccordion = () => {
   return (
     <Box mt={8} maxW="600px">
       <Button
-        variant="ghost"
+        variant="link"
         onClick={onToggle}
         rightIcon={
           <Icon as={isOpen ? IoChevronDownSharp : IoChevronForwardSharp} />

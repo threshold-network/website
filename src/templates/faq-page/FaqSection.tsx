@@ -67,10 +67,12 @@ const FaqSection: FC<Props> = ({ title, faq, additionalHelp }) => {
         }))}
       />
       <Stack mt={20}>
-        <BodyLg mb={8}>{additionalHelp.text}</BodyLg>
+        <BodyLg color="gray.50" mb={4}>
+          {additionalHelp.text}
+        </BodyLg>
         <CmsButtonLink
           leftIcon={
-            <Image fill="white" {...additionalHelp.button.icon.image} />
+            <Image boxSize="20px" {...additionalHelp.button.icon.image} />
           }
           cmsVariant={additionalHelp.button.variant}
           url={additionalHelp.button.url}

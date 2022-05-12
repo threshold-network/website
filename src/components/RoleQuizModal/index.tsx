@@ -12,19 +12,21 @@ import {
   ModalOverlay,
 } from "@chakra-ui/react"
 import { useQuizModal } from "../../contexts/QuizModalContext"
+import { H5 } from "../Typography"
+import useChakraBreakpoint from "../../hooks/useChakraBreakpoint"
 
 interface Props {
   stages: {
     questionPage: QuizStageData
     resultPage: ResultPageProps
   }[]
+  result?: Role
+  setResult: (result?: Role) => void
 }
 
-const RoleQuizModalTemplate: FC<Props> = ({ stages }) => {
+const RoleQuizModalTemplate: FC<Props> = ({ stages, result, setResult }) => {
   const [currentStageIdx, setCurrentStageIdx] = useState(0)
   const currentStage = useMemo(() => stages[currentStageIdx], [currentStageIdx])
-
-  const [result, setResult] = useState<Role | undefined>()
 
   const resetQuizState = () => {
     setResult(undefined)
@@ -114,15 +116,28 @@ const RoleQuiz = () => {
 
   const { stages } = data.allMarkdownRemark.edges[0].node.frontmatter
   const { closeModal, isOpen } = useQuizModal()
+  const [result, setResult] = useState<Role | undefined>()
+
+  const smallerThanMd = useChakraBreakpoint("md")
 
   return (
-    <Modal isOpen={isOpen} onClose={closeModal} size="6xl">
+    <Modal
+      isOpen={isOpen}
+      onClose={closeModal}
+      size={smallerThanMd ? "full" : "5xl"}
+    >
       <ModalOverlay />
       <ModalContent bg="gray.900" minH="500px">
-        <ModalHeader>Quiz</ModalHeader>
+        <ModalHeader>
+          <H5 color="gray.300">{result ? "Your Results" : "Quiz"} </H5>
+        </ModalHeader>
         <ModalCloseButton />
-        <ModalBody p={20}>
-          <RoleQuizModalTemplate stages={stages} />
+        <ModalBody p={{ base: 4, md: 20 }}>
+          <RoleQuizModalTemplate
+            result={result}
+            setResult={setResult}
+            stages={stages}
+          />
         </ModalBody>
       </ModalContent>
     </Modal>
