@@ -4,8 +4,7 @@ import RolePageTemplate from "../RolePageTemplate"
 import SectionTemplate from "../../home-page/SectionTemplate"
 import { PageSection, ResponsiveStack } from "../../../components/PageSection"
 import SecondaryInfoColumn from "./SecondaryInfoColumn"
-import { SimpleGrid } from "@chakra-ui/react"
-import LPCard from "../../../components/LPCard"
+import { LPCardGroup } from "../../../components/LPCard"
 import { H3 } from "../../../components"
 
 const TokenHolderPageTemplate: FC<any> = ({ data }) => {
@@ -26,13 +25,9 @@ const TokenHolderPageTemplate: FC<any> = ({ data }) => {
         <SecondaryInfoColumn {...secondaryInfo.left} />
         <SecondaryInfoColumn {...secondaryInfo.right} />
       </ResponsiveStack>
-      <PageSection>
+      <PageSection withSmallPadding>
         <H3 color="gray.300">Pools you may be interested in</H3>
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6} mt={6}>
-          {interestedPools.map((pool: any, i) => (
-            <LPCard key={i} {...pool} />
-          ))}
-        </SimpleGrid>
+        <LPCardGroup cards={interestedPools} />
       </PageSection>
     </RolePageTemplate>
   )

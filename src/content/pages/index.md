@@ -122,16 +122,16 @@ joinTheCommunity:
         - label: Discord
           url: https://discord.gg/VafbhzJ3vW
           image: /images/discord.svg
-          variant: EXTERNAL_OUTLINE
+          variant: INTERNAL_OUTLINE
           icon:
-            image: /images/discord.svg
+            image: /images/logo-discord.png
             alt: discord
         - label: Telegram
           url: NEED_URL
           image: /images/telegram.svg
-          variant: EXTERNAL_OUTLINE
+          variant: INTERNAL_OUTLINE
           icon:
-            image: /images/telegram.svg
+            image: /images/paper-plane-sharp.png
             alt: telegram
   right:
     - label: For Developers
@@ -143,9 +143,9 @@ joinTheCommunity:
         - label: Github
           url: https://github.com/threshold-network
           image: /images/github.svg
-          variant: EXTERNAL_OUTLINE
+          variant: INTERNAL_OUTLINE
           icon:
-            image: /images/github.svg
+            image: /images/logo-github.png
             alt: github
 title: Threshold Network
 description: Threshold powers user sovereignty on the public blockchain.

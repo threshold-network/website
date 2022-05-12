@@ -29,6 +29,7 @@ export const H2: FC<TextProps> = (props) => {
       as="h2"
       fontSize={{ base: "40px", md: "48px" }}
       lineHeight={{ base: "46px", md: "52px" }}
+      fontWeight={600}
       {...props}
     />
   )

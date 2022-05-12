@@ -37,7 +37,7 @@ const FooterContent: FC<{
         <Stack
           direction="row"
           justifyContent={{ base: "center", md: "space-between" }}
-          spacing={{ base: 12, lg: 24 }}
+          spacing={{ base: 12, lg: 36 }}
           w="full"
         >
           <Box>
@@ -46,13 +46,14 @@ const FooterContent: FC<{
               <SocialMediaLinks
                 links={socialLinks}
                 isMobileDrawerFooter={smScreen}
+                spacing={4}
               />
               <ThresholdBrand
                 display={{ base: "block", md: "none" }}
                 justifyContent="center"
                 p={0}
               />
-              <Stack>
+              <Stack spacing={0}>
                 <BodySm
                   textAlign={{ base: "center", md: "left" }}
                   color="gray.300"

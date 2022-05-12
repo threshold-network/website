@@ -50,7 +50,14 @@ const Content: FC<{
     <ResponsiveStack justifyContent="flex-start" mt={6}>
       {footerButtons.map((_) => (
         <CmsButtonLink
-          leftIcon={<Image color="white" boxSize="20px" {..._.icon.image} />}
+          leftIcon={
+            <Image
+              fill="white"
+              color="white"
+              boxSize="20px"
+              {..._.icon.image}
+            />
+          }
           key={_.label}
           cmsVariant={_.variant as ButtonType}
           url={_.url}

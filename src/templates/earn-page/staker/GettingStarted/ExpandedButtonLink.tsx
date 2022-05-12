@@ -25,7 +25,8 @@ const ExpandedButtonLink: FC<GettingStartedButtonLink> = ({
       p={6}
       _hover={{
         cursor: "pointer",
-        bg: "gray.800",
+        bg: "blackAlpha.400",
+        textDecoration: "none",
       }}
       as={Link}
       href={url}
