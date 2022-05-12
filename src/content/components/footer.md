@@ -61,7 +61,7 @@ social_links:
       alt: twitter
     label: Twitter
   - label: Telegram
-    url: telegram
+    url: https://t.me/thresholdnetwork
     icon:
       image: /images/telegram.svg
       alt: telegram

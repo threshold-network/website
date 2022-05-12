@@ -10,6 +10,7 @@ import { FiArrowUpRight } from "react-icons/all"
 import { graphql, useStaticQuery } from "gatsby"
 import { ImageProps } from "../Image"
 import useChakraBreakpoint from "../../hooks/useChakraBreakpoint"
+import { useQuizModal } from "../../contexts/QuizModalContext"
 
 const FooterContent: FC<{
   columns: {
@@ -30,6 +31,8 @@ const FooterContent: FC<{
   }[]
 }> = ({ columns, socialLinks }) => {
   const smScreen = useChakraBreakpoint("md")
+  const { openModal } = useQuizModal()
+
   return (
     <Box>
       <NewsletterSubscribe />
@@ -87,6 +90,12 @@ const FooterContent: FC<{
                       to={_.url}
                       href={_.url}
                       target={_.isExternal ? "_blank" : undefined}
+                      onClick={(e) => {
+                        if (_.url === "/profile-quiz") {
+                          e.preventDefault()
+                          openModal()
+                        }
+                      }}
                     >
                       <BodySm color="gray.300">{_.label}</BodySm>
                       {_.isExternal && (

@@ -864,6 +864,7 @@ collections:
               allow_add: true,
               fields:
                 [
+                  { label: "Title", name: "title", widget: "string" },
                   {
                     label: "Image 1",
                     name: "image1",
@@ -876,7 +877,6 @@ collections:
                     widget: file,
                     media_library: { config: { multiple: false } },
                   },
-                  { label: "Title", name: "title", widget: "string" },
                   { label: "Sub Title", name: "subTitle", widget: "string" },
                   {
                     label: "Button Text",
@@ -959,6 +959,7 @@ collections:
               allow_add: true,
               fields:
                 [
+                  { label: "Title", name: "title", widget: "string" },
                   {
                     label: "Image 1",
                     name: "image1",
@@ -971,7 +972,6 @@ collections:
                     widget: file,
                     media_library: { config: { multiple: false } },
                   },
-                  { label: "Title", name: "title", widget: "string" },
                   { label: "Sub Title", name: "subTitle", widget: "string" },
                   {
                     label: "Button Text",
@@ -1109,18 +1109,18 @@ collections:
                           fields:
                             [
                               {
+                                label: "Label",
+                                name: "label",
+                                widget: "string",
+                                minimal: true,
+                              },
+                              {
                                 label: "Left Icon",
                                 name: "leftIcon",
                                 widget: file,
                                 required: true,
                                 media_library: { config: { multiple: false } },
                                 hint: "SVG only. SVG must have width and height attributes set in the file.",
-                              },
-                              {
-                                label: "Label",
-                                name: "label",
-                                widget: "string",
-                                minimal: true,
                               },
                               {
                                 label: "Url",
@@ -1159,18 +1159,18 @@ collections:
                           fields:
                             [
                               {
+                                label: "Label",
+                                name: "label",
+                                widget: "string",
+                                minimal: true,
+                              },
+                              {
                                 label: "Left Icon",
                                 name: "leftIcon",
                                 widget: file,
                                 required: true,
                                 media_library: { config: { multiple: false } },
                                 hint: "SVG only. SVG must have width and height attributes set in the file.",
-                              },
-                              {
-                                label: "Label",
-                                name: "label",
-                                widget: "string",
-                                minimal: true,
                               },
                               {
                                 label: "Url",
@@ -1585,6 +1585,7 @@ collections:
               allow_add: true,
               fields:
                 [
+                  { label: "Title", name: "title", widget: "string" },
                   {
                     label: "Image 1",
                     name: "image1",
@@ -1597,7 +1598,6 @@ collections:
                     widget: file,
                     media_library: { config: { multiple: false } },
                   },
-                  { label: "Title", name: "title", widget: "string" },
                   { label: "Sub Title", name: "subTitle", widget: "string" },
                   {
                     label: "Button Text",

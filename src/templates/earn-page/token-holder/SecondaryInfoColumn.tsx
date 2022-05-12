@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { SectionTextContainer } from "../../../components/PageSection"
-import { H2, H5, LabelMd } from "../../../components"
+import { BodyLg, H2, H5, LabelMd } from "../../../components"
 import { Stack } from "@chakra-ui/react"
 import {
   ButtonType,
@@ -31,9 +31,9 @@ const SecondaryInfoColumn: FC<Props> = ({
         {label}
       </LabelMd>
       <H5 mt={1}>{title}</H5>
-      <H5 mt={6} color="gray.300" maxW="420px">
+      <BodyLg mt={6} color="gray.300" maxW="420px">
         {description}
-      </H5>
+      </BodyLg>
       <Stack mt={6} direction={{ base: "column", md: "row" }} spacing={8}>
         {buttons.map((_: FooterButton, i) => (
           <CmsButtonLink

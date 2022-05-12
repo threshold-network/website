@@ -16,15 +16,9 @@ btcInfo:
   image: /images/tbtc.png
   buttons:
     - label: Launch tBTC Dapp
-      url: NEED_URL
+      url: https://tbtc.network/
       variant: EXTERNAL_SOLID
 interestedPools:
-  - image1: /images/tbtc-v2.svg
-    image2: /images/group-81037904.svg
-    title: TBTCv2 + Saddle
-    subTitle: SADDLE
-    buttonText: View Pool on Saddle
-    buttonUrl: NEED_URL
   - image1: /images/tbtc-v2.svg
     image2: /images/mbtc.svg
     title: TBTCv2 + mBTC
