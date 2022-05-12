@@ -2,9 +2,9 @@ import { FC } from "react"
 import { graphql } from "gatsby"
 import RolePageTemplate from "../RolePageTemplate"
 import SectionTemplate from "../../home-page/SectionTemplate"
-import { PageSection } from "../../../components/PageSection"
-import { H3 } from "../../../components"
+import { H4 } from "../../../components"
 import { LPCardGroup } from "../../../components/LPCard"
+import { Box } from "@chakra-ui/react"
 
 const LiquidityProviderPageTemplate: FC<any> = ({ data }) => {
   const { lpInfo, interestedPools } = data.markdownRemark.frontmatter
@@ -12,10 +12,10 @@ const LiquidityProviderPageTemplate: FC<any> = ({ data }) => {
   return (
     <RolePageTemplate>
       <SectionTemplate {...lpInfo} preTitle={null} columnReverse isSmallSize />
-      <PageSection withSmallPadding>
-        <H3 color="gray.300">Pools you may be interested in</H3>
+      <Box>
+        <H4 color="gray.300">Pools you may be interested in</H4>
         <LPCardGroup cards={interestedPools} />
-      </PageSection>
+      </Box>
     </RolePageTemplate>
   )
 }

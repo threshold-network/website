@@ -1,11 +1,12 @@
 import { FC } from "react"
 import { graphql } from "gatsby"
+import { Box } from "@chakra-ui/react"
 import RolePageTemplate from "../RolePageTemplate"
 import SectionTemplate from "../../home-page/SectionTemplate"
-import { PageSection, ResponsiveStack } from "../../../components/PageSection"
+import { ResponsiveStack } from "../../../components/PageSection"
 import SecondaryInfoColumn from "./SecondaryInfoColumn"
 import { LPCardGroup } from "../../../components/LPCard"
-import { H3 } from "../../../components"
+import { H4 } from "../../../components"
 
 const TokenHolderPageTemplate: FC<any> = ({ data }) => {
   const { tokenHolderInfo, secondaryInfo, interestedPools } =
@@ -21,14 +22,14 @@ const TokenHolderPageTemplate: FC<any> = ({ data }) => {
         columnReverse
         isSmallSize
       />
-      <ResponsiveStack spacing={12}>
+      <ResponsiveStack spacing={12} mt={12}>
         <SecondaryInfoColumn {...secondaryInfo.left} />
         <SecondaryInfoColumn {...secondaryInfo.right} />
       </ResponsiveStack>
-      <PageSection withSmallPadding>
-        <H3 color="gray.300">Pools you may be interested in</H3>
+      <Box mt={20}>
+        <H4 color="gray.300">Pools you may be interested in</H4>
         <LPCardGroup cards={interestedPools} />
-      </PageSection>
+      </Box>
     </RolePageTemplate>
   )
 }

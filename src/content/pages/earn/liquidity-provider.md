@@ -24,12 +24,6 @@ interestedPools:
     buttonText: View Pool on Curve
     buttonUrl: https://curve.fi/teth
   - image1: /images/tbtc-v2.svg
-    image2: /images/group-81037904.svg
-    title: TBTCv2 + Saddle
-    subTitle: Saddle
-    buttonText: View Pool on Saddle
-    buttonUrl: NEED_URL
-  - image1: /images/tbtc-v2.svg
     image2: /images/mbtc.svg
     title: TBTCv2 + mBTC
     subTitle: MSTABLE

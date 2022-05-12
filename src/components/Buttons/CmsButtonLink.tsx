@@ -30,9 +30,7 @@ export const CmsButtonLink: FC<Props> = ({ cmsVariant, url, ...props }) => {
     case "EXTERNAL_OUTLINE":
       return (
         <ExternalButtonLink
-          h="auto"
-          px={6}
-          py={4}
+          size="lg"
           variant="outline"
           href={url as ExternalLinkHref}
           {...props}
