@@ -1,12 +1,14 @@
 import { FC } from "react"
 import { Link } from "@chakra-ui/react"
+import { Link as GatsbyLink } from "gatsby"
 import { LabelMd } from "../../Typography"
 
 const NavLink: FC<{ href: string }> = ({ href, children }) => {
   return (
     <Link
+      as={GatsbyLink}
       px={2}
-      href={href}
+      to={href}
       color="gray.300"
       display="flex"
       _hover={{

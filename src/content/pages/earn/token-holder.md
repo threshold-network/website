@@ -2,10 +2,10 @@
 template: earn-page/token-holder
 path: /earn/token-holder
 title: Token Holder
+seoTitle: Threshold Token Holder
 seoDescription: As a Token Holder, you can make the most of your tokens on the
   Threshold Network by participating in DAO governance and voting on what’s next
   for Threshold. Legacy NU or KEEP tokens should first be migrated to T.
-seoTitle: Threshold Token Holder
 tokenHolderInfo:
   title: Token Holder
   description: As a Token Holder, you can make the most of your tokens on the
@@ -21,8 +21,7 @@ secondaryInfo:
   left:
     label: T Token Holders
     title: Participate in Threshold Governance!
-    description:
-      As a T token holder, you can participate in the Threshold DAO and
+    description: As a T token holder, you can participate in the Threshold DAO and
       vote to decide what's next for the network.
     buttons:
       - label: About Governance
@@ -31,8 +30,7 @@ secondaryInfo:
   right:
     label: Legacy Token Holders
     title: Migrate your KEEP to T
-    description:
-      Do you have KEEP or NU tokens? Migrate them to T to make the most
+    description: Do you have KEEP or NU tokens? Migrate them to T to make the most
       of the Threshold network.
     buttons:
       - label: Migrate your tokens
@@ -44,7 +42,7 @@ interestedPools:
     title: T + ETH
     subTitle: Curve
     buttonText: View Pool on Curve
-    buttonUrl: NEED_URL
+    buttonUrl: https://curve.fi/teth
   - image1: /images/tbtc-v2.svg
     image2: /images/group-81037904.svg
     title: TBTCv2 + Saddle
@@ -56,5 +54,5 @@ interestedPools:
     title: TBTCv2 + mBTC
     subTitle: MSTABLE
     buttonText: View Pool on mStable
-    buttonUrl: NEED_URL
+    buttonUrl: https://mstable.app/#/mbtc/pools/0xc3280306b6218031e61752d060b091278d45c329
 ---
