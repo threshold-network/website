@@ -5,7 +5,8 @@ title: Governance Page
 seoTitle: Threshold Governance
 governanceInfo:
   title: Governance
-  description: "Threshold is governed by a DAO and is a three-pronged system: the
+  description:
+    "Threshold is governed by a DAO and is a three-pronged system: the
     Token Holder DAO, Staker DAO and Elected Council. Each of these holds the
     other two accountable, and they each hold separate responsibilities that are
     embedded in the governance structure."
@@ -26,7 +27,7 @@ guildsInfo:
       your interests and expertise.
     buttons:
       - label: Join Discord
-        url: https://discord.gg/VafbhzJ3vW
+        url: https://discord.gg/Threshold
         variant: INTERNAL_SOLID
       - label: Read Guilds Proposal
         url: NEED_URL
@@ -38,7 +39,8 @@ guildsInfo:
         label: Proposals
   guildCards:
     - title: Marketing Guild
-      description: This guild markets Threshold, grows network contributors, educates
+      description:
+        This guild markets Threshold, grows network contributors, educates
         on the value of Threshold, onboards new members to the DAO and more.
       memberAvatars:
         - memberName: Nous
@@ -57,7 +59,8 @@ guildsInfo:
           image: /images/82_2.png
       joinUrl: NEED_URL
     - title: Treasury Guild
-      description: This guild manages the Threshold DAO treasury, drafts budgets,
+      description:
+        This guild manages the Threshold DAO treasury, drafts budgets,
         proposes financial strategies, and more.
       memberAvatars:
         - memberName: Lake Laogai
@@ -80,7 +83,8 @@ guildsInfo:
           image: /images/104_2.jpg
       joinUrl: NEED_URL
     - title: Integrations Guild
-      description: This guild develops DAO to DAO relationships for Threshold and
+      description:
+        This guild develops DAO to DAO relationships for Threshold and
         creates partnerships for the network with a current focus on tBTC v2
         opportunities.
       memberAvatars:

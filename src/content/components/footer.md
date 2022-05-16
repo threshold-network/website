@@ -10,7 +10,7 @@ columns:
         url: /press
         isExternal: false
       - label: Roadmap
-        url: NEED_URL
+        url: "https://blog.threshold.network/the-story-of-threshold/ "
         isExternal: true
       - label: Blog
         url: https://blog.threshold.network/
@@ -38,7 +38,7 @@ columns:
         url: /governance
         isExternal: false
       - label: Discord
-        url: https://discord.gg/VafbhzJ3vW
+        url: https://discord.gg/Threshold
         isExternal: true
       - label: Forum
         url: https://forum.threshold.network/
@@ -66,7 +66,7 @@ social_links:
       image: /images/telegram.svg
       alt: telegram
   - label: Discord
-    url: " https://discord.gg/VafbhzJ3vW"
+    url: " https://discord.gg/Threshold"
     icon:
       image: /images/discord.svg
       alt: discord

@@ -41,7 +41,7 @@ social_links:
       image: /images/telegram.svg
       alt: Telegram
   - label: Discord
-    url: https://discord.gg/VafbhzJ3vW
+    url: https://discord.gg/Threshold
     icon:
       image: /images/discord.svg
       alt: Threshold Discord
