@@ -1,5 +1,4 @@
-import Card from "../../../../components/Card"
-import React, { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import type { ChartArea, ChartData } from "chart.js"
 import {
   CategoryScale,
@@ -114,8 +113,9 @@ function TStakedChart() {
 
     const data = await dataFetcher()
 
-    const scrubbedData = Object.values(data).flatMap((datum) => {
-      const { x: amountStaked, y: date } = datum[0] || {}
+    const scrubbedData = data?.map((datum) => {
+      // @ts-ignore
+      const { x: amountStaked, y: date } = datum || {}
       const amountBn = new BigNumber(amountStaked)
 
       // TODO: investigate if this conversion is correct
