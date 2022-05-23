@@ -1,26 +1,62 @@
-import { Box, Button, HStack, Icon, Stack } from "@chakra-ui/react"
+import { HStack, Icon, Stack } from "@chakra-ui/react"
+import { gql } from "graphql-request"
 import { IoDocument } from "react-icons/all"
+import { BigNumber } from "ethers"
 import Card from "../../components/Card"
 import { PageSection } from "../../components/PageSection"
 import { H2, H3, LabelMd } from "../../components"
 import ExternalButtonLink from "../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../components/Navbar/types"
 import { StatBoxGroup } from "../../components/StatBox"
+import { T_NETWORK_SUBGRAPH_URL } from "../../config/subgraph"
+import useQuery from "../../hooks/useQuery"
+import { formatTokenAmount } from "../../utils"
 
 const ThresholdDaoDataSection = () => {
   const totalTreasuryHoldings = "$50,000,000"
 
+  const { data } = useQuery<{
+    daometric: { liquidTotal: string; stakedTotal: string }
+    tokenholderDelegations: { id: string }[]
+    stakeDelegations: { id: string }[]
+  }>(
+    T_NETWORK_SUBGRAPH_URL,
+    gql`
+      query {
+        daometric(id: "dao-metrics") {
+          liquidTotal
+          stakedTotal
+        }
+        tokenholderDelegations(first: 1000, where: { liquidWeight_gt: "0" }) {
+          id
+        }
+        stakeDelegations(first: 1000, where: { totalWeight_gt: "0" }) {
+          id
+        }
+      }
+    `
+  )
+  const { daometric, tokenholderDelegations, stakeDelegations } = data || {
+    daometric: { liquidTotal: "0", stakedTotal: "0" },
+    tokenholderDelegations: [],
+    stakeDelegations: [],
+  }
+  const delegated = formatTokenAmount(
+    BigNumber.from(daometric.liquidTotal)
+      .add(BigNumber.from(daometric.stakedTotal))
+      .toString()
+  )
   const stats = [
     {
-      amount: "50,000,000",
+      amount: delegated,
       label: "Delegated",
     },
     {
-      amount: "20,000",
+      amount: stakeDelegations.length.toString(),
       label: "Staker DAO Addresses",
     },
     {
-      amount: "30,000",
+      amount: tokenholderDelegations.length.toString(),
       label: "Token Holder DAO Addresses",
     },
   ]
