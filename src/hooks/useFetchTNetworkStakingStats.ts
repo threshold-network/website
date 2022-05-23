@@ -1,13 +1,6 @@
+import { useCallback } from "react"
 import { gql, request } from "graphql-request"
 import { T_NETWORK_SUBGRAPH_URL } from "../config/subgraph"
-
-// const minStakeQuery = gql`
-//   query MinStake {
-//     minStakeAmounts(orderDirection: desc, orderBy: updatedAt, first: 1) {
-//       amount
-//     }
-//   }
-// `
 
 const ONE_SEC_IN_MILISECONDS = 1000
 const ONE_DAY_IN_SECONDS = 86400
@@ -90,16 +83,16 @@ const fetchTNetworkStats = async (period: TStatsPeriods) => {
   }
 }
 
-const useFetchTNetworkStats = () => {
-  const fetchWeeklyData = async () => {
+const useFetchTNetworkStakingStats = () => {
+  const fetchWeeklyData = useCallback(async () => {
     return await fetchTNetworkStats(TStatsPeriods.Week)
-  }
-  const fetchMonthlyData = async () => {
+  }, [])
+  const fetchMonthlyData = useCallback(async () => {
     return await fetchTNetworkStats(TStatsPeriods.Month)
-  }
-  const fetchYearlyData = async () => {
+  }, [])
+  const fetchYearlyData = useCallback(async () => {
     return await fetchTNetworkStats(TStatsPeriods.Year)
-  }
+  }, [])
 
   return {
     fetchWeeklyData,
@@ -108,4 +101,4 @@ const useFetchTNetworkStats = () => {
   }
 }
 
-export default useFetchTNetworkStats
+export default useFetchTNetworkStakingStats

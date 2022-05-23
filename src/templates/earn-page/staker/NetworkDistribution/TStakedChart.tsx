@@ -16,7 +16,7 @@ import { Box, Button, HStack, Spinner } from "@chakra-ui/react"
 import BigNumber from "bignumber.js"
 import { formatEther } from "ethers/lib/utils"
 import { H5 } from "../../../../components"
-import useFetchStakedT from "../../../../hooks/useFetchStakedT"
+import useFetchStakedT from "../../../../hooks/useFetchTNetworkStakingStats"
 
 ChartJS.register(
   CategoryScale,
