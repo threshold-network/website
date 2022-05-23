@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import type { ChartArea, ChartData } from "chart.js"
 import {
   CategoryScale,
@@ -39,52 +39,6 @@ function createGradient(ctx: CanvasRenderingContext2D, area: ChartArea) {
   return gradient
 }
 
-const options = {
-  plugins: {
-    legend: { display: false },
-  },
-  maintainAspectRatio: false,
-  scales: {
-    x: {
-      ticks: {
-        fontColor: "white",
-        padding: 20,
-        // @ts-ignore
-        callback: function (val, index, tick) {
-          // only show label for first and last of the data set
-          if (index === 0 || index === tick.length - 1) {
-            // @ts-ignore
-            return this.getLabelForValue(val)
-          }
-
-          return ""
-        },
-      },
-    },
-    y: {
-      ticks: {
-        fontColor: "white",
-        maxTicksLimit: 5,
-        padding: 20,
-        callback: (value: string | number) => {
-          return numeral(value).format("0.00a")
-        },
-      },
-      grid: {
-        borderDash: [18, 18],
-        borderDashOffset: 18,
-        color: function (context: any) {
-          // removes the bottom horizontal line - may be needed if gradient cannot be transparent
-          // if (context.index === 0) {
-          //   return undefined
-          // }
-          return "#718096" //gray.500"
-        },
-      },
-    },
-  },
-}
-
 function TStakedChart() {
   const chartRef = useRef<ChartJS>(null)
   const [filter, setFilter] = useState<Filter>("Year")
@@ -94,6 +48,66 @@ function TStakedChart() {
   })
   const { fetchWeeklyData, fetchMonthlyData, fetchYearlyData } =
     useFetchStakedT()
+
+  const options = useMemo(
+    () => ({
+      plugins: {
+        legend: { display: false },
+      },
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          ticks: {
+            fontColor: "white",
+            padding: 20,
+            // @ts-ignore
+            callback: function (val, index, tick) {
+              // only show label for first and last of the data set
+              if (index === 0 || index === tick.length - 1) {
+                const dateOptions = {
+                  year: filter === "Week" ? undefined : "numeric",
+                  month: "short",
+                  day: filter === "Week" ? "numeric" : undefined,
+                }
+                // @ts-ignore
+                const date = this.getLabelForValue(val)
+
+                return new Date(+date * 1000).toLocaleDateString(
+                  "en-US",
+                  // @ts-ignore
+                  dateOptions
+                )
+              }
+
+              return ""
+            },
+          },
+        },
+        y: {
+          ticks: {
+            fontColor: "white",
+            maxTicksLimit: 5,
+            padding: 20,
+            callback: (value: string | number) => {
+              return numeral(value).format("0.00a")
+            },
+          },
+          grid: {
+            borderDash: [18, 18],
+            borderDashOffset: 18,
+            color: function (context: any) {
+              // removes the bottom horizontal line - may be needed if gradient cannot be transparent
+              // if (context.index === 0) {
+              //   return undefined
+              // }
+              return "#718096" //gray.500"
+            },
+          },
+        },
+      },
+    }),
+    [filter]
+  )
 
   const fetchAndUpdateChartData = useCallback(async () => {
     const chart = chartRef.current
@@ -128,12 +142,8 @@ function TStakedChart() {
 
       return {
         y: amountToken.toString(),
-        // TODO: pass different formatting option here based on the filter
-        x: new Date(+date * 1000).toLocaleDateString("en-gb", {
-          year: "numeric",
-          month: "numeric",
-          day: "numeric",
-        }),
+        // @ts-ignore
+        x: date, // new Date(+date * 1000).toLocaleDateString("en-gb", dateOptions),
       }
     })
 
