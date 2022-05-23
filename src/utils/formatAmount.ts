@@ -5,6 +5,8 @@ export const formatNumeral = (number: string | number, format = "0,00.00") => {
   return numeral(number).format(format)
 }
 
+export { formatUnits }
+
 export const formatTokenAmount = (
   rawAmount: number | string,
   format = "0,00.00",

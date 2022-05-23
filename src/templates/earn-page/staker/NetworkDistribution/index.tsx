@@ -5,8 +5,14 @@ import TStakedChart from "./TStakedChart"
 import { H2, H5, LabelMd } from "../../../../components"
 import useQuery from "../../../../hooks/useQuery"
 import { T_NETWORK_SUBGRAPH_URL } from "../../../../config/subgraph"
-import { formatTokenAmount } from "../../../../utils"
+import {
+  exchangeAPI,
+  formatFiatCurrencyAmount,
+  formatTokenAmount,
+  formatUnits,
+} from "../../../../utils"
 import StatBox from "../../../../components/StatBox"
+import { useTTokenPrice } from "../../../../contexts/TokenPriceContext"
 
 function NetworkDistribution() {
   const { isFetching, data, error } = useQuery<{
@@ -25,10 +31,18 @@ function NetworkDistribution() {
       }
     `
   )
-  const { epoches, minStakeAmounts } = data!
-  const totalStaked = formatTokenAmount(!error ? epoches[0].totalStaked : "0")
+  const { epoches, minStakeAmounts } = data || {
+    epoches: [{ totalStaked: "0" }],
+    minStakeAmounts: [{ amount: "0" }],
+  }
+  const totalStaked = !error ? epoches[0].totalStaked : "0"
+  const forrmattedTotalStaked = formatTokenAmount(totalStaked)
   const minStakeAmount = formatTokenAmount(
     !error ? minStakeAmounts[0].amount : "0"
+  )
+  const tPrice = useTTokenPrice()
+  const totalValueStakedInUSD = formatFiatCurrencyAmount(
+    exchangeAPI.toUsdBalance(formatUnits(totalStaked), tPrice).toString()
   )
 
   return (
@@ -40,8 +54,8 @@ function NetworkDistribution() {
         </Stack> */}
         <Stack spacing={4}>
           <LabelMd color="gray.500">Total Value Staked</LabelMd>
-          <H2 color="gray.50">{totalStaked} T</H2>
-          <H5 color="gray.500">$15,300,000</H5>
+          <H2 color="gray.50">{forrmattedTotalStaked} T</H2>
+          <H5 color="gray.500">{totalValueStakedInUSD}</H5>
         </Stack>
       </Stack>
       <TStakedChart />
