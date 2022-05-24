@@ -46,13 +46,13 @@ columns:
   - title: About
     links:
       - label: Contributors
-        url: /faq
+        url: /about#contributors
         isExternal: false
       - label: FAQ
-        url: /faq
+        url: /about#faq
         isExternal: false
       - label: Audits
-        url: /faq
+        url: /about#audits
         isExternal: false
 social_links:
   - url: https://twitter.com/TheTNetwork

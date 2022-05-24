@@ -24,11 +24,11 @@ nav_items:
   - label: About
     subitems:
       - label: Contributors
-        url: /faq
+        url: /about#contributors
       - label: FAQ
-        url: /faq
+        url: /about#faq
       - label: Audits
-        url: /faq
+        url: /about#audits
 social_links:
   - label: Twitter
     url: https://twitter.com/TheTNetwork

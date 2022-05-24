@@ -82,7 +82,7 @@ harnessThePower:
     threshold number of them (t-of-n) to cooperate.
   buttons:
     - label: About Threshold
-      url: /faq
+      url: /about
       variant: INTERNAL_SOLID
   subitems:
     - title: Decentralized

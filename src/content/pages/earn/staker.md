@@ -1,7 +1,8 @@
 ---
 activeCommunity:
   title: Threshold Staker
-  description: Stakers escrow T tokens to run a node on the Threshold Network and
+  description:
+    Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards. Running a node helps to provide cryptography services on
     Threshold and secure the network. Take on a role as a Staker with Threshold
     and be a core component of the network.
@@ -17,7 +18,8 @@ seoDescription: Stakers escrow T tokens to run a node on the Threshold Network
   and be a core component of the network.
 stakerInfo:
   title: Threshold Staker
-  description: Stakers escrow T tokens to run a node on the Threshold Network and
+  description:
+    Stakers escrow T tokens to run a node on the Threshold Network and
     earn rewards. Running a node helps to provide cryptography services on
     Threshold and secure the network. Take on a role as a Staker with Threshold
     and be a core component of the network.
@@ -104,7 +106,7 @@ gettingStarted:
         leftIcon: /images/document.svg
       - leftIcon: /images/hardware-chip-sharp.svg
         label: Staking Providers
-        url: https://docs.nucypher.com/en/latest/pre_application/node_providers.html
+        url: https://docs.nucypher.com/en/latest/pre_application/node_providers.htmlF
         rightIcon: /images/external-arrow.svg
       - leftIcon: /images/logo-discord.png
         label: Ask Questions in Discord
@@ -116,7 +118,8 @@ gettingStarted:
         rightIcon: /images/external-arrow.svg
   right:
     title: Applications
-    description: Threshold stakers can authorize several different applications to
+    description:
+      Threshold stakers can authorize several different applications to
       stake on with their T stakes.
     links:
       - leftIcon: /images/t-logo.png
