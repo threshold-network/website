@@ -27,7 +27,7 @@ const ThresholdDaoDataSection = () => {
           liquidTotal
           stakedTotal
         }
-        tokenholderDelegations(first: 1000, where: { liquidWeight_gt: "0" }) {
+        tokenholderDelegations(first: 1000, where: { totalWeight_gt: "0" }) {
           id
         }
         stakeDelegations(first: 1000, where: { totalWeight_gt: "0" }) {
