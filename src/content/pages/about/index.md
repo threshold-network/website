@@ -37,7 +37,16 @@ teamsSection:
         variant: EXTERNAL_OUTLINE
 faq:
   title: FAQ
-  about:
+  additionalHelp:
+    text: Still have questions? Join our Discord!
+    button:
+      label: Join Discord
+      url: https://discord.gg/Threshold
+      icon:
+        image: /images/logo-discord.png
+        alt: discord
+      variant: INTERNAL_SOLID
+  faqs:
     - question: What is threshold cryptography?
       answer: Threshold cryptography is a revolutionary technology that uses
         cryptography to unlock greater utility and usability for digital assets
@@ -53,20 +62,52 @@ faq:
         guide.
       buttons:
         - label: How to run a PRE Node
-          url: https://docs.nucypher.com/en/latest/pre_application/running_a_node.html
           leftIcon:
             image: /images/document.svg
           rightIcon:
             image: /images/external-arrow.svg
-  additionalHelp:
-    text: Still have questions? Join our Discord!
-    button:
-      label: Join Discord
-      url: https://discord.gg/Threshold
-      icon:
-        image: /images/logo-discord.png
-        alt: discord
-      variant: INTERNAL_SOLID
+          url: https://docs.nucypher.com/en/latest/pre_application/running_a_node.html
+    - question: What staking providers work with Threshold?
+      answer: You can refer to the list of staking providers below.
+      buttons:
+        - label: Staking Providers
+          leftIcon:
+            image: /images/document.svg
+          rightIcon:
+            image: /images/external-arrow.svg
+          url: NEED_URL
+    - question: What determines the exchange rate for T tokens?
+      answer: As decided by the NU and KEEP communities in the final merge proposal,
+        the conversion ratio for each token is based on the total supply rather
+        than price. The final total supply of NU is ~1,380,688,920 and the total
+        supply of KEEP is ~940,795,010. As a result, the token factors are
+        1NU:~3.26T and 1KEEP:~4.78T.
+      buttons:
+        - label: Launch Details Post
+          leftIcon:
+            image: /images/document.svg
+          rightIcon:
+            image: /images/external-arrow.svg
+          url: https://blog.threshold.network/threshold-launch/
+    - question: How did Keep and NuCypher merge?
+      answer: The Keep and NuCypher communities voted to merge into a single network
+        in the RC0 T Token proposal. This resulted in the first ever
+        decentralized on-chain network merger and launched Threshold Network.
+        The merger resulted in the introduction of a new token (T), the
+        Threshold DAO,  and the Threshold Discord server.
+      buttons:
+        - label: RC0 Proposal
+          url: NEED_URL
+          leftIcon:
+            image: /images/document.svg
+          rightIcon:
+            image: /images/external-arrow.svg
+        - label: Merger Blog Post
+          url: https://blog.threshold.network/decentralized-merger/
+          leftIcon:
+            image: /images/document.svg
+          rightIcon:
+            image: /images/external-arrow.svg
 title: About
 audits:
   - title: "Least Authority: Bridge.sol Security Summary Report"

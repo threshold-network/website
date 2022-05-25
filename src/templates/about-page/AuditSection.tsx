@@ -16,7 +16,7 @@ interface Props {
 
 const AuditSection: FC<Props> = ({ audits }) => {
   return (
-    <PageSection bg="gray.800" withSmallPadding>
+    <PageSection bg="gray.800" withSmallPadding id="audits">
       <H3 mb={8}>Audits</H3>
       {audits.map((audit) => (
         <Card maxW="512px" p={4}>

@@ -1824,7 +1824,7 @@ collections:
                   { label: "FAQ Title", name: "title", widget: "string" },
                   {
                     label: "FAQs",
-                    name: "about",
+                    name: "faqs",
                     widget: "list",
                     allow_add: true,
                     fields:
@@ -1965,7 +1965,9 @@ collections:
                     label: "Image",
                     name: "auditImage",
                     widget: file,
+                    required: true,
                     media_library: { config: { multiple: false } },
+                    hint: "SVG only. SVG must have width and height attributes set in the file.",
                   },
                 ],
             },
