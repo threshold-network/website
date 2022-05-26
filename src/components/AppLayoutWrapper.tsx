@@ -8,20 +8,23 @@ import Footer from "./Footer"
 import { SEO } from "./SEO"
 import { QuizModalContextProvider } from "../contexts/QuizModalContext"
 import RoleQuizModal from "./RoleQuizModal"
+import { TokenPriceContextProvider } from "../contexts/TokenPriceContext"
 
 const App: FC = ({ children }) => {
   useDarkMode()
   return (
-    <QuizModalContextProvider>
-      <Box minHeight="100%">
-        <Box as="main">
-          <RoleQuizModal />
-          <Navbar />
-          {children}
-          <Footer />
+    <TokenPriceContextProvider>
+      <QuizModalContextProvider>
+        <Box minHeight="100%">
+          <Box as="main">
+            <RoleQuizModal />
+            <Navbar />
+            {children}
+            <Footer />
+          </Box>
         </Box>
-      </Box>
-    </QuizModalContextProvider>
+      </QuizModalContextProvider>
+    </TokenPriceContextProvider>
   )
 }
 
