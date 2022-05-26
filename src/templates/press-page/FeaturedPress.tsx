@@ -27,8 +27,11 @@ const PressCard: FC<PressArticle> = ({
       flexDirection="column"
       justifyContent="space-between"
       p={0}
+      h="100%"
     >
-      <Image {...image} />
+      <Box h="180px" overflow="hidden">
+        <Image {...image} />
+      </Box>
       <Box p={6}>
         <Stack spacing={6}>
           <Stack spacing={4}>

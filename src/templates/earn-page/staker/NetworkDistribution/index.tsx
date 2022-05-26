@@ -1,8 +1,8 @@
-import { HStack, Icon, SimpleGrid, Stack } from "@chakra-ui/react"
+import { Box, HStack, Icon, SimpleGrid, Stack } from "@chakra-ui/react"
 import { gql } from "graphql-request"
 import Card from "../../../../components/Card"
 import TStakedChart from "./TStakedChart"
-import { BodyLg, H2, H5, LabelMd } from "../../../../components"
+import { BodyLg, H2, H3, H5, LabelMd } from "../../../../components"
 import useQuery from "../../../../hooks/useQuery"
 import { T_NETWORK_SUBGRAPH_URL } from "../../../../config/subgraph"
 import {
@@ -50,28 +50,31 @@ function NetworkDistribution() {
   )
 
   return (
-    <Card mt={8}>
-      <Stack justifyContent="space-between" direction="row" mb={12}>
-        {/* <Stack spacing={4}>
+    <Box mt={8}>
+      <H3 color="gray.50">Network distribution</H3>
+      <Card mt={8}>
+        <Stack justifyContent="space-between" direction="row" mb={12}>
+          {/* <Stack spacing={4}>
           <LabelMd color="gray.500">Total Value Locked</LabelMd>`
           <H2 color="gray.50">$2,400,000</H2>
         </Stack> */}
-        <Stack spacing={4}>
-          <LabelMd textTransform="uppercase" color="gray.500">
-            Total Value Staked
-          </LabelMd>
-          <H2 color="gray.50">{forrmattedTotalStaked} T</H2>
-          <H5 color="gray.500">{totalValueStakedInUSD}</H5>
+          <Stack spacing={4}>
+            <LabelMd textTransform="uppercase" color="gray.500">
+              Total Value Staked
+            </LabelMd>
+            <H2 color="gray.50">{forrmattedTotalStaked} T</H2>
+            <H5 color="gray.500">{totalValueStakedInUSD}</H5>
+          </Stack>
         </Stack>
-      </Stack>
-      <TStakedChart />
-      <HStack spacing={4}>
-        <Icon boxSize="20px" color="gray.500" as={BsFillInfoCircleFill} />
-        <BodyLg color="gray.500">
-          The minimum T required to stake is {minStakeAmount} T.
-        </BodyLg>
-      </HStack>
-    </Card>
+        <TStakedChart />
+        <HStack spacing={4}>
+          <Icon boxSize="20px" color="gray.500" as={BsFillInfoCircleFill} />
+          <BodyLg color="gray.500">
+            The minimum T required to stake is {minStakeAmount} T.
+          </BodyLg>
+        </HStack>
+      </Card>
+    </Box>
   )
 }
 
