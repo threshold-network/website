@@ -21,7 +21,8 @@ secondaryInfo:
   left:
     label: T Token Holders
     title: Participate in Threshold Governance!
-    description: As a T token holder, you can participate in the Threshold DAO and
+    description:
+      As a T token holder, you can participate in the Threshold DAO and
       vote to decide what's next for the network.
     buttons:
       - label: About Governance
@@ -30,7 +31,8 @@ secondaryInfo:
   right:
     label: Legacy Token Holders
     title: Migrate your KEEP to T
-    description: Do you have KEEP or NU tokens? Migrate them to T to make the most
+    description:
+      Do you have KEEP or NU tokens? Migrate them to T to make the most
       of the Threshold network.
     buttons:
       - label: Migrate your tokens
