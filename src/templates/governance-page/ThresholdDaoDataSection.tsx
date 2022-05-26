@@ -10,10 +10,11 @@ import { ExternalLinkHref } from "../../components/Navbar/types"
 import { StatBoxGroup } from "../../components/StatBox"
 import { T_NETWORK_SUBGRAPH_URL } from "../../config/subgraph"
 import useQuery from "../../hooks/useQuery"
-import { formatTokenAmount } from "../../utils"
+import { formatFiatCurrencyAmount, formatTokenAmount } from "../../utils"
+import { useBalanceOfDAOTreasury } from "../../hooks/useBalanceOfDAOTreasury"
 
 const ThresholdDaoDataSection = () => {
-  const totalTreasuryHoldings = "$50,000,000"
+  const totalTreasuryHoldings = useBalanceOfDAOTreasury()
 
   const { data } = useQuery<{
     daometric: { liquidTotal: string; stakedTotal: string }
@@ -68,7 +69,7 @@ const ThresholdDaoDataSection = () => {
         <HStack justifyContent="space-between" mb={16}>
           <Stack spacing={6}>
             <LabelMd color="gray.500">Total Treasury Holdings</LabelMd>
-            <H2>{totalTreasuryHoldings}</H2>
+            <H2>{formatFiatCurrencyAmount(totalTreasuryHoldings)}</H2>
           </Stack>
           <ExternalButtonLink
             display={{ base: "none", md: "inherit" }}
