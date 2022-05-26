@@ -117,7 +117,7 @@ gettingStarted:
         url: https://forum.threshold.network/
         rightIcon: /images/external-arrow.svg
   right:
-    title: Applications
+    title: Apps to stake on
     description:
       Threshold stakers can authorize several different applications to
       stake on with their T stakes.
