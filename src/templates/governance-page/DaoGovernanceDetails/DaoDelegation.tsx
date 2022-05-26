@@ -58,15 +58,18 @@ const DaoDelegation: FC<{ selectedDao: DAO }> = ({ selectedDao }) => {
       <ResponsiveStack spacing={12} mt={12}>
         <Card w="full">
           <BodyLg color="gray.100">
-            Members of the Staker DAO are exclusively stakers. Get started below
-            voting on staker proposals.
+            {selectedDao === "STAKER"
+              ? "Members of the Staker DAO are exclusively stakers. Get started below voting on staker proposals."
+              : "T token holders can delegate their vote using the Boardroom dashboard."}
           </BodyLg>
           <ExternalButtonLink href={"NEED_URL" as ExternalLinkHref} mt={8}>
             Delegate your vote
           </ExternalButtonLink>
         </Card>
         <Stack w="full" spacing={4} justifyContent="center">
-          <LabelMd color="gray.500">Total Delegated</LabelMd>
+          <LabelMd textTransform="uppercase" color="gray.500">
+            Liquid T Delegated
+          </LabelMd>
           <H3 color="gray.100">{`${formatTokenAmount(totalDelegated)} T`}</H3>
           <HStack w="full">
             <Progress
@@ -79,7 +82,7 @@ const DaoDelegation: FC<{ selectedDao: DAO }> = ({ selectedDao }) => {
             <BodySm color="gray.500">{percentDelegated}%</BodySm>
           </HStack>
           <BodyMd color="gray.500">
-            Out of {formatTokenAmount(maxDelegation)}
+            Out of {formatTokenAmount(maxDelegation)} Circulating Supply
           </BodyMd>
         </Stack>
       </ResponsiveStack>

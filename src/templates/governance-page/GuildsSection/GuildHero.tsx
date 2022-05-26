@@ -30,7 +30,7 @@ const GuildHero: FC<GuildHeroProps> = ({
   return (
     <ResponsiveStack spacing={8} columnReverse>
       <Stack w="full" spacing={8}>
-        <H3 color="gray.50">{title}</H3>
+        <H2 color="gray.50">{title}</H2>
         <BodyLg color="gray.300">{description}</BodyLg>
         <Stack mt={6} direction={{ base: "column", md: "row" }} spacing={8}>
           {buttons.map((btn) => (
@@ -56,7 +56,7 @@ const GuildHero: FC<GuildHeroProps> = ({
             <H2
               bgGradient="linear-gradient(120.19deg, #BD30FF 3.32%, #7D00FF 95.02%)"
               bgClip="text"
-              fontWeight="extrabold"
+              fontWeight="bold"
             >
               {stat.value}
             </H2>

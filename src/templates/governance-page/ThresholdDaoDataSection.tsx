@@ -68,7 +68,9 @@ const ThresholdDaoDataSection = () => {
       <Card mt={8} p={12} boxShadow="rgba(159, 162, 166, 0.1) 0px 0px 96px;">
         <HStack justifyContent="space-between" mb={16}>
           <Stack spacing={6}>
-            <LabelMd color="gray.500">Total Treasury Holdings</LabelMd>
+            <LabelMd textTransform="uppercase" color="gray.500">
+              Total Treasury Holdings
+            </LabelMd>
             <H2>{formatFiatCurrencyAmount(totalTreasuryHoldings)}</H2>
           </Stack>
           <ExternalButtonLink
