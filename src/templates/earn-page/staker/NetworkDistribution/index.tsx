@@ -1,8 +1,8 @@
-import { SimpleGrid, Stack } from "@chakra-ui/react"
+import { HStack, Icon, SimpleGrid, Stack } from "@chakra-ui/react"
 import { gql } from "graphql-request"
 import Card from "../../../../components/Card"
 import TStakedChart from "./TStakedChart"
-import { H2, H5, LabelMd } from "../../../../components"
+import { BodyLg, H2, H5, LabelMd } from "../../../../components"
 import useQuery from "../../../../hooks/useQuery"
 import { T_NETWORK_SUBGRAPH_URL } from "../../../../config/subgraph"
 import {
@@ -13,6 +13,10 @@ import {
 } from "../../../../utils"
 import StatBox from "../../../../components/StatBox"
 import { useTTokenPrice } from "../../../../contexts/TokenPriceContext"
+import {
+  BsFillInfoCircleFill,
+  IoInformationCircleOutline,
+} from "react-icons/all"
 
 function NetworkDistribution() {
   const { isFetching, data, error } = useQuery<{
@@ -49,20 +53,24 @@ function NetworkDistribution() {
     <Card mt={8}>
       <Stack justifyContent="space-between" direction="row" mb={12}>
         {/* <Stack spacing={4}>
-          <LabelMd color="gray.500">Total Value Locked</LabelMd>
+          <LabelMd color="gray.500">Total Value Locked</LabelMd>`
           <H2 color="gray.50">$2,400,000</H2>
         </Stack> */}
         <Stack spacing={4}>
-          <LabelMd color="gray.500">Total Value Staked</LabelMd>
+          <LabelMd textTransform="uppercase" color="gray.500">
+            Total Value Staked
+          </LabelMd>
           <H2 color="gray.50">{forrmattedTotalStaked} T</H2>
           <H5 color="gray.500">{totalValueStakedInUSD}</H5>
         </Stack>
       </Stack>
       <TStakedChart />
-      <SimpleGrid columns={{ base: 1, md: 2 }} mt={6} spacing="10">
-        <StatBox amount="Trust us ;)" label="Lifetime Rewards" />
-        <StatBox amount={`${minStakeAmount} T`} label="Min Stake" />
-      </SimpleGrid>
+      <HStack spacing={4}>
+        <Icon boxSize="20px" color="gray.500" as={BsFillInfoCircleFill} />
+        <BodyLg color="gray.500">
+          The minimum T required to stake is {minStakeAmount} T.
+        </BodyLg>
+      </HStack>
     </Card>
   )
 }
