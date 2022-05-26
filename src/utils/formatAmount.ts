@@ -9,7 +9,7 @@ export { formatUnits }
 
 export const formatTokenAmount = (
   rawAmount: number | string,
-  format = "0,00.00",
+  format = "0,00",
   decimals = 18
 ) => {
   return formatNumeral(formatUnits(rawAmount, decimals), format)
