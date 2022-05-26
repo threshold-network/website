@@ -6,6 +6,7 @@ import {
   Filler,
   Legend,
   LinearScale,
+  LineController,
   LineElement,
   PointElement,
   Tooltip,
@@ -21,6 +22,7 @@ import useFetchStakedT from "../../../../hooks/useFetchTNetworkStakingStats"
 ChartJS.register(
   CategoryScale,
   LinearScale,
+  LineController,
   PointElement,
   LineElement,
   Tooltip,
