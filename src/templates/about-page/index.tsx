@@ -4,9 +4,15 @@ import SectionTemplate from "../home-page/SectionTemplate"
 import { Box } from "@chakra-ui/react"
 import ContributingTeamsSection from "./ContributingTeamsSection"
 import FaqSection from "./FaqSection"
+// import AuditSection from "./AuditSection"
 
 const FAQPageTemplate: FC<any> = ({ data }) => {
-  const { aboutInfo, teamsSection, faq } = data.markdownRemark.frontmatter
+  const {
+    aboutInfo,
+    teamsSection,
+    faq,
+    // audits
+  } = data.markdownRemark.frontmatter
 
   return (
     <Box>
@@ -19,6 +25,7 @@ const FAQPageTemplate: FC<any> = ({ data }) => {
       />
       <ContributingTeamsSection {...teamsSection} />
       <FaqSection {...faq} />
+      {/* <AuditSection audits={audits} /> */}
     </Box>
   )
 }
@@ -91,7 +98,7 @@ export const query = graphql`
         }
         faq {
           title
-          faq {
+          faqs {
             question
             answer
             buttons {
@@ -142,6 +149,21 @@ export const query = graphql`
                 }
                 alt
               }
+            }
+          }
+        }
+        audits {
+          title
+          url
+          date
+          auditImage {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
             }
           }
         }

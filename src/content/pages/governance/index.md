@@ -27,7 +27,7 @@ guildsInfo:
       your interests and expertise.
     buttons:
       - label: Join Discord
-        url: https://discord.gg/VafbhzJ3vW
+        url: https://discord.gg/Threshold
         variant: INTERNAL_SOLID
       - label: Read Guilds Proposal
         url: NEED_URL

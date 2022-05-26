@@ -728,33 +728,6 @@ collections:
                       },
                     ],
                 }
-      # Earn Page
-      - file: "src/content/pages/earn/index.md"
-        name: "earn"
-        label: "Earn"
-        fields:
-          - {
-              label: "Template",
-              name: "template",
-              widget: "hidden",
-              default: "earn-page",
-            }
-          - { label: "Path", name: "path", widget: "hidden", default: "/earn" }
-          - { label: "Title", name: "title", widget: "string" }
-          - {
-              label: "SEO Title",
-              name: "seoTitle",
-              widget: "string",
-              hint: "SEO title",
-              required: false,
-            }
-          - {
-              label: "SEO Description",
-              name: "seoDescription",
-              widget: "string",
-              hint: "SEO description",
-              required: false,
-            }
       # BTC Page
       - file: "src/content/pages/earn/btc.md"
         name: "btc"
@@ -1607,76 +1580,25 @@ collections:
                   { label: "Button URL", name: "buttonUrl", widget: "string" },
                 ],
             }
+
       # About Page
       - file: "src/content/pages/about/index.md"
         name: "about"
         label: "About"
-        fields:
-          - {
-              label: "Template",
-              name: "template",
-              widget: "hidden",
-              default: "about-page",
-            }
-          - { label: "Path", name: "path", widget: "hidden", default: "/about" }
-          - {
-              label: "SEO Title",
-              name: "seoTitle",
-              widget: "string",
-              hint: "SEO title",
-              required: false,
-            }
-          - {
-              label: "SEO Description",
-              name: "seoDescription",
-              widget: "string",
-              hint: "SEO description",
-              required: false,
-            }
-      # Audits Page
-      - file: "src/content/pages/audits/index.md"
-        name: "audits"
-        label: "Audits"
-        fields:
-          - {
-              label: "Template",
-              name: "template",
-              widget: "hidden",
-              default: "audits-page",
-            }
-          - {
-              label: "Path",
-              name: "path",
-              widget: "hidden",
-              default: "/audits",
-            }
-          - {
-              label: "SEO Title",
-              name: "seoTitle",
-              widget: "string",
-              hint: "SEO title",
-              required: false,
-            }
-          - {
-              label: "SEO Description",
-              name: "seoDescription",
-              widget: "string",
-              hint: "SEO description",
-              required: false,
-            }
-      # FAQ Page
-      - file: "src/content/pages/faq/index.md"
-        name: "faq"
-        label: "FAQ"
         fields:
           [
             {
               label: "Template",
               name: "template",
               widget: "hidden",
-              default: "faq-page",
+              default: "about-page",
             },
-            { label: "Path", name: "path", widget: "hidden", default: "/faq" },
+            {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/about",
+            },
             {
               label: "SEO Title",
               name: "seoTitle",
@@ -1902,7 +1824,7 @@ collections:
                   { label: "FAQ Title", name: "title", widget: "string" },
                   {
                     label: "FAQs",
-                    name: "faq",
+                    name: "faqs",
                     widget: "list",
                     allow_add: true,
                     fields:
@@ -2026,6 +1948,26 @@ collections:
                             ],
                         },
                       ],
+                  },
+                ],
+            },
+            {
+              label: "Audits Section",
+              name: "audits",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  { label: "Title", name: title, widget: string },
+                  { label: "URL", name: url, widget: string },
+                  { label: "Date", name: date, widget: string },
+                  {
+                    label: "Image",
+                    name: "auditImage",
+                    widget: file,
+                    required: true,
+                    media_library: { config: { multiple: false } },
+                    hint: "SVG only. SVG must have width and height attributes set in the file.",
                   },
                 ],
             },

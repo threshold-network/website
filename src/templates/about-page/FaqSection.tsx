@@ -10,7 +10,7 @@ import {
 
 interface Props {
   title: string
-  faq: {
+  faqs: {
     question: string
     answer: string
     buttons: {
@@ -31,12 +31,12 @@ interface Props {
   }
 }
 
-const FaqSection: FC<Props> = ({ title, faq, additionalHelp }) => {
+const FaqSection: FC<Props> = ({ title, faqs, additionalHelp }) => {
   return (
-    <PageSection bg="gray.900" withSmallPadding>
+    <PageSection bg="gray.900" withSmallPadding id="faq">
       <H3>{title}</H3>
       <Accordion
-        items={faq.map((faq) => ({
+        items={faqs.map((faq) => ({
           title: faq.question,
           body: (
             <Box key={faq.question} mb={6}>

@@ -1,22 +1,21 @@
 ---
-template: faq-page
-path: /faq
-title: FAQ
-seoTitle: FAQ
+template: about-page
+path: /about
+seoTitle: About
+seoDescription: ""
 aboutInfo:
-  rowReverse: false
   title: About
   description: Threshold is the first ever on-chain merge between two existing
     networks and communities, Keep and NuCypher. Threshold provides a suite of
     threshold cryptography services that power user sovereignty on the
     blockchain.
+  image: /images/about-illustration.svg
   buttons:
     - label: About the merge
-      url: NEED_URL
+      url: https://blog.threshold.network/the-story-of-threshold/
       variant: EXTERNAL_SOLID
-  image: /images/staking-threshold.png
+  rowReverse: false
 teamsSection:
-  title: Contributing Teams
   left:
     description:
       Keep is the privacy-focused infrastructure behind tBTC, the only
@@ -27,6 +26,7 @@ teamsSection:
       - label: Visit Keep's Website
         url: https://keep.network/
         variant: EXTERNAL_OUTLINE
+  title: Contributing Teams
   right:
     description:
       NuCypher brings privacy to the public blockchain. NuCypher's PRE
@@ -34,7 +34,7 @@ teamsSection:
       protocols.
     image: /images/nu-logo.png
     buttons:
-      - label: Visit NuCypher's Website
+      - label: Visit NuCypher’s Website
         url: https://www.nucypher.com/
         variant: EXTERNAL_OUTLINE
 faq:
@@ -43,14 +43,19 @@ faq:
     text: Still have questions? Join our Discord!
     button:
       label: Join Discord
-      url: https://discord.gg/VafbhzJ3vW
+      url: https://discord.gg/Threshold
       icon:
         image: /images/logo-discord.png
         alt: discord
-      variant: EXTERNAL_SOLID
-  faq:
+      variant: INTERNAL_SOLID
+  faqs:
     - question: What is threshold cryptography?
-      answer: NEED_COPY
+      answer: Threshold cryptography is a revolutionary technology that uses
+        cryptography to unlock greater utility and usability for digital assets
+        without needing to trust a centralized party. Threshold cryptography
+        distributes sensitive operations across multiple independent entities –
+        like nodes in a network – and requires a threshold, or minimum number of
+        those entities to cooperate for the operation to be successful.
     - question: Do legacy KEEP stakers need to set up a PRE node?
       answer:
         Yes, everyone who stakes on Threshold will need to run a PRE node. If
@@ -59,22 +64,20 @@ faq:
         guide.
       buttons:
         - label: How to run a PRE Node
-          url: NEED_URL
-          variant: INTERNAL_OUTLINE
           leftIcon:
             image: /images/document.svg
           rightIcon:
             image: /images/external-arrow.svg
+          url: https://docs.nucypher.com/en/latest/pre_application/running_a_node.html
     - question: What staking providers work with Threshold?
       answer: You can refer to the list of staking providers below.
       buttons:
         - label: Staking Providers
-          url: NEED_URL
           leftIcon:
             image: /images/document.svg
           rightIcon:
             image: /images/external-arrow.svg
-          variant: INTERNAL_OUTLINE
+          url: NEED_URL
     - question: What determines the exchange rate for T tokens?
       answer:
         As decided by the NU and KEEP communities in the final merge proposal,
@@ -84,11 +87,11 @@ faq:
         1NU:~3.26T and 1KEEP:~4.78T.
       buttons:
         - label: Launch Details Post
-          url: NEED_URL
           leftIcon:
             image: /images/document.svg
           rightIcon:
             image: /images/external-arrow.svg
+          url: https://blog.threshold.network/threshold-launch/
     - question: How did Keep and NuCypher merge?
       answer:
         The Keep and NuCypher communities voted to merge into a single network
@@ -104,9 +107,15 @@ faq:
           rightIcon:
             image: /images/external-arrow.svg
         - label: Merger Blog Post
-          url: NEED_URL
+          url: https://blog.threshold.network/decentralized-merger/
           leftIcon:
             image: /images/document.svg
           rightIcon:
             image: /images/external-arrow.svg
+title: About
+audits:
+  - title: "Least Authority: Bridge.sol Security Summary Report"
+    url: NEED_URL
+    date: 25 february 2022
+    auditImage: /images/least-authority-2.png
 ---

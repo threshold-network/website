@@ -56,7 +56,7 @@ const ContributingTeams: FC<ContributingTeamsProps> = ({
   title,
 }) => {
   return (
-    <PageSection bg="gray.900" withSmallPadding>
+    <PageSection bg="gray.900" withSmallPadding id="contributors">
       <H3>{title}</H3>
       <ResponsiveStack spacing={16} mt={20}>
         <ContributingTeamsSection {...left} />

@@ -24,11 +24,11 @@ nav_items:
   - label: About
     subitems:
       - label: Contributors
-        url: /faq
+        url: /about#contributors
       - label: FAQ
-        url: /faq
+        url: /about#faq
       - label: Audits
-        url: /faq
+        url: /about#audits
 social_links:
   - label: Twitter
     url: https://twitter.com/TheTNetwork
@@ -41,7 +41,7 @@ social_links:
       image: /images/telegram.svg
       alt: Telegram
   - label: Discord
-    url: https://discord.gg/VafbhzJ3vW
+    url: https://discord.gg/Threshold
     icon:
       image: /images/discord.svg
       alt: Threshold Discord
