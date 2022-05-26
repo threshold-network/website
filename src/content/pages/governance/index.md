@@ -16,7 +16,7 @@ governanceInfo:
       url: https://forum.threshold.network/
       variant: EXTERNAL_SOLID
     - label: Read Proposal
-      url: NEED_URL
+      url: https://forum.threshold.network/c/governance-proposals/7
       variant: EXTERNAL_OUTLINE
   rowReverse: false
 guildsInfo:
@@ -30,7 +30,7 @@ guildsInfo:
         url: https://discord.gg/Threshold
         variant: INTERNAL_SOLID
       - label: Read Guilds Proposal
-        url: NEED_URL
+        url: https://forum.threshold.network/t/tip-13-bootstrap-threshold-dao-guilds/246
         variant: EXTERNAL_OUTLINE
     guildStats:
       - value: 700+
@@ -57,7 +57,7 @@ guildsInfo:
           image: /images/202_2.gif
         - memberName: Liz
           image: /images/82_2.png
-      joinUrl: NEED_URL
+      joinUrl: https://thresholdnetwork.notion.site/Marketing-Guild-9803f6d29d09481da9a99264ec625aab
     - title: Treasury Guild
       description:
         This guild manages the Threshold DAO treasury, drafts budgets,
@@ -81,7 +81,7 @@ guildsInfo:
           memberName: Derek Pierre
         - memberName: David Núñez
           image: /images/104_2.jpg
-      joinUrl: NEED_URL
+      joinUrl: https://thresholdnetwork.notion.site/Treasury-Guild-7b50c4d66c0a4f93991cc64352d6ce73
     - title: Integrations Guild
       description:
         This guild develops DAO to DAO relationships for Threshold and
@@ -98,7 +98,7 @@ guildsInfo:
           image: /images/8_2.jpg
         - memberName: Rusty Mason
           image: /images/162_2.jpg
-      joinUrl: NEED_URL
+      joinUrl: https://thresholdnetwork.notion.site/Integrations-Guild-4ff2e5fdea4442d7af19d27342ab8225
 migrationInfo:
   title: Do you own KEEP or Nu and want to participate in Threshold Goverance?
   description: Migrate your tokens to T so you can take full advantage of the Threshold DAO.

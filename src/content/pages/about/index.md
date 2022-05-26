@@ -77,7 +77,7 @@ faq:
             image: /images/document.svg
           rightIcon:
             image: /images/external-arrow.svg
-          url: NEED_URL
+          url: https://docs.nucypher.com/en/latest/pre_application/node_providers.html
     - question: What determines the exchange rate for T tokens?
       answer:
         As decided by the NU and KEEP communities in the final merge proposal,
@@ -101,13 +101,13 @@ faq:
         Threshold DAO,  and the Threshold Discord server.
       buttons:
         - label: RC0 Proposal
-          url: NEED_URL
+          url: https://forum.keep.network/t/t-token-proposal-rc0/264
           leftIcon:
             image: /images/document.svg
           rightIcon:
             image: /images/external-arrow.svg
         - label: Merger Blog Post
-          url: https://blog.threshold.network/decentralized-merger/
+          url: https://blog.threshold.network/decentralized-merger
           leftIcon:
             image: /images/document.svg
           rightIcon:
