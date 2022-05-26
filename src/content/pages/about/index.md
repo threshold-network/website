@@ -17,7 +17,8 @@ aboutInfo:
   rowReverse: false
 teamsSection:
   left:
-    description: Keep is the privacy-focused infrastructure behind tBTC, the only
+    description:
+      Keep is the privacy-focused infrastructure behind tBTC, the only
       truly decentralized solution for Bitcoin on Ethereum. Keep secures private
       data on public blockchains with “keeps.”
     image: /images/keep-logo-green.png
@@ -27,7 +28,8 @@ teamsSection:
         variant: EXTERNAL_OUTLINE
   title: Contributing Teams
   right:
-    description: NuCypher brings privacy to the public blockchain. NuCypher's PRE
+    description:
+      NuCypher brings privacy to the public blockchain. NuCypher's PRE
       network provides cryptographic access controls for distributed apps and
       protocols.
     image: /images/nu-logo.png
@@ -54,9 +56,9 @@ faq:
         distributes sensitive operations across multiple independent entities –
         like nodes in a network – and requires a threshold, or minimum number of
         those entities to cooperate for the operation to be successful.
-      buttons: []
     - question: Do legacy KEEP stakers need to set up a PRE node?
-      answer: Yes, everyone who stakes on Threshold will need to run a PRE node. If
+      answer:
+        Yes, everyone who stakes on Threshold will need to run a PRE node. If
         you are working with a stakng provider, reach out to them to accomplish
         this. If you are running your own node, you can refer to the following
         guide.
@@ -77,7 +79,8 @@ faq:
             image: /images/external-arrow.svg
           url: NEED_URL
     - question: What determines the exchange rate for T tokens?
-      answer: As decided by the NU and KEEP communities in the final merge proposal,
+      answer:
+        As decided by the NU and KEEP communities in the final merge proposal,
         the conversion ratio for each token is based on the total supply rather
         than price. The final total supply of NU is ~1,380,688,920 and the total
         supply of KEEP is ~940,795,010. As a result, the token factors are
@@ -90,7 +93,8 @@ faq:
             image: /images/external-arrow.svg
           url: https://blog.threshold.network/threshold-launch/
     - question: How did Keep and NuCypher merge?
-      answer: The Keep and NuCypher communities voted to merge into a single network
+      answer:
+        The Keep and NuCypher communities voted to merge into a single network
         in the RC0 T Token proposal. This resulted in the first ever
         decentralized on-chain network merger and launched Threshold Network.
         The merger resulted in the introduction of a new token (T), the
