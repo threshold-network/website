@@ -1,0 +1,2747 @@
+backend:
+  name: github
+  repo: threshold-network/splash-page
+  site_domain: threshold.network
+  open_authoring: true
+
+local_backend: true
+
+site_url: https://threshold.network
+
+publish_mode: editorial_workflow
+
+media_folder: static/images
+public_folder: /images
+
+collections:
+  - name: pages
+    label: "Pages"
+    files:
+      - file: "src/content/pages/index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "home-page",
+            }
+          - { label: "Path", name: "path", widget: "hidden", default: "/" }
+          - {
+              label: "SEO Title",
+              name: "seoTitle",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "seoDescription",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  minimal: true,
+                }
+              - {
+                  label: "Body",
+                  name: "body",
+                  widget: "markdown",
+                  required: false,
+                }
+              - {
+                  label: "CTA Buttons",
+                  name: "ctaButtons",
+                  widget: "list",
+                  allow_add: true,
+                  required: false,
+                  fields:
+                    [
+                      { label: Label, name: label, widget: string },
+                      { label: URL, name: url, widget: string },
+                    ],
+                }
+          - label: "Staker Role"
+            name: "stakerRole"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {
+                  label: "Row Reverse",
+                  name: "rowReverse",
+                  widget: boolean,
+                  required: false,
+                  default: false,
+                }
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  minimal: true,
+                }
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: file,
+                  media_library: { config: { multiple: false } },
+                }
+              - {
+                  label: "Buttons",
+                  name: "buttons",
+                  widget: "list",
+                  allow_add: true,
+                  required: false,
+                  fields:
+                    [
+                      { label: Label, name: label, widget: string },
+                      { label: URL, name: url, widget: string },
+                      {
+                        label: Variant,
+                        name: variant,
+                        widget: select,
+                        required: true,
+                        options:
+                          [
+                            {
+                              label: "External Solid",
+                              value: "EXTERNAL_SOLID",
+                            },
+                            {
+                              label: "Internal Solid",
+                              value: "INTERNAL_SOLID",
+                            },
+                            {
+                              label: "External Outline",
+                              value: "EXTERNAL_OUTLINE",
+                            },
+                            {
+                              label: "Internal Outline",
+                              value: "INTERNAL_OUTLINE",
+                            },
+                          ],
+                      },
+                    ],
+                }
+
+          - label: "Liquidity Provider Role"
+            name: "lpRole"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {
+                  label: "Row Reverse",
+                  name: "rowReverse",
+                  widget: boolean,
+                  required: false,
+                  default: false,
+                }
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  minimal: true,
+                }
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: file,
+                  media_library: { config: { multiple: false } },
+                }
+              - {
+                  label: "Buttons",
+                  name: "buttons",
+                  widget: "list",
+                  allow_add: true,
+                  required: false,
+                  fields:
+                    [
+                      { label: Label, name: label, widget: string },
+                      { label: URL, name: url, widget: string },
+                      {
+                        label: Variant,
+                        name: variant,
+                        widget: select,
+                        required: true,
+                        options:
+                          [
+                            {
+                              label: "External Solid",
+                              value: "EXTERNAL_SOLID",
+                            },
+                            {
+                              label: "Internal Solid",
+                              value: "INTERNAL_SOLID",
+                            },
+                            {
+                              label: "External Outline",
+                              value: "EXTERNAL_OUTLINE",
+                            },
+                            {
+                              label: "Internal Outline",
+                              value: "INTERNAL_OUTLINE",
+                            },
+                          ],
+                      },
+                    ],
+                }
+          - label: "Bitcoin User Role"
+            name: "btcRole"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {
+                  label: "Row Reverse",
+                  name: "rowReverse",
+                  widget: boolean,
+                  required: false,
+                  default: false,
+                }
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  minimal: true,
+                }
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: file,
+                  media_library: { config: { multiple: false } },
+                }
+              - {
+                  label: "Buttons",
+                  name: "buttons",
+                  widget: "list",
+                  allow_add: true,
+                  required: false,
+                  fields:
+                    [
+                      { label: Label, name: label, widget: string },
+                      { label: URL, name: url, widget: string },
+                      {
+                        label: Variant,
+                        name: variant,
+                        widget: select,
+                        required: true,
+                        options:
+                          [
+                            {
+                              label: "External Solid",
+                              value: "EXTERNAL_SOLID",
+                            },
+                            {
+                              label: "Internal Solid",
+                              value: "INTERNAL_SOLID",
+                            },
+                            {
+                              label: "External Outline",
+                              value: "EXTERNAL_OUTLINE",
+                            },
+                            {
+                              label: "Internal Outline",
+                              value: "INTERNAL_OUTLINE",
+                            },
+                          ],
+                      },
+                    ],
+                }
+
+          - label: "Token Holder Role"
+            name: "tokenHolderRole"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {
+                  label: "Row Reverse",
+                  name: "rowReverse",
+                  widget: boolean,
+                  required: false,
+                  default: false,
+                }
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  minimal: true,
+                }
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: file,
+                  media_library: { config: { multiple: false } },
+                }
+              - {
+                  label: "Buttons",
+                  name: "buttons",
+                  widget: "list",
+                  allow_add: true,
+                  required: false,
+                  fields:
+                    [
+                      { label: Label, name: label, widget: string },
+                      { label: URL, name: url, widget: string },
+                      {
+                        label: Variant,
+                        name: variant,
+                        widget: select,
+                        required: true,
+                        options:
+                          [
+                            {
+                              label: "External Solid",
+                              value: "EXTERNAL_SOLID",
+                            },
+                            {
+                              label: "Internal Solid",
+                              value: "INTERNAL_SOLID",
+                            },
+                            {
+                              label: "External Outline",
+                              value: "EXTERNAL_OUTLINE",
+                            },
+                            {
+                              label: "Internal Outline",
+                              value: "INTERNAL_OUTLINE",
+                            },
+                          ],
+                      },
+                    ],
+                }
+          - label: "Migration Info"
+            name: "migrationInfo"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {
+                  label: "Row Reverse",
+                  name: "rowReverse",
+                  widget: boolean,
+                  required: false,
+                  default: false,
+                }
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  minimal: true,
+                }
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: file,
+                  media_library: { config: { multiple: false } },
+                }
+              - {
+                  label: "Buttons",
+                  name: "buttons",
+                  widget: "list",
+                  allow_add: true,
+                  required: false,
+                  fields:
+                    [
+                      { label: Label, name: label, widget: string },
+                      { label: URL, name: url, widget: string },
+                      {
+                        label: Variant,
+                        name: variant,
+                        widget: select,
+                        required: true,
+                        options:
+                          [
+                            {
+                              label: "External Solid",
+                              value: "EXTERNAL_SOLID",
+                            },
+                            {
+                              label: "Internal Solid",
+                              value: "INTERNAL_SOLID",
+                            },
+                            {
+                              label: "External Outline",
+                              value: "EXTERNAL_OUTLINE",
+                            },
+                            {
+                              label: "Internal Outline",
+                              value: "INTERNAL_OUTLINE",
+                            },
+                          ],
+                      },
+                    ],
+                }
+          - label: "Harness The Power Section"
+            name: "harnessThePower"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  minimal: true,
+                }
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Buttons",
+                  name: "buttons",
+                  widget: "list",
+                  allow_add: true,
+                  required: false,
+                  fields:
+                    [
+                      { label: Label, name: label, widget: string },
+                      { label: URL, name: url, widget: string },
+                      {
+                        label: Variant,
+                        name: variant,
+                        widget: select,
+                        required: true,
+                        options:
+                          [
+                            {
+                              label: "External Solid",
+                              value: "EXTERNAL_SOLID",
+                            },
+                            {
+                              label: "Internal Solid",
+                              value: "INTERNAL_SOLID",
+                            },
+                            {
+                              label: "External Outline",
+                              value: "EXTERNAL_OUTLINE",
+                            },
+                            {
+                              label: "Internal Outline",
+                              value: "INTERNAL_OUTLINE",
+                            },
+                          ],
+                      },
+                    ],
+                }
+              - {
+                  label: "Sub Items",
+                  name: "subitems",
+                  widget: "list",
+                  hint: "Do not add more than 3",
+                  allow_add: true,
+                  fields:
+                    [
+                      { label: "Title", name: "title", widget: "string" },
+                      {
+                        label: "Description",
+                        name: "description",
+                        widget: "markdown",
+                      },
+                      {
+                        label: "Image",
+                        name: "image",
+                        widget: file,
+                        media_library: { config: { multiple: false } },
+                      },
+                    ],
+                }
+          - label: "Active Community Section"
+            name: "activeCommunity"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {
+                  label: "Row Reverse",
+                  name: "rowReverse",
+                  widget: boolean,
+                  required: false,
+                  default: false,
+                }
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  minimal: true,
+                }
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: file,
+                  media_library: { config: { multiple: false } },
+                }
+              - {
+                  label: "Buttons",
+                  name: "buttons",
+                  widget: "list",
+                  allow_add: true,
+                  required: false,
+                  fields:
+                    [
+                      { label: Label, name: label, widget: string },
+                      { label: URL, name: url, widget: string },
+                      {
+                        label: Variant,
+                        name: variant,
+                        widget: select,
+                        required: true,
+                        options:
+                          [
+                            {
+                              label: "External Solid",
+                              value: "EXTERNAL_SOLID",
+                            },
+                            {
+                              label: "Internal Solid",
+                              value: "INTERNAL_SOLID",
+                            },
+                            {
+                              label: "External Outline",
+                              value: "EXTERNAL_OUTLINE",
+                            },
+                            {
+                              label: "Internal Outline",
+                              value: "INTERNAL_OUTLINE",
+                            },
+                          ],
+                      },
+                    ],
+                }
+          - label: "Join The Community Section"
+            name: "joinTheCommunity"
+            widget: "object"
+            collapsed: true
+            allow_add: false
+            required: true
+            fields:
+              - {
+                  label: "Left Side",
+                  name: "left",
+                  widget: "list",
+                  fields:
+                    [
+                      {
+                        label: "Label",
+                        name: "label",
+                        widget: "string",
+                        minimal: true,
+                      },
+                      {
+                        label: "Title",
+                        name: "title",
+                        widget: "string",
+                        minimal: true,
+                      },
+                      {
+                        label: "Description",
+                        name: "description",
+                        widget: "string",
+                        required: false,
+                      },
+                      {
+                        label: "Buttons",
+                        name: "buttons",
+                        widget: "list",
+                        allow_add: true,
+                        required: false,
+                        fields:
+                          [
+                            { label: Label, name: label, widget: string },
+                            { label: URL, name: url, widget: string },
+                            {
+                              label: Icon,
+                              name: icon,
+                              widget: object,
+                              fields:
+                                [
+                                  {
+                                    label: "Image",
+                                    name: "image",
+                                    widget: file,
+                                    required: true,
+                                    media_library:
+                                      { config: { multiple: false } },
+                                    hint: "SVG only. SVG must have width and height attributes set in the file.",
+                                  },
+                                  {
+                                    label: "Alt",
+                                    name: "alt",
+                                    widget: "string",
+                                  },
+                                ],
+                            },
+                            {
+                              label: Variant,
+                              name: variant,
+                              widget: select,
+                              required: true,
+                              options:
+                                [
+                                  {
+                                    label: "External Solid",
+                                    value: "EXTERNAL_SOLID",
+                                  },
+                                  {
+                                    label: "Internal Solid",
+                                    value: "INTERNAL_SOLID",
+                                  },
+                                  {
+                                    label: "External Outline",
+                                    value: "EXTERNAL_OUTLINE",
+                                  },
+                                  {
+                                    label: "Internal Outline",
+                                    value: "INTERNAL_OUTLINE",
+                                  },
+                                ],
+                            },
+                          ],
+                      },
+                    ],
+                }
+              - {
+                  label: "Right Side",
+                  name: "right",
+                  widget: "list",
+                  fields:
+                    [
+                      {
+                        label: "Label",
+                        name: "label",
+                        widget: "string",
+                        minimal: true,
+                      },
+                      {
+                        label: "Title",
+                        name: "title",
+                        widget: "string",
+                        minimal: true,
+                      },
+                      {
+                        label: "Description",
+                        name: "description",
+                        widget: "string",
+                        required: false,
+                      },
+                      {
+                        label: "Buttons",
+                        name: "buttons",
+                        widget: "list",
+                        allow_add: true,
+                        required: false,
+                        fields:
+                          [
+                            { label: Label, name: label, widget: string },
+                            { label: URL, name: url, widget: string },
+                            {
+                              label: Icon,
+                              name: icon,
+                              widget: object,
+                              fields:
+                                [
+                                  {
+                                    label: "Image",
+                                    name: "image",
+                                    widget: file,
+                                    required: true,
+                                    media_library:
+                                      { config: { multiple: false } },
+                                    hint: "SVG only. SVG must have width and height attributes set in the file.",
+                                  },
+                                  {
+                                    label: "Alt",
+                                    name: "alt",
+                                    widget: "string",
+                                  },
+                                ],
+                            },
+                            {
+                              label: Variant,
+                              name: variant,
+                              widget: select,
+                              required: true,
+                              options:
+                                [
+                                  {
+                                    label: "External Solid",
+                                    value: "EXTERNAL_SOLID",
+                                  },
+                                  {
+                                    label: "Internal Solid",
+                                    value: "INTERNAL_SOLID",
+                                  },
+                                  {
+                                    label: "External Outline",
+                                    value: "EXTERNAL_OUTLINE",
+                                  },
+                                  {
+                                    label: "Internal Outline",
+                                    value: "INTERNAL_OUTLINE",
+                                  },
+                                ],
+                            },
+                          ],
+                      },
+                    ],
+                }
+      # BTC Page
+      - file: "src/content/pages/earn/btc.md"
+        name: "btc"
+        label: "BTC"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "earn-page/btc",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/earn/btc",
+            }
+          - {
+              label: "SEO Title",
+              name: "seoTitle",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "seoDescription",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
+          - {
+              label: "BTC User Info Section",
+              name: "btcInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Liquidity Pools",
+              name: "interestedPools",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Image 1",
+                    name: "image1",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Image 2",
+                    name: "image2",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  { label: "Sub Title", name: "subTitle", widget: "string" },
+                  {
+                    label: "Button Text",
+                    name: "buttonText",
+                    widget: "string",
+                  },
+                  { label: "Button URL", name: "buttonUrl", widget: "string" },
+                ],
+            }
+      # Liquidity Provider Page
+      - file: "src/content/pages/earn/liquidity-provider.md"
+        name: "liquidityProvider"
+        label: "Liquidity Provider"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "earn-page/liquidity-provider",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/earn/liquidity-provider",
+            }
+          - {
+              label: "SEO Title",
+              name: "seoTitle",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "seoDescription",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
+          - {
+              label: "Liquidity Provider Info Section",
+              name: "lpInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                ],
+            }
+
+          - {
+              label: "Liquidity Pools",
+              name: "interestedPools",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Image 1",
+                    name: "image1",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Image 2",
+                    name: "image2",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  { label: "Sub Title", name: "subTitle", widget: "string" },
+                  {
+                    label: "Button Text",
+                    name: "buttonText",
+                    widget: "string",
+                  },
+                  { label: "Button URL", name: "buttonUrl", widget: "string" },
+                ],
+            }
+      # Staker Page
+      - file: "src/content/pages/earn/staker.md"
+        name: "staker"
+        label: "Staker"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "earn-page/staker",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/earn/staker",
+            }
+          - {
+              label: "SEO Title",
+              name: "seoTitle",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "seoDescription",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
+          - {
+              label: "Staker Info Section",
+              name: "stakerInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Getting Started Section",
+              name: "gettingStarted",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Left Side",
+                    name: "left",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Title", name: "title", widget: "string" },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                        },
+                        {
+                          label: "Links",
+                          name: "links",
+                          widget: "list",
+                          fields:
+                            [
+                              {
+                                label: "Label",
+                                name: "label",
+                                widget: "string",
+                                minimal: true,
+                              },
+                              {
+                                label: "Left Icon",
+                                name: "leftIcon",
+                                widget: file,
+                                required: true,
+                                media_library: { config: { multiple: false } },
+                                hint: "SVG only. SVG must have width and height attributes set in the file.",
+                              },
+                              {
+                                label: "Url",
+                                name: "url",
+                                widget: "string",
+                                required: true,
+                              },
+                              {
+                                label: "Right Icon",
+                                name: "rightIcon",
+                                widget: file,
+                                required: true,
+                                media_library: { config: { multiple: false } },
+                                hint: "SVG only. SVG must have width and height attributes set in the file.",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Right Side",
+                    name: "right",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Title", name: "title", widget: "string" },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                        },
+                        {
+                          label: "Links",
+                          name: "links",
+                          widget: "list",
+                          fields:
+                            [
+                              {
+                                label: "Label",
+                                name: "label",
+                                widget: "string",
+                                minimal: true,
+                              },
+                              {
+                                label: "Left Icon",
+                                name: "leftIcon",
+                                widget: file,
+                                required: true,
+                                media_library: { config: { multiple: false } },
+                                hint: "SVG only. SVG must have width and height attributes set in the file.",
+                              },
+                              {
+                                label: "Url",
+                                name: "url",
+                                widget: "string",
+                                required: true,
+                              },
+                              {
+                                label: "Right Icon",
+                                name: "rightIcon",
+                                widget: file,
+                                required: true,
+                                media_library: { config: { multiple: false } },
+                                hint: "SVG only. SVG must have width and height attributes set in the file.",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Technical Requirements Section",
+              name: "techRequirements",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Requirements",
+                    name: "requirements",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: "Label", name: "label", widget: "string" },
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: "object",
+                          fields:
+                            [
+                              {
+                                label: "Image",
+                                name: "image",
+                                widget: file,
+                                required: true,
+                                media_library: { config: { multiple: false } },
+                              },
+                              { label: "Alt", name: "alt", widget: "string" },
+                            ],
+                        },
+                      ],
+                  },
+
+                  {
+                    label: "CTA",
+                    name: "cta",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Title", name: "ctaTitle", widget: "string" },
+                        { label: "Button Label", name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+
+          - {
+              label: "Legacy Stakers",
+              name: "legacyStakers",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Pre Title",
+                    name: "preTitle",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+
+      # Token Holder Page
+      - file: "src/content/pages/earn/token-holder.md"
+        name: "tokenHolder"
+        label: "Token Holder"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "earn-page/token-holder",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/earn/token-holder",
+            }
+          - {
+              label: "SEO Title",
+              name: "seoTitle",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "seoDescription",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
+          - {
+              label: "Token Holder Info Section",
+              name: "tokenHolderInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+
+          - {
+              label: "Secondary Token Holder Info",
+              name: "secondaryInfo",
+              widget: "object",
+              collapsed: true,
+              allow_add: false,
+              required: true,
+              fields:
+                [
+                  {
+                    label: "Left Side",
+                    name: "left",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Label",
+                          name: "label",
+                          widget: "string",
+                          minimal: true,
+                        },
+                        {
+                          label: "Title",
+                          name: "title",
+                          widget: "string",
+                          minimal: true,
+                        },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                          required: false,
+                        },
+                        {
+                          label: "Buttons",
+                          name: "buttons",
+                          widget: "list",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              { label: Label, name: label, widget: string },
+                              { label: URL, name: url, widget: string },
+                              {
+                                label: Variant,
+                                name: variant,
+                                widget: select,
+                                required: true,
+                                options:
+                                  [
+                                    {
+                                      label: "External Solid",
+                                      value: "EXTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "Internal Solid",
+                                      value: "INTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "External Outline",
+                                      value: "EXTERNAL_OUTLINE",
+                                    },
+                                    {
+                                      label: "Internal Outline",
+                                      value: "INTERNAL_OUTLINE",
+                                    },
+                                  ],
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Right Side",
+                    name: "right",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Label",
+                          name: "label",
+                          widget: "string",
+                          minimal: true,
+                        },
+                        {
+                          label: "Title",
+                          name: "title",
+                          widget: "string",
+                          minimal: true,
+                        },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                          required: false,
+                        },
+                        {
+                          label: "Buttons",
+                          name: "buttons",
+                          widget: "list",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              { label: Label, name: label, widget: string },
+                              { label: URL, name: url, widget: string },
+                              {
+                                label: Variant,
+                                name: variant,
+                                widget: select,
+                                required: true,
+                                options:
+                                  [
+                                    {
+                                      label: "External Solid",
+                                      value: "EXTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "Internal Solid",
+                                      value: "INTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "External Outline",
+                                      value: "EXTERNAL_OUTLINE",
+                                    },
+                                    {
+                                      label: "Internal Outline",
+                                      value: "INTERNAL_OUTLINE",
+                                    },
+                                  ],
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+
+          - {
+              label: "Liquidity Pools",
+              name: "interestedPools",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Image 1",
+                    name: "image1",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Image 2",
+                    name: "image2",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  { label: "Sub Title", name: "subTitle", widget: "string" },
+                  {
+                    label: "Button Text",
+                    name: "buttonText",
+                    widget: "string",
+                  },
+                  { label: "Button URL", name: "buttonUrl", widget: "string" },
+                ],
+            }
+
+      # About Page
+      - file: "src/content/pages/about/index.md"
+        name: "about"
+        label: "About"
+        fields:
+          [
+            {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "about-page",
+            },
+            {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/about",
+            },
+            {
+              label: "SEO Title",
+              name: "seoTitle",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            },
+            {
+              label: "SEO Description",
+              name: "seoDescription",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            },
+            {
+              label: "About Section",
+              name: "aboutInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            },
+            {
+              label: "Teams Section",
+              name: "teamsSection",
+              widget: "object",
+              collapsed: true,
+              allow_add: false,
+              required: true,
+              fields:
+                [
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Left Side",
+                    name: "left",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                          required: false,
+                        },
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
+                        {
+                          label: "Buttons",
+                          name: "buttons",
+                          widget: "list",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              { label: Label, name: label, widget: string },
+                              { label: URL, name: url, widget: string },
+                              {
+                                label: Variant,
+                                name: variant,
+                                widget: select,
+                                required: true,
+                                options:
+                                  [
+                                    {
+                                      label: "External Solid",
+                                      value: "EXTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "Internal Solid",
+                                      value: "INTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "External Outline",
+                                      value: "EXTERNAL_OUTLINE",
+                                    },
+                                    {
+                                      label: "Internal Outline",
+                                      value: "INTERNAL_OUTLINE",
+                                    },
+                                  ],
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Right Side",
+                    name: "right",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                          required: false,
+                        },
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
+                        {
+                          label: "Buttons",
+                          name: "buttons",
+                          widget: "list",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              { label: Label, name: label, widget: string },
+                              { label: URL, name: url, widget: string },
+                              {
+                                label: Variant,
+                                name: variant,
+                                widget: select,
+                                required: true,
+                                options:
+                                  [
+                                    {
+                                      label: "External Solid",
+                                      value: "EXTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "Internal Solid",
+                                      value: "INTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "External Outline",
+                                      value: "EXTERNAL_OUTLINE",
+                                    },
+                                    {
+                                      label: "Internal Outline",
+                                      value: "INTERNAL_OUTLINE",
+                                    },
+                                  ],
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            },
+            {
+              label: "FAQ Section",
+              name: "faq",
+              widget: "object",
+              fields:
+                [
+                  { label: "FAQ Title", name: "title", widget: "string" },
+                  {
+                    label: "FAQs",
+                    name: "faqs",
+                    widget: "list",
+                    allow_add: true,
+                    fields:
+                      [
+                        {
+                          label: "Question",
+                          name: "question",
+                          widget: "string",
+                        },
+                        { label: "Answer", name: "answer", widget: "string" },
+                        {
+                          label: "Buttons",
+                          name: "buttons",
+                          widget: "list",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              { label: Label, name: label, widget: string },
+                              { label: URL, name: url, widget: string },
+                              {
+                                label: "Left Icon",
+                                name: leftIcon,
+                                widget: object,
+                                fields:
+                                  [
+                                    {
+                                      label: "Image",
+                                      name: "image",
+                                      widget: file,
+                                      required: true,
+                                      media_library:
+                                        { config: { multiple: false } },
+                                      hint: "SVG only. SVG must have width and height attributes set in the file.",
+                                    },
+                                  ],
+                              },
+                              {
+                                label: "Right Icon",
+                                name: rightIcon,
+                                widget: object,
+                                fields:
+                                  [
+                                    {
+                                      label: "Image",
+                                      name: "image",
+                                      widget: file,
+                                      required: true,
+                                      media_library:
+                                        { config: { multiple: false } },
+                                      hint: "SVG only. SVG must have width and height attributes set in the file.",
+                                    },
+                                  ],
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Additional Help Section",
+                    name: "additionalHelp",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Text", name: "text", widget: "string" },
+                        {
+                          label: "Button",
+                          name: "button",
+                          widget: "object",
+                          fields:
+                            [
+                              { label: Label, name: label, widget: string },
+                              { label: URL, name: url, widget: string },
+                              {
+                                label: Icon,
+                                name: icon,
+                                widget: object,
+                                fields:
+                                  [
+                                    {
+                                      label: "Image",
+                                      name: "image",
+                                      widget: file,
+                                      required: true,
+                                      media_library:
+                                        { config: { multiple: false } },
+                                      hint: "SVG only. SVG must have width and height attributes set in the file.",
+                                    },
+                                    {
+                                      label: "Alt",
+                                      name: "alt",
+                                      widget: "string",
+                                    },
+                                  ],
+                              },
+                              {
+                                label: Variant,
+                                name: variant,
+                                widget: select,
+                                required: true,
+                                options:
+                                  [
+                                    {
+                                      label: "External Solid",
+                                      value: "EXTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "Internal Solid",
+                                      value: "INTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "External Outline",
+                                      value: "EXTERNAL_OUTLINE",
+                                    },
+                                    {
+                                      label: "Internal Outline",
+                                      value: "INTERNAL_OUTLINE",
+                                    },
+                                  ],
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            },
+            {
+              label: "Audits Section",
+              name: "audits",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  { label: "Title", name: title, widget: string },
+                  { label: "URL", name: url, widget: string },
+                  { label: "Date", name: date, widget: string },
+                  {
+                    label: "Image",
+                    name: "auditImage",
+                    widget: file,
+                    required: true,
+                    media_library: { config: { multiple: false } },
+                    hint: "SVG only. SVG must have width and height attributes set in the file.",
+                  },
+                ],
+            },
+          ]
+
+      # Governance Page
+      - file: "src/content/pages/governance/index.md"
+        name: "governancePage"
+        label: "Governance Page"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "governance-page",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/governance",
+            }
+          - {
+              label: "SEO Title",
+              name: "seoTitle",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "seoDescription",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
+          - {
+              label: "Hero Section",
+              name: "governanceInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Guilds Section",
+              name: "guildsInfo",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Hero Section",
+                    name: "heroSection",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Title", name: "title", widget: "string" },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                        },
+                        {
+                          label: "Buttons",
+                          name: "buttons",
+                          widget: "list",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              { label: Label, name: label, widget: string },
+                              { label: URL, name: url, widget: string },
+                              {
+                                label: Variant,
+                                name: variant,
+                                widget: select,
+                                required: true,
+                                options:
+                                  [
+                                    {
+                                      label: "External Solid",
+                                      value: "EXTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "Internal Solid",
+                                      value: "INTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "External Outline",
+                                      value: "EXTERNAL_OUTLINE",
+                                    },
+                                    {
+                                      label: "Internal Outline",
+                                      value: "INTERNAL_OUTLINE",
+                                    },
+                                  ],
+                              },
+                            ],
+                        },
+                        {
+                          label: "Guild Stats",
+                          name: "guildStats",
+                          widget: "list",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              {
+                                label: "value",
+                                name: "value",
+                                widget: "string",
+                              },
+                              {
+                                label: "label",
+                                name: "label",
+                                widget: "string",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Guild Cards",
+                    name: "guildCards",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: "Title", name: "title", widget: string },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: string,
+                        },
+                        {
+                          label: "Member Avatars",
+                          name: "memberAvatars",
+                          widget: "list",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              {
+                                label: "Image",
+                                name: "image",
+                                widget: file,
+                                required: false,
+                                media_library: { config: { multiple: false } },
+                              },
+                              {
+                                label: "Member Name",
+                                name: "memberName",
+                                widget: string,
+                              },
+                            ],
+                        },
+                        { label: "Join URL", name: "joinUrl", widget: string },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Migration Info",
+              name: "migrationInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+      # Press Page
+      - file: "src/content/pages/press/index.md"
+        name: "press"
+        label: "Press"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "press-page",
+            }
+          - { label: "Path", name: "path", widget: "hidden", default: "/press" }
+          - {
+              label: "SEO Title",
+              name: "seoTitle",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "seoDescription",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Sub Title",
+              name: "subTitle",
+              widget: "markdown",
+              required: true,
+              minimal: true,
+            }
+          - {
+              label: "Featured Press Section",
+              name: "featuredPress",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Press Articles",
+                    name: "pressArticles",
+                    widget: "list",
+                    allow_add: true,
+                    fields:
+                      [
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
+                        { label: "Title", name: "title", widget: "string" },
+                        {
+                          label: "Sub Title",
+                          name: "subTitle",
+                          widget: "string",
+                        },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                        },
+                        { label: "url", name: "url", widget: "string" },
+                      ],
+                  },
+                  {
+                    label: "Featured In Images",
+                    name: "featuredIn",
+                    widget: "list",
+                    allow_add: true,
+                    fields:
+                      [
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
+                      ],
+                  },
+                ],
+            }
+  - name: "components"
+    label: "Components"
+    files:
+      - file: "src/content/components/take-the-quiz-banner.md"
+        label: "Take the quiz banner"
+        name: "takeTheQuizBanner"
+        fields:
+          - {
+              label: "Template Key",
+              name: "template",
+              widget: "hidden",
+              default: "take-the-quiz-banner",
+            }
+          - {
+              label: "Description",
+              name: "description",
+              widget: "string",
+              required: true,
+            }
+          - {
+              label: "Button Text",
+              name: "buttonText",
+              widget: "string",
+              required: true,
+            }
+      - file: "src/content/components/announcement-banner.md"
+        label: "Announcement Banner"
+        name: "announcement"
+        fields:
+          - {
+              label: "Template Key",
+              name: "template",
+              widget: "hidden",
+              default: "announcement",
+            }
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              required: true,
+              minimal: true,
+            }
+      - file: "src/content/components/nav-bar.md"
+        label: "Navigation Bar"
+        name: "nav"
+        fields:
+          - {
+              label: "Template Key",
+              name: "template",
+              widget: "hidden",
+              default: "nav-bar",
+            }
+          - {
+              label: "Nav Items",
+              name: "nav_items",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  { label: "Label", name: "label", widget: "string" },
+                  {
+                    label: "URL",
+                    name: "url",
+                    widget: "string",
+                    required: false,
+                    hint: "Use a relative URL (e.g. /press) if the link is an internal link.",
+                  },
+                  {
+                    label: "External Link",
+                    name: "isExternal",
+                    widget: "boolean",
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Sub Items",
+                    name: "subitems",
+                    widget: "list",
+                    allow_add: true,
+                    fields:
+                      [
+                        { label: "Label", name: "label", widget: "string" },
+                        {
+                          label: "External Link",
+                          name: "isExternal",
+                          widget: "boolean",
+                          default: false,
+                          required: false,
+                        },
+                        {
+                          label: "URL",
+                          name: "url",
+                          widget: "string",
+                          hint: "Use a relative URL (e.g. /press) if the link is an internal link.",
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Social Media Links",
+              name: "social_links",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  {
+                    label: "Label",
+                    name: "label",
+                    widget: "string",
+                    required: false,
+                  },
+                  { label: "URL", name: "url", widget: "string" },
+                  {
+                    label: Icon,
+                    name: icon,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          required: true,
+                          media_library: { config: { multiple: false } },
+                          hint: "SVG only. SVG must have width and height attributes set in the file.",
+                        },
+                        { label: "Alt", name: "alt", widget: "string" },
+                      ],
+                  },
+                ],
+            }
+      - file: "src/content/components/footer.md"
+        label: "Footer"
+        name: "footer"
+        fields:
+          - {
+              label: "Template Key",
+              name: "template",
+              widget: "hidden",
+              default: "footer",
+            }
+          - {
+              label: "Columns",
+              name: "columns",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Links",
+                    name: "links",
+                    widget: "list",
+                    allow_add: true,
+                    fields:
+                      [
+                        {
+                          label: "Label",
+                          name: "label",
+                          widget: "string",
+                          required: false,
+                        },
+                        { label: "URL", name: "url", widget: "string" },
+                        {
+                          label: "External",
+                          name: "isExternal",
+                          widget: boolean,
+                          required: false,
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Social Media Links",
+              name: "social_links",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  {
+                    label: "Label",
+                    name: "label",
+                    widget: "string",
+                    required: false,
+                  },
+                  { label: "URL", name: "url", widget: "string" },
+                  {
+                    label: Icon,
+                    name: icon,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          required: true,
+                          media_library: { config: { multiple: false } },
+                          hint: "SVG only. SVG must have width and height attributes set in the file.",
+                        },
+                        { label: "Alt", name: "alt", widget: "string" },
+                      ],
+                  },
+                ],
+            }
+      - file: "src/content/components/role-quiz-modal.md"
+        label: "Role Quiz Modal"
+        name: "roleQuizModal"
+        fields:
+          - {
+              label: "Template Key",
+              name: "template",
+              widget: "hidden",
+              default: "role-quiz-modal",
+            }
+          - {
+              label: "Defi Accordion",
+              name: "defiAccordion",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Button Text",
+                    name: "buttonText",
+                    widget: "string",
+                  },
+                  {
+                    label: "Accordion Text",
+                    name: "accordionText",
+                    widget: "string",
+                  },
+                ],
+            }
+          - {
+              label: "Stages",
+              name: "stages",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  {
+                    label: Stage,
+                    name: stageId,
+                    widget: select,
+                    required: true,
+                    options:
+                      [
+                        { label: "BTC STAGE", value: "BTC" },
+                        { label: "LP STAGE", value: "LIQUIDITY" },
+                        { label: "STAKER STAGE", value: "STAKER" },
+                        { label: "TOKEN HOLDER STAGE", value: "TOKEN_HOLDER" },
+                      ],
+                  },
+                  {
+                    label: "Question Page",
+                    name: "questionPage",
+                    widget: "object",
+                    fields:
+                      [
+                        {
+                          label: "Title",
+                          name: "title",
+                          widget: "string",
+                          required: false,
+                        },
+                        {
+                          label: "Include Defi Accordion",
+                          name: "includeAccordion",
+                          widget: "boolean",
+                          required: false,
+                        },
+                        {
+                          label: "Options",
+                          name: "options",
+                          widget: "list",
+                          fields:
+                            [
+                              {
+                                label: "Label",
+                                name: "label",
+                                widget: "string",
+                              },
+                              {
+                                label: "Result",
+                                name: "result",
+                                widget: select,
+                                options:
+                                  [
+                                    { label: "Next", value: "NEXT" },
+                                    { label: "BTC Result", value: "BTC" },
+                                    { label: "LP Result", value: "LIQUIDITY" },
+                                    { label: "Staker Result", value: "STAKER" },
+                                    {
+                                      label: "Token Holder Result",
+                                      value: "TOKEN_HOLDER",
+                                    },
+                                  ],
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                  {
+                    label: "Result Page",
+                    name: "resultPage",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Title", widget: "string", name: "title" },
+                        {
+                          label: "Description",
+                          name: "description",
+                          widget: "string",
+                          required: false,
+                        },
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
+                        {
+                          label: "Button",
+                          name: "button",
+                          widget: "object",
+                          allow_add: true,
+                          required: false,
+                          fields:
+                            [
+                              { label: Label, name: label, widget: string },
+                              { label: URL, name: url, widget: string },
+                              {
+                                label: Variant,
+                                name: variant,
+                                widget: select,
+                                required: true,
+                                options:
+                                  [
+                                    {
+                                      label: "External Solid",
+                                      value: "EXTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "Internal Solid",
+                                      value: "INTERNAL_SOLID",
+                                    },
+                                    {
+                                      label: "External Outline",
+                                      value: "EXTERNAL_OUTLINE",
+                                    },
+                                    {
+                                      label: "Internal Outline",
+                                      value: "INTERNAL_OUTLINE",
+                                    },
+                                  ],
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+      - file: "src/content/components/dao-treasury-tokens.md"
+        label: "DAO Treasury Holding Tokens"
+        name: "daoTreasuryTokens"
+        fields:
+          - {
+              label: "Template Key",
+              name: "template",
+              widget: "hidden",
+              default: "dao-treasury-tokens",
+            }
+          - {
+              label: "Token Addresses",
+              name: "tokens",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  {
+                    label: "Token Address",
+                    name: "address",
+                    widget: "string",
+                    required: true,
+                  },
+                  {
+                    label: CoinGecko ID",
+                    name: "coingeckoId",
+                    widget: "string",
+                    required: true,
+                  },
+                ],
+            }

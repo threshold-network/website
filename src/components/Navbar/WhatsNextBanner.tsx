@@ -1,42 +1,50 @@
-import {
-  Alert,
-  Box,
-  Text,
-  CloseButton,
-  Icon,
-  Link,
-  Stack,
-} from "@chakra-ui/react"
 import { FC } from "react"
-import { HiOutlineExternalLink } from "react-icons/all"
+import { Alert, AlertDescription, CloseButton } from "@chakra-ui/react"
+import { graphql, useStaticQuery } from "gatsby"
 
-const WhatsNextBanner: FC<{ onClose: () => void }> = ({ onClose }) => {
+export type WhatsNextBannerProps = {
+  onClose: () => void
+  body: string
+}
+
+export const WhatsNextBannerTemplate: FC<WhatsNextBannerProps> = ({
+  onClose,
+  body,
+}) => {
   return (
     <Alert
-      bg="brand.700"
-      color="brand.100"
+      bg="brand.500"
+      color="white"
       justifyContent="center"
       position="relative"
     >
-      <Stack direction={{ base: "column", lg: "row" }} pr={8}>
-        <Text>
-          The Threshold DAO is looking for delegates! Find out how to get
-          involved on the Forum:
-        </Text>
-        <Box>
-          <Link
-            ml="5px"
-            textDecoration="underline"
-            href="https://forum.threshold.network/t/threshold-dao-delegates/325"
-          >
-            Learn More
-          </Link>
-          <Icon ml="5px" as={HiOutlineExternalLink} />
-        </Box>
-      </Stack>
+      <AlertDescription dangerouslySetInnerHTML={{ __html: body }} />
       <CloseButton position="absolute" right="10px" onClick={onClose} />
     </Alert>
   )
+}
+
+const query = graphql`
+  query Announcement {
+    allMarkdownRemark(
+      filter: { frontmatter: { template: { eq: "announcement" } } }
+    ) {
+      edges {
+        node {
+          html
+        }
+      }
+    }
+  }
+`
+
+const WhatsNextBanner: FC<Omit<WhatsNextBannerProps, "body">> = ({
+  onClose,
+}) => {
+  const data = useStaticQuery(query)
+  const body = data.allMarkdownRemark.edges[0].node.html
+
+  return body ? <WhatsNextBannerTemplate body={body} onClose={onClose} /> : null
 }
 
 export default WhatsNextBanner

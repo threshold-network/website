@@ -1,14 +1,70 @@
 import { FC } from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import { Container, HStack, useDisclosure } from "@chakra-ui/react"
-import NavLinks from "./NavLinks"
-import ThresholdBrand from "./ThresholdBrand"
+import ThresholdBrand from "../ThresholdBrand"
 import SocialMediaLinks from "./SocialMediaLinks"
 import HamburgerButton from "./HamburgerButton"
-import MobileDrawer from "./MobileDrawer"
-import { ExternalLink, LinkInfo } from "./types"
+import { LinkInfo } from "./types"
 import WhatsNextBanner from "./WhatsNextBanner"
+import MobileDrawer from "./MobileNav/MobileDrawer"
+import DesktopNavLinks from "./DesktopNav/DesktopNavLinks"
 
-const Navbar: FC = () => {
+const query = graphql`
+  query Navbar {
+    allMarkdownRemark(
+      filter: { frontmatter: { template: { eq: "nav-bar" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            nav_items {
+              label
+              url
+              isExternal
+              subitems {
+                url
+                label
+                isExternal
+              }
+            }
+            social_links {
+              label
+              url
+              icon {
+                image {
+                  id
+                  relativePath
+                  internal {
+                    mediaType
+                  }
+                  svg {
+                    name
+                    attributes {
+                      key
+                      value
+                    }
+                    children {
+                      name
+                      type
+                      value
+                      attributes {
+                        key
+                        value
+                      }
+                    }
+                  }
+                }
+                alt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+export const Navbar: FC = () => {
   const {
     isOpen: isDrawerOpen,
     onOpen: onDrawOpen,
@@ -18,33 +74,40 @@ const Navbar: FC = () => {
   const { isOpen: showBanner, onClose: closeBanner } = useDisclosure({
     defaultIsOpen: true,
   })
-
-  const navLinks: LinkInfo[] = [
-    { href: ExternalLink.THRESHOLD_DISCORD, text: "Community" },
-    { href: ExternalLink.THRESHOLD_BLOG, text: "Blog" },
-    { href: ExternalLink.GOVERNANCE, text: "Governance" },
-    { href: ExternalLink.THRESHOLD_TOKEN, text: "Token" },
-    { href: ExternalLink.STAKE, text: "Stake" },
-  ]
+  const data = useStaticQuery(query)
+  const socialLinks =
+    data.allMarkdownRemark.edges[0].node.frontmatter.social_links
+  const navLinks = data.allMarkdownRemark.edges[0].node.frontmatter
+    .nav_items as LinkInfo[]
 
   return (
     <>
       {showBanner && <WhatsNextBanner onClose={closeBanner} />}
-      <HStack borderBottom="1px solid" borderColor="brand.300" h="90px">
-        <Container maxW="6xl" h="100%" display="flex">
+      <HStack
+        bg="gray.900"
+        h="90px"
+        borderBottom="1px solid"
+        borderColor="gray.700"
+        as="header"
+      >
+        <Container
+          maxW="1072px"
+          h="100%"
+          display="flex"
+          justifyContent="space-between"
+        >
+          <ThresholdBrand />
           <MobileDrawer
             isOpen={isDrawerOpen}
             onClose={onDrawerClose}
             navLinks={navLinks}
+            socialLinks={socialLinks}
           />
-          <ThresholdBrand />
-          <NavLinks navLinks={navLinks} />
-          <SocialMediaLinks />
+          <DesktopNavLinks navLinks={navLinks} />
+          <SocialMediaLinks links={socialLinks} pl={8} />
           <HamburgerButton openDrawer={onDrawOpen} />
         </Container>
       </HStack>
     </>
   )
 }
-
-export default Navbar
