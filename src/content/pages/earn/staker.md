@@ -106,7 +106,7 @@ gettingStarted:
         leftIcon: /images/document.svg
       - leftIcon: /images/hardware-chip-sharp.svg
         label: Staking Providers
-        url: https://docs.nucypher.com/en/latest/pre_application/node_providers.htmlF
+        url: https://docs.nucypher.com/en/latest/pre_application/node_providers.html
         rightIcon: /images/external-arrow.svg
       - leftIcon: /images/logo-discord.png
         label: Ask Questions in Discord
