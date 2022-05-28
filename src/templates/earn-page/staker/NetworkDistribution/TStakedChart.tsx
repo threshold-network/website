@@ -18,6 +18,7 @@ import BigNumber from "bignumber.js"
 import { formatEther } from "ethers/lib/utils"
 import { H5 } from "../../../../components"
 import useFetchStakedT from "../../../../hooks/useFetchTNetworkStakingStats"
+import { ResponsiveStack } from "../../../../components/PageSection"
 
 ChartJS.register(
   CategoryScale,
@@ -181,7 +182,7 @@ function TStakedChart() {
 
   return (
     <Box mt={8}>
-      <HStack justifyContent="space-between">
+      <ResponsiveStack justifyContent="space-between" columnReverse>
         <H5>Cumulative T Staked</H5>
         <HStack>
           {(["Week", "Month", "Year"] as Filter[]).map((btn) => (
@@ -194,7 +195,7 @@ function TStakedChart() {
             </Button>
           ))}
         </HStack>
-      </HStack>
+      </ResponsiveStack>
       <Box height="200px" mt={8}>
         {isLoading ? (
           <Spinner m="auto" display="flex" />

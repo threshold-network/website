@@ -1,6 +1,6 @@
-import React, { FC } from "react"
+import React, { FC, useEffect } from "react"
 import { Button, Stack } from "@chakra-ui/react"
-import { BodyMd, H2, H3, H5 } from "../../components/Typography"
+import { BodyMd, H3 } from "../../components/Typography"
 import {
   ResponsiveStack,
   SectionImage,
@@ -26,6 +26,10 @@ const QuizResult: FC<ResultPageProps & { resetQuizState: () => void }> = ({
   resetQuizState,
 }) => {
   const { closeModal } = useQuizModal()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <ResponsiveStack spacing={16}>

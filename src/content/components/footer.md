@@ -51,9 +51,6 @@ columns:
       - label: FAQ
         url: /about#faq
         isExternal: false
-      - label: Audits
-        url: /about#audits
-        isExternal: false
 social_links:
   - url: https://twitter.com/TheTNetwork
     icon:
