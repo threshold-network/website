@@ -47,7 +47,7 @@ const RolesNav = ({ location }) => {
         variant={pathname.includes("/token-holder") ? "outline" : "ghost"}
         width="full"
       >
-        Token Holder
+        Token {!isSmallScreen && "Holder"}
       </Button>
     </HStack>
   )
