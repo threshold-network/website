@@ -1,12 +1,13 @@
 backend:
   name: github
   repo: threshold-network/splash-page
-  site_domain: threshold.network
+  branch: main
+  site_domain: 031740ea-aeb7-4c1e-a6c7-87fb401e9c24
   open_authoring: true
 
 local_backend: true
 
-site_url: https://threshold.network
+site_url: https://preview.threshold.network/test/
 
 publish_mode: editorial_workflow
 
