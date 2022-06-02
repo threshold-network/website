@@ -1,11 +1,11 @@
-import { HStack, Icon, Stack } from "@chakra-ui/react"
+import { Button, HStack, Icon, Stack } from "@chakra-ui/react"
 import { gql } from "graphql-request"
-import { IoDocument } from "react-icons/all"
+import { FiArrowUpRight, IoDocument } from "react-icons/all"
 import { BigNumber } from "ethers"
+import { Link as GatsbyLink } from "gatsby"
 import Card from "../../components/Card"
 import { PageSection } from "../../components/PageSection"
 import { H2, H3, LabelMd } from "../../components"
-import ExternalButtonLink from "../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../components/Navbar/types"
 import { StatBoxGroup } from "../../components/StatBox"
 import { T_NETWORK_SUBGRAPH_URL } from "../../config/subgraph"
@@ -73,14 +73,16 @@ const ThresholdDaoDataSection = () => {
             </LabelMd>
             <H2>{formatFiatCurrencyAmount(totalTreasuryHoldings)}</H2>
           </Stack>
-          <ExternalButtonLink
+          <Button
             display={{ base: "none", md: "inherit" }}
             variant="outline"
             leftIcon={<Icon as={IoDocument} />}
-            href={"" as ExternalLinkHref}
+            rightIcon={<FiArrowUpRight />}
+            as={GatsbyLink}
+            to={"/governance#guilds" as ExternalLinkHref}
           >
             Parts of the DAO
-          </ExternalButtonLink>
+          </Button>
         </HStack>
         <StatBoxGroup stats={stats} />
       </Card>

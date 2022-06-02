@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import { Box, Button, Stack } from "@chakra-ui/react"
+import { Box, Button, HStack, Stack, Wrap } from "@chakra-ui/react"
 import { BodyLg, BodyMd, H3, Image, ImageProps } from "../../components"
 import { PageSection } from "../../components/PageSection"
 import Accordion from "../../components/Accordion"
@@ -40,28 +40,34 @@ const FaqSection: FC<Props> = ({ title, faqs, additionalHelp }) => {
           title: faq.question,
           body: (
             <Box key={faq.question} mb={6}>
-              <BodyMd color="gray.300">{faq.answer}</BodyMd>
-              {faq.buttons &&
-                faq.buttons.map((button) => {
-                  return (
-                    <Button
-                      key={button.label}
-                      mt={8}
-                      px={4}
-                      py={6}
-                      variant="outline"
-                      borderColor="gray.700"
-                      leftIcon={
-                        <Image boxSize="20px" {...button.leftIcon.image} />
-                      }
-                      rightIcon={
-                        <Image boxSize="20px" {...button.rightIcon.image} />
-                      }
-                    >
-                      {button.label}
-                    </Button>
-                  )
-                })}
+              <BodyMd textAlign="left" color="gray.300">
+                {faq.answer}
+              </BodyMd>
+              <Wrap mt={8} spacing={6} flexWrap="wrap">
+                {faq.buttons &&
+                  faq.buttons.map((button) => {
+                    return (
+                      <Button
+                        as="a"
+                        href={button.url}
+                        target="_blank"
+                        key={button.label}
+                        px={4}
+                        py={6}
+                        variant="outline"
+                        borderColor="gray.700"
+                        leftIcon={
+                          <Image boxSize="20px" {...button.leftIcon.image} />
+                        }
+                        rightIcon={
+                          <Image boxSize="20px" {...button.rightIcon.image} />
+                        }
+                      >
+                        {button.label}
+                      </Button>
+                    )
+                  })}
+              </Wrap>
             </Box>
           ),
         }))}

@@ -30,7 +30,7 @@ const Accordion: FC<Props> = ({ items, ...accordionProps }) => {
                     justifyContent="space-between"
                     py={10}
                   >
-                    <BodyLg>{item.title}</BodyLg>
+                    <BodyLg textAlign="left">{item.title}</BodyLg>
                     {isExpanded ? (
                       <MinusIcon fontSize="12px" />
                     ) : (

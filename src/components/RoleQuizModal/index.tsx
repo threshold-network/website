@@ -17,6 +17,7 @@ import useChakraBreakpoint from "../../hooks/useChakraBreakpoint"
 
 interface Props {
   stages: {
+    stageId: string
     questionPage: QuizStageData
     resultPage: ResultPageProps
   }[]
@@ -26,7 +27,15 @@ interface Props {
 
 const RoleQuizModalTemplate: FC<Props> = ({ stages, result, setResult }) => {
   const [currentStageIdx, setCurrentStageIdx] = useState(0)
-  const currentStage = useMemo(() => stages[currentStageIdx], [currentStageIdx])
+  const questionStage = useMemo(
+    () => stages[currentStageIdx].questionPage,
+    [currentStageIdx]
+  )
+  const resultStage = useMemo(
+    () =>
+      stages.filter((stage) => stage.stageId === result)[0]?.resultPage || {},
+    [stages, result]
+  )
 
   const resetQuizState = () => {
     setResult(undefined)
@@ -48,18 +57,13 @@ const RoleQuizModalTemplate: FC<Props> = ({ stages, result, setResult }) => {
   }
 
   if (result) {
-    return (
-      <QuizResult
-        {...currentStage.resultPage}
-        resetQuizState={resetQuizState}
-      />
-    )
+    return <QuizResult {...resultStage} resetQuizState={resetQuizState} />
   }
 
   return (
     <QuizStage
       shouldDisplayBackButton={currentStageIdx > 0}
-      stage={currentStage.questionPage}
+      stage={questionStage}
       goForward={goForward}
       goBack={goBack}
     />

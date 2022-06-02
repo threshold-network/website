@@ -18,7 +18,8 @@ featuredPress:
     - image: /images/pgwujjyi4jafnfjeglw6hmcpma.jpg
       title: "'Keanu' Explained: What It Means to Merge Two Ethereum Projects"
       subTitle: MAR 2021 Brady Dale
-      description: Keep and NuCypher, ICO-era survivors with $500M in combined assets,
+      description:
+        Keep and NuCypher, ICO-era survivors with $500M in combined assets,
         may soon forge a new model of cooperation among decentralized protocols.
       url: https://www.coindesk.com/tech/2021/03/11/keanu-explained-what-it-means-to-merge-two-ethereum-projects/
     - title: Keep Network unveils v2 specs for tBTC protocol

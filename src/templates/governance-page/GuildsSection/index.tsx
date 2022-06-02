@@ -11,7 +11,7 @@ interface GuildsSectionProps {
 
 const GuildsSection: FC<GuildsSectionProps> = ({ heroSection, guildCards }) => {
   return (
-    <PageSection bg="#151A20">
+    <PageSection bg="#151A20" id="guilds">
       <Stack spacing={12}>
         <GuildHero {...heroSection} />
         <GuildCards cards={guildCards} />

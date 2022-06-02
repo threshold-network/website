@@ -49,7 +49,7 @@ stages:
       image: /images/staking-threshold.png
       button:
         label: About Staking
-        url: /earn/stake
+        url: /earn/staker
         variant: INTERNAL_SOLID
   - stageId: LIQUIDITY
     questionPage:
