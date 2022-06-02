@@ -1,5 +1,6 @@
 import { FC } from "react"
 import { Box, BoxProps, Icon, Link } from "@chakra-ui/react"
+import { Link as GatsbyLink } from "gatsby"
 import { H5 } from "../../Typography"
 import { FiArrowRight } from "react-icons/all"
 
@@ -12,8 +13,9 @@ const MobileNavLink: FC<{ href?: string; hasNested: boolean } & BoxProps> = ({
   return (
     <Box {...props}>
       <Link
+        as={href ? GatsbyLink : Link}
+        to={href}
         href={href}
-        target="_blank"
         color="white"
         display="flex"
         justifyContent="space-between"

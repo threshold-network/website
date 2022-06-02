@@ -74,6 +74,8 @@ const MobileDrawer: FC<{
                   if (subitems) {
                     setIsNestedRoute(true)
                     setNavLinksToRender(subitems)
+                  } else {
+                    onClose()
                   }
                 }}
               >
