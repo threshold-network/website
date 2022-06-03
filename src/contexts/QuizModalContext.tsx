@@ -13,8 +13,13 @@ export const QuizModalContext = createContext<{
 export const QuizModalContextProvider: React.FC = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const openModal = () => setIsOpen(true)
-  const closeModal = () => setIsOpen(false)
+  const openModal = () => {
+    window.scrollTo(0, 0)
+    setIsOpen(true)
+  }
+  const closeModal = () => {
+    setIsOpen(false)
+  }
 
   return (
     <QuizModalContext.Provider value={{ isOpen, openModal, closeModal }}>

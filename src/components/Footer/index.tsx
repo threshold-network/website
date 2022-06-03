@@ -94,6 +94,9 @@ const FooterContent: FC<{
                         if (_.url === "/profile-quiz") {
                           e.preventDefault()
                           openModal()
+                          if (document.activeElement instanceof HTMLElement) {
+                            document.activeElement.blur()
+                          }
                         }
                       }}
                     >

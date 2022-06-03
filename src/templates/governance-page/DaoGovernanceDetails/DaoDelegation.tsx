@@ -62,7 +62,12 @@ const DaoDelegation: FC<{ selectedDao: DAO }> = ({ selectedDao }) => {
               ? "Members of the Staker DAO are exclusively stakers. Get started below voting on staker proposals."
               : "T token holders can delegate their vote using the Boardroom dashboard."}
           </BodyLg>
-          <ExternalButtonLink href={"NEED_URL" as ExternalLinkHref} mt={8}>
+          <ExternalButtonLink
+            href={
+              "https://stake.nucypher.network/manage/delegate" as ExternalLinkHref
+            }
+            mt={8}
+          >
             Delegate your vote
           </ExternalButtonLink>
         </Card>
