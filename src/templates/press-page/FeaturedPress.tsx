@@ -30,7 +30,7 @@ const PressCard: FC<PressArticle> = ({
       h="100%"
     >
       <Box h="180px" overflow="hidden">
-        <Image {...image} />
+        <Image borderRadius="10px 10px 0 0" {...image} />
       </Box>
       <Box p={6}>
         <Stack spacing={6}>
@@ -38,6 +38,7 @@ const PressCard: FC<PressArticle> = ({
             <Card.Title>{title}</Card.Title>
             <Card.SubTitle>{subTitle}</Card.SubTitle>
           </Stack>
+          f
           <Card.Divider />
           <Card.Body as="div" noOfLines={6}>
             {description}
