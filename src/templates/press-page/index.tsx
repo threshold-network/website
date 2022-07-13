@@ -50,6 +50,7 @@ export const query = graphql`
           title
           pressArticles {
             title
+            date
             subTitle
             description
             url

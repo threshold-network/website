@@ -2312,17 +2312,13 @@ collections:
                     allow_add: true,
                     fields:
                       [
-                        {
-                          label: "Image",
-                          name: "image",
-                          widget: file,
-                          media_library: { config: { multiple: false } },
-                        },
                         { label: "Title", name: "title", widget: "string" },
+                        { label: "Date", name: "date", widget: "datetime" },
                         {
                           label: "Sub Title",
                           name: "subTitle",
                           widget: "string",
+                          required: false,
                         },
                         {
                           label: "Description",
@@ -2330,6 +2326,12 @@ collections:
                           widget: "string",
                         },
                         { label: "url", name: "url", widget: "string" },
+                        {
+                          label: "Image",
+                          name: "image",
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
                       ],
                   },
                   {
