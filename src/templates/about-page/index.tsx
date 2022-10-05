@@ -4,15 +4,11 @@ import SectionTemplate from "../home-page/SectionTemplate"
 import { Box } from "@chakra-ui/react"
 import ContributingTeamsSection from "./ContributingTeamsSection"
 import FaqSection from "./FaqSection"
-// import AuditSection from "./AuditSection"
+import AuditSection from "./AuditSection"
 
 const FAQPageTemplate: FC<any> = ({ data }) => {
-  const {
-    aboutInfo,
-    teamsSection,
-    faq,
-    // audits
-  } = data.markdownRemark.frontmatter
+  const { aboutInfo, teamsSection, faq, audits } =
+    data.markdownRemark.frontmatter
 
   return (
     <Box>
@@ -25,7 +21,7 @@ const FAQPageTemplate: FC<any> = ({ data }) => {
       />
       <ContributingTeamsSection {...teamsSection} />
       <FaqSection {...faq} />
-      {/* <AuditSection audits={audits} /> */}
+      <AuditSection audits={audits} />
     </Box>
   )
 }
@@ -163,7 +159,7 @@ export const query = graphql`
               mediaType
             }
             childImageSharp {
-              gatsbyImageData(width: 200)
+              gatsbyImageData(width: 200, height: 164)
             }
           }
         }

@@ -27,6 +27,9 @@ nav_items:
         url: /about#contributors
       - label: FAQ
         url: /about#faq
+      - isExternal: false
+        label: Audits
+        url: /about#audits
 social_links:
   - label: Twitter
     url: https://twitter.com/TheTNetwork

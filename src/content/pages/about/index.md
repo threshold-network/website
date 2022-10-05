@@ -1,20 +1,5 @@
 ---
-template: about-page
 path: /about
-seoTitle: About
-seoDescription: ""
-aboutInfo:
-  title: About
-  description: Threshold is the first ever on-chain merge between two existing
-    networks and communities, Keep and NuCypher. Threshold provides a suite of
-    threshold cryptography services that power user sovereignty on the
-    blockchain.
-  image: /images/about-illustration.svg
-  buttons:
-    - label: About the merge
-      url: https://blog.threshold.network/the-story-of-threshold/
-      variant: EXTERNAL_SOLID
-  rowReverse: false
 teamsSection:
   left:
     description:
@@ -113,9 +98,34 @@ faq:
           rightIcon:
             image: /images/external-arrow.svg
 title: About
+template: about-page
+seoTitle: About
+seoDescription: ""
+aboutInfo:
+  title: About
+  description: Threshold is the first ever on-chain merge between two existing
+    networks and communities, Keep and NuCypher. Threshold provides a suite of
+    threshold cryptography services that power user sovereignty on the
+    blockchain.
+  image: /images/about-illustration.svg
+  buttons:
+    - label: About the merge
+      url: https://blog.threshold.network/the-story-of-threshold/
+      variant: EXTERNAL_SOLID
+  rowReverse: false
 audits:
-  - title: "Least Authority: Bridge.sol Security Summary Report"
+  - title: "Least Authority: tBTC Bridge v2 Security Audit Report"
     url: NEED_URL
-    date: 25 february 2022
+    date: 29 September 2022
     auditImage: /images/least-authority-2.png
+  - title: "CertiK: Vending Machine Security Audit Report"
+    url: https://www.certik.com/projects/threshold-network
+    date: 19 November 2021
+    auditImage: /images/ctk-logo-ver-white.png
+  - title:
+      "ChainSecurity: Staking Contract, T Token, Vending Machine Security Audit
+      Report"
+    url: https://chainsecurity.com/security-audit/threshold-network/
+    date: 09 November 2021
+    auditImage: /images/chainsecurity-vertical-logo-white-with-transparent-background.png
 ---
