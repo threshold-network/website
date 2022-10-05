@@ -93,7 +93,7 @@ harnessThePower:
       description:
         Splitting cryptographic operations across nodes increases security
         and availability and reduces trust assumptions. Threshold is
-        [audited](/audits) by the best firms in the space.
+        [audited](/about#audits) by the best firms in the space.
       image: /images/secure-icon.png
     - title: Private
       description: Cryptographic protocols eradicate the trust burden forced on
