@@ -115,7 +115,7 @@ aboutInfo:
   rowReverse: false
 audits:
   - title: "Least Authority: tBTC Bridge v2 Security Audit Report"
-    url: https://leastauthority.com/static/publications/LeastAuthority_KeepNetwork_tBTC_Bridge_v2_Updated_Final_Audit_Report.pdf
+    url: https://leastauthority.com/blog/audits/audit-of-keep-network-tbtc-bridge-v2/
     date: 29 September 2022
     auditImage: /images/least-authority-2.png
   - title: "CertiK: Vending Machine Security Audit Report"
