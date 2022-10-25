@@ -36,6 +36,7 @@ jobs:
         run: yarn build
         env:
           PUBLIC_URL: /
+          POSTHOG_SUPPORT: true
 
       - uses: actions/upload-artifact@v2
         with:
