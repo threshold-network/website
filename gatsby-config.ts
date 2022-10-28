@@ -75,8 +75,8 @@ if (process.env["POSTHOG_SUPPORT"] === "true") {
   plugins.push({
     resolve: "gatsby-plugin-posthog",
     options: {
-      apiKey: "phc_5XMnBAeMVxZQhmBm6G0Kee5ujBOiUhGYIakUKfDhgs5",
-      apiHost: "https://app.posthog.com",
+      apiKey: process.env["POSTHOG_API_KEY"],
+      apiHost: process.env["POSTHOG_HOSTNAME_HTTP"],
       initOptions: {
         persistence: "memory",
       },

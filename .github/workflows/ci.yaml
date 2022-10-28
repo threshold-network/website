@@ -37,6 +37,8 @@ jobs:
         env:
           PUBLIC_URL: /
           POSTHOG_SUPPORT: true
+          POSTHOG_API_KEY: ${{ secrets.MAINNET_POSTHOG_API_KEY }}
+          POSTHOG_HOSTNAME_HTTP: ${{ secrets.MAINNET_POSTHOG_HOSTNAME_HTTP }}
 
       - uses: actions/upload-artifact@v2
         with:
