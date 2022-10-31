@@ -10868,6 +10868,13 @@ gatsby-plugin-page-creator@^4.9.1:
     globby "^11.0.4"
     lodash "^4.17.21"
 
+gatsby-plugin-posthog@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/gatsby-plugin-posthog/-/gatsby-plugin-posthog-1.0.1.tgz#e455720a66d235ed8d7f508e9e575f95e20f189b"
+  integrity sha512-RIyDTj/XcMvmV6Vs6HJa8zQFGcQr52LcS4iD76g5WfFB705hFOAPchIISFoFMQd3qN1n3m4jUinhA/uuhN43Qg==
+  dependencies:
+    "@babel/runtime" "^7.8.7"
+
 gatsby-plugin-react-helmet@^5.11.0:
   version "5.11.0"
   resolved "https://registry.npmjs.org/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-5.11.0.tgz#cf20639260fd1fd6180a3cfe1c64da2636ea9655"
