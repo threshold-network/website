@@ -23,11 +23,11 @@ interestedPools:
     title: T + ETH
     subTitle: Curve
     buttonText: View Pool on Curve
-    buttonUrl: https://curve.fi/teth
-  - image1: /images/tbtc-v2.svg
-    image2: /images/mbtc.svg
-    title: TBTCv2 + mBTC
-    subTitle: MSTABLE
-    buttonText: View Pool on mStable
-    buttonUrl: https://mstable.app/#/mbtc/pools/0xc3280306b6218031e61752d060b091278d45c329
+    buttonUrl: https://curve.fi/#/ethereum/pools/teth/deposit
+  - image1: /images/threshold.svg
+    image2: /images/ethereum.svg
+    title: T + ETH
+    subTitle: Balancer
+    buttonText: View Pool on Balancer
+    buttonUrl: https://app.balancer.fi/#/ethereum/pool/0x8167a1117691f39e05e9131cfa88f0e3a620e96700020000000000000000038c/invest
 ---

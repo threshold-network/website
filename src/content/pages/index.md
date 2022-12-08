@@ -65,12 +65,12 @@ tokenHolderRole:
   bgColor: "#3c3c3c"
 migrationInfo:
   title: Do you own KEEP or NU?
-  description: Keep and NuCypher merged to form the Threshold Network. Migrate
+  description: Keep and NuCypher merged to form the Threshold Network. Upgrade
     your tokens to T!
   image: /images/legacy-tokens.png
   buttons:
-    - label: Migrate tokens
-      url: https://dashboard.threshold.network/
+    - label: Upgrade tokens
+      url: https://dashboard.threshold.network/upgrade
       variant: EXTERNAL_OUTLINE
   bgColor: "#141414"
   rowReverse: false
