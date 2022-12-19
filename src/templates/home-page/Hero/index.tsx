@@ -1,10 +1,10 @@
 import React, { FC } from "react"
-import { Box, Container, HStack, Image, Stack } from "@chakra-ui/react"
+import { Box, Container, Stack } from "@chakra-ui/react"
 import { ButtonLg, H1, H5 } from "../../../components/Typography"
 import heroGradientBg from "../../../static/images/hero-gradient-bg.png"
-import tbtcProductDemo from "../../../static/images/tbtc-product-demo.png"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
+import { Image, ImageProps } from "../../../components/Image"
 
 const heroButtonProps = {
   h: "auto",
@@ -13,11 +13,12 @@ const heroButtonProps = {
   px: "40px",
 }
 
-const Hero: FC<{ title: string; body: string; ctaButtons: any }> = ({
-  title,
-  body,
-  ctaButtons,
-}) => {
+const Hero: FC<{
+  title: string
+  body: string
+  ctaButtons: any
+  image: ImageProps
+}> = ({ title, body, ctaButtons, image }) => {
   return (
     <Box
       minHeight={{ base: "740px", md: "800px" }}
@@ -33,7 +34,7 @@ const Hero: FC<{ title: string; body: string; ctaButtons: any }> = ({
         }}
         paddingTop={{ base: "80px", md: "135px" }}
       >
-        <Box display="flex">
+        <Box display="flex" flexDirection={{ base: "column", lg: "row" }}>
           <Box>
             <Stack spacing={8}>
               <H1 maxW="740px">{title}</H1>
@@ -64,12 +65,19 @@ const Hero: FC<{ title: string; body: string; ctaButtons: any }> = ({
             </Stack>
           </Box>
           <Box
-            display={{ base: "none", lg: "flex" }}
+            display="flex"
             flexDirection="column"
             justifyContent="end"
             pb={7}
           >
-            <Image m={0} maxW="350px" maxH="200px" src={tbtcProductDemo} />
+            {image && (
+              <Image
+                m={0}
+                mt={{ base: 8, lg: 0 }}
+                maxW={{ base: "600px", lg: "350px" }}
+                {...image}
+              />
+            )}
           </Box>
         </Box>
       </Container>

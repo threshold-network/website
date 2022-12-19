@@ -22,6 +22,8 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
   } = data.markdownRemark.frontmatter
   const proposals = data.allProposals
 
+  console.log("passing the hero: ", hero)
+
   return (
     <>
       <Hero {...hero} />
@@ -49,6 +51,16 @@ export const query = graphql`
           ctaButtons {
             label
             url
+          }
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
           }
         }
         stakerRole {
