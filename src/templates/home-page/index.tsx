@@ -22,7 +22,6 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
   } = data.markdownRemark.frontmatter
   const proposals = data.allProposals
 
-  console.log("passing the hero: ", hero)
 
   return (
     <>
