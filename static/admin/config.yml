@@ -60,6 +60,12 @@ collections:
                   required: false,
                 }
               - {
+                  label: "Image",
+                  name: "image",
+                  widget: file,
+                  media_library: { config: { multiple: false } },
+                }
+              - {
                   label: "CTA Buttons",
                   name: "ctaButtons",
                   widget: "list",
