@@ -12,7 +12,6 @@ import WhatIsThreshold from "./WhaIsThreshold"
 const SplashPageTemplate: FC<any> = ({ data }) => {
   const {
     hero,
-    tbtc,
     whatIsThreshold,
     stakerRole,
     lpRole,
@@ -29,10 +28,9 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
     <>
       <Hero {...hero} />
       <WhatIsThreshold {...whatIsThreshold} bgColor="gray.900" />
-      <SectionTemplate {...tbtc} bgColor="#181D22" />
+      <SectionTemplate {...btcRole} bgColor="#181D22" />
       <SectionTemplate {...stakerRole} bgColor="gray.900" />
       <SectionTemplate {...lpRole} bgColor="#181D22" />
-      <SectionTemplate {...btcRole} bgColor="#0A0C0F" />
       <SectionTemplate {...tokenHolderRole} bgColor="#161A1F" />
       <TakeTheQuiz topBgColor="#161A1F" bottomBgColor="#181D22" />
       <MigrationInfoSection {...migrationInfo} bgColor="#181D22" />
@@ -70,26 +68,6 @@ export const query = graphql`
           title
           description
           youtubeID
-          buttons {
-            label
-            url
-            variant
-          }
-        }
-        tbtc {
-          rowReverse
-          title
-          description
-          image {
-            id
-            relativePath
-            internal {
-              mediaType
-            }
-            childImageSharp {
-              gatsbyImageData(width: 200)
-            }
-          }
           buttons {
             label
             url
