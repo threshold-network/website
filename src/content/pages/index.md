@@ -11,6 +11,19 @@ hero:
     - label: Pre Launch NFT
       url: https://galxe.com/Threshold/campaign/GCBKCUwT8Q
   image: /images/tbtc-dashboard.png
+tbtc:
+  rowReverse: false
+  title: Bridge BTC to Ethereum
+  description: tBTC is Threshold’s decentralized bridge to bring BTC to the
+    Ethereum network.
+  image: /images/tbtc-illustration.png
+  buttons:
+    - label: Stay Updated
+      url: https://twitter.com/TheTNetwork
+      variant: EXTERNAL_SOLID
+    - label: Learn More
+      url: /tbtc
+      variant: INTERNAL_OUTLINE
 stakerRole:
   title: Threshold Staking
   description: Stakers escrow T tokens to run a node on the Threshold Network and

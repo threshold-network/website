@@ -11,6 +11,7 @@ import ActiveCommunity from "./ActiveCommunity"
 const SplashPageTemplate: FC<any> = ({ data }) => {
   const {
     hero,
+    tbtc,
     stakerRole,
     lpRole,
     btcRole,
@@ -22,10 +23,11 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
   } = data.markdownRemark.frontmatter
   const proposals = data.allProposals
 
-
   return (
     <>
       <Hero {...hero} />
+      <SectionTemplate {...stakerRole} bgColor="gray.900" />
+      <SectionTemplate {...tbtc} bgColor="#181D22" />
       <SectionTemplate {...stakerRole} bgColor="gray.900" />
       <SectionTemplate {...lpRole} bgColor="#181D22" />
       <SectionTemplate {...btcRole} bgColor="#0A0C0F" />
@@ -60,6 +62,26 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData(width: 200)
             }
+          }
+        }
+        tbtc {
+          rowReverse
+          title
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
+            label
+            url
+            variant
           }
         }
         stakerRole {
