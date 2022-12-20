@@ -7,11 +7,13 @@ import MigrationInfoSection from "./MigrationInfoSection"
 import HarnessThePower from "./HarnessThePower"
 import JoinTheCommunity from "./JoinTheCommunity"
 import ActiveCommunity from "./ActiveCommunity"
+import WhatIsThreshold from "./WhaIsThreshold"
 
 const SplashPageTemplate: FC<any> = ({ data }) => {
   const {
     hero,
     tbtc,
+    whatIsThreshold,
     stakerRole,
     lpRole,
     btcRole,
@@ -26,7 +28,7 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
   return (
     <>
       <Hero {...hero} />
-      <SectionTemplate {...stakerRole} bgColor="gray.900" />
+      <WhatIsThreshold {...whatIsThreshold} bgColor="gray.900" />
       <SectionTemplate {...tbtc} bgColor="#181D22" />
       <SectionTemplate {...stakerRole} bgColor="gray.900" />
       <SectionTemplate {...lpRole} bgColor="#181D22" />
@@ -62,6 +64,16 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData(width: 200)
             }
+          }
+        }
+        whatIsThreshold {
+          title
+          description
+          youtubeID
+          buttons {
+            label
+            url
+            variant
           }
         }
         tbtc {
