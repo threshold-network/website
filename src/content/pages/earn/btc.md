@@ -15,8 +15,8 @@ btcInfo:
     in DeFi.
   image: /images/tbtc.png
   buttons:
-    - label: Launch tBTC Dapp
-      url: https://tbtc.network/
+    - label: Stay Updated
+      url: https://twitter.com/TheTNetwork
       variant: EXTERNAL_SOLID
 interestedPools:
   - image1: /images/tbtc-v2.svg
