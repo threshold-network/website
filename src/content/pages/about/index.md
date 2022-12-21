@@ -15,8 +15,8 @@ teamsSection:
   right:
     description:
       NuCypher brings privacy to the public blockchain. NuCypher's proxy
-      re-encryption (PRE) network provides cryptographic access controls for
-      distributed apps and protocols.
+      re-encryption (PRE) and condition-based decryption (CBD) network provides
+      cryptographic access controls for distributed apps and protocols.
     image: /images/nu-logo.png
     buttons:
       - label: Visit NuCypher’s Website
@@ -62,7 +62,7 @@ faq:
             image: /images/document.svg
           rightIcon:
             image: /images/external-arrow.svg
-          url: https://docs.nucypher.com/en/latest/pre_application/node_providers.html
+          url: https://docs.threshold.network/staking-and-running-a-node/running-a-node/staking-providers
     - question: What determines the exchange rate for T tokens?
       answer:
         As decided by the NU and KEEP communities in the final merge proposal,

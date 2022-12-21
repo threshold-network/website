@@ -53,18 +53,20 @@ const DaoDelegation: FC<{ selectedDao: DAO }> = ({ selectedDao }) => {
   return (
     <PageSection bg="gray.900" withSmallPadding>
       <H4 color="gray.300">
-        {selectedDao === "STAKER" ? "Staker" : "Token Holder"} DAO Delegation
+        {selectedDao === "STAKER" ? "Staker" : "Token Holder"} Delegation
       </H4>
       <ResponsiveStack spacing={12} mt={12}>
         <Card w="full">
           <BodyLg color="gray.100">
             {selectedDao === "STAKER"
-              ? "Members of the Staker DAO are exclusively stakers. Get started below voting on staker proposals."
+              ? "T stakers can delegate their vote using the NuCypher dashboard."
               : "T token holders can delegate their vote using the Boardroom dashboard."}
           </BodyLg>
           <ExternalButtonLink
             href={
-              "https://stake.nucypher.network/manage/delegate" as ExternalLinkHref
+              selectedDao === "STAKER"
+                ? ("https://stake.nucypher.network/manage/delegate" as ExternalLinkHref)
+                : ("https://boardroom.io/threshold/proposals" as ExternalLinkHref)
             }
             mt={8}
           >
@@ -73,7 +75,9 @@ const DaoDelegation: FC<{ selectedDao: DAO }> = ({ selectedDao }) => {
         </Card>
         <Stack w="full" spacing={4} justifyContent="center">
           <LabelMd textTransform="uppercase" color="gray.500">
-            Liquid T Delegated
+            {selectedDao === "STAKER"
+              ? "Staked T Delegated"
+              : "Liquid T Delegated"}
           </LabelMd>
           <H3 color="gray.100">{`${formatTokenAmount(totalDelegated)} T`}</H3>
           <HStack w="full">
