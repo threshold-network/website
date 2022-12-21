@@ -15,8 +15,8 @@ btcInfo:
     in DeFi.
   image: /images/tbtc.png
   buttons:
-    - label: Launch tBTC v2 Migration Dapp
-      url: https://dashboard.keep.network/tbtc-migration/portal
+    - label: Stay Updated
+      url: https://twitter.com/TheTNetwork
       variant: EXTERNAL_SOLID
 interestedPools:
   - image1: /images/tbtc-v2.svg
