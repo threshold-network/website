@@ -8,8 +8,8 @@ hero:
   ctaButtons:
     - label: Stay Updated
       url: https://twitter.com/TheTNetwork
-    - label: Pre Launch NFT
-      url: https://galxe.com/Threshold/campaign/GCBKCUwT8Q
+    - label: Mint tBTC
+      url: https://dashboard.threshold.network/tBTC
   image: /images/tbtc-dashboard.png
 stakerRole:
   title: Threshold Staking
