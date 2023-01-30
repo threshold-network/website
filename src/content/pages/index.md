@@ -6,10 +6,10 @@ hero:
   title: The safe way to earn with your Bitcoin.
   body: Deposit and redeem BTC in DeFi without intermediaries using Threshold’s tBTC.
   ctaButtons:
-    - label: Stay Updated
-      url: https://twitter.com/TheTNetwork
     - label: Mint tBTC
       url: https://dashboard.threshold.network/tBTC
+    - label: Stay Updated
+      url: https://twitter.com/TheTNetwork
   image: /images/tbtc-dashboard.png
 stakerRole:
   title: Threshold Staking
