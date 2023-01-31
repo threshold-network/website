@@ -8,7 +8,7 @@ nav_items:
         url: /earn/staker
       - label: Liquidity Provider
         url: /earn/liquidity-provider
-      - label: BTC/tBTC User
+      - label: tBTC Bridge
         url: /earn/btc
       - label: Token Holder
         url: /earn/token-holder

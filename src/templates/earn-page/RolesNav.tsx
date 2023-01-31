@@ -39,7 +39,7 @@ const RolesNav = ({ location }) => {
         variant={pathname.includes("/btc") ? "outline" : "ghost"}
         width="full"
       >
-        BTC/tBTC {!isSmallScreen && "User"}
+        tBTC {!isSmallScreen && "Bridge"}
       </Button>
       <Button
         as={GatsbyLink}

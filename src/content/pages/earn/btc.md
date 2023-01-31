@@ -8,15 +8,15 @@ seoDescription: tBTC is Threshold’s decentralized bridge to bring BTC to the
   your Bitcoin to Ethereum in a secure and trustless way to participate in DeFi.
 btcInfo:
   rowReverse: false
-  title: BTC/ tBTC User
+  title: tBTC Bridge
   description: tBTC is Threshold’s decentralized bridge to bring BTC to the
     Ethereum network; the only permissionless solution on the market today.
     Bridge your Bitcoin to Ethereum in a secure and trustless way to participate
     in DeFi.
   image: /images/tbtc.png
   buttons:
-    - label: Stay Updated
-      url: https://twitter.com/TheTNetwork
+    - label: Mint tBTC
+      url: https://dashboard.threshold.network/tBTC
       variant: EXTERNAL_SOLID
 interestedPools:
   - image1: /images/tbtc-v2.svg

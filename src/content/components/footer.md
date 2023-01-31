@@ -23,7 +23,7 @@ columns:
       - label: Liquidity Provider
         url: /earn/liquidity-provider
         isExternal: false
-      - label: BTC/tBTC User
+      - label: tBTC Bridge
         url: /earn/btc
         isExternal: false
       - label: Token Holder
