@@ -5,10 +5,9 @@ title: Governance Page
 seoTitle: Threshold Governance
 governanceInfo:
   title: Governance
-  description:
-    "Threshold is governed by a DAO and is a three-pronged system: the
-    Token Holder DAO, Staker DAO and Elected Council. Each of these holds the
-    other two accountable, and they each hold separate responsibilities that are
+  description: "Threshold is governed by a DAO and is a two-pronged system: the
+    Token Holder DAO and Elected Council. Each of these holds the
+    other accountable, and they each hold separate responsibilities that are
     embedded in the governance structure."
   image: /images/governance.png
   buttons:

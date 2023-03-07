@@ -66,7 +66,7 @@ stages:
       title: Liquidity Provider
       description:
         Based on your quiz answers, the role suited to your preferences is
-        a liquidity provider for Threshold. To learn more abouot this role, head
+        a liquidity provider for Threshold. To learn more about this role, head
         to the page below!
       image: /images/liquidity.png
       button:

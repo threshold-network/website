@@ -25,6 +25,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: "Set up security.txt and .well-known/security.txt"
+        run: |
+          mkdir static/.well-known
+          cp static/security.txt static/.well-known/security.txt  
+
       - name: Build preview
         if: github.event_name == 'pull_request'
         run: yarn build:prefixed
@@ -36,6 +41,9 @@ jobs:
         run: yarn build
         env:
           PUBLIC_URL: /
+          POSTHOG_SUPPORT: true
+          POSTHOG_API_KEY: ${{ secrets.MAINNET_POSTHOG_API_KEY }}
+          POSTHOG_HOSTNAME_HTTP: ${{ secrets.MAINNET_POSTHOG_HOSTNAME_HTTP }}
 
       - uses: actions/upload-artifact@v3
         with:

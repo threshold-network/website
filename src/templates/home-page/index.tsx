@@ -50,6 +50,16 @@ export const query = graphql`
             label
             url
           }
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
         }
         stakerRole {
           rowReverse

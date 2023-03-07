@@ -101,12 +101,12 @@ gettingStarted:
       staking on Threshold.
     links:
       - label: How to Run a Node
-        url: https://docs.nucypher.com/en/latest/pre_application/running_a_node.html
+        url: https://docs.threshold.network/staking-and-running-a-node/running-a-node
         rightIcon: /images/external-arrow.svg
         leftIcon: /images/document.svg
       - leftIcon: /images/hardware-chip-sharp.svg
         label: Staking Providers
-        url: https://docs.nucypher.com/en/latest/pre_application/node_providers.htmlF
+        url: https://docs.threshold.network/staking-and-running-a-node/running-a-node/staking-providers
         rightIcon: /images/external-arrow.svg
       - leftIcon: /images/logo-discord.png
         label: Ask Questions in Discord
@@ -123,19 +123,11 @@ gettingStarted:
       stake on with their T stakes.
     links:
       - leftIcon: /images/t-logo.png
-        label: Threshold
-        url: https://dashboard.threshold.network/
-        rightIcon: /images/external-arrow.svg
-      - leftIcon: /images/nu-token-symbol-1-.svg
-        label: PRE
-        url: https://stake.nucypher.network/
-        rightIcon: /images/external-arrow.svg
-      - leftIcon: /images/keep-token-symbol.svg
-        label: Keep
-        url: https://dashboard.keep.network/
+        label: Threshold Access Control
+        url: https://docs.threshold.network/fundamentals/threshold-access-control
         rightIcon: /images/external-arrow.svg
       - leftIcon: /images/tbtc-v2.svg
-        label: tBTC v2 (coming soon)
-        url: https://github.com/keep-network/tbtc-v2
-        rightIcon: /images/logo-github.png
+        label: tBTC v2
+        url: https://docs.threshold.network/fundamentals/tbtc-v2
+        rightIcon: /images/external-arrow.svg
 ---

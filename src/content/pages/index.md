@@ -3,14 +3,14 @@ template: home-page
 path: /
 seoTitle: Threshold Network
 hero:
-  title: Full control over your digital assets
-  body: Threshold provides a suite of threshold cryptography services that power
-    user sovereignty on the blockchain.
+  title: The safe way to earn with your Bitcoin.
+  body: Deposit and redeem BTC in DeFi without intermediaries using Threshold’s tBTC.
   ctaButtons:
-    - label: Launch Dapp
-      url: https://dashboard.threshold.network
-    - label: Join Discord
-      url: https://discord.gg/Threshold
+    - label: Mint tBTC
+      url: https://dashboard.threshold.network/tBTC
+    - label: Stay Updated
+      url: https://twitter.com/TheTNetwork
+  image: /images/tbtc-dashboard.png
 stakerRole:
   title: Threshold Staking
   description:
@@ -42,8 +42,8 @@ btcRole:
     Ethereum network.
   image: /images/tbtc.png
   buttons:
-    - label: Mint tBTC
-      url: https://tbtc.network/
+    - label: Stay Updated
+      url: https://twitter.com/TheTNetwork
       variant: EXTERNAL_SOLID
     - label: Learn More
       url: /earn/btc
@@ -66,12 +66,12 @@ tokenHolderRole:
   bgColor: "#3c3c3c"
 migrationInfo:
   title: Do you own KEEP or NU?
-  description: Keep and NuCypher merged to form the Threshold Network. Migrate
+  description: Keep and NuCypher merged to form the Threshold Network. Upgrade
     your tokens to T!
   image: /images/legacy-tokens.png
   buttons:
-    - label: Migrate tokens
-      url: https://dashboard.threshold.network/
+    - label: Upgrade tokens
+      url: https://dashboard.threshold.network/upgrade
       variant: EXTERNAL_OUTLINE
   bgColor: "#141414"
   rowReverse: false

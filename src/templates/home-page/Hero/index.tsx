@@ -1,10 +1,10 @@
 import React, { FC } from "react"
 import { Box, Container, Stack } from "@chakra-ui/react"
 import { ButtonLg, H1, H5 } from "../../../components/Typography"
-import heroGradientCurve from "../../../static/images/hero-gradient-swoosh.png"
-import useChakraBreakpoint from "../../../hooks/useChakraBreakpoint"
+import heroGradientBg from "../../../static/images/hero-gradient-bg.png"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
+import { Image, ImageProps } from "../../../components/Image"
 
 const heroButtonProps = {
   h: "auto",
@@ -13,66 +13,73 @@ const heroButtonProps = {
   px: "40px",
 }
 
-const Hero: FC<{ title: string; body: string; ctaButtons: any }> = ({
-  title,
-  body,
-  ctaButtons,
-}) => {
-  const isMobile = useChakraBreakpoint("md")
-
+const Hero: FC<{
+  title: string
+  body: string
+  ctaButtons: any
+  image: ImageProps
+}> = ({ title, body, ctaButtons, image }) => {
   return (
     <Box
-      position="relative"
       minHeight={{ base: "740px", md: "800px" }}
-      bg="gray.900"
+      backgroundImage={heroGradientBg}
+      backgroundSize="100% 100%"
+      backgroundRepeat="no-repeat"
     >
-      <Box
-        backgroundImage={heroGradientCurve}
-        backgroundPosition={{ base: "center bottom", md: "center 250px" }}
-        backgroundSize={{ base: "contain", md: "100% 100%" }}
-        backgroundRepeat="no-repeat"
-        position="absolute"
-        left={0}
-        right={0}
-        bottom={0}
-        top={0}
-      />
       <Container
         maxW={{
           base: "640px",
           md: "960px",
-          lg: "1072px",
+          lg: "1044px",
         }}
         paddingTop={{ base: "80px", md: "135px" }}
-        px={{ base: "16px", lg: "88px" }}
       >
-        <Stack spacing={8}>
-          <H1 maxW="740px">{title}</H1>
-          <H5 color="gray.300" maxW="590px">
-            {body}
-          </H5>
-        </Stack>
+        <Box display="flex" flexDirection={{ base: "column", lg: "row" }}>
+          <Box>
+            <Stack spacing={8}>
+              <H1 maxW="740px">{title}</H1>
+              <H5 color="gray.300" maxW="590px">
+                {body}
+              </H5>
+            </Stack>
 
-        <Stack
-          mt={{ base: 12, md: 20 }}
-          direction={{ base: "column", md: "row" }}
-          spacing={12}
-        >
-          {ctaButtons.map(
-            (_: { label: string; url: string }, index: number) => {
-              return (
-                <ExternalButtonLink
-                  key={_.label}
-                  {...heroButtonProps}
-                  variant={index === 0 ? "special" : "outline"}
-                  href={_.url as ExternalLinkHref}
-                >
-                  <ButtonLg>{_.label}</ButtonLg>
-                </ExternalButtonLink>
-              )
-            }
-          )}
-        </Stack>
+            <Stack
+              mt={12}
+              direction={{ base: "column", md: "row" }}
+              spacing={12}
+            >
+              {ctaButtons.map(
+                (_: { label: string; url: string }, index: number) => {
+                  return (
+                    <ExternalButtonLink
+                      key={_.label}
+                      {...heroButtonProps}
+                      variant={index === 0 ? "special" : "outline"}
+                      href={_.url as ExternalLinkHref}
+                    >
+                      <ButtonLg>{_.label}</ButtonLg>
+                    </ExternalButtonLink>
+                  )
+                }
+              )}
+            </Stack>
+          </Box>
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="end"
+            pb={7}
+          >
+            {image && (
+              <Image
+                m={0}
+                mt={{ base: 8, lg: 0 }}
+                maxW={{ base: "600px", lg: "350px" }}
+                {...image}
+              />
+            )}
+          </Box>
+        </Box>
       </Container>
     </Box>
   )
