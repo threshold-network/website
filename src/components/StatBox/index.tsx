@@ -1,17 +1,26 @@
 import { FC } from "react"
-import { SimpleGrid, VStack } from "@chakra-ui/react"
+import {
+  SimpleGrid,
+  StackProps,
+  TextProps,
+  useMultiStyleConfig,
+  useStyleConfig,
+  VStack,
+} from "@chakra-ui/react"
 import { BodyMd, H4 } from "../Typography"
 
 interface Stat {
   amount: string
   label: string
+  variant?: string
 }
 
-const StatBox: FC<Stat> = ({ amount, label }) => {
+const StatBox: FC<Stat> = ({ amount, label, variant }) => {
+  const styles = useMultiStyleConfig("StatBox", { variant })
   return (
-    <VStack bg="gray.800" p={8} borderRadius="md">
-      <H4>{amount}</H4>
-      <BodyMd color="gray.500">{label}</BodyMd>
+    <VStack sx={styles.stack}>
+      <H4 sx={styles.mainText}>{amount}</H4>
+      <BodyMd sx={styles.secondaryText}>{label}</BodyMd>
     </VStack>
   )
 }

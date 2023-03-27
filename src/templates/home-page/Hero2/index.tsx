@@ -5,7 +5,6 @@ import heroGradientBg from "../../../static/images/hero-gradient-bg.png"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 import { Image, ImageProps } from "../../../components/Image"
-import { Analytics } from "./Analytics"
 
 const heroButtonProps = {
   h: "auto",
@@ -21,7 +20,12 @@ const Hero: FC<{
   image: ImageProps
 }> = ({ title, body, ctaButtons, image }) => {
   return (
-    <Box minHeight={{ base: "740px", md: "800px" }} bg={"gray.900"}>
+    <Box
+      minHeight={{ base: "740px", md: "800px" }}
+      backgroundImage={heroGradientBg}
+      backgroundSize="100% 100%"
+      backgroundRepeat="no-repeat"
+    >
       <Container
         maxW={{
           base: "640px",
@@ -76,7 +80,6 @@ const Hero: FC<{
             )}
           </Box>
         </Box>
-        <Analytics mt={"5rem"} />
       </Container>
     </Box>
   )
