@@ -9,25 +9,20 @@ import { TBTCStats } from "./TBTCStats"
 import { gql } from "graphql-request"
 import { TBTC_SUBGRAPH_URL } from "../../../config/subgraph"
 import useQuery from "../../../hooks/useQuery"
+import { LatestMint, LatestMints } from "./LatestMints"
 
 const BTCPageTemplate: FC<any> = ({ data }) => {
   const { btcInfo, interestedPools } = data.markdownRemark.frontmatter
 
+  // TODO: The transactions don't contain the information about the user address,
+  // that did a reveal.
   const {
     isFetching,
     data: tbtcTokenData,
     error,
   } = useQuery<{
     tbtctoken: { currentTokenHolders: string; totalSupply: string }
-    transactions: {
-      id: string
-      amount: string
-      description: string
-      txHash: string
-      to: string
-      from: string
-      timestamp: string
-    }[]
+    transactions: LatestMint[]
   }>(
     TBTC_SUBGRAPH_URL,
     gql`
@@ -36,10 +31,13 @@ const BTCPageTemplate: FC<any> = ({ data }) => {
           currentTokenHolders
           totalSupply
         }
-        transactions(where: { description: "Minting Finalized" }, first: 10) {
-          id
+        transactions(
+          where: { description: "Minting Finalized" }
+          first: 10
+          orderBy: timestamp
+          orderDirection: desc
+        ) {
           amount
-          description
           txHash
           to
           from
@@ -66,6 +64,7 @@ const BTCPageTemplate: FC<any> = ({ data }) => {
         tbtcUniqueAddresses={currentTokenHolders}
         totalMints={"100"}
       />
+      <LatestMints latestMints={transactions} mt={"6rem"} />
       <Box mt={12}>
         <H4 color="gray.300">Pools you may be interested in</H4>
         <LPCardGroup cards={interestedPools} />
