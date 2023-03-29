@@ -1,15 +1,17 @@
 import { FC } from "react"
 import { graphql } from "gatsby"
-import { Box } from "@chakra-ui/react"
+import { Box, Stack, VStack } from "@chakra-ui/react"
 import RolePageTemplate from "../RolePageTemplate"
 import SectionTemplate from "../../home-page/SectionTemplate"
-import { H4 } from "../../../components"
+import { BodyLg, H4, H5 } from "../../../components"
 import { LPCardGroup } from "../../../components/LPCard"
 import { TBTCStats } from "./TBTCStats"
 import { gql } from "graphql-request"
 import { TBTC_SUBGRAPH_URL } from "../../../config/subgraph"
 import useQuery from "../../../hooks/useQuery"
 import { LatestMint, LatestMints } from "./LatestMints"
+import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
+import { ExternalLinkHref } from "../../../components/Navbar/types"
 
 const BTCPageTemplate: FC<any> = ({ data }) => {
   const { btcInfo, interestedPools } = data.markdownRemark.frontmatter
@@ -65,6 +67,31 @@ const BTCPageTemplate: FC<any> = ({ data }) => {
         totalMints={"100"}
       />
       <LatestMints latestMints={transactions} mt={"6rem"} />
+      <Box my={"10rem"}>
+        <Stack direction={{ base: "column", lg: "row" }}>
+          <VStack alignItems={"flex-start"} justifyContent="center" pr={150}>
+            <H5>What is TBTC?</H5>
+            <BodyLg py={"2rem"} color="gray.300">
+              Check out the following tBTC intro video and subscribe to our
+              Youtube channel for more.
+            </BodyLg>
+            <ExternalButtonLink
+              href={ExternalLinkHref.THRESHOLD_YOUTUBE_SUBSCRIBE}
+              variant="outline"
+            >
+              Subscribe
+            </ExternalButtonLink>
+          </VStack>
+          <Box
+            as="iframe"
+            src="https://www.youtube.com/embed/dtLIfSy8TEE"
+            width="100%"
+            sx={{
+              aspectRatio: "16/9",
+            }}
+          />
+        </Stack>
+      </Box>
       <Box mt={12}>
         <H4 color="gray.300">Pools you may be interested in</H4>
         <LPCardGroup cards={interestedPools} />

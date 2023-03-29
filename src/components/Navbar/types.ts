@@ -26,4 +26,5 @@ export enum ExternalLinkHref {
   GOVERNANCE = "https://forum.threshold.network/",
   THRESHOLD_TOKEN = "https://curve.fi/teth",
   DAPP = "https://dashboard.threshold.network",
+  THRESHOLD_YOUTUBE_SUBSCRIBE = "https://www.youtube.com/@Threshold.Network?sub_confirmation=1",
 }
