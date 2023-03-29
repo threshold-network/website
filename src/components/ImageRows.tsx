@@ -17,6 +17,7 @@ interface ImageRowsProps {
 }
 
 export const ImageRows: FC<ImageRowsProps> = ({ data }) => {
+  // TODO: Add horizontal line after each row (except last one)
   return (
     <>
       {data.map((tbtcPartnerData, index, array) => {

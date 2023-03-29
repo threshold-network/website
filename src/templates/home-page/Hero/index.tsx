@@ -1,11 +1,18 @@
-import React, { FC } from "react"
+import { FC } from "react"
 import { Box, Container, Stack } from "@chakra-ui/react"
 import { ButtonLg, H1, H5 } from "../../../components/Typography"
-import heroGradientBg from "../../../static/images/hero-gradient-bg.png"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 import { Image, ImageProps } from "../../../components/Image"
 import { Analytics } from "./Analytics"
+import { gql } from "graphql-request"
+import {
+  TBTC_SUBGRAPH_URL,
+  T_NETWORK_SUBGRAPH_URL,
+} from "../../../config/subgraph"
+import useQuery from "../../../hooks/useQuery"
+import { exchangeAPI, formatUnits } from "../../../utils"
+import { useTTokenPrice } from "../../../contexts/TokenPriceContext"
 
 const heroButtonProps = {
   h: "auto",
@@ -20,6 +27,62 @@ const Hero: FC<{
   ctaButtons: any
   image: ImageProps
 }> = ({ title, body, ctaButtons, image }) => {
+  const {
+    isFetching: isTotalStakedFetching,
+    data: totalStakedData,
+    error: totalStakedError,
+  } = useQuery<{
+    epoches: { totalStaked: string }[]
+    minStakeAmounts: { amount: string }[]
+  }>(
+    T_NETWORK_SUBGRAPH_URL,
+    gql`
+      query {
+        epoches(orderBy: startTime, orderDirection: desc, first: 1) {
+          totalStaked
+        }
+      }
+    `
+  )
+
+  const { isFetching, data, error } = useQuery<{
+    tbtctoken: { currentTokenHolders: string; totalSupply: string }
+  }>(
+    TBTC_SUBGRAPH_URL,
+    gql`
+      query {
+        tbtctoken(id: "TBTCToken") {
+          currentTokenHolders
+          totalSupply
+        }
+        transactions(where: { description: "Minting Finalized" }) {
+          id
+          amount
+          description
+          txHash
+          to
+          from
+          timestamp
+        }
+      }
+    `
+  )
+
+  const { epoches } = totalStakedData || {
+    epoches: [{ totalStaked: "0" }],
+  }
+  const totalStaked = !error ? epoches[0].totalStaked : "0"
+  const tPrice = useTTokenPrice()
+  const totalValueStakedInUSD = exchangeAPI
+    .toUsdBalance(formatUnits(totalStaked), tPrice)
+    .toString()
+
+  const { tbtctoken } = data || {
+    tbtctoken: { currentTokenHolders: "0", totalSupply: "0" },
+  }
+  const currentTokenHolders = !error ? tbtctoken.currentTokenHolders : "0"
+  const totalSupply = !error ? tbtctoken.totalSupply : "0"
+
   return (
     <Box minHeight={{ base: "740px", md: "800px" }} bg={"gray.900"}>
       <Container
@@ -76,7 +139,13 @@ const Hero: FC<{
             )}
           </Box>
         </Box>
-        <Analytics pt={{ base: "0", lg: "5rem" }} pb={"5rem"} />
+        <Analytics
+          tbtcTtvl={totalSupply}
+          tbtcUniqueAddresses={currentTokenHolders}
+          stakingTvlInUSD={totalValueStakedInUSD}
+          pt={{ base: "0", lg: "5rem" }}
+          pb={"5rem"}
+        />
       </Container>
     </Box>
   )

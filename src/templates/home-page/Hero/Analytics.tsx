@@ -1,21 +1,34 @@
 import { Stack, Button, StackProps } from "@chakra-ui/react"
 import { FC } from "react"
 import { StatBoxGroup } from "../../../components/StatBox"
+import { formatFiatCurrencyAmount, formatTokenAmount } from "../../../utils"
 
-export const Analytics: FC<StackProps> = ({ ...restProps }) => {
+interface AnalyticsProps {
+  tbtcTtvl: string // in wei
+  tbtcUniqueAddresses: string
+  stakingTvlInUSD: string // without the `$` sign
+}
+
+export const Analytics: FC<AnalyticsProps & StackProps> = ({
+  tbtcTtvl,
+  tbtcUniqueAddresses,
+  stakingTvlInUSD,
+  ...restProps
+}) => {
   const stats = [
     {
-      amount: "420.69btc",
+      // TODOL make the `btc` word smaller
+      amount: `${formatTokenAmount(tbtcTtvl, "0,00.00")}btc`,
       label: "tBTC TVL",
       variant: "secondary",
     },
     {
-      amount: "6500",
+      amount: tbtcUniqueAddresses,
       label: "tBTC unique address",
       variant: "secondary",
     },
     {
-      amount: "$130M",
+      amount: formatFiatCurrencyAmount(stakingTvlInUSD, "0a").toUpperCase(),
       label: "Staking TVL",
       variant: "secondary",
     },
