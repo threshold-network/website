@@ -55,15 +55,6 @@ const Hero: FC<{
           currentTokenHolders
           totalSupply
         }
-        transactions(where: { description: "Minting Finalized" }) {
-          id
-          amount
-          description
-          txHash
-          to
-          from
-          timestamp
-        }
       }
     `
   )

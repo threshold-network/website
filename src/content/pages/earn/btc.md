@@ -15,7 +15,7 @@ btcInfo:
     in DeFi.
   image: /images/tbtc.png
   buttons:
-    - label: Mint tBTC
+    - label: Mint Now
       url: https://dashboard.threshold.network/tBTC
       variant: EXTERNAL_SOLID
 interestedPools:

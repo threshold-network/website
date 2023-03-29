@@ -11,7 +11,11 @@ export const StatBox = {
     },
   },
   variants: {
-    primary: {},
+    primary: {
+      stack: {
+        backgroundColor: "gray.900",
+      },
+    },
     secondary: {
       stack: {
         backgroundColor: "#181D23",

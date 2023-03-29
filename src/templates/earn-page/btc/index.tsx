@@ -5,13 +5,67 @@ import RolePageTemplate from "../RolePageTemplate"
 import SectionTemplate from "../../home-page/SectionTemplate"
 import { H4 } from "../../../components"
 import { LPCardGroup } from "../../../components/LPCard"
+import { TBTCStats } from "./TBTCStats"
+import { gql } from "graphql-request"
+import { TBTC_SUBGRAPH_URL } from "../../../config/subgraph"
+import useQuery from "../../../hooks/useQuery"
 
 const BTCPageTemplate: FC<any> = ({ data }) => {
   const { btcInfo, interestedPools } = data.markdownRemark.frontmatter
 
+  const {
+    isFetching,
+    data: tbtcTokenData,
+    error,
+  } = useQuery<{
+    tbtctoken: { currentTokenHolders: string; totalSupply: string }
+    transactions: {
+      id: string
+      amount: string
+      description: string
+      txHash: string
+      to: string
+      from: string
+      timestamp: string
+    }[]
+  }>(
+    TBTC_SUBGRAPH_URL,
+    gql`
+      query {
+        tbtctoken(id: "TBTCToken") {
+          currentTokenHolders
+          totalSupply
+        }
+        transactions(where: { description: "Minting Finalized" }, first: 10) {
+          id
+          amount
+          description
+          txHash
+          to
+          from
+          timestamp
+        }
+      }
+    `
+  )
+
+  const { tbtctoken, transactions } = tbtcTokenData || {
+    tbtctoken: { currentTokenHolders: "0", totalSupply: "0" },
+    transactions: [],
+  }
+  const currentTokenHolders = !error ? tbtctoken.currentTokenHolders : "0"
+  const totalSupply = !error ? tbtctoken.totalSupply : "0"
+
+  console.log("transactions: ", transactions)
+
   return (
     <RolePageTemplate>
       <SectionTemplate {...btcInfo} preTitle={null} columnReverse isSmallSize />
+      <TBTCStats
+        tbtcTvl={totalSupply}
+        tbtcUniqueAddresses={currentTokenHolders}
+        totalMints={"100"}
+      />
       <Box mt={12}>
         <H4 color="gray.300">Pools you may be interested in</H4>
         <LPCardGroup cards={interestedPools} />
