@@ -52,24 +52,25 @@ export const LatestMints: FC<LatestMintProps & BoxProps> = ({
             </Tr>
           </Thead>
           <Tbody>
-            {latestMints.map((mint) => {
+            {latestMints.map((mint, index) => {
+              const backgroundColor = index % 2 ? "transaprent" : "#181D23"
               return (
-                <Tr>
-                  <Td>
+                <Tr backgroundColor={backgroundColor}>
+                  <Td borderBottom={"none"}>
                     <BodyMd>{formatTokenAmount(mint.amount, "0,00.00")}</BodyMd>
                   </Td>
-                  <Td>
+                  <Td borderBottom={"none"}>
                     {/* TODO: Add IBM Plex Mono font and add image next to address */}
                     <BodyMd fontFamily={"Courier New"}>
                       {shortenAddress(mint.from)}
                     </BodyMd>
                   </Td>
-                  <Td>
+                  <Td borderBottom={"none"}>
                     <BodyMd fontFamily={"Courier New"}>
                       {shortenAddress(mint.txHash)}
                     </BodyMd>
                   </Td>
-                  <Td textAlign={"right"}>
+                  <Td borderBottom={"none"} textAlign={"right"}>
                     <BodyMd>{getRelativeTime(Number(mint.timestamp))}</BodyMd>
                   </Td>
                 </Tr>
