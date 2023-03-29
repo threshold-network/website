@@ -870,6 +870,49 @@ collections:
                 ],
             }
           - {
+              label: "TBTC Partners Section",
+              name: "tbtcPartners",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Minters",
+                    name: "minters",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Name, name: name, widget: string },
+                        {
+                          label: Image,
+                          name: image,
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
+                      ],
+                  },
+                  {
+                    label: "Guardians",
+                    name: "guardians",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Name, name: name, widget: string },
+                        {
+                          label: Image,
+                          name: image,
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
               label: "Liquidity Pools",
               name: "interestedPools",
               widget: "list",

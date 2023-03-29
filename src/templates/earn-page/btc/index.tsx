@@ -12,9 +12,14 @@ import useQuery from "../../../hooks/useQuery"
 import { LatestMint, LatestMints } from "./LatestMints"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
+import { TBTCPartners } from "../../home-page/BTCRole/tBTCPartners"
+import { PageSection } from "../../../components/PageSection"
 
 const BTCPageTemplate: FC<any> = ({ data }) => {
-  const { btcInfo, interestedPools } = data.markdownRemark.frontmatter
+  const { btcInfo, tbtcPartners, interestedPools } =
+    data.markdownRemark.frontmatter
+
+  const { minters, guardians } = tbtcPartners
 
   // TODO: The transactions don't contain the information about the user address,
   // that did a reveal.
@@ -59,44 +64,61 @@ const BTCPageTemplate: FC<any> = ({ data }) => {
   console.log("transactions: ", transactions)
 
   return (
-    <RolePageTemplate>
-      <SectionTemplate {...btcInfo} preTitle={null} columnReverse isSmallSize />
-      <TBTCStats
-        tbtcTvl={totalSupply}
-        tbtcUniqueAddresses={currentTokenHolders}
-        totalMints={"100"}
-      />
-      <LatestMints latestMints={transactions} mt={"6rem"} />
-      <Box my={"10rem"}>
-        <Stack direction={{ base: "column", lg: "row" }}>
-          <VStack alignItems={"flex-start"} justifyContent="center" pr={150}>
-            <H5>What is TBTC?</H5>
-            <BodyLg py={"2rem"} color="gray.300">
-              Check out the following tBTC intro video and subscribe to our
-              Youtube channel for more.
-            </BodyLg>
-            <ExternalButtonLink
-              href={ExternalLinkHref.THRESHOLD_YOUTUBE_SUBSCRIBE}
-              variant="outline"
+    <>
+      <RolePageTemplate>
+        <SectionTemplate
+          {...btcInfo}
+          preTitle={null}
+          columnReverse
+          isSmallSize
+        />
+        <TBTCStats
+          tbtcTvl={totalSupply}
+          tbtcUniqueAddresses={currentTokenHolders}
+          totalMints={"100"}
+        />
+        <LatestMints latestMints={transactions} mt={"6rem"} />
+        <Box my={{ base: "3rem", xl: "10rem" }}>
+          <Stack direction={{ base: "column", lg: "row" }}>
+            <VStack
+              alignItems={"flex-start"}
+              justifyContent="center"
+              pr={150}
+              mb={"2rem"}
             >
-              Subscribe
-            </ExternalButtonLink>
-          </VStack>
-          <Box
-            as="iframe"
-            src="https://www.youtube.com/embed/dtLIfSy8TEE"
-            width="100%"
-            sx={{
-              aspectRatio: "16/9",
-            }}
-          />
-        </Stack>
-      </Box>
-      <Box mt={12}>
-        <H4 color="gray.300">Pools you may be interested in</H4>
-        <LPCardGroup cards={interestedPools} />
-      </Box>
-    </RolePageTemplate>
+              <H5>What is TBTC?</H5>
+              <BodyLg py={"2rem"} color="gray.300">
+                Check out the following tBTC intro video and subscribe to our
+                Youtube channel for more.
+              </BodyLg>
+              <ExternalButtonLink
+                href={ExternalLinkHref.THRESHOLD_YOUTUBE_SUBSCRIBE}
+                variant="outline"
+              >
+                Subscribe
+              </ExternalButtonLink>
+            </VStack>
+            <Box
+              as="iframe"
+              src="https://www.youtube.com/embed/dtLIfSy8TEE"
+              width="100%"
+              sx={{
+                aspectRatio: "16/9",
+              }}
+            />
+          </Stack>
+        </Box>
+      </RolePageTemplate>
+      <PageSection backgroundColor={"#0A0C0F"} withSmallPadding>
+        <TBTCPartners minters={minters} guardians={guardians} />
+      </PageSection>
+      <PageSection backgroundColor={"gray.900"} withSmallPadding>
+        <Box>
+          <H4 color="gray.300">Pools you may be interested in</H4>
+          <LPCardGroup cards={interestedPools} />
+        </Box>
+      </PageSection>
+    </>
   )
 }
 
@@ -125,6 +147,34 @@ export const query = graphql`
             label
             url
             variant
+          }
+        }
+        tbtcPartners {
+          minters {
+            name
+            image {
+              id
+              relativePath
+              internal {
+                mediaType
+              }
+              childImageSharp {
+                gatsbyImageData(width: 200)
+              }
+            }
+          }
+          guardians {
+            name
+            image {
+              id
+              relativePath
+              internal {
+                mediaType
+              }
+              childImageSharp {
+                gatsbyImageData(width: 200)
+              }
+            }
           }
         }
         interestedPools {
