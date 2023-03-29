@@ -76,7 +76,7 @@ const Hero: FC<{
             )}
           </Box>
         </Box>
-        <Analytics mt={"5rem"} />
+        <Analytics pt={{ base: "0", lg: "5rem" }} pb={"5rem"} />
       </Container>
     </Box>
   )

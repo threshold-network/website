@@ -7,13 +7,14 @@ import MigrationInfoSection from "./MigrationInfoSection"
 import HarnessThePower from "./HarnessThePower"
 import JoinTheCommunity from "./JoinTheCommunity"
 import ActiveCommunity from "./ActiveCommunity"
+import { BTCRole } from "./BTCRole"
 
 const SplashPageTemplate: FC<any> = ({ data }) => {
   const {
     hero,
+    btcRole,
     stakerRole,
     lpRole,
-    btcRole,
     tokenHolderRole,
     migrationInfo,
     harnessThePower,
@@ -22,12 +23,14 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
   } = data.markdownRemark.frontmatter
   const proposals = data.allProposals
 
+  console.log("btcRole: ", btcRole)
+
   return (
     <>
       <Hero {...hero} />
+      <BTCRole {...btcRole} bgColor="#0A0C0F" />
       <SectionTemplate {...stakerRole} bgColor="gray.900" />
       <SectionTemplate {...lpRole} bgColor="#181D22" />
-      <SectionTemplate {...btcRole} bgColor="#0A0C0F" />
       <SectionTemplate {...tokenHolderRole} bgColor="#161A1F" />
       <TakeTheQuiz topBgColor="#161A1F" bottomBgColor="#181D22" />
       <MigrationInfoSection {...migrationInfo} bgColor="#181D22" />
@@ -61,6 +64,52 @@ export const query = graphql`
             }
           }
         }
+        btcRole {
+          rowReverse
+          title
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
+            label
+            url
+            variant
+          }
+          minters {
+            name
+            image {
+              id
+              relativePath
+              internal {
+                mediaType
+              }
+              childImageSharp {
+                gatsbyImageData(width: 200)
+              }
+            }
+          }
+          guardians {
+            name
+            image {
+              id
+              relativePath
+              internal {
+                mediaType
+              }
+              childImageSharp {
+                gatsbyImageData(width: 200)
+              }
+            }
+          }
+        }
         stakerRole {
           rowReverse
           title
@@ -82,26 +131,6 @@ export const query = graphql`
           }
         }
         lpRole {
-          rowReverse
-          title
-          description
-          image {
-            id
-            relativePath
-            internal {
-              mediaType
-            }
-            childImageSharp {
-              gatsbyImageData(width: 200)
-            }
-          }
-          buttons {
-            label
-            url
-            variant
-          }
-        }
-        btcRole {
           rowReverse
           title
           description
