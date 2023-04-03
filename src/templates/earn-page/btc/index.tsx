@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { Box, Stack, VStack } from "@chakra-ui/react"
 import RolePageTemplate from "../RolePageTemplate"
 import SectionTemplate from "../../home-page/SectionTemplate"
-import { BodyLg, H4, H5 } from "../../../components"
+import { BodyLg, H3, H4, H5 } from "../../../components"
 import { LPCardGroup } from "../../../components/LPCard"
 import { TBTCStats } from "./TBTCStats"
 import { gql } from "graphql-request"
@@ -14,6 +14,7 @@ import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 import { TBTCPartners } from "../../home-page/BTCRole/tBTCPartners"
 import { PageSection } from "../../../components/PageSection"
+import BlogPosts from "../../press-page/BlogPosts"
 
 const BTCPageTemplate: FC<any> = ({ data }) => {
   const { btcInfo, tbtcPartners, interestedPools } =
@@ -111,6 +112,14 @@ const BTCPageTemplate: FC<any> = ({ data }) => {
       </RolePageTemplate>
       <PageSection backgroundColor={"#0A0C0F"} withSmallPadding>
         <TBTCPartners minters={minters} guardians={guardians} />
+      </PageSection>
+      <PageSection backgroundColor={"gray.900"} withSmallPadding>
+        <Box>
+          <BlogPosts
+            title={"Learn more about tBTC"}
+            subTitle={"These blogs highlight the latest news about tBTC."}
+          />
+        </Box>
       </PageSection>
       <PageSection backgroundColor={"gray.900"} withSmallPadding>
         <Box>

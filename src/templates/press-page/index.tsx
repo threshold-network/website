@@ -32,7 +32,10 @@ const PressPageTemplate: FC<any> = ({ data }) => {
           ({ image }: { image: ImageProps }) => image
         )}
       />
-      <BlogPosts />
+      <BlogPosts
+        title={"Blog Highlights"}
+        subTitle={"Hand Selected posts by the Threshold team."}
+      />
     </PageSection>
   )
 }
