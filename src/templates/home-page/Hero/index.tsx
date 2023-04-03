@@ -56,6 +56,7 @@ const Hero: FC<{
                       {...heroButtonProps}
                       variant={index === 0 ? "special" : "outline"}
                       href={_.url as ExternalLinkHref}
+                      data-ph-capture-attribute-button-name={`${_.label} (${window.location.href})`}
                     >
                       <ButtonLg>{_.label}</ButtonLg>
                     </ExternalButtonLink>

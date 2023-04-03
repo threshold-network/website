@@ -73,6 +73,7 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
                 key={_.label}
                 cmsVariant={_.variant as ButtonType}
                 url={_.url}
+                data-ph-capture-attribute-button-name={`${_.label} (${window.location.href})`}
               >
                 {_.label}
               </CmsButtonLink>
