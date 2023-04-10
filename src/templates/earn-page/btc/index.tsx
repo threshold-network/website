@@ -62,8 +62,6 @@ const BTCPageTemplate: FC<any> = ({ data }) => {
   const currentTokenHolders = !error ? tbtctoken.currentTokenHolders : "0"
   const totalSupply = !error ? tbtctoken.totalSupply : "0"
 
-  console.log("transactions: ", transactions)
-
   return (
     <>
       <RolePageTemplate>
