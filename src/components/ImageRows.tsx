@@ -20,7 +20,7 @@ export const ImageRows: FC<ImageRowsProps> = ({ data }) => {
   // TODO: Add horizontal line after each row (except last one)
   return (
     <>
-      {data.map((tbtcPartnerData, index, array) => {
+      {data.map((item, index, array) => {
         return (
           <Stack direction={{ base: "column", xl: "row" }}>
             <Stack
@@ -31,7 +31,7 @@ export const ImageRows: FC<ImageRowsProps> = ({ data }) => {
                 width={{ base: "500px", xl: "150px" }}
                 color={{ base: "brand.300", xl: "gray.300" }}
               >
-                {tbtcPartnerData.title}
+                {item.title}
               </LabelMd>
               <Show below={"xl"}>
                 <Divider
@@ -42,7 +42,7 @@ export const ImageRows: FC<ImageRowsProps> = ({ data }) => {
               </Show>
             </Stack>
             <Flex wrap={"wrap"}>
-              {tbtcPartnerData.images.map((imageData) => {
+              {item.images.map((imageData) => {
                 return (
                   <Image
                     {...imageData.image}
