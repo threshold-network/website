@@ -1,3 +1,13 @@
+// Define an array of time units, each with a name and number of seconds
+const timeUnits = [
+  { unit: "year", seconds: 31536000 },
+  { unit: "month", seconds: 2592000 },
+  { unit: "day", seconds: 86400 },
+  { unit: "hour", seconds: 3600 },
+  { unit: "minute", seconds: 60 },
+  { unit: "second", seconds: 1 },
+]
+
 /**
  * Returns a string based on a give timestamp that represents relative time e.g.:
  * - just now
@@ -12,16 +22,6 @@ export const getRelativeTime = (timestamp: number): string => {
 
   // Calculate the time difference in seconds
   const secondsAgo = now - timestamp
-
-  // Define an array of time units, each with a name and number of seconds
-  const timeUnits = [
-    { unit: "year", seconds: 31536000 },
-    { unit: "month", seconds: 2592000 },
-    { unit: "day", seconds: 86400 },
-    { unit: "hour", seconds: 3600 },
-    { unit: "minute", seconds: 60 },
-    { unit: "second", seconds: 1 },
-  ]
 
   // Loop through the time units (in a descending order) and divide `secondsAgo`
   // by `seconds` that represents that time unit. If the result is greater or
