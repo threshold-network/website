@@ -51,7 +51,7 @@ export const TBTCStats: FC<TBTCStatsProps> = ({
 
   return (
     <>
-      <H3 fontWeight={600} mb={"2rem"}>
+      <H3 fontWeight={600} mb={"8"}>
         tBTC Stats
       </H3>
       <Card>
