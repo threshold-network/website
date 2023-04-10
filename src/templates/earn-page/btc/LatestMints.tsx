@@ -56,9 +56,11 @@ export const LatestMints: FC<LatestMintProps & BoxProps> = ({
           </Thead>
           <Tbody>
             {latestMints.map((mint, index) => {
-              const backgroundColor = index % 2 ? "transaprent" : "#181D23"
               return (
-                <Tr backgroundColor={backgroundColor}>
+                <Tr
+                  _odd={{ backgroundColor: "#181D23" }}
+                  _even={{ backgroundColor: "transparent" }}
+                >
                   <Td borderBottom={"none"}>
                     <BodyMd>{formatTokenAmount(mint.amount, "0,00.00")}</BodyMd>
                   </Td>
