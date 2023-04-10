@@ -30,7 +30,8 @@ export const getRelativeTime = (timestamp: number): string => {
     const unitCount = Math.floor(secondsAgo / seconds)
     if (unitCount >= 1) {
       // Return a string representing the time difference in the chosen unit
-      return `${unitCount} ${unit}${unitCount > 1 ? "s" : ""} ago`
+      const rtf1 = new Intl.RelativeTimeFormat("en", { style: "long" })
+      return rtf1.format(-unitCount, unit as Intl.RelativeTimeFormatUnit)
     }
   }
 
