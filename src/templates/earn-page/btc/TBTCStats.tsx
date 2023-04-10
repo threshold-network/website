@@ -1,7 +1,9 @@
 import { Button, Stack, VStack } from "@chakra-ui/react"
 import { FC } from "react"
 import { H2, H3, LabelMd } from "../../../components"
+import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import Card from "../../../components/Card"
+import { ExternalLinkHref } from "../../../components/Navbar/types"
 import { StatBoxGroup } from "../../../components/StatBox"
 import { useTBTCTokenPrice } from "../../../contexts/TokenPriceContext"
 import {
@@ -63,14 +65,14 @@ export const TBTCStats: FC<TBTCStatsProps> = ({
             </LabelMd>
             <H2 mt={"1rem"}>{`${tBTCTvlInUSDFormatted} USD`}</H2>
           </VStack>
-
-          <Button
-            size="lg"
+          <ExternalButtonLink
+            href={ExternalLinkHref.DUNE_DASHBOARD_TBTC}
             variant="outline"
+            size="lg"
             alignSelf={{ xs: "center", base: "flex-end", lg: "flex-start" }}
           >
             View Dune Analytics Dashboard
-          </Button>
+          </ExternalButtonLink>
         </Stack>
         <StatBoxGroup stats={stats} />
       </Card>
