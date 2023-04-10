@@ -11,8 +11,11 @@ import {
 } from "@chakra-ui/react"
 import { FC } from "react"
 import { BodyMd, H5, LabelSm } from "../../../components"
-import { formatTokenAmount, shortenAddress } from "../../../utils"
-import { getRelativeTime } from "../../../utils/time"
+import {
+  formatTokenAmount,
+  getRelativeTime,
+  shortenAddress,
+} from "../../../utils"
 
 export interface LatestMint {
   amount: string
