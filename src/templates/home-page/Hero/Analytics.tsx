@@ -1,5 +1,7 @@
-import { Stack, Button, StackProps } from "@chakra-ui/react"
+import { Stack, StackProps } from "@chakra-ui/react"
 import { FC } from "react"
+import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
+import { ExternalLinkHref } from "../../../components/Navbar/types"
 import { StatBoxGroup } from "../../../components/StatBox"
 import { formatFiatCurrencyAmount, formatTokenAmount } from "../../../utils"
 
@@ -37,9 +39,15 @@ export const Analytics: FC<AnalyticsProps & StackProps> = ({
   return (
     <Stack spacing={"10"} {...restProps}>
       <StatBoxGroup stats={stats} />
-      <Button size="lg" variant="outline" alignSelf={"center"} mt={"2rem"}>
+      <ExternalButtonLink
+        href={ExternalLinkHref.DUNE_DASHBOARD_TBTC}
+        variant="outline"
+        size="lg"
+        alignSelf={"center"}
+        mt={"2rem"}
+      >
         View Dune Analytics Dashboard
-      </Button>
+      </ExternalButtonLink>
     </Stack>
   )
 }
