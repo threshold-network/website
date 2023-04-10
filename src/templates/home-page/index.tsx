@@ -23,8 +23,6 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
   } = data.markdownRemark.frontmatter
   const proposals = data.allProposals
 
-  console.log("btcRole: ", btcRole)
-
   return (
     <>
       <Hero {...hero} />
