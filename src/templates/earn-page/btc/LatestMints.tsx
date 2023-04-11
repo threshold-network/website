@@ -18,11 +18,16 @@ import {
 } from "../../../utils"
 
 export interface LatestMint {
-  amount: string
-  txHash: string
-  to: string
-  from: string
+  id: string // txHash
   timestamp: string
+  deposits: [
+    {
+      actualAmountReceived: string
+      user: {
+        id: string
+      }
+    }
+  ]
 }
 
 interface LatestMintProps {
@@ -60,19 +65,25 @@ export const LatestMints: FC<LatestMintProps & BoxProps> = ({
                 <Tr
                   _odd={{ backgroundColor: "#181D23" }}
                   _even={{ backgroundColor: "transparent" }}
+                  key={`latest-mints-${mint.id}`}
                 >
                   <Td borderBottom={"none"}>
-                    <BodyMd>{formatTokenAmount(mint.amount, "0,00.00")}</BodyMd>
+                    <BodyMd>
+                      {formatTokenAmount(
+                        mint.deposits[0].actualAmountReceived,
+                        "0,00.00"
+                      )}
+                    </BodyMd>
                   </Td>
                   <Td borderBottom={"none"}>
                     {/* TODO: Add IBM Plex Mono font and add image next to address */}
                     <BodyMd fontFamily={"Courier New"}>
-                      {shortenAddress(mint.from)}
+                      {shortenAddress(mint.deposits[0].user.id)}
                     </BodyMd>
                   </Td>
                   <Td borderBottom={"none"}>
                     <BodyMd fontFamily={"Courier New"}>
-                      {shortenAddress(mint.txHash)}
+                      {shortenAddress(mint.id)}
                     </BodyMd>
                   </Td>
                   <Td borderBottom={"none"} textAlign={"right"}>

@@ -41,15 +41,18 @@ const BTCPageTemplate: FC<any> = ({ data }) => {
         }
         transactions(
           where: { description: "Minting Finalized" }
-          first: 10
           orderBy: timestamp
           orderDirection: desc
+          first: 10
         ) {
-          amount
-          txHash
-          to
-          from
+          id
           timestamp
+          deposits {
+            actualAmountReceived
+            user {
+              id
+            }
+          }
         }
       }
     `
