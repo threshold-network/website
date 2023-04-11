@@ -37,8 +37,10 @@ const Hero: FC<{
         <Box display="flex" flexDirection={{ base: "column", lg: "row" }}>
           <Box>
             <Stack spacing={8}>
-              <H1 maxW="740px">{title}</H1>
-              <H5 color="gray.300" maxW="590px">
+              <H1 maxW="740px" color="white">
+                {title}
+              </H1>
+              <H5 color="gray.50" maxW="590px">
                 {body}
               </H5>
             </Stack>
