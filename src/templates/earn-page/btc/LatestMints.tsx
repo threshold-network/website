@@ -76,13 +76,12 @@ export const LatestMints: FC<LatestMintProps & BoxProps> = ({
                     </BodyMd>
                   </Td>
                   <Td borderBottom={"none"}>
-                    {/* TODO: Add IBM Plex Mono font and add image next to address */}
-                    <BodyMd fontFamily={"Courier New"}>
+                    <BodyMd fontFamily={"IBM Plex Mono"} fontWeight={"400"}>
                       {shortenAddress(mint.deposits[0].user.id)}
                     </BodyMd>
                   </Td>
                   <Td borderBottom={"none"}>
-                    <BodyMd fontFamily={"Courier New"}>
+                    <BodyMd fontFamily={"IBM Plex Mono"} fontWeight={"400"}>
                       {shortenAddress(mint.id)}
                     </BodyMd>
                   </Td>
