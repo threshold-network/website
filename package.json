@@ -19,6 +19,7 @@
     "axios": "^0.26.1",
     "bignumber.js": "^9.0.2",
     "chart.js": "^3.7.1",
+    "ethereum-blockies-base64": "^1.0.2",
     "ethers": "^5.6.4",
     "focus-visible": "^5.2.0",
     "framer-motion": "^6.2.8",

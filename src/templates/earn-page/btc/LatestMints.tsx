@@ -1,6 +1,7 @@
 import {
   Box,
   BoxProps,
+  HStack,
   Table,
   TableContainer,
   Tbody,
@@ -11,6 +12,7 @@ import {
 } from "@chakra-ui/react"
 import { FC } from "react"
 import { BodyMd, H5, LabelSm } from "../../../components"
+import Identicon from "../../../components/Identicon"
 import {
   formatTokenAmount,
   getRelativeTime,
@@ -76,9 +78,12 @@ export const LatestMints: FC<LatestMintProps & BoxProps> = ({
                     </BodyMd>
                   </Td>
                   <Td borderBottom={"none"}>
-                    <BodyMd fontFamily={"IBM Plex Mono"} fontWeight={"400"}>
-                      {shortenAddress(mint.deposits[0].user.id)}
-                    </BodyMd>
+                    <HStack>
+                      <Identicon address={mint.deposits[0].user.id} />
+                      <BodyMd fontFamily={"IBM Plex Mono"} fontWeight={"400"}>
+                        {shortenAddress(mint.deposits[0].user.id)}
+                      </BodyMd>
+                    </HStack>
                   </Td>
                   <Td borderBottom={"none"}>
                     <BodyMd fontFamily={"IBM Plex Mono"} fontWeight={"400"}>
