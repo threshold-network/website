@@ -65,7 +65,7 @@ export const LatestMints: FC<LatestMintProps & BoxProps> = ({
             {latestMints.map((mint, index) => {
               return (
                 <Tr
-                  _odd={{ backgroundColor: "#181D23" }}
+                  _odd={{ backgroundColor: "blue.900" }}
                   _even={{ backgroundColor: "transparent" }}
                   key={`latest-mints-${mint.id}`}
                 >

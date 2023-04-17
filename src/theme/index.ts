@@ -48,6 +48,9 @@ const colors = {
     800: "#323A47",
     900: "#1D2229",
   },
+  blue: {
+    900: "#181D23", // very dark blue
+  },
 }
 
 const theme = extendTheme({

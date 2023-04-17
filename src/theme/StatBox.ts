@@ -18,7 +18,7 @@ export const StatBox = {
     },
     secondary: {
       stack: {
-        backgroundColor: "#181D23",
+        backgroundColor: "blue.900",
         border: "1px solid",
         borderColor: "gray.700",
       },
