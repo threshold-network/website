@@ -17,6 +17,7 @@ export interface FooterButton {
   label: string
   url: string
   variant: string
+  posthogLabel?: string
 }
 
 export interface RoleTemplateProps extends BoxProps {
@@ -68,16 +69,23 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
           )}
 
           <Stack mt={10} direction={{ base: "column", md: "row" }} spacing={8}>
-            {buttons.map((_: FooterButton, i) => (
-              <CmsButtonLink
-                key={_.label}
-                cmsVariant={_.variant as ButtonType}
-                url={_.url}
-                data-ph-capture-attribute-button-name={`${_.label} (${window.location.href})`}
-              >
-                {_.label}
-              </CmsButtonLink>
-            ))}
+            {buttons.map((_: FooterButton, i) => {
+              const additionalProps = {} as any
+              if (_.posthogLabel) {
+                additionalProps["data-ph-capture-attribute-button-name"] =
+                  _.posthogLabel
+              }
+              return (
+                <CmsButtonLink
+                  key={_.label}
+                  cmsVariant={_.variant as ButtonType}
+                  url={_.url}
+                  {...additionalProps}
+                >
+                  {_.label}
+                </CmsButtonLink>
+              )
+            })}
           </Stack>
         </SectionTextContainer>
         {image && <SectionImage {...image} />}

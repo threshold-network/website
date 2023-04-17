@@ -49,14 +49,23 @@ const Hero: FC<{
               spacing={12}
             >
               {ctaButtons.map(
-                (_: { label: string; url: string }, index: number) => {
+                (
+                  _: { label: string; url: string; posthogLabel: string },
+                  index: number
+                ) => {
+                  const additionalProps = {} as any
+                  if (_.posthogLabel) {
+                    additionalProps["data-ph-capture-attribute-button-name"] =
+                      _.posthogLabel
+                  }
+
                   return (
                     <ExternalButtonLink
                       key={_.label}
                       {...heroButtonProps}
                       variant={index === 0 ? "special" : "outline"}
                       href={_.url as ExternalLinkHref}
-                      data-ph-capture-attribute-button-name={`${_.label} (${window.location.href})`}
+                      {...additionalProps}
                     >
                       <ButtonLg>{_.label}</ButtonLg>
                     </ExternalButtonLink>
