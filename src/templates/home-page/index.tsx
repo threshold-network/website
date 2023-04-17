@@ -120,6 +120,7 @@ export const query = graphql`
             label
             url
             variant
+            posthogLabel
           }
         }
         tokenHolderRole {
