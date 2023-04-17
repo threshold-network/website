@@ -55,9 +55,11 @@ const Hero: FC<{
                   index: number
                 ) => {
                   return (
-                    <TrackedComponent posthogLabel={_.posthogLabel}>
+                    <TrackedComponent
+                      posthogLabel={_.posthogLabel}
+                      key={_.label}
+                    >
                       <ExternalButtonLink
-                        key={_.label}
                         {...heroButtonProps}
                         variant={index === 0 ? "special" : "outline"}
                         href={_.url as ExternalLinkHref}

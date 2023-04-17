@@ -72,9 +72,8 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
           <Stack mt={10} direction={{ base: "column", md: "row" }} spacing={8}>
             {buttons.map((_: FooterButton, i) => {
               return (
-                <TrackedComponent posthogLabel={_.posthogLabel}>
+                <TrackedComponent posthogLabel={_.posthogLabel} key={_.label}>
                   <CmsButtonLink
-                    key={_.label}
                     cmsVariant={_.variant as ButtonType}
                     url={_.url}
                   >
