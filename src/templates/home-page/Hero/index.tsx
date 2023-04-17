@@ -5,6 +5,7 @@ import heroGradientBg from "../../../static/images/hero-gradient-bg.png"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 import { Image, ImageProps } from "../../../components/Image"
+import { TrackedComponent } from "../../../components/Posthog/TrackedComponents"
 
 const heroButtonProps = {
   h: "auto",
@@ -53,22 +54,17 @@ const Hero: FC<{
                   _: { label: string; url: string; posthogLabel: string },
                   index: number
                 ) => {
-                  const additionalProps = {} as any
-                  if (_.posthogLabel) {
-                    additionalProps["data-ph-capture-attribute-button-name"] =
-                      _.posthogLabel
-                  }
-
                   return (
-                    <ExternalButtonLink
-                      key={_.label}
-                      {...heroButtonProps}
-                      variant={index === 0 ? "special" : "outline"}
-                      href={_.url as ExternalLinkHref}
-                      {...additionalProps}
-                    >
-                      <ButtonLg>{_.label}</ButtonLg>
-                    </ExternalButtonLink>
+                    <TrackedComponent posthogLabel={_.posthogLabel}>
+                      <ExternalButtonLink
+                        key={_.label}
+                        {...heroButtonProps}
+                        variant={index === 0 ? "special" : "outline"}
+                        href={_.url as ExternalLinkHref}
+                      >
+                        <ButtonLg>{_.label}</ButtonLg>
+                      </ExternalButtonLink>
+                    </TrackedComponent>
                   )
                 }
               )}

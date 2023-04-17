@@ -12,6 +12,7 @@ import {
   SectionTextContainer,
 } from "../../components/PageSection"
 import { ImageProps } from "../../components"
+import { TrackedComponent } from "../../components/Posthog/TrackedComponents"
 
 export interface FooterButton {
   label: string
@@ -70,20 +71,16 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
 
           <Stack mt={10} direction={{ base: "column", md: "row" }} spacing={8}>
             {buttons.map((_: FooterButton, i) => {
-              const additionalProps = {} as any
-              if (_.posthogLabel) {
-                additionalProps["data-ph-capture-attribute-button-name"] =
-                  _.posthogLabel
-              }
               return (
-                <CmsButtonLink
-                  key={_.label}
-                  cmsVariant={_.variant as ButtonType}
-                  url={_.url}
-                  {...additionalProps}
-                >
-                  {_.label}
-                </CmsButtonLink>
+                <TrackedComponent posthogLabel={_.posthogLabel}>
+                  <CmsButtonLink
+                    key={_.label}
+                    cmsVariant={_.variant as ButtonType}
+                    url={_.url}
+                  >
+                    {_.label}
+                  </CmsButtonLink>
+                </TrackedComponent>
               )
             })}
           </Stack>
