@@ -18,6 +18,7 @@ btcInfo:
     - label: Mint tBTC
       url: https://dashboard.threshold.network/tBTC
       variant: EXTERNAL_SOLID
+      posthogLabel: Mint tBTC [btcInfo] (/earn/btc)
 interestedPools:
   - image1: /images/tbtc-v2.svg
     image2: /images/tbtc-v2.svg

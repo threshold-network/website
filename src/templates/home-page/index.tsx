@@ -49,6 +49,7 @@ export const query = graphql`
           ctaButtons {
             label
             url
+            posthogLabel
           }
           image {
             id
@@ -119,6 +120,7 @@ export const query = graphql`
             label
             url
             variant
+            posthogLabel
           }
         }
         tokenHolderRole {
