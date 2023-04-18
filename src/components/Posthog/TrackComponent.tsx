@@ -1,11 +1,11 @@
 import React, { ReactNode, FC, ReactElement } from "react"
 
-interface TrackedComponentProps {
+interface TrackComponentProps {
   posthogLabel?: string
   children: ReactNode
 }
 
-export const TrackedComponent: FC<TrackedComponentProps> = ({
+export const TrackComponent: FC<TrackComponentProps> = ({
   posthogLabel,
   children,
 }) => {

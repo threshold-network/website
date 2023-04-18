@@ -5,7 +5,7 @@ import heroGradientBg from "../../../static/images/hero-gradient-bg.png"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 import { Image, ImageProps } from "../../../components/Image"
-import { TrackedComponent } from "../../../components/Posthog/TrackedComponents"
+import { TrackComponent } from "../../../components/Posthog/TrackComponent"
 
 const heroButtonProps = {
   h: "auto",
@@ -55,10 +55,7 @@ const Hero: FC<{
                   index: number
                 ) => {
                   return (
-                    <TrackedComponent
-                      posthogLabel={_.posthogLabel}
-                      key={_.label}
-                    >
+                    <TrackComponent posthogLabel={_.posthogLabel} key={_.label}>
                       <ExternalButtonLink
                         {...heroButtonProps}
                         variant={index === 0 ? "special" : "outline"}
@@ -66,7 +63,7 @@ const Hero: FC<{
                       >
                         <ButtonLg>{_.label}</ButtonLg>
                       </ExternalButtonLink>
-                    </TrackedComponent>
+                    </TrackComponent>
                   )
                 }
               )}
