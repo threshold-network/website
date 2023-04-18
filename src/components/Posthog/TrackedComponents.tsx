@@ -10,14 +10,10 @@ export const TrackedComponent: FC<TrackedComponentProps> = ({
   children,
 }) => {
   const child = React.Children.only(children)
-  const renderChildren = () => {
-    const additionalProps = {} as any
-    if (posthogLabel) {
-      additionalProps["data-ph-capture-attribute-button-name"] = posthogLabel
-      return React.cloneElement(child as ReactElement, additionalProps)
-    }
-    return child
-  }
 
-  return <>{renderChildren()}</>
+  return posthogLabel
+    ? React.cloneElement(child as ReactElement, {
+        "data-ph-capture-attribute-button-name": posthogLabel,
+      })
+    : (child as ReactElement)
 }
