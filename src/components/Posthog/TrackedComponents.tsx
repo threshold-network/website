@@ -1,5 +1,4 @@
-import React, { ReactNode } from "react"
-import { FC } from "react"
+import React, { ReactNode, FC } from "react"
 
 interface TrackedComponentProps {
   posthogLabel?: string
