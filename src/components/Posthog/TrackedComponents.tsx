@@ -1,4 +1,4 @@
-import React, { ReactNode, FC } from "react"
+import React, { ReactNode, FC, ReactElement } from "react"
 
 interface TrackedComponentProps {
   posthogLabel?: string
@@ -11,12 +11,10 @@ export const TrackedComponent: FC<TrackedComponentProps> = ({
 }) => {
   const child = React.Children.only(children)
   const renderChildren = () => {
-    if (React.isValidElement(child)) {
-      const additionalProps = {} as any
-      if (posthogLabel) {
-        additionalProps["data-ph-capture-attribute-button-name"] = posthogLabel
-        return React.cloneElement(child, additionalProps)
-      }
+    const additionalProps = {} as any
+    if (posthogLabel) {
+      additionalProps["data-ph-capture-attribute-button-name"] = posthogLabel
+      return React.cloneElement(child as ReactElement, additionalProps)
     }
     return child
   }
