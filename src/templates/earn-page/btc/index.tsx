@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { Box, Stack, VStack } from "@chakra-ui/react"
 import RolePageTemplate from "../RolePageTemplate"
 import SectionTemplate from "../../home-page/SectionTemplate"
-import { BodyLg, H3, H4, H5 } from "../../../components"
+import { BodyLg, H4, H5 } from "../../../components"
 import { LPCardGroup } from "../../../components/LPCard"
 import { TBTCStats } from "./TBTCStats"
 import { gql } from "graphql-request"
@@ -15,12 +15,14 @@ import { ExternalLinkHref } from "../../../components/Navbar/types"
 import { TBTCPartners } from "../../home-page/BTCRole/tBTCPartners"
 import { PageSection } from "../../../components/PageSection"
 import BlogPosts from "../../press-page/BlogPosts"
+import { useTotalMints } from "../../../hooks/tBTC/useTotalMints"
 
 const BTCPageTemplate: FC<any> = ({ data }) => {
   const { btcInfo, tbtcPartners, interestedPools } =
     data.markdownRemark.frontmatter
 
   const { minters, guardians } = tbtcPartners
+  const { totalMints } = useTotalMints()
 
   // TODO: The transactions don't contain the information about the user address,
   // that did a reveal.
@@ -77,7 +79,7 @@ const BTCPageTemplate: FC<any> = ({ data }) => {
         <TBTCStats
           tbtcTvl={totalSupply}
           tbtcUniqueAddresses={currentTokenHolders}
-          totalMints={"100"}
+          totalMints={totalMints?.toString() || "0"}
         />
         <LatestMints latestMints={transactions} mt={"6rem"} />
         <Box my={{ base: "3rem", xl: "10rem" }}>
