@@ -4,7 +4,7 @@ path: /
 seoTitle: Threshold Network
 hero:
   title: Bridge your Bitcoin and start earning.
-  body: Deposit and redeem BTC in DeFi without intermediaries using Threshold’s tBTC.
+  body: Deposit and redeem BTC in DeFi without intermediaries using Threshold's tBTC.
   ctaButtons:
     - label: Mint tBTC
       url: https://dashboard.threshold.network/tBTC
