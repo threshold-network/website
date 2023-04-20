@@ -21,6 +21,8 @@ export const StatBox = {
         backgroundColor: "blue.900",
         border: "1px solid",
         borderColor: "gray.700",
+        paddingTop: 12,
+        paddingBottom: 12,
       },
       mainText: {
         color: "gray.50",

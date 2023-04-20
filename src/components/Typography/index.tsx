@@ -72,6 +72,18 @@ export const H5: FC<TextProps> = (props) => {
   )
 }
 
+export const H6: FC<TextProps> = (props) => {
+  return (
+    <Text
+      as="h6"
+      fontWeight="500"
+      fontSize="18px"
+      lineHeight="28px"
+      {...props}
+    />
+  )
+}
+
 export const BodyLg: FC<TextProps> = (props) => {
   return <Text as="p" fontSize="18px" lineHeight="28px" {...props} />
 }
