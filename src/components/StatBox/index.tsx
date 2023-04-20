@@ -5,6 +5,7 @@ import {
   StackProps,
   useMultiStyleConfig,
   VStack,
+  SimpleGridProps,
 } from "@chakra-ui/react"
 import { BodySm, BodyMd, H1, H4, H5, H6 } from "../Typography"
 
@@ -43,9 +44,12 @@ const StatBox: FC<Stat & StackProps> = ({
   )
 }
 
-export const StatBoxGroup: FC<{ stats: Stat[] }> = ({ stats }) => {
+export const StatBoxGroup: FC<{ stats: Stat[] } & SimpleGridProps> = ({
+  stats,
+  ...restProps
+}) => {
   return (
-    <SimpleGrid columns={{ base: 1, md: 3 }} mt={8} spacing={8}>
+    <SimpleGrid columns={{ base: 1, md: 3 }} mt={8} spacing={8} {...restProps}>
       {stats.map((stat) => (
         <StatBox key={stat.label} {...stat} />
       ))}

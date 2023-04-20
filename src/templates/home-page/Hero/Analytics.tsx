@@ -43,7 +43,7 @@ export const Analytics: FC<AnalyticsProps & StackProps> = ({
 
   return (
     <Stack spacing={"10"} {...restProps}>
-      <StatBoxGroup stats={stats} />
+      <StatBoxGroup stats={stats} spacing={4} />
       <ExternalButtonLink
         href={ExternalLinkHref.DUNE_DASHBOARD_TBTC}
         variant="outline"
