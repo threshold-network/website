@@ -9,6 +9,7 @@
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
     "@fontsource/ibm-plex-mono": "^4.5.13",
+    "@fontsource/inter": "^4.5.15",
     "@tryghost/content-api": "^1.9.1",
     "@types/node": "^16.9.1",
     "@types/numeral": "^2.0.2",
