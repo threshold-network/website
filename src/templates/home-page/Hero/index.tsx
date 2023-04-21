@@ -1,11 +1,19 @@
-import React, { FC } from "react"
+import { FC } from "react"
 import { Box, Container, Stack } from "@chakra-ui/react"
 import { ButtonLg, H1, H5 } from "../../../components/Typography"
-import heroGradientBg from "../../../static/images/hero-gradient-bg.png"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 import { Image, ImageProps } from "../../../components/Image"
 import { TrackComponent } from "../../../components/Posthog/TrackComponent"
+import { Analytics } from "./Analytics"
+import { gql } from "graphql-request"
+import {
+  TBTC_SUBGRAPH_URL,
+  T_NETWORK_SUBGRAPH_URL,
+} from "../../../config/subgraph"
+import useQuery from "../../../hooks/useQuery"
+import { exchangeAPI, formatUnits } from "../../../utils"
+import { useTTokenPrice } from "../../../contexts/TokenPriceContext"
 
 const heroButtonProps = {
   h: "auto",
@@ -20,13 +28,55 @@ const Hero: FC<{
   ctaButtons: any
   image: ImageProps
 }> = ({ title, body, ctaButtons, image }) => {
+  const {
+    isFetching: isTotalStakedFetching,
+    data: totalStakedData,
+    error: totalStakedError,
+  } = useQuery<{
+    epoches: { totalStaked: string }[]
+    minStakeAmounts: { amount: string }[]
+  }>(
+    T_NETWORK_SUBGRAPH_URL,
+    gql`
+      query {
+        epoches(orderBy: startTime, orderDirection: desc, first: 1) {
+          totalStaked
+        }
+      }
+    `
+  )
+
+  const { isFetching, data, error } = useQuery<{
+    tbtctoken: { currentTokenHolders: string; totalSupply: string }
+  }>(
+    TBTC_SUBGRAPH_URL,
+    gql`
+      query {
+        tbtctoken(id: "TBTCToken") {
+          currentTokenHolders
+          totalSupply
+        }
+      }
+    `
+  )
+
+  const { epoches } = totalStakedData || {
+    epoches: [{ totalStaked: "0" }],
+  }
+  const totalStaked = !error ? epoches[0].totalStaked : "0"
+  const tPrice = useTTokenPrice()
+  const totalValueStakedInUSD = exchangeAPI
+    .toUsdBalance(formatUnits(totalStaked), tPrice)
+    .toString()
+
+  const { tbtctoken } = data || {
+    tbtctoken: { currentTokenHolders: "0", totalSupply: "0" },
+  }
+  const currentTokenHolders = !error ? tbtctoken.currentTokenHolders : "0"
+  const totalSupply = !error ? tbtctoken.totalSupply : "0"
+
   return (
-    <Box
-      minHeight={{ base: "740px", md: "800px" }}
-      backgroundImage={heroGradientBg}
-      backgroundSize="100% 100%"
-      backgroundRepeat="no-repeat"
-    >
+    <Box minHeight={{ base: "740px", md: "800px" }} bg={"gray.900"}>
       <Container
         maxW={{
           base: "640px",
@@ -38,10 +88,10 @@ const Hero: FC<{
         <Box display="flex" flexDirection={{ base: "column", lg: "row" }}>
           <Box>
             <Stack spacing={8}>
-              <H1 maxW="740px" color="white">
+              <H1 maxW="720px" pr={20}>
                 {title}
               </H1>
-              <H5 color="gray.50" maxW="590px">
+              <H5 color="gray.300" maxW="590px">
                 {body}
               </H5>
             </Stack>
@@ -87,6 +137,13 @@ const Hero: FC<{
             )}
           </Box>
         </Box>
+        <Analytics
+          tbtcTtvl={totalSupply}
+          tbtcUniqueAddresses={currentTokenHolders}
+          stakingTvlInUSD={totalValueStakedInUSD}
+          pt={{ base: "0", lg: "5rem" }}
+          pb={"5rem"}
+        />
       </Container>
     </Box>
   )

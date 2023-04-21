@@ -15,7 +15,7 @@ const App: FC = ({ children }) => {
   return (
     <TokenPriceContextProvider>
       <QuizModalContextProvider>
-        <Box minHeight="100%">
+        <Box minHeight="100%" fontFamily={"Inter"}>
           <Box as="main">
             <RoleQuizModal />
             <Navbar />

@@ -13,17 +13,19 @@ export interface SocialLink {
 }
 
 export enum ExternalLinkHref {
-  TELEGRAM = "TELEGRAM",
-  STAKER_ROLE_LEARN_MORE = "STAKER_ROLE_LEARN_MORE",
+  BTC_ROLE_LEARN_MORE = "BTC_ROLE_LEARN_MORE",
+  DAPP = "https://dashboard.threshold.network",
+  DUNE_DASHBOARD_TBTC = "https://dune.com/threshold/tbtc",
+  GOVERNANCE = "https://forum.threshold.network/",
   LP_ROLE_LEARN_MORE = "LP_ROLE_LEARN_MORE",
   MINT_TBC = "MINT_TBC",
-  BTC_ROLE_LEARN_MORE = "BTC_ROLE_LEARN_MORE",
-  TOKEN_HOLDER_ROLE_LEARN_MORE = "TOKEN_HOLDER_ROLE_LEARN_MORE",
-  THRESHOLD_GITHUB = "https://github.com/threshold-network",
-  THRESHOLD_DISCORD = "https://discord.gg/Threshold",
-  THRESHOLD_TWITTER = "https://twitter.com/TheTNetwork",
+  STAKER_ROLE_LEARN_MORE = "STAKER_ROLE_LEARN_MORE",
+  TELEGRAM = "TELEGRAM",
   THRESHOLD_BLOG = "https://blog.threshold.network/",
-  GOVERNANCE = "https://forum.threshold.network/",
+  THRESHOLD_DISCORD = "https://discord.gg/Threshold",
+  THRESHOLD_GITHUB = "https://github.com/threshold-network",
   THRESHOLD_TOKEN = "https://curve.fi/teth",
-  DAPP = "https://dashboard.threshold.network",
+  THRESHOLD_TWITTER = "https://twitter.com/TheTNetwork",
+  THRESHOLD_YOUTUBE_SUBSCRIBE = "https://www.youtube.com/@Threshold.Network?sub_confirmation=1",
+  TOKEN_HOLDER_ROLE_LEARN_MORE = "TOKEN_HOLDER_ROLE_LEARN_MORE",
 }

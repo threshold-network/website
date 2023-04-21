@@ -6,6 +6,7 @@ export enum CoingeckoID {
   NU = "nucypher",
   T = "threshold-network-token",
   ETH = "ethereum",
+  TBTC = "tbtc",
 }
 
 const fetchCryptoCurrencyPriceUSD = async (id: CoingeckoID) => {

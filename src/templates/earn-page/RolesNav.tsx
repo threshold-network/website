@@ -19,6 +19,14 @@ const RolesNav = ({ location }) => {
     >
       <Button
         as={GatsbyLink}
+        to="/earn/btc"
+        variant={pathname.includes("/btc") ? "outline" : "ghost"}
+        width="full"
+      >
+        tBTC {!isSmallScreen && "Bridge"}
+      </Button>
+      <Button
+        as={GatsbyLink}
         to="/earn/staker"
         variant={pathname.includes("/staker") ? "outline" : "ghost"}
         width="full"
@@ -32,14 +40,6 @@ const RolesNav = ({ location }) => {
         width="full"
       >
         Liquidity {!isSmallScreen && "Provider"}
-      </Button>
-      <Button
-        as={GatsbyLink}
-        to="/earn/btc"
-        variant={pathname.includes("/btc") ? "outline" : "ghost"}
-        width="full"
-      >
-        tBTC {!isSmallScreen && "Bridge"}
       </Button>
       <Button
         as={GatsbyLink}

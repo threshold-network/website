@@ -39,14 +39,19 @@ const BlogCard: FC<BlogPost> = ({ title, subTitle, description, url }) => {
   )
 }
 
-const BlogPosts: FC = () => {
+export interface BlogPostsProps {
+  title: string
+  subTitle: string
+}
+
+const BlogPosts: FC<BlogPostsProps> = ({ title, subTitle }) => {
   const blogPosts = useGhostBlogPosts()
 
   return (
     <Box>
-      <H3>Blog Highlights</H3>
+      <H3 color="gray.50">{title}</H3>
       <H5 mt={4} color="gray.300">
-        Hand Selected posts by the Threshold team.
+        {subTitle}
       </H5>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} mt={8}>
         {blogPosts.slice(0, 3).map((post: any, i) => (

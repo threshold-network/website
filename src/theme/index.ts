@@ -3,6 +3,7 @@ import { createBreakpoints } from "@chakra-ui/theme-tools"
 import { Button } from "./Button"
 import { Card } from "./Card"
 import { Progress } from "./Progress"
+import { StatBox } from "./StatBox"
 
 const config = {
   initialColorMode: "dark",
@@ -47,6 +48,9 @@ const colors = {
     800: "#323A47",
     900: "#1D2229",
   },
+  blue: {
+    900: "#181D23", // very dark blue
+  },
 }
 
 const theme = extendTheme({
@@ -67,6 +71,7 @@ const theme = extendTheme({
     Button,
     Card,
     Progress,
+    StatBox,
     Input: {
       baseStyle: {
         field: {

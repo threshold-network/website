@@ -3,8 +3,8 @@ template: home-page
 path: /
 seoTitle: Threshold Network
 hero:
-  title: The safe way to earn with your Bitcoin.
-  body: Deposit and redeem BTC in DeFi without intermediaries using Threshold’s tBTC.
+  title: Bridge your Bitcoin and start earning.
+  body: Deposit and redeem BTC in DeFi without intermediaries using Threshold's tBTC.
   ctaButtons:
     - label: Mint tBTC
       url: https://dashboard.threshold.network/tBTC
@@ -12,7 +12,48 @@ hero:
     - label: Stay Updated
       url: https://twitter.com/TheTNetwork
       posthogLabel: Stay Updated [hero] (Main page)
-  image: /images/tbtc-dashboard.png
+  image: /images/minting-tbtc.png
+btcRole:
+  title: Bridge BTC to Ethereum
+  description: tBTC is Threshold’s decentralized bridge to bring BTC to the
+    Ethereum network.
+  descriptionOfPartners: tBTC is backed by the following partners.
+  image: /images/tbtc.png
+  buttons:
+    - label: Stay Updated
+      url: https://twitter.com/TheTNetwork
+      variant: EXTERNAL_SOLID
+      posthogLabel: Stay Updated [btcRole] (Main page)
+    - label: Learn More
+      url: /earn/btc
+      variant: INTERNAL_OUTLINE
+      posthogLabel: Learn More [btcRole] (Main page)
+  rowReverse: false
+  bgColor: "#333333"
+  minters:
+    - name: curve
+      image: /images/logos/logo-curve.png
+    - name: yearn
+      image: /images/logos/logo-yearn.png
+    - name: synthetix
+      image: /images/logos/logo-synthetix.png
+    - name: connext
+      image: /images/logos/logo-connext.png
+    - name: alchemix
+      image: /images/logos/logo-alchemix.png
+    - name: euler
+      image: /images/logos/logo-euler.png
+    - name: aavechan
+      image: /images/logos/logo-aavechan.png
+  guardians:
+    - name: stakerDAO
+      image: /images/logos/logo-stakerdao.png
+    - name: catalog
+      image: /images/logos/logo-catalog.png
+    - name: entropy
+      image: /images/logos/logo-entropy.png
+    - name: badgerDAO
+      image: /images/logos/logo-badgerdao.png
 stakerRole:
   title: Threshold Staking
   description:
@@ -38,22 +79,6 @@ lpRole:
       variant: INTERNAL_SOLID
   rowReverse: true
   bgColor: "#858585"
-btcRole:
-  title: Bridge BTC to Ethereum
-  description: tBTC is Threshold’s decentralized bridge to bring BTC to the
-    Ethereum network.
-  image: /images/tbtc.png
-  buttons:
-    - label: Stay Updated
-      url: https://twitter.com/TheTNetwork
-      variant: EXTERNAL_SOLID
-      posthogLabel: Stay Updated [btcRole] (Main page)
-    - label: Learn More
-      url: /earn/btc
-      variant: INTERNAL_OUTLINE
-      posthogLabel: Learn More [btcRole] (Main page)
-  rowReverse: false
-  bgColor: "#333333"
 tokenHolderRole:
   title: Token Holder DAO
   description: Make the most of your T tokens on the Threshold Network by

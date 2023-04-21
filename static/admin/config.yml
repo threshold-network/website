@@ -82,6 +82,107 @@ collections:
                       },
                     ],
                 }
+          - label: "Bitcoin User Role"
+            name: "btcRole"
+            widget: "object"
+            collapsed: true
+            fields:
+              - {
+                  label: "Row Reverse",
+                  name: "rowReverse",
+                  widget: boolean,
+                  required: false,
+                  default: false,
+                }
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  minimal: true,
+                }
+              - {
+                  label: "Description",
+                  name: "description",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: file,
+                  media_library: { config: { multiple: false } },
+                }
+              - {
+                  label: "Buttons",
+                  name: "buttons",
+                  widget: "list",
+                  allow_add: true,
+                  required: false,
+                  fields:
+                    [
+                      { label: Label, name: label, widget: string },
+                      { label: URL, name: url, widget: string },
+                      {
+                        label: Variant,
+                        name: variant,
+                        widget: select,
+                        required: true,
+                        options:
+                          [
+                            {
+                              label: "External Solid",
+                              value: "EXTERNAL_SOLID",
+                            },
+                            {
+                              label: "Internal Solid",
+                              value: "INTERNAL_SOLID",
+                            },
+                            {
+                              label: "External Outline",
+                              value: "EXTERNAL_OUTLINE",
+                            },
+                            {
+                              label: "Internal Outline",
+                              value: "INTERNAL_OUTLINE",
+                            },
+                          ],
+                      },
+                    ],
+                }
+              - {
+                  label: "Minters",
+                  name: "minters",
+                  widget: "list",
+                  allow_add: true,
+                  required: false,
+                  fields:
+                    [
+                      { label: Name, name: name, widget: string },
+                      {
+                        label: Image,
+                        name: image,
+                        widget: file,
+                        media_library: { config: { multiple: false } },
+                      },
+                    ],
+                }
+              - {
+                  label: "Guardians",
+                  name: "guardians",
+                  widget: "list",
+                  allow_add: true,
+                  required: false,
+                  fields:
+                    [
+                      { label: Name, name: name, widget: string },
+                      {
+                        label: Image,
+                        name: image,
+                        widget: file,
+                        media_library: { config: { multiple: false } },
+                      },
+                    ],
+                }
           - label: "Staker Role"
             name: "stakerRole"
             widget: "object"
@@ -215,73 +316,6 @@ collections:
                             },
                           ],
                       },
-                    ],
-                }
-          - label: "Bitcoin User Role"
-            name: "btcRole"
-            widget: "object"
-            collapsed: true
-            fields:
-              - {
-                  label: "Row Reverse",
-                  name: "rowReverse",
-                  widget: boolean,
-                  required: false,
-                  default: false,
-                }
-              - {
-                  label: "Title",
-                  name: "title",
-                  widget: "string",
-                  minimal: true,
-                }
-              - {
-                  label: "Description",
-                  name: "description",
-                  widget: "string",
-                  required: false,
-                }
-              - {
-                  label: "Image",
-                  name: "image",
-                  widget: file,
-                  media_library: { config: { multiple: false } },
-                }
-              - {
-                  label: "Buttons",
-                  name: "buttons",
-                  widget: "list",
-                  allow_add: true,
-                  required: false,
-                  fields:
-                    [
-                      { label: Label, name: label, widget: string },
-                      { label: URL, name: url, widget: string },
-                      {
-                        label: Variant,
-                        name: variant,
-                        widget: select,
-                        required: true,
-                        options:
-                          [
-                            {
-                              label: "External Solid",
-                              value: "EXTERNAL_SOLID",
-                            },
-                            {
-                              label: "Internal Solid",
-                              value: "INTERNAL_SOLID",
-                            },
-                            {
-                              label: "External Outline",
-                              value: "EXTERNAL_OUTLINE",
-                            },
-                            {
-                              label: "Internal Outline",
-                              value: "INTERNAL_OUTLINE",
-                            },
-                          ],
-                      },
                       {
                         label: Posthog Label,
                         name: posthogLabel,
@@ -289,7 +323,6 @@ collections:
                       },
                     ],
                 }
-
           - label: "Token Holder Role"
             name: "tokenHolderRole"
             widget: "object"
@@ -846,6 +879,49 @@ collections:
                           label: Posthog Label,
                           name: posthogLabel,
                           widget: string,
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "TBTC Partners Section",
+              name: "tbtcPartners",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Minters",
+                    name: "minters",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Name, name: name, widget: string },
+                        {
+                          label: Image,
+                          name: image,
+                          widget: file,
+                          media_library: { config: { multiple: false } },
+                        },
+                      ],
+                  },
+                  {
+                    label: "Guardians",
+                    name: "guardians",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Name, name: name, widget: string },
+                        {
+                          label: Image,
+                          name: image,
+                          widget: file,
+                          media_library: { config: { multiple: false } },
                         },
                       ],
                   },
