@@ -20,6 +20,8 @@ export const Analytics: FC<AnalyticsProps & StackProps> = ({
   const statsStyles = {
     variant: "secondary",
     size: "lg",
+    boxShadow: "0px 0px 200px 10px rgba(153, 116, 255, 0.16)",
+    filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))",
   }
   const stats = [
     {
@@ -43,17 +45,7 @@ export const Analytics: FC<AnalyticsProps & StackProps> = ({
 
   return (
     <Stack spacing={"10"} {...restProps}>
-      <StatBoxGroup
-        stats={stats}
-        spacing={4}
-        filter={"drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"}
-        background={"none"}
-        boxShadow={"0px 0px 200px 10px rgba(153, 116, 255, 0.16)"}
-        zIndex={100}
-        // backgroundImage={
-        //   "radial-gradient(ellipse at center, rgba(153, 116, 255, 0.16) 99%, transparent 80%)"
-        // }
-      />
+      <StatBoxGroup stats={stats} spacing={4} />
       <ExternalButtonLink
         href={ExternalLinkHref.DUNE_DASHBOARD_TBTC}
         variant="outline"
