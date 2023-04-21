@@ -75,6 +75,11 @@ collections:
                     [
                       { label: Label, name: label, widget: string },
                       { label: URL, name: url, widget: string },
+                      {
+                        label: Posthog Label,
+                        name: posthogLabel,
+                        widget: string,
+                      },
                     ],
                 }
           - label: "Bitcoin User Role"
@@ -310,6 +315,11 @@ collections:
                               value: "INTERNAL_OUTLINE",
                             },
                           ],
+                      },
+                      {
+                        label: Posthog Label,
+                        name: posthogLabel,
+                        widget: string,
                       },
                     ],
                 }
@@ -864,6 +874,11 @@ collections:
                                 value: "INTERNAL_OUTLINE",
                               },
                             ],
+                        },
+                        {
+                          label: Posthog Label,
+                          name: posthogLabel,
+                          widget: string,
                         },
                       ],
                   },

@@ -18,6 +18,7 @@ btcInfo:
     - label: Mint Now
       url: https://dashboard.threshold.network/tBTC
       variant: EXTERNAL_SOLID
+      posthogLabel: Mint now [btcInfo] (/earn/btc)
 tbtcPartners:
   minters:
     - name: curve

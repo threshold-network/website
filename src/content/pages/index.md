@@ -8,8 +8,10 @@ hero:
   ctaButtons:
     - label: Mint tBTC
       url: https://dashboard.threshold.network/tBTC
+      posthogLabel: Mint tBTC [hero] (Main page)
     - label: Stay Updated
       url: https://twitter.com/TheTNetwork
+      posthogLabel: Stay Updated [hero] (Main page)
   image: /images/minting-tbtc.png
 btcRole:
   title: Bridge BTC to Ethereum
@@ -21,9 +23,11 @@ btcRole:
     - label: Stay Updated
       url: https://twitter.com/TheTNetwork
       variant: EXTERNAL_SOLID
+      posthogLabel: Stay Updated [btcRole] (Main page)
     - label: Learn More
       url: /earn/btc
       variant: INTERNAL_OUTLINE
+      posthogLabel: Learn More [btcRole] (Main page)
   rowReverse: false
   bgColor: "#333333"
   minters:

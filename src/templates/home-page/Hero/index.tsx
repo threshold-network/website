@@ -4,6 +4,7 @@ import { ButtonLg, H1, H5 } from "../../../components/Typography"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 import { Image, ImageProps } from "../../../components/Image"
+import { TrackComponent } from "../../../components/Posthog/TrackComponent"
 import { Analytics } from "./Analytics"
 import { gql } from "graphql-request"
 import {
@@ -101,16 +102,20 @@ const Hero: FC<{
               spacing={12}
             >
               {ctaButtons.map(
-                (_: { label: string; url: string }, index: number) => {
+                (
+                  _: { label: string; url: string; posthogLabel: string },
+                  index: number
+                ) => {
                   return (
-                    <ExternalButtonLink
-                      key={_.label}
-                      {...heroButtonProps}
-                      variant={index === 0 ? "special" : "outline"}
-                      href={_.url as ExternalLinkHref}
-                    >
-                      <ButtonLg>{_.label}</ButtonLg>
-                    </ExternalButtonLink>
+                    <TrackComponent posthogLabel={_.posthogLabel} key={_.label}>
+                      <ExternalButtonLink
+                        {...heroButtonProps}
+                        variant={index === 0 ? "special" : "outline"}
+                        href={_.url as ExternalLinkHref}
+                      >
+                        <ButtonLg>{_.label}</ButtonLg>
+                      </ExternalButtonLink>
+                    </TrackComponent>
                   )
                 }
               )}

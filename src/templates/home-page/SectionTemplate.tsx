@@ -12,11 +12,13 @@ import {
   SectionTextContainer,
 } from "../../components/PageSection"
 import { ImageProps } from "../../components"
+import { TrackComponent } from "../../components/Posthog/TrackComponent"
 
 export interface FooterButton {
   label: string
   url: string
   variant: string
+  posthogLabel?: string
 }
 
 export interface RoleTemplateProps extends BoxProps {
@@ -68,15 +70,18 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
           )}
 
           <Stack mt={10} direction={{ base: "column", md: "row" }} spacing={8}>
-            {buttons.map((_: FooterButton, i) => (
-              <CmsButtonLink
-                key={_.label}
-                cmsVariant={_.variant as ButtonType}
-                url={_.url}
-              >
-                {_.label}
-              </CmsButtonLink>
-            ))}
+            {buttons.map((_: FooterButton, i) => {
+              return (
+                <TrackComponent posthogLabel={_.posthogLabel} key={_.label}>
+                  <CmsButtonLink
+                    cmsVariant={_.variant as ButtonType}
+                    url={_.url}
+                  >
+                    {_.label}
+                  </CmsButtonLink>
+                </TrackComponent>
+              )
+            })}
           </Stack>
         </SectionTextContainer>
         {image && <SectionImage {...image} />}
