@@ -54,7 +54,7 @@ export const TBTCStats: FC<TBTCStatsProps> = ({
       <H3 fontWeight={600} mb={"8"}>
         tBTC Stats
       </H3>
-      <Card>
+      <Card boxShadow={"0px 0px 200px 10px rgba(153, 116, 255, 0.16)"}>
         <Stack
           direction={{ base: "column-reverse", lg: "row" }}
           justifyContent={"space-between"}
