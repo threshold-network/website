@@ -45,6 +45,9 @@ columns:
         isExternal: true
   - title: About
     links:
+      - label: Docs
+        url: https://docs.threshold.network/
+        isExternal: true
       - label: Contributors
         url: /about#contributors
         isExternal: false

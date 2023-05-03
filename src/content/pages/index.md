@@ -176,6 +176,13 @@ joinTheCommunity:
           icon:
             image: /images/logo-github.png
             alt: github
+        - label: Docs
+          url:  https://docs.threshold.network/
+          image: /images/document.svg
+          variant: INTERNAL_OUTLINE
+          icon:
+            image: /images/document.svg
+            alt: docs
 title: Threshold Network
 description: Threshold powers user sovereignty on the public blockchain.
 ---
