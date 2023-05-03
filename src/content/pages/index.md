@@ -129,7 +129,7 @@ harnessThePower:
         end-users and ensure privacy on the public blockchain.
       image: /images/private-icon.png
 activeCommunity:
-  title: Threshold is run by an  active community.
+  title: Threshold is run by an active community.
   bgColor: "#141414"
   description: The Threshold DAO is a decentralized community of T token holders
     and their delegates who collectively vote to decide what's next for the
