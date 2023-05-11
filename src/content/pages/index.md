@@ -30,30 +30,6 @@ btcRole:
       posthogLabel: Learn More [btcRole] (Main page)
   rowReverse: false
   bgColor: "#333333"
-  minters:
-    - name: curve
-      image: /images/logos/logo-curve.png
-    - name: yearn
-      image: /images/logos/logo-yearn.png
-    - name: synthetix
-      image: /images/logos/logo-synthetix.png
-    - name: connext
-      image: /images/logos/logo-connext.png
-    - name: alchemix
-      image: /images/logos/logo-alchemix.png
-    - name: euler
-      image: /images/logos/logo-euler.png
-    - name: aavechan
-      image: /images/logos/logo-aavechan.png
-  guardians:
-    - name: stakerDAO
-      image: /images/logos/logo-stakerdao.png
-    - name: catalog
-      image: /images/logos/logo-catalog.png
-    - name: entropy
-      image: /images/logos/logo-entropy.png
-    - name: badgerDAO
-      image: /images/logos/logo-badgerdao.png
 stakerRole:
   title: Threshold Staking
   description:
