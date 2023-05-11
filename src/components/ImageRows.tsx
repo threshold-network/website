@@ -31,10 +31,10 @@ export const ImageRows = <T extends ImageRowItem>({
   renderImageCallback,
 }: ImageRowsProps<T>) => {
   return (
-    <VStack spacing="14">
+    <VStack spacing="14" alignItems="flex-start">
       {data.map((item) => {
         return (
-          <Box key={item.title}>
+          <Box key={item.title} width="100%">
             <LabelMd color="brand.300">{item.title}</LabelMd>
             <Divider borderColor="brand.700" mb="10" />
             <SimpleGrid columns={4} spacing="14">

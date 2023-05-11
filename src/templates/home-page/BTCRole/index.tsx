@@ -18,9 +18,13 @@ export const BTCRole: FC<RoleTemplateProps & BTCRoleProps> = ({
       <H4 color="gray.300">tBTC is backed by the following partners.</H4>
       <SimpleGrid
         mt="4.5rem"
-        columns={{ base: 2, md: 4, lg: 6 }}
         spacingY="5.5rem"
-        justifyItems="center"
+        justifyContent="space-between"
+        templateColumns={{
+          base: "repeat(2, 80px)",
+          md: "repeat(4, 80px)",
+          lg: "repeat(6, 80px)",
+        }}
       >
         {partners.map(renderPartners)}
       </SimpleGrid>
