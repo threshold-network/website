@@ -23,6 +23,9 @@ nav_items:
         isExternal: true
   - label: About
     subitems:
+      - label: Docs
+        url: https://docs.threshold.network/
+        isExternal: true
       - label: Contributors
         url: /about#contributors
       - label: FAQ
