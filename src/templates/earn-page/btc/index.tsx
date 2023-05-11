@@ -12,16 +12,14 @@ import useQuery from "../../../hooks/useQuery"
 import { LatestMint, LatestMints } from "./LatestMints"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
-import { TBTCPartners } from "../../home-page/BTCRole/tBTCPartners"
+import { TBTCPartners } from "../../../components/tBTCPartners"
 import { PageSection } from "../../../components/PageSection"
 import BlogPosts from "../../press-page/BlogPosts"
 import { useTotalMints } from "../../../hooks/tBTC/useTotalMints"
 
 const BTCPageTemplate: FC<any> = ({ data }) => {
-  const { btcInfo, tbtcPartners, interestedPools } =
-    data.markdownRemark.frontmatter
+  const { btcInfo, interestedPools } = data.markdownRemark.frontmatter
 
-  const { minters, guardians } = tbtcPartners
   const { totalMints } = useTotalMints()
 
   // TODO: The transactions don't contain the information about the user address,
@@ -114,7 +112,7 @@ const BTCPageTemplate: FC<any> = ({ data }) => {
         </Box>
       </RolePageTemplate>
       <PageSection backgroundColor={"#0A0C0F"} withSmallPadding>
-        <TBTCPartners minters={minters} guardians={guardians} />
+        <TBTCPartners />
       </PageSection>
       <PageSection backgroundColor={"gray.900"} withSmallPadding>
         <Box>
@@ -160,34 +158,6 @@ export const query = graphql`
             url
             variant
             posthogLabel
-          }
-        }
-        tbtcPartners {
-          minters {
-            name
-            image {
-              id
-              relativePath
-              internal {
-                mediaType
-              }
-              childImageSharp {
-                gatsbyImageData(width: 200)
-              }
-            }
-          }
-          guardians {
-            name
-            image {
-              id
-              relativePath
-              internal {
-                mediaType
-              }
-              childImageSharp {
-                gatsbyImageData(width: 200)
-              }
-            }
           }
         }
         interestedPools {

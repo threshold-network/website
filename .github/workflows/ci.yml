@@ -28,7 +28,7 @@ jobs:
       - name: "Set up security.txt and .well-known/security.txt"
         run: |
           mkdir static/.well-known
-          cp static/security.txt static/.well-known/security.txt  
+          cp static/security.txt static/.well-known/security.txt
 
       - name: Build preview
         if: github.event_name == 'pull_request'

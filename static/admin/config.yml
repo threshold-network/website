@@ -149,40 +149,6 @@ collections:
                       },
                     ],
                 }
-              - {
-                  label: "Minters",
-                  name: "minters",
-                  widget: "list",
-                  allow_add: true,
-                  required: false,
-                  fields:
-                    [
-                      { label: Name, name: name, widget: string },
-                      {
-                        label: Image,
-                        name: image,
-                        widget: file,
-                        media_library: { config: { multiple: false } },
-                      },
-                    ],
-                }
-              - {
-                  label: "Guardians",
-                  name: "guardians",
-                  widget: "list",
-                  allow_add: true,
-                  required: false,
-                  fields:
-                    [
-                      { label: Name, name: name, widget: string },
-                      {
-                        label: Image,
-                        name: image,
-                        widget: file,
-                        media_library: { config: { multiple: false } },
-                      },
-                    ],
-                }
           - label: "Staker Role"
             name: "stakerRole"
             widget: "object"
@@ -879,49 +845,6 @@ collections:
                           label: Posthog Label,
                           name: posthogLabel,
                           widget: string,
-                        },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: "TBTC Partners Section",
-              name: "tbtcPartners",
-              widget: "object",
-              collapsed: true,
-              fields:
-                [
-                  {
-                    label: "Minters",
-                    name: "minters",
-                    widget: "list",
-                    allow_add: true,
-                    required: false,
-                    fields:
-                      [
-                        { label: Name, name: name, widget: string },
-                        {
-                          label: Image,
-                          name: image,
-                          widget: file,
-                          media_library: { config: { multiple: false } },
-                        },
-                      ],
-                  },
-                  {
-                    label: "Guardians",
-                    name: "guardians",
-                    widget: "list",
-                    allow_add: true,
-                    required: false,
-                    fields:
-                      [
-                        { label: Name, name: name, widget: string },
-                        {
-                          label: Image,
-                          name: image,
-                          widget: file,
-                          media_library: { config: { multiple: false } },
                         },
                       ],
                   },
@@ -2841,6 +2764,40 @@ collections:
                     name: "coingeckoId",
                     widget: "string",
                     required: true,
+                  },
+                ],
+            }
+      - file: "src/content/components/tBTC-partners.md"
+        label: "tBTC Partners"
+        name: "tBTCPartners"
+        fields:
+          - {
+              label: "Template Key",
+              name: "template",
+              widget: "hidden",
+              default: "tBTC-partners",
+            }
+          - {
+              label: "tBTC Partners",
+              name: "partners",
+              widget: "list",
+              allow_add: true,
+              required: false,
+              fields:
+                [
+                  { label: Name, name: name, widget: string },
+                  { label: Link, name: link, widget: string },
+                  {
+                    label: Role,
+                    name: role,
+                    widget: select,
+                    options: ["minter", "guardian", "general"],
+                  },
+                  {
+                    label: Image,
+                    name: image,
+                    widget: file,
+                    media_library: { config: { multiple: false } },
                   },
                 ],
             }
