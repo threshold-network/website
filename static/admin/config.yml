@@ -2767,7 +2767,7 @@ collections:
                   },
                 ],
             }
-      - file: "src/content/component/tBTC-partners.md"
+      - file: "src/content/components/tBTC-partners.md"
         label: "tBTC Partners"
         name: "tBTCPartners"
         fields:
