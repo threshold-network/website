@@ -19,7 +19,7 @@ export const BTCRole: FC<RoleTemplateProps & BTCRoleProps> = ({
       <SimpleGrid
         mt="4.5rem"
         spacingY="5.5rem"
-        justifyContent="space-between"
+        justifyContent={{ base: "space-around", md: "space-between" }}
         templateColumns={{
           base: "repeat(2, 80px)",
           md: "repeat(4, 80px)",
