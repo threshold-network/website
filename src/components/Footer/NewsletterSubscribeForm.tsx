@@ -1,27 +1,9 @@
-import React, { FC, FormEvent, useState } from "react"
-import MailchimpSubscribe, {
-  EmailFormFields,
-  FormHooks,
-} from "react-mailchimp-subscribe"
+import { FC } from "react"
 import { Box } from "@chakra-ui/react"
 import { ResponsiveStack, SectionTextContainer } from "../PageSection"
 import { BodyLg, H5 } from "../Typography"
-import { MAILCHIMP_POST_URL } from "../../config/newsletterConfig"
 
-const CustomForm: FC<FormHooks<EmailFormFields>> = ({
-  status,
-  message,
-  subscribe,
-}) => {
-  const [email, setEmail] = useState("")
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    subscribe({
-      EMAIL: email,
-    })
-  }
-
+const NewsletterSubscribeForm: FC = () => {
   return (
     <ResponsiveStack columnReverse spacing={12}>
       <SectionTextContainer>
@@ -43,19 +25,10 @@ const CustomForm: FC<FormHooks<EmailFormFields>> = ({
             borderRadius: "0",
             backgroundColor: "transparent",
           }}
-        ></iframe>
+        />
       </Box>
     </ResponsiveStack>
   )
 }
 
-const MailchimpForm = () => {
-  return (
-    <MailchimpSubscribe
-      url={MAILCHIMP_POST_URL}
-      render={(mailChimpProps) => <CustomForm {...mailChimpProps} />}
-    />
-  )
-}
-
-export default MailchimpForm
+export default NewsletterSubscribeForm
