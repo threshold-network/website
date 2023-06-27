@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: threshold-network/splash-page
+  repo: threshold-network/website
   site_domain: threshold.network
   open_authoring: true
 
