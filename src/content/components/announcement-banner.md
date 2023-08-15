@@ -3,4 +3,4 @@ template: announcement
 title: Announcement
 ---
 
-Maximize your BTC in DeFi by minting tBTC! <a href="https://blog.threshold.network/thresholds-tbtc-launches-minting-for-only-decentralized-permissionless-scalable-btc-bridge-to-defi/" target="_blank" rel="noopener noreferrer">Learn More</a>
+Maximize your BTC in DeFi. <a href="https://dashboard.threshold.network/tBTC/mint" target="_blank" rel="noopener noreferrer">Mint tBTC now</a>
