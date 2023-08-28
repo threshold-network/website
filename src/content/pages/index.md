@@ -153,7 +153,7 @@ joinTheCommunity:
             image: /images/logo-github.png
             alt: github
         - label: Docs
-          url:  https://docs.threshold.network/
+          url: https://docs.threshold.network/
           image: /images/document.svg
           variant: INTERNAL_OUTLINE
           icon:

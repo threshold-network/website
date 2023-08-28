@@ -14,6 +14,8 @@ nav_items:
         url: /earn/token-holder
   - label: Governance
     url: /governance
+  - label: Ecosystem
+    url: /ecosystem
   - label: News
     subitems:
       - label: Press

@@ -37,6 +37,9 @@ columns:
       - label: Governance
         url: /governance
         isExternal: false
+      - label: Ecosystem
+        url: /ecosystem
+        isExternal: false
       - label: Discord
         url: https://discord.gg/Threshold
         isExternal: true

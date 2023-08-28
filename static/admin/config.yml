@@ -1992,7 +1992,77 @@ collections:
                 ],
             },
           ]
-
+      # Ecosystem Page
+      - file: "src/content/pages/ecosystem/index.md"
+        name: "ecosystemPage"
+        label: "Ecosystem Page"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "ecosystem-page",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/ecosystem",
+            }
+          - {
+              label: "SEO Title",
+              name: "seoTitle",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "seoDescription",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
+          - {
+              label: "Hero Section",
+              name: "ecosystemInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Highlighted Word",
+                    name: "highlightedWord",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                ],
+            }
       # Governance Page
       - file: "src/content/pages/governance/index.md"
         name: "governancePage"
