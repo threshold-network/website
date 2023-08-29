@@ -1,8 +1,8 @@
-import { FC } from "react"
+import { FC, useEffect, useState, useRef } from "react"
 import { Image, ImageProps } from "./Image"
 import Card from "./Card"
 import { LabelSm } from "./Typography"
-import { Box, Stack, useMediaQuery } from "@chakra-ui/react"
+import { Box, Stack } from "@chakra-ui/react"
 
 interface IntegrationCardProps {
   image: ImageProps
@@ -36,20 +36,61 @@ const IntegrationCard: FC<IntegrationCardProps> = ({
 export const IntegrationsCardGroup: FC<{ cards: IntegrationCardProps[] }> = ({
   cards,
 }) => {
-  const [isLargerThan1120] = useMediaQuery("(min-width: 1120px)")
-  const [isLargerThan768] = useMediaQuery("(min-width: 768px)")
-  const isInBetweenSizes = isLargerThan768 && !isLargerThan1120
-  const columns = isLargerThan1120 ? 3 : isInBetweenSizes ? 2 : 1
+  const [cardSet, setCardSet] = useState<IntegrationCardProps[]>([])
+  const scrollContainer = useRef<HTMLDivElement>(null)
+
+  const cardWidth = parseInt("170")
+  const cardSpacing = parseInt("6")
+
+  useEffect(() => {
+    const numberOfCards = window.innerWidth / (cardWidth + cardSpacing)
+    const roundedNumberOfCards = Math.floor(numberOfCards)
+    let newCardSet: IntegrationCardProps[] = []
+
+    // Create a new array by duplicating the original cards until we reach the calculated size
+    for (let i = 0; i < roundedNumberOfCards; i++) {
+      newCardSet = [...newCardSet, ...cards]
+    }
+    setCardSet(newCardSet)
+  }, [cardWidth, cardSpacing, cards])
+
+  useEffect(() => {
+    let animationFrame: number
+
+    const scrollCards = () => {
+      if (scrollContainer.current) {
+        const scrollElem = scrollContainer.current
+        scrollElem.scrollLeft += 1.5
+
+        // Reset to the start when reaching the end
+        if (
+          scrollElem.scrollLeft >=
+          scrollElem.scrollWidth - scrollElem.offsetWidth
+        ) {
+          scrollElem.scrollLeft = 0
+        }
+      }
+      animationFrame = requestAnimationFrame(scrollCards)
+    }
+    animationFrame = requestAnimationFrame(scrollCards)
+
+    return () => {
+      cancelAnimationFrame(animationFrame)
+    }
+  }, [cardSet])
 
   return (
     <Stack
+      ref={scrollContainer}
+      id="card-container"
       backgroundColor="gray.900"
       direction="row"
-      justifyContent="center"
-      spacing={6}
-      w="full"
+      spacing={cardSpacing}
+      overflowX="hidden"
+      py={20}
+      my={-20}
     >
-      {cards.map((card: any, i) => (
+      {cardSet.map((card: IntegrationCardProps, i) => (
         <IntegrationCard key={i} {...card} />
       ))}
     </Stack>
