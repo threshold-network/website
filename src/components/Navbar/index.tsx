@@ -91,7 +91,7 @@ export const Navbar: FC = () => {
         as="header"
       >
         <Container
-          maxW="1072px"
+          maxW="1140px"
           h="100%"
           display="flex"
           justifyContent="space-between"

@@ -2063,6 +2063,22 @@ collections:
                   },
                 ],
             }
+          - {
+              label: "Integrations",
+              name: "integrations",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                ],
+            }
       # Governance Page
       - file: "src/content/pages/governance/index.md"
         name: "governancePage"
