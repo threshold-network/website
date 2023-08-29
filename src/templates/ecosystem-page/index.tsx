@@ -3,9 +3,15 @@ import { graphql } from "gatsby"
 import SectionTemplate from "../home-page/SectionTemplate"
 import { Box } from "@chakra-ui/react"
 import { IntegrationsCardGroup } from "../../components/IntegrationCard"
+import ProgramsAndEvents from "./ProgramsAndEvents"
 
 const EcosystemPageTemplate: FC = ({ data }: any) => {
-  const { ecosystemInfo, integrations } = data.markdownRemark.frontmatter
+  const {
+    ecosystemInfo,
+    integrations,
+    programsAndEventsInfo,
+    programsAndEvents,
+  } = data.markdownRemark.frontmatter
 
   return (
     <Box>
@@ -19,6 +25,9 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
         isImageBackground
       />
       <IntegrationsCardGroup cards={integrations} />
+      <SectionTemplate {...programsAndEventsInfo} bgColor="gray.900">
+        <ProgramsAndEvents cards={programsAndEvents} />
+      </SectionTemplate>
     </Box>
   )
 }
@@ -58,6 +67,27 @@ export const query = graphql`
             }
           }
           title
+        }
+        programsAndEventsInfo {
+          rowReverse
+          preTitle
+          title
+          description
+        }
+        programsAndEvents {
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          title
+          description
+          url
         }
       }
     }

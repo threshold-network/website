@@ -2079,6 +2079,62 @@ collections:
                   },
                 ],
             }
+          - {
+              label: "Programs and Events Section",
+              name: "programsAndEventsInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Pre Title",
+                    name: "preTitle",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: "Programs and Events Card",
+              name: "programsAndEvents",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                  },
+                  { label: "URL", name: "url", widget: "string" },
+                ],
+            }
       # Governance Page
       - file: "src/content/pages/governance/index.md"
         name: "governancePage"
