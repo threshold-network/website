@@ -4,6 +4,11 @@ import { Image } from "../components/Image"
 import useChakraBreakpoint from "../hooks/useChakraBreakpoint"
 import { ImageProps } from "./Image"
 
+export interface SectionImageProps {
+  imageProps: ImageProps
+  isImageBackground?: boolean
+}
+
 export const PageSection: FC<BoxProps & { withSmallPadding?: boolean }> = ({
   withSmallPadding,
   children,
@@ -45,12 +50,24 @@ export const ResponsiveStack: FC<
   )
 }
 
-export const SectionImage: FC<ImageProps> = (imageProps) => {
+export const SectionImage: FC<SectionImageProps> = ({
+  imageProps,
+  isImageBackground,
+}) => {
   const mdSize = useChakraBreakpoint("md")
 
   return (
-    <Box maxW="415px" maxH="300px" mx={mdSize ? "auto !important" : undefined}>
-      <Image {...imageProps} />
+    <Box
+      display="flex"
+      justifyContent="center"
+      maxW="415px"
+      maxH="300px"
+      mx={mdSize ? "auto !important" : undefined}
+    >
+      <Image
+        position={isImageBackground ? "absolute" : undefined}
+        {...imageProps}
+      />
     </Box>
   )
 }
