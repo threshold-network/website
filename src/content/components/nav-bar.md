@@ -33,12 +33,15 @@ nav_items:
       - isExternal: false
         label: Audits
         url: /about#audits
+      - label: Brand Assets
+        url: https://bit.ly/threshold-brand-assets
+        isExternal: true
 social_links:
   - label: Twitter
     url: https://twitter.com/TheTNetwork
     icon:
       image: /images/twitter.svg
-      alt: Thershold Twitter
+      alt: Threshold Twitter
   - label: Telegram
     url: https://t.me/thresholdnetwork
     icon:
