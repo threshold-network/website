@@ -47,103 +47,103 @@ projectsAndToolsInfo:
   description: "Find the perfect tool or services that suite your web3 needs."
   rowReverse: false
 projectsAndTools:
-  - image: /images/ethereum.svg
+  - image: /images/tbtc.svg
     title: tBTC
     description: tBTC is a Bitcoin-backed token pegged to the price of bitcoin. It allows holders to use bitcoin on DeFi.
     categories:
       - label: Project
-    timestamp: 9
+    timestamp: 1675199559
     buttons:
     - label: Learn More
-      url: https://forum.threshold.network/
+      url: https://docs.threshold.network/applications/tbtc-v2/
       variant: EXTERNAL_SOLID
     - label: Go to App
-      url: https://forum.threshold.network/c/governance-proposals/7
+      url: https://dashboard.threshold.network/tBTC/mint/
       variant: EXTERNAL_OUTLINE
-  - image: /images/ethereum.svg
+  - image: /images/thusd.svg
     title: thUSD
     description: thUSD is a stablecoin soft-pegged against USD and backed by ETH and tBTC as collaterals.
     categories:
       - label: project
-    timestamp: 8
+    timestamp: 1688159559
     buttons:
     - label: Learn More
-      url: https://forum.threshold.network/
+      url: https://docs.threshold.network/applications/threshold-usd
       variant: EXTERNAL_SOLID
     - label: Go to App
-      url: https://forum.threshold.network/c/governance-proposals/7
+      url: https://app.thresholdusd.org/
       variant: EXTERNAL_OUTLINE
-  - image: /images/ethereum.svg
+  - image: /images/taco.svg
     title: TACo
     description: Threshold Access Control enables end-to-end encrypted data sharing and communication.
     categories:
       - label: project
       - label: infrastructure
-    timestamp: 7
+    timestamp: 1693429959
     buttons:
     - label: Learn More
-      url: https://forum.threshold.network/
+      url: https://docs.threshold.network/app-development/threshold-access-control-tac
       variant: EXTERNAL_SOLID
-  - image: /images/ethereum.svg
+  - image: /images/delegates-dashboard.svg
     title: Delegates Dashboard
     description: The Delegates Dashboard aims to facilitate the delegation of voting power to our delegates.
     categories:
       - label: tool
-    timestamp: 6
+    timestamp: 1677791559
     buttons:
     - label: Go to App
-      url: https://forum.threshold.network/
+      url: https://threshold-delegate.vercel.app/
       variant: EXTERNAL_SOLID
-  - image: /images/ethereum.svg
+  - image: /images/dune-analytics.svg
     title: Dune Analytics
     description: Information about the network and its ecosystem's tokens can be queried on Dune Analytics.
     categories:
       - label: tool
-    timestamp: 5
+    timestamp: 1630357959
     buttons:
     - label: Go to App
-      url: https://forum.threshold.network/
+      url: https://dune.com/cygnusv/Threshold-Network
       variant: EXTERNAL_SOLID
-  - image: /images/ethereum.svg
+  - image: /images/the-graph.svg
     title: tBTC Subgraph
     description: The aim of the subgraph is to facilitate queries about the T token and Threshold's Network DAO governance.
     categories:
       - label: tool
       - label: integration
-    timestamp: 4
+    timestamp: 1680210759
     buttons:
     - label: Go to App
-      url: https://forum.threshold.network/
+      url: https://thegraph.com/explorer/subgraphs/2E1dYAE5EsJdfC1gyzp98hHPPCxSoX2TSoBivzFto47b?view=Overview&chain=mainnet
       variant: EXTERNAL_SOLID
-  - image: /images/ethereum.svg
+  - image: /images/notion.svg
     title: Community Notion Tools
-    description: The aim of the subgraph is to facilitate queries about the T token and Threshold's Network DAO governance.
+    description: Our organization uses Notion as a central source of truth for the different DAO groups of work and guilds.
     categories:
       - label: tool
-    timestamp: 3
+    timestamp: 1630357959
     buttons:
     - label: Go to App
-      url: https://forum.threshold.network/
+      url: https://www.notion.so/Mission-Vision-and-Values-fc45ef966f9747fd911a14cf0a2a82c2
       variant: EXTERNAL_SOLID
-  - image: /images/ethereum.svg
+  - image: /images/the-graph.svg
     title: Threshold Subgraph
-    description: The aim of the subgraph is to facilitate queries about the T token and Threshold's Network DAO governance.
+    description: The aim of this subgraph was to facilitate rewards distribution and queries about the T token.
     categories:
       - label: tool
       - label: integration
-    timestamp: 2
+    timestamp: 1680210759
     buttons:
     - label: Go to App
-      url: https://forum.threshold.network/
+      url: https://thegraph.com/explorer/subgraphs/8iv4pFv7UL3vMjYeetmFCKD9Mg2V4d1S2rapQXo8fRq5?view=Overview&chain=mainnet
       variant: EXTERNAL_SOLID
-  - image: /images/ethereum.svg
+  - image: /images/101-courses.svg
     title: 101 Courses and Videos
-    description: The aim of the subgraph is to facilitate queries about the T token and Threshold's Network DAO governance.
+    description: Initiative from the Marketing Guild to help understand better the technologies around our products.
     categories: 
     - label: tool
-    timestamp: 1
+    timestamp: 1667164359
     buttons:
     - label: Go to App
-      url: https://forum.threshold.network/
+      url: https://101.xyz/course/claqymc0v067108kyden9aehq
       variant: EXTERNAL_SOLID
 ---
