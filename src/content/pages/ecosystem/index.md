@@ -52,7 +52,7 @@ projectsAndTools:
     description: tBTC is a Bitcoin-backed token pegged to the price of bitcoin. It allows holders to use bitcoin on DeFi.
     categories:
       - label: Project
-    timestamp: 1231231
+    timestamp: 9
     buttons:
     - label: Learn More
       url: https://forum.threshold.network/
@@ -64,8 +64,8 @@ projectsAndTools:
     title: thUSD
     description: thUSD is a stablecoin soft-pegged against USD and backed by ETH and tBTC as collaterals.
     categories:
-      - label: Project
-    timestamp: 1231231
+      - label: project
+    timestamp: 8
     buttons:
     - label: Learn More
       url: https://forum.threshold.network/
@@ -77,9 +77,9 @@ projectsAndTools:
     title: TACo
     description: Threshold Access Control enables end-to-end encrypted data sharing and communication.
     categories:
-      - label: Project
-      - label: Infrastructure
-    timestamp: 1231231
+      - label: project
+      - label: infrastructure
+    timestamp: 7
     buttons:
     - label: Learn More
       url: https://forum.threshold.network/
@@ -88,8 +88,8 @@ projectsAndTools:
     title: Delegates Dashboard
     description: The Delegates Dashboard aims to facilitate the delegation of voting power to our delegates.
     categories:
-      - label: Tool
-    timestamp: 1231231
+      - label: tool
+    timestamp: 6
     buttons:
     - label: Go to App
       url: https://forum.threshold.network/
@@ -98,8 +98,8 @@ projectsAndTools:
     title: Dune Analytics
     description: Information about the network and its ecosystem's tokens can be queried on Dune Analytics.
     categories:
-      - label: Tool
-    timestamp: 1231231
+      - label: tool
+    timestamp: 5
     buttons:
     - label: Go to App
       url: https://forum.threshold.network/
@@ -108,9 +108,9 @@ projectsAndTools:
     title: tBTC Subgraph
     description: The aim of the subgraph is to facilitate queries about the T token and Threshold's Network DAO governance.
     categories:
-      - label: Tool
-      - label: Integration
-    timestamp: 1231231
+      - label: tool
+      - label: integration
+    timestamp: 4
     buttons:
     - label: Go to App
       url: https://forum.threshold.network/
@@ -119,8 +119,8 @@ projectsAndTools:
     title: Community Notion Tools
     description: The aim of the subgraph is to facilitate queries about the T token and Threshold's Network DAO governance.
     categories:
-      - label: Tool
-    timestamp: 1231231
+      - label: tool
+    timestamp: 3
     buttons:
     - label: Go to App
       url: https://forum.threshold.network/
@@ -129,9 +129,9 @@ projectsAndTools:
     title: Threshold Subgraph
     description: The aim of the subgraph is to facilitate queries about the T token and Threshold's Network DAO governance.
     categories:
-      - label: Tool
-      - label: Integration
-    timestamp: 1231231
+      - label: tool
+      - label: integration
+    timestamp: 2
     buttons:
     - label: Go to App
       url: https://forum.threshold.network/
@@ -140,8 +140,8 @@ projectsAndTools:
     title: 101 Courses and Videos
     description: The aim of the subgraph is to facilitate queries about the T token and Threshold's Network DAO governance.
     categories: 
-    - label: Tool
-    timestamp: 1231231
+    - label: tool
+    timestamp: 1
     buttons:
     - label: Go to App
       url: https://forum.threshold.network/
