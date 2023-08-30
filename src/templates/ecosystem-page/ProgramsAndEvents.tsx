@@ -21,6 +21,7 @@ const ProgramsAndEventsCard: FC<ProgramsAndEventsCardProps> = ({
   return (
     <Stack spacing={3}>
       <Card
+        boxShadow={"0px 4px 4px 0px rgba(0, 0, 0, 0.25)"}
         m="0"
         p="0"
         display="flex"
