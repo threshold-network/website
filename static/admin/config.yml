@@ -2135,6 +2135,112 @@ collections:
                   { label: "URL", name: "url", widget: "string" },
                 ],
             }
+          - {
+              label: "Projects and Tools Section",
+              name: "projectsAndToolsInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Pre Title",
+                    name: "preTitle",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: "Projects and Tools Card",
+              name: "projectsAndTools",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                  },
+                  {
+                    label: "Categories",
+                    name: "categories",
+                    widget: "list",
+                    allow_add: true,
+                    required: true,
+                    fields: [{ label: Label, name: label, widget: string }],
+                  },
+                  {
+                    label: "Timestamp",
+                    name: "timestamp",
+                    widget: "number",
+                    required: false,
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
       # Governance Page
       - file: "src/content/pages/governance/index.md"
         name: "governancePage"

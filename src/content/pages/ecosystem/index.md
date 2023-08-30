@@ -41,4 +41,109 @@ programsAndEvents:
     title: tBTC Wrapped Tour
     description: Mint tBTC during Tour Stop 3 to claim this exclusive tBTC Wrapped Tour Arbitrum OAT!
     url: https://blog.threshold.network/stop-three-on-tbtcs-wrapped-tour-kicks-off-with-an-arbitrum-integration-and-a-new-galxe-oat/
+projectsAndToolsInfo:
+  preTitle: Ecosystem
+  title: Powered By Threshold Foundation
+  description: "Find the perfect tool or services that suite your web3 needs."
+  rowReverse: false
+projectsAndTools:
+  - image: /images/ethereum.svg
+    title: tBTC
+    description: tBTC is a Bitcoin-backed token pegged to the price of bitcoin. It allows holders to use bitcoin on DeFi.
+    categories:
+      - label: Project
+    timestamp: 1231231
+    buttons:
+    - label: Learn More
+      url: https://forum.threshold.network/
+      variant: EXTERNAL_SOLID
+    - label: Go to App
+      url: https://forum.threshold.network/c/governance-proposals/7
+      variant: EXTERNAL_OUTLINE
+  - image: /images/ethereum.svg
+    title: thUSD
+    description: thUSD is a stablecoin soft-pegged against USD and backed by ETH and tBTC as collaterals.
+    categories:
+      - label: Project
+    timestamp: 1231231
+    buttons:
+    - label: Learn More
+      url: https://forum.threshold.network/
+      variant: EXTERNAL_SOLID
+    - label: Go to App
+      url: https://forum.threshold.network/c/governance-proposals/7
+      variant: EXTERNAL_OUTLINE
+  - image: /images/ethereum.svg
+    title: TACo
+    description: Threshold Access Control enables end-to-end encrypted data sharing and communication.
+    categories:
+      - label: Project
+      - label: Infrastructure
+    timestamp: 1231231
+    buttons:
+    - label: Learn More
+      url: https://forum.threshold.network/
+      variant: EXTERNAL_SOLID
+  - image: /images/ethereum.svg
+    title: Delegates Dashboard
+    description: The Delegates Dashboard aims to facilitate the delegation of voting power to our delegates.
+    categories:
+      - label: Tool
+    timestamp: 1231231
+    buttons:
+    - label: Go to App
+      url: https://forum.threshold.network/
+      variant: EXTERNAL_SOLID
+  - image: /images/ethereum.svg
+    title: Dune Analytics
+    description: Information about the network and its ecosystem's tokens can be queried on Dune Analytics.
+    categories:
+      - label: Tool
+    timestamp: 1231231
+    buttons:
+    - label: Go to App
+      url: https://forum.threshold.network/
+      variant: EXTERNAL_SOLID
+  - image: /images/ethereum.svg
+    title: tBTC Subgraph
+    description: The aim of the subgraph is to facilitate queries about the T token and Threshold's Network DAO governance.
+    categories:
+      - label: Tool
+      - label: Integration
+    timestamp: 1231231
+    buttons:
+    - label: Go to App
+      url: https://forum.threshold.network/
+      variant: EXTERNAL_SOLID
+  - image: /images/ethereum.svg
+    title: Community Notion Tools
+    description: The aim of the subgraph is to facilitate queries about the T token and Threshold's Network DAO governance.
+    categories:
+      - label: Tool
+    timestamp: 1231231
+    buttons:
+    - label: Go to App
+      url: https://forum.threshold.network/
+      variant: EXTERNAL_SOLID
+  - image: /images/ethereum.svg
+    title: Threshold Subgraph
+    description: The aim of the subgraph is to facilitate queries about the T token and Threshold's Network DAO governance.
+    categories:
+      - label: Tool
+      - label: Integration
+    timestamp: 1231231
+    buttons:
+    - label: Go to App
+      url: https://forum.threshold.network/
+      variant: EXTERNAL_SOLID
+  - image: /images/ethereum.svg
+    title: 101 Courses and Videos
+    description: The aim of the subgraph is to facilitate queries about the T token and Threshold's Network DAO governance.
+    categories: 
+    - label: Tool
+    timestamp: 1231231
+    buttons:
+    - label: Go to App
+      url: https://forum.threshold.network/
+      variant: EXTERNAL_SOLID
 ---

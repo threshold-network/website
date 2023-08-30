@@ -4,6 +4,7 @@ import SectionTemplate from "../home-page/SectionTemplate"
 import { Box } from "@chakra-ui/react"
 import { IntegrationsCardGroup } from "../../components/IntegrationCard"
 import ProgramsAndEvents from "./ProgramsAndEvents"
+import ProjectsAndTools from "./ProjectsAndTools"
 
 const EcosystemPageTemplate: FC = ({ data }: any) => {
   const {
@@ -11,6 +12,8 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
     integrations,
     programsAndEventsInfo,
     programsAndEvents,
+    projectsAndToolsInfo,
+    projectsAndTools,
   } = data.markdownRemark.frontmatter
 
   return (
@@ -25,8 +28,15 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
         isImageBackground
       />
       <IntegrationsCardGroup cards={integrations} />
-      <SectionTemplate {...programsAndEventsInfo} bgColor="gray.900">
+      <SectionTemplate
+        {...programsAndEventsInfo}
+        isMediumSize
+        bgColor="gray.900"
+      >
         <ProgramsAndEvents cards={programsAndEvents} />
+      </SectionTemplate>
+      <SectionTemplate {...projectsAndToolsInfo} isMediumSize bgColor="#161A1F">
+        <ProjectsAndTools cards={projectsAndTools} />
       </SectionTemplate>
     </Box>
   )
@@ -88,6 +98,35 @@ export const query = graphql`
           title
           description
           url
+        }
+        projectsAndToolsInfo {
+          rowReverse
+          preTitle
+          title
+          description
+        }
+        projectsAndTools {
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          title
+          description
+          categories {
+            label
+          }
+          timestamp
+          buttons {
+            label
+            url
+            variant
+          }
         }
       }
     }

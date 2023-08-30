@@ -58,11 +58,6 @@ const ProgramsAndEventsCard: FC<ProgramsAndEventsCardProps> = ({
   )
 }
 
-export interface ProgramsAndEventsProps {
-  title: string
-  subTitle: string
-}
-
 const ProgramsAndEvents: FC<{ cards: ProgramsAndEventsCardProps[] }> = ({
   cards,
 }) => {

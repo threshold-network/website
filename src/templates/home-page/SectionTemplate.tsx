@@ -30,6 +30,7 @@ export interface RoleTemplateProps extends BoxProps {
   image?: ImageProps
   rowReverse?: boolean
   isSmallSize?: boolean
+  isMediumSize?: boolean
   isImageBackground?: boolean
   columnReverse?: boolean
   preTitle?: string
@@ -76,13 +77,18 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
   rowReverse,
   columnReverse,
   isSmallSize,
+  isMediumSize,
   isImageBackground,
   preTitle = "Get Started",
   children,
   ...boxProps
 }) => {
   return (
-    <PageSection withSmallPadding={isSmallSize} {...boxProps}>
+    <PageSection
+      withSmallPadding={isSmallSize}
+      withMediumPadding={isMediumSize}
+      {...boxProps}
+    >
       <ResponsiveStack
         rowReverse={rowReverse}
         columnReverse={columnReverse}
@@ -105,7 +111,6 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
               {description}
             </H5>
           )}
-
           <Stack mt={10} direction={{ base: "column", md: "row" }} spacing={8}>
             {buttons.map((_: FooterButton, i) => {
               return (

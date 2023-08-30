@@ -9,14 +9,18 @@ export interface SectionImageProps {
   isImageBackground?: boolean
 }
 
-export const PageSection: FC<BoxProps & { withSmallPadding?: boolean }> = ({
-  withSmallPadding,
-  children,
-  ...props
-}) => {
+export const PageSection: FC<
+  BoxProps & { withSmallPadding?: boolean; withMediumPadding?: boolean }
+> = ({ withSmallPadding, withMediumPadding, children, ...props }) => {
   return (
     <Box
-      py={withSmallPadding ? { base: 8, md: 16 } : { base: 20, md: 40 }}
+      py={
+        withSmallPadding
+          ? { base: 8, md: 16 }
+          : withMediumPadding
+          ? { base: 14, md: 28 }
+          : { base: 20, md: 40 }
+      }
       as="section"
       {...props}
     >
