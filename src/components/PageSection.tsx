@@ -66,6 +66,7 @@ export const SectionImage: FC<SectionImageProps> = ({
       justifyContent="center"
       maxW="415px"
       maxH="300px"
+      overflowX="hidden"
       mx={mdSize ? "auto !important" : undefined}
     >
       <Image

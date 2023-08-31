@@ -66,7 +66,7 @@ export const ProjectsAndToolsCard: FC<ProjectsAndToolsCardProps> = ({
         >
           <Stack spacing={7}>
             <Stack direction="row" alignItems="center" gap={4}>
-              <Image h={"60px"} w={"60px"} {...image} />
+              <Image h="60px" w="60px" {...image} />
               <Card.Title noOfLines={2} maxWidth="120px" fontWeight="medium">
                 {title}
               </Card.Title>

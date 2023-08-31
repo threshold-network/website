@@ -5,6 +5,7 @@ import { Box } from "@chakra-ui/react"
 import { IntegrationsCardGroup } from "../../components/IntegrationCard"
 import ProgramsAndEvents from "./ProgramsAndEvents"
 import ProjectsAndTools from "./ProjectsAndTools"
+import Resources from "./Resources"
 
 const EcosystemPageTemplate: FC = ({ data }: any) => {
   const {
@@ -14,29 +15,40 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
     programsAndEvents,
     projectsAndToolsInfo,
     projectsAndTools,
+    resourcesInfo,
+    resources,
   } = data.markdownRemark.frontmatter
 
   return (
-    <Box>
+    <Box bgColor="gray.900">
       <SectionTemplate
         {...ecosystemInfo}
         image={{ ...ecosystemInfo.image, mr: "28rem", mt: "-3rem", w: "52rem" }}
         preTitle={null}
         columnReverse
-        bgColor="gray.900"
         isSmallSize
         isImageBackground
       />
       <IntegrationsCardGroup cards={integrations} />
-      <SectionTemplate
-        {...programsAndEventsInfo}
-        isMediumSize
-        bgColor="gray.900"
-      >
+      <SectionTemplate {...programsAndEventsInfo} isMediumSize>
         <ProgramsAndEvents cards={programsAndEvents} />
       </SectionTemplate>
       <SectionTemplate {...projectsAndToolsInfo} isMediumSize bgColor="#161A1F">
         <ProjectsAndTools cards={projectsAndTools} />
+      </SectionTemplate>
+      <SectionTemplate
+        {...resourcesInfo}
+        image={{
+          ...ecosystemInfo.image,
+          left: 0,
+          ml: "4rem",
+          mt: "-6rem",
+          w: "52rem",
+        }}
+        isMediumSize
+        isImageBackground
+      >
+        <Resources cards={resources} />
       </SectionTemplate>
     </Box>
   )
@@ -122,6 +134,32 @@ export const query = graphql`
             label
           }
           timestamp
+          buttons {
+            label
+            url
+            variant
+          }
+        }
+        resourcesInfo {
+          rowReverse
+          preTitle
+          title
+          description
+        }
+        resources {
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          isBigSize
+          title
+          description
           buttons {
             label
             url

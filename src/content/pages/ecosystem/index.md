@@ -51,7 +51,7 @@ projectsAndTools:
     title: tBTC
     description: tBTC is a Bitcoin-backed token pegged to the price of bitcoin. It allows holders to use bitcoin on DeFi.
     categories:
-      - label: Project
+      - label: project
     timestamp: 1675199559
     buttons:
     - label: Learn More
@@ -146,4 +146,32 @@ projectsAndTools:
     - label: Go to App
       url: https://101.xyz/course/claqymc0v067108kyden9aehq
       variant: EXTERNAL_SOLID
+resourcesInfo:
+  preTitle: Resources
+  title: Ecosystem Resources
+  description: "A mission-aligned coalition of organizations shaping the future of web3."
+  rowReverse: false
+resources:
+  - image: /images/github-resources.svg
+    title: Github
+    description: Explore the repositories and contribute to the Threshold ecosystem.
+    buttons:
+    - label: Explore our Github
+      url: https://github.com/threshold-network/
+      variant: EXTERNAL_OUTLINE
+  - image: /images/discourse-resources.svg
+    title: Governance Forum
+    description: Get involved in the discussions that are shaping the future of cryptography in the web3.
+    buttons:
+    - label: Learn More
+      url: https://forum.threshold.network/
+      variant: EXTERNAL_OUTLINE
+  - image: /images/threshold-resources.svg
+    isBigSize: true
+    title: Explore the Threshold Community Blog
+    description: Read all the articles from across the Threshold ecosystem, easily accessible through our Blog.
+    buttons:
+    - label: Read Our Blog
+      url: https://blog.threshold.network/
+      variant: EXTERNAL_OUTLINE
 ---
