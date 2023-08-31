@@ -13,6 +13,15 @@ const Pagination: FC<PaginationProps> = ({
   currentPage,
   setCurrentPage,
 }) => {
+  const goToNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1)
+    }
+  }
+
+  const goToLastPage = () => {
+    setCurrentPage(totalPages)
+  }
   return (
     <Stack direction="row" spacing={4} align="center">
       {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
@@ -32,7 +41,7 @@ const Pagination: FC<PaginationProps> = ({
         display="flex"
         alignItems="center"
         as="button"
-        onClick={() => setCurrentPage(currentPage + 1)}
+        onClick={goToNextPage}
       >
         <ChevronRightIcon />
       </Box>
@@ -43,7 +52,7 @@ const Pagination: FC<PaginationProps> = ({
         alignItems="center"
         borderRight="1px solid"
         as="button"
-        onClick={() => setCurrentPage(totalPages)}
+        onClick={goToLastPage}
       >
         <ChevronRightIcon />
       </Box>
