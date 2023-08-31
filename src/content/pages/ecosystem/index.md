@@ -174,4 +174,19 @@ resources:
     - label: Read Our Blog
       url: https://blog.threshold.network/
       variant: EXTERNAL_OUTLINE
+communityInfo:
+  title: Join our Community
+  description: "Stay up-to-date on the ecosystem news, discussions, and community events."
+  rowReverse: false
+community:
+  - leftIcon: /images/discord-social.svg
+    title: Discord
+    description: Ask questions and engage with our vibrant community.
+    url: https://discord.gg/Threshold
+    rightIcon: /images/external-arrow.svg
+  - leftIcon: /images/twitter-social.svg
+    title: Twitter
+    description: Keep in the loop on the latest ecosystem news.
+    url: https://twitter.com/TheTNetwork
+    rightIcon: /images/external-arrow.svg
 ---

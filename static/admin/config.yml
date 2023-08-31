@@ -2340,6 +2340,66 @@ collections:
                   },
                 ],
             }
+          - {
+              label: "Community Section",
+              name: "communityInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                ],
+            }
+          - {
+              label: "Community Card",
+              name: "community",
+              widget: "list",
+              allow_add: true,
+              fields:
+                [
+                  {
+                    label: "Left Icon",
+                    name: "leftIcon",
+                    widget: file,
+                    required: true,
+                    media_library: { config: { multiple: false } },
+                    hint: "SVG only. SVG must have width and height attributes set in the file.",
+                  },
+                  {
+                    label: "Right Icon",
+                    name: "rightIcon",
+                    widget: file,
+                    required: true,
+                    media_library: { config: { multiple: false } },
+                    hint: "SVG only. SVG must have width and height attributes set in the file.",
+                  },
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                  },
+                  { label: "URL", name: "url", widget: "string" },
+                ],
+            }
       # Governance Page
       - file: "src/content/pages/governance/index.md"
         name: "governancePage"

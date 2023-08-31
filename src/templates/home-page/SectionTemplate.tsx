@@ -32,6 +32,7 @@ export interface RoleTemplateProps extends BoxProps {
   isSmallSize?: boolean
   isMediumSize?: boolean
   isImageBackground?: boolean
+  isCentered?: boolean
   columnReverse?: boolean
   preTitle?: string
 }
@@ -79,6 +80,7 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
   isSmallSize,
   isMediumSize,
   isImageBackground,
+  isCentered,
   preTitle = "Get Started",
   children,
   ...boxProps
@@ -93,6 +95,8 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
         rowReverse={rowReverse}
         columnReverse={columnReverse}
         spacing={16}
+        justifyContent={isCentered ? "center" : undefined}
+        textAlign={isCentered ? "center" : undefined}
       >
         <SectionTextContainer>
           <LabelMd textTransform="uppercase" color="gray.500">

@@ -63,7 +63,7 @@ const ProgramsAndEvents: FC<{ cards: ProgramsAndEventsCardProps[] }> = ({
   cards,
 }) => {
   return (
-    <SimpleGrid columns={{ base: 1, md: 3 }} spacing={5} mt={8}>
+    <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4} mt={8}>
       {cards.slice(0, 3).map((program: any, i) => (
         <ProgramsAndEventsCard key={i} {...program} />
       ))}

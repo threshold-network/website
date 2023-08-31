@@ -5,7 +5,8 @@ import { Box } from "@chakra-ui/react"
 import { IntegrationsCardGroup } from "../../components/IntegrationCard"
 import ProgramsAndEvents from "./ProgramsAndEvents"
 import ProjectsAndTools from "./ProjectsAndTools"
-import Resources from "./Resources"
+import ResourcesSection from "./ResourcesSection"
+import CommunitySection from "./CommunitySection"
 
 const EcosystemPageTemplate: FC = ({ data }: any) => {
   const {
@@ -17,13 +18,21 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
     projectsAndTools,
     resourcesInfo,
     resources,
+    communityInfo,
+    community,
   } = data.markdownRemark.frontmatter
 
   return (
     <Box bgColor="gray.900">
       <SectionTemplate
         {...ecosystemInfo}
-        image={{ ...ecosystemInfo.image, mr: "28rem", mt: "-3rem", w: "52rem" }}
+        image={{
+          ...ecosystemInfo.image,
+          right: 0,
+          mr: "32rem",
+          mt: "-3rem",
+          w: "52rem",
+        }}
         preTitle={null}
         columnReverse
         isSmallSize
@@ -48,7 +57,10 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
         isMediumSize
         isImageBackground
       >
-        <Resources cards={resources} />
+        <ResourcesSection cards={resources} />
+      </SectionTemplate>
+      <SectionTemplate {...communityInfo} preTitle="" isSmallSize isCentered>
+        <CommunitySection cards={community} />
       </SectionTemplate>
     </Box>
   )
@@ -165,6 +177,62 @@ export const query = graphql`
             url
             variant
           }
+        }
+        communityInfo {
+          rowReverse
+          title
+          description
+        }
+        community {
+          leftIcon {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            svg {
+              name
+              attributes {
+                key
+                value
+              }
+              children {
+                name
+                type
+                value
+                attributes {
+                  key
+                  value
+                }
+              }
+            }
+          }
+          rightIcon {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            svg {
+              name
+              attributes {
+                key
+                value
+              }
+              children {
+                name
+                type
+                value
+                attributes {
+                  key
+                  value
+                }
+              }
+            }
+          }
+          title
+          description
+          url
         }
       }
     }

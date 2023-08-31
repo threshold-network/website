@@ -111,7 +111,7 @@ const ProjectsAndTools: FC<{ cards: ProjectsAndToolsCardProps[] }> = ({
           setCurrentPage={setCurrentPage}
         />
       </Stack>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4} mt={8}>
+      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={3} mt={8}>
         {paginatedCards.map((card: any, i) => (
           <ProjectsAndToolsCard key={i} {...card} />
         ))}
