@@ -22,7 +22,14 @@ const ResourcesCard: FC<ResourcesCardProps> = ({
   buttons,
 }) => {
   return (
-    <Card m="auto" display="flex" flexDirection="column" w="100%" p={10}>
+    <Card
+      boxShadow={"0px 4px 90px 0px rgba(153, 116, 255, 0.06)"}
+      m="auto"
+      display="flex"
+      flexDirection="column"
+      w="100%"
+      p={10}
+    >
       <Stack spacing={6}>
         <Stack direction="row" alignItems="center" gap={4}>
           <Image h="42px" w="42px" {...image} />
@@ -56,6 +63,7 @@ const ResourcesExtendedCard: FC<ResourcesCardProps> = ({
 }) => {
   return (
     <GridItem
+      boxShadow={"0px 4px 90px 0px rgba(153, 116, 255, 0.06)"}
       m="auto"
       display="flex"
       flexDirection="column"

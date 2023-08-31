@@ -28,6 +28,7 @@ const CommunitySectionCard: FC<CommunitySectionCardProps> = ({
       }}
     >
       <Card
+        boxShadow={"0px 4px 90px 0px rgba(153, 116, 255, 0.06)"}
         m="auto"
         display="flex"
         flexDirection="column"
