@@ -62,7 +62,7 @@ export const SectionImage: FC<SectionImageProps> = ({
 
   return (
     <Box
-      display="flex"
+      display={isImageBackground ? { base: "none", md: "flex" } : "flex"}
       justifyContent="center"
       maxW="415px"
       maxH="300px"
