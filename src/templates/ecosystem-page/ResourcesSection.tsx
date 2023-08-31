@@ -100,10 +100,10 @@ const ResourcesExtendedCard: FC<ResourcesCardProps> = ({
   )
 }
 
-const Resources: FC<{ cards: ResourcesCardProps[] }> = ({ cards }) => {
+const ResourcesSection: FC<{ cards: ResourcesCardProps[] }> = ({ cards }) => {
   return (
     <>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5} mt={8}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} mt={8}>
         {cards
           .slice(0, 3)
           .map((resource: any, i) =>
@@ -118,4 +118,4 @@ const Resources: FC<{ cards: ResourcesCardProps[] }> = ({ cards }) => {
   )
 }
 
-export default Resources
+export default ResourcesSection
