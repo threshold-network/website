@@ -44,7 +44,7 @@ faq:
     - question: Do legacy KEEP stakers need to set up a PRE node?
       answer:
         Yes, everyone who stakes on Threshold will need to run a PRE node. If
-        you are working with a stakng provider, reach out to them to accomplish
+        you are working with a staking provider, reach out to them to accomplish
         this. If you are running your own node, you can refer to the following
         guide.
       buttons:
@@ -97,6 +97,9 @@ faq:
             image: /images/document.svg
           rightIcon:
             image: /images/external-arrow.svg
+    - question: What is the difference between Threshold's services and those of competitors?
+      answer:
+        Threshold is committed to transparent decentralization.
 title: About
 template: about-page
 seoTitle: About
