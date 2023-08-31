@@ -15,10 +15,7 @@ const FilterMenu: React.FC<FilterMenuProps> = ({
   setCurrentPage,
 }) => {
   return (
-    <Stack
-      direction={{ base: "column", md: "row" }}
-      spacing={{ base: 1, md: 4 }}
-    >
+    <Stack direction="row" flexWrap="wrap" spacing={{ md: 3 }}>
       {options.map((option, index) => (
         <Button
           key={index}

@@ -34,7 +34,8 @@ const SortDropdown: React.FC<SortDropdownProps> = ({
         return (
           <>
             <MenuButton
-              px={2}
+              px={4}
+              mt={{ base: 8, md: 0 }}
               color="gray.500"
               _hover={hoverStyles}
               {...openStyles}

@@ -75,12 +75,19 @@ const ResourcesExtendedCard: FC<ResourcesCardProps> = ({
           <Flex
             flexDirection="row"
             alignItems="center"
+            justifyContent="center"
             gap={6}
             px={{ base: 8, md: 20 }}
             py={20}
             backgroundImage={backgroundResources}
+            backgroundRepeat="no-repeat"
+            backgroundSize="cover"
           >
-            <Image h="132px" w="132px" {...image} />
+            <Image
+              h={{ base: "80px", md: "132px" }}
+              w={{ base: "80px", md: "132px" }}
+              {...image}
+            />
             <H3 fontWeight="semibold" noOfLines={2}>
               Threshold Blog
             </H3>
