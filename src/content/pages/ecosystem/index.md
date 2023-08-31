@@ -26,7 +26,7 @@ integrations:
 programsAndEventsInfo:
   preTitle: Get Involved
   title: Community Programs & Events
-  description: "Stay well-informed about the most recent community programs and events."
+  description: "Stay informed about the most recent community programs and events."
   rowReverse: false
 programsAndEvents:
   - image: /images/wormhole-hackaton.png
@@ -43,13 +43,13 @@ programsAndEvents:
     url: https://blog.threshold.network/stop-three-on-tbtcs-wrapped-tour-kicks-off-with-an-arbitrum-integration-and-a-new-galxe-oat/
 projectsAndToolsInfo:
   preTitle: Ecosystem
-  title: Powered By Threshold Foundation
-  description: "Find the perfect tool or services that suite your web3 needs."
+  title: Powered By Threshold DAO
+  description: "Tools and initiatives to empower ecosystem stakeholders. "
   rowReverse: false
 projectsAndTools:
   - image: /images/tbtc.svg
     title: tBTC
-    description: tBTC is a Bitcoin-backed token pegged to the price of bitcoin. It allows holders to use bitcoin on DeFi.
+    description: tBTC is a decentralized, BTC-backed token with 1-1 price peg to Bitcoin. It allows holders to use Bitcoin on DeFi.
     categories:
       - label: project
     timestamp: 1675199559
@@ -161,7 +161,7 @@ resources:
       variant: EXTERNAL_OUTLINE
   - image: /images/discourse-resources.svg
     title: Governance Forum
-    description: Get involved in the discussions that are shaping the future of cryptography in the web3.
+    description: Get involved in the discussions that are shaping the future of the Threshold ecosystem.
     buttons:
     - label: Learn More
       url: https://forum.threshold.network/
@@ -169,7 +169,7 @@ resources:
   - image: /images/threshold-resources.svg
     isBigSize: true
     title: Explore the Threshold Community Blog
-    description: Read all the articles from across the Threshold ecosystem, easily accessible through our Blog.
+    description: Read all the articles from across the Threshold ecosystem.
     buttons:
     - label: Read Our Blog
       url: https://blog.threshold.network/
