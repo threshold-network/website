@@ -1,6 +1,6 @@
-import { FC } from "react"
+import { Dispatch, SetStateAction } from "react"
 import { HStack, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
-import { BodyMd, LabelMd, LabelSm } from "./Typography"
+import { BodyMd, LabelMd } from "./Typography"
 import { ChevronDownIcon } from "@chakra-ui/icons"
 
 export enum SortOptions {
@@ -16,8 +16,8 @@ const hoverStyles = {
 }
 
 interface SortDropdownProps {
-  sortOption: Partial<SortOptions>
-  setSortOption: React.Dispatch<React.SetStateAction<SortOptions>>
+  sortOption: SortOptions | "Sort"
+  setSortOption: Dispatch<SetStateAction<SortOptions | undefined>>
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>
 }
 

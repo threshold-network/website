@@ -45,9 +45,7 @@ const ProjectsAndTools: FC<{ cards: ProjectsAndToolsCardProps[] }> = ({
     ProjectsAndToolsCardProps[]
   >([])
   const [activeCategory, setActiveCategory] = useState<string | null>("all")
-  const [sortOption, setSortOption] = useState<SortOptions>(
-    SortOptions.TIMESTAMP_DESC
-  )
+  const [sortOption, setSortOption] = useState<SortOptions>()
 
   const [currentPage, setCurrentPage] = useState(1)
   const totalPages = Math.ceil(allFilteredCards.length / ITEMS_PER_PAGE)
@@ -106,7 +104,7 @@ const ProjectsAndTools: FC<{ cards: ProjectsAndToolsCardProps[] }> = ({
           setCurrentPage={setCurrentPage}
         />
         <SortDropdown
-          sortOption={sortOption}
+          sortOption={sortOption || "Sort"}
           setSortOption={setSortOption}
           setCurrentPage={setCurrentPage}
         />
