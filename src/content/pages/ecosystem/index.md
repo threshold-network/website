@@ -84,15 +84,15 @@ projectsAndTools:
     - label: Learn More
       url: https://docs.threshold.network/app-development/threshold-access-control-tac
       variant: EXTERNAL_SOLID
-  - image: /images/delegates-dashboard.svg
-    title: Delegates Dashboard
-    description: The Delegates Dashboard aims to facilitate the delegation of voting power to our delegates.
-    categories:
-      - label: tool
-    timestamp: 1677791559
+  - image: /images/threshold-tool.svg
+    title: tBTC Scan
+    description: tBTC Scan provides useful system status and insights on the network, including deposits and redeems.
+    categories: 
+    - label: tool
+    timestamp: 1680374826
     buttons:
     - label: Go to App
-      url: https://threshold-delegate.vercel.app/
+      url: https://101.xyz/course/claqymc0v067108kyden9aehq
       variant: EXTERNAL_SOLID
   - image: /images/dune-analytics.svg
     title: Dune Analytics
@@ -114,6 +114,26 @@ projectsAndTools:
     buttons:
     - label: Go to App
       url: https://thegraph.com/explorer/subgraphs/2E1dYAE5EsJdfC1gyzp98hHPPCxSoX2TSoBivzFto47b?view=Overview&chain=mainnet
+      variant: EXTERNAL_SOLID
+  - image: /images/boardroom-resources.svg
+    title: Threshold Boardroom
+    description: Boardroom is a management dashboard built for active DAO participants and stakeholders.
+    categories:
+      - label: tool
+    timestamp: 1648086498
+    buttons:
+    - label: Go to App
+      url: https://boardroom.io/threshold
+      variant: EXTERNAL_SOLID
+  - image: /images/threshold-tool.svg
+    title: Delegates Dashboard
+    description: The Delegates Dashboard aims to facilitate the delegation of voting power to our delegates.
+    categories:
+      - label: tool
+    timestamp: 1677791559
+    buttons:
+    - label: Go to App
+      url: https://threshold-delegate.vercel.app/
       variant: EXTERNAL_SOLID
   - image: /images/notion.svg
     title: Community Notion Tools
