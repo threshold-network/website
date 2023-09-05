@@ -7,6 +7,7 @@ import ProgramsAndEvents from "./ProgramsAndEvents"
 import ProjectsAndTools from "./ProjectsAndTools"
 import ResourcesSection from "./ResourcesSection"
 import CommunitySection from "./CommunitySection"
+import { HighlightWord } from "../../components/HighlightWord"
 
 const EcosystemPageTemplate: FC = ({ data }: any) => {
   const {
@@ -26,6 +27,14 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
     <Box bgColor="gray.900">
       <SectionTemplate
         {...ecosystemInfo}
+        title={
+          <HighlightWord
+            title={ecosystemInfo.title}
+            highlightedWord="Ecosystem"
+            bgGradient="linear-gradient(120.19deg, #BD30FF 3.32%, #7D00FF 95.02%)"
+            fontWeight="bold"
+          />
+        }
         image={{
           ...ecosystemInfo.image,
           right: 0,

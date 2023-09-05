@@ -14,6 +14,8 @@ import {
 import { ImageProps } from "../../components"
 import { TrackComponent } from "../../components/Posthog/TrackComponent"
 
+type OmittedBoxProps = Omit<BoxProps, "title">
+
 export interface FooterButton {
   label: string
   url: string
@@ -21,9 +23,9 @@ export interface FooterButton {
   posthogLabel?: string
 }
 
-export interface RoleTemplateProps extends BoxProps {
+export interface RoleTemplateProps extends OmittedBoxProps {
   bgColor: string
-  title: string
+  title: string | JSX.Element
   description: string
   buttons: FooterButton[]
   highlightedWord?: string
@@ -34,38 +36,6 @@ export interface RoleTemplateProps extends BoxProps {
   isCentered?: boolean
   columnReverse?: boolean
   preTitle?: string
-}
-
-const SectionTitleTemplate: FC<Partial<RoleTemplateProps>> = ({
-  title,
-  highlightedWord,
-}) => {
-  return (
-    <H2 mt={3} color="brand.50">
-      {title!
-        .split(" ")
-        .map((word, index, arr) => {
-          return word === highlightedWord ? (
-            <Text
-              as="span"
-              bgGradient="linear-gradient(120.19deg, #BD30FF 3.32%, #7D00FF 95.02%)"
-              bgClip="text"
-              fontWeight="bold"
-              key={index}
-            >
-              {word}
-            </Text>
-          ) : (
-            <Text as="span" color="brand.50" key={index}>
-              {word}
-            </Text>
-          )
-        })
-        .reduce((acc, curr, index, arr) => {
-          return index !== arr.length - 1 ? [...acc, curr, " "] : [...acc, curr]
-        }, [] as React.ReactNode[])}
-    </H2>
-  )
 }
 
 const SectionTemplate: FC<RoleTemplateProps> = ({
