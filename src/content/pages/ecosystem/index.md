@@ -29,8 +29,8 @@ programsAndEventsInfo:
   description: "Stay informed about the most recent community programs and events."
   rowReverse: false
 programsAndEvents:
-  - image: /images/wormhole-hackaton.png
-    title: Wormhole Encode Hackaton
+  - image: /images/wormhole-hackathon.png
+    title: Wormhole Encode Hackathon
     description: 4 days packed with learning, networking and building with Wormhole at the Encode Club Hacker House.
     url: https://www.encode.club/wormhole-hackathon
   - image: /images/bond-program.png
