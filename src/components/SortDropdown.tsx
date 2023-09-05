@@ -3,7 +3,7 @@ import { HStack, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react"
 import { BodyMd, LabelMd } from "./Typography"
 import { ChevronDownIcon } from "@chakra-ui/icons"
 
-export enum SortOptions {
+export enum SortOption {
   TITLE_ASC = "Title (A-Z)",
   TITLE_DESC = "Title (Z-A)",
   TIMESTAMP_ASC = "Oldest",
@@ -16,8 +16,8 @@ const hoverStyles = {
 }
 
 interface SortDropdownProps {
-  sortOption: SortOptions | "Sort"
-  setSortOption: Dispatch<SetStateAction<SortOptions | undefined>>
+  sortOption: SortOption | "Sort"
+  setSortOption: Dispatch<SetStateAction<SortOption | undefined>>
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>
 }
 
@@ -48,14 +48,14 @@ const SortDropdown: React.FC<SortDropdownProps> = ({
               </HStack>
             </MenuButton>
             <MenuList bg="gray.900" borderColor="gray.700">
-              {Object.values(SortOptions).map((option, index) => {
+              {Object.values(SortOption).map((option, index) => {
                 return (
                   <MenuItem
                     key={index}
                     color="gray.300"
                     onClick={() => {
                       setCurrentPage(1)
-                      setSortOption(option as SortOptions)
+                      setSortOption(option as SortOption)
                     }}
                     _hover={{ bg: "gray.900", color: "white" }}
                     _focus={{

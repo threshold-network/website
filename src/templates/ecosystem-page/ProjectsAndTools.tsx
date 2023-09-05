@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react"
 import { SimpleGrid, Stack, Flex } from "@chakra-ui/react"
 import { ImageProps } from "../../components"
-import SortDropdown, { SortOptions } from "../../components/SortDropdown"
+import SortDropdown, { SortOption } from "../../components/SortDropdown"
 import FilterMenu from "../../components/FilterMenu"
 import { ProjectsAndToolsCard } from "./ProjectsAndToolsCard"
 import Pagination from "../../components/Pagination"
@@ -9,7 +9,7 @@ import { convertDateToTimestamp } from "../../utils/date"
 
 const ITEMS_PER_PAGE = 6
 
-export enum Categories {
+export enum Category {
   ALL = "all",
   PROJECT = "project",
   TOOL = "tool",
@@ -45,15 +45,17 @@ const ProjectsAndTools: FC<{ cards: ProjectsAndToolsCardProps[] }> = ({
   const [paginatedCards, setPaginatedCards] = useState<
     ProjectsAndToolsCardProps[]
   >([])
-  const [activeCategory, setActiveCategory] = useState<string | null>("all")
-  const [sortOption, setSortOption] = useState<SortOptions>()
+  const [activeCategory, setActiveCategory] = useState<string | null>(
+    Category.ALL
+  )
+  const [sortOption, setSortOption] = useState<SortOption>()
 
   const [currentPage, setCurrentPage] = useState(1)
   const totalPages = Math.ceil(allFilteredCards.length / ITEMS_PER_PAGE)
 
   const filterAndSortCards = () => {
     const tempCards =
-      activeCategory === "all"
+      activeCategory === Category.ALL
         ? cards
         : cards.filter((card) =>
             card.categories.some(
@@ -67,13 +69,13 @@ const ProjectsAndTools: FC<{ cards: ProjectsAndToolsCardProps[] }> = ({
       const bDate = convertDateToTimestamp(b.date)
 
       switch (sortOption) {
-        case SortOptions.TITLE_ASC:
+        case SortOption.TITLE_ASC:
           return a.title.localeCompare(b.title)
-        case SortOptions.TITLE_DESC:
+        case SortOption.TITLE_DESC:
           return b.title.localeCompare(a.title)
-        case SortOptions.TIMESTAMP_ASC:
+        case SortOption.TIMESTAMP_ASC:
           return aDate - bDate
-        case SortOptions.TIMESTAMP_DESC:
+        case SortOption.TIMESTAMP_DESC:
           return bDate - aDate
         default:
           return 0
@@ -102,7 +104,7 @@ const ProjectsAndTools: FC<{ cards: ProjectsAndToolsCardProps[] }> = ({
         mt={12}
       >
         <FilterMenu
-          options={Object.values(Categories) as string[]}
+          options={Object.values(Category) as string[]}
           activeFilter={activeCategory}
           setActiveFilter={setActiveCategory}
           setCurrentPage={setCurrentPage}

@@ -5,14 +5,6 @@ import ExternalButtonLink from "../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../components/Navbar/types"
 import { Image, ImageProps } from "../../components"
 
-export enum Categories {
-  ALL = "all",
-  PROJECT = "project",
-  TOOL = "tool",
-  INFRASTRUCTURE = "infrastructure",
-  INTEGRATION = "integration",
-}
-
 export interface CardButton {
   label: string
   url: string
