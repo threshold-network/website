@@ -39,15 +39,16 @@ export const IntegrationsCardGroup: FC<{ cards: IntegrationCardProps[] }> = ({
   const [cardSet, setCardSet] = useState<IntegrationCardProps[]>([])
   const scrollContainer = useRef<HTMLDivElement>(null)
 
-  const cardWidth = parseInt("170")
-  const cardSpacing = parseInt("6")
+  const cardWidth = 170
+  const cardSpacing = 6
 
   useEffect(() => {
     const numberOfCards = window.innerWidth / (cardWidth + cardSpacing)
     const roundedNumberOfCards = Math.floor(numberOfCards)
     let newCardSet: IntegrationCardProps[] = []
 
-    // Create a new array by duplicating the original cards until we reach the calculated size
+    // Create a new array by duplicating the original cards until we reach the
+    // calculated size
     for (let i = 0; i < roundedNumberOfCards; i++) {
       newCardSet = [...newCardSet, ...cards]
     }
