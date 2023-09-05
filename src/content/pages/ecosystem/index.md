@@ -52,7 +52,7 @@ projectsAndTools:
     description: tBTC is a decentralized, BTC-backed token with 1-1 price peg to Bitcoin. It allows holders to use Bitcoin on DeFi.
     categories:
       - label: project
-    timestamp: 1675199559
+    date: 2023-01-31
     buttons:
     - label: Learn More
       url: https://docs.threshold.network/applications/tbtc-v2/
@@ -65,7 +65,7 @@ projectsAndTools:
     description: thUSD is a stablecoin soft-pegged against USD and backed by ETH and tBTC as collaterals.
     categories:
       - label: project
-    timestamp: 1688159559
+    date: 2023-03-19
     buttons:
     - label: Learn More
       url: https://docs.threshold.network/applications/threshold-usd
@@ -79,7 +79,7 @@ projectsAndTools:
     categories:
       - label: project
       - label: infrastructure
-    timestamp: 1693429959
+    date: 2023-09-01
     buttons:
     - label: Learn More
       url: https://docs.threshold.network/app-development/threshold-access-control-tac
@@ -89,7 +89,7 @@ projectsAndTools:
     description: tBTC Scan provides useful system status and insights on the network, including deposits and redeems.
     categories: 
     - label: tool
-    timestamp: 1680374826
+    date: 2023-03-07
     buttons:
     - label: Go to App
       url: https://101.xyz/course/claqymc0v067108kyden9aehq
@@ -99,7 +99,7 @@ projectsAndTools:
     description: Information about the network and its ecosystem's tokens can be queried on Dune Analytics.
     categories:
       - label: tool
-    timestamp: 1630357959
+    date: 2022-09-15
     buttons:
     - label: Go to App
       url: https://dune.com/cygnusv/Threshold-Network
@@ -110,7 +110,7 @@ projectsAndTools:
     categories:
       - label: tool
       - label: integration
-    timestamp: 1680210759
+    date: 2023-03-10
     buttons:
     - label: Go to App
       url: https://thegraph.com/explorer/subgraphs/2E1dYAE5EsJdfC1gyzp98hHPPCxSoX2TSoBivzFto47b?view=Overview&chain=mainnet
@@ -120,7 +120,7 @@ projectsAndTools:
     description: Boardroom is a management dashboard built for active DAO participants and stakeholders.
     categories:
       - label: tool
-    timestamp: 1648086498
+    date: 2023-02-19
     buttons:
     - label: Go to App
       url: https://boardroom.io/threshold
@@ -130,7 +130,7 @@ projectsAndTools:
     description: The Delegates Dashboard aims to facilitate the delegation of voting power to our delegates.
     categories:
       - label: tool
-    timestamp: 1677791559
+    date: 2023-03-24
     buttons:
     - label: Go to App
       url: https://threshold-delegate.vercel.app/
@@ -140,7 +140,7 @@ projectsAndTools:
     description: Our organization uses Notion as a central source of truth for the different DAO groups of work and guilds.
     categories:
       - label: tool
-    timestamp: 1630357959
+    date: 2021-01-08
     buttons:
     - label: Go to App
       url: https://www.notion.so/Mission-Vision-and-Values-fc45ef966f9747fd911a14cf0a2a82c2
@@ -151,7 +151,7 @@ projectsAndTools:
     categories:
       - label: tool
       - label: integration
-    timestamp: 1680210759
+    date: 2023-02-21
     buttons:
     - label: Go to App
       url: https://thegraph.com/explorer/subgraphs/8iv4pFv7UL3vMjYeetmFCKD9Mg2V4d1S2rapQXo8fRq5?view=Overview&chain=mainnet
@@ -161,7 +161,7 @@ projectsAndTools:
     description: Initiative from the Marketing Guild to help understand better the technologies around our products.
     categories: 
     - label: tool
-    timestamp: 1667164359
+    date: 2023-03-11
     buttons:
     - label: Go to App
       url: https://101.xyz/course/claqymc0v067108kyden9aehq

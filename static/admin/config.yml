@@ -2196,12 +2196,7 @@ collections:
                     required: true,
                     fields: [{ label: Label, name: label, widget: string }],
                   },
-                  {
-                    label: "Timestamp",
-                    name: "timestamp",
-                    widget: "number",
-                    required: false,
-                  },
+                  { label: "Date", name: "date", widget: "datetime" },
                   {
                     label: "Buttons",
                     name: "buttons",

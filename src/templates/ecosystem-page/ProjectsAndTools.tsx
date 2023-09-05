@@ -5,6 +5,7 @@ import SortDropdown, { SortOptions } from "../../components/SortDropdown"
 import FilterMenu from "../../components/FilterMenu"
 import { ProjectsAndToolsCard } from "./ProjectsAndToolsCard"
 import Pagination from "../../components/Pagination"
+import { convertDateToTimestamp } from "../../utils/date"
 
 const ITEMS_PER_PAGE = 6
 
@@ -31,7 +32,7 @@ export interface ProjectsAndToolsCardProps {
   title: string
   description: string
   categories: CardCategory[]
-  timestamp: number
+  date: Date
   buttons: CardButton[]
 }
 
@@ -62,15 +63,18 @@ const ProjectsAndTools: FC<{ cards: ProjectsAndToolsCardProps[] }> = ({
 
     // Sorting logic
     return tempCards.sort((a, b) => {
+      const aDate = convertDateToTimestamp(a.date)
+      const bDate = convertDateToTimestamp(b.date)
+
       switch (sortOption) {
         case SortOptions.TITLE_ASC:
           return a.title.localeCompare(b.title)
         case SortOptions.TITLE_DESC:
           return b.title.localeCompare(a.title)
         case SortOptions.TIMESTAMP_ASC:
-          return a.timestamp - b.timestamp
+          return aDate - bDate
         case SortOptions.TIMESTAMP_DESC:
-          return b.timestamp - a.timestamp
+          return bDate - aDate
         default:
           return 0
       }
