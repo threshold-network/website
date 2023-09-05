@@ -39,9 +39,7 @@ export interface ProjectsAndToolsCardProps {
 const ProjectsAndTools: FC<{ cards: ProjectsAndToolsCardProps[] }> = ({
   cards,
 }) => {
-  const [allFilteredCards, setAllFilteredCards] = useState<
-    ProjectsAndToolsCardProps[]
-  >([])
+  const [totalNumberOfCards, setTotalNumberOfCards] = useState<number>(0)
   const [paginatedCards, setPaginatedCards] = useState<
     ProjectsAndToolsCardProps[]
   >([])
@@ -51,7 +49,7 @@ const ProjectsAndTools: FC<{ cards: ProjectsAndToolsCardProps[] }> = ({
   const [sortOption, setSortOption] = useState<SortOption>()
 
   const [currentPage, setCurrentPage] = useState(1)
-  const totalPages = Math.ceil(allFilteredCards.length / ITEMS_PER_PAGE)
+  const totalPages = Math.ceil(totalNumberOfCards / ITEMS_PER_PAGE)
 
   const filterAndSortCards = () => {
     const tempCards =
@@ -85,8 +83,9 @@ const ProjectsAndTools: FC<{ cards: ProjectsAndToolsCardProps[] }> = ({
 
   useEffect(() => {
     const sortedAndFilteredCards = filterAndSortCards()
-    setAllFilteredCards(sortedAndFilteredCards)
 
+    // Set total number of cards instead of the entire array
+    setTotalNumberOfCards(sortedAndFilteredCards.length)
     setPaginatedCards(
       sortedAndFilteredCards.slice(
         (currentPage - 1) * ITEMS_PER_PAGE,
