@@ -11,7 +11,7 @@ const LiquidityProviderPageTemplate: FC<any> = ({ data }) => {
 
   return (
     <RolePageTemplate>
-      <SectionTemplate {...lpInfo} preTitle={null} columnReverse isSmallSize />
+      <SectionTemplate {...lpInfo} preTitle={null} columnReverse size="sm" />
       <Box>
         <H4 color="gray.300">Pools you may be interested in</H4>
         <LPCardGroup cards={interestedPools} />

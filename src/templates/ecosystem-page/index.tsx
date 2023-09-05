@@ -35,14 +35,14 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
         }}
         preTitle={null}
         columnReverse
-        isSmallSize
+        size="sm"
         isImageBackground
       />
       <IntegrationsCardGroup cards={integrations} />
-      <SectionTemplate {...programsAndEventsInfo} isMediumSize>
+      <SectionTemplate {...programsAndEventsInfo} size="md">
         <ProgramsAndEvents cards={programsAndEvents} />
       </SectionTemplate>
-      <SectionTemplate {...projectsAndToolsInfo} isMediumSize bgColor="#161A1F">
+      <SectionTemplate {...projectsAndToolsInfo} size="md" bgColor="#161A1F">
         <ProjectsAndTools cards={projectsAndTools} />
       </SectionTemplate>
       <SectionTemplate
@@ -54,12 +54,12 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
           mt: "-6rem",
           w: "52rem",
         }}
-        isMediumSize
+        size="md"
         isImageBackground
       >
         <ResourcesSection cards={resources} />
       </SectionTemplate>
-      <SectionTemplate {...communityInfo} preTitle="" isSmallSize isCentered>
+      <SectionTemplate {...communityInfo} preTitle="" size="sm" isCentered>
         <CommunitySection cards={community} />
       </SectionTemplate>
     </Box>
@@ -145,7 +145,7 @@ export const query = graphql`
           categories {
             label
           }
-          timestamp
+          date
           buttons {
             label
             url

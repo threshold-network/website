@@ -1,5 +1,5 @@
 import React, { FC } from "react"
-import { BoxProps, Stack, Text } from "@chakra-ui/react"
+import { BoxProps, Stack } from "@chakra-ui/react"
 import {
   ButtonType,
   CmsButtonLink,
@@ -29,8 +29,7 @@ export interface RoleTemplateProps extends BoxProps {
   highlightedWord?: string
   image?: ImageProps
   rowReverse?: boolean
-  isSmallSize?: boolean
-  isMediumSize?: boolean
+  size?: "sm" | "md"
   isImageBackground?: boolean
   isCentered?: boolean
   columnReverse?: boolean
@@ -77,8 +76,7 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
   image,
   rowReverse,
   columnReverse,
-  isSmallSize,
-  isMediumSize,
+  size,
   isImageBackground,
   isCentered,
   preTitle = "Get Started",
@@ -87,8 +85,8 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
 }) => {
   return (
     <PageSection
-      withSmallPadding={isSmallSize}
-      withMediumPadding={isMediumSize}
+      withSmallPadding={size === "sm"}
+      withMediumPadding={size === "md"}
       {...boxProps}
     >
       <ResponsiveStack
@@ -102,11 +100,10 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
           <LabelMd textTransform="uppercase" color="gray.500">
             {preTitle}
           </LabelMd>
-          <SectionTitleTemplate
-            title={title}
-            highlightedWord={highlightedWord}
-          />
-          {isSmallSize ? (
+          <H2 mt={3} color="gray.50">
+            {title}
+          </H2>
+          {size === "sm" ? (
             <BodyLg mt={10} color="gray.300">
               {description}
             </BodyLg>

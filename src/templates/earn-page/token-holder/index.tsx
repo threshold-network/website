@@ -20,7 +20,7 @@ const TokenHolderPageTemplate: FC<any> = ({ data }) => {
         {...tokenHolderInfo}
         preTitle={null}
         columnReverse
-        isSmallSize
+        size="sm"
       />
       <ResponsiveStack spacing={12} mt={12}>
         <SecondaryInfoColumn {...secondaryInfo.left} />

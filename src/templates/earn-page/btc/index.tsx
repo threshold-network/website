@@ -68,12 +68,7 @@ const BTCPageTemplate: FC<any> = ({ data }) => {
   return (
     <>
       <RolePageTemplate>
-        <SectionTemplate
-          {...btcInfo}
-          preTitle={null}
-          columnReverse
-          isSmallSize
-        />
+        <SectionTemplate {...btcInfo} preTitle={null} columnReverse size="sm" />
         <TBTCStats
           tbtcTvl={totalSupply}
           tbtcUniqueAddresses={currentTokenHolders}

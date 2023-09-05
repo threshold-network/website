@@ -17,7 +17,7 @@ const StakerPageTemplate: FC<any> = ({ data }) => {
         {...stakerInfo}
         preTitle={null}
         columnReverse
-        isSmallSize
+        size="sm"
       />
       <NetworkDistribution />
       <GettingStarted {...gettingStarted} />
