@@ -92,10 +92,10 @@ migrationInfo:
   bgColor: "#141414"
   rowReverse: false
 harnessThePower:
-  title: Threshold is committed to ZeroBullshit decentralization 
-  description: Threshold combines threshold cryptography with a cryptoeconomically-coordinated network. All cryptographic operations are disassembled and distributed across independent nodes, such that no commercial entity or individual has any unilateral power. In this way, sovereign assets and private data are not vulnerable to rogue developer teams, opaque backroom deals, regulator intervention or any other single point-of-failure events. Like many Web3 projects, Threshold strives to steadily minimize each application's trust impositions. Unlike others, Threshold is committed to full transparency ('zero bullshit') on the current state of decentralization.     
+  title: Threshold is a Day-One-Decentralized Network
+  description: For every application launched on Threshold, all cryptographic operations are disassembled and distributed across independent nodes – from Genesis. By avoiding a 'temporary phase' of unilateral power, sovereign assets and private data are not vulnerable to rogue developer teams, opaque backroom deals, or any other point-of-failure events. Like many Web3 projects, Threshold strives to steadily minimize trust impositions. Unlike others, Threshold provides full transparency on the current state of decentralization.    
   buttons:
-    - label: About Threshold
+    - label: Learn More
       url: /about
       variant: INTERNAL_SOLID
   subitems:
@@ -109,7 +109,7 @@ harnessThePower:
         [audited](/about#audits) by the most reputable firms in the space.
       image: /images/secure-icon.png
     - title: Transparent
-      description: No service or network can offer perfect trustlessness. Threshold is committed to explaining the trust assumptions of each component of each app, and how they will evolve over time. 
+      description: No service, product or network can offer perfect 'trustlessness'. Threshold explains the underlying trust assumptions of each component of each app, and how they'll evolve over time. 
       image: /images/private-icon.png
 activeCommunity:
   title: Threshold is run by an active community.
