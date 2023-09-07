@@ -114,6 +114,10 @@ aboutInfo:
       variant: EXTERNAL_SOLID
   rowReverse: false
 audits:
+  - title: "Least Authority: Solana Smart Contracts Audit Report"
+    url: https://leastauthority.com/blog/audits/audit-of-keep-network-solana-smart-contracts/
+    date: 6 September 2023
+    auditImage: /images/least-authority-2.png
   - title: "Least Authority: tBTC Bridge v2 Security Audit Report"
     url: https://leastauthority.com/blog/audits/audit-of-keep-network-tbtc-bridge-v2/
     date: 29 September 2022
