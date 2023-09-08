@@ -32,7 +32,7 @@ export interface ProjectsAndToolsCardProps {
   title: string
   description: string
   categories: CardCategory[]
-  date: Date
+  date: string
   buttons: CardButton[]
 }
 
