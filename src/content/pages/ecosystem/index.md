@@ -53,12 +53,12 @@ projectsAndTools:
       - label: project
     date: 2023-01-31
     buttons:
-    - label: Learn More
-      url: https://docs.threshold.network/applications/tbtc-v2/
-      variant: EXTERNAL_SOLID
-    - label: Go to App
-      url: https://dashboard.threshold.network/tBTC/mint/
-      variant: EXTERNAL_OUTLINE
+      - label: Learn More
+        url: https://docs.threshold.network/applications/tbtc-v2/
+        variant: EXTERNAL_SOLID
+      - label: Go to App
+        url: https://dashboard.threshold.network/tBTC/mint/
+        variant: EXTERNAL_OUTLINE
   - image: /images/thusd.svg
     title: thUSD
     description: thUSD is a stablecoin soft-pegged against USD and backed by ETH and tBTC as collaterals.
@@ -66,12 +66,12 @@ projectsAndTools:
       - label: project
     date: 2023-03-19
     buttons:
-    - label: Learn More
-      url: https://docs.threshold.network/applications/threshold-usd
-      variant: EXTERNAL_SOLID
-    - label: Go to App
-      url: https://app.thresholdusd.org/
-      variant: EXTERNAL_OUTLINE
+      - label: Learn More
+        url: https://docs.threshold.network/applications/threshold-usd
+        variant: EXTERNAL_SOLID
+      - label: Go to App
+        url: https://app.thresholdusd.org/
+        variant: EXTERNAL_OUTLINE
   - image: /images/taco.svg
     title: TACo
     description: Threshold Access Control enables end-to-end encrypted data sharing and communication.
@@ -80,19 +80,19 @@ projectsAndTools:
       - label: infrastructure
     date: 2023-09-01
     buttons:
-    - label: Learn More
-      url: https://docs.threshold.network/app-development/threshold-access-control-tac
-      variant: EXTERNAL_SOLID
+      - label: Learn More
+        url: https://docs.threshold.network/app-development/threshold-access-control-tac
+        variant: EXTERNAL_SOLID
   - image: /images/threshold-tool.svg
     title: tBTC Scan
     description: tBTC Scan provides useful system status and insights on the network, including deposits and redeems.
-    categories: 
-    - label: tool
+    categories:
+      - label: tool
     date: 2023-03-07
     buttons:
-    - label: Go to App
-      url: https://101.xyz/course/claqymc0v067108kyden9aehq
-      variant: EXTERNAL_SOLID
+      - label: Go to App
+        url: https://101.xyz/course/claqymc0v067108kyden9aehq
+        variant: EXTERNAL_SOLID
   - image: /images/dune-analytics.svg
     title: Dune Analytics
     description: Information about the network and its ecosystem's tokens can be queried on Dune Analytics.
@@ -100,9 +100,9 @@ projectsAndTools:
       - label: tool
     date: 2022-09-15
     buttons:
-    - label: Go to App
-      url: https://dune.com/cygnusv/Threshold-Network
-      variant: EXTERNAL_SOLID
+      - label: Go to App
+        url: https://dune.com/cygnusv/Threshold-Network
+        variant: EXTERNAL_SOLID
   - image: /images/the-graph.svg
     title: tBTC Subgraph
     description: The aim of the subgraph is to facilitate queries about the T token and Threshold's Network DAO governance.
@@ -111,9 +111,9 @@ projectsAndTools:
       - label: integration
     date: 2023-03-10
     buttons:
-    - label: Go to App
-      url: https://thegraph.com/explorer/subgraphs/2E1dYAE5EsJdfC1gyzp98hHPPCxSoX2TSoBivzFto47b?view=Overview&chain=mainnet
-      variant: EXTERNAL_SOLID
+      - label: Go to App
+        url: https://thegraph.com/explorer/subgraphs/2E1dYAE5EsJdfC1gyzp98hHPPCxSoX2TSoBivzFto47b?view=Overview&chain=mainnet
+        variant: EXTERNAL_SOLID
   - image: /images/boardroom-resources.svg
     title: Threshold Boardroom
     description: Boardroom is a management dashboard built for active DAO participants and stakeholders.
@@ -121,9 +121,9 @@ projectsAndTools:
       - label: tool
     date: 2023-02-19
     buttons:
-    - label: Go to App
-      url: https://boardroom.io/threshold
-      variant: EXTERNAL_SOLID
+      - label: Go to App
+        url: https://boardroom.io/threshold
+        variant: EXTERNAL_SOLID
   - image: /images/threshold-tool.svg
     title: Delegates Dashboard
     description: The Delegates Dashboard aims to facilitate the delegation of voting power to our delegates.
@@ -131,9 +131,9 @@ projectsAndTools:
       - label: tool
     date: 2023-03-24
     buttons:
-    - label: Go to App
-      url: https://threshold-delegate.vercel.app/
-      variant: EXTERNAL_SOLID
+      - label: Go to App
+        url: https://threshold-delegate.vercel.app/
+        variant: EXTERNAL_SOLID
   - image: /images/notion.svg
     title: Community Notion Tools
     description: Our organization uses Notion as a central source of truth for the different DAO groups of work and guilds.
@@ -141,9 +141,9 @@ projectsAndTools:
       - label: tool
     date: 2021-01-08
     buttons:
-    - label: Go to App
-      url: https://www.notion.so/Mission-Vision-and-Values-fc45ef966f9747fd911a14cf0a2a82c2
-      variant: EXTERNAL_SOLID
+      - label: Go to App
+        url: https://www.notion.so/Mission-Vision-and-Values-fc45ef966f9747fd911a14cf0a2a82c2
+        variant: EXTERNAL_SOLID
   - image: /images/the-graph.svg
     title: Threshold Subgraph
     description: The aim of this subgraph was to facilitate rewards distribution and queries about the T token.
@@ -152,19 +152,19 @@ projectsAndTools:
       - label: integration
     date: 2023-02-21
     buttons:
-    - label: Go to App
-      url: https://thegraph.com/explorer/subgraphs/8iv4pFv7UL3vMjYeetmFCKD9Mg2V4d1S2rapQXo8fRq5?view=Overview&chain=mainnet
-      variant: EXTERNAL_SOLID
+      - label: Go to App
+        url: https://thegraph.com/explorer/subgraphs/8iv4pFv7UL3vMjYeetmFCKD9Mg2V4d1S2rapQXo8fRq5?view=Overview&chain=mainnet
+        variant: EXTERNAL_SOLID
   - image: /images/101-courses.svg
     title: 101 Courses and Videos
     description: Initiative from the Marketing Guild to help understand better the technologies around our products.
-    categories: 
-    - label: tool
+    categories:
+      - label: tool
     date: 2023-03-11
     buttons:
-    - label: Go to App
-      url: https://101.xyz/course/claqymc0v067108kyden9aehq
-      variant: EXTERNAL_SOLID
+      - label: Go to App
+        url: https://101.xyz/course/claqymc0v067108kyden9aehq
+        variant: EXTERNAL_SOLID
 resourcesInfo:
   preTitle: Resources
   title: Ecosystem Resources
@@ -175,24 +175,24 @@ resources:
     title: Github
     description: Explore the repositories and contribute to the Threshold ecosystem.
     buttons:
-    - label: Explore our Github
-      url: https://github.com/threshold-network/
-      variant: EXTERNAL_OUTLINE
+      - label: Explore our Github
+        url: https://github.com/threshold-network/
+        variant: EXTERNAL_OUTLINE
   - image: /images/discourse-resources.svg
     title: Governance Forum
     description: Get involved in the discussions that are shaping the future of the Threshold ecosystem.
     buttons:
-    - label: Learn More
-      url: https://forum.threshold.network/
-      variant: EXTERNAL_OUTLINE
+      - label: Learn More
+        url: https://forum.threshold.network/
+        variant: EXTERNAL_OUTLINE
   - image: /images/threshold-resources.svg
     isBigSize: true
     title: Explore the Threshold Community Blog
     description: Read all the articles from across the Threshold ecosystem.
     buttons:
-    - label: Read Our Blog
-      url: https://blog.threshold.network/
-      variant: EXTERNAL_OUTLINE
+      - label: Read Our Blog
+        url: https://blog.threshold.network/
+        variant: EXTERNAL_OUTLINE
 communityInfo:
   title: Join our Community
   description: "Stay up-to-date on the ecosystem news, discussions, and community events."
