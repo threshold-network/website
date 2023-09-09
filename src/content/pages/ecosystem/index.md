@@ -55,10 +55,10 @@ projectsAndTools:
     buttons:
       - label: Learn More
         url: https://docs.threshold.network/applications/tbtc-v2/
-        variant: EXTERNAL_SOLID
+        variant: EXTERNAL_OUTLINE
       - label: Go to App
         url: https://dashboard.threshold.network/tBTC/mint/
-        variant: EXTERNAL_OUTLINE
+        variant: EXTERNAL_SOLID
   - image: /images/thusd.svg
     title: thUSD
     description: thUSD is a stablecoin soft-pegged against USD and backed by ETH and tBTC as collaterals.
@@ -68,10 +68,10 @@ projectsAndTools:
     buttons:
       - label: Learn More
         url: https://docs.threshold.network/applications/threshold-usd
-        variant: EXTERNAL_SOLID
+        variant: EXTERNAL_OUTLINE
       - label: Go to App
         url: https://app.thresholdusd.org/
-        variant: EXTERNAL_OUTLINE
+        variant: EXTERNAL_SOLID
   - image: /images/taco.svg
     title: TACo
     description: Threshold Access Control enables end-to-end encrypted data sharing and communication.
@@ -82,7 +82,7 @@ projectsAndTools:
     buttons:
       - label: Learn More
         url: https://docs.threshold.network/app-development/threshold-access-control-tac
-        variant: EXTERNAL_SOLID
+        variant: EXTERNAL_OUTLINE
   - image: /images/threshold-tool.svg
     title: tBTC Scan
     description: tBTC Scan provides useful system status and insights on the network, including deposits and redeems.
@@ -200,7 +200,7 @@ communityInfo:
 community:
   - leftIcon: /images/discord-social.svg
     title: Discord
-    description: Ask questions and engage with our vibrant community.
+    description: Ask questions and engage with our community.
     url: https://discord.gg/Threshold
     rightIcon: /images/external-arrow.svg
   - leftIcon: /images/twitter-social.svg
