@@ -40,7 +40,7 @@ const CommunitySectionCard: FC<CommunitySectionCardProps> = ({
         }}
       >
         <Stack alignItems="start" direction="row" spacing={6}>
-          <Image left={0} top={0} {...leftIcon} />
+          <Image width="32px" height="32px" left={0} top={0} {...leftIcon} />
           <Stack spacing={2} width="full">
             <H5 noOfLines={2}>{title}</H5>
             <Card.Body as="div" color="gray.400">
@@ -59,7 +59,7 @@ const CommunitySection: FC<{ cards: CommunitySectionCardProps[] }> = ({
 }) => {
   return (
     <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} mt={6} mb={12}>
-      {cards.slice(0, 2).map((program: any, i) => (
+      {cards.map((program: any, i) => (
         <CommunitySectionCard key={i} {...program} />
       ))}
     </SimpleGrid>
