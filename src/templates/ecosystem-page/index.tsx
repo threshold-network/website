@@ -46,8 +46,9 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
         columnReverse
         size="sm"
         isImageBackground
-      />
-      <IntegrationsCardGroup cards={integrations} />
+      >
+        <IntegrationsCardGroup cards={integrations} />
+      </SectionTemplate>
       <SectionTemplate {...programsAndEventsInfo} size="md">
         <ProgramsAndEvents cards={programsAndEvents} />
       </SectionTemplate>

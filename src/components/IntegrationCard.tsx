@@ -40,7 +40,7 @@ export const IntegrationsCardGroup: FC<{ cards: IntegrationCardProps[] }> = ({
   const scrollContainer = useRef<HTMLDivElement>(null)
 
   const cardWidth = 170
-  const cardSpacing = 6
+  const cardSpacing = 5
 
   useEffect(() => {
     const numberOfCards = window.innerWidth / (cardWidth + cardSpacing)
@@ -81,20 +81,34 @@ export const IntegrationsCardGroup: FC<{ cards: IntegrationCardProps[] }> = ({
   }, [cardSet])
 
   return (
-    <Stack
-      ref={scrollContainer}
-      id="card-container"
-      backgroundColor="gray.900"
-      direction="row"
-      spacing={cardSpacing}
-      overflowX="hidden"
-      py={20}
-      my={-20}
-    >
-      {cardSet.map((card: IntegrationCardProps, i) => (
-        <IntegrationCard key={i} {...card} />
-      ))}
-    </Stack>
+    <Box position="relative">
+      <Box
+        position="absolute"
+        top="0"
+        bottom="0"
+        left="0"
+        right="0"
+        boxShadow={`inset 80px 0 30px -30px rgba(29, 34, 41, 1), 
+        inset -80px 0 30px -30px rgba(29, 34, 41, 1)`}
+        pointerEvents="none"
+        zIndex="1"
+      />
+      <Stack
+        ref={scrollContainer}
+        id="card-container"
+        backgroundColor="gray.900"
+        direction="row"
+        spacing={cardSpacing}
+        overflowX="hidden"
+        py={20}
+        mb={-28}
+        position="relative"
+      >
+        {cardSet.map((card: IntegrationCardProps, i) => (
+          <IntegrationCard key={i} {...card} />
+        ))}
+      </Stack>
+    </Box>
   )
 }
 
