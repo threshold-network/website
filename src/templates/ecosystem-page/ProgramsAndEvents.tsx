@@ -19,7 +19,7 @@ const ProgramsAndEventsCard: FC<ProgramsAndEventsCardProps> = ({
   url,
 }) => {
   return (
-    <Stack spacing={3}>
+    <Stack spacing={0}>
       <Card
         boxShadow={"0px 4px 4px 0px rgba(0, 0, 0, 0.25)"}
         m="0"
@@ -39,6 +39,7 @@ const ProgramsAndEventsCard: FC<ProgramsAndEventsCardProps> = ({
         flexDirection="column"
         justifyContent="space-between"
         borderTopRadius={0}
+        borderTop="transparent"
         w="100%"
       >
         <Stack spacing={6}>
