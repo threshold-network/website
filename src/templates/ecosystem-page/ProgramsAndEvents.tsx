@@ -31,7 +31,7 @@ const ProgramsAndEventsCard: FC<ProgramsAndEventsCardProps> = ({
         w="100%"
         overflow="hidden"
       >
-        <Image left={0} top={0} {...image} />
+        <Image h="180px" left={0} top={0} {...image} />
       </Card>
       <Card
         m="auto"
