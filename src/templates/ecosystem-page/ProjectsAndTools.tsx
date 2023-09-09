@@ -84,7 +84,6 @@ const ProjectsAndTools: FC<{ cards: ProjectsAndToolsCardProps[] }> = ({
   useEffect(() => {
     const sortedAndFilteredCards = filterAndSortCards()
 
-    // Set total number of cards instead of the entire array
     setTotalNumberOfCards(sortedAndFilteredCards.length)
     setPaginatedCards(
       sortedAndFilteredCards.slice(
