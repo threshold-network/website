@@ -83,10 +83,6 @@ export const ProjectsAndToolsCard: FC<ProjectsAndToolsCardProps> = ({
                         size="sm"
                         width="100%"
                         py="17px"
-                        _hover={{
-                          bgColor: "white",
-                          color: "black",
-                        }}
                       >
                         {button.label}
                       </ExternalButtonLink>
