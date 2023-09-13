@@ -14,6 +14,7 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
   const {
     hero,
     btcRole,
+    bugBounty,
     stakerRole,
     lpRole,
     tokenHolderRole,
@@ -30,6 +31,7 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
     <>
       <Hero {...hero} />
       <BTCRole partners={tBTCPartners} {...btcRole} bgColor="#0A0C0F" />
+      <SectionTemplate {...bugBounty} />
       <SectionTemplate {...stakerRole} bgColor="gray.900" />
       <SectionTemplate {...lpRole} bgColor="#181D22" />
       <SectionTemplate {...tokenHolderRole} bgColor="#161A1F" />
@@ -86,6 +88,28 @@ export const query = graphql`
             variant
             posthogLabel
           }
+        }
+        bugBounty {
+          rowReverse
+          preTitle
+          title
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
+            label
+            url
+            variant
+          }
+          bgColor
         }
         stakerRole {
           rowReverse
