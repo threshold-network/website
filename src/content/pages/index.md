@@ -91,6 +91,24 @@ migrationInfo:
       variant: EXTERNAL_OUTLINE
   bgColor: "#141414"
   rowReverse: false
+tacoRole:
+  title: Lorem ipsum dolor sit amet
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+  image: /images/liquidity.png
+  buttons:
+    - label: Lorem ipsum
+      url: /about
+      variant: INTERNAL_SOLID
+  subitems:
+    - title: Lorem ipsum dolor sit amet
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+      image: /images/decentralized-icon.png
+    - title: Lorem ipsum dolor sit amet
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+      image: /images/secure-icon.png
+    - title: Lorem ipsum dolor sit amet
+      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+      image: /images/private-icon.png
 harnessThePower:
   title: Harness the power of Threshold
   description: Threshold leverages threshold cryptography to protect digital
