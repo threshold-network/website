@@ -32,7 +32,7 @@ const ActiveCommunity: FC<ActiveCommunityProps> = ({
   return (
     <SectionTemplate
       preTitle=""
-      isSmallSize
+      size="sm"
       bgColor="gray.900"
       title={title}
       description={description}

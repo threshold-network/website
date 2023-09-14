@@ -75,7 +75,7 @@ export const Image: FC<ImageProps & IconProps & { childImageSharp?: any }> = ({
   childImageSharp,
   ...restProps
 }) => {
-  if (internal.mediaType === "image/svg+xml" && svg) {
+  if (internal?.mediaType === "image/svg+xml" && svg) {
     const IconComponent = buildIcon(id, svg)
     return <IconComponent {...restProps} />
   } else if (gatsbyImageData) {

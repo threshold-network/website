@@ -14,6 +14,8 @@ import {
 import { ImageProps } from "../../components"
 import { TrackComponent } from "../../components/Posthog/TrackComponent"
 
+type OmittedBoxProps = Omit<BoxProps, "title">
+
 export interface FooterButton {
   label: string
   url: string
@@ -21,36 +23,48 @@ export interface FooterButton {
   posthogLabel?: string
 }
 
-export interface RoleTemplateProps extends BoxProps {
+export interface RoleTemplateProps extends OmittedBoxProps {
   bgColor: string
-  title: string
+  title: string | JSX.Element
   description: string
   buttons: FooterButton[]
+  highlightedWord?: string
   image?: ImageProps
   rowReverse?: boolean
-  isSmallSize?: boolean
+  size?: "sm" | "md"
+  isImageBackground?: boolean
+  isCentered?: boolean
   columnReverse?: boolean
   preTitle?: string
 }
 
 const SectionTemplate: FC<RoleTemplateProps> = ({
   title,
+  highlightedWord,
   description,
   buttons = [],
   image,
   rowReverse,
   columnReverse,
-  isSmallSize,
+  size,
+  isImageBackground,
+  isCentered,
   preTitle = "Get Started",
   children,
   ...boxProps
 }) => {
   return (
-    <PageSection withSmallPadding={isSmallSize} {...boxProps}>
+    <PageSection
+      withSmallPadding={size === "sm"}
+      withMediumPadding={size === "md"}
+      {...boxProps}
+    >
       <ResponsiveStack
         rowReverse={rowReverse}
         columnReverse={columnReverse}
         spacing={16}
+        justifyContent={isCentered ? "center" : undefined}
+        textAlign={isCentered ? "center" : undefined}
       >
         <SectionTextContainer>
           <LabelMd textTransform="uppercase" color="gray.500">
@@ -59,7 +73,7 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
           <H2 mt={3} color="gray.50">
             {title}
           </H2>
-          {isSmallSize ? (
+          {size === "sm" ? (
             <BodyLg mt={10} color="gray.300">
               {description}
             </BodyLg>
@@ -68,7 +82,6 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
               {description}
             </H5>
           )}
-
           <Stack mt={10} direction={{ base: "column", md: "row" }} spacing={8}>
             {buttons.map((_: FooterButton, i) => {
               return (
@@ -84,7 +97,12 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
             })}
           </Stack>
         </SectionTextContainer>
-        {image && <SectionImage {...image} />}
+        {image && (
+          <SectionImage
+            imageProps={image}
+            isImageBackground={isImageBackground}
+          />
+        )}
       </ResponsiveStack>
       {children}
     </PageSection>

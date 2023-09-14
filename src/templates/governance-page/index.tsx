@@ -19,7 +19,7 @@ const GovernancePageTemplate: FC = ({ data }: any) => {
         preTitle={null}
         columnReverse
         bgColor="gray.900"
-        isSmallSize
+        size="sm"
       />
       <ThresholdDaoDataSection />
       <DaoGovernanceDetails proposals={proposals} />
