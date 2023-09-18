@@ -34,7 +34,7 @@ bugBounty:
   preTitle: Bug bounty
   title: "Join the hunt: $500K Bug Bounty"
   description: "Spot security risks, claim your prize. No KYC, no fuss."
-  image: /images/immunefi.png
+  image: /images/immunefi.svg
   buttons:
     - label: Read more
       url: https://immunefi.com/bounty/thresholdnetwork/
