@@ -53,12 +53,12 @@ projectsAndTools:
       - label: project
     date: 2023-01-31
     buttons:
-      - label: Learn More
-        url: https://docs.threshold.network/applications/tbtc-v2/
-        variant: EXTERNAL_OUTLINE
       - label: Go to App
         url: https://dashboard.threshold.network/tBTC/mint/
         variant: EXTERNAL_SOLID
+      - label: Learn More
+        url: https://docs.threshold.network/applications/tbtc-v2/
+        variant: EXTERNAL_OUTLINE
   - image: /images/thusd.svg
     title: thUSD
     description: thUSD is a stablecoin soft-pegged against USD and backed by ETH and tBTC as collaterals.
@@ -66,12 +66,12 @@ projectsAndTools:
       - label: project
     date: 2023-03-19
     buttons:
-      - label: Learn More
-        url: https://docs.threshold.network/applications/threshold-usd
-        variant: EXTERNAL_OUTLINE
       - label: Go to App
         url: https://app.thresholdusd.org/
         variant: EXTERNAL_SOLID
+      - label: Learn More
+        url: https://docs.threshold.network/applications/threshold-usd
+        variant: EXTERNAL_OUTLINE
   - image: /images/taco.svg
     title: TACo
     description: Threshold Access Control enables end-to-end encrypted data sharing and communication.
