@@ -15,6 +15,9 @@ columns:
       - label: Blog
         url: https://blog.threshold.network/
         isExternal: true
+      - label: Bug Bounty
+        url: https://immunefi.com/bounty/thresholdnetwork/
+        isExternal: true
   - title: Earn
     links:
       - label: Staker

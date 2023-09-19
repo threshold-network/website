@@ -30,6 +30,17 @@ btcRole:
       posthogLabel: Learn More [btcRole] (Main page)
   rowReverse: false
   bgColor: "#333333"
+bugBounty:
+  preTitle: Bug bounty
+  title: "Join the hunt: $500K Bug Bounty"
+  description: "Spot security risks, claim your prize. No KYC, no fuss."
+  image: /images/immunefi.svg
+  buttons:
+    - label: Read more
+      url: https://immunefi.com/bounty/thresholdnetwork/
+      variant: EXTERNAL_SOLID
+  rowReverse: false
+  bgColor: "#161A1F"
 stakerRole:
   title: Threshold Staking
   description:
