@@ -76,8 +76,8 @@ const ResourcesExtendedCard: FC<ResourcesCardProps> = ({
             flexDirection="row"
             alignItems="center"
             justifyContent="center"
-            gap={6}
-            px={{ base: 8, md: 16 }}
+            gap={{ base: 10, md: 6 }}
+            px={{ base: 10, md: 16 }}
             py={20}
             backgroundImage={backgroundResources}
             backgroundRepeat="no-repeat"
@@ -92,7 +92,7 @@ const ResourcesExtendedCard: FC<ResourcesCardProps> = ({
               Threshold Blog
             </H3>
           </Flex>
-          <Stack spacing={7} pl={16} pr={20} py={10}>
+          <Stack spacing={7} px={{ base: 10, md: 20 }} py={10}>
             <H5 noOfLines={2}>{title}</H5>
             <BodyLg as="div" color="gray.400" noOfLines={3}>
               {description}
