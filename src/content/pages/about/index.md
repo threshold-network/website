@@ -35,12 +35,13 @@ faq:
       variant: INTERNAL_SOLID
   faqs:
     - question: What is threshold cryptography?
-      answer: Threshold cryptography is a revolutionary technology that uses
-        cryptography to unlock greater utility and usability for digital assets
-        without needing to trust a centralized party. Threshold cryptography
-        distributes sensitive operations across multiple independent entities –
-        like nodes in a network – and requires a threshold, or minimum number of
-        those entities to cooperate for the operation to be successful.
+      answer: Threshold Cryptography is a class of cryptographic primitive that helps spread operations across a group of service-providers, such that no single entity is being trusted to behave correctly. The concept of a 'threshold' – wherein a minimum number of independent entities must align on the expected behavior – is a straightforward but powerful impediment against unilateral control. Without that control, surveillance, rent-seeking, and other exploitative Web2.0 practices become far harder to impose on end-users.   
+    - question: What is the difference between Threshold's services and those offered by competitors, with respect to trust?
+      answer:
+        Although most Web3 and DeFi projects pay lip service to 'decentralization', 'trust-minimization', and 'permissionless', far fewer wait until their networks (and therefore services) are meaningfully decentralized before launching. Not only is their path towards trust-reduction often unclear and unresolved – i.e. necessitating ambitious R&D efforts with no guaranteed resolutions – there is also a tendency to obfuscate this uncertainty. Threshold is committed to (1) achieving meaningful decentralization (defined below) before offering a Mainnet/production version of any service, (2) making the limitations of said version (particularly with respect to trust impositions) transparent and comprehensible, and (3) delaying the service's launch until a low-risk path towards resolving those trust-related limitations has been established and planned out. To that end, Threshold's open-source repositories go beyond polished pull requests, and include plenty of upstream issues discussing the trust burdens placed on adopters amd users, and how we might solve them. Threshold documentation also contains entire sections dedicated to explaining the underlying trust assumptions of a given Threshold application or service. See TACo's Trust Assumptions pages for details of the current and future state of trust.      
+    - question: What is Threshold's definition of 'meaningful decentralization'? 
+      answer: Decentralization is a nebulous and contentious term, and a universally applicable delineation may never be agreed upon. In the context of Threshold's Web3 and DeFi applications – namely, a BTC-ETH bridge, programmable access control, verifiable randomness, and a stablecoin – we offer the following definition. An application may be described as 'meaningfully decentralized' if critical operational power is distributed across observably independent entities. More specifically, this means that no single commercial entity (or conglomerate) has the ability to abscond with user funds, decrypt private user data, spoof randomness, or block/DOS any of the services that Threshold adopters rely upon. Perhaps it would be better to describe this definition as 'Minimum Viable Decentralization', since Threshold delivers cryptographic services that are much more decentralized. For example, the signer set that manages tBTC deposits is always group of 100 nodes, while with TACo access to sensitive data is managed by cohorts of around 30 nodes – in both cases selected from the wider node population (which hovers around 250 and 100 distinct Etheruem addresses respectively). There are two caveats; (1) there are other components of each app that are less decentralized, and (2) a tBTC set or TACo cohort may contain multiple nodes controlled by the same entity. However, while it may not be possible to verify on-chain who controls each node, it is discernible through informal evidence – including Etherscan observation, 'voluntary self-doxxing' via community participation, and third-party oversight into correlations and concentrations of machines. Overall, the bar for 'meaningfully decentralized' is arguably rather low, and yet Threshold remains one of the few networks that clears this bar.   
+      
     - question: Do legacy KEEP stakers need to set up a PRE node?
       answer:
         Yes, everyone who stakes on Threshold will need to run a PRE node. If
@@ -97,9 +98,7 @@ faq:
             image: /images/document.svg
           rightIcon:
             image: /images/external-arrow.svg
-    - question: What is the difference between Threshold's services and those of competitors?
-      answer:
-        Threshold is committed to transparent decentralization.
+
 title: About
 template: about-page
 seoTitle: About

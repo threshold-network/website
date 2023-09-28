@@ -92,8 +92,8 @@ migrationInfo:
   bgColor: "#141414"
   rowReverse: false
 harnessThePower:
-  title: Threshold is a Day-One-Decentralized Network
-  description: For every application launched on Threshold, all cryptographic operations are disassembled and distributed across independent nodes – from Genesis. By avoiding a 'temporary phase' of unilateral power, sovereign assets and private data are not vulnerable to rogue developer teams, opaque backroom deals, or any other point-of-failure events. Like many Web3 projects, Threshold strives to steadily minimize trust impositions. Unlike others, Threshold provides full transparency on the current state of decentralization.    
+  title: A Day-One-Decentralized Network
+  description: In each Threshold app, all cryptographic operations are disassembled and distributed across independent nodes, from the start. There's no 'temporary phase' of unilateral power, so sovereign assets and private data aren't vulnerable to rogue developer teams, opaque backroom deals, or SPOF events. Like most Web3 projects, Threshold steadily minimizes trust impositions over time. Unlike others, Threshold provides total transparency on the current state of decentralization.    
   buttons:
     - label: Learn More
       url: /about
@@ -109,7 +109,7 @@ harnessThePower:
         [audited](/about#audits) by the most reputable firms in the space.
       image: /images/secure-icon.png
     - title: Transparent
-      description: No service, product or network can offer perfect 'trustlessness'. Threshold explains the underlying trust assumptions of each component of each app, and how they'll evolve over time. 
+      description: No service, product or network can offer perfect 'trustlessness'. Threshold explains the trust assumptions of each component of each app, and how they'll evolve over time. 
       image: /images/private-icon.png
 activeCommunity:
   title: Threshold is run by an active community.
