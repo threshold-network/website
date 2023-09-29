@@ -92,28 +92,24 @@ migrationInfo:
   bgColor: "#141414"
   rowReverse: false
 harnessThePower:
-  title: Harness the power of Threshold
-  description: Threshold leverages threshold cryptography to protect digital
-    assets by distributing operations across independent parties, requiring some
-    threshold number of them (t-of-n) to cooperate.
+  title: A Day-One-Decentralized Network
+  description: In each Threshold app, all cryptographic operations are disassembled and distributed across independent nodes, from the start. There's no 'temporary phase' of unilateral power, so sovereign assets and private data aren't vulnerable to rogue developer teams, opaque backroom deals, or SPOF events. Like most Web3 projects, Threshold steadily minimizes trust impositions over time. Unlike others, Threshold provides total transparency on the current state of decentralization.    
   buttons:
-    - label: About Threshold
+    - label: Learn More
       url: /about
       variant: INTERNAL_SOLID
   subitems:
     - title: Decentralized
-      description: Threshold utilizes a network of independent nodes to provide
-        threshold cryptographic services without a central authority.
+      description: Threshold has built a robust network of independent nodes to collectively provide
+        threshold cryptographic services. There are no central authorities, temporary or otherwise. 
       image: /images/decentralized-icon.png
-    - title: Secure
+    - title: High Security
       description:
-        Splitting cryptographic operations across nodes increases security
-        and availability and reduces trust assumptions. Threshold is
-        [audited](/about#audits) by the best firms in the space.
+        Splitting cryptographic operations across multiple nodes increases redundancy, liveness and overall security. Threshold is also
+        [audited](/about#audits) by the most reputable firms in the space.
       image: /images/secure-icon.png
-    - title: Private
-      description: Cryptographic protocols eradicate the trust burden forced on
-        end-users and ensure privacy on the public blockchain.
+    - title: Transparent
+      description: No service, product or network can offer perfect 'trustlessness'. Threshold explains the trust assumptions of each component of each app, and how they'll evolve over time. 
       image: /images/private-icon.png
 activeCommunity:
   title: Threshold is run by an active community.
