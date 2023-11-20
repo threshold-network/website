@@ -2,6 +2,8 @@
 
 ## Development
 
+Uses node v16
+
 ### Setup
 
 Install dependencies:
