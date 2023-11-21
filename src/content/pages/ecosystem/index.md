@@ -137,16 +137,6 @@ projectsAndTools:
       - label: Go to App
         url: https://thegraph.com/explorer/subgraphs/8iv4pFv7UL3vMjYeetmFCKD9Mg2V4d1S2rapQXo8fRq5?view=Overview&chain=mainnet
         variant: EXTERNAL_SOLID
-  - image: /images/101-courses.svg
-    title: 101 Courses and Videos
-    description: Initiative from the Marketing Guild to help understand better the technologies around our products.
-    categories:
-      - label: tool
-    date: 2023-03-11
-    buttons:
-      - label: Go to App
-        url: https://101.xyz/course/claqymc0v067108kyden9aehq
-        variant: EXTERNAL_SOLID
 resourcesInfo:
   preTitle: Resources
   title: Ecosystem Resources
