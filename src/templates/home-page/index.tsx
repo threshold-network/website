@@ -2,7 +2,6 @@ import { FC } from "react"
 import { graphql } from "gatsby"
 import Hero from "./Hero"
 import SectionTemplate from "./SectionTemplate"
-import TakeTheQuiz from "./TakeTheQuiz"
 import MigrationInfoSection from "./MigrationInfoSection"
 import HarnessThePower from "./HarnessThePower"
 import JoinTheCommunity from "./JoinTheCommunity"
@@ -35,7 +34,6 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
       <SectionTemplate {...stakerRole} bgColor="gray.900" />
       <SectionTemplate {...lpRole} bgColor="#181D22" />
       <SectionTemplate {...tokenHolderRole} bgColor="#161A1F" />
-      <TakeTheQuiz topBgColor="#161A1F" bottomBgColor="#181D22" />
       <MigrationInfoSection {...migrationInfo} bgColor="#181D22" />
       <HarnessThePower {...harnessThePower} />
       <ActiveCommunity {...activeCommunity} proposals={proposals} />

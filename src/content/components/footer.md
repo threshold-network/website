@@ -32,9 +32,6 @@ columns:
       - label: Token Holder
         url: /earn/token-holder
         isExternal: false
-      - label: Earn Profile Quiz
-        url: /profile-quiz
-        isExternal: false
   - title: Community
     links:
       - label: Governance
