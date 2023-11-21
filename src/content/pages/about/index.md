@@ -19,8 +19,8 @@ teamsSection:
       cryptographic access controls for distributed apps and protocols.
     image: /images/nu-logo.png
     buttons:
-      - label: Visit NuCypher’s Website
-        url: https://www.nucypher.com/
+      - label: Visit NuCypher’s Github
+        url: https://github.com/nucypher
         variant: EXTERNAL_OUTLINE
 faq:
   title: FAQ
