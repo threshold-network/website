@@ -13,8 +13,6 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
   const {
     ecosystemInfo,
     integrations,
-    programsAndEventsInfo,
-    programsAndEvents,
     projectsAndToolsInfo,
     projectsAndTools,
     resourcesInfo,
@@ -48,9 +46,6 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
         isImageBackground
       >
         <IntegrationsCardGroup cards={integrations} />
-      </SectionTemplate>
-      <SectionTemplate {...programsAndEventsInfo} size="md">
-        <ProgramsAndEvents cards={programsAndEvents} />
       </SectionTemplate>
       <SectionTemplate {...projectsAndToolsInfo} size="md" bgColor="#161A1F">
         <ProjectsAndTools cards={projectsAndTools} />
@@ -111,27 +106,6 @@ export const query = graphql`
             }
           }
           title
-        }
-        programsAndEventsInfo {
-          rowReverse
-          preTitle
-          title
-          description
-        }
-        programsAndEvents {
-          image {
-            id
-            relativePath
-            internal {
-              mediaType
-            }
-            childImageSharp {
-              gatsbyImageData(width: 200)
-            }
-          }
-          title
-          description
-          url
         }
         projectsAndToolsInfo {
           rowReverse

@@ -22,24 +22,6 @@ integrations:
     title: Arbitrum
   - image: /images/logo-polygon.svg
     title: Polygon
-programsAndEventsInfo:
-  preTitle: Get Involved
-  title: Community Programs & Events
-  description: "Stay informed about the most recent community programs and events."
-  rowReverse: false
-programsAndEvents:
-  - image: /images/wormhole-hackathon.png
-    title: Wormhole Encode Hackathon
-    description: 4 days packed with learning, networking and building with Wormhole at the Encode Club Hacker House.
-    url: https://www.encode.club/wormhole-hackathon
-  - image: /images/bond-program.png
-    title: T Bond Bootstrap Program
-    description: Threshold Bond Program is here to help the Threshold Treasury Guild continue to grow tBTC liquidity.
-    url: https://blog.threshold.network/unlocking-liquidity-threshold-launches-bond-program-with-bond-protocol/
-  - image: /images/tbtc-wrapper.png
-    title: tBTC Wrapped Tour
-    description: Mint tBTC during Tour Stop 3 to claim this exclusive tBTC Wrapped Tour Arbitrum OAT!
-    url: https://blog.threshold.network/stop-three-on-tbtcs-wrapped-tour-kicks-off-with-an-arbitrum-integration-and-a-new-galxe-oat/
 projectsAndToolsInfo:
   preTitle: Ecosystem
   title: Powered By Threshold DAO
