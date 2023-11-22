@@ -54,7 +54,6 @@ export const query = graphql`
             }
           }
           title
-          subTitle
           buttonText
           buttonUrl
         }
