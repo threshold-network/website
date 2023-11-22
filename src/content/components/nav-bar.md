@@ -54,6 +54,11 @@ social_links:
     icon:
       image: /images/discord.svg
       alt: Threshold Discord
+  - label: Discourse
+    url: https://forum.threshold.network
+    icon:
+      image: /images/discourse-resources.svg
+      alt: Threshold Forum
   - label: GitHub
     url: https://github.com/threshold-network
     icon:
