@@ -9,7 +9,6 @@ import useChakraBreakpoint from "../hooks/useChakraBreakpoint"
 
 interface LPCardProps {
   image1: ImageProps
-  image2: ImageProps
   title: string
   subTitle: string
   buttonText: string
@@ -18,7 +17,6 @@ interface LPCardProps {
 
 const LPCard: FC<LPCardProps> = ({
   image1,
-  image2,
   title,
   subTitle,
   buttonUrl,
@@ -37,15 +35,6 @@ const LPCard: FC<LPCardProps> = ({
             h="32px"
             w="32px"
             {...image1}
-          />
-          <Image
-            left="20px"
-            top="20px"
-            position="absolute"
-            boxSize="48px"
-            h="32px"
-            w="32px"
-            {...image2}
           />
         </Box>
         <Stack spacing={0}>

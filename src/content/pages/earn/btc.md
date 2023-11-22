@@ -19,11 +19,4 @@ btcInfo:
       url: https://dashboard.threshold.network/tBTC
       variant: EXTERNAL_SOLID
       posthogLabel: Mint now [btcInfo] (/earn/btc)
-interestedPools:
-  - image1: /images/tbtc-v2.svg
-    image2: /images/tbtc-v2.svg
-    title: TBTCv1 -> TBTCv2
-    subTitle: Upgrade
-    buttonText: View Portal
-    buttonUrl: https://dashboard.keep.network/tbtc-migration/portal
 ---

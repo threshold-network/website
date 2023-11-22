@@ -18,7 +18,7 @@ import BlogPosts from "../../press-page/BlogPosts"
 import { useTotalMints } from "../../../hooks/tBTC/useTotalMints"
 
 const BTCPageTemplate: FC<any> = ({ data }) => {
-  const { btcInfo, interestedPools } = data.markdownRemark.frontmatter
+  const { btcInfo } = data.markdownRemark.frontmatter
 
   const { totalMints } = useTotalMints()
 
@@ -117,12 +117,6 @@ const BTCPageTemplate: FC<any> = ({ data }) => {
           />
         </Box>
       </PageSection>
-      <PageSection backgroundColor={"gray.900"} withSmallPadding>
-        <Box>
-          <H4 color="gray.300">Pools you may be interested in</H4>
-          <LPCardGroup cards={interestedPools} />
-        </Box>
-      </PageSection>
     </>
   )
 }
@@ -154,32 +148,6 @@ export const query = graphql`
             variant
             posthogLabel
           }
-        }
-        interestedPools {
-          image1 {
-            id
-            relativePath
-            internal {
-              mediaType
-            }
-            childImageSharp {
-              gatsbyImageData(width: 200)
-            }
-          }
-          image2 {
-            id
-            relativePath
-            internal {
-              mediaType
-            }
-            childImageSharp {
-              gatsbyImageData(width: 200)
-            }
-          }
-          title
-          subTitle
-          buttonText
-          buttonUrl
         }
       }
     }

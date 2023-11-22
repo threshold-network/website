@@ -53,16 +53,6 @@ export const query = graphql`
               gatsbyImageData(width: 200)
             }
           }
-          image2 {
-            id
-            relativePath
-            internal {
-              mediaType
-            }
-            childImageSharp {
-              gatsbyImageData(width: 200)
-            }
-          }
           title
           subTitle
           buttonText
