@@ -175,6 +175,11 @@ community:
     description: Ask questions and engage with our community.
     url: https://discord.gg/Threshold
     rightIcon: /images/external-arrow.svg
+  - leftIcon: /images/telegram-social.svg
+    title: Telegram
+    description: Ask questions and engage with our community.
+    url: https://twitter.com/TheTNetwork
+    rightIcon: /images/external-arrow.svg
   - leftIcon: /images/twitter-social.svg
     title: Twitter
     description: Keep in the loop on the latest ecosystem news.
