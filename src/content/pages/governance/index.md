@@ -14,8 +14,8 @@ governanceInfo:
     - label: Governance Forum
       url: https://forum.threshold.network/
       variant: EXTERNAL_SOLID
-    - label: Read Proposal
-      url: https://forum.threshold.network/c/governance-proposals/7
+    - label: Delegate Vote
+      url: https://delegates.threshold.network/
       variant: EXTERNAL_OUTLINE
   rowReverse: false
 guildsInfo:
