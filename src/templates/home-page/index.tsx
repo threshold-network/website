@@ -6,13 +6,10 @@ import MigrationInfoSection from "./MigrationInfoSection"
 import HarnessThePower from "./HarnessThePower"
 import JoinTheCommunity from "./JoinTheCommunity"
 import ActiveCommunity from "./ActiveCommunity"
-import { BTCRole } from "./BTCRole"
-import { useTBTCPartners } from "../../components/tBTCPartners"
 
 const SplashPageTemplate: FC<any> = ({ data }) => {
   const {
     hero,
-    btcRole,
     bugBounty,
     stakerRole,
     lpRole,
@@ -24,12 +21,9 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
   } = data.markdownRemark.frontmatter
   const proposals = data.allProposals
 
-  const { all: tBTCPartners } = useTBTCPartners()
-
   return (
     <>
       <Hero {...hero} />
-      <BTCRole partners={tBTCPartners} {...btcRole} bgColor="#0A0C0F" />
       <SectionTemplate {...bugBounty} />
       <SectionTemplate {...stakerRole} bgColor="gray.900" />
       <SectionTemplate {...lpRole} bgColor="#181D22" />
@@ -64,27 +58,6 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData(width: 200)
             }
-          }
-        }
-        btcRole {
-          rowReverse
-          title
-          description
-          image {
-            id
-            relativePath
-            internal {
-              mediaType
-            }
-            childImageSharp {
-              gatsbyImageData(width: 200)
-            }
-          }
-          buttons {
-            label
-            url
-            variant
-            posthogLabel
           }
         }
         bugBounty {
