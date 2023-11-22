@@ -9,9 +9,6 @@ columns:
       - label: Press
         url: /press
         isExternal: false
-      - label: Roadmap
-        url: "https://blog.threshold.network/the-story-of-threshold/ "
-        isExternal: true
       - label: Blog
         url: https://blog.threshold.network/
         isExternal: true
@@ -40,11 +37,14 @@ columns:
       - label: Ecosystem
         url: /ecosystem
         isExternal: false
+      - label: Forum
+        url: https://forum.threshold.network/
+        isExternal: true
       - label: Discord
         url: https://discord.gg/Threshold
         isExternal: true
-      - label: Forum
-        url: https://forum.threshold.network/
+      - label: Telegram
+        url: https://t.me/thresholdnetwork
         isExternal: true
   - title: About
     links:
