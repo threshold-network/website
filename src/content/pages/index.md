@@ -92,22 +92,25 @@ migrationInfo:
   bgColor: "#141414"
   rowReverse: false
 tacoRole:
-  title: Lorem ipsum dolor sit amet
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+  title: Build uncensorable e2ee into your app
+  description: TACo is the only end-to-end encryption plugin that is end-to-end decentralized
   image: /images/liquidity.png
   buttons:
-    - label: Lorem ipsum
-      url: /about
+    - label: Read the docs
+      url: https://docs.threshold.network/applications/threshold-access-control
       variant: INTERNAL_SOLID
+    - label: Learn More
+      url: /taco
+      variant: INTERNAL_OUTLINE
   subitems:
-    - title: Lorem ipsum dolor sit amet
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+    - title: Easy to integrate 
+      description: TACo makes access control easy with an intuitive API, flexible architecture, and a free-to-use Testnet. All you need is a use case that involves private data, and where trusting an intermediary won't fly.  
       image: /images/decentralized-icon.png
-    - title: Lorem ipsum dolor sit amet
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+    - title: Day One Decentralized
+      description: Access to data encrypted via TACo is managed by groups of independent Threshold nodes, from the very first byte. There's no 'temporary phase' where you trust the developers not to decrypt sensitive data.
       image: /images/secure-icon.png
-    - title: Lorem ipsum dolor sit amet
-      description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+    - title: Secure & redundant
+      description: Access control groups are sampled from a live, battle-tested & well-collateralized network – TACo is already being utilized to transfer hyper-sensitive payloads like seed phrases & health data.    
       image: /images/private-icon.png
 harnessThePower:
   title: Harness the power of Threshold
