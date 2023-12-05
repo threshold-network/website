@@ -8,7 +8,7 @@ import TechnicalRequirements from "./TechnicalRequirements"
 import MigrationInfoSection from "../../home-page/MigrationInfoSection"
 
 const StakerPageTemplate: FC<any> = ({ data }) => {
-  const { stakerInfo, gettingStarted, techRequirements, legacyStakers } =
+  const { stakerInfo, gettingStarted, techRequirements } =
     data.markdownRemark.frontmatter
 
   return (
@@ -22,7 +22,6 @@ const StakerPageTemplate: FC<any> = ({ data }) => {
       <NetworkDistribution />
       <GettingStarted {...gettingStarted} />
       <TechnicalRequirements {...techRequirements} />
-      <MigrationInfoSection bgColor="gray.900" {...legacyStakers} />
     </RolePageTemplate>
   )
 }
@@ -186,26 +185,6 @@ export const query = graphql`
           }
           cta {
             ctaTitle
-            label
-            url
-            variant
-          }
-        }
-        legacyStakers {
-          preTitle
-          title
-          description
-          image {
-            id
-            relativePath
-            internal {
-              mediaType
-            }
-            childImageSharp {
-              gatsbyImageData(width: 200)
-            }
-          }
-          buttons {
             label
             url
             variant

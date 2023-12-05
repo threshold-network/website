@@ -22,24 +22,6 @@ integrations:
     title: Arbitrum
   - image: /images/logo-polygon.svg
     title: Polygon
-programsAndEventsInfo:
-  preTitle: Get Involved
-  title: Community Programs & Events
-  description: "Stay informed about the most recent community programs and events."
-  rowReverse: false
-programsAndEvents:
-  - image: /images/wormhole-hackathon.png
-    title: Wormhole Encode Hackathon
-    description: 4 days packed with learning, networking and building with Wormhole at the Encode Club Hacker House.
-    url: https://www.encode.club/wormhole-hackathon
-  - image: /images/bond-program.png
-    title: T Bond Bootstrap Program
-    description: Threshold Bond Program is here to help the Threshold Treasury Guild continue to grow tBTC liquidity.
-    url: https://blog.threshold.network/unlocking-liquidity-threshold-launches-bond-program-with-bond-protocol/
-  - image: /images/tbtc-wrapper.png
-    title: tBTC Wrapped Tour
-    description: Mint tBTC during Tour Stop 3 to claim this exclusive tBTC Wrapped Tour Arbitrum OAT!
-    url: https://blog.threshold.network/stop-three-on-tbtcs-wrapped-tour-kicks-off-with-an-arbitrum-integration-and-a-new-galxe-oat/
 projectsAndToolsInfo:
   preTitle: Ecosystem
   title: Powered By Threshold DAO
@@ -155,16 +137,6 @@ projectsAndTools:
       - label: Go to App
         url: https://thegraph.com/explorer/subgraphs/8iv4pFv7UL3vMjYeetmFCKD9Mg2V4d1S2rapQXo8fRq5?view=Overview&chain=mainnet
         variant: EXTERNAL_SOLID
-  - image: /images/101-courses.svg
-    title: 101 Courses and Videos
-    description: Initiative from the Marketing Guild to help understand better the technologies around our products.
-    categories:
-      - label: tool
-    date: 2023-03-11
-    buttons:
-      - label: Go to App
-        url: https://101.xyz/course/claqymc0v067108kyden9aehq
-        variant: EXTERNAL_SOLID
 resourcesInfo:
   preTitle: Resources
   title: Ecosystem Resources
@@ -202,6 +174,11 @@ community:
     title: Discord
     description: Ask questions and engage with our community.
     url: https://discord.gg/Threshold
+    rightIcon: /images/external-arrow.svg
+  - leftIcon: /images/telegram-social.svg
+    title: Telegram
+    description: Ask questions and engage with our community.
+    url: https://twitter.com/TheTNetwork
     rightIcon: /images/external-arrow.svg
   - leftIcon: /images/twitter-social.svg
     title: Twitter

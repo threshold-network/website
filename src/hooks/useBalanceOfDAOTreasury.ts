@@ -4,8 +4,8 @@ import { FixedNumber } from "ethers"
 import { CoingeckoID, exchangeAPI, formatUnits } from "../utils"
 import { useERC20TokensBalanceCall } from "./useERC20TokensBalanceCall"
 
-// https://etherscan.io/address/0x9f6e831c8f8939dc0c830c6e492e7cef4f9c2f5f
-const DAO_TREASURY_ADDRESS = "0x9f6e831c8f8939dc0c830c6e492e7cef4f9c2f5f"
+// https://etherscan.io/address/0x87F005317692D05BAA4193AB0c961c69e175f45f
+const DAO_TREASURY_ADDRESS = "0x87F005317692D05BAA4193AB0c961c69e175f45f"
 
 const query = graphql`
   query {

@@ -2,18 +2,14 @@ import { FC } from "react"
 import { graphql } from "gatsby"
 import Hero from "./Hero"
 import SectionTemplate from "./SectionTemplate"
-import TakeTheQuiz from "./TakeTheQuiz"
 import MigrationInfoSection from "./MigrationInfoSection"
 import HarnessThePower from "./HarnessThePower"
 import JoinTheCommunity from "./JoinTheCommunity"
 import ActiveCommunity from "./ActiveCommunity"
-import { BTCRole } from "./BTCRole"
-import { useTBTCPartners } from "../../components/tBTCPartners"
 
 const SplashPageTemplate: FC<any> = ({ data }) => {
   const {
     hero,
-    btcRole,
     bugBounty,
     stakerRole,
     lpRole,
@@ -25,17 +21,13 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
   } = data.markdownRemark.frontmatter
   const proposals = data.allProposals
 
-  const { all: tBTCPartners } = useTBTCPartners()
-
   return (
     <>
       <Hero {...hero} />
-      <BTCRole partners={tBTCPartners} {...btcRole} bgColor="#0A0C0F" />
       <SectionTemplate {...bugBounty} />
       <SectionTemplate {...stakerRole} bgColor="gray.900" />
       <SectionTemplate {...lpRole} bgColor="#181D22" />
       <SectionTemplate {...tokenHolderRole} bgColor="#161A1F" />
-      <TakeTheQuiz topBgColor="#161A1F" bottomBgColor="#181D22" />
       <MigrationInfoSection {...migrationInfo} bgColor="#181D22" />
       <HarnessThePower {...harnessThePower} />
       <ActiveCommunity {...activeCommunity} proposals={proposals} />
@@ -66,27 +58,6 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData(width: 200)
             }
-          }
-        }
-        btcRole {
-          rowReverse
-          title
-          description
-          image {
-            id
-            relativePath
-            internal {
-              mediaType
-            }
-            childImageSharp {
-              gatsbyImageData(width: 200)
-            }
-          }
-          buttons {
-            label
-            url
-            variant
-            posthogLabel
           }
         }
         bugBounty {

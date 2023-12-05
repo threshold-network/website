@@ -9,9 +9,6 @@ columns:
       - label: Press
         url: /press
         isExternal: false
-      - label: Roadmap
-        url: "https://blog.threshold.network/the-story-of-threshold/ "
-        isExternal: true
       - label: Blog
         url: https://blog.threshold.network/
         isExternal: true
@@ -32,9 +29,6 @@ columns:
       - label: Token Holder
         url: /earn/token-holder
         isExternal: false
-      - label: Earn Profile Quiz
-        url: /profile-quiz
-        isExternal: false
   - title: Community
     links:
       - label: Governance
@@ -43,11 +37,14 @@ columns:
       - label: Ecosystem
         url: /ecosystem
         isExternal: false
+      - label: Forum
+        url: https://forum.threshold.network/
+        isExternal: true
       - label: Discord
         url: https://discord.gg/Threshold
         isExternal: true
-      - label: Forum
-        url: https://forum.threshold.network/
+      - label: Telegram
+        url: https://t.me/thresholdnetwork
         isExternal: true
   - title: About
     links:
@@ -79,6 +76,11 @@ social_links:
     icon:
       image: /images/discord.svg
       alt: discord
+  - label: Discourse
+    url: https://forum.threshold.network
+    icon:
+      image: /images/discourse-resources.svg
+      alt: Threshold Forum
   - label: Github
     url: https://github.com/threshold-network
     icon:

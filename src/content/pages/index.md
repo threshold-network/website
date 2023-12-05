@@ -33,7 +33,7 @@ btcRole:
 bugBounty:
   preTitle: Bug bounty
   title: "Join the hunt: $500K Bug Bounty"
-  description: "Spot security risks, claim your prize. No KYC, no fuss."
+  description: "Spot security risks, claim your prize."
   image: /images/immunefi.svg
   buttons:
     - label: Read more

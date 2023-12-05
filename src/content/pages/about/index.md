@@ -19,8 +19,8 @@ teamsSection:
       cryptographic access controls for distributed apps and protocols.
     image: /images/nu-logo.png
     buttons:
-      - label: Visit NuCypher’s Website
-        url: https://www.nucypher.com/
+      - label: Visit NuCypher’s Github
+        url: https://github.com/nucypher
         variant: EXTERNAL_OUTLINE
 faq:
   title: FAQ
@@ -41,19 +41,6 @@ faq:
         distributes sensitive operations across multiple independent entities –
         like nodes in a network – and requires a threshold, or minimum number of
         those entities to cooperate for the operation to be successful.
-    - question: Do legacy KEEP stakers need to set up a PRE node?
-      answer:
-        Yes, everyone who stakes on Threshold will need to run a PRE node. If
-        you are working with a stakng provider, reach out to them to accomplish
-        this. If you are running your own node, you can refer to the following
-        guide.
-      buttons:
-        - label: How to run a PRE Node
-          leftIcon:
-            image: /images/document.svg
-          rightIcon:
-            image: /images/external-arrow.svg
-          url: https://docs.nucypher.com/en/latest/pre_application/running_a_node.html
     - question: What staking providers work with Threshold?
       answer: You can refer to the list of staking providers below.
       buttons:

@@ -14,8 +14,8 @@ governanceInfo:
     - label: Governance Forum
       url: https://forum.threshold.network/
       variant: EXTERNAL_SOLID
-    - label: Read Proposal
-      url: https://forum.threshold.network/c/governance-proposals/7
+    - label: Delegate Vote
+      url: https://delegates.threshold.network/
       variant: EXTERNAL_OUTLINE
   rowReverse: false
 guildsInfo:
@@ -32,9 +32,9 @@ guildsInfo:
         url: https://forum.threshold.network/t/tip-13-bootstrap-threshold-dao-guilds/246
         variant: EXTERNAL_OUTLINE
     guildStats:
-      - value: 700+
+      - value: 7,000+
         label: Guild Members in Discord
-      - value: 20+
+      - value: 60+
         label: Proposals
   guildCards:
     - title: Marketing Guild
@@ -99,7 +99,7 @@ guildsInfo:
           image: /images/162_2.jpg
       joinUrl: https://thresholdnetwork.notion.site/Integrations-Guild-4ff2e5fdea4442d7af19d27342ab8225
 migrationInfo:
-  title: Do you own KEEP or Nu and want to participate in Threshold Goverance?
+  title: Do you own KEEP or NU and want to participate in Threshold Governance?
   description: Migrate your tokens to T so you can take full advantage of the Threshold DAO.
   image: /images/legacy-tokens.png
   buttons:
