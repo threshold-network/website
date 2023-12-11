@@ -2,7 +2,7 @@
 template: build-page/tbtc-sdk
 path: build-page/tbtc-sdk
 title: SDK Page
-seo: 
+seo:
   - title: tBTC SDK
 sdkInfo:
   title: "tBTC SDK: Supercharge Your Project with Bitcoin"
@@ -67,7 +67,7 @@ callToActionInfo:
   description: "Join our community and explore the endless possibilities with tBTC SDK."
   rowReverse: false
   buttons:
-  - label: Learn More
-    url: https://docs.threshold.network/app-development/tbtc-v2/tbtc-sdk/
-    variant: EXTERNAL_OUTLINE
+    - label: Learn More
+      url: https://docs.threshold.network/app-development/tbtc-v2/tbtc-sdk/
+      variant: EXTERNAL_OUTLINE
 ---

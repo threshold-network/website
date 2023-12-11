@@ -2780,7 +2780,7 @@ collections:
                       ],
                   },
                 ],
-            }    
+            }
       # Governance Page
       - file: "src/content/pages/governance/index.md"
         name: "governancePage"

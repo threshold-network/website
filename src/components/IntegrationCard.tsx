@@ -101,7 +101,6 @@ export const IntegrationsCardGroup: FC<{ cards: IntegrationCardProps[] }> = ({
         spacing={cardSpacing}
         overflowX="hidden"
         py={20}
-        mb={-28}
         position="relative"
       >
         {cardSet.map((card: IntegrationCardProps, i) => (
