@@ -66,7 +66,7 @@ const UseCasesCard: FC<UseCasesCardProps> = ({
               {preTitle}
             </Card.PreTitle>
             <Stack direction="row" alignItems="center" gap={4}>
-              <Image h="40px" w="40px" {...image} />
+              <Image h="38px" w="38px" {...image} />
               <Card.Title noOfLines={2} maxWidth="130px" fontWeight="bold">
                 {title}
               </Card.Title>

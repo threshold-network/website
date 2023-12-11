@@ -36,7 +36,7 @@ const SDKPageTemplate: FC = ({ data }: any) => {
         columnReverse
         size="sm"
       >
-        <Divider mt="7rem" />
+        <Divider mt="9rem" />
       </SectionTemplate>
       <SectionTemplate
         {...featuresInfo}
