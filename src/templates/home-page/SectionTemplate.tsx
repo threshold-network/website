@@ -25,10 +25,9 @@ export interface FooterButton {
 
 export interface RoleTemplateProps extends OmittedBoxProps {
   bgColor: string
-  title: string | JSX.Element
+  title: string | JSX.Element | FC
   description: string
   buttons: FooterButton[]
-  highlightedWord?: string
   image?: ImageProps
   rowReverse?: boolean
   size?: "sm" | "md"
@@ -40,7 +39,6 @@ export interface RoleTemplateProps extends OmittedBoxProps {
 
 const SectionTemplate: FC<RoleTemplateProps> = ({
   title,
-  highlightedWord,
   description,
   buttons = [],
   image,
@@ -63,7 +61,7 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
         rowReverse={rowReverse}
         columnReverse={columnReverse}
         spacing={16}
-        justifyContent={isCentered ? "center" : undefined}
+        justifyContent={isCentered ? "center" : "space-between"}
         textAlign={isCentered ? "center" : undefined}
       >
         <SectionTextContainer>
@@ -82,7 +80,12 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
               {description}
             </H5>
           )}
-          <Stack mt={10} direction={{ base: "column", md: "row" }} spacing={8}>
+          <Stack
+            mt={10}
+            direction={{ base: "column", md: "row" }}
+            justifyContent={isCentered ? "center" : "space-between"}
+            spacing={8}
+          >
             {buttons.map((_: FooterButton, i) => {
               return (
                 <TrackComponent posthogLabel={_.posthogLabel} key={_.label}>

@@ -10,6 +10,7 @@ import { FC } from "react"
 import { BodyLg, BodySm, LabelSm } from "../Typography"
 
 type CardComponent<P> = FC<P> & {
+  PreTitle: FC<TextProps>
   Title: FC<TextProps>
   SubTitle: FC<TextProps>
   Divider: FC<DividerProps>
@@ -20,6 +21,12 @@ const Card: CardComponent<BoxProps> = (props) => {
   const styles = useStyleConfig("Card")
   return <Box __css={styles} {...props} />
 }
+
+const PreTitle: FC = ({ children, ...textProps }) => (
+  <LabelSm as="span" bgClip="text" textTransform="uppercase" {...textProps}>
+    {children}
+  </LabelSm>
+)
 
 const Title: FC = ({ children, ...textProps }) => (
   <BodyLg {...textProps}>{children}</BodyLg>
@@ -39,6 +46,7 @@ const Divider = ({ ...dividerProps }) => {
   return <ChakraDivider bg="gray.700" {...dividerProps} />
 }
 
+Card.PreTitle = PreTitle
 Card.Title = Title
 Card.SubTitle = SubTitle
 Card.Body = Body

@@ -1,6 +1,5 @@
 import React, { FC } from "react"
-import { RoleTemplateProps } from "../templates/home-page/SectionTemplate"
-import { BoxProps, Text } from "@chakra-ui/react"
+import { Box, BoxProps, Text } from "@chakra-ui/react"
 
 export interface HighlightWordProps extends BoxProps {
   title: string
