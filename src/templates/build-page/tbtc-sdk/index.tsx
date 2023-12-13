@@ -146,11 +146,6 @@ export const query = graphql`
               gatsbyImageData(width: 200)
             }
           }
-          buttons {
-            label
-            url
-            variant
-          }
         }
         features {
           title

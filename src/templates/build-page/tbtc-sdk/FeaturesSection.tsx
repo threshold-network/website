@@ -48,7 +48,7 @@ const FeaturesSection: FC<FeaturesSectionProps> = ({
 }: FeaturesSectionProps) => {
   return (
     <>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4} mt={20}>
+      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4} mt={8}>
         {cards.map((resource: any, i) => (
           <FeatureCard key={i} icon={icon} {...resource} />
         ))}

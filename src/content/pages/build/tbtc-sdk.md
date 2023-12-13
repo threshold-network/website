@@ -11,8 +11,8 @@ sdkInfo:
   image: /images/tbtc-sdk.svg
   buttons:
     - label: Go To Docs
-      url: https://docs.threshold.network/app-development/tbtc-v2/tbtc-sdk
-      variant: EXTERNAL_OUTLINE
+      url: https://blog.threshold.network/harnessing-the-tbtc-sdk-empowering-your-projects-with-bitcoin/
+      variant: EXTERNAL_SOLID
   rowReverse: false
 useCasesInfo:
   preTitle: Explore
@@ -49,10 +49,6 @@ featuresInfo:
   title: Key Features
   description: "Explore tBTC SDK's core features for seamless Bitcoin integration."
   image: /images/ecosystem-grid.svg
-  buttons:
-    - label: Learn More
-      url: https://docs.threshold.network/app-development/tbtc-v2/tbtc-sdk/architecture
-      variant: EXTERNAL_OUTLINE
   rowReverse: false
   icon: /images/gradient-box-icon.svg
 features:
@@ -69,5 +65,8 @@ callToActionInfo:
   buttons:
     - label: Learn More
       url: https://docs.threshold.network/app-development/tbtc-v2/tbtc-sdk/
+      variant: EXTERNAL_OUTLINE
+    - label: Join Discord
+      url: https://discord.gg/threshold
       variant: EXTERNAL_OUTLINE
 ---
