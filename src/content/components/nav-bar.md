@@ -12,21 +12,24 @@ nav_items:
         url: /earn/btc
       - label: Token Holder
         url: /earn/token-holder
+  - label: Build
+    isExternal: false
+    subitems:
+      - label: tBTC SDK
+        url: /build/tbtc-sdk
+      - label: Docs
+        url: https://docs.threshold.network/
+        isExternal: true
   - label: Governance
     url: /governance
   - label: Ecosystem
     url: /ecosystem
-  - label: News
+  - label: About
     subitems:
       - label: Press
         url: /press
       - label: Blog
         url: https://blog.threshold.network/
-        isExternal: true
-  - label: About
-    subitems:
-      - label: Docs
-        url: https://docs.threshold.network/
         isExternal: true
       - label: Contributors
         url: /about#contributors
