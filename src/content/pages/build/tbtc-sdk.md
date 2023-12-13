@@ -1,16 +1,16 @@
 ---
 template: build-page/tbtc-sdk
-path: build-page/tbtc-sdk
+path: /build/tbtc-sdk
 title: SDK Page
-seo:
-  - title: tBTC SDK
+seoTitle: Threshold tBTC SDK
+seoDescription: "Develop applications using tBTC SDK, and leverage the Bitcoins strength across various blockchains, enhancing user flexibility and market reach"
 sdkInfo:
   title: "tBTC SDK: Supercharge Your Project with Bitcoin"
   highlightedWord: "tBTC SDK:"
   description: "Unlock the power of blockchain – The ultimate toolkit for harnessing Bitcoin's potential."
   image: /images/tbtc-sdk.svg
   buttons:
-    - label: Go To Docs
+    - label: Learn More
       url: https://blog.threshold.network/harnessing-the-tbtc-sdk-empowering-your-projects-with-bitcoin/
       variant: EXTERNAL_SOLID
   rowReverse: false
