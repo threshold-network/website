@@ -92,9 +92,9 @@ migrationInfo:
   bgColor: "#141414"
   rowReverse: false
 tacoRole:
-  title: Build uncensorable e2ee into your app
+  title: Build Uncensorable e2ee into your Dapp
   description: TACo is the only end-to-end encryption plugin that is end-to-end decentralized
-  image: /images/liquidity.png
+  image: /images/taco-section-image.svg
   buttons:
     - label: Read the docs
       url: https://docs.threshold.network/applications/threshold-access-control
