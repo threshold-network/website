@@ -5,6 +5,7 @@ import SectionTemplate from "./SectionTemplate"
 import MigrationInfoSection from "./MigrationInfoSection"
 import JoinTheCommunity from "./JoinTheCommunity"
 import ActiveCommunity from "./ActiveCommunity"
+import InfoColumnsSection from "./InfoColumnsSection"
 
 const SplashPageTemplate: FC<any> = ({ data }) => {
   const {
