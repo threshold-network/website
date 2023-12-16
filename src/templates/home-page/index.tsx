@@ -10,8 +10,8 @@ import InfoColumnsSection from "./InfoColumnsSection"
 const SplashPageTemplate: FC<any> = ({ data }) => {
   const {
     hero,
-    bugBounty,
     tacoRole,
+    bugBounty,
     stakerRole,
     lpRole,
     tokenHolderRole,
@@ -25,8 +25,8 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
   return (
     <>
       <Hero {...hero} />
-      <SectionTemplate {...bugBounty} />
       <InfoColumnsSection {...tacoRole} bgColor="#161A1F" />
+      <SectionTemplate {...bugBounty} />
       <SectionTemplate {...stakerRole} bgColor="gray.900" />
       <SectionTemplate {...lpRole} bgColor="#181D22" />
       <SectionTemplate {...tokenHolderRole} bgColor="#161A1F" />
