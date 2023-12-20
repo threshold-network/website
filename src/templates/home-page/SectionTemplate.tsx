@@ -83,7 +83,7 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
           <Stack
             mt={10}
             direction={{ base: "column", md: "row" }}
-            justifyContent={isCentered ? "center" : "space-between"}
+            justifyContent={isCentered ? "center" : "start"}
             spacing={8}
           >
             {buttons.map((_: FooterButton, i) => {

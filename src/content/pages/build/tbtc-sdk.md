@@ -10,9 +10,12 @@ sdkInfo:
   description: "Unlock the power of blockchain – The ultimate toolkit for harnessing Bitcoin's potential."
   image: /images/tbtc-sdk.svg
   buttons:
+    - label: Bounty Program
+      url: https://blog.threshold.network/introducing-the-tbtc-sdk-bounty-program/
+      variant: EXTERNAL_SOLID
     - label: Learn More
       url: https://blog.threshold.network/harnessing-the-tbtc-sdk-empowering-your-projects-with-bitcoin/
-      variant: EXTERNAL_SOLID
+      variant: EXTERNAL_OUTLINE
   rowReverse: false
 useCasesInfo:
   preTitle: Explore
