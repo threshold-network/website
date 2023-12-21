@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react"
 import { SimpleGrid, Stack, Flex } from "@chakra-ui/react"
-import { ImageProps } from "../../components"
+import { CardButton, CardCategory, ImageProps } from "../../components"
 import SortDropdown, { SortOption } from "../../components/SortDropdown"
 import FilterMenu from "../../components/FilterMenu"
 import { ProjectsAndToolsCard } from "./ProjectsAndToolsCard"
@@ -15,16 +15,6 @@ export enum Category {
   TOOL = "tool",
   INFRASTRUCTURE = "infrastructure",
   INTEGRATION = "integration",
-}
-
-export interface CardButton {
-  label: string
-  url: string
-  variant: string
-}
-
-export interface CardCategory {
-  label: string
 }
 
 export interface ProjectsAndToolsCardProps {

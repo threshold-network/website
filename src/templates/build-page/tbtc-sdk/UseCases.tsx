@@ -1,19 +1,9 @@
 import { FC, useRef, useState } from "react"
 import { Box, Button, SimpleGrid, Stack, Flex } from "@chakra-ui/react"
-import Card from "../../../components/Card"
+import Card, { CardButton, CardCategory } from "../../../components/Card"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 import { Image, ImageProps } from "../../../components"
-
-export interface CardButton {
-  label: string
-  url: string
-  variant: string
-}
-
-export interface CardCategory {
-  label: string
-}
 
 export interface UseCasesCardProps {
   image: ImageProps
@@ -43,11 +33,10 @@ const UseCasesCard: FC<UseCasesCardProps> = ({
         onMouseLeave={() => setIsHovered(false)}
         rounded="2xl"
         p="2px"
-        bgGradient={
-          isHovered
-            ? "linear-gradient(180deg, rgba(189,48,255,0) 0%, rgba(125,0,255,1) 100%)"
-            : "none"
-        }
+        _hover={{
+          bgGradient:
+            "linear-gradient(180deg, rgba(189,48,255,0) 0%, rgba(125,0,255,1) 100%)",
+        }}
       >
         <Card
           m="auto"
@@ -87,7 +76,7 @@ const UseCasesCard: FC<UseCasesCardProps> = ({
                   variant="link"
                   size="md"
                   width="100%"
-                  ml="-0.5rem"
+                  justifyContent="left"
                 >
                   {button.label}
                 </ExternalButtonLink>

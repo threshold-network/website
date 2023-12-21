@@ -3,12 +3,12 @@ import { SimpleGrid, Stack } from "@chakra-ui/react"
 import Card from "../../../components/Card"
 import { BodyMd, H6, Image, ImageProps } from "../../../components"
 
-export interface FeaturesSectionProps {
+interface FeaturesSectionProps {
   cards: FeatureCardProps[]
   icon: ImageProps
 }
 
-export interface FeatureCardProps {
+interface FeatureCardProps {
   title: string
   description: string
   isBigSize?: boolean
@@ -49,8 +49,8 @@ const FeaturesSection: FC<FeaturesSectionProps> = ({
   return (
     <>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4} mt={8}>
-        {cards.map((resource: any, i) => (
-          <FeatureCard key={i} icon={icon} {...resource} />
+        {cards.map((card: FeatureCardProps, i) => (
+          <FeatureCard key={i} icon={icon} {...card} />
         ))}
       </SimpleGrid>
     </>

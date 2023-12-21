@@ -5,12 +5,22 @@ import { Box, Divider } from "@chakra-ui/react"
 import UseCases from "./UseCases"
 import FeaturesSection from "./FeaturesSection"
 import { HighlightWord } from "../../../components/HighlightWord"
+import { SectionInfo } from "../../../types"
 
-const SDKTitle: FC = ({ sdkInfo }: any) => (
+interface SDKPageContent {
+  [key: string]: SectionInfo | SectionInfo[]
+}
+
+interface SDKTitleProps {
+  title: string
+  highlightedWord: string
+}
+
+const SDKTitle: FC<SDKTitleProps> = ({ title, highlightedWord }) => (
   <Box mr="-4rem">
     <HighlightWord
-      title={sdkInfo.title}
-      highlightedWord={sdkInfo.highlightedWord}
+      title={title}
+      highlightedWord={highlightedWord}
       bgGradient="linear-gradient(120.19deg, #BD30FF 3.32%, #7D00FF 95.02%)"
       fontWeight="bold"
     />
@@ -25,13 +35,15 @@ const SDKPageTemplate: FC = ({ data }: any) => {
     featuresInfo,
     features,
     callToActionInfo,
-  } = data.markdownRemark.frontmatter
+  } = data.markdownRemark.frontmatter as SDKPageContent
+  const { title, highlightedWord, ...sectionTemplateProps } =
+    sdkInfo as SectionInfo
 
   return (
     <Box bgColor="gray.900">
       <SectionTemplate
-        {...sdkInfo}
-        title={<SDKTitle sdkInfo={sdkInfo} />}
+        {...sectionTemplateProps}
+        title={<SDKTitle title={title} highlightedWord={highlightedWord} />}
         preTitle={null}
         columnReverse
         size="sm"

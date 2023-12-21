@@ -9,6 +9,16 @@ import {
 import { FC } from "react"
 import { BodyLg, BodySm, LabelSm } from "../Typography"
 
+export interface CardButton {
+  label: string
+  url: string
+  variant: string
+}
+
+export interface CardCategory {
+  label: string
+}
+
 type CardComponent<P> = FC<P> & {
   PreTitle: FC<TextProps>
   Title: FC<TextProps>
