@@ -30,7 +30,7 @@ export interface FooterButton {
 export interface RoleTemplateProps extends OmittedBoxProps {
   title: string | JSX.Element | FC
   description: string
-  buttons: FooterButton[]
+  buttons?: FooterButton[]
   bgColor?: string
   image?: ImageProps & ChakraImageProps
   rowReverse?: boolean
