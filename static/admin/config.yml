@@ -2567,6 +2567,12 @@ collections:
                     widget: file,
                     media_library: { config: { multiple: false } },
                   },
+                  {
+                    label: "Pre Title",
+                    name: "preTitle",
+                    widget: "string",
+                    minimal: true,
+                  },
                   { label: "Title", name: "title", widget: "string" },
                   {
                     label: "Description",
@@ -2665,12 +2671,6 @@ collections:
               allow_add: true,
               fields:
                 [
-                  {
-                    label: "Pre Title",
-                    name: "preTitle",
-                    widget: "string",
-                    minimal: true,
-                  },
                   { label: "Title", name: "title", widget: "string" },
                   {
                     label: "Description",
