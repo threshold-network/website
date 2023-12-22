@@ -2,13 +2,18 @@ import { FC } from "react"
 import { graphql } from "gatsby"
 import SectionTemplate from "../../home-page/SectionTemplate"
 import { Box, Divider } from "@chakra-ui/react"
-import UseCases from "./UseCases"
-import FeaturesSection from "./FeaturesSection"
+import UseCases, { UseCasesCardProps } from "./UseCases"
+import FeaturesSection, { FeatureCardProps } from "./FeaturesSection"
 import { HighlightWord } from "../../../components/HighlightWord"
-import { SectionInfo } from "../../../types"
+import { SectionInfo, WithRequiredProperty } from "../../../types"
 
 interface SDKPageContent {
-  [key: string]: SectionInfo | SectionInfo[]
+  sdkInfo: SectionInfo
+  useCasesInfo: SectionInfo
+  useCases: UseCasesCardProps[]
+  featuresInfo: WithRequiredProperty<SectionInfo, "icon" | "image">
+  features: FeatureCardProps[]
+  callToActionInfo: WithRequiredProperty<SectionInfo, "buttons">
 }
 
 interface SDKTitleProps {
@@ -43,8 +48,7 @@ const SDKPageTemplate: FC = ({ data }: any) => {
     <Box bgColor="gray.900">
       <SectionTemplate
         {...sectionTemplateProps}
-        title={<SDKTitle title={title} highlightedWord={highlightedWord} />}
-        preTitle={null}
+        title={<SDKTitle title={title} highlightedWord={highlightedWord!} />}
         columnReverse
         size="sm"
       >
@@ -70,7 +74,6 @@ const SDKPageTemplate: FC = ({ data }: any) => {
       </SectionTemplate>
       <SectionTemplate
         {...callToActionInfo}
-        preTitle={null}
         size="md"
         isCentered
         bgColor="#161A1F"

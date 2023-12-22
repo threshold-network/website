@@ -8,5 +8,9 @@ export interface SectionInfo {
   buttons?: CardButton[]
   icon?: ImageProps
   image?: ImageProps
-  rowReversedw: boolean
+  rowReverse?: boolean
+}
+
+export type WithRequiredProperty<Type, Key extends keyof Type> = Type & {
+  [Property in Key]-?: Type[Property]
 }
