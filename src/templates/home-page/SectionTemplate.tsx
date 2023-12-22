@@ -1,5 +1,9 @@
 import React, { FC } from "react"
-import { BoxProps, Stack } from "@chakra-ui/react"
+import {
+  BoxProps,
+  ImageProps as ChakraImageProps,
+  Stack,
+} from "@chakra-ui/react"
 import {
   ButtonType,
   CmsButtonLink,
@@ -24,11 +28,11 @@ export interface FooterButton {
 }
 
 export interface RoleTemplateProps extends OmittedBoxProps {
-  bgColor: string
   title: string | JSX.Element | FC
   description: string
   buttons: FooterButton[]
-  image?: ImageProps
+  bgColor?: string
+  image?: ImageProps & ChakraImageProps
   rowReverse?: boolean
   size?: "sm" | "md"
   isImageBackground?: boolean
