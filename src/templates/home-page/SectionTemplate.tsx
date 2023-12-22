@@ -1,5 +1,9 @@
 import React, { FC } from "react"
-import { BoxProps, Stack } from "@chakra-ui/react"
+import {
+  BoxProps,
+  ImageProps as ChakraImageProps,
+  Stack,
+} from "@chakra-ui/react"
 import {
   ButtonType,
   CmsButtonLink,
@@ -24,12 +28,11 @@ export interface FooterButton {
 }
 
 export interface RoleTemplateProps extends OmittedBoxProps {
-  bgColor: string
-  title: string | JSX.Element
+  title: string | JSX.Element | FC
   description: string
-  buttons: FooterButton[]
-  highlightedWord?: string
-  image?: ImageProps
+  buttons?: FooterButton[]
+  bgColor?: string
+  image?: ImageProps & ChakraImageProps
   rowReverse?: boolean
   size?: "sm" | "md"
   isImageBackground?: boolean
@@ -40,7 +43,6 @@ export interface RoleTemplateProps extends OmittedBoxProps {
 
 const SectionTemplate: FC<RoleTemplateProps> = ({
   title,
-  highlightedWord,
   description,
   buttons = [],
   image,
@@ -63,7 +65,7 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
         rowReverse={rowReverse}
         columnReverse={columnReverse}
         spacing={16}
-        justifyContent={isCentered ? "center" : undefined}
+        justifyContent={isCentered ? "center" : "space-between"}
         textAlign={isCentered ? "center" : undefined}
       >
         <SectionTextContainer>
@@ -82,7 +84,12 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
               {description}
             </H5>
           )}
-          <Stack mt={10} direction={{ base: "column", md: "row" }} spacing={8}>
+          <Stack
+            mt={10}
+            direction={{ base: "column", md: "row" }}
+            justifyContent={isCentered ? "center" : "start"}
+            spacing={8}
+          >
             {buttons.map((_: FooterButton, i) => {
               return (
                 <TrackComponent posthogLabel={_.posthogLabel} key={_.label}>

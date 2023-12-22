@@ -10,7 +10,7 @@ const NavLink: FC<{ href: string }> = ({ href, children }) => {
       px={2}
       to={href}
       color="gray.300"
-      display="flex"
+      display={{ base: "none", lg: "flex" }}
       _hover={{
         textDecoration: "none",
         color: "white",

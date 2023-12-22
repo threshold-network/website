@@ -18,13 +18,24 @@ import { LinkInfo, SocialLink } from "../types"
 import SocialMediaLinks from "../SocialMediaLinks"
 import { FaChevronLeft } from "react-icons/all"
 import { BodySm, H5 } from "../../Typography"
+import { CardButton } from "../../Card"
+import NavCTAButtons from "../NavCTAButtons"
 
-const MobileDrawer: FC<{
+interface MobileDrawerProps {
   onClose: () => void
   isOpen: boolean
   navLinks: LinkInfo[]
   socialLinks: SocialLink[]
-}> = ({ onClose, isOpen, navLinks, socialLinks }) => {
+  menuButtons: CardButton[]
+}
+
+const MobileDrawer: FC<MobileDrawerProps> = ({
+  onClose,
+  isOpen,
+  navLinks,
+  socialLinks,
+  menuButtons,
+}) => {
   const isMobileDevice = useChakraBreakpoint("lg")
 
   const [navLinksToRender, setNavLinksToRender] = useState(navLinks)
@@ -64,6 +75,14 @@ const MobileDrawer: FC<{
           justifyContent="space-between"
           pb={20}
         >
+          <NavCTAButtons
+            menuButtons={menuButtons}
+            display={{ base: "flex", md: "none" }}
+            w="100%"
+            fontSize="18px"
+            height={14}
+            mb={6}
+          />
           <Stack divider={<StackDivider borderColor="gray.700" />}>
             {navLinksToRender.map(({ url, label, subitems }) => (
               <MobileNavLink

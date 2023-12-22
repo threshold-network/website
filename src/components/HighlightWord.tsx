@@ -1,10 +1,9 @@
 import React, { FC } from "react"
-import { RoleTemplateProps } from "../templates/home-page/SectionTemplate"
 import { BoxProps, Text } from "@chakra-ui/react"
 
 export interface HighlightWordProps extends BoxProps {
   title: string
-  highlightedWord: string
+  highlightedWord?: string
 }
 
 export const HighlightWord: FC<HighlightWordProps> = ({
@@ -12,13 +11,13 @@ export const HighlightWord: FC<HighlightWordProps> = ({
   highlightedWord,
   ...highlightedWordProps
 }) => {
-  const titleSplittedByHighlightedWord = title.split(highlightedWord!)
+  const splittedTitle = title.split(highlightedWord || "")
   return (
     <>
-      {titleSplittedByHighlightedWord.map((item, index) => (
+      {splittedTitle.map((item, index) => (
         <React.Fragment key={`text-${index}`}>
           {item}
-          {index !== titleSplittedByHighlightedWord.length - 1 && (
+          {index !== splittedTitle.length - 1 && highlightedWord && (
             <Text as="span" bgClip="text" key={index} {...highlightedWordProps}>
               {highlightedWord}
             </Text>

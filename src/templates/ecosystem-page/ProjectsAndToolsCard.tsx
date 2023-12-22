@@ -1,19 +1,9 @@
 import { FC, useRef, useState } from "react"
 import { Box, Button, SimpleGrid, Stack, Flex } from "@chakra-ui/react"
-import Card from "../../components/Card"
+import Card, { CardButton, CardCategory } from "../../components/Card"
 import ExternalButtonLink from "../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../components/Navbar/types"
 import { Image, ImageProps } from "../../components"
-
-export interface CardButton {
-  label: string
-  url: string
-  variant: string
-}
-
-export interface CardCategory {
-  label: string
-}
 
 export interface ProjectsAndToolsCardProps {
   image: ImageProps

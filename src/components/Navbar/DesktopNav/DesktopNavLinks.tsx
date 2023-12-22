@@ -3,8 +3,18 @@ import { HStack } from "@chakra-ui/react"
 import DropdownLabelLink from "./DropdownMenu"
 import NavLink from "./NavLink"
 import { LinkInfo } from "../types"
+import NavCTAButtons from "../NavCTAButtons"
+import { CardButton } from "../../Card"
 
-const DesktopNavLinks: FC<{ navLinks: LinkInfo[] }> = ({ navLinks }) => {
+interface DesktopNavLinksProps {
+  navLinks: LinkInfo[]
+  menuButtons: CardButton[]
+}
+
+const DesktopNavLinks: FC<DesktopNavLinksProps> = ({
+  navLinks,
+  menuButtons,
+}) => {
   return (
     <HStack
       w="100%"
@@ -13,7 +23,8 @@ const DesktopNavLinks: FC<{ navLinks: LinkInfo[] }> = ({ navLinks }) => {
       borderColor="gray.700"
       px={8}
       spacing={4}
-      display={{ base: "none", lg: "inherit" }}
+      display={{ base: "none", md: "inherit" }}
+      justifyContent={{ base: "end", lg: "start" }}
       as="nav"
     >
       {navLinks.map(({ subitems, label, url }) => {
@@ -29,6 +40,7 @@ const DesktopNavLinks: FC<{ navLinks: LinkInfo[] }> = ({ navLinks }) => {
           </NavLink>
         )
       })}
+      <NavCTAButtons menuButtons={menuButtons} px={5} />
     </HStack>
   )
 }

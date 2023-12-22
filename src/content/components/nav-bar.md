@@ -12,21 +12,24 @@ nav_items:
         url: /earn/btc
       - label: Token Holder
         url: /earn/token-holder
+  - label: Build
+    isExternal: false
+    subitems:
+      - label: tBTC SDK
+        url: /build/tbtc-sdk
+      - label: Docs
+        url: https://docs.threshold.network/
+        isExternal: true
   - label: Governance
     url: /governance
   - label: Ecosystem
     url: /ecosystem
-  - label: News
+  - label: About
     subitems:
       - label: Press
         url: /press
       - label: Blog
         url: https://blog.threshold.network/
-        isExternal: true
-  - label: About
-    subitems:
-      - label: Docs
-        url: https://docs.threshold.network/
         isExternal: true
       - label: Contributors
         url: /about#contributors
@@ -38,6 +41,9 @@ nav_items:
       - label: Brand Assets
         url: https://bit.ly/threshold-brand-assets
         isExternal: true
+menu_buttons:
+  - label: tBTC dApp
+    url: https://dashboard.threshold.network/tBTC
 social_links:
   - label: Twitter
     url: https://twitter.com/TheTNetwork
@@ -54,11 +60,6 @@ social_links:
     icon:
       image: /images/discord.svg
       alt: Threshold Discord
-  - label: Discourse
-    url: https://forum.threshold.network
-    icon:
-      image: /images/discourse-resources.svg
-      alt: Threshold Forum
   - label: GitHub
     url: https://github.com/threshold-network
     icon:

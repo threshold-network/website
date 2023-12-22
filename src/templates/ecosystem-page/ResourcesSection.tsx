@@ -1,10 +1,9 @@
 import { FC } from "react"
 import { Flex, GridItem, SimpleGrid, Stack } from "@chakra-ui/react"
-import Card from "../../components/Card"
+import Card, { CardButton } from "../../components/Card"
 import ExternalButtonLink from "../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../components/Navbar/types"
 import { BodyLg, H3, H5, Image, ImageProps } from "../../components"
-import { CardButton } from "./ProjectsAndToolsCard"
 import backgroundResources from "../../static/images/background-resources.svg"
 
 export interface ResourcesCardProps {
