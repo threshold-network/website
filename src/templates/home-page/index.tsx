@@ -3,13 +3,14 @@ import { graphql } from "gatsby"
 import Hero from "./Hero"
 import SectionTemplate from "./SectionTemplate"
 import MigrationInfoSection from "./MigrationInfoSection"
-import HarnessThePower from "./HarnessThePower"
 import JoinTheCommunity from "./JoinTheCommunity"
 import ActiveCommunity from "./ActiveCommunity"
+import InfoColumnsSection from "./InfoColumnsSection"
 
 const SplashPageTemplate: FC<any> = ({ data }) => {
   const {
     hero,
+    tacoRole,
     bugBounty,
     stakerRole,
     lpRole,
@@ -24,12 +25,13 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
   return (
     <>
       <Hero {...hero} />
+      <InfoColumnsSection {...tacoRole} bgColor="#161A1F" />
       <SectionTemplate {...bugBounty} />
       <SectionTemplate {...stakerRole} bgColor="gray.900" />
       <SectionTemplate {...lpRole} bgColor="#181D22" />
       <SectionTemplate {...tokenHolderRole} bgColor="#161A1F" />
       <MigrationInfoSection {...migrationInfo} bgColor="#181D22" />
-      <HarnessThePower {...harnessThePower} />
+      <InfoColumnsSection {...harnessThePower} bgColor="gray.800" />
       <ActiveCommunity {...activeCommunity} proposals={proposals} />
       <JoinTheCommunity {...joinTheCommunity} />
     </>
@@ -145,6 +147,39 @@ export const query = graphql`
         migrationInfo {
           rowReverse
           title
+          description
+          image {
+            id
+            relativePath
+            internal {
+              mediaType
+            }
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
+          }
+          buttons {
+            label
+            url
+            variant
+          }
+        }
+        tacoRole {
+          title
+          subitems {
+            description(from: "description")
+            title
+            image {
+              id
+              relativePath
+              internal {
+                mediaType
+              }
+              childImageSharp {
+                gatsbyImageData(width: 200)
+              }
+            }
+          }
           description
           image {
             id

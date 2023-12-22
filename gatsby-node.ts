@@ -100,6 +100,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
     }
     type Frontmatter {
       harnessThePower: Subitems
+      tacoRole: Subitems
     }
     type ProposalContent {
       html: String
