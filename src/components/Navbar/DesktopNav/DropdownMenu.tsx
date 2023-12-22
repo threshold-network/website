@@ -35,6 +35,7 @@ const DropdownMenu: FC<{ dropdown: LinkInfo[]; text: string }> = ({
               px={2}
               color="gray.300"
               _hover={hoverStyles}
+              display={{ base: "none", lg: "inherit" }}
               {...openStyles}
             >
               <HStack>
