@@ -1,6 +1,6 @@
-import { FC, useRef, useState } from "react"
-import { Box, Button, SimpleGrid, Stack, Flex } from "@chakra-ui/react"
-import Card, { CardButton, CardCategory } from "../../../components/Card"
+import { FC } from "react"
+import { Box, SimpleGrid, Stack } from "@chakra-ui/react"
+import Card, { CardButton } from "../../../components/Card"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
 import { Image, ImageProps } from "../../../components"
@@ -10,8 +10,6 @@ export interface UseCasesCardProps {
   preTitle: string
   title: string
   description: string
-  categories: CardCategory[]
-  timestamp: number
   buttons: CardButton[]
 }
 
@@ -22,15 +20,9 @@ const UseCasesCard: FC<UseCasesCardProps> = ({
   description,
   buttons,
 }) => {
-  const [isHovered, setIsHovered] = useState(false)
-  const cardRef = useRef(null)
-
   return (
     <Stack spacing={6}>
       <Box
-        ref={cardRef}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
         rounded="2xl"
         p="2px"
         _hover={{
