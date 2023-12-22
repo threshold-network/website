@@ -98,10 +98,10 @@ tacoRole:
   buttons:
     - label: Read the docs
       url: https://docs.threshold.network/applications/threshold-access-control
-      variant: INTERNAL_SOLID
+      variant: EXTERNAL_SOLID
     - label: Quickstart
       url: https://docs.threshold.network/app-development/threshold-access-control-tac/quickstart-testnet
-      variant: INTERNAL_OUTLINE
+      variant: EXTERNAL_OUTLINE
   subitems:
     - title: Easy to integrate
       description: TACo makes access control easy with an intuitive API, flexible architecture, and a free-to-use Testnet. All you need is a use case that involves private data, and where trusting an intermediary won't fly.
