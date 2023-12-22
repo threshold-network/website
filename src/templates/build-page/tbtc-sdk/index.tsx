@@ -13,7 +13,7 @@ interface SDKPageContent {
   useCases: UseCasesCardProps[]
   featuresInfo: WithRequiredProperty<SectionInfo, "icon" | "image">
   features: FeatureCardProps[]
-  callToActionInfo: WithRequiredProperty<SectionInfo, "buttons">
+  callToActionInfo: SectionInfo
 }
 
 interface SDKTitleProps {
@@ -41,8 +41,7 @@ const SDKPageTemplate: FC = ({ data }: any) => {
     features,
     callToActionInfo,
   } = data.markdownRemark.frontmatter as SDKPageContent
-  const { title, highlightedWord, ...sectionTemplateProps } =
-    sdkInfo as SectionInfo
+  const { title, highlightedWord, ...sectionTemplateProps } = sdkInfo
 
   return (
     <Box bgColor="gray.900">
