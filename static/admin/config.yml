@@ -355,11 +355,6 @@ collections:
                             },
                           ],
                       },
-                      {
-                        label: Posthog Label,
-                        name: posthogLabel,
-                        widget: string,
-                      },
                     ],
                 }
           - label: "Token Holder Role"
