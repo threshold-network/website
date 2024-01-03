@@ -8,8 +8,9 @@ const ThresholdBrand: FC<{ isDrawerOpen?: boolean } & StackProps> = ({
 }) => {
   return (
     <HStack
-      minW={{ base: "184px", lg: "225px" }}
-      justifyContent={isDrawerOpen ? "center" : "flex-start"}
+      w={{ xl: "100%" }}
+      minW={{ base: "184px", xl: "225px" }}
+      justifyContent={isDrawerOpen ? "center" : "end"}
       pr="32px"
       {...props}
     >

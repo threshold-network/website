@@ -17,14 +17,14 @@ const DesktopNavLinks: FC<DesktopNavLinksProps> = ({
 }) => {
   return (
     <HStack
-      w="100%"
+      w={{ base: "100%", xl: "auto" }}
       borderRight="1px solid"
       borderLeft="1px solid"
       borderColor="gray.700"
       px={8}
       spacing={4}
       display={{ base: "none", md: "inherit" }}
-      justifyContent={{ base: "end", lg: "start" }}
+      justifyContent={{ base: "end", xl: "start" }}
       as="nav"
     >
       {navLinks.map(({ subitems, label, url }) => {
