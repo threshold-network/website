@@ -22,7 +22,7 @@ interface SDKTitleProps {
 }
 
 const SDKTitle: FC<SDKTitleProps> = ({ title, highlightedWord }) => (
-  <Box mr="-4rem">
+  <Box mr={{ lg: "-4rem" }}>
     <HighlightWord
       title={title}
       highlightedWord={highlightedWord}
