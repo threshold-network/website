@@ -12,6 +12,8 @@ Install dependencies:
 yarn
 ```
 
+Copy `.env.example`, rename to `.env.development` and setup variables.
+
 ### Run local netlify backed
 
 To run the app in the development mode:
