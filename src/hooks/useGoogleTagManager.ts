@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 
 export const useGoogleTagManager = (gtmId?: string) => {
-  if (!process.env.GATSBY_FEATURE_FLAG_GTM || !gtmId) {
+  if (!process.env.GATSBY_GTM_SUPPORT || !gtmId) {
     return
   }
 
