@@ -9,9 +9,11 @@ import { SEO } from "./SEO"
 import { QuizModalContextProvider } from "../contexts/QuizModalContext"
 import RoleQuizModal from "./RoleQuizModal"
 import { TokenPriceContextProvider } from "../contexts/TokenPriceContext"
+import { useGoogleTagManager } from "../hooks/useGoogleTagManager"
 
 const App: FC = ({ children }) => {
   useDarkMode()
+  useGoogleTagManager(process.env.GATSBY_GTM_ID)
   return (
     <TokenPriceContextProvider>
       <QuizModalContextProvider>
