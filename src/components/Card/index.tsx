@@ -13,6 +13,7 @@ export interface CardButton {
   label: string
   url: string
   variant: string
+  posthogLabel?: string
 }
 
 export interface CardCategory {
