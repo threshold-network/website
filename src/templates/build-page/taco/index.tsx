@@ -8,6 +8,7 @@ import TacoFeatures, { FeatureSection } from "./TacoFeatures"
 import TacoDiagrams from "./TacoDiagrams"
 import { ImageProps } from "../../../components"
 import TacoExamples from "./TacoExamples"
+import TacoTable, { SectionTable } from "./TacoTable"
 
 export interface TacoPageContent {
   tacoInfo: SectionInfo
@@ -18,27 +19,11 @@ export interface TacoPageContent {
   tacoExamplesInfo: SectionInfo
   tacoExamples: SectionInfo[]
   tacoTableInfo: SectionInfo
-  tacoTable: TacoTable
+  tacoTable: SectionTable
 }
 
 export interface ExtendedSectionInfo extends SectionInfo {
   background?: ImageProps
-}
-
-export interface TableOptions {
-  project: "Taco" | "Taco" | "Taco" | "Taco" | "Taco"
-  mark: "POSITIVE" | "NEGATIVE" | "NEUTRAL"
-  hightlight?: boolean
-}
-
-export interface TableRow {
-  label: string
-  options: TableOptions[]
-}
-
-export interface TacoTable {
-  headers: Array<string>
-  features: TableRow[]
 }
 
 export interface TacoTitleProps {
@@ -152,6 +137,26 @@ const TacoPageTemplate: FC = ({ data }: any) => {
         isImageBackground
       >
         <TacoExamples tacoExamples={tacoExamples} />
+      </SectionTemplate>
+      <SectionTemplate
+        {...tacoTableInfo}
+        title={
+          <Box mx={{ md: "-4rem" }}>
+            <HighlightWords
+              title={tacoTableInfo.title}
+              highlighted={tacoTableInfo.highlighted}
+              bgGradient="linear-gradient(120.19deg, #BD30FF 3.32%, #7432FF 175%)"
+              fontWeight="bold"
+            />
+          </Box>
+        }
+        bgColor="#161A1F"
+        preTitle=""
+        size="md"
+        isCentered
+        isImageBackground
+      >
+        <TacoTable {...tacoTable} />
       </SectionTemplate>
     </Box>
   )
@@ -287,7 +292,7 @@ export const query = graphql`
             options {
               project
               mark
-              hightlight
+              highlight
             }
           }
         }

@@ -1,15 +1,9 @@
 import React, { FC, useState } from "react"
 import { Box, Stack, Collapse, Flex } from "@chakra-ui/react"
-import { H3, BodyLg, LabelMd, H5 } from "../../../components/Typography"
 import { ResponsiveStack } from "../../../components/PageSection"
 import { Image } from "../../../components/Image"
-
-import { TrackComponent } from "../../../components/Posthog/TrackComponent"
-import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { SectionInfo } from "../../../types"
-import { CardButton } from "../../../components"
 import Card from "../../../components/Card"
-import { ExternalLinkHref } from "../../../components/Navbar/types"
 
 export interface TacoExamplesProps {
   tacoExamples: SectionInfo[]

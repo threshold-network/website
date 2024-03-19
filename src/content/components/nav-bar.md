@@ -17,6 +17,8 @@ nav_items:
     subitems:
       - label: tBTC SDK
         url: /build/tbtc-sdk
+      - label: TACo
+        url: /build/taco
       - label: Docs
         url: https://docs.threshold.network/
         isExternal: true

@@ -2194,10 +2194,10 @@ collections:
                     minimal: true,
                   },
                   {
-                    label: "Highlighted Word",
-                    name: "highlightedWord",
-                    widget: "string",
-                    minimal: true,
+                    label: "Highlighted Words",
+                    name: "highlighted",
+                    widget: "list",
+                    field: { widget: "string" },
                   },
                   {
                     label: "Description",
@@ -2541,10 +2541,10 @@ collections:
                     minimal: true,
                   },
                   {
-                    label: "Highlighted Word",
-                    name: "highlightedWord",
-                    widget: "string",
-                    minimal: true,
+                    label: "Highlighted Words",
+                    name: "highlighted",
+                    widget: "list",
+                    field: { widget: "string" },
                   },
                   {
                     label: "Description",
@@ -2814,6 +2814,413 @@ collections:
                               {
                                 label: "Internal Outline",
                                 value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+      # Taco Page
+      - file: "src/content/pages/build/taco.md"
+        name: "tacoPage"
+        label: "Taco Page"
+        fields:
+          - {
+              label: "Template",
+              name: "template",
+              widget: "hidden",
+              default: "build-page/taco-page",
+            }
+          - {
+              label: "Path",
+              name: "path",
+              widget: "hidden",
+              default: "/build/taco",
+            }
+          - {
+              label: "SEO Title",
+              name: "seoTitle",
+              widget: "string",
+              hint: "SEO title",
+              required: false,
+            }
+          - {
+              label: "SEO Description",
+              name: "seoDescription",
+              widget: "string",
+              hint: "SEO description",
+              required: false,
+            }
+          - {
+              label: "Hero Section",
+              name: "tacoInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          required: true,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Features Info",
+              name: "tacoFeaturesInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Highlighted Words",
+                    name: "highlighted",
+                    widget: "list",
+                    field: { widget: "string" },
+                  },
+                ],
+            }
+          - {
+              label: "Features",
+              name: "tacoFeatures",
+              widget: "list",
+              collapsed: true,
+              fields:
+                [
+                  { label: "Section Title", name: "title", widget: "string" },
+                  {
+                    label: "Cards",
+                    name: "cards",
+                    widget: "list",
+                    fields:
+                      [
+                        {
+                          label: "Card Title",
+                          name: "title",
+                          widget: "string",
+                        },
+                        {
+                          label: "Card Description",
+                          name: "description",
+                          widget: "string",
+                        },
+                        {
+                          label: "Icon",
+                          name: "icon",
+                          widget: "file",
+                          media_library: { config: { multiple: false } },
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Diagrams Info",
+              name: "tacoDiagramsInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Diagrams Background Image",
+                    name: "background",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                ],
+            }
+          - {
+              label: "Diagrams",
+              name: "tacoDiagrams",
+              widget: "list",
+              fields:
+                [
+                  {
+                    label: "Pre Title",
+                    name: "preTitle",
+                    widget: "string",
+                    required: false,
+                  },
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Buttons",
+                    name: "buttons",
+                    widget: "list",
+                    allow_add: true,
+                    required: false,
+                    fields:
+                      [
+                        { label: Label, name: label, widget: string },
+                        { label: URL, name: url, widget: string },
+                        {
+                          label: Variant,
+                          name: variant,
+                          widget: select,
+                          options:
+                            [
+                              {
+                                label: "External Solid",
+                                value: "EXTERNAL_SOLID",
+                              },
+                              {
+                                label: "Internal Solid",
+                                value: "INTERNAL_SOLID",
+                              },
+                              {
+                                label: "External Outline",
+                                value: "EXTERNAL_OUTLINE",
+                              },
+                              {
+                                label: "Internal Outline",
+                                value: "INTERNAL_OUTLINE",
+                              },
+                            ],
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "Examples Info",
+              name: "tacoExamplesInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Pre Title",
+                    name: "preTitle",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                ],
+            }
+          - {
+              label: "Examples",
+              name: "tacoExamples",
+              widget: "list",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                  },
+                  {
+                    label: "Image",
+                    name: "image",
+                    widget: file,
+                    media_library: { config: { multiple: false } },
+                  },
+                ],
+            }
+          - {
+              label: "Table Info",
+              name: "tacoTableInfo",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Title",
+                    name: "title",
+                    widget: "string",
+                    minimal: true,
+                  },
+                  {
+                    label: "Highlighted Words",
+                    name: "highlighted",
+                    widget: "list",
+                    field: { widget: "string" },
+                  },
+                  {
+                    label: "Description",
+                    name: "description",
+                    widget: "string",
+                    required: false,
+                  },
+                  {
+                    label: "Row Reverse",
+                    name: "rowReverse",
+                    widget: boolean,
+                    required: false,
+                    default: false,
+                  },
+                ],
+            }
+          - {
+              label: "Table",
+              name: "tacoTable",
+              widget: "object",
+              collapsed: true,
+              fields:
+                [
+                  {
+                    label: "Headers",
+                    name: "headers",
+                    widget: "list",
+                    field: { widget: "string" },
+                  },
+                  {
+                    label: "Features",
+                    name: "features",
+                    widget: "list",
+                    fields:
+                      [
+                        { label: "Label", name: "label", widget: "string" },
+                        {
+                          label: "Options",
+                          name: "options",
+                          widget: "list",
+                          fields:
+                            [
+                              {
+                                label: "Project",
+                                name: "project",
+                                widget: "string",
+                              },
+                              {
+                                label: "Mark",
+                                name: "mark",
+                                widget: "select",
+                                options:
+                                  [
+                                    { label: "Positive", value: "POSITIVE" },
+                                    { label: "Negative", value: "NEGATIVE" },
+                                    { label: "Neutral", value: "NEUTRAL" },
+                                  ],
+                              },
+                              {
+                                label: "Highlight",
+                                name: "highlight",
+                                widget: "boolean",
+                                required: false,
+                                default: false,
                               },
                             ],
                         },
