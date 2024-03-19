@@ -68,9 +68,9 @@ const TacoTable: FC<TacoTableProps> = ({ headers, features }) => {
           {features.map((feature, index) => (
             <Tr
               key={index}
-              boxShadow="0px 0px 90px 4px rgba(153, 116, 255, 0.04)"
+              boxShadow="0px 0px 90px 3px rgba(153, 116, 255, 0.06)"
             >
-              <Td py={7} fontSize="12px" textAlign="center">
+              <Td py={8} fontSize="12px" textAlign="center">
                 <BodySm>{feature.label}</BodySm>
               </Td>
               {feature.options.map((option, optIndex) => (
