@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react"
-import { Box, Stack } from "@chakra-ui/react"
+import { Box, Icon, Stack } from "@chakra-ui/react"
 import { BodyLg, H3, LabelMd } from "../../../components/Typography"
 import {
   PageSection,
@@ -11,6 +11,7 @@ import { TrackComponent } from "../../../components/Posthog/TrackComponent"
 import { SectionInfo } from "../../../types"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
 import { ExternalLinkHref } from "../../../components/Navbar/types"
+import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs"
 
 export interface TacoDiagramsProps {
   backgroundImage: ImageProps
@@ -77,20 +78,20 @@ const TacoDiagrams: FC<TacoDiagramsProps> = ({
               />
             ))}
           </Stack>
-          <Stack mt={12} spacing={8} direction="row">
+          <Stack mt={12} spacing={3} direction="row">
             <Box
               onClick={() => handlePrev()}
               cursor="pointer"
               opacity={current === 0 ? 0.5 : 1}
             >
-              <Image relativePath={"left-arrow.svg"} />
+              <Icon boxSize="45px" as={BsArrowLeftShort} />
             </Box>
             <Box
               onClick={() => handleNext()}
               cursor="pointer"
               opacity={current === 2 ? 0.5 : 1}
             >
-              <Image relativePath={"right-arrow.svg"} />
+              <Icon boxSize="45px" as={BsArrowRightShort} />
             </Box>
           </Stack>
         </Box>

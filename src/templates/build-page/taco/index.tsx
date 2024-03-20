@@ -291,8 +291,16 @@ export const query = graphql`
             label
             options {
               project
-              mark
-              highlight
+              image {
+                id
+                relativePath
+                internal {
+                  mediaType
+                }
+                childImageSharp {
+                  gatsbyImageData(width: 200)
+                }
+              }
             }
           }
         }

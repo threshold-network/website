@@ -1,11 +1,10 @@
 import React, { FC } from "react"
 import { Box, Table, Tbody, Td, Th, Thead, Tr, Center } from "@chakra-ui/react"
-import { BodySm, Image } from "../../../components"
+import { BodySm, Image, ImageProps } from "../../../components"
 
 export interface TableOptions {
   project: "Taco" | "Taco" | "Taco" | "Taco" | "Taco"
-  mark: "POSITIVE" | "NEGATIVE" | "NEUTRAL"
-  highlight: boolean
+  image: ImageProps
 }
 
 export interface TableRow {
@@ -24,25 +23,6 @@ export interface TacoTableProps {
 }
 
 const TacoTable: FC<TacoTableProps> = ({ headers, features }) => {
-  const getMarkImage = (mark: string, highlight: boolean) => {
-    const colorSuffix = highlight
-      ? "purple"
-      : mark === "NEGATIVE"
-      ? "gray"
-      : "white"
-
-    switch (mark) {
-      case "POSITIVE":
-        return `check-${colorSuffix}.svg`
-      case "NEGATIVE":
-        return `x-${colorSuffix}.svg`
-      case "NEUTRAL":
-        return `dash-${colorSuffix}.svg`
-      default:
-        return ""
-    }
-  }
-
   return (
     <Box my={12}>
       <Table variant="simple" borderBottom="none">
@@ -75,10 +55,7 @@ const TacoTable: FC<TacoTableProps> = ({ headers, features }) => {
               {feature.options.map((option, optIndex) => (
                 <Td textAlign="center" key={optIndex}>
                   <Center>
-                    <Image
-                      relativePath={getMarkImage(option.mark, option.highlight)}
-                      alt={option.mark}
-                    />
+                    <Image {...option.image} />
                   </Center>
                 </Td>
               ))}

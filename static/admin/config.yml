@@ -3205,22 +3205,10 @@ collections:
                                 widget: "string",
                               },
                               {
-                                label: "Mark",
-                                name: "mark",
-                                widget: "select",
-                                options:
-                                  [
-                                    { label: "Positive", value: "POSITIVE" },
-                                    { label: "Negative", value: "NEGATIVE" },
-                                    { label: "Neutral", value: "NEUTRAL" },
-                                  ],
-                              },
-                              {
-                                label: "Highlight",
-                                name: "highlight",
-                                widget: "boolean",
-                                required: false,
-                                default: false,
+                                label: "Image",
+                                name: "image",
+                                widget: file,
+                                media_library: { config: { multiple: false } },
                               },
                             ],
                         },

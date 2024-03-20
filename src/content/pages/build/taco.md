@@ -117,137 +117,97 @@ tacoTable:
     - label: "Scalable to millions of users"
       options:
         - project: "Taco"
-          mark: "POSITIVE"
-          highlight: true
+          image: "/images/check-purple.svg"
         - project: "LIT"
-          mark: "POSITIVE"
-          highlight: false
+          image: "/images/check-white.svg"
         - project: "EVM Contract"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
         - project: "PKI"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
         - project: "Cloud Service"
-          mark: "POSITIVE"
-          highlight: false
+          image: "/images/check-white.svg"
     - label: "Arbitrary access conditions"
       options:
         - project: "Taco"
-          mark: "POSITIVE"
-          highlight: true
+          image: "/images/check-purple.svg"
         - project: "LIT"
-          mark: "POSITIVE"
-          highlight: false
+          image: "/images/check-white.svg"
         - project: "EVM Contract"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
         - project: "PKI"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
         - project: "Cloud Service"
-          mark: "POSITIVE"
-          highlight: false
+          image: "/images/check-white.svg"
     - label: "Redundant & highly available"
       options:
         - project: "Taco"
-          mark: "POSITIVE"
-          highlight: true
+          image: "/images/check-purple.svg"
         - project: "LIT"
-          mark: "NEUTRAL"
-          highlight: false
+          image: "/images/dash-white.svg"
         - project: "EVM Contract"
-          mark: "POSITIVE"
-          highlight: false
+          image: "/images/check-white.svg"
         - project: "PKI"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
         - project: "Cloud Service"
-          mark: "POSITIVE"
-          highlight: false
+          image: "/images/check-white.svg"
     - label: "Cryptoeconomically secured"
       options:
         - project: "Taco"
-          mark: "POSITIVE"
-          highlight: true
+          image: "/images/check-purple.svg"
         - project: "LIT"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
         - project: "EVM Contract"
-          mark: "POSITIVE"
-          highlight: false
+          image: "/images/check-white.svg"
         - project: "PKI"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
         - project: "Cloud Service"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
     - label: "Battle-tested network"
       options:
         - project: "Taco"
-          mark: "POSITIVE"
-          highlight: true
+          image: "/images/check-purple.svg"
         - project: "LIT"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
         - project: "EVM Contract"
-          mark: "POSITIVE"
-          highlight: false
+          image: "/images/check-white.svg"
         - project: "PKI"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
         - project: "Cloud Service"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
     - label: "Transparent trust model"
       options:
         - project: "Taco"
-          mark: "POSITIVE"
-          highlight: true
+          image: "/images/check-purple.svg"
         - project: "LIT"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
         - project: "EVM Contract"
-          mark: "POSITIVE"
-          highlight: false
+          image: "/images/check-white.svg"
         - project: "PKI"
-          mark: "POSITIVE"
-          highlight: false
+          image: "/images/check-white.svg"
         - project: "Cloud Service"
-          mark: "NEUTRAL"
-          highlight: false
+          image: "/images/dash-white.svg"
     - label: "Track record with infra"
       options:
         - project: "Taco"
-          mark: "POSITIVE"
-          highlight: true
+          image: "/images/check-purple.svg"
         - project: "LIT"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
         - project: "EVM Contract"
-          mark: "POSITIVE"
-          highlight: false
+          image: "/images/check-white.svg"
         - project: "PKI"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
         - project: "Cloud Service"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
     - label: "Multi-chain"
       options:
         - project: "Taco"
-          mark: "NEUTRAL"
-          highlight: true
+          image: "/images/dash-purple.svg"
         - project: "LIT"
-          mark: "POSITIVE"
-          highlight: false
+          image: "/images/check-white.svg"
         - project: "EVM Contract"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
         - project: "PKI"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
         - project: "Cloud Service"
-          mark: "NEGATIVE"
-          highlight: false
+          image: "/images/x-gray.svg"
 ---
