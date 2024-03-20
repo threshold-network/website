@@ -1,16 +1,6 @@
 import React, { FC } from "react"
-import {
-  Box,
-  Table,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Tr,
-  Center,
-  Image,
-} from "@chakra-ui/react"
-import { BodySm } from "../../../components"
+import { Box, Table, Tbody, Td, Th, Thead, Tr, Center } from "@chakra-ui/react"
+import { BodySm, Image } from "../../../components"
 
 export interface TableOptions {
   project: "Taco" | "Taco" | "Taco" | "Taco" | "Taco"
@@ -43,11 +33,11 @@ const TacoTable: FC<TacoTableProps> = ({ headers, features }) => {
 
     switch (mark) {
       case "POSITIVE":
-        return `/images/check-${colorSuffix}.svg`
+        return `check-${colorSuffix}.svg`
       case "NEGATIVE":
-        return `/images/x-${colorSuffix}.svg`
+        return `x-${colorSuffix}.svg`
       case "NEUTRAL":
-        return `/images/dash-${colorSuffix}.svg`
+        return `dash-${colorSuffix}.svg`
       default:
         return ""
     }
@@ -86,7 +76,7 @@ const TacoTable: FC<TacoTableProps> = ({ headers, features }) => {
                 <Td textAlign="center" key={optIndex}>
                   <Center>
                     <Image
-                      src={getMarkImage(option.mark, option.highlight)}
+                      relativePath={getMarkImage(option.mark, option.highlight)}
                       alt={option.mark}
                     />
                   </Center>

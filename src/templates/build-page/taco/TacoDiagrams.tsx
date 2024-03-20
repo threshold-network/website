@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react"
-import { Box, Stack, Image as ChakraImage } from "@chakra-ui/react"
+import { Box, Stack } from "@chakra-ui/react"
 import { BodyLg, H3, LabelMd } from "../../../components/Typography"
 import {
   PageSection,
@@ -83,14 +83,14 @@ const TacoDiagrams: FC<TacoDiagramsProps> = ({
               cursor="pointer"
               opacity={current === 0 ? 0.5 : 1}
             >
-              <ChakraImage src="/images/left-arrow.svg" />
+              <Image relativePath={"left-arrow.svg"} />
             </Box>
             <Box
               onClick={() => handleNext()}
               cursor="pointer"
               opacity={current === 2 ? 0.5 : 1}
             >
-              <ChakraImage src="/images/right-arrow.svg" />
+              <Image relativePath={"right-arrow.svg"} />
             </Box>
           </Stack>
         </Box>
