@@ -68,7 +68,7 @@ tacoDiagrams:
       - label: "taco-web"
         url: https://github.com/nucypher/taco-web
         variant: EXTERNAL_OUTLINE
-      - label: "nucypher/nucypher"
+      - label: "nucypher/main"
         url: https://github.com/nucypher/nucypher/tree/main
         variant: EXTERNAL_OUTLINE
   - title: "Accessing Decrypted Data"
@@ -79,7 +79,7 @@ tacoDiagrams:
       - label: "taco-web"
         url: https://github.com/nucypher/taco-web
         variant: EXTERNAL_OUTLINE
-      - label: "nucypher/nucypher"
+      - label: "nucypher/main"
         url: https://github.com/nucypher/nucypher/tree/main
         variant: EXTERNAL_OUTLINE
 tacoExamplesInfo:

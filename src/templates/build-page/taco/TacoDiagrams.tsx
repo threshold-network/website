@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react"
-import { Box, Stack } from "@chakra-ui/react"
+import { Box, Stack, Image as ChakraImage } from "@chakra-ui/react"
 import { BodyLg, H3, LabelMd } from "../../../components/Typography"
 import {
   PageSection,
@@ -35,7 +35,7 @@ const TacoDiagrams: FC<TacoDiagramsProps> = ({
   return (
     <PageSection withMediumPadding position="relative">
       <ResponsiveStack rowGap={12} alignItems="center">
-        <Box maxW={{ base: "100%", md: "350px" }}>
+        <Box maxW={{ base: "100%", md: "370px" }}>
           <LabelMd textTransform="uppercase" color="gray.500">
             {currentDiagram.preTitle}
           </LabelMd>
@@ -56,9 +56,9 @@ const TacoDiagrams: FC<TacoDiagramsProps> = ({
                   variant="outline"
                   size="md"
                   fontSize="14px"
-                  maxW="10rem"
+                  maxW="12rem"
                   width="100%"
-                  py="20px"
+                  py="24px"
                 >
                   {button.label}
                 </ExternalButtonLink>
@@ -83,14 +83,14 @@ const TacoDiagrams: FC<TacoDiagramsProps> = ({
               cursor="pointer"
               opacity={current === 0 ? 0.5 : 1}
             >
-              <Image relativePath="/left-arrow.svg" />
+              <ChakraImage src="/images/left-arrow.svg" />
             </Box>
             <Box
               onClick={() => handleNext()}
               cursor="pointer"
               opacity={current === 2 ? 0.5 : 1}
             >
-              <Image relativePath="/right-arrow.svg" />
+              <ChakraImage src="/images/right-arrow.svg" />
             </Box>
           </Stack>
         </Box>
