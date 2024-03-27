@@ -33,18 +33,18 @@ export const TacoExampleCard: FC<TacoExampleProps> = ({
           : "none"
       }
     >
-      <Card w={{ base: "100%", md: "420px" }}>
+      <Card
+        onClick={() => togglePanel(index)}
+        cursor="pointer"
+        w={{ base: "100%", md: "420px" }}
+      >
         <Stack
           direction="row"
           alignItems="center"
           justifyContent="space-between"
         >
           <Card.Title fontWeight="medium">{title}</Card.Title>
-          <Box
-            fontSize="28px"
-            cursor="pointer"
-            onClick={() => togglePanel(index)}
-          >
+          <Box fontSize="28px" cursor="pointer">
             {expandedPanel === index ? "-" : "+"}
           </Box>
         </Stack>
