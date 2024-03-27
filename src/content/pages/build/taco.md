@@ -6,7 +6,7 @@ seoTitle: Threshold Taco
 seoDescription: "TACo (Threshold Access Control) enables end-to-end encrypted data sharing and communication."
 tacoInfo:
   title: "TACo: Privacy without trust"
-  description: "Give your users true sovereignty over their data, today. TACo – the first and only access control layer you aren’t forced to trust."
+  description: "Give your users true sovereignty over their data, today. TACo is the first and only access control layer you aren’t forced to trust."
   image: /images/taco-encryption.svg
   buttons:
     - label: Start Building
@@ -17,41 +17,41 @@ tacoInfo:
       variant: EXTERNAL_OUTLINE
   rowReverse: false
 tacoFeaturesInfo:
-  title: "The Fully Decentralized End-to-End Encryption"
-  description: "Empower users to share data with qualifying recipients, and no-one else Encryption via a decentralized cryptosystem."
+  title: "End-to-End Encryption. End-to-End Decentralized."
+  description: "Empower users to share data with qualifying recipients, and no-one else. Encryption via a decentralized cryptosystem, from day one."
   highlighted: ["Decentralized", "Encryption"]
 tacoFeatures:
   - title: "Web3 needs TACo"
     cards:
       - title: "Decentralized Storage"
-        description: "TACo is the perfect compliment to persistent storage, finally enabling users to grant future access without having to download & re-encrypt locally."
+        description: "TACo is the perfect complement to persistent storage, finally enabling users to grant future access without having to download & re-encrypt locally."
         icon: /images/storage-icon.svg
       - title: "Web3 Social Networks"
-        description: "TACo enables many-to-many data sharing, minus a centralized  authority that eventually decides to harvest and monetize interpersonal communication."
+        description: "TACo enables many-to-many data sharing, without a centralized authority that may harvest and monetize interpersonal communication."
         icon: /images/social-icon.svg
       - title: "Media content-gating"
-        description: "Whether it's a stream, a movie or a collectible, TACo enforces decryption rights to media, so owning an NFT has meaning beyond a symbolic receipt."
+        description: "Whether it's a stream, a movie or a collectible, TACo enforces the decryption rights. 'Owning' an NFT now has meaning beyond a symbolic receipt."
         icon: /images/media-icon.svg
   - title: "The Web needs TACo"
     cards:
       - title: "Hyper-sensitive data"
-        description: "From reproductive health data to  seed phrase recovery, TACo is leveraged to ensure that high-stakes data sharing doesn’t involve trusting an intermediary."
+        description: "From reproductive healthcare to password recovery, TACo is used to ensure that high-stakes data sharing doesn’t involve trusting an intermediary."
         icon: /images/locker-icon.svg
       - title: "IoT & Connected Vehicles"
-        description: "TACo is the antidote to the interconnected hardware panopticon, where every waking (and sleeping) moment of our lives is surveilled."
+        description: "TACo is the antidote to the interconnected hardware panopticon, in which every waking (and sleeping) moment of our lives is surveilled/harvested by data custodians."
         icon: /images/iot-icon.svg
       - title: "Activism & Human Rights"
-        description: "TACo protects those most at risk of intimidation, censorship and reprisal based on a data leaks – whether via a hack, subpoena, or a data vending business model."
+        description: "TACo protects the most vulnerable in society – those who may suffer  intimidation, censorship and violence as a consequence of their data being leaked." 
         icon: /images/activism-icon.svg
 tacoDiagramsInfo:
   title: "Integrate a Privacy Layer with Nothing to Hide"
-  description: "TACo isn't just auditable, it's comprehensible, from high-level schematic to client code."
+  description: "TACo isn't just auditable, it's comprehensible. From high-level schematic to client code."
   image: /images/taco-grid.svg
   background: /images/glowing-background.png
 tacoDiagrams:
   - title: "Generating a DKG Cohort"
     preTitle: "learn"
-    description: "Independent nodes sampled from the Threshold network form a cohort – who collectively generate a DKG public key."
+    description: "Independent nodes are sampled from the Threshold Network, forming a cohort that collectively generates a DKG public key."
     image: /images/first-taco-diagram.svg
     buttons:
       - label: "nucypher/ferveo"
@@ -62,7 +62,7 @@ tacoDiagrams:
         variant: EXTERNAL_OUTLINE
   - title: "Encrypting Private Data"
     preTitle: "learn"
-    description: "Data owners specify conditions for decryption, embedded with private data and encrypted with the DKG public key."
+    description: "Data owners specify decryption conditions, embedded alongside the private data. The payload is encrypted with the DKG public key."
     image: "/images/second-taco-diagram.svg"
     buttons:
       - label: "taco-web"
@@ -73,7 +73,7 @@ tacoDiagrams:
         variant: EXTERNAL_OUTLINE
   - title: "Accessing Decrypted Data"
     preTitle: "learn"
-    description: "Requesters present state to the cohort, who verify conditions fulfillment before provisioning decryption material."
+    description: "Data requesters present proof to the cohort, who verify condition fulfillment before provisioning them with decryption material."
     image: "/images/third-taco-diagram.svg"
     buttons:
       - label: "taco-web"
