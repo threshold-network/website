@@ -4,7 +4,7 @@ import SectionTemplate from "../../home-page/SectionTemplate"
 import { Box, Divider } from "@chakra-ui/react"
 import UseCases, { UseCasesCardProps } from "./UseCases"
 import FeaturesSection, { FeatureCardProps } from "./FeaturesSection"
-import { HighlightWord } from "../../../components/HighlightWord"
+import { HighlightWords } from "../../../components/HighlightWords"
 import { SectionInfo, WithRequiredProperty } from "../../../types"
 
 interface SDKPageContent {
@@ -18,15 +18,15 @@ interface SDKPageContent {
 
 interface SDKTitleProps {
   title: string
-  highlightedWord: string
+  highlighted: string[]
 }
 
-const SDKTitle: FC<SDKTitleProps> = ({ title, highlightedWord }) => (
-  <Box mr="-4rem">
-    <HighlightWord
+const SDKTitle: FC<SDKTitleProps> = ({ title, highlighted }) => (
+  <Box mr={{ lg: "-4rem" }}>
+    <HighlightWords
       title={title}
-      highlightedWord={highlightedWord}
-      bgGradient="linear-gradient(120.19deg, #BD30FF 3.32%, #7D00FF 95.02%)"
+      highlighted={highlighted}
+      bgGradient="linear-gradient(120.19deg, #BD30FF 3.32%, #7432FF 175%)"
       fontWeight="bold"
     />
   </Box>
@@ -41,13 +41,13 @@ const SDKPageTemplate: FC = ({ data }: any) => {
     features,
     callToActionInfo,
   } = data.markdownRemark.frontmatter as SDKPageContent
-  const { title, highlightedWord, ...sectionTemplateProps } = sdkInfo
+  const { title, highlighted, ...sectionTemplateProps } = sdkInfo
 
   return (
     <Box bgColor="gray.900">
       <SectionTemplate
         {...sectionTemplateProps}
-        title={<SDKTitle title={title} highlightedWord={highlightedWord!} />}
+        title={<SDKTitle title={title} highlighted={highlighted!} />}
         columnReverse
         size="sm"
       >
@@ -58,7 +58,7 @@ const SDKPageTemplate: FC = ({ data }: any) => {
         image={{
           ...featuresInfo.image,
           left: 0,
-          ml: "4rem",
+          ml: "-44rem",
           mt: "-5rem",
           w: "52rem",
         }}
@@ -91,7 +91,7 @@ export const query = graphql`
         sdkInfo {
           rowReverse
           title
-          highlightedWord
+          highlighted
           description
           image {
             id

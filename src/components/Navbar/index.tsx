@@ -33,6 +33,7 @@ export const Navbar: FC = () => {
     <>
       {showBanner && <WhatsNextBanner onClose={closeBanner} />}
       <HStack
+        w="100%"
         bg="gray.900"
         h="90px"
         borderBottom="1px solid"
@@ -40,10 +41,11 @@ export const Navbar: FC = () => {
         as="header"
       >
         <Container
-          maxW="1140px"
           h="100%"
+          maxW="none"
           display="flex"
           justifyContent="space-between"
+          pr={{ base: 0, xl: 8 }}
         >
           <ThresholdBrand />
           <MobileDrawer

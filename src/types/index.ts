@@ -4,7 +4,7 @@ export interface SectionInfo {
   title: string
   description: string
   preTitle?: string
-  highlightedWord?: string
+  highlighted?: string[]
   buttons?: CardButton[]
   icon?: ImageProps
   image?: ImageProps

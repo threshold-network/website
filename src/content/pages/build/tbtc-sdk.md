@@ -6,7 +6,7 @@ seoTitle: Threshold tBTC SDK
 seoDescription: "Develop applications using tBTC SDK, and leverage the Bitcoins strength across various blockchains, enhancing user flexibility and market reach"
 sdkInfo:
   title: "tBTC SDK: Supercharge Your Project with Bitcoin"
-  highlightedWord: "tBTC SDK:"
+  highlighted: ["tBTC", "SDK:"]
   description: "Unlock the power of blockchain – The ultimate toolkit for harnessing Bitcoin's potential."
   image: /images/tbtc-sdk.svg
   buttons:

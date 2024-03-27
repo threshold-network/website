@@ -46,6 +46,7 @@ export const ResponsiveStack: FC<
         base: columnReverse ? "column" : "column-reverse",
         md: rowReverse ? "row-reverse" : "row",
       }}
+      position="relative"
       justifyContent="space-between"
       {...props}
     >

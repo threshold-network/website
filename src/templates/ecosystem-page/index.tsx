@@ -7,7 +7,7 @@ import ProgramsAndEvents from "./ProgramsAndEvents"
 import ProjectsAndTools from "./ProjectsAndTools"
 import ResourcesSection from "./ResourcesSection"
 import CommunitySection from "./CommunitySection"
-import { HighlightWord } from "../../components/HighlightWord"
+import { HighlightWords } from "../../components/HighlightWords"
 
 const EcosystemPageTemplate: FC = ({ data }: any) => {
   const {
@@ -20,15 +20,16 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
     communityInfo,
     community,
   } = data.markdownRemark.frontmatter
+  const { highlighted } = ecosystemInfo
 
   return (
     <Box bgColor="gray.900">
       <SectionTemplate
         {...ecosystemInfo}
         title={
-          <HighlightWord
+          <HighlightWords
             title={ecosystemInfo.title}
-            highlightedWord="Ecosystem"
+            highlighted={highlighted}
             bgGradient="linear-gradient(120.19deg, #BD30FF 3.32%, #7D00FF 95.02%)"
             fontWeight="bold"
           />
@@ -36,7 +37,7 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
         image={{
           ...ecosystemInfo.image,
           right: 0,
-          mr: "32rem",
+          mr: "-12rem",
           mt: "-3rem",
           w: "52rem",
         }}
@@ -55,7 +56,7 @@ const EcosystemPageTemplate: FC = ({ data }: any) => {
         image={{
           ...ecosystemInfo.image,
           left: 0,
-          ml: "4rem",
+          ml: "-40rem",
           mt: "-6rem",
           w: "52rem",
         }}
@@ -81,7 +82,7 @@ export const query = graphql`
         ecosystemInfo {
           rowReverse
           title
-          highlightedWord
+          highlighted
           description
           image {
             id
