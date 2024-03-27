@@ -29,10 +29,12 @@ const TacoTable: FC<TacoTableProps> = ({ headers, features }) => {
         <Thead>
           <Tr>
             {headers.map((header, index) => (
-              <Th key={index} textAlign="center">
+              <Th key={index}>
                 <BodySm
                   textTransform="none"
                   fontWeight="medium"
+                  pl={index === 0 ? 14 : 0}
+                  textAlign={index === 0 ? "left" : "center"}
                   letterSpacing={0}
                   mb={2}
                   color={header === "TACo" ? "white" : "#727485"}
@@ -49,11 +51,11 @@ const TacoTable: FC<TacoTableProps> = ({ headers, features }) => {
               key={index}
               boxShadow="0px 0px 90px 3px rgba(153, 116, 255, 0.06)"
             >
-              <Td py={8} fontSize="12px" textAlign="center">
+              <Td py={8} pl={20}>
                 <BodySm>{feature.label}</BodySm>
               </Td>
               {feature.options.map((option, optIndex) => (
-                <Td textAlign="center" key={optIndex}>
+                <Td textAlign="center" w={36} key={optIndex}>
                   <Center>
                     <Image {...option.image} />
                   </Center>
