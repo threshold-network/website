@@ -19,7 +19,7 @@ tacoInfo:
 tacoFeaturesInfo:
   title: "End-to-End Encryption. End-to-End Decentralized."
   description: "Empower users to share data with qualifying recipients, and no-one else. Encryption via a decentralized cryptosystem, from day one."
-  highlighted: ["Decentralized", "Encryption"]
+  highlighted: ["Encryption.", "Decentralized."]
 tacoFeatures:
   - title: "Web3 needs TACo"
     cards:
@@ -41,7 +41,7 @@ tacoFeatures:
         description: "TACo is the antidote to the interconnected hardware panopticon, in which every waking (and sleeping) moment of our lives is surveilled/harvested by data custodians."
         icon: /images/iot-icon.svg
       - title: "Activism & Human Rights"
-        description: "TACo protects the most vulnerable in society – those who may suffer  intimidation, censorship and violence as a consequence of their data being leaked." 
+        description: "TACo protects the most vulnerable in society – those who may suffer  intimidation, censorship and violence as a consequence of their data being leaked."
         icon: /images/activism-icon.svg
 tacoDiagramsInfo:
   title: "Integrate a Privacy Layer with Nothing to Hide"
