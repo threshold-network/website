@@ -13,7 +13,7 @@ tacoInfo:
       url: https://docs.threshold.network/app-development/threshold-access-control-tac/integration-guide
       variant: EXTERNAL_SOLID
     - label: Trust Overview
-      url: https://docs.threshold.network/app-development/threshold-access-control-tac/trust-assumptions/cbd-mainnet-version
+      url: https://docs.threshold.network/app-development/threshold-access-control-tac/trust-assumptions/mainnet-trust-model-foundation
       variant: EXTERNAL_OUTLINE
   rowReverse: false
 tacoFeaturesInfo:
@@ -27,21 +27,21 @@ tacoFeatures:
         description: "TACo is the perfect complement to persistent storage, finally enabling users to grant future access without having to download & re-encrypt locally."
         icon: /images/storage-icon.svg
       - title: "Web3 Social Networks"
-        description: "TACo enables many-to-many data sharing, without a centralized authority that may harvest and monetize interpersonal communication."
+        description: "TACo facilitates many-to-many data sharing, without a centralized authority that may harvest, exploit and monetize interpersonal communication."
         icon: /images/social-icon.svg
-      - title: "Media content-gating"
-        description: "Whether it's a stream, a movie or a collectible, TACo enforces the decryption rights. 'Owning' an NFT now has meaning beyond a symbolic receipt."
+      - title: "Media Content-gating"
+        description: "Whether it's a stream, a movie or a collectible, TACo enforces the decryption rights. 'Owning' an NFT now holds significance beyond a symbolic receipt."
         icon: /images/media-icon.svg
   - title: "The Web needs TACo"
     cards:
       - title: "Hyper-sensitive data"
-        description: "From reproductive healthcare to password recovery, TACo is used to ensure that high-stakes data sharing doesn’t involve trusting an intermediary."
+        description: "From password recovery to reproductive healthcare, TACo ensures that high-stakes data sharing doesn’t necessitate trusting an intermediary."
         icon: /images/locker-icon.svg
       - title: "IoT & Connected Vehicles"
-        description: "TACo is the antidote to the interconnected hardware panopticon, in which every waking (and sleeping) moment of our lives is surveilled/harvested by data custodians."
+        description: "TACo is the antidote to the interconnected hardware panopticon, in which every waking (and sleeping) moment of life is surveilled/harvested by data custodians."
         icon: /images/iot-icon.svg
       - title: "Activism & Human Rights"
-        description: "TACo protects the most vulnerable in society – those who may suffer  intimidation, censorship and violence as a consequence of their data being leaked."
+        description: "TACo protects the most vulnerable in society – those who may face intimidation, censorship and violence as a consequence of their data being leaked."
         icon: /images/activism-icon.svg
 tacoDiagramsInfo:
   title: "Integrate a Privacy Layer with Nothing to Hide"
@@ -51,7 +51,7 @@ tacoDiagramsInfo:
 tacoDiagrams:
   - title: "Generating a DKG Cohort"
     preTitle: "learn"
-    description: "Independent nodes are sampled from the Threshold Network, forming a cohort that collectively generates a DKG public key."
+    description: "Independent nodes are sampled from the Threshold Network to collectively generate a distributed public key."
     image: /images/first-taco-diagram.svg
     buttons:
       - label: "nucypher/ferveo"
@@ -68,8 +68,8 @@ tacoDiagrams:
       - label: "taco-web"
         url: https://github.com/nucypher/taco-web
         variant: EXTERNAL_OUTLINE
-      - label: "nucypher/main"
-        url: https://github.com/nucypher/nucypher/tree/main
+      - label: "nucypher"
+        url: https://github.com/nucypher/nucypher
         variant: EXTERNAL_OUTLINE
   - title: "Accessing Decrypted Data"
     preTitle: "learn"
@@ -79,8 +79,8 @@ tacoDiagrams:
       - label: "taco-web"
         url: https://github.com/nucypher/taco-web
         variant: EXTERNAL_OUTLINE
-      - label: "nucypher/main"
-        url: https://github.com/nucypher/nucypher/tree/main
+      - label: "nucypher"
+        url: https://github.com/nucypher/nucypher
         variant: EXTERNAL_OUTLINE
 tacoExamplesInfo:
   title: "Access conditions that fit your use case"
@@ -90,10 +90,10 @@ tacoExamplesInfo:
   rowReverse: false
 tacoExamples:
   - title: "NFT-gating"
-    description: "Predicate decryption rights on the holding of special-purpose NFTs. Works for digital media, event streams and beyond."
+    description: "Predicate decryption rights on ownership of a special-purpose NFTs. Works for digital media, event streams and beyond."
     image: "/images/nft-gating.png"
   - title: "Secret recovery"
-    description: "Share your seed phrase or password  – to beneficiaries or your future self – without risking DOS by an intermediary."
+    description: "Securely share your seed phrase/password with beneficiaries or your future self, without risking DOS by an intermediary."
     image: "/images/secret-recovery.png"
   - title: "Inference protection"
     description: "Prevent third-parties from harvesting or blocking communication between end-users and generative models."
