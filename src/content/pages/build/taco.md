@@ -91,13 +91,13 @@ tacoExamplesInfo:
 tacoExamples:
   - title: "NFT-gating"
     description: "Predicate decryption rights on ownership of a special-purpose NFTs. Works for digital media, event streams and beyond."
-    image: "/images/nft-gating.png"
+    image: "/images/nft-gating.svg"
   - title: "Secret recovery"
     description: "Securely share your seed phrase/password with beneficiaries or your future self, without risking DOS by an intermediary."
-    image: "/images/secret-recovery.png"
+    image: "/images/secret-recovery.svg"
   - title: "Inference protection"
     description: "Prevent third-parties from harvesting or blocking communication between end-users and generative models."
-    image: "/images/inference-protection.png"
+    image: "/images/inference-protection.svg"
 tacoTableInfo:
   title: "The Zero Compromise Solution"
   highlighted: ["Zero", "Compromise"]
