@@ -73,7 +73,7 @@ tacoDiagrams:
         variant: EXTERNAL_OUTLINE
   - title: "Accessing Decrypted Data"
     preTitle: "learn"
-    description: "Data requesters present proof to the cohort, who verify condition fulfillment before provisioning them with decryption material."
+    description: "Data requesters present proof to the cohort, and each member verifies condition fulfilment before provisioning the requester with a decryption share; decryption requires a threshold of these shares."
     image: "/images/third-taco-diagram.svg"
     buttons:
       - label: "taco-web"
