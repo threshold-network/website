@@ -5,7 +5,7 @@ title: TACo Page
 seoTitle: Threshold Taco
 seoDescription: "TACo (Threshold Access Control) enables end-to-end encrypted data sharing and communication."
 tacoInfo:
-  title: "TACo: Privacy without trust"
+  title: "TACo: Privacy Without Trust"
   description: "Give your users true sovereignty over their data, today. TACo is the first and only access control layer you aren’t forced to trust."
   image: /images/taco-encryption.svg
   buttons:
