@@ -101,7 +101,7 @@ tacoExamples:
 tacoTableInfo:
   title: "The Zero Compromise Solution"
   highlighted: ["Zero", "Compromise"]
-  description: "Choose a service that’s easy to integrate and that’s actually decentralized."
+  description: "TACo blends ease of integration with genuine decentralization. No need to choose between the two."
   rowReverse: false
 tacoTable:
   headers:
