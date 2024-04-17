@@ -5,7 +5,7 @@ title: Ecosystem Page
 seoTitle: Threshold Ecosystem
 ecosystemInfo:
   title: We Are Building Our Ecosystem Together
-  highlightedWord: "Ecosystem"
+  highlighted: ["Ecosystem"]
   description: "The Threshold ecosystem is built around a vibrant community of users, developers, designers, and educators."
   image: /images/ecosystem-grid.svg
   rowReverse: false
@@ -73,7 +73,7 @@ projectsAndTools:
     date: 2023-03-07
     buttons:
       - label: Go to App
-        url: https://101.xyz/course/claqymc0v067108kyden9aehq
+        url: https://tbtcscan.com/
         variant: EXTERNAL_SOLID
   - image: /images/dune-analytics.svg
     title: Dune Analytics

@@ -11,18 +11,19 @@ const SocialMediaLinks: FC<
 > = ({ isMobileDrawerFooter, links, ...stackProps }) => {
   return (
     <HStack
-      spacing={6}
+      w="100%"
+      spacing={5}
       display={{
         base: isMobileDrawerFooter ? "inherit" : "none",
-        lg: "inherit",
+        xl: "inherit",
       }}
       justifyContent={{
         base: isMobileDrawerFooter ? "center" : "flex-end",
-        lg: "flex-start",
+        xl: "flex-start",
       }}
       borderLeft={{
         base: isMobileDrawerFooter ? "none" : "1px solid",
-        lg: "none",
+        xl: "none",
       }}
       borderColor="brand.300"
       marginBottom={isMobileDrawerFooter ? 8 : undefined}

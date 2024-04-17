@@ -59,6 +59,7 @@ const SectionTemplate: FC<RoleTemplateProps> = ({
     <PageSection
       withSmallPadding={size === "sm"}
       withMediumPadding={size === "md"}
+      overflow="hidden"
       {...boxProps}
     >
       <ResponsiveStack
