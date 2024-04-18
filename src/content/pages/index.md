@@ -96,9 +96,9 @@ tacoRole:
   description: TACo is the only end-to-end encryption plugin that is end-to-end decentralized
   image: /images/taco-section-image.svg
   buttons:
-    - label: Read the docs
-      url: https://docs.threshold.network/applications/threshold-access-control
-      variant: EXTERNAL_SOLID
+    - label: Learn More
+      url: /build/taco
+      variant: INTERNAL_SOLID
     - label: Quickstart
       url: https://docs.threshold.network/app-development/threshold-access-control-tac/quickstart-testnet
       variant: EXTERNAL_OUTLINE
