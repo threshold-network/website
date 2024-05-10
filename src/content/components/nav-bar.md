@@ -44,8 +44,6 @@ nav_items:
 menu_buttons:
   - label: tBTC dApp
     url: https://dashboard.threshold.network/tBTC
-  - label: thUSD dApp
-    url: https://app.thresholdusd.org
 social_links:
   - label: Twitter
     url: https://twitter.com/TheTNetwork
