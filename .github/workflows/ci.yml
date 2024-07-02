@@ -46,6 +46,7 @@ jobs:
           POSTHOG_HOSTNAME_HTTP: ${{ secrets.MAINNET_POSTHOG_HOSTNAME_HTTP }}
           GATSBY_GTM_SUPPORT: true
           GATSBY_GTM_ID: ${{ secrets.GTM_ID }}
+          SUBGRAPH_API_KEY: ${{ secrets.SUBGRAPH_API_KEY }}
 
       - uses: actions/upload-artifact@v3
         with:

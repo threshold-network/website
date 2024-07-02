@@ -1,5 +1,5 @@
 import { gql, request } from "graphql-request"
-import { TBTC_SUBGRAPH_URL } from "../../config/subgraph"
+import { TBTC_SUBGRAPH_ID, SUBGRAPH_GATEWAY_URL } from "../../config/subgraph"
 import { useEffect, useState } from "react"
 
 export const useTotalMints = () => {
@@ -22,11 +22,10 @@ export const useTotalMints = () => {
         ) {
           id
         }
-      }
-    `
+      }`
 
       const result: { transactions: { id: string }[] } = await request(
-        TBTC_SUBGRAPH_URL,
+        SUBGRAPH_GATEWAY_URL + TBTC_SUBGRAPH_ID,
         query
       )
 

@@ -8,7 +8,7 @@ import { PageSection } from "../../components/PageSection"
 import { H2, H3, LabelMd } from "../../components"
 import { ExternalLinkHref } from "../../components/Navbar/types"
 import { StatBoxGroup } from "../../components/StatBox"
-import { T_NETWORK_SUBGRAPH_URL } from "../../config/subgraph"
+import { T_NETWORK_SUBGRAPH_ID } from "../../config/subgraph"
 import useQuery from "../../hooks/useQuery"
 import { formatFiatCurrencyAmount, formatTokenAmount } from "../../utils"
 import { useBalanceOfDAOTreasury } from "../../hooks/useBalanceOfDAOTreasury"
@@ -21,7 +21,7 @@ const ThresholdDaoDataSection = () => {
     tokenholderDelegations: { id: string }[]
     stakeDelegations: { id: string }[]
   }>(
-    T_NETWORK_SUBGRAPH_URL,
+    T_NETWORK_SUBGRAPH_ID,
     gql`
       query {
         daometric(id: "dao-metrics") {

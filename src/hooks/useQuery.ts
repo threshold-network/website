@@ -1,3 +1,4 @@
+import { SUBGRAPH_GATEWAY_URL } from "../config/subgraph"
 import { useEffect, useReducer, useRef, Reducer } from "react"
 import { request } from "graphql-request"
 
@@ -34,10 +35,7 @@ const fetchReducer = <T>(state: State<T>, action: Action<T>): State<T> => {
   }
 }
 
-function useQuery<T = unknown>(
-  graphEndpoint: string,
-  query?: string
-): State<T> {
+function useQuery<T = unknown>(subgraphId: string, query?: string): State<T> {
   const shouldUpdateState = useRef<boolean>(true)
   const initialState: State<T> = {
     error: undefined,
@@ -59,7 +57,7 @@ function useQuery<T = unknown>(
       dispatch({ type: Actions.Start })
 
       try {
-        const response = await request(graphEndpoint, query)
+        const response = await request(SUBGRAPH_GATEWAY_URL + subgraphId, query)
         if (!shouldUpdateState.current) return
 
         dispatch({ type: Actions.Success, payload: response })

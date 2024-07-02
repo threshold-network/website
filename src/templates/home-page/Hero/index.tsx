@@ -8,8 +8,8 @@ import { TrackComponent } from "../../../components/Posthog/TrackComponent"
 import { Analytics } from "./Analytics"
 import { gql } from "graphql-request"
 import {
-  TBTC_SUBGRAPH_URL,
-  T_NETWORK_SUBGRAPH_URL,
+  TBTC_SUBGRAPH_ID,
+  T_NETWORK_SUBGRAPH_ID,
 } from "../../../config/subgraph"
 import useQuery from "../../../hooks/useQuery"
 import { exchangeAPI, formatUnits } from "../../../utils"
@@ -33,14 +33,14 @@ const Hero: FC<{
     data: totalStakedData,
     error: totalStakedError,
   } = useQuery<{
-    epoches: { totalStaked: string }[]
+    daometric: { stakedTotal: string }
     minStakeAmounts: { amount: string }[]
   }>(
-    T_NETWORK_SUBGRAPH_URL,
+    T_NETWORK_SUBGRAPH_ID,
     gql`
       query {
-        epoches(orderBy: startTime, orderDirection: desc, first: 1) {
-          totalStaked
+        daometric(id: "dao-metrics") {
+          stakedTotal
         }
       }
     `
@@ -49,7 +49,7 @@ const Hero: FC<{
   const { isFetching, data, error } = useQuery<{
     tbtctoken: { currentTokenHolders: string; totalSupply: string }
   }>(
-    TBTC_SUBGRAPH_URL,
+    TBTC_SUBGRAPH_ID,
     gql`
       query {
         tbtctoken(id: "TBTCToken") {
@@ -60,10 +60,10 @@ const Hero: FC<{
     `
   )
 
-  const { epoches } = totalStakedData || {
-    epoches: [{ totalStaked: "0" }],
+  const { daometric } = totalStakedData || {
+    daometric: { stakedTotal: "0" },
   }
-  const totalStaked = !error ? epoches[0].totalStaked : "0"
+  const totalStaked = !error ? daometric.stakedTotal : "0"
   const tPrice = useTTokenPrice()
   const totalValueStakedInUSD = exchangeAPI
     .toUsdBalance(formatUnits(totalStaked), tPrice)
