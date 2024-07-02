@@ -4,7 +4,7 @@ import Card from "../../../../components/Card"
 import TStakedChart from "./TStakedChart"
 import { BodyLg, H2, H3, H5, LabelMd } from "../../../../components"
 import useQuery from "../../../../hooks/useQuery"
-import { T_NETWORK_SUBGRAPH_URL } from "../../../../config/subgraph"
+import { T_NETWORK_SUBGRAPH_ID } from "../../../../config/subgraph"
 import {
   exchangeAPI,
   formatFiatCurrencyAmount,
@@ -20,14 +20,14 @@ import {
 
 function NetworkDistribution() {
   const { isFetching, data, error } = useQuery<{
-    epoches: { totalStaked: string }[]
+    daometric: { stakedTotal: string }
     minStakeAmounts: { amount: string }[]
   }>(
-    T_NETWORK_SUBGRAPH_URL,
+    T_NETWORK_SUBGRAPH_ID,
     gql`
       query {
-        epoches(orderBy: startTime, orderDirection: desc, first: 1) {
-          totalStaked
+        daometric(id: "dao-metrics") {
+          stakedTotal
         }
         minStakeAmounts(first: 1, orderBy: updatedAt, orderDirection: desc) {
           amount
@@ -35,18 +35,18 @@ function NetworkDistribution() {
       }
     `
   )
-  const { epoches, minStakeAmounts } = data || {
-    epoches: [{ totalStaked: "0" }],
+  const { daometric, minStakeAmounts } = data || {
+    daometric: { stakedTotal: "0" },
     minStakeAmounts: [{ amount: "0" }],
   }
-  const totalStaked = !error ? epoches[0].totalStaked : "0"
-  const forrmattedTotalStaked = formatTokenAmount(totalStaked)
+  const stakedTotal = !error ? daometric.stakedTotal : "0"
+  const forrmattedTotalStaked = formatTokenAmount(stakedTotal)
   const minStakeAmount = formatTokenAmount(
     !error ? minStakeAmounts[0].amount : "0"
   )
   const tPrice = useTTokenPrice()
   const totalValueStakedInUSD = formatFiatCurrencyAmount(
-    exchangeAPI.toUsdBalance(formatUnits(totalStaked), tPrice).toString()
+    exchangeAPI.toUsdBalance(formatUnits(stakedTotal), tPrice).toString()
   )
 
   return (
