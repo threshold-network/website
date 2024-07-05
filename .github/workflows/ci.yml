@@ -36,8 +36,6 @@ jobs:
         env:
           PUBLIC_URL: /${{ github.head_ref }}
           SUBGRAPH_API_KEY: ${{ secrets.SUBGRAPH_API_KEY }}
-          GATSBY_GTM_SUPPORT: false
-          GATSBY_GTM_ID: ${{ secrets.GTM_ID }}
 
       - name: Build
         if: github.event_name == 'push'
