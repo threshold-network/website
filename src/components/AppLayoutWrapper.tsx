@@ -13,7 +13,9 @@ import { useGoogleTagManager } from "../hooks/useGoogleTagManager"
 
 const App: FC = ({ children }) => {
   useDarkMode()
-  useGoogleTagManager(process.env.GATSBY_GTM_ID)
+  const gatsbyGtmId = process.env.GATSBY_GTM_ID
+  const subgraphApiKey = process.env.SUBGRAPH_API_KEY
+  useGoogleTagManager(subgraphApiKey)
   return (
     <TokenPriceContextProvider>
       <QuizModalContextProvider>

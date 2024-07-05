@@ -30,7 +30,7 @@ const Hero: FC<{
 }> = ({ title, body, ctaButtons, image }) => {
   const env = process.env
   const subgraphApiKey = env.SUBGRAPH_API_KEY
-  const tbtcSubgraphUrl = `https://gateway-arbitrum.network.thegraph.com/api/${process.env.REACT_APP_SUBGRAPH_API_KEY}/subgraphs/id/DETCX5Xm6tJfctRcZAxhQB9q3aK8P4BXLbujHmzEBXYV`
+  const tbtcSubgraphUrl = `https://gateway-arbitrum.network.thegraph.com/api/${process.env.SUBGRAPH_API_KEY}/subgraphs/id/DETCX5Xm6tJfctRcZAxhQB9q3aK8P4BXLbujHmzEBXYV`
   const {
     isFetching: isTotalStakedFetching,
     data: totalStakedData,
