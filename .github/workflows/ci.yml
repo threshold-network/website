@@ -35,6 +35,7 @@ jobs:
         run: yarn build:prefixed
         env:
           PUBLIC_URL: /${{ github.head_ref }}
+          GATSBY_SUBGRAPH_API_KEY: ${{ secrets.SUBGRAPH_API_KEY }}
 
       - name: Build
         if: github.event_name == 'push'
@@ -46,7 +47,7 @@ jobs:
           POSTHOG_HOSTNAME_HTTP: ${{ secrets.MAINNET_POSTHOG_HOSTNAME_HTTP }}
           GATSBY_GTM_SUPPORT: true
           GATSBY_GTM_ID: ${{ secrets.GTM_ID }}
-          SUBGRAPH_API_KEY: ${{ secrets.SUBGRAPH_API_KEY }}
+          GATSBY_SUBGRAPH_API_KEY: ${{ secrets.SUBGRAPH_API_KEY }}
 
       - uses: actions/upload-artifact@v3
         with:
