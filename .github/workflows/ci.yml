@@ -35,6 +35,9 @@ jobs:
         run: yarn build:prefixed
         env:
           PUBLIC_URL: /${{ github.head_ref }}
+          GATSBY_GTM_SUPPORT: false
+          GATSBY_GTM_ID: ${{ secrets.GTM_ID }}
+          SUBGRAPH_API_KEY: ${{ secrets.SUBGRAPH_API_KEY }}
 
       - name: Build
         if: github.event_name == 'push'
