@@ -63,7 +63,7 @@ const Hero: FC<{
   const { epoches } = totalStakedData || {
     epoches: [{ totalStaked: "0" }],
   }
-  const totalStaked = !error ? epoches[0].totalStaked : "0"
+  const totalStaked = !totalStakedError ? epoches[0].totalStaked : "0"
   const tPrice = useTTokenPrice()
   const totalValueStakedInUSD = exchangeAPI
     .toUsdBalance(formatUnits(totalStaked), tPrice)

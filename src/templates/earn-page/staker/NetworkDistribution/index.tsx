@@ -1,4 +1,4 @@
-import { Box, HStack, Icon, SimpleGrid, Stack } from "@chakra-ui/react"
+import { Box, HStack, Icon, Stack } from "@chakra-ui/react"
 import { gql } from "graphql-request"
 import Card from "../../../../components/Card"
 import TStakedChart from "./TStakedChart"
@@ -11,12 +11,8 @@ import {
   formatTokenAmount,
   formatUnits,
 } from "../../../../utils"
-import StatBox from "../../../../components/StatBox"
 import { useTTokenPrice } from "../../../../contexts/TokenPriceContext"
-import {
-  BsFillInfoCircleFill,
-  IoInformationCircleOutline,
-} from "react-icons/all"
+import { BsFillInfoCircleFill } from "react-icons/all"
 
 function NetworkDistribution() {
   const { isFetching, data, error } = useQuery<{
