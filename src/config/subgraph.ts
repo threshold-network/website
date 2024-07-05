@@ -4,6 +4,4 @@ export const T_NETWORK_SUBGRAPH_URL =
 export const T_NETWORK_SUBGRAPH_ID =
   "5TJAMbsRwm1avUTV4CofaLT4apfQoAiNcysEit9BWr6R"
 
-export const TBTC_SUBGRAPH_ID = "DETCX5Xm6tJfctRcZAxhQB9q3aK8P4BXLbujHmzEBXYV"
-
-export const SUBGRAPH_GATEWAY_URL = `https://gateway-arbitrum.network.thegraph.com/api/${process.env.SUBGRAPH_API_KEY}/subgraphs/id/`
+export const TBTC_SUBGRAPH_URL = `https://gateway-arbitrum.network.thegraph.com/api/${process.env.SUBGRAPH_API_KEY}/subgraphs/id/DETCX5Xm6tJfctRcZAxhQB9q3aK8P4BXLbujHmzEBXYV`

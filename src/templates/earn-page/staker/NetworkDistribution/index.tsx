@@ -1,33 +1,29 @@
-import { Box, HStack, Icon, SimpleGrid, Stack } from "@chakra-ui/react"
+import { Box, HStack, Icon, Stack } from "@chakra-ui/react"
 import { gql } from "graphql-request"
 import Card from "../../../../components/Card"
 import TStakedChart from "./TStakedChart"
 import { BodyLg, H2, H3, H5, LabelMd } from "../../../../components"
 import useQuery from "../../../../hooks/useQuery"
-import { T_NETWORK_SUBGRAPH_ID } from "../../../../config/subgraph"
+import { T_NETWORK_SUBGRAPH_URL } from "../../../../config/subgraph"
 import {
   exchangeAPI,
   formatFiatCurrencyAmount,
   formatTokenAmount,
   formatUnits,
 } from "../../../../utils"
-import StatBox from "../../../../components/StatBox"
 import { useTTokenPrice } from "../../../../contexts/TokenPriceContext"
-import {
-  BsFillInfoCircleFill,
-  IoInformationCircleOutline,
-} from "react-icons/all"
+import { BsFillInfoCircleFill } from "react-icons/all"
 
 function NetworkDistribution() {
   const { isFetching, data, error } = useQuery<{
-    daometric: { stakedTotal: string }
+    epoches: { totalStaked: string }[]
     minStakeAmounts: { amount: string }[]
   }>(
-    T_NETWORK_SUBGRAPH_ID,
+    T_NETWORK_SUBGRAPH_URL,
     gql`
       query {
-        daometric(id: "dao-metrics") {
-          stakedTotal
+        epoches(orderBy: startTime, orderDirection: desc, first: 1) {
+          totalStaked
         }
         minStakeAmounts(first: 1, orderBy: updatedAt, orderDirection: desc) {
           amount
@@ -35,18 +31,18 @@ function NetworkDistribution() {
       }
     `
   )
-  const { daometric, minStakeAmounts } = data || {
-    daometric: { stakedTotal: "0" },
+  const { epoches, minStakeAmounts } = data || {
+    epoches: [{ totalStaked: "0" }],
     minStakeAmounts: [{ amount: "0" }],
   }
-  const stakedTotal = !error ? daometric.stakedTotal : "0"
-  const forrmattedTotalStaked = formatTokenAmount(stakedTotal)
+  const totalStaked = !error ? epoches[0].totalStaked : "0"
+  const forrmattedTotalStaked = formatTokenAmount(totalStaked)
   const minStakeAmount = formatTokenAmount(
     !error ? minStakeAmounts[0].amount : "0"
   )
   const tPrice = useTTokenPrice()
   const totalValueStakedInUSD = formatFiatCurrencyAmount(
-    exchangeAPI.toUsdBalance(formatUnits(stakedTotal), tPrice).toString()
+    exchangeAPI.toUsdBalance(formatUnits(totalStaked), tPrice).toString()
   )
 
   return (

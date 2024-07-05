@@ -4,10 +4,9 @@ import { Box, Stack, VStack } from "@chakra-ui/react"
 import RolePageTemplate from "../RolePageTemplate"
 import SectionTemplate from "../../home-page/SectionTemplate"
 import { BodyLg, H4, H5 } from "../../../components"
-import { LPCardGroup } from "../../../components/LPCard"
 import { TBTCStats } from "./TBTCStats"
 import { gql } from "graphql-request"
-import { TBTC_SUBGRAPH_ID } from "../../../config/subgraph"
+import { TBTC_SUBGRAPH_URL } from "../../../config/subgraph"
 import useQuery from "../../../hooks/useQuery"
 import { LatestMint, LatestMints } from "./LatestMints"
 import ExternalButtonLink from "../../../components/Buttons/ExternalButtonLink"
@@ -32,7 +31,7 @@ const BTCPageTemplate: FC<any> = ({ data }) => {
     tbtctoken: { currentTokenHolders: string; totalSupply: string }
     transactions: LatestMint[]
   }>(
-    TBTC_SUBGRAPH_ID,
+    TBTC_SUBGRAPH_URL,
     gql`
       query {
         tbtctoken(id: "TBTCToken") {
