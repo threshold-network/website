@@ -8,7 +8,7 @@ hero:
   ctaNotice:
     label: New!
     url: https://app.aave.com/reserve-overview/?underlyingAsset=0x18084fba666a33d37592fa2633fd49a74dd93a88&marketName=proto_mainnet_v3
-    description: tBTC is live on Aave. Put your tBTC to work now!
+    description: tBTC is live on Aave. Another opportunity to put your tBTC to work now! 
   ctaButtons:
     - label: Mint tBTC
       url: https://dashboard.threshold.network/tBTC
