@@ -66,6 +66,17 @@ collections:
                   media_library: { config: { multiple: false } },
                 }
               - {
+                  label: "CTA Notice",
+                  name: "ctaNotice",
+                  widget: "object",
+                  fields:
+                    [
+                      { label: Label, name: label, widget: string },
+                      { label: URL, name: url, widget: string },
+                      { label: Description, name: description, widget: string },
+                    ],
+                }
+              - {
                   label: "CTA Buttons",
                   name: "ctaButtons",
                   widget: "list",

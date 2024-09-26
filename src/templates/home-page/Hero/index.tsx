@@ -14,6 +14,13 @@ import {
 import useQuery from "../../../hooks/useQuery"
 import { exchangeAPI, formatUnits } from "../../../utils"
 import { useTTokenPrice } from "../../../contexts/TokenPriceContext"
+import CTANotice from "../../../components/CTANotice"
+
+export interface CTANotice {
+  label: string
+  url: string
+  description: string
+}
 
 const heroButtonProps = {
   h: "auto",
@@ -25,9 +32,10 @@ const heroButtonProps = {
 const Hero: FC<{
   title: string
   body: string
+  ctaNotice: CTANotice
   ctaButtons: any
   image: ImageProps
-}> = ({ title, body, ctaButtons, image }) => {
+}> = ({ title, body, ctaNotice, ctaButtons, image }) => {
   const {
     isFetching: isTotalStakedFetching,
     data: totalStakedData,
@@ -88,6 +96,7 @@ const Hero: FC<{
         <Box display="flex" flexDirection={{ base: "column", lg: "row" }}>
           <Box>
             <Stack spacing={8}>
+              <CTANotice {...ctaNotice} />
               <H1 maxW="720px" pr={20}>
                 {title}
               </H1>
