@@ -46,6 +46,11 @@ export const query = graphql`
         hero {
           title
           body
+          ctaNotice {
+            label
+            url
+            description
+          }
           ctaButtons {
             label
             url

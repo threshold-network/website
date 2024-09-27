@@ -66,7 +66,7 @@ const plugins: Array<PluginRef> = [
   {
     resolve: "gatsby-plugin-netlify-cms",
     options: {
-      modulePath: path.resolve("/src/cms/cms.ts"),
+      modulePath: path.resolve("src/cms/cms.ts"),
     },
   },
 ]
