@@ -26,7 +26,7 @@ guildsInfo:
       your interests and expertise.
     buttons:
       - label: Join Discord
-        url: https://discord.gg/Threshold
+        url: https://discord.threshold.network
         variant: INTERNAL_SOLID
       - label: Read Guilds Proposal
         url: https://forum.threshold.network/t/tip-13-bootstrap-threshold-dao-guilds/246

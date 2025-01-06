@@ -41,7 +41,7 @@ columns:
         url: https://forum.threshold.network/
         isExternal: true
       - label: Discord
-        url: https://discord.gg/Threshold
+        url: https://discord.threshold.network
         isExternal: true
       - label: Telegram
         url: https://t.me/thresholdnetwork
@@ -72,7 +72,7 @@ social_links:
       image: /images/telegram.svg
       alt: telegram
   - label: Discord
-    url: " https://discord.gg/Threshold"
+    url: "https://discord.threshold.network/"
     icon:
       image: /images/discord.svg
       alt: discord

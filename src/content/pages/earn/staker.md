@@ -97,7 +97,7 @@ gettingStarted:
         rightIcon: /images/external-arrow.svg
       - leftIcon: /images/logo-discord.png
         label: Ask Questions in Discord
-        url: https://discord.gg/Threshold
+        url: https://discord.threshold.network
         rightIcon: /images/external-arrow.svg
       - leftIcon: /images/pencil-sharp.svg
         label: Threshold Forum
