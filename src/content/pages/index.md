@@ -161,7 +161,7 @@ joinTheCommunity:
         up to date.
       buttons:
         - label: Discord
-          url: https://discord.gg/Threshold
+          url: https://discord.threshold.network
           image: /images/discord.svg
           variant: INTERNAL_OUTLINE
           icon:

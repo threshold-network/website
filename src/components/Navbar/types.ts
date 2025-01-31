@@ -24,7 +24,7 @@ export enum ExternalLinkHref {
   TELEGRAM = "TELEGRAM",
   TBTC_WRAPPED_TOUR = "https://blog.threshold.network/stop-three-on-tbtcs-wrapped-tour-kicks-off-with-an-arbitrum-integration-and-a-new-galxe-oat/",
   THRESHOLD_BLOG = "https://blog.threshold.network/",
-  THRESHOLD_DISCORD = "https://discord.gg/Threshold",
+  THRESHOLD_DISCORD = "https://discord.threshold.network",
   THRESHOLD_GITHUB = "https://github.com/threshold-network",
   THRESHOLD_TOKEN = "https://curve.fi/teth",
   THRESHOLD_TWITTER = "https://twitter.com/TheTNetwork",

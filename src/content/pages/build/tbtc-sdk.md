@@ -70,6 +70,6 @@ callToActionInfo:
       url: https://docs.threshold.network/app-development/tbtc-v2/tbtc-sdk/
       variant: EXTERNAL_OUTLINE
     - label: Join Discord
-      url: https://discord.gg/threshold
+      url: https://discord.threshold.network
       variant: EXTERNAL_OUTLINE
 ---

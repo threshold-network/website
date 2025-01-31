@@ -173,7 +173,7 @@ community:
   - leftIcon: /images/discord-social.svg
     title: Discord
     description: Ask questions and engage with our community.
-    url: https://discord.gg/Threshold
+    url: https://discord.threshold.network
     rightIcon: /images/external-arrow.svg
   - leftIcon: /images/telegram-social.svg
     title: Telegram

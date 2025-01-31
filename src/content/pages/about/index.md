@@ -28,7 +28,7 @@ faq:
     text: Still have questions? Join our Discord!
     button:
       label: Join Discord
-      url: https://discord.gg/Threshold
+      url: https://discord.threshold.network
       icon:
         image: /images/logo-discord.png
         alt: discord
