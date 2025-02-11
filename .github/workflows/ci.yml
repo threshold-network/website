@@ -49,7 +49,7 @@ jobs:
           GATSBY_GTM_ID: ${{ secrets.GTM_ID }}
           GATSBY_SUBGRAPH_API_KEY: ${{ secrets.SUBGRAPH_API_KEY }}
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: build
           path: public
@@ -62,7 +62,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
 
       - name: Deploy PR to GCP
         uses: thesis/gcp-storage-bucket-action@v3.1.0
@@ -95,7 +95,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
 
       - name: Deploy build to GCP
         uses: thesis/gcp-storage-bucket-action@v3.1.0
