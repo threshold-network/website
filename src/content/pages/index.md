@@ -45,21 +45,6 @@ bugBounty:
       variant: EXTERNAL_SOLID
   rowReverse: false
   bgColor: "#161A1F"
-stakerRole:
-  title: Threshold Staking
-  description:
-    Stakers escrow T tokens to run a node on the Threshold Network and
-    earn rewards.
-  image: /images/staking-threshold.png
-  buttons:
-    - label: Start Staking
-      url: https://dashboard.threshold.network/overview/network
-      variant: EXTERNAL_SOLID
-    - variant: INTERNAL_OUTLINE
-      label: Learn More
-      url: /earn/staker
-  rowReverse: false
-  bgColor: "#858585"
 lpRole:
   title: Provide Liquidity
   description: Liquidity providers earn yields by depositing assets into liquidity pools.
@@ -84,38 +69,6 @@ tokenHolderRole:
       variant: INTERNAL_OUTLINE
   rowReverse: true
   bgColor: "#3c3c3c"
-migrationInfo:
-  title: Do you own KEEP or NU?
-  description: Keep and NuCypher merged to form the Threshold Network. Upgrade
-    your tokens to T!
-  image: /images/legacy-tokens.png
-  buttons:
-    - label: Upgrade tokens
-      url: https://dashboard.threshold.network/upgrade
-      variant: EXTERNAL_OUTLINE
-  bgColor: "#141414"
-  rowReverse: false
-tacoRole:
-  title: Build uncensorable e2ee into your dapp
-  description: TACo is the only end-to-end encryption plugin that is end-to-end decentralized
-  image: /images/taco-section-image.svg
-  buttons:
-    - label: Learn More
-      url: /build/taco
-      variant: INTERNAL_SOLID
-    - label: Quickstart
-      url: https://docs.threshold.network/app-development/threshold-access-control-tac/quickstart-testnet
-      variant: EXTERNAL_OUTLINE
-  subitems:
-    - title: Easy to integrate
-      description: TACo makes access control easy with an intuitive API, flexible architecture, and a free-to-use Testnet. All you need is a use case that involves private data, and where trusting an intermediary won't fly.
-      image: /images/decentralized-icon.png
-    - title: Day One Decentralized
-      description: Access to data encrypted via TACo is managed by groups of independent Threshold nodes, from the very first byte. There's no 'temporary phase' where you trust the developers not to decrypt sensitive data.
-      image: /images/secure-icon.png
-    - title: Secure & redundant
-      description: Access control groups are sampled from a live, battle-tested & well-collateralized network. TACo is being integrated into apps handling hyper-sensitive payloads like seed phrases & health data.
-      image: /images/private-icon.png
 harnessThePower:
   title: Harness the power of Threshold
   description: Threshold leverages threshold cryptography to protect digital

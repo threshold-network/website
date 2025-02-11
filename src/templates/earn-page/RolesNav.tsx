@@ -27,14 +27,6 @@ const RolesNav = ({ location }) => {
       </Button>
       <Button
         as={GatsbyLink}
-        to="/earn/staker"
-        variant={pathname.includes("/staker") ? "outline" : "ghost"}
-        width="full"
-      >
-        Staker
-      </Button>
-      <Button
-        as={GatsbyLink}
         to="/earn/liquidity-provider"
         variant={pathname.includes("/liquidity-provider") ? "outline" : "ghost"}
         width="full"

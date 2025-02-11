@@ -14,7 +14,7 @@ interface AnalyticsProps {
 export const Analytics: FC<AnalyticsProps & StackProps> = ({
   tbtcTtvl,
   tbtcUniqueAddresses,
-  stakingTvlInUSD,
+  tvlInUSD,
   ...restProps
 }) => {
   const statsStyles = {
@@ -28,7 +28,7 @@ export const Analytics: FC<AnalyticsProps & StackProps> = ({
       // TODOL make the `btc` word smaller
       amount: `${formatTokenAmount(tbtcTtvl, "0,00.00")}`,
       currency: "btc",
-      label: "tBTC TVL",
+      label: "BTC TVL",
       ...statsStyles,
     },
     {
@@ -37,8 +37,8 @@ export const Analytics: FC<AnalyticsProps & StackProps> = ({
       ...statsStyles,
     },
     {
-      amount: formatFiatCurrencyAmount(stakingTvlInUSD, "0a").toUpperCase(),
-      label: "Staking TVL",
+      amount: formatFiatCurrencyAmount(tvlInUSD, "0a").toUpperCase(),
+      label: "USD TVL",
       ...statsStyles,
     },
   ]

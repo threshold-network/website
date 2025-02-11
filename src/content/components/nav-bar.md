@@ -4,8 +4,6 @@ nav_items:
   - label: Earn
     isExternal: false
     subitems:
-      - label: Staker
-        url: /earn/staker
       - label: Liquidity Provider
         url: /earn/liquidity-provider
       - label: tBTC Bridge
