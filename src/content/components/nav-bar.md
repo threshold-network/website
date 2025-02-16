@@ -14,7 +14,7 @@ nav_items:
     isExternal: false
     subitems:
       - label: TACo
-        url: /build/taco
+        url: https://docs.taco.build
       - label: tBTC SDK
         url: /build/tbtc-sdk
       - label: Docs
