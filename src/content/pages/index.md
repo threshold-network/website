@@ -69,30 +69,17 @@ tokenHolderRole:
       variant: INTERNAL_OUTLINE
   rowReverse: true
   bgColor: "#3c3c3c"
-harnessThePower:
-  title: Harness the power of Threshold
-  description: Threshold leverages threshold cryptography to protect digital
-    assets by distributing operations across independent parties, requiring some
-    threshold number of them (t-of-n) to cooperate.
+tacoRole:
+  title: Build uncensorable e2ee into your dapp
+  description: TACo is the only end-to-end encryption plugin that is end-to-end decentralized
+  image: /images/taco-section-image.svg
   buttons:
-    - label: About Threshold
-      url: /about
+    - label: Taco.build
+      url: https://taco.build
       variant: INTERNAL_SOLID
-  subitems:
-    - title: Decentralized
-      description: Threshold utilizes a network of independent nodes to provide
-        threshold cryptographic services without a central authority.
-      image: /images/decentralized-icon.png
-    - title: Secure
-      description:
-        Splitting cryptographic operations across nodes increases security
-        and availability and reduces trust assumptions. Threshold is
-        [audited](/about#audits) by the best firms in the space.
-      image: /images/secure-icon.png
-    - title: Private
-      description: Cryptographic protocols eradicate the trust burden forced on
-        end-users and ensure privacy on the public blockchain.
-      image: /images/private-icon.png
+    - label: Docs
+      url: https://docs.taco.build
+      variant: EXTERNAL_OUTLINE
 activeCommunity:
   title: Threshold is run by an active community.
   bgColor: "#141414"
