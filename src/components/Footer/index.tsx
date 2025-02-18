@@ -61,14 +61,12 @@ const FooterContent: FC<{
                   textAlign={{ base: "center", md: "left" }}
                   color="gray.300"
                 >
-                  ©{new Date().getFullYear()} | A Thesis Build
+                  ©{new Date().getFullYear()} | All Rights Reserved
                 </BodySm>
                 <BodySm
                   textAlign={{ base: "center", md: "left" }}
                   color="gray.300"
-                >
-                  All Rights Reserved
-                </BodySm>
+                ></BodySm>
               </Stack>
             </Stack>
           </Box>

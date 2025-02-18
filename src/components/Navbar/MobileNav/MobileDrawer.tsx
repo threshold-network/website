@@ -104,9 +104,7 @@ const MobileDrawer: FC<MobileDrawerProps> = ({
           </Stack>
           <VStack>
             <SocialMediaLinks isMobileDrawerFooter links={socialLinks} />
-            <BodySm color="gray.300">
-              ©{new Date().getFullYear()} | A Thesis Build
-            </BodySm>
+            <BodySm color="gray.300">©{new Date().getFullYear()}</BodySm>
             <BodySm color="gray.300">All Rights Reserved</BodySm>
           </VStack>
         </DrawerBody>

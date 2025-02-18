@@ -13,7 +13,7 @@ import {
 } from "../../../config/subgraph"
 import useQuery from "../../../hooks/useQuery"
 import { exchangeAPI, formatUnits } from "../../../utils"
-import { useTTokenPrice } from "../../../contexts/TokenPriceContext"
+import { useTBTCTokenPrice } from "../../../contexts/TokenPriceContext"
 import CTANotice from "../../../components/CTANotice"
 
 export interface CTANotice {
@@ -71,17 +71,17 @@ const Hero: FC<{
   const { epoches } = totalStakedData || {
     epoches: [{ totalStaked: "0" }],
   }
-  const totalStaked = !totalStakedError ? epoches[0].totalStaked : "0"
-  const tPrice = useTTokenPrice()
-  const totalValueStakedInUSD = exchangeAPI
-    .toUsdBalance(formatUnits(totalStaked), tPrice)
-    .toString()
 
   const { tbtctoken } = data || {
     tbtctoken: { currentTokenHolders: "0", totalSupply: "0" },
   }
   const currentTokenHolders = !error ? tbtctoken.currentTokenHolders : "0"
   const totalSupply = !error ? tbtctoken.totalSupply : "0"
+
+  const tBTCPrice = useTBTCTokenPrice()
+  const tBTCTvlInUSD = exchangeAPI
+    .toUsdBalance(formatUnits(totalSupply), tBTCPrice)
+    .toString()
 
   return (
     <Box minHeight={{ base: "740px", md: "800px" }} bg={"gray.900"}>
@@ -149,7 +149,7 @@ const Hero: FC<{
         <Analytics
           tbtcTtvl={totalSupply}
           tbtcUniqueAddresses={currentTokenHolders}
-          stakingTvlInUSD={totalValueStakedInUSD}
+          tvlInUSD={tBTCTvlInUSD}
           pt={{ base: "0", lg: "5rem" }}
           pb={"5rem"}
         />

@@ -4,8 +4,6 @@ nav_items:
   - label: Earn
     isExternal: false
     subitems:
-      - label: Staker
-        url: /earn/staker
       - label: Liquidity Provider
         url: /earn/liquidity-provider
       - label: tBTC Bridge
@@ -16,7 +14,7 @@ nav_items:
     isExternal: false
     subitems:
       - label: TACo
-        url: /build/taco
+        url: https://docs.taco.build
       - label: tBTC SDK
         url: /build/tbtc-sdk
       - label: Docs

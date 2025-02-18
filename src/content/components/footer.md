@@ -17,9 +17,6 @@ columns:
         isExternal: true
   - title: Earn
     links:
-      - label: Staker
-        url: /earn/staker
-        isExternal: false
       - label: Liquidity Provider
         url: /earn/liquidity-provider
         isExternal: false

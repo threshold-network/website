@@ -2,7 +2,6 @@ import { FC } from "react"
 import { graphql } from "gatsby"
 import Hero from "./Hero"
 import SectionTemplate from "./SectionTemplate"
-import MigrationInfoSection from "./MigrationInfoSection"
 import JoinTheCommunity from "./JoinTheCommunity"
 import ActiveCommunity from "./ActiveCommunity"
 import InfoColumnsSection from "./InfoColumnsSection"
@@ -12,11 +11,8 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
     hero,
     tacoRole,
     bugBounty,
-    stakerRole,
     lpRole,
     tokenHolderRole,
-    migrationInfo,
-    harnessThePower,
     activeCommunity,
     joinTheCommunity,
   } = data.markdownRemark.frontmatter
@@ -25,13 +21,10 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
   return (
     <>
       <Hero {...hero} />
-      <InfoColumnsSection {...tacoRole} bgColor="#161A1F" />
       <SectionTemplate {...bugBounty} />
-      <SectionTemplate {...stakerRole} bgColor="gray.900" />
       <SectionTemplate {...lpRole} bgColor="#181D22" />
       <SectionTemplate {...tokenHolderRole} bgColor="#161A1F" />
-      <MigrationInfoSection {...migrationInfo} bgColor="#181D22" />
-      <InfoColumnsSection {...harnessThePower} bgColor="gray.800" />
+      <SectionTemplate {...tacoRole} bgColor="#161A1F" />
       <ActiveCommunity {...activeCommunity} proposals={proposals} />
       <JoinTheCommunity {...joinTheCommunity} />
     </>
@@ -89,26 +82,6 @@ export const query = graphql`
           }
           bgColor
         }
-        stakerRole {
-          rowReverse
-          title
-          description
-          image {
-            id
-            relativePath
-            internal {
-              mediaType
-            }
-            childImageSharp {
-              gatsbyImageData(width: 200)
-            }
-          }
-          buttons {
-            label
-            url
-            variant
-          }
-        }
         lpRole {
           rowReverse
           title
@@ -149,42 +122,8 @@ export const query = graphql`
             variant
           }
         }
-        migrationInfo {
-          rowReverse
-          title
-          description
-          image {
-            id
-            relativePath
-            internal {
-              mediaType
-            }
-            childImageSharp {
-              gatsbyImageData(width: 200)
-            }
-          }
-          buttons {
-            label
-            url
-            variant
-          }
-        }
         tacoRole {
           title
-          subitems {
-            description(from: "description")
-            title
-            image {
-              id
-              relativePath
-              internal {
-                mediaType
-              }
-              childImageSharp {
-                gatsbyImageData(width: 200)
-              }
-            }
-          }
           description
           image {
             id
@@ -196,29 +135,6 @@ export const query = graphql`
               gatsbyImageData(width: 200)
             }
           }
-          buttons {
-            label
-            url
-            variant
-          }
-        }
-        harnessThePower {
-          title
-          subitems {
-            description(from: "description")
-            title
-            image {
-              id
-              relativePath
-              internal {
-                mediaType
-              }
-              childImageSharp {
-                gatsbyImageData(width: 200)
-              }
-            }
-          }
-          description
           buttons {
             label
             url
