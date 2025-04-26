@@ -24,7 +24,8 @@ const ProposalForumCard: FC<ProposalForum> = ({
   const formatDate = useFormatDate()
   const _createdAt = formatDate(createdAt)
   const subTitle = `${_createdAt} · ${createdBy}`
-  const _content = typeof content === "string" ? content : content.raw
+  const _content =
+    typeof content === "string" ? content : content?.html || content?.raw || ""
   return (
     <Card
       maxW={{ base: "100%", md: "336px" }}
