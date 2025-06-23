@@ -36,6 +36,7 @@ jobs:
         env:
           PUBLIC_URL: /${{ github.head_ref }}
           GATSBY_SUBGRAPH_API_KEY: ${{ secrets.SUBGRAPH_API_KEY }}
+          GATSBY_COOKIE3_SITE_ID: ${{ secrets.COOKIE3_SITE_ID }}
 
       - name: Build
         if: github.event_name == 'push'
@@ -48,6 +49,7 @@ jobs:
           GATSBY_GTM_SUPPORT: true
           GATSBY_GTM_ID: ${{ secrets.GTM_ID }}
           GATSBY_SUBGRAPH_API_KEY: ${{ secrets.SUBGRAPH_API_KEY }}
+          GATSBY_COOKIE3_SITE_ID: ${{ secrets.COOKIE3_SITE_ID }}
 
       - uses: actions/upload-artifact@v4
         with:
