@@ -55,7 +55,7 @@ columns:
         url: /about#faq
         isExternal: false
       - label: Brand Assets
-        url: https://bit.ly/threshold-brand-assets
+        url: https://threshold-labs.notion.site/brand-guide
         isExternal: true
 social_links:
   - url: https://twitter.com/TheTNetwork
