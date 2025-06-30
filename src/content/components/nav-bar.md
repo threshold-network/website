@@ -39,7 +39,7 @@ nav_items:
         label: Audits
         url: /about#audits
       - label: Brand Assets
-        url: https://threshold-labs.notion.site/brand-guide
+        url: https://bit.ly/threshold-brand-assets
         isExternal: true
 menu_buttons:
   - label: tBTC dApp
