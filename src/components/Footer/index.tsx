@@ -56,18 +56,41 @@ const FooterContent: FC<{
                 justifyContent="center"
                 p={0}
               />
-              <Stack spacing={0}>
+              <HStack
+                spacing={1}
+                justifyContent={{ base: "center", md: "flex-start" }}
+                whiteSpace="nowrap"
+              >
                 <BodySm
                   textAlign={{ base: "center", md: "left" }}
                   color="gray.300"
                 >
-                  ©{new Date().getFullYear()} | All Rights Reserved
+                  ©{new Date().getFullYear()}
                 </BodySm>
+                <BodySm color="gray.300">|</BodySm>
                 <BodySm
                   textAlign={{ base: "center", md: "left" }}
                   color="gray.300"
-                ></BodySm>
-              </Stack>
+                >
+                  All Rights Reserved
+                </BodySm>
+                <BodySm color="gray.300">|</BodySm>
+                <Link
+                  href="https://docs.threshold.network/resources/privacy-policy"
+                  target="_blank"
+                  _hover={{ color: "white" }}
+                >
+                  <BodySm color="gray.300">Privacy Policy</BodySm>
+                </Link>
+                <BodySm color="gray.300">|</BodySm>
+                <Link
+                  href="https://docs.threshold.network/resources/tbtc-terms-of-use"
+                  target="_blank"
+                  _hover={{ color: "white" }}
+                >
+                  <BodySm color="gray.300">tBTC Terms of Service</BodySm>
+                </Link>
+              </HStack>
             </Stack>
           </Box>
           <HStack
