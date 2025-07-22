@@ -1,4 +1,4 @@
-name: Thrershold Website CI
+name: Threshold Website CI
 
 on:
   pull_request:
