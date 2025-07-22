@@ -80,7 +80,7 @@ const FooterContent: FC<{
                   target="_blank"
                   _hover={{ color: "white" }}
                 >
-                  <BodySm color="gray.300">Privacy Policy </BodySm>
+                  <BodySm color="gray.300">Privacy Policy</BodySm>
                 </Link>
                 <BodySm color="gray.300">|</BodySm>
                 <Link
