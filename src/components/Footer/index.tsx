@@ -88,7 +88,7 @@ const FooterContent: FC<{
                   target="_blank"
                   _hover={{ color: "white" }}
                 >
-                  <BodySm color="gray.300">tBTC Terms of Service</BodySm>
+                  <BodySm color="gray.300">Terms of Use</BodySm>
                 </Link>
               </HStack>
             </Stack>
