@@ -9,7 +9,6 @@ import InfoColumnsSection from "./InfoColumnsSection"
 const SplashPageTemplate: FC<any> = ({ data }) => {
   const {
     hero,
-    tacoRole,
     bugBounty,
     lpRole,
     tokenHolderRole,
@@ -24,7 +23,6 @@ const SplashPageTemplate: FC<any> = ({ data }) => {
       <SectionTemplate {...bugBounty} />
       <SectionTemplate {...lpRole} bgColor="#181D22" />
       <SectionTemplate {...tokenHolderRole} bgColor="#161A1F" />
-      <SectionTemplate {...tacoRole} bgColor="#161A1F" />
       <ActiveCommunity {...activeCommunity} proposals={proposals} />
       <JoinTheCommunity {...joinTheCommunity} />
     </>
@@ -104,25 +102,6 @@ export const query = graphql`
         }
         tokenHolderRole {
           rowReverse
-          title
-          description
-          image {
-            id
-            relativePath
-            internal {
-              mediaType
-            }
-            childImageSharp {
-              gatsbyImageData(width: 200)
-            }
-          }
-          buttons {
-            label
-            url
-            variant
-          }
-        }
-        tacoRole {
           title
           description
           image {

@@ -69,17 +69,6 @@ tokenHolderRole:
       variant: INTERNAL_OUTLINE
   rowReverse: true
   bgColor: "#3c3c3c"
-tacoRole:
-  title: Build uncensorable e2ee into your dapp
-  description: TACo is the only end-to-end encryption plugin that is end-to-end decentralized
-  image: /images/taco-section-image.svg
-  buttons:
-    - label: Taco.build
-      url: https://taco.build
-      variant: INTERNAL_SOLID
-    - label: Docs
-      url: https://docs.taco.build
-      variant: EXTERNAL_OUTLINE
 activeCommunity:
   title: Threshold is run by an active community.
   bgColor: "#141414"
