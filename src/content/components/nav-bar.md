@@ -22,6 +22,15 @@ nav_items:
         isExternal: true
   - label: Governance
     url: /governance
+    subitems:
+      - label: Threshold DAO
+        url: /governance
+      - label: Forum
+        url: https://forum.threshold.network/
+        isExternal: true
+      - label: Delegate Vote
+        url: https://delegates.threshold.network/
+        isExternal: true
   - label: Ecosystem
     url: /ecosystem
   - label: About
